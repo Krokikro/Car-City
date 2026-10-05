@@ -6,9 +6,10 @@
 #   bash scripts/build-pages.sh --push     → собрать и выложить в ветку gh-pages
 set -euo pipefail
 cd "$(dirname "$0")/.."
+SITE="$PWD"
 BASE="${PAGES_BASE:-/Car-City}"
 STASH="$(mktemp -d)"
-restore() { for d in api lab; do [ -d "$STASH/$d" ] && mv "$STASH/$d" "app/$d"; done; rm -rf "$STASH"; }
+restore() { for d in api lab; do if [ -d "$STASH/$d" ]; then mv "$STASH/$d" "$SITE/app/$d"; fi; done; rmdir "$STASH"; }
 trap restore EXIT
 for d in api lab; do [ -d "app/$d" ] && mv "app/$d" "$STASH/$d"; done
 rm -rf .next out
@@ -22,10 +23,11 @@ if [ "${1:-}" = "--push" ]; then
   SHA="$(git rev-parse --short HEAD)"
   TMP="$(mktemp -d)"
   cp -r out/. "$TMP/"
-  cd "$TMP"
+  pushd "$TMP" >/dev/null
   git init -q -b gh-pages
   git add -A
   git -c user.name="Car City preview" -c user.email="noreply@car-city.pro" commit -qm "Предпросмотр сайта ($SHA)"
   git push -f "$(git -C "$REPO" remote get-url origin)" gh-pages:gh-pages
+  popd >/dev/null
   rm -rf "$TMP"
 fi
