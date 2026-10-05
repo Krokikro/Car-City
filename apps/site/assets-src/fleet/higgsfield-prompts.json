@@ -1,0 +1,164 @@
+{
+ "master_job": "b5cd0f75-fa96-48c9-8504-34049725b690",
+ "logo_media": "2ec015a8-c38d-48c9-9920-c0604ab51363",
+ "model": "gpt_image_2_5 medium 2k 4:3",
+ "done": {
+  "kia-rio-1.4": "be7883d8-f144-49f5-aca1-87a7eaf6fe31"
+ },
+ "requests": [
+  {
+   "slug": "kia-rio-1.6",
+   "medias": [
+    "d74998fb-49b9-4814-b650-f71500ad1ae6",
+    "b5cd0f75-fa96-48c9-8504-34049725b690",
+    "2ec015a8-c38d-48c9-9920-c0604ab51363"
+   ],
+   "prompt": "Image 1 shows the exact car model: a Kia Rio 4th generation sedan (2020 facelift). Image 2 is the Car City fleet master photo. Image 3 is the Car City logo. Create a new ultra-photorealistic commercial studio photograph that keeps EVERYTHING from the master photo identical - same dark studio background with the glowing yellow horizontal light line on the back wall, same polished dark reflective floor, same lighting, same camera angle (front three-quarter view, car facing left, lens at headlight height), same framing and car size in frame - but the car is replaced with the Kia Rio 4th generation sedan (2020 facelift) exactly as in image 1 (body shape, headlights, grille, bumpers, wheels, proportions). Livery identical to the master photo: entire body solid glossy taxi yellow #FFB700, thin black-and-yellow checkerboard band along the side at door-handle level across both doors, on the front door the round Car City logo with bold black text CAR CITY under it and black text +7 (499) 302-31-59 under that. No Yandex branding, no other text or logos on the body. Front license plate area: the number plate is completely covered by a white plate-shaped Car City cover in a black frame, showing the round Car City logo and bold yellow-and-black text CAR CITY; no plate number, letters or digits visible (this is the one difference from the master photo). Headlights and daytime running lights on. Hyper-detailed, sharp, magazine car advertising quality, no people, no watermark."
+  },
+  {
+   "slug": "kia-rio-1.4",
+   "medias": [
+    "e68a45fc-3d55-4e99-99b1-18b3605a9397",
+    "b5cd0f75-fa96-48c9-8504-34049725b690",
+    "2ec015a8-c38d-48c9-9920-c0604ab51363"
+   ],
+   "prompt": "Image 1 shows the exact car model: a Kia Rio X-Line crossover hatchback with black plastic wheel arch trim. Image 2 is the Car City fleet master photo. Image 3 is the Car City logo. Create a new ultra-photorealistic commercial studio photograph that keeps EVERYTHING from the master photo identical - same dark studio background with the glowing yellow horizontal light line on the back wall, same polished dark reflective floor, same lighting, same camera angle (front three-quarter view, car facing left, lens at headlight height), same framing and car size in frame - but the car is replaced with the Kia Rio X-Line crossover hatchback with black plastic wheel arch trim exactly as in image 1 (body shape, headlights, grille, bumpers, wheels, proportions). Livery identical to the master photo: entire body solid glossy taxi yellow #FFB700, thin black-and-yellow checkerboard band along the side at door-handle level across both doors, on the front door the round Car City logo with bold black text CAR CITY under it and black text +7 (499) 302-31-59 under that. No Yandex branding, no other text or logos on the body. Front license plate area: the number plate is completely covered by a white plate-shaped Car City cover in a black frame, showing the round Car City logo and bold yellow-and-black text CAR CITY; no plate number, letters or digits visible (this is the one difference from the master photo). Headlights and daytime running lights on. Hyper-detailed, sharp, magazine car advertising quality, no people, no watermark."
+  },
+  {
+   "slug": "skoda-rapid-1.6",
+   "medias": [
+    "87b078d4-1bcf-4a9b-8d81-82733d4fd500",
+    "b5cd0f75-fa96-48c9-8504-34049725b690",
+    "2ec015a8-c38d-48c9-9920-c0604ab51363"
+   ],
+   "prompt": "Image 1 shows the exact car model: a Skoda Rapid 2nd generation liftback (2020+). Image 2 is the Car City fleet master photo. Image 3 is the Car City logo. Create a new ultra-photorealistic commercial studio photograph that keeps EVERYTHING from the master photo identical - same dark studio background with the glowing yellow horizontal light line on the back wall, same polished dark reflective floor, same lighting, same camera angle (front three-quarter view, car facing left, lens at headlight height), same framing and car size in frame - but the car is replaced with the Skoda Rapid 2nd generation liftback (2020+) exactly as in image 1 (body shape, headlights, grille, bumpers, wheels, proportions). Livery identical to the master photo: entire body solid glossy taxi yellow #FFB700, thin black-and-yellow checkerboard band along the side at door-handle level across both doors, on the front door the round Car City logo with bold black text CAR CITY under it and black text +7 (499) 302-31-59 under that. No Yandex branding, no other text or logos on the body. Front license plate area: the number plate is completely covered by a white plate-shaped Car City cover in a black frame, showing the round Car City logo and bold yellow-and-black text CAR CITY; no plate number, letters or digits visible (this is the one difference from the master photo). Headlights and daytime running lights on. Hyper-detailed, sharp, magazine car advertising quality, no people, no watermark."
+  },
+  {
+   "slug": "moskvich-3",
+   "medias": [
+    "348f69d7-62fe-4e1e-bb8a-cce9dc01381b",
+    "b5cd0f75-fa96-48c9-8504-34049725b690",
+    "2ec015a8-c38d-48c9-9920-c0604ab51363"
+   ],
+   "prompt": "Image 1 shows the exact car model: a Moskvich 3 compact crossover (2023). Image 2 is the Car City fleet master photo. Image 3 is the Car City logo. Create a new ultra-photorealistic commercial studio photograph that keeps EVERYTHING from the master photo identical - same dark studio background with the glowing yellow horizontal light line on the back wall, same polished dark reflective floor, same lighting, same camera angle (front three-quarter view, car facing left, lens at headlight height), same framing and car size in frame - but the car is replaced with the Moskvich 3 compact crossover (2023) exactly as in image 1 (body shape, headlights, grille, bumpers, wheels, proportions). Livery identical to the master photo: entire body solid glossy taxi yellow #FFB700, thin black-and-yellow checkerboard band along the side at door-handle level across both doors, on the front door the round Car City logo with bold black text CAR CITY under it and black text +7 (499) 302-31-59 under that. No Yandex branding, no other text or logos on the body. Front license plate area: the number plate is completely covered by a white plate-shaped Car City cover in a black frame, showing the round Car City logo and bold yellow-and-black text CAR CITY; no plate number, letters or digits visible (this is the one difference from the master photo). Headlights and daytime running lights on. Hyper-detailed, sharp, magazine car advertising quality, no people, no watermark."
+  },
+  {
+   "slug": "belgee-x50",
+   "medias": [
+    "b4501063-5c63-4db8-9da4-96e19451d1e4",
+    "b5cd0f75-fa96-48c9-8504-34049725b690",
+    "2ec015a8-c38d-48c9-9920-c0604ab51363"
+   ],
+   "prompt": "Image 1 shows the exact car model: a Belgee X50 compact crossover (Geely Coolray twin). Image 2 is the Car City fleet master photo. Image 3 is the Car City logo. Create a new ultra-photorealistic commercial studio photograph that keeps EVERYTHING from the master photo identical - same dark studio background with the glowing yellow horizontal light line on the back wall, same polished dark reflective floor, same lighting, same camera angle (front three-quarter view, car facing left, lens at headlight height), same framing and car size in frame - but the car is replaced with the Belgee X50 compact crossover (Geely Coolray twin) exactly as in image 1 (body shape, headlights, grille, bumpers, wheels, proportions). Livery identical to the master photo: entire body solid glossy taxi yellow #FFB700, thin black-and-yellow checkerboard band along the side at door-handle level across both doors, on the front door the round Car City logo with bold black text CAR CITY under it and black text +7 (499) 302-31-59 under that. No Yandex branding, no other text or logos on the body. Front license plate area: the number plate is completely covered by a white plate-shaped Car City cover in a black frame, showing the round Car City logo and bold yellow-and-black text CAR CITY; no plate number, letters or digits visible (this is the one difference from the master photo). Headlights and daytime running lights on. Hyper-detailed, sharp, magazine car advertising quality, no people, no watermark."
+  },
+  {
+   "slug": "geely-emgrand",
+   "medias": [
+    "1dd11bd4-d47c-4263-88a1-eda054240ff9",
+    "b5cd0f75-fa96-48c9-8504-34049725b690",
+    "2ec015a8-c38d-48c9-9920-c0604ab51363"
+   ],
+   "prompt": "Image 1 shows the exact car model: a Geely Emgrand sedan (2023, 4th gen). Image 2 is the Car City fleet master photo. Image 3 is the Car City logo. Create a new ultra-photorealistic commercial studio photograph that keeps EVERYTHING from the master photo identical - same dark studio background with the glowing yellow horizontal light line on the back wall, same polished dark reflective floor, same lighting, same camera angle (front three-quarter view, car facing left, lens at headlight height), same framing and car size in frame - but the car is replaced with the Geely Emgrand sedan (2023, 4th gen) exactly as in image 1 (body shape, headlights, grille, bumpers, wheels, proportions). Livery identical to the master photo: entire body solid glossy taxi yellow #FFB700, thin black-and-yellow checkerboard band along the side at door-handle level across both doors, on the front door the round Car City logo with bold black text CAR CITY under it and black text +7 (499) 302-31-59 under that. No Yandex branding, no other text or logos on the body. Front license plate area: the number plate is completely covered by a white plate-shaped Car City cover in a black frame, showing the round Car City logo and bold yellow-and-black text CAR CITY; no plate number, letters or digits visible (this is the one difference from the master photo). Headlights and daytime running lights on. Hyper-detailed, sharp, magazine car advertising quality, no people, no watermark."
+  },
+  {
+   "slug": "chery-tiggo-4-pro",
+   "medias": [
+    "2b45b78e-75fa-4c01-8e96-e2966eda01f9",
+    "b5cd0f75-fa96-48c9-8504-34049725b690",
+    "2ec015a8-c38d-48c9-9920-c0604ab51363"
+   ],
+   "prompt": "Image 1 shows the exact car model: a Chery Tiggo 4 Pro crossover. Image 2 is the Car City fleet master photo. Image 3 is the Car City logo. Create a new ultra-photorealistic commercial studio photograph that keeps EVERYTHING from the master photo identical - same dark studio background with the glowing yellow horizontal light line on the back wall, same polished dark reflective floor, same lighting, same camera angle (front three-quarter view, car facing left, lens at headlight height), same framing and car size in frame - but the car is replaced with the Chery Tiggo 4 Pro crossover exactly as in image 1 (body shape, headlights, grille, bumpers, wheels, proportions). Livery identical to the master photo: entire body solid glossy taxi yellow #FFB700, thin black-and-yellow checkerboard band along the side at door-handle level across both doors, on the front door the round Car City logo with bold black text CAR CITY under it and black text +7 (499) 302-31-59 under that. No Yandex branding, no other text or logos on the body. Front license plate area: the number plate is completely covered by a white plate-shaped Car City cover in a black frame, showing the round Car City logo and bold yellow-and-black text CAR CITY; no plate number, letters or digits visible (this is the one difference from the master photo). Headlights and daytime running lights on. Hyper-detailed, sharp, magazine car advertising quality, no people, no watermark."
+  },
+  {
+   "slug": "omoda-s-5",
+   "medias": [
+    "5524e97d-4aa2-4795-8fa6-3e0b45454a4e",
+    "b5cd0f75-fa96-48c9-8504-34049725b690",
+    "2ec015a8-c38d-48c9-9920-c0604ab51363"
+   ],
+   "prompt": "Image 1 shows the exact car model: a Omoda S5 sedan with large diamond-pattern grille. Image 2 is the Car City fleet master photo. Image 3 is the Car City logo. Create a new ultra-photorealistic commercial studio photograph that keeps EVERYTHING from the master photo identical - same dark studio background with the glowing yellow horizontal light line on the back wall, same polished dark reflective floor, same lighting, same camera angle (front three-quarter view, car facing left, lens at headlight height), same framing and car size in frame - but the car is replaced with the Omoda S5 sedan with large diamond-pattern grille exactly as in image 1 (body shape, headlights, grille, bumpers, wheels, proportions). Livery identical to the master photo: entire body solid glossy taxi yellow #FFB700, thin black-and-yellow checkerboard band along the side at door-handle level across both doors, on the front door the round Car City logo with bold black text CAR CITY under it and black text +7 (499) 302-31-59 under that. No Yandex branding, no other text or logos on the body. Front license plate area: the number plate is completely covered by a white plate-shaped Car City cover in a black frame, showing the round Car City logo and bold yellow-and-black text CAR CITY; no plate number, letters or digits visible (this is the one difference from the master photo). Headlights and daytime running lights on. Hyper-detailed, sharp, magazine car advertising quality, no people, no watermark."
+  },
+  {
+   "slug": "chery-tiggo-4",
+   "medias": [
+    "6d2a5369-1f25-4142-91e5-da32fe00e7f3",
+    "b5cd0f75-fa96-48c9-8504-34049725b690",
+    "2ec015a8-c38d-48c9-9920-c0604ab51363"
+   ],
+   "prompt": "Image 1 shows the exact car model: a Chery Tiggo 4 crossover (2019-2021). Image 2 is the Car City fleet master photo. Image 3 is the Car City logo. Create a new ultra-photorealistic commercial studio photograph that keeps EVERYTHING from the master photo identical - same dark studio background with the glowing yellow horizontal light line on the back wall, same polished dark reflective floor, same lighting, same camera angle (front three-quarter view, car facing left, lens at headlight height), same framing and car size in frame - but the car is replaced with the Chery Tiggo 4 crossover (2019-2021) exactly as in image 1 (body shape, headlights, grille, bumpers, wheels, proportions). Livery identical to the master photo: entire body solid glossy taxi yellow #FFB700, thin black-and-yellow checkerboard band along the side at door-handle level across both doors, on the front door the round Car City logo with bold black text CAR CITY under it and black text +7 (499) 302-31-59 under that. No Yandex branding, no other text or logos on the body. Front license plate area: the number plate is completely covered by a white plate-shaped Car City cover in a black frame, showing the round Car City logo and bold yellow-and-black text CAR CITY; no plate number, letters or digits visible (this is the one difference from the master photo). Headlights and daytime running lights on. Hyper-detailed, sharp, magazine car advertising quality, no people, no watermark."
+  },
+  {
+   "slug": "exeed-lx-2023",
+   "medias": [
+    "b5cd0f75-fa96-48c9-8504-34049725b690",
+    "2ec015a8-c38d-48c9-9920-c0604ab51363"
+   ],
+   "prompt": "Image 1 is the Car City fleet master photo. Image 2 is the Car City logo. Create a new ultra-photorealistic commercial studio photograph that keeps EVERYTHING from the master photo identical - same dark studio background with the glowing yellow horizontal light line on the back wall, same polished dark reflective floor, same lighting, same camera angle (front three-quarter view, car facing left, lens at headlight height), same framing and car size in frame - but the car is replaced with a brand-new Exeed LX 2023 compact premium crossover, rendered as the real production model with accurate body shape, headlights, grille, bumpers and badge. Livery identical to the master photo: entire body solid glossy taxi yellow #FFB700, thin black-and-yellow checkerboard band along the side at door-handle level across both doors, on the front door the round Car City logo with bold black text CAR CITY under it and black text +7 (499) 302-31-59 under that. No Yandex branding, no other text or logos on the body. Front license plate area: the number plate is completely covered by a white plate-shaped Car City cover in a black frame, showing the round Car City logo and bold yellow-and-black text CAR CITY; no plate number, letters or digits visible (this is the one difference from the master photo). Headlights and daytime running lights on. Hyper-detailed, sharp, magazine car advertising quality, no people, no watermark."
+  },
+  {
+   "slug": "jac-j7",
+   "medias": [
+    "b5cd0f75-fa96-48c9-8504-34049725b690",
+    "2ec015a8-c38d-48c9-9920-c0604ab51363"
+   ],
+   "prompt": "Image 1 is the Car City fleet master photo. Image 2 is the Car City logo. Create a new ultra-photorealistic commercial studio photograph that keeps EVERYTHING from the master photo identical - same dark studio background with the glowing yellow horizontal light line on the back wall, same polished dark reflective floor, same lighting, same camera angle (front three-quarter view, car facing left, lens at headlight height), same framing and car size in frame - but the car is replaced with a brand-new JAC J7 liftback sedan (2021+), rendered as the real production model with accurate body shape, headlights, grille, bumpers and badge. Livery identical to the master photo: entire body solid glossy taxi yellow #FFB700, thin black-and-yellow checkerboard band along the side at door-handle level across both doors, on the front door the round Car City logo with bold black text CAR CITY under it and black text +7 (499) 302-31-59 under that. No Yandex branding, no other text or logos on the body. Front license plate area: the number plate is completely covered by a white plate-shaped Car City cover in a black frame, showing the round Car City logo and bold yellow-and-black text CAR CITY; no plate number, letters or digits visible (this is the one difference from the master photo). Headlights and daytime running lights on. Hyper-detailed, sharp, magazine car advertising quality, no people, no watermark."
+  },
+  {
+   "slug": "haval-f7",
+   "medias": [
+    "b5cd0f75-fa96-48c9-8504-34049725b690",
+    "2ec015a8-c38d-48c9-9920-c0604ab51363"
+   ],
+   "prompt": "Image 1 is the Car City fleet master photo. Image 2 is the Car City logo. Create a new ultra-photorealistic commercial studio photograph that keeps EVERYTHING from the master photo identical - same dark studio background with the glowing yellow horizontal light line on the back wall, same polished dark reflective floor, same lighting, same camera angle (front three-quarter view, car facing left, lens at headlight height), same framing and car size in frame - but the car is replaced with a brand-new Haval F7 crossover (2022 facelift), rendered as the real production model with accurate body shape, headlights, grille, bumpers and badge. Livery identical to the master photo: entire body solid glossy taxi yellow #FFB700, thin black-and-yellow checkerboard band along the side at door-handle level across both doors, on the front door the round Car City logo with bold black text CAR CITY under it and black text +7 (499) 302-31-59 under that. No Yandex branding, no other text or logos on the body. Front license plate area: the number plate is completely covered by a white plate-shaped Car City cover in a black frame, showing the round Car City logo and bold yellow-and-black text CAR CITY; no plate number, letters or digits visible (this is the one difference from the master photo). Headlights and daytime running lights on. Hyper-detailed, sharp, magazine car advertising quality, no people, no watermark."
+  },
+  {
+   "slug": "chery-tiggo-7-pro-max",
+   "medias": [
+    "b5cd0f75-fa96-48c9-8504-34049725b690",
+    "2ec015a8-c38d-48c9-9920-c0604ab51363"
+   ],
+   "prompt": "Image 1 is the Car City fleet master photo. Image 2 is the Car City logo. Create a new ultra-photorealistic commercial studio photograph that keeps EVERYTHING from the master photo identical - same dark studio background with the glowing yellow horizontal light line on the back wall, same polished dark reflective floor, same lighting, same camera angle (front three-quarter view, car facing left, lens at headlight height), same framing and car size in frame - but the car is replaced with a brand-new Chery Tiggo 7 Pro Max crossover (2023), rendered as the real production model with accurate body shape, headlights, grille, bumpers and badge. Livery identical to the master photo: entire body solid glossy taxi yellow #FFB700, thin black-and-yellow checkerboard band along the side at door-handle level across both doors, on the front door the round Car City logo with bold black text CAR CITY under it and black text +7 (499) 302-31-59 under that. No Yandex branding, no other text or logos on the body. Front license plate area: the number plate is completely covered by a white plate-shaped Car City cover in a black frame, showing the round Car City logo and bold yellow-and-black text CAR CITY; no plate number, letters or digits visible (this is the one difference from the master photo). Headlights and daytime running lights on. Hyper-detailed, sharp, magazine car advertising quality, no people, no watermark."
+  },
+  {
+   "slug": "hyundai-sonata",
+   "medias": [
+    "b5cd0f75-fa96-48c9-8504-34049725b690",
+    "2ec015a8-c38d-48c9-9920-c0604ab51363"
+   ],
+   "prompt": "Image 1 is the Car City fleet master photo. Image 2 is the Car City logo. Create a new ultra-photorealistic commercial studio photograph that keeps EVERYTHING from the master photo identical - same dark studio background with the glowing yellow horizontal light line on the back wall, same polished dark reflective floor, same lighting, same camera angle (front three-quarter view, car facing left, lens at headlight height), same framing and car size in frame - but the car is replaced with a brand-new Hyundai Sonata 8th generation sedan (DN8), rendered as the real production model with accurate body shape, headlights, grille, bumpers and badge. Livery identical to the master photo: entire body solid glossy taxi yellow #FFB700, thin black-and-yellow checkerboard band along the side at door-handle level across both doors, on the front door the round Car City logo with bold black text CAR CITY under it and black text +7 (499) 302-31-59 under that. No Yandex branding, no other text or logos on the body. Front license plate area: the number plate is completely covered by a white plate-shaped Car City cover in a black frame, showing the round Car City logo and bold yellow-and-black text CAR CITY; no plate number, letters or digits visible (this is the one difference from the master photo). Headlights and daytime running lights on. Hyper-detailed, sharp, magazine car advertising quality, no people, no watermark."
+  },
+  {
+   "slug": "kia-k5",
+   "medias": [
+    "b5cd0f75-fa96-48c9-8504-34049725b690",
+    "2ec015a8-c38d-48c9-9920-c0604ab51363"
+   ],
+   "prompt": "Image 1 is the Car City fleet master photo. Image 2 is the Car City logo. Create a new ultra-photorealistic commercial studio photograph that keeps EVERYTHING from the master photo identical - same dark studio background with the glowing yellow horizontal light line on the back wall, same polished dark reflective floor, same lighting, same camera angle (front three-quarter view, car facing left, lens at headlight height), same framing and car size in frame - but the car is replaced with a brand-new Kia K5 sedan (DL3, 2020+), rendered as the real production model with accurate body shape, headlights, grille, bumpers and badge. Livery identical to the master photo: entire body solid glossy taxi yellow #FFB700, thin black-and-yellow checkerboard band along the side at door-handle level across both doors, on the front door the round Car City logo with bold black text CAR CITY under it and black text +7 (499) 302-31-59 under that. No Yandex branding, no other text or logos on the body. Front license plate area: the number plate is completely covered by a white plate-shaped Car City cover in a black frame, showing the round Car City logo and bold yellow-and-black text CAR CITY; no plate number, letters or digits visible (this is the one difference from the master photo). Headlights and daytime running lights on. Hyper-detailed, sharp, magazine car advertising quality, no people, no watermark."
+  },
+  {
+   "slug": "geely-atlas-pro",
+   "medias": [
+    "b5cd0f75-fa96-48c9-8504-34049725b690",
+    "2ec015a8-c38d-48c9-9920-c0604ab51363"
+   ],
+   "prompt": "Image 1 is the Car City fleet master photo. Image 2 is the Car City logo. Create a new ultra-photorealistic commercial studio photograph that keeps EVERYTHING from the master photo identical - same dark studio background with the glowing yellow horizontal light line on the back wall, same polished dark reflective floor, same lighting, same camera angle (front three-quarter view, car facing left, lens at headlight height), same framing and car size in frame - but the car is replaced with a brand-new Geely Atlas Pro crossover, rendered as the real production model with accurate body shape, headlights, grille, bumpers and badge. Livery identical to the master photo: entire body solid glossy taxi yellow #FFB700, thin black-and-yellow checkerboard band along the side at door-handle level across both doors, on the front door the round Car City logo with bold black text CAR CITY under it and black text +7 (499) 302-31-59 under that. No Yandex branding, no other text or logos on the body. Front license plate area: the number plate is completely covered by a white plate-shaped Car City cover in a black frame, showing the round Car City logo and bold yellow-and-black text CAR CITY; no plate number, letters or digits visible (this is the one difference from the master photo). Headlights and daytime running lights on. Hyper-detailed, sharp, magazine car advertising quality, no people, no watermark."
+  },
+  {
+   "slug": "chery-tiggo-7-pro",
+   "medias": [
+    "b5cd0f75-fa96-48c9-8504-34049725b690",
+    "2ec015a8-c38d-48c9-9920-c0604ab51363"
+   ],
+   "prompt": "Image 1 is the Car City fleet master photo. Image 2 is the Car City logo. Create a new ultra-photorealistic commercial studio photograph that keeps EVERYTHING from the master photo identical - same dark studio background with the glowing yellow horizontal light line on the back wall, same polished dark reflective floor, same lighting, same camera angle (front three-quarter view, car facing left, lens at headlight height), same framing and car size in frame - but the car is replaced with a brand-new Chery Tiggo 7 Pro crossover (2020-2022), rendered as the real production model with accurate body shape, headlights, grille, bumpers and badge. Livery identical to the master photo: entire body solid glossy taxi yellow #FFB700, thin black-and-yellow checkerboard band along the side at door-handle level across both doors, on the front door the round Car City logo with bold black text CAR CITY under it and black text +7 (499) 302-31-59 under that. No Yandex branding, no other text or logos on the body. Front license plate area: the number plate is completely covered by a white plate-shaped Car City cover in a black frame, showing the round Car City logo and bold yellow-and-black text CAR CITY; no plate number, letters or digits visible (this is the one difference from the master photo). Headlights and daytime running lights on. Hyper-detailed, sharp, magazine car advertising quality, no people, no watermark."
+  },
+  {
+   "slug": "volkswagen-polo-1.6",
+   "medias": [
+    "f9f22257-45a3-4fcf-98d9-70a60800141e",
+    "b5cd0f75-fa96-48c9-8504-34049725b690",
+    "2ec015a8-c38d-48c9-9920-c0604ab51363"
+   ],
+   "prompt": "Image 1 shows the exact car model: a Volkswagen Polo liftback (2020+). Image 2 is the Car City fleet master photo. Image 3 is the Car City logo. Create a new ultra-photorealistic commercial studio photograph that keeps EVERYTHING from the master photo identical - same dark studio background with the glowing yellow horizontal light line on the back wall, same polished dark reflective floor, same lighting, same camera angle (front three-quarter view, car facing left, lens at headlight height), same framing and car size in frame - but the car is replaced with the Volkswagen Polo liftback (2020+) exactly as in image 1 (body shape, headlights, grille, bumpers, wheels, proportions). Livery identical to the master photo: entire body solid glossy taxi yellow #FFB700, thin black-and-yellow checkerboard band along the side at door-handle level across both doors, on the front door the round Car City logo with bold black text CAR CITY under it and black text +7 (499) 302-31-59 under that. No Yandex branding, no other text or logos on the body. Front license plate area: the number plate is completely covered by a white plate-shaped Car City cover in a black frame, showing the round Car City logo and bold yellow-and-black text CAR CITY; no plate number, letters or digits visible (this is the one difference from the master photo). Headlights and daytime running lights on. Hyper-detailed, sharp, magazine car advertising quality, no people, no watermark."
+  }
+ ]
+}
