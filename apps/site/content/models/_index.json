@@ -1,0 +1,875 @@
+[
+  {
+    "url": "https://car-city.pro/klassyi-avtomobilej/ekonom/kia-rio-1.4",
+    "mode": "arenda",
+    "class": "ekonom",
+    "slug": "kia-rio-1.4",
+    "name": "Kia Rio X-Line",
+    "price_text": "от 1900 ₽/сутки",
+    "specs": {
+      "Год выпуска": "2020",
+      "КПП": "(пусто)",
+      "Объем двигателя": "1,4 л",
+      "Средний расход": "5,1 л/100 км",
+      "Привод": "Передний",
+      "Доступный график аренды": "5/2, 6/1, 7/0"
+    },
+    "images": [
+      "https://car-city.pro/assets/components/phpthumbof/cache/kia-rio-x-line.c73e761ba202038328bfb0d77573d6e5.webP"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/klassyi-avtomobilej/ekonom/kia-rio-1.6",
+    "mode": "arenda",
+    "class": "ekonom",
+    "slug": "kia-rio-1.6",
+    "name": "Киа Рио 1.6",
+    "price_text": "от 1900 ₽/сутки",
+    "specs": {
+      "Год выпуска": "2020",
+      "КПП": "(пусто)",
+      "Объем двигателя": "1,6 л",
+      "Средний расход": "5,3 л/100 км",
+      "Привод": "Передний",
+      "Доступный график аренды": "5/2, 6/1, 7/0"
+    },
+    "images": [
+      "https://car-city.pro/assets/components/phpthumbof/cache/kia-rio-1.6-new.c73e761ba202038328bfb0d77573d6e5.webP"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/klassyi-avtomobilej/ekonom/skoda-rapid-1.6",
+    "mode": "arenda",
+    "class": "ekonom",
+    "slug": "skoda-rapid-1.6",
+    "name": "Skoda Rapid 1.6",
+    "price_text": "от 1500 ₽/сутки",
+    "specs": {
+      "Год выпуска": "2020",
+      "КПП": "(пусто)",
+      "Объем двигателя": "1,6 л",
+      "Средний расход": "4,8 л/100 км",
+      "Привод": "Передний",
+      "Доступный график аренды": "5/2, 6/1, 7/0"
+    },
+    "images": [
+      "https://car-city.pro/assets/components/phpthumbof/cache/skoda-rapid-1.eb8b4635ffc0a38bc8c62a147ca8c38f.webP"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/klassyi-avtomobilej/ekonom/volkswagen-polo-1.6",
+    "mode": "arenda",
+    "class": "ekonom",
+    "slug": "volkswagen-polo-1.6",
+    "name": "Volkswagen Polo 1.6",
+    "price_text": "от 1900 ₽/сутки",
+    "specs": {
+      "Год выпуска": "2020",
+      "КПП": "(пусто)",
+      "Объем двигателя": "1,6 л",
+      "Средний расход": "5.8 л/100 км",
+      "Привод": "Передний",
+      "Доступный график аренды": "5/2, 6/1, 7/0"
+    },
+    "images": [
+      "https://car-city.pro/assets/components/phpthumbof/cache/volkswagen-polo-1.6-min-1-.eb8b4635ffc0a38bc8c62a147ca8c38f.webP"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/klassyi-avtomobilej/gruzovoy/sollers-argo",
+    "mode": "arenda",
+    "class": "gruzovoy",
+    "slug": "sollers-argo",
+    "name": "Sollers Argo",
+    "price_text": "от 3150₽ в сутки",
+    "specs": {
+      "Общая длина": "5 990 мм",
+      "Тип колес": "Двускатный",
+      "Год выпуска": "2023",
+      "Вместимость": "4 палета"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/truck/sollers-argo/sollers-argo.webp",
+      "https://car-city.pro/sollersargo1-(1).webp",
+      "https://car-city.pro/sollersargo1-(2).webp",
+      "https://car-city.pro/sollersargo1-(4).webp",
+      "https://car-city.pro/sollersargo1-(3).webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/klassyi-avtomobilej/gruzovoy/sollers-atlant-19-td",
+    "mode": "arenda",
+    "class": "gruzovoy",
+    "slug": "sollers-atlant-19-td",
+    "name": "Sollers Atlant 1.9 TD",
+    "price_text": "от 3375₽ в сутки",
+    "specs": {
+      "Общая длина": "4 900 мм",
+      "Тип колес": "Односкатный",
+      "Год выпуска": "2023",
+      "Общая высота": "2 395 мм"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/truck/sollers_atlant_1.9/sollers_atlant_1.9.webp",
+      "https://car-city.pro/sollersatlant19td-(4).webp",
+      "https://car-city.pro/sollersatlant19td-(1).webp",
+      "https://car-city.pro/sollersatlant19td-(3).webp",
+      "https://car-city.pro/sollersatlant19td-(2).webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/klassyi-avtomobilej/gruzovoy/sollers-atlant-l3h2-2-7d",
+    "mode": "arenda",
+    "class": "gruzovoy",
+    "slug": "sollers-atlant-l3h2-2-7d",
+    "name": "Sollers Atlant L3H2 2.7D",
+    "price_text": "от 3600₽ в сутки",
+    "specs": {
+      "Общая длина": "5 990 мм",
+      "Тип колес": "Односкатный",
+      "Год выпуска": "2024",
+      "Общая высота": "2 675 мм"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/truck/sollers_atlant_l3h2_27d/sollers_atlant_l3h2_27d.webp",
+      "https://car-city.pro/ChatGPT-Image-2-sent.-2026-g.,-16-17-36.png",
+      "https://car-city.pro/ChatGPT-Image-2-sent.-2026-g.,-16-19-28.png",
+      "https://car-city.pro/ChatGPT-Image-2-sent.-2026-g.,-16-31-06.png",
+      "https://car-city.pro/ChatGPT-Image-2-sent.-2026-g.,-16-27-25.png"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/klassyi-avtomobilej/komfort-plyus/chery-tiggo-7-pro-max",
+    "mode": "arenda",
+    "class": "komfort-plyus",
+    "slug": "chery-tiggo-7-pro-max",
+    "name": "Chery Tiggo 7 Pro Max",
+    "price_text": "от 2600₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,5 л",
+      "Год выпуска": "2023",
+      "Средний расход": "8,2 л / 100 км"
+    },
+    "images": [
+      "https://car-city.pro/themes/imgs/cars/okleyka/chery-tiggo-7-pro-max.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Chery-Tiggo-7-Pro-Max/1.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Chery-Tiggo-7-Pro-Max/2.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Chery-Tiggo-7-Pro-Max/3.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Chery-Tiggo-7-Pro-Max/4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/klassyi-avtomobilej/komfort-plyus/chery-tiggo-7-pro",
+    "mode": "arenda",
+    "class": "komfort-plyus",
+    "slug": "chery-tiggo-7-pro",
+    "name": "Chery Tiggo 7 Pro",
+    "price_text": "от 2800₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,5 л",
+      "Год выпуска": "2023",
+      "Средний расход": "9,9 л / 100 км"
+    },
+    "images": [
+      "https://car-city.pro/themes/imgs/cars/okleyka/chery-tiggo-7-pro.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Chery-Tiggo-7-Pro/1.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Chery-Tiggo-7-Pro/2.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Chery-Tiggo-7-Pro/3.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Chery-Tiggo-7-Pro/4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/klassyi-avtomobilej/komfort-plyus/exeed-lx-2023",
+    "mode": "arenda",
+    "class": "komfort-plyus",
+    "slug": "exeed-lx-2023",
+    "name": "Exeed LX 2023",
+    "price_text": "от 2800₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,5 л",
+      "Год выпуска": "2023",
+      "Средний расход": "8,1 л / 100 км"
+    },
+    "images": [
+      "https://car-city.pro/themes/imgs/cars/okleyka/exeed-lx.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Exeed-LX/1.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Exeed-LX/2.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Exeed-LX/3.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Exeed-LX/4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/klassyi-avtomobilej/komfort-plyus/geely-atlas-pro",
+    "mode": "arenda",
+    "class": "komfort-plyus",
+    "slug": "geely-atlas-pro",
+    "name": "Geely Atlas PRO",
+    "price_text": "от 2800₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,5 л",
+      "Год выпуска": "2023",
+      "Средний расход": "6,8 л / 100 км"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/komfort-plus/Geely-Atlas-Pro/Geely_Atlas_Pro.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Geely-Atlas-Pro/1.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Geely-Atlas-Pro/2.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Geely-Atlas-Pro/3.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Geely-Atlas-Pro/4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/klassyi-avtomobilej/komfort-plyus/haval-f7",
+    "mode": "arenda",
+    "class": "komfort-plyus",
+    "slug": "haval-f7",
+    "name": "Haval F7",
+    "price_text": "от 2800₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,6 л",
+      "Год выпуска": "2023",
+      "Средний расход": "6,8-7,2 л / 100 км"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/komfort-plus/Haval-F7/Haval_F7.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Haval-F7/1.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Haval-F7/2.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Haval-F7/3.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Haval-F7/4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/klassyi-avtomobilej/komfort-plyus/hyundai-sonata",
+    "mode": "arenda",
+    "class": "komfort-plyus",
+    "slug": "hyundai-sonata",
+    "name": "Hyundai Sonata",
+    "price_text": "от 2800₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,6 -3,3 л",
+      "Год выпуска": "2021",
+      "Средний расход": "6,1 - 8,2 л / 100 км"
+    },
+    "images": [
+      "https://car-city.pro/themes/imgs/cars/okleyka/hyundai-sonata-2020.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Hyundai-Sonata/1.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Hyundai-Sonata/2.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Hyundai-Sonata/3.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Hyundai-Sonata/4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/klassyi-avtomobilej/komfort-plyus/jac-j7",
+    "mode": "arenda",
+    "class": "komfort-plyus",
+    "slug": "jac-j7",
+    "name": "Jac J7",
+    "price_text": "от 2600₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,5 л",
+      "Год выпуска": "2023",
+      "Средний расход": "8,5 л / 100 км"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/komfort-plus/Jac-J7/Jac_J7.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Jac-J7/1.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Jac-J7/2.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Jac-J7/3.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Jac-J7/4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/klassyi-avtomobilej/komfort-plyus/kia-k5",
+    "mode": "arenda",
+    "class": "komfort-plyus",
+    "slug": "kia-k5",
+    "name": "Kia K5",
+    "price_text": "от 2800₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "2 л",
+      "Год выпуска": "2020",
+      "Средний расход": "5,3 - 8,2 л / 100 км"
+    },
+    "images": [
+      "https://car-city.pro/themes/imgs/cars/okleyka/kia-k5.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Kia-K5/1.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Kia-K5/2.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Kia-K5/3.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Kia-K5/4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/klassyi-avtomobilej/komfort/chery-tiggo-4-pro",
+    "mode": "arenda",
+    "class": "komfort",
+    "slug": "chery-tiggo-4-pro",
+    "name": "Chery Tiggo 4 Pro",
+    "price_text": "от 2000₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,5 л",
+      "Год выпуска": "2023",
+      "Средний расход": "6,6 л / 100 км"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/komfort/chery-tiggo-4-pro/1.webp",
+      "https://car-city.pro/assets/gallery/komfort/chery-tiggo-4-pro/galery_1.webp",
+      "https://car-city.pro/assets/gallery/komfort/chery-tiggo-4-pro/galery_2.webp",
+      "https://car-city.pro/assets/gallery/komfort/chery-tiggo-4-pro/galery_3.webp",
+      "https://car-city.pro/assets/gallery/komfort/chery-tiggo-4-pro/galery_4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/klassyi-avtomobilej/komfort/chery-tiggo-4",
+    "mode": "arenda",
+    "class": "komfort",
+    "slug": "chery-tiggo-4",
+    "name": "Chery Tiggo 4",
+    "price_text": "от 2000₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,5 л",
+      "Год выпуска": "2023",
+      "Средний расход": "6,6 л / 100 км"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/komfort/chery-tiggo-4/1.webp",
+      "https://car-city.pro/assets/gallery/komfort/chery-tiggo-4/galery_1.webp",
+      "https://car-city.pro/assets/gallery/komfort/chery-tiggo-4/galery_2.webp",
+      "https://car-city.pro/assets/gallery/komfort/chery-tiggo-4/galery_3.webp",
+      "https://car-city.pro/assets/gallery/komfort/chery-tiggo-4/galery_4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/klassyi-avtomobilej/komfort/geely-emgrand",
+    "mode": "arenda",
+    "class": "komfort",
+    "slug": "geely-emgrand",
+    "name": "Geely Emgrand",
+    "price_text": "от 2000₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,5 л",
+      "Год выпуска": "2023",
+      "Средний расход": "5,8 л / 100 км"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/komfort/geely-emgrand/1.webp",
+      "https://car-city.pro/assets/gallery/komfort/geely-emgrand/galery_1.webp",
+      "https://car-city.pro/assets/gallery/komfort/geely-emgrand/galery_2.webp",
+      "https://car-city.pro/assets/gallery/komfort/geely-emgrand/galery_3.webp",
+      "https://car-city.pro/assets/gallery/komfort/geely-emgrand/galery_4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/klassyi-avtomobilej/komfort/moskvich-3",
+    "mode": "arenda",
+    "class": "komfort",
+    "slug": "moskvich-3",
+    "name": "Москвич 3",
+    "price_text": "от 2000₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,5 л",
+      "Год выпуска": "2023",
+      "Средний расход": "5,8 л / 100 км"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/komfort/moskvich-3/1.webp",
+      "https://car-city.pro/assets/gallery/komfort/moskvich-3/galery_1.webp",
+      "https://car-city.pro/assets/gallery/komfort/moskvich-3/galery_2.webp",
+      "https://car-city.pro/assets/gallery/komfort/moskvich-3/galery_3.webp",
+      "https://car-city.pro/assets/gallery/komfort/moskvich-3/galery_4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/klassyi-avtomobilej/komfort/omoda-s-5",
+    "mode": "arenda",
+    "class": "komfort",
+    "slug": "omoda-s-5",
+    "name": "Omoda S5",
+    "price_text": "от 2000₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,5 л",
+      "Год выпуска": "2023",
+      "Средний расход": "6,6 л / 100 км"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/komfort/omoda-s5/1.webp",
+      "https://car-city.pro/assets/gallery/komfort/omoda-s5/galery_1.webp",
+      "https://car-city.pro/assets/gallery/komfort/omoda-s5/galery_2.webp",
+      "https://car-city.pro/assets/gallery/komfort/omoda-s5/galery_3.webp",
+      "https://car-city.pro/assets/gallery/komfort/omoda-s5/galery_4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/vykup/ekonom/kia-rio-1.4",
+    "mode": "vykup",
+    "class": "ekonom",
+    "slug": "kia-rio-1.4",
+    "name": "Kia Rio X-Line",
+    "price_text": "от 2089₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,4 л",
+      "Год выпуска": "2020",
+      "Средний расход": "5,1 л/100 км"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/econom/kia-rio-1.4/1.webp",
+      "https://car-city.pro/assets/gallery/econom/kia-rio-1.4/galery_1.webp",
+      "https://car-city.pro/assets/gallery/econom/kia-rio-1.4/galery_2.webp",
+      "https://car-city.pro/assets/gallery/econom/kia-rio-1.4/galery_3.webp",
+      "https://car-city.pro/assets/gallery/econom/kia-rio-1.4/galery_4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/vykup/ekonom/kia-rio-1.6",
+    "mode": "vykup",
+    "class": "ekonom",
+    "slug": "kia-rio-1.6",
+    "name": "Kia Rio 1.6",
+    "price_text": "от 2089₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,6 л",
+      "Год выпуска": "2020",
+      "Средний расход": "5,3л/100 км"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/econom/kia-rio-1.6/1.webp",
+      "https://car-city.pro/assets/gallery/econom/kia-rio-1.6/galery_1.webp",
+      "https://car-city.pro/assets/gallery/econom/kia-rio-1.6/galery_2.webp",
+      "https://car-city.pro/assets/gallery/econom/kia-rio-1.6/galery_3.webp",
+      "https://car-city.pro/assets/gallery/econom/kia-rio-1.6/galery_4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/vykup/ekonom/skoda-rapid-1.6",
+    "mode": "vykup",
+    "class": "ekonom",
+    "slug": "skoda-rapid-1.6",
+    "name": "Skoda Rapid",
+    "price_text": "от 2089₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,5 л",
+      "Год выпуска": "2022",
+      "Средний расход": "6,6л/100 км"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/econom/skoda-rapid/1.webp",
+      "https://car-city.pro/assets/gallery/econom/skoda-rapid/galery_1.webp",
+      "https://car-city.pro/assets/gallery/econom/skoda-rapid/galery_2.webp",
+      "https://car-city.pro/assets/gallery/econom/skoda-rapid/galery_3.webp",
+      "https://car-city.pro/assets/gallery/econom/skoda-rapid/galery_4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/vykup/ekonom/volkswagen-polo-1.6",
+    "mode": "vykup",
+    "class": "ekonom",
+    "slug": "volkswagen-polo-1.6",
+    "name": "Volkswagen Polo",
+    "price_text": "от 2150₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,6 л",
+      "Год выпуска": "2020",
+      "Средний расход": "5,8 л/100 км"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/econom/volkswagen-polo-1.6/1.webp",
+      "https://car-city.pro/assets/gallery/econom/volkswagen-polo-1.6/galery_1.webp",
+      "https://car-city.pro/assets/gallery/econom/volkswagen-polo-1.6/galery_2.webp",
+      "https://car-city.pro/assets/gallery/econom/volkswagen-polo-1.6/galery_3.webp",
+      "https://car-city.pro/assets/gallery/econom/volkswagen-polo-1.6/galery_4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/vykup/gruzovoy/lada-largus",
+    "mode": "vykup",
+    "class": "gruzovoy",
+    "slug": "lada-largus",
+    "name": "Lada Largus",
+    "price_text": "от 2491₽ в сутки",
+    "specs": {
+      "Погрузочная длина": "1740 мм",
+      "Объем кузова": "4.91м",
+      "Год выпуска": "2025",
+      "Вместимость": "2 палета"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/truck/lada-largus/lada-largus.webp",
+      "https://car-city.pro/Lad5a-Largus1.webp",
+      "https://car-city.pro/Lada-Largus4.webp",
+      "https://car-city.pro/Lada-Largus3.webp",
+      "https://car-city.pro/Lada-Largus2.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/vykup/gruzovoy/sollers-argo",
+    "mode": "vykup",
+    "class": "gruzovoy",
+    "slug": "sollers-argo",
+    "name": "Sollers Argo",
+    "price_text": "от 4274₽ в сутки",
+    "specs": {
+      "Общая длина": "5 990 мм",
+      "Тип колес": "Двускатный",
+      "Год выпуска": "2023",
+      "Вместимость": "4 палета"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/truck/sollers-argo/sollers-argo.webp",
+      "https://car-city.pro/sollersargo1-(1).webp",
+      "https://car-city.pro/sollersargo1-(2).webp",
+      "https://car-city.pro/sollersargo1-(4).webp",
+      "https://car-city.pro/sollersargo1-(3).webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/vykup/gruzovoy/sollers-atlant-19-td",
+    "mode": "vykup",
+    "class": "gruzovoy",
+    "slug": "sollers-atlant-19-td",
+    "name": "Sollers Atlant 1.9 TD",
+    "price_text": "от 2813₽ в сутки",
+    "specs": {
+      "Общая длина": "4 900 мм",
+      "Тип колес": "Односкатный",
+      "Год выпуска": "2023",
+      "Общая высота": "2 395 мм"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/truck/sollers_atlant_1.9/sollers_atlant_1.9.webp",
+      "https://car-city.pro/sollersatlant19td-(4).webp",
+      "https://car-city.pro/sollersatlant19td-(1).webp",
+      "https://car-city.pro/sollersatlant19td-(3).webp",
+      "https://car-city.pro/sollersatlant19td-(2).webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/vykup/gruzovoy/sollers-atlant-l3h2-2-7d",
+    "mode": "vykup",
+    "class": "gruzovoy",
+    "slug": "sollers-atlant-l3h2-2-7d",
+    "name": "Sollers Atlant L3H2 2.7D",
+    "price_text": "от 4420₽ в сутки",
+    "specs": {
+      "Общая длина": "5 990 мм",
+      "Тип колес": "Односкатный",
+      "Год выпуска": "2024",
+      "Общая высота": "2 675 мм"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/truck/sollers_atlant_l3h2_27d/sollers_atlant_l3h2_27d.webp",
+      "https://car-city.pro/ChatGPT-Image-2-sent.-2026-g.,-16-17-36.png",
+      "https://car-city.pro/ChatGPT-Image-2-sent.-2026-g.,-16-19-28.png",
+      "https://car-city.pro/ChatGPT-Image-2-sent.-2026-g.,-16-31-06.png",
+      "https://car-city.pro/ChatGPT-Image-2-sent.-2026-g.,-16-27-25.png"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/vykup/komfort-plyus/belgee-x70",
+    "mode": "vykup",
+    "class": "komfort-plyus",
+    "slug": "belgee-x70",
+    "name": "Belgee X70",
+    "price_text": "от 4279₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,5 л",
+      "Год выпуска": "2025",
+      "Средний расход": "6,8 л / 100 км"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/komfort-plus/Belgee%20X70/1.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Belgee%20X70/2.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Belgee%20X70/3.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Belgee%20X70/4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/vykup/komfort-plyus/chery-tiggo-7-pro-max",
+    "mode": "vykup",
+    "class": "komfort-plyus",
+    "slug": "chery-tiggo-7-pro-max",
+    "name": "Chery Tiggo 7 PRO MAX",
+    "price_text": "от 3315₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,5 л",
+      "Год выпуска": "2023",
+      "Средний расход": "8,2 л / 100 км"
+    },
+    "images": [
+      "https://car-city.pro/themes/imgs/cars/okleyka/chery-tiggo-7-pro-max.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Chery-Tiggo-7-Pro-Max/1.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Chery-Tiggo-7-Pro-Max/2.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Chery-Tiggo-7-Pro-Max/3.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Chery-Tiggo-7-Pro-Max/4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/vykup/komfort-plyus/chery-tiggo-7-pro",
+    "mode": "vykup",
+    "class": "komfort-plyus",
+    "slug": "chery-tiggo-7-pro",
+    "name": "Chery Tiggo 7 PRO",
+    "price_text": "от 2511₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,5 л",
+      "Год выпуска": "2023",
+      "Средний расход": "9,9 л / 100 км"
+    },
+    "images": [
+      "https://car-city.pro/themes/imgs/cars/okleyka/chery-tiggo-7-pro.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Chery-Tiggo-7-Pro/1.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Chery-Tiggo-7-Pro/2.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Chery-Tiggo-7-Pro/3.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Chery-Tiggo-7-Pro/4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/vykup/komfort-plyus/exeed-lx-2023",
+    "mode": "vykup",
+    "class": "komfort-plyus",
+    "slug": "exeed-lx-2023",
+    "name": "Exeed LX 2023",
+    "price_text": "от 2836₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,5 л",
+      "Год выпуска": "2023",
+      "Средний расход": "8,1 л / 100 км"
+    },
+    "images": [
+      "https://car-city.pro/themes/imgs/cars/okleyka/exeed-lx.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Exeed-LX/1.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Exeed-LX/2.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Exeed-LX/3.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Exeed-LX/4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/vykup/komfort-plyus/geely-atlas-pro",
+    "mode": "vykup",
+    "class": "komfort-plyus",
+    "slug": "geely-atlas-pro",
+    "name": "Geely Atlas PRO",
+    "price_text": "от 2900₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,5 л",
+      "Год выпуска": "2023",
+      "Средний расход": "6,8 л / 100 км"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/komfort-plus/Geely-Atlas-Pro/Geely_Atlas_Pro.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Geely-Atlas-Pro/1.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Geely-Atlas-Pro/2.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Geely-Atlas-Pro/3.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Geely-Atlas-Pro/4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/vykup/komfort-plyus/haval-f7",
+    "mode": "vykup",
+    "class": "komfort-plyus",
+    "slug": "haval-f7",
+    "name": "Haval F7",
+    "price_text": "от 2836₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,6 л",
+      "Год выпуска": "2023",
+      "Средний расход": "6,8-7,2 л / 100 км"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/komfort-plus/Haval-F7/Haval_F7.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Haval-F7/1.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Haval-F7/2.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Haval-F7/3.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Haval-F7/4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/vykup/komfort-plyus/hyundai-sonata",
+    "mode": "vykup",
+    "class": "komfort-plyus",
+    "slug": "hyundai-sonata",
+    "name": "Hyundai Sonata",
+    "price_text": "от 3200₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "2 л",
+      "Год выпуска": "2021",
+      "Средний расход": "6,1 - 8,2 л / 100 км"
+    },
+    "images": [
+      "https://car-city.pro/themes/imgs/cars/okleyka/hyundai-sonata-2020.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Hyundai-Sonata/1.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Hyundai-Sonata/2.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Hyundai-Sonata/3.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Hyundai-Sonata/4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/vykup/komfort-plyus/jac-j7",
+    "mode": "vykup",
+    "class": "komfort-plyus",
+    "slug": "jac-j7",
+    "name": "Jac J7",
+    "price_text": "от 2022₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,5 л",
+      "Год выпуска": "2023",
+      "Средний расход": "8,5 л / 100 км"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/komfort-plus/Jac-J7/Jac_J7.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Jac-J7/1.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Jac-J7/2.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Jac-J7/3.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Jac-J7/4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/vykup/komfort-plyus/kia-k5",
+    "mode": "vykup",
+    "class": "komfort-plyus",
+    "slug": "kia-k5",
+    "name": "Kia K5",
+    "price_text": "от 3420₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "2 л",
+      "Год выпуска": "2020",
+      "Средний расход": "5,3 - 8,2 л / 100 км"
+    },
+    "images": [
+      "https://car-city.pro/themes/imgs/cars/okleyka/kia-k5.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Kia-K5/1.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Kia-K5/2.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Kia-K5/3.webp",
+      "https://car-city.pro/assets/gallery/komfort-plus/Kia-K5/4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/vykup/komfort/chery-tiggo-4-pro",
+    "mode": "vykup",
+    "class": "komfort",
+    "slug": "chery-tiggo-4-pro",
+    "name": "Chery Tiggo 4 PRO",
+    "price_text": "от 1848₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,5 л",
+      "Год выпуска": "2023",
+      "Средний расход": "7,2 л/100 км"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/komfort/chery-tiggo-4-pro/1.webp",
+      "https://car-city.pro/assets/gallery/komfort/chery-tiggo-4-pro/galery_1.webp",
+      "https://car-city.pro/assets/gallery/komfort/chery-tiggo-4-pro/galery_2.webp",
+      "https://car-city.pro/assets/gallery/komfort/chery-tiggo-4-pro/galery_3.webp",
+      "https://car-city.pro/assets/gallery/komfort/chery-tiggo-4-pro/galery_4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/vykup/komfort/chery-tiggo-4",
+    "mode": "vykup",
+    "class": "komfort",
+    "slug": "chery-tiggo-4",
+    "name": "Chery Tiggo 4",
+    "price_text": "от 2022₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,5 л",
+      "Год выпуска": "2022",
+      "Средний расход": "6,6л/100 км"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/komfort/chery-tiggo-4/1.webp",
+      "https://car-city.pro/assets/gallery/komfort/chery-tiggo-4/galery_1.webp",
+      "https://car-city.pro/assets/gallery/komfort/chery-tiggo-4/galery_2.webp",
+      "https://car-city.pro/assets/gallery/komfort/chery-tiggo-4/galery_3.webp",
+      "https://car-city.pro/assets/gallery/komfort/chery-tiggo-4/galery_4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/vykup/komfort/geely-emgrand",
+    "mode": "vykup",
+    "class": "komfort",
+    "slug": "geely-emgrand",
+    "name": "Geely Emgrand",
+    "price_text": "от 2 290₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,5 л",
+      "Год выпуска": "2023",
+      "Средний расход": "5,8 л/100 км"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/komfort/geely-emgrand/1.webp",
+      "https://car-city.pro/assets/gallery/komfort/geely-emgrand/galery_1.webp",
+      "https://car-city.pro/assets/gallery/komfort/geely-emgrand/galery_2.webp",
+      "https://car-city.pro/assets/gallery/komfort/geely-emgrand/galery_3.webp",
+      "https://car-city.pro/assets/gallery/komfort/geely-emgrand/galery_4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/vykup/komfort/moskvich-3",
+    "mode": "vykup",
+    "class": "komfort",
+    "slug": "moskvich-3",
+    "name": "Москвич 3",
+    "price_text": "от 2000₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,5 л",
+      "Год выпуска": "2023",
+      "Средний расход": "5,8л/100 км"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/komfort/moskvich-3/1.webp",
+      "https://car-city.pro/assets/gallery/komfort/moskvich-3/galery_1.webp",
+      "https://car-city.pro/assets/gallery/komfort/moskvich-3/galery_2.webp",
+      "https://car-city.pro/assets/gallery/komfort/moskvich-3/galery_3.webp",
+      "https://car-city.pro/assets/gallery/komfort/moskvich-3/galery_4.webp"
+    ]
+  },
+  {
+    "url": "https://car-city.pro/vykup/komfort/omoda-s-5",
+    "mode": "vykup",
+    "class": "komfort",
+    "slug": "omoda-s-5",
+    "name": "Omoda S5",
+    "price_text": "от 2342₽ в сутки",
+    "specs": {
+      "Привод": "Передний",
+      "Объем двигателя": "1,5 л",
+      "Год выпуска": "2023",
+      "Средний расход": "7,3 л/100 км"
+    },
+    "images": [
+      "https://car-city.pro/assets/gallery/komfort/omoda-s5/1.webp",
+      "https://car-city.pro/assets/gallery/komfort/omoda-s5/galery_1.webp",
+      "https://car-city.pro/assets/gallery/komfort/omoda-s5/galery_2.webp",
+      "https://car-city.pro/assets/gallery/komfort/omoda-s5/galery_3.webp",
+      "https://car-city.pro/assets/gallery/komfort/omoda-s5/galery_4.webp"
+    ]
+  }
+]

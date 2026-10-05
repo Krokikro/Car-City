@@ -1,19 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { company } from "@/lib/content";
 
 type State = "idle" | "sending" | "done" | "error";
 
-// Заявка: имя, телефон, отдельное согласие на обработку данных (152-ФЗ, по умолчанию не отмечено).
-// Скрытое поле company_site — ловушка для ботов.
-export function LeadForm() {
+// Форма заявки. Согласие на обработку данных отдельной галкой (152-ФЗ), по умолчанию не отмечена.
+// company_site — ловушка для ботов.
+export function LeadForm({ button = "Перезвоните мне", source = "site", compact = false }: { button?: string; source?: string; compact?: boolean }) {
+  const id = useId();
   const [state, setState] = useState<State>("idle");
   const [error, setError] = useState("");
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const data = Object.fromEntries(new FormData(e.currentTarget));
+    const data = { ...Object.fromEntries(new FormData(e.currentTarget)), source };
     setState("sending");
     setError("");
     try {
@@ -27,52 +28,41 @@ export function LeadForm() {
     }
   }
 
-  return (
-    <section className="section lead-section" id="zayavka" aria-labelledby="lead-title">
-      <div className="wrap split">
-        <div className="head">
-          <p className="mono">Заявка</p>
-          <h2 id="lead-title" className="display">Перезвоним и подберём машину</h2>
-          <p className="lead">Или позвоните сами:</p>
-          <p className="phones">
-            {company.phones.map((p) => (
-              <a key={p} href={`tel:${p.replace(/[^\d+]/g, "")}`} className="mono-num">{p}</a>
-            ))}
-          </p>
-        </div>
-        {state === "done" ? (
-          <div className="lead-done" role="status">
-            <h3>Заявка принята</h3>
-            <p className="muted">Менеджер перезвонит в рабочее время офиса.</p>
-          </div>
-        ) : (
-          <form className="lead-form" onSubmit={onSubmit} noValidate={false}>
-            <label className="field">
-              <span className="mono">Имя</span>
-              <input name="name" autoComplete="given-name" required minLength={2} maxLength={60} />
-            </label>
-            <label className="field">
-              <span className="mono">Телефон</span>
-              <input name="phone" type="tel" inputMode="tel" autoComplete="tel" required placeholder="+7 900 000-00-00" pattern="[+\d\s()\-]{10,20}" />
-            </label>
-            <label className="hp" aria-hidden="true">
-              Сайт компании
-              <input name="company_site" tabIndex={-1} autoComplete="off" />
-            </label>
-            <label className="consent">
-              <input type="checkbox" name="consent" required />
-              <span>
-                Согласен на обработку персональных данных по{" "}
-                <a href={company.privacyUrl} target="_blank" rel="noopener">политике конфиденциальности</a>
-              </span>
-            </label>
-            <button className="btn btn-primary" type="submit" disabled={state === "sending"}>
-              {state === "sending" ? "Отправляем…" : "Жду звонка"}
-            </button>
-            {state === "error" && <p className="form-error" role="alert">{error}</p>}
-          </form>
-        )}
+  if (state === "done")
+    return (
+      <div className="lead-done" role="status">
+        <span className="lead-done-ico" aria-hidden="true">✓</span>
+        <p className="h3">Заявка принята</p>
+        <p className="muted">Менеджер свяжется с вами в течение 1 минуты в рабочее время офиса.</p>
       </div>
-    </section>
+    );
+
+  return (
+    <form className={`lead-form${compact ? " compact" : ""}`} onSubmit={onSubmit}>
+      <div className="lead-fields">
+        <label className="field">
+          <input id={`${id}-n`} name="name" autoComplete="given-name" required minLength={2} maxLength={60} placeholder=" " />
+          <span>Имя</span>
+        </label>
+        <label className="field">
+          <input id={`${id}-p`} name="phone" type="tel" inputMode="tel" autoComplete="tel" required placeholder=" " pattern="[+\d\s()\-]{10,20}" />
+          <span>Телефон</span>
+        </label>
+      </div>
+      <label className="hp" aria-hidden="true">
+        Сайт компании
+        <input name="company_site" tabIndex={-1} autoComplete="off" />
+      </label>
+      <label className="consent">
+        <input type="checkbox" name="consent" required />
+        <span>
+          Даю согласие на <a href={company.privacyUrl} target="_blank" rel="noopener">обработку персональных данных</a>
+        </span>
+      </label>
+      <button className="btn btn-primary btn-lg" type="submit" disabled={state === "sending"} data-magnetic>
+        {state === "sending" ? "Отправляем…" : button}
+      </button>
+      {state === "error" && <p className="form-error" role="alert">{error}</p>}
+    </form>
   );
 }

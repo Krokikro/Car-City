@@ -13,6 +13,12 @@ export const company = {
   fleet: "1000+",
   renters: "4000+",
   boughtOut: "1400+",
+  years: 7,
+  messengerPhone: "+7 (901) 347-98-68",
+  telegram: "https://t.me/+79013479868",
+  whatsapp: "https://wa.me/+79013479868",
+  max: "https://max.ru/u/f9LHodD0cOJMl118MYnSxw-XC6C3ws3b8QXkTUY9wMS03jvBbptkzzwVG2Y",
+  youtube: "https://www.youtube.com/@CarCityTaxi",
   group: "Входит в группу Элит Кар",
   privacyUrl: "https://car-city.pro/themes/document/politika-konfedenczialnosti-kar-siti.pdf",
 };
