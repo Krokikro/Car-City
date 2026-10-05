@@ -1,0 +1,25 @@
+/* Форма заявки: выбор мессенджера, капча, экран «Спасибо»; cookie-баннер. Основа формы — sections.css. */
+.lead-msgr { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; border: 0; min-width: 0; }
+.lead-msgr legend { width: 100%; padding: 0; margin-bottom: 8px; }
+.lead-chip { position: relative; }
+.lead-chip input { position: absolute; opacity: 0; pointer-events: none; }
+.lead-chip .pill { min-height: 38px; padding: 0 14px; }
+.lead-chip input:checked + .pill { background: var(--text); color: var(--bg); border-color: var(--text); }
+.lead-chip input:focus-visible + .pill { outline: 2px solid var(--cc-signal); outline-offset: 3px; }
+.lead-captcha:empty { display: none; }
+.lead-done-msgr { display: flex; flex-wrap: wrap; gap: 8px; }
+.lead-done-msgr .pill { min-height: 40px; }
+
+.cookie {
+  position: fixed; left: 12px; right: 12px; bottom: max(12px, env(safe-area-inset-bottom)); z-index: 95;
+  display: grid; gap: 12px; max-width: 520px; padding: 20px; border-radius: var(--radius-card);
+  background: rgba(22, 24, 27, .94); backdrop-filter: blur(16px); border: 1px solid var(--glass-line);
+  box-shadow: 0 24px 60px -20px rgba(0, 0, 0, .7); font-size: 14px; color: var(--text-muted);
+}
+@media (min-width: 720px) { .cookie { left: 24px; right: auto; bottom: 24px; } }
+.cookie-title { font: 500 16px/1.3 var(--font-text); color: var(--text); }
+.cookie-text a { color: var(--text); }
+.cookie-cats { display: grid; gap: 10px; }
+.cookie-cats b { color: var(--text); font-weight: 500; }
+.cookie-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.cookie-actions .btn { flex: 1 1 auto; }
