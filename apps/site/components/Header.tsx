@@ -1,22 +1,25 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { publishedLocales } from "@car-city/i18n";
+import { usePathname } from "next/navigation";
 import { Logo } from "./Logo";
 import { company } from "@/lib/content";
-
-const nav = [
-  { href: "/#avtopark", label: "Автопарк" },
-  { href: "/vykup", label: "Выкуп" },
-  { href: "/usloviya", label: "Условия" },
-  { href: "/o-nas", label: "О нас" },
-  { href: "/reviews", label: "Отзывы" },
-  { href: "/contact", label: "Контакты" },
-];
+import { LANGS, LANG_NAMES, LANG_SHORT, href, splitLang } from "@/lib/i18n";
+import { ui } from "@/lib/ui";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { lang, path } = splitLang(usePathname() || "/");
+  const t = ui(lang);
+  const nav = [
+    { href: "/#avtopark", label: t.nav.fleet },
+    { href: "/vykup", label: t.nav.vykup },
+    { href: "/usloviya", label: t.nav.usloviya },
+    { href: "/o-nas", label: t.nav.onas },
+    { href: "/reviews", label: t.nav.reviews },
+    { href: "/contact", label: t.nav.contact },
+  ];
   useEffect(() => {
     const on = () => setScrolled(scrollY > 24);
     on();
@@ -30,41 +33,48 @@ export function Header() {
   const tel = company.phones[0];
   return (
     <header className="site-header" data-scrolled={scrolled || undefined}>
-      <a href="/" className="brand" aria-label="Car City, на главную">
+      <a href={href("/", lang)} className="brand" aria-label={t.toHome}>
         <Logo size={40} />
       </a>
-      <nav aria-label="Основное меню" className="nav">
+      <nav aria-label={t.mainMenu} className="nav">
         {nav.map((item) => (
-          <a key={item.href} href={item.href} className="nav-link">
+          <a key={item.href} href={href(item.href, lang)} className="nav-link">
             {item.label}
           </a>
         ))}
       </nav>
       <div className="header-actions">
-        {publishedLocales.length > 1 && (
-          <label className="lang">
-            <span className="visually-hidden">Язык</span>
-            <select defaultValue="ru">
-              {publishedLocales.map((l) => (
-                <option key={l.code} value={l.code}>{l.name}</option>
-              ))}
-            </select>
-          </label>
-        )}
+        <details className="lang">
+          <summary aria-label={t.language}>{LANG_SHORT[lang]}</summary>
+          <ul>
+            {LANGS.map((l) => (
+              <li key={l}>
+                <a href={href(path, l)} hrefLang={l} lang={l} aria-current={l === lang ? "true" : undefined}>
+                  <b>{LANG_SHORT[l]}</b> {LANG_NAMES[l]}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </details>
         <a href={`tel:${tel.replace(/[^\d+]/g, "")}`} className="header-tel mono-num">{tel}</a>
-        <a href="#zayavka" className="btn btn-glass btn-sm header-cta">Оставить заявку</a>
-        <button className="burger" aria-label="Меню" aria-expanded={open} onClick={() => setOpen(!open)}>
+        <a href="#zayavka" className="btn btn-glass btn-sm header-cta">{t.lead}</a>
+        <button className="burger" aria-label={t.menu} aria-expanded={open} onClick={() => setOpen(!open)}>
           <span /><span />
         </button>
       </div>
       <div className="mobile-menu" hidden={!open}>
-        <nav aria-label="Меню">
+        <nav aria-label={t.menu}>
           {nav.map((item, i) => (
-            <a key={item.href} href={item.href} onClick={() => setOpen(false)} style={{ ["--i" as string]: i }}>
+            <a key={item.href} href={href(item.href, lang)} onClick={() => setOpen(false)} style={{ ["--i" as string]: i }}>
               {item.label}
             </a>
           ))}
         </nav>
+        <div className="mobile-langs">
+          {LANGS.map((l) => (
+            <a key={l} href={href(path, l)} hrefLang={l} aria-current={l === lang ? "true" : undefined}>{LANG_SHORT[l]}</a>
+          ))}
+        </div>
         <div className="mobile-menu-foot">
           {company.phones.map((p) => (
             <a key={p} href={`tel:${p.replace(/[^\d+]/g, "")}`} className="mono-num">{p}</a>

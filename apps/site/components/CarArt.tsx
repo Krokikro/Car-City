@@ -1,3 +1,4 @@
+import { asset } from "@/lib/i18n";
 import { carImages } from "@/lib/car-images";
 
 type Body = "sedan" | "crossover" | "van" | "minivan";
@@ -37,7 +38,7 @@ const PATHS: Record<Body, { body: string; glass: string; wheels: [number, number
 export function CarArt({ slug, name, priority = false }: { slug: string; name: string; priority?: boolean }) {
   const meta = carImages[slug];
   if (meta) {
-    const base = `/cars/${slug}`;
+    const base = asset(`/cars/${slug}`);
     return (
       <picture className="car-photo">
         <source type="image/avif" srcSet={`${base}-480.avif 480w, ${base}-800.avif 800w`} sizes="(max-width: 720px) 86vw, 420px" />

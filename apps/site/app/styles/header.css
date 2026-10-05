@@ -17,7 +17,18 @@
 .nav-link:hover::after { transform: scaleX(1); transform-origin: left; }
 .header-actions { margin-left: auto; display: flex; gap: var(--space-4); align-items: center; }
 .header-tel { color: var(--text); text-decoration: none; font-size: 15px; display: none; }
-.lang select { background: var(--glass); border: 1px solid var(--glass-line); border-radius: var(--radius-pill); padding: 8px 12px; }
+.lang { position: relative; }
+.lang summary { list-style: none; cursor: pointer; height: 40px; min-width: 52px; padding: 0 14px; display: grid; place-items: center; border-radius: var(--radius-pill); background: var(--glass); border: 1px solid var(--glass-line); font: 500 13px/1 var(--font-mono); letter-spacing: .08em; transition: border-color var(--dur) var(--ease-out); }
+.lang summary::-webkit-details-marker { display: none; }
+.lang summary:hover, .lang[open] summary { border-color: var(--cc-signal); }
+.lang ul { position: absolute; right: 0; top: calc(100% + 10px); min-width: 200px; margin: 0; padding: 8px; list-style: none; border-radius: 18px; background: rgba(16,17,19,.94); border: 1px solid var(--glass-line); backdrop-filter: blur(18px); box-shadow: 0 24px 60px rgba(0,0,0,.5); animation: menuIn .35s var(--ease-out); }
+.lang li a { display: flex; gap: 12px; align-items: center; padding: 10px 12px; border-radius: 12px; color: var(--text); text-decoration: none; }
+.lang li a b { font: 500 12px/1 var(--font-mono); color: var(--text-muted); width: 22px; }
+.lang li a:hover { background: rgba(255,255,255,.06); }
+.lang li a[aria-current] b { color: var(--cc-signal); }
+.mobile-langs { display: flex; gap: 8px; flex-wrap: wrap; }
+.mobile-langs a { padding: 10px 14px; border-radius: var(--radius-pill); border: 1px solid var(--glass-line); color: var(--text); text-decoration: none; font: 500 13px/1 var(--font-mono); }
+.mobile-langs a[aria-current] { border-color: var(--cc-signal); color: var(--cc-signal); }
 .burger { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--glass-line); background: var(--glass); display: grid; place-content: center; gap: 6px; cursor: pointer; }
 .burger span { display: block; width: 18px; height: 1.5px; background: var(--text); transition: transform var(--dur) var(--ease-out); }
 .menu-open .burger span:first-child { transform: translateY(3.75px) rotate(45deg); }

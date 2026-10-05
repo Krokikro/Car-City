@@ -2,6 +2,7 @@
 // Адрес страницы берётся из поля url как есть, с исходным регистром, чтобы не потерять SEO.
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
+import type { Lang } from "./i18n";
 
 export type DocKind = "page" | "model" | "article";
 
@@ -18,6 +19,8 @@ export interface Doc {
   body: string;
   /** фото модели из блока IMAGES («Галерея модели») */
   gallery: string[];
+  /** язык текста; у непереведённой страницы остаётся ru */
+  lang: Lang;
 }
 
 const ROOT = join(process.cwd(), "content");
@@ -51,57 +54,64 @@ function splitGallery(body: string) {
   return { body: body.slice(0, i), gallery };
 }
 
-let cache: Map<string, Doc> | null = null;
+const cache = new Map<Lang, Map<string, Doc>>();
 
-export function allDocs(): Map<string, Doc> {
-  if (cache && process.env.NODE_ENV === "production") return cache;
+function readDir(dir: string, kind: DocKind, lang: Lang, into: Map<string, Doc>) {
+  if (!existsSync(dir)) return;
+  for (const f of readdirSync(dir)) {
+    if (!f.endsWith(".md") || f.startsWith("_") || f === "index.md") continue;
+    const { meta, body: raw } = parseFront(readFileSync(join(dir, f), "utf8"));
+    if (!meta.url) continue;
+    const { body, gallery } = splitGallery(raw);
+    const path = toPath(meta.url);
+    into.set(path, {
+      kind,
+      path,
+      title: meta.title || meta.h1 || "",
+      h1: meta.h1 || meta.title || "",
+      description: meta.description,
+      date: meta.date,
+      cls: meta.class,
+      mode: meta.mode === "vykup" ? "vykup" : meta.mode === "arenda" ? "arenda" : undefined,
+      body,
+      gallery,
+      lang,
+    });
+  }
+}
+
+/** Все страницы на языке lang. Чего ещё нет в переводе, показываем по-русски по тому же адресу. */
+export function allDocs(lang: Lang = "ru"): Map<string, Doc> {
+  const hit = cache.get(lang);
+  if (hit && process.env.NODE_ENV === "production") return hit;
   const map = new Map<string, Doc>();
   for (const [dir, kind] of Object.entries(DIRS)) {
-    const d = join(ROOT, dir);
-    if (!existsSync(d)) continue;
-    for (const f of readdirSync(d)) {
-      if (!f.endsWith(".md") || f.startsWith("_") || f === "index.md") continue;
-      const { meta, body: raw } = parseFront(readFileSync(join(d, f), "utf8"));
-      if (!meta.url) continue;
-      const { body, gallery } = splitGallery(raw);
-      const path = toPath(meta.url);
-      map.set(path, {
-        kind,
-        path,
-        title: meta.title || meta.h1 || "",
-        h1: meta.h1 || meta.title || "",
-        description: meta.description,
-        date: meta.date,
-        cls: meta.class,
-        mode: meta.mode === "vykup" ? "vykup" : meta.mode === "arenda" ? "arenda" : undefined,
-        body,
-        gallery,
-      });
-    }
+    readDir(join(ROOT, dir), kind, "ru", map);
+    if (lang !== "ru") readDir(join(ROOT, "i18n", lang, dir), kind, lang, map);
   }
-  cache = map;
+  cache.set(lang, map);
   return map;
 }
 
-export function getDoc(path: string) {
-  const all = allDocs();
+export function getDoc(path: string, lang: Lang = "ru") {
+  const all = allDocs(lang);
   return all.get(path) ?? [...all.values()].find((d) => d.path.toLowerCase() === path.toLowerCase());
 }
 
-export function articles() {
+export function articles(lang: Lang = "ru") {
   const idx = join(ROOT, "articles", "_index.json");
   const meta: { slug: string; date?: string }[] = existsSync(idx) ? JSON.parse(readFileSync(idx, "utf8")) : [];
   const dates = new Map(meta.map((m) => [m.slug, m.date]));
-  return [...allDocs().values()]
+  return [...allDocs(lang).values()]
     .filter((d) => d.kind === "article")
     .map((d) => ({ ...d, date: d.date ?? dates.get(d.path.split("/").pop()!) }));
 }
 
 /** Пара «аренда ↔ выкуп» для страницы модели */
-export function twinOf(doc: Doc) {
+export function twinOf(doc: Doc, lang: Lang = "ru") {
   if (doc.kind !== "model") return undefined;
   const parts = doc.path.split("/");
   const slug = parts.pop()!.toLowerCase();
   const want = doc.mode === "arenda" ? "vykup" : "arenda";
-  return [...allDocs().values()].find((d) => d.kind === "model" && d.mode === want && d.path.split("/").pop()!.toLowerCase() === slug);
+  return [...allDocs(lang).values()].find((d) => d.kind === "model" && d.mode === want && d.path.split("/").pop()!.toLowerCase() === slug);
 }

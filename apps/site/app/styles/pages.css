@@ -188,3 +188,5 @@
 /* пока картинка не загрузилась или недоступна, не показываем системную иконку и alt */
 .pg-fig-img img, .rimg img, .mdl-thumbs img { color: transparent; font-size: 0; }
 .lead strong { color: var(--text); font-weight: 500; }
+
+.pg-untranslated { position: relative; z-index: 3; margin-top: calc(var(--header-h) + 12px); margin-bottom: -40px; font-size: 12px; color: var(--text-muted); }

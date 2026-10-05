@@ -1,6 +1,7 @@
+import { href, type Lang } from "@/lib/i18n";
 import { ratings, reviews } from "@/lib/home";
 
-export function Reviews() {
+export function Reviews({ lang = "ru" }: { lang?: Lang }) {
   return (
     <section className="section reviews" aria-labelledby="reviews-title">
       <div className="wrap">
@@ -29,7 +30,7 @@ export function Reviews() {
             </figcaption>
           </figure>
         ))}
-        <a href="/reviews/" className="review review-more">
+        <a href={href("/reviews", lang)} className="review review-more">
           <span className="h1">Показать еще</span>
           <span className="arrow">→</span>
         </a>

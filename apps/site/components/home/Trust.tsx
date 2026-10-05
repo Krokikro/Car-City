@@ -1,6 +1,7 @@
+import { href, type Lang } from "@/lib/i18n";
 import { trust } from "@/lib/home";
 
-export function Trust() {
+export function Trust({ lang = "ru" }: { lang?: Lang }) {
   const row = [...trust.owners, ...trust.owners];
   return (
     <section className="section trust" aria-labelledby="trust-title">
@@ -27,7 +28,7 @@ export function Trust() {
       </div>
       <div className="wrap trust-cta" data-reveal>
         <p className="h1">{trust.cta.title}</p>
-        <a href="/vykup/" className="btn btn-primary btn-lg" data-magnetic>{trust.cta.text} <span className="arrow">→</span></a>
+        <a href={href("/vykup", lang)} className="btn btn-primary btn-lg" data-magnetic>{trust.cta.text} <span className="arrow">→</span></a>
       </div>
     </section>
   );

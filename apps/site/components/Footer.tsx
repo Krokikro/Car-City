@@ -1,19 +1,22 @@
 import { company, offices } from "@/lib/content";
+import { href, type Lang } from "@/lib/i18n";
+import { ui } from "@/lib/ui";
 import { Logo } from "./Logo";
 
-const cols = [
-  { title: "Аренда", links: [["Эконом", "/ekonom/"], ["Комфорт", "/komfort/"], ["Комфорт плюс", "/komfortplus/"], ["Грузовой", "/gruzovoy/"], ["Аренда такси для ИП", "/arenda-taksi-ip/"]] },
-  { title: "Выкуп", links: [["Аренда с правом выкупа", "/vykup/"], ["Выкуп эконом", "/vykup/ekonom/"], ["Выкуп комфорт", "/vykup/komfort/"], ["Выкуп комфорт+", "/vykup/komfort-plyus/"]] },
-  { title: "Компания", links: [["Условия", "/usloviya/"], ["О нас", "/o-nas/"], ["Отзывы", "/reviews/"], ["Новости", "/novosti/"], ["Контакты", "/contact/"]] },
-];
-
-export function Footer() {
+export function Footer({ lang = "ru" }: { lang?: Lang }) {
+  const t = ui(lang);
+  const f = t.footer;
+  const cols = [
+    { title: f.rent, links: [[t.cls.ekonom, "/ekonom"], [t.cls.komfort, "/komfort"], [t.cls.komfortplus, "/komfortplus"], [t.cls.gruzovoy, "/gruzovoy"], [f.rentIp, "/arenda-taksi-ip"]] },
+    { title: f.buy, links: [[f.rto, "/vykup"], [f.buyEkonom, "/vykup/ekonom"], [f.buyKomfort, "/vykup/komfort"], [f.buyKomfortPlus, "/vykup/komfort-plyus"]] },
+    { title: f.company, links: [[t.nav.usloviya, "/usloviya"], [t.nav.onas, "/o-nas"], [t.nav.reviews, "/reviews"], [t.nav.news, "/novosti"], [t.nav.contact, "/contact"]] },
+  ];
   return (
     <footer className="site-footer">
       <div className="wrap footer-top">
         <div className="footer-brand">
           <Logo size={56} />
-          <p className="muted">{company.group}. {company.legalName}</p>
+          <p className="muted">{f.group}. {company.legalName}</p>
           <div className="footer-phones">
             {company.phones.map((p) => (
               <a key={p} href={`tel:${p.replace(/[^\d+]/g, "")}`} className="mono-num">{p}</a>
@@ -30,13 +33,13 @@ export function Footer() {
         {cols.map((c) => (
           <nav key={c.title} aria-label={c.title} className="footer-col">
             <p className="mono">{c.title}</p>
-            {c.links.map(([l, h]) => <a key={h} href={h}>{l}</a>)}
+            {c.links.map(([l, h]) => <a key={h} href={href(h, lang)}>{l}</a>)}
           </nav>
         ))}
         <div className="footer-col footer-offices">
-          <p className="mono">Офисы</p>
+          <p className="mono">{f.offices}</p>
           {offices.map((o) => (
-            <p key={o.name}><span>м. {o.metro}</span><br /><span className="muted small">{o.address}, {o.hours}</span></p>
+            <p key={o.name}><span>{f.metro} {o.metro}</span><br /><span className="muted small">{o.address}, {o.hours}</span></p>
           ))}
         </div>
       </div>
@@ -45,8 +48,8 @@ export function Footer() {
       </div>
       <div className="wrap footer-bottom">
         <span className="muted small">© {new Date().getFullYear()} {company.legalName}</span>
-        <a href={company.privacyUrl} className="muted small">Политика конфиденциальности</a>
-        <a href="/sitemap" className="muted small">Карта сайта</a>
+        <a href={company.privacyUrl} className="muted small">{f.privacy}</a>
+        <a href={href("/sitemap", lang)} className="muted small">{f.sitemap}</a>
       </div>
       <div className="checker-strip" aria-hidden="true" />
     </footer>

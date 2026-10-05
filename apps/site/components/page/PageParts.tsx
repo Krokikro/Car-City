@@ -2,6 +2,8 @@ import { marked } from "marked";
 import type { Block, Btn, Card, Fig } from "@/lib/blocks";
 import { CarArt } from "../CarArt";
 import { ShaderBackdrop } from "../motion/ShaderBackdrop";
+import { href, type Lang } from "@/lib/i18n";
+import { ui } from "@/lib/ui";
 
 const RENT: Record<string, string> = {
   "/klassyi-avtomobilej": "/",
@@ -25,7 +27,7 @@ const crumbHref = (i: number, n: number, path: string) => {
   return RENT[href] ?? href;
 };
 
-export function Crumbs({ items, path }: { items: string[]; path: string }) {
+export function Crumbs({ items, path, lang = "ru" }: { items: string[]; path: string; lang?: Lang }) {
   if (!items.length) return null;
   const ld = {
     "@context": "https://schema.org",
@@ -33,10 +35,10 @@ export function Crumbs({ items, path }: { items: string[]; path: string }) {
     itemListElement: items.map((name, i) => ({ "@type": "ListItem", position: i + 1, name, item: `https://car-city.pro${crumbHref(i, items.length, path)}` })),
   };
   return (
-    <nav className="crumbs mono" aria-label="Хлебные крошки">
+    <nav className="crumbs mono" aria-label={ui(lang).crumbs}>
       {items.map((c, i) => (
         <span key={i}>
-          {i < items.length - 1 ? <a href={crumbHref(i, items.length, path)}>{c}</a> : <span aria-current="page">{c}</span>}
+          {i < items.length - 1 ? <a href={href(crumbHref(i, items.length, path), lang)}>{c}</a> : <span aria-current="page">{c}</span>}
           {i < items.length - 1 && <i aria-hidden="true">/</i>}
         </span>
       ))}
@@ -58,7 +60,7 @@ export function Buttons({ btns, size = "btn-lg" }: { btns: Btn[]; size?: string 
   );
 }
 
-export function PageHero({ eyebrow, h1, crumbs, path, paras, btns, introHtml }: { eyebrow: string; h1: string; crumbs: string[]; path: string; paras: string[]; btns: Btn[]; introHtml: string }) {
+export function PageHero({ eyebrow, h1, crumbs, path, paras, btns, introHtml, lang = "ru" }: { eyebrow: string; h1: string; crumbs: string[]; path: string; paras: string[]; btns: Btn[]; introHtml: string; lang?: Lang }) {
   const rich = /<(ul|ol|table|h3|figure)/.test(introHtml);
   return (
     <>
@@ -67,7 +69,7 @@ export function PageHero({ eyebrow, h1, crumbs, path, paras, btns, introHtml }: 
         <div className="pg-hero-veil" aria-hidden="true" />
         <div className="pg-hero-checker" aria-hidden="true" />
         <div className="wrap pg-hero-in">
-          <Crumbs items={crumbs} path={path} />
+          <Crumbs items={crumbs} path={path} lang={lang} />
           <p className="mono eyebrow">{eyebrow}</p>
           <h1 id="pg-h1" className="display-xl" data-split>{h1}</h1>
           {!rich && paras.slice(0, 2).map((p, i) => <p key={i} className="lead" data-reveal dangerouslySetInnerHTML={{ __html: marked.parseInline(p, { async: false }) as string }} />)}
@@ -83,12 +85,13 @@ export function PageHero({ eyebrow, h1, crumbs, path, paras, btns, introHtml }: 
   );
 }
 
-export function CarCards({ groups }: { groups: Extract<Block, { t: "cards" }>["groups"] }) {
+export function CarCards({ groups, lang = "ru" }: { groups: Extract<Block, { t: "cards" }>["groups"]; lang?: Lang }) {
+  const t = ui(lang);
   return (
-    <section className="section pg-cards" aria-label="Автомобили">
+    <section className="section pg-cards" aria-label={t.cars}>
       <div className="wrap">
         {groups.length > 1 && (
-          <nav className="pg-chips" aria-label="Классы">
+          <nav className="pg-chips" aria-label={t.classes}>
             {groups.map((g, i) => g.label && <a key={i} className="pill" href={`#cls-${i}`}>{g.label}<span className="pill-count">{g.cards.length}</span></a>)}
           </nav>
         )}
@@ -164,7 +167,7 @@ export function Section({ b, n }: { b: Extract<Block, { t: "section" }>; n: numb
   );
 }
 
-export function Faq({ b }: { b: Extract<Block, { t: "faq" }> }) {
+export function Faq({ b, lang = "ru" }: { b: Extract<Block, { t: "faq" }>; lang?: Lang }) {
   const ld = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -175,7 +178,7 @@ export function Faq({ b }: { b: Extract<Block, { t: "faq" }> }) {
       <div className="wrap split">
         <div className="sticky">
           <p className="mono eyebrow">FAQ</p>
-          <h2 className="display" data-split>{b.title || "Частые вопросы"}</h2>
+          <h2 className="display" data-split>{b.title || ui(lang).faq}</h2>
         </div>
         <div className="faq">
           {b.items.map((f, i) => (

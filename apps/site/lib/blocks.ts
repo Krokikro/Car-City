@@ -3,6 +3,7 @@
 import { marked } from "marked";
 import { fleet } from "./fleet";
 import { toPath } from "./docs";
+import { href as langHref, localizeHtml, type Lang } from "./i18n";
 
 export interface Btn { label: string; href: string }
 export interface Card { name: string; slug?: string; specs: [string, string][]; price?: string; btn?: Btn; img?: string }
@@ -28,6 +29,8 @@ const MODEL_LINK = /^\/(vykup|klassyi-avtomobilej)\/[^/]+\/[^/]+$/i;
 
 export function localHref(url: string) {
   if (!/^https?:\/\/(www\.)?car-city\.pro/.test(url)) return url;
+  // файлы (pdf, картинки) остаются на старом домене, на страницы ведём внутри сайта
+  if (/\.(pdf|docx?|xlsx?|webp|jpe?g|png|svg|gif|mp4)(\?|$)/i.test(url)) return url;
   const p = toPath(url);
   return p === "/" ? "/" : p;
 }
@@ -35,8 +38,8 @@ export function localHref(url: string) {
 /** Кнопки без ссылки на старом сайте открывают форму заявки — у нас это блок #zayavka на той же странице */
 function btnHref(label: string, url?: string, twin?: string) {
   if (url) return localHref(url);
-  if (/выкуп/i.test(label) && twin) return twin;
-  if (/аренд/i.test(label) && twin) return twin;
+  // «Перейти к выкупу», «Арендовать» → та же модель в другом формате (на всех языках сайта)
+  if (twin && /выкуп|аренд|rent|buy|сатып|ижара|жалға|sotib|ijara/i.test(label)) return twin;
   return "#zayavka";
 }
 
@@ -98,7 +101,7 @@ function render(md: string, twin?: string) {
     .replace(/<p>((?:\s*@@BTN\d+@@\s*)+)<\/p>/g, (_, g: string) => `<p class="btn-row">${g}</p>`)
     .replace(/@@BTN(\d+)@@/g, (_, i: string) => {
       const b = btns[+i];
-      const primary = b.href === "#zayavka" || /начать|забронир|получить/i.test(b.label);
+      const primary = b.href === "#zayavka" || /начать|забронир|получить|start|book|get/i.test(b.label);
       return `<a class="btn ${primary ? "btn-primary" : "btn-ghost"}" href="${b.href}">${b.label} <span class="arrow">→</span></a>`;
     })
     .replace(/<p>@@IMG([^|@]+)\|([^@]*)@@<\/p>/g, (_, u: string, c: string) => imgFig(decodeURIComponent(u), decodeURIComponent(c)))
@@ -114,14 +117,14 @@ function card(title: string, body: string): Card | null {
   const btn = body.match(/\[\[btn:([^\]|]+)\|([^\]]+)\]\]/);
   const href = btn ? localHref(btn[2]) : undefined;
   if (!btn || !href || !MODEL_LINK.test(href)) return null;
-  const price = body.match(/^(от\s[\d\s]+\s?₽[^\n]*)$/m)?.[1];
-  const specs = [...body.matchAll(/^([А-ЯЁA-Z][^:\n]{2,30}):\s*(.+)$/gm)].map((m) => [m[1], m[2]] as [string, string]);
+  const price = body.match(/^([^\n\d]{0,14}\d[\d\s]*\s?₽[^\n]{0,30})$/m)?.[1];
+  const specs = [...body.matchAll(/^(\p{Lu}[^:\n]{2,40}):\s*(.+)$/gmu)].map((m) => [m[1], m[2]] as [string, string]);
   const img = body.match(/\[\[img:([^|\]]+)/)?.[1];
   const f = fleet.find((x) => [x.rent, x.buy].some((p) => p?.toLowerCase() === href.toLowerCase()));
   return { name: title, slug: f?.slug, specs, price, btn: { label: btn[1], href }, img };
 }
 
-export function parseDoc(src: string, opts: { twin?: string; model?: boolean } = {}): Parsed {
+export function parseDoc(src: string, opts: { twin?: string; model?: boolean; lang?: Lang } = {}): Parsed {
   const { s, crumbs, final } = prep(src);
   const chunks = s.split(/^## /m);
   const introMd = chunks.shift() ?? "";
@@ -141,8 +144,8 @@ export function parseDoc(src: string, opts: { twin?: string; model?: boolean } =
     for (const l of lines) {
       const b = l.match(/^\[\[btn:([^\]|]+)(?:\|([^\]]+))?\]\]$/);
       if (b) { btns.push({ label: b[1], href: btnHref(b[1], b[2], opts.twin) }); continue; }
-      if (opts.model && /^от\s.*₽/.test(l)) { price = l; continue; }
-      if (opts.model && l.length < 48 && !/^[#\-[|]/.test(l)) { specs.push(l); continue; }
+      if (opts.model && l.length < 64 && /\d[\d\s]*\s?₽/.test(l) && !l.startsWith("|")) { price = l.replace(/\*\*/g, ""); continue; }
+      if (opts.model && l.length < 64 && !/^[#\-[|]/.test(l)) { specs.push(l); continue; }
       rest.push(l);
     }
     const r = render(rest.join("\n\n").replace(/\n\n(?=\|)/g, "\n").replace(/\n\n(?=- )/g, "\n"), opts.twin);
@@ -154,7 +157,7 @@ export function parseDoc(src: string, opts: { twin?: string; model?: boolean } =
     if (/\[\[calc\]\]/.test(md)) { blocks.push({ t: "calculator" }); return; }
     if (/^Нам доверяют/i.test(title)) { blocks.push({ t: "trust" }); return; }
     const qs = md.split(/^### /m);
-    if (/вопрос/i.test(title) && qs.length > 2) {
+    if (/вопрос|question|суроо|сұрақ|savol/i.test(title) && qs.length > 2) {
       const lead = qs.shift()!;
       const items = qs.map((q) => { const [h, ...a] = q.split("\n"); return { q: h.trim(), a: render(a.join("\n"), opts.twin).html }; });
       if (lead.trim()) blocks.push({ t: "section", title, ...render(lead, opts.twin) });
@@ -195,7 +198,20 @@ export function parseDoc(src: string, opts: { twin?: string; model?: boolean } =
     }
     pushSection(title, body);
   }
-  return { crumbs, intro, blocks, final };
+  return localize({ crumbs, intro, blocks, final }, opts.lang ?? "ru");
+}
+
+/** Внутренние ссылки → с префиксом хостинга и языка */
+function localize(p: Parsed, lang: Lang): Parsed {
+  const b = (x: Btn) => ({ ...x, href: langHref(x.href, lang) });
+  p.intro.btns = p.intro.btns.map(b);
+  p.intro.html = localizeHtml(p.intro.html, lang);
+  for (const blk of p.blocks) {
+    if (blk.t === "section") { blk.html = localizeHtml(blk.html, lang); blk.btns = blk.btns.map(b); }
+    if (blk.t === "faq") blk.items = blk.items.map((q) => ({ ...q, a: localizeHtml(q.a, lang) }));
+    if (blk.t === "cards") for (const g of blk.groups) g.cards = g.cards.map((c) => ({ ...c, btn: c.btn && b(c.btn) }));
+  }
+  return p;
 }
 
 export interface Review { name: string; date: string; source: string; url?: string; text: string }

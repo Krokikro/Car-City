@@ -8,6 +8,7 @@ import "./styles/sections.css";
 import "./styles/pages.css";
 import { gfxDetectScript } from "@/lib/gfx";
 import { company } from "@/lib/content";
+import { asset } from "@/lib/i18n";
 import { MotionRoot } from "@/components/motion/MotionRoot";
 import { Cursor } from "@/components/motion/Cursor";
 
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
   description: "Аренда машин для работы в такси и выкуп без кредита. Эконом, Комфорт, Комфорт+, Грузовой. Машина в день заявки.",
   alternates: { canonical: "/" },
   openGraph: { type: "website", locale: "ru_RU", siteName: "Car City" },
-  icons: { icon: "/brand/emblem-96.png", apple: "/brand/emblem-192.png" },
+  icons: { icon: asset("/brand/emblem-96.png"), apple: asset("/brand/emblem-192.png") },
 };
 
 export const viewport: Viewport = {

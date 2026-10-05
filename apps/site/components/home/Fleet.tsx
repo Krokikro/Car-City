@@ -5,10 +5,13 @@ import { fleet, fleetClasses } from "@/lib/fleet";
 import type { CarClass } from "@/lib/content";
 import { rub } from "@/lib/format";
 import { CarArt } from "../CarArt";
+import { href, type Lang } from "@/lib/i18n";
+import { ui } from "@/lib/ui";
 
 // Автопарк: вкладки классов с бегущей подложкой, горизонтальная лента карточек с перетаскиванием,
 // наклон карточки за курсором и блик. Порядок вкладок и карточек — как на car-city.pro.
-export function Fleet() {
+export function Fleet({ lang = "ru" }: { lang?: Lang }) {
+  const t = ui(lang);
   const [active, setActive] = useState<CarClass>("komfort");
   const tabs = useRef<HTMLDivElement>(null);
   const ind = useRef<HTMLSpanElement>(null);
@@ -90,8 +93,8 @@ export function Fleet() {
                 )}
                 <p className="car-price"><span>от</span> {rub(m.price)}<small>/сутки</small></p>
                 <div className="car-actions">
-                  {m.rent && <a className="btn btn-primary btn-sm" href={m.rent}>Арендовать</a>}
-                  {m.buy && <a className="btn btn-ghost btn-sm" href={m.buy}>Выкупить</a>}
+                  {m.rent && <a className="btn btn-primary btn-sm" href={href(m.rent, lang)}>{t.rentCta}</a>}
+                  {m.buy && <a className="btn btn-ghost btn-sm" href={href(m.buy, lang)}>{t.buyCta}</a>}
                 </div>
               </div>
               <span className="car-glare" aria-hidden="true" />
