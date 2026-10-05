@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { allDocs, getDoc, twinOf, articles, type Doc } from "@/lib/docs";
-import { parseDoc } from "@/lib/blocks";
+import { parseDoc, parseReviews } from "@/lib/blocks";
+import { ReviewsWall } from "@/components/page/ReviewsWall";
 import { fleet } from "@/lib/fleet";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -47,6 +48,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
   const car = isModel ? fleet.find((f) => [f.rent, f.buy].some((x) => x?.toLowerCase() === doc.path.toLowerCase())) : undefined;
   const name = p.crumbs[p.crumbs.length - 1] ?? car?.name ?? doc.h1;
 
+  // у ленты новостей и стены отзывов вступление — это сам список, его рисуют отдельные компоненты
+  const list = doc.path === "/novosti" || doc.path === "/reviews";
   let n = 0;
   return (
     <>
@@ -57,9 +60,10 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
         ) : isModel ? (
           <ModelHero h1={doc.h1} name={name} slug={car?.slug ?? ""} cls={doc.cls} mode={doc.mode} twin={twin} path={doc.path} crumbs={p.crumbs} specs={p.intro.specs} price={p.intro.price} btns={p.intro.btns} gallery={doc.gallery} />
         ) : (
-          <PageHero eyebrow={eyebrowOf(doc)} h1={doc.h1} crumbs={p.crumbs} path={doc.path} paras={doc.path === "/novosti" ? p.intro.paras.slice(0, 1) : p.intro.paras} btns={p.intro.btns} introHtml={doc.path === "/novosti" ? "" : p.intro.html} />
+          <PageHero eyebrow={eyebrowOf(doc)} h1={doc.h1} crumbs={p.crumbs} path={doc.path} paras={list ? [] : p.intro.paras} btns={p.intro.btns} introHtml={list ? "" : p.intro.html} />
         )}
         {doc.path === "/novosti" && <NewsGrid src={doc.body} list={articles()} />}
+        {doc.path === "/reviews" && <ReviewsWall items={parseReviews(doc.body)} />}
         {doc.kind !== "article" &&
           p.blocks.map((b, i) => {
             if (b.t === "cards") return <CarCards key={i} groups={b.groups} />;

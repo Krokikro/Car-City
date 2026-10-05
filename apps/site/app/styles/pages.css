@@ -172,3 +172,19 @@
 .smap ul { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 10px; }
 .smap a { color: var(--text-muted); text-decoration: none; transition: color .2s; }
 .smap a:hover { color: var(--cc-signal); }
+
+/* ── стена отзывов ── */
+.rwall-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; }
+.rwall-grid { columns: 3 320px; column-gap: 14px; }
+.rwall-card { break-inside: avoid; margin: 0 0 14px; padding: 24px; border-radius: var(--radius-card); border: 1px solid var(--line); background: linear-gradient(180deg, #15171a, #0f1012); display: grid; gap: 14px; animation: cardIn .7s var(--ease-out) both; animation-delay: calc(var(--i) * 45ms); transition: border-color .3s; }
+.rwall-card:hover { border-color: rgba(255,183,0,.35); }
+.rwall-top { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; }
+.rwall-ava { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; background: radial-gradient(circle at 30% 30%, #ffd066, var(--cc-signal)); color: var(--cc-on-signal); font: 500 18px/1 var(--font-display); }
+.rwall-top figcaption { color: var(--text); font-weight: 500; }
+.rwall-top p { margin: 2px 0 0; font-size: 12px; color: var(--text-faint); }
+.rwall-src { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); padding: 6px 10px; border: 1px solid var(--line); border-radius: var(--radius-pill); }
+.rwall-stars { margin: 0; color: var(--cc-signal); letter-spacing: 3px; }
+.rwall-card blockquote { margin: 0; color: var(--text-muted); font-size: 16px; line-height: 1.6; }
+/* пока картинка не загрузилась или недоступна, не показываем системную иконку и alt */
+.pg-fig-img img, .rimg img, .mdl-thumbs img { color: transparent; font-size: 0; }
+.lead strong { color: var(--text); font-weight: 500; }

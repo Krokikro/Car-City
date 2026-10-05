@@ -58,11 +58,11 @@ function prep(src: string) {
   s = s.replace(/^\[([^\]\n]+)\]\((https?:\/\/[^)\s]+)\)[ \t]*$/gm, (_, l: string, u: string) => `[[btn:${l.trim()}|${u}]]`);
   s = s.replace(/^\[([^\]\n[]+)\][ \t]*$/gm, (_, l: string) => `[[btn:${l.trim()}]]`);
   // несколько картинок в строке (иллюстрации без подписей) и отдельные картинки
-  s = s.replace(/^(?:!\[[^\]]*\]\([^)]+\)[ \t]*)+$/gm, (line) =>
-    [...line.matchAll(/!\[([^\]]*)\]\(([^)]+)\)/g)].filter((m) => !DECOR.test(m[2])).map((m) => `[[img:${m[2]}|${m[1]}]]`).join("\n"),
+  s = s.replace(/^(?:!\[[^\]]*\]\((?:[^()\s]|\([^()\s]*\))+\)[ \t]*)+$/gm, (line) =>
+    [...line.matchAll(/!\[([^\]]*)\]\(((?:[^()\s]|\([^()\s]*\))+)\)/g)].filter((m) => !DECOR.test(m[2])).map((m) => `[[img:${m[2]}|${m[1]}]]`).join("\n"),
   );
   // иконка + подпись в одной строке → пункт списка, фото + подпись → карточка
-  s = s.replace(/^!\[[^\]]*\]\(([^)]+)\)[ \t]+(.+)$/gm, (m, u: string, cap: string) => (DECOR.test(u) ? `- ${cap}` : `[[fig:${u}|${cap}]]`));
+  s = s.replace(/^!\[[^\]]*\]\(((?:[^()\s]|\([^()\s]*\))+)\)[ \t]+(.+)$/gm, (m, u: string, cap: string) => (DECOR.test(u) ? `- ${cap}` : `[[fig:${u}|${cap}]]`));
   // ссылки на старый домен → относительные
   s = s.replace(/\]\((https?:\/\/(?:www\.)?car-city\.pro[^)]*)\)/g, (_, u: string) => `](${localHref(u)})`);
   return { s, crumbs, final };
@@ -196,4 +196,13 @@ export function parseDoc(src: string, opts: { twin?: string; model?: boolean } =
     pushSection(title, body);
   }
   return { crumbs, intro, blocks, final };
+}
+
+export interface Review { name: string; date: string; source: string; url?: string; text: string }
+
+export function parseReviews(md: string): Review[] {
+  const out: Review[] = [];
+  const re = /\*\*([^*]+)\*\*\s*\n+([^\n]*?)\s+на\s+\[([^\]]+)\]\(([^)]*)\)\s*\n+([\s\S]*?)(?=\n!\[|\n---|\n## |$)/g;
+  for (const m of md.matchAll(re)) out.push({ name: m[1].trim(), date: m[2].trim(), source: m[3].trim(), url: m[4], text: m[5].trim() });
+  return out;
 }

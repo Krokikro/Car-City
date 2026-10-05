@@ -54,7 +54,7 @@ function splitGallery(body: string) {
 let cache: Map<string, Doc> | null = null;
 
 export function allDocs(): Map<string, Doc> {
-  if (cache) return cache;
+  if (cache && process.env.NODE_ENV === "production") return cache;
   const map = new Map<string, Doc>();
   for (const [dir, kind] of Object.entries(DIRS)) {
     const d = join(ROOT, dir);

@@ -1,13 +1,24 @@
+import { marked } from "marked";
 import type { Block, Btn, Card, Fig } from "@/lib/blocks";
 import { CarArt } from "../CarArt";
 import { ShaderBackdrop } from "../motion/ShaderBackdrop";
+
+const RENT: Record<string, string> = {
+  "/klassyi-avtomobilej": "/",
+  "/klassyi-avtomobilej/ekonom": "/ekonom",
+  "/klassyi-avtomobilej/komfort": "/komfort",
+  "/klassyi-avtomobilej/komfort-plyus": "/komfortplus",
+  "/klassyi-avtomobilej/gruzovoy": "/gruzovoy",
+};
 
 const crumbHref = (i: number, n: number, path: string) => {
   if (i === 0) return "/";
   // на старом сайте промежуточные крошки ведут на разделы; восстанавливаем их по адресу страницы
   const seg = path.split("/").filter(Boolean);
   const depth = Math.max(1, seg.length - (n - 1 - i));
-  return "/" + seg.slice(0, depth).join("/");
+  const href = "/" + seg.slice(0, depth).join("/");
+  // разделы аренды на старом сайте живут по коротким адресам: /komfort, /komfortplus …
+  return RENT[href] ?? href;
 };
 
 export function Crumbs({ items, path }: { items: string[]; path: string }) {
@@ -55,7 +66,7 @@ export function PageHero({ eyebrow, h1, crumbs, path, paras, btns, introHtml }: 
           <Crumbs items={crumbs} path={path} />
           <p className="mono eyebrow">{eyebrow}</p>
           <h1 id="pg-h1" className="display-xl" data-split>{h1}</h1>
-          {!rich && paras.slice(0, 2).map((p, i) => <p key={i} className="lead" data-reveal>{p}</p>)}
+          {!rich && paras.slice(0, 2).map((p, i) => <p key={i} className="lead" data-reveal dangerouslySetInnerHTML={{ __html: marked.parseInline(p, { async: false }) as string }} />)}
           <Buttons btns={btns} />
         </div>
       </section>
