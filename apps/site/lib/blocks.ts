@@ -159,7 +159,7 @@ export function parseDoc(src: string, opts: { twin?: string; model?: boolean; la
 
   const pushSection = (title: string, md: string) => {
     if (/\[\[calc\]\]/.test(md)) { blocks.push({ t: "calculator" }); return; }
-    if (/^Нам доверяют/i.test(title)) { blocks.push({ t: "trust" }); return; }
+    if (/^(Нам доверяют|They trust us|Бизге ишен|Бізге сен|Bizga ishon)/i.test(title)) { blocks.push({ t: "trust" }); return; }
     const qs = md.split(/^### /m);
     if (/вопрос|question|суроо|сұрақ|savol/i.test(title) && qs.length > 2) {
       const lead = qs.shift()!;
