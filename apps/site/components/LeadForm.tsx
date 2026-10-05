@@ -1,7 +1,10 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { company } from "@/lib/content";
+import { isLang, splitLang } from "@/lib/i18n";
+import { leadFormI18n } from "@/lib/lead/i18n";
 import { formatPhone, normalizePhone, phoneDigits } from "@/lib/lead/phone";
 import { getTouches } from "@/lib/lead/attribution";
 import { GOALS, getYmClientId, reachGoal } from "@/lib/lead/metrika";
@@ -91,7 +94,9 @@ class LeadError extends Error {
 // Защита: ловушка company_site, время заполнения, согласие отдельной неотмеченной галкой (152-ФЗ),
 // капча — только если сервер счёл отправку подозрительной.
 export function LeadForm({ button, source = "site", compact = false, extra, t: tp, lang, askMessenger = true, askMarketing = true, consentUrl = company.privacyUrl }: Props) {
-  const t: LeadFormText = { ...leadFormRu, ...tp, errors: { ...leadFormRu.errors, ...tp?.errors }, messengers: { ...leadFormRu.messengers, ...tp?.messengers } };
+  const pathLang = splitLang(usePathname() || "/").lang;
+  const base = leadFormI18n[isLang(lang) ? lang : pathLang] ?? leadFormRu;
+  const t: LeadFormText = { ...base, ...tp, errors: { ...base.errors, ...tp?.errors }, messengers: { ...base.messengers, ...tp?.messengers } };
   const id = useId();
   const [state, setState] = useState<State>("idle");
   const [error, setError] = useState("");
