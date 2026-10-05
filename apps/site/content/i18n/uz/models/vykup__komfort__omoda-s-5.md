@@ -1,14 +1,14 @@
 ---
-url: https://car-city.pro/vykup/komfort/chery-tiggo-4-pro
-title: "Moskvada Chery Tiggo 4 PROʼni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
-h1: "Taksi uchun Chery Tiggo 4 PROʼni sotib olish"
+url: https://car-city.pro/vykup/komfort/omoda-s-5
+title: "Moskvada Omoda S5-ni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
+h1: "Taksi uchun Omoda S5-ni sotib olish"
 class: komfort
 mode: vykup
 ---
 
-BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Sotib olish uchun Komfort avtomobillar > Chery Tiggo 4 PRO
+BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Sotib olish uchun Komfort avtomobillar > Omoda S5
 
-# Taksi uchun Chery Tiggo 4 PROʼni sotib olish
+# Taksi uchun Omoda S5-ni sotib olish
 
 Old gʻildirak yuritmasi
 
@@ -16,28 +16,27 @@ Dvigatel hajmi 1,5 l
 
 2023-yil ishlab chiqarilgan
 
-Oʻrtacha sarf 7,2 l/100 km
+Oʻrtacha sarf 7,3 l/100 km
 
-kuniga 1848₽ dan
+kuniga 2342₽ dan
 
 [Кнопка: Hamkorlikni boshlash]
 
-## Taksi uchun Chery Tiggo 4 Proʼni sotib olish huquqi bilan ijaraga olish
+## Taksi uchun Omoda S5-ni sotib olish huquqi bilan ijaraga olish
 
 Car Cityʼda taksida ishlash uchun qulay Komfort klassidagi avtomobillarni taklif qilamiz.
 
 Avtomobilning aʼlo texnik holatini, sotib olishning moslashuvchan formatini, shuningdek Car City jamoasidan doimiy texnik yordamni kafolatlaymiz!
 
-### Komfort klassidagi Chery Tiggo 4 Pro avtomobili narxlari
+### Komfort klassidagi Omoda S5 avtomobili narxlari
 
 Avtomobilni sotib olish narxi siz tanlagan toʻlov formatiga bogʻliq:
 
 | Boshlangʻich toʻlov | Muddat | Toʻlov | Sotib olish toʻlovi |
 |---|---|---|---|
-| 100 000₽ | 1 yil | 3 529₽ | 60 000 ₽ |
-| 100 000₽ | 1,5 yil | 2 686₽ | 60 000 ₽ |
-| 100 000₽ | 2 yil | 2 268₽ | 60 000 ₽ |
-| 100 000₽ | 3 yil | 1 848₽ | 60 000 ₽ |
+| 100 000₽ | 1 yil | 3 644₽ | 60 000 ₽ |
+| 100 000₽ | 1,5 yil | 2 774₽ | 60 000 ₽ |
+| 100 000₽ | 2 yil | 2 342₽ | 60 000 ₽ |
 
 - Boshlangʻich toʻlovni ofisdagi menejer bilan kelishgan holda qismlarga boʻlish mumkin
 - Sotib olish toʻlovi – sotib olish muddati oxirida toʻlanadigan va avtomobilning umumiy narxiga kiradigan summa. Bu toʻlov kunlik toʻlovlarni kamaytirish uchun qoʻshilgan
@@ -57,21 +56,18 @@ Taksi, yetkazib berish yoki shaxsiy maqsadlar uchun
 
 [Кнопка: Hisob-kitobni olish]
 
-## Chery Tiggo 4 Pro avtomobili haqida
+## Omoda S5 avtomobili haqida
 
-Chery Tiggo 4 Pro – xitoylik ishlab chiqaruvchining eng ommabop modellaridan biri. Arzon ijara va oddiy xizmat koʻrsatish bilan bu krossover taksi haydovchisiga charchamasdan ishlash, har qanday yoʻlovchini, hatto yoʻllari yaxshi boʻlmagan joylarga ham olib borish imkonini beradi. Ixchamlik va krossoverlar uchun yengil vazn uning yurish xususiyatlarini yaxshilaydi, shuningdek shahar sharoitida yoqilgʻi tejashga yordam beradi.
+Omoda S5 — shahar yoʻnalishlari va taksida jadal ishlash uchun mos boʻlgan ifodali dizayn, texnologiyalar va muvozanatli xususiyatlar uygʻunligi. Mashina yoʻlda oson taniladi, yoʻlovchilarda ishonch uygʻotadi, haydovchiga esa rul ortida qulaylik va ishonch bagʻishlaydi. Taksi uchun Omoda ijarasi — ortiqcha qiyinchiliklarsiz darhol ishga kirishish imkoniyati.
 
-### Chery Tiggo 4-ni qulay sharoitda sotib olish
-
-Avtomobil nafaqat haydovchi uchun yaxshi, balki yoʻlovchilar uchun ham qulay. Zamonaviy dizayndagi keng salonga toʻrt nafar yoʻlovchi bemalol sigʻadi. Bunga salonning aʼlo shovqin izolyatsiyasi va ravon yurishni qoʻshing: mijozlardan koʻplab ijobiy fikrlar olasiz, bu esa reytingingizni tez koʻtaradi.
+Omoda S5 — taksida barqaror daromad uchun amaliy vosita. Unda taksi haydovchisi uchun muhim boʻlgan barcha parametrlar muvozanatlashgan: qulaylik, tejamkorlik, ishonchlilik.
 
 ### Modelning texnik xususiyatlari
 
-- **Dvigatel:** Benzin, 1.5 TCI, 147 o.k.
-- **Sigʻimi:** 5 oʻrin, yukxona 340 l
-- **Oʻlchamlari:** 4338x1830x1645 mm, gʻildirak bazasi – 2630 mm, klirens – 171 mm
-- **Yoqilgʻi sarfi:** aralash siklda 6,6 l
-- **Dinamika:** maksimal tezlik – 190 km/soat, 100 km/soat gacha tezlanish – 9,7 s
+- 1.5 l dvigatel — ishonchli atmosfera dvigateli, tez-tez safarlar sharoitida barqaror ishlaydi.
+- Oʻrtacha yoqilgʻi sarfi 100 km ga taxminan 7,3 l — liniyada doimiy ishlash uchun foydali.
+- Keng salon, 482 litrli yukxona — haydovchi va yuki bor yoʻlovchilar uchun qulay.
+- Xavfsizlik yostiqchalari, ABS, ESP barqarorlashtirish tizimi.
 
 ### Avtomobilni 3 qadamda qanday olish mumkin?
 
@@ -96,11 +92,11 @@ Avtomobil nafaqat haydovchi uchun yaxshi, balki yoʻlovchilar uchun ham qulay. Z
 ## IMAGES
 
 Галерея модели (alt пустой):
-- https://car-city.pro/assets/gallery/komfort/chery-tiggo-4-pro/1.webp
-- https://car-city.pro/assets/gallery/komfort/chery-tiggo-4-pro/galery_1.webp
-- https://car-city.pro/assets/gallery/komfort/chery-tiggo-4-pro/galery_2.webp
-- https://car-city.pro/assets/gallery/komfort/chery-tiggo-4-pro/galery_3.webp
-- https://car-city.pro/assets/gallery/komfort/chery-tiggo-4-pro/galery_4.webp
+- https://car-city.pro/assets/gallery/komfort/omoda-s5/1.webp
+- https://car-city.pro/assets/gallery/komfort/omoda-s5/galery_1.webp
+- https://car-city.pro/assets/gallery/komfort/omoda-s5/galery_2.webp
+- https://car-city.pro/assets/gallery/komfort/omoda-s5/galery_3.webp
+- https://car-city.pro/assets/gallery/komfort/omoda-s5/galery_4.webp
 
 Декоративные / общие:
 - https://car-city.pro/assets/gallery/car_logo.webp

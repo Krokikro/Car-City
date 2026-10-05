@@ -1,14 +1,14 @@
 ---
 url: https://car-city.pro/vykup/komfort-plyus/haval-f7
-title: "Moskvada Haval F7 ni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
-h1: "Taksi uchun Haval F7 ni sotib olish"
+title: "Moskvada Haval F7-ni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
+h1: "Taksi uchun Haval F7-ni sotib olish"
 class: komfort-plyus
 mode: vykup
 ---
 
 BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Sotib olish uchun Komfort+ avtomobillar > Haval F7
 
-# Taksi uchun Haval F7 ni sotib olish
+# Taksi uchun Haval F7-ni sotib olish
 
 Old gʻildirak yuritmasi
 
@@ -22,7 +22,7 @@ kuniga 2836₽ dan
 
 [Кнопка: Hamkorlikni boshlash]
 
-## Taksi uchun Haval F7 ni sotib olish huquqi bilan ijaraga olish
+## Taksi uchun Haval F7-ni sotib olish huquqi bilan ijaraga olish
 
 Car Cityʼda taksida ishlash uchun qulay Komfort+ klassidagi avtomobillarni taklif qilamiz.
 
@@ -58,9 +58,9 @@ Taksi, yetkazib berish yoki shaxsiy maqsadlar uchun
 
 ## Haval F7 avtomobili haqida
 
-«Komfort+» klassidagi bu besh oʻrinli Haval F7 xetchbekida yoʻlovchi tashish deyarli sezilmasdan, eng muhimi – yoqimli va ishonchli oʻtadi. Model xitoy brendi tomonidan innovatsion muhandislik yutuqlari va yangilangan dizayn bilan yaratilgan. Keng salonda yoʻlovchilar oʻzlarini siqilish va noqulayliklarsiz, maksimal qulay his qiladi. Texnik jihozlanish va kuch mexanizmlarining parametrlari hatto notekis yoʻllarda ham murosasiz tezlik va mutlaq xavfsizlikni taʼminlaydi. Haval F7 ni ijaraga oling va zavq hamda qulaylik bilan ishlang!
+«Komfort+» klassidagi bu besh oʻrinli Haval F7 xetchbekida yoʻlovchi tashish deyarli sezilmasdan, eng muhimi – yoqimli va ishonchli oʻtadi. Model xitoy brendi tomonidan innovatsion muhandislik yutuqlari va yangilangan dizayn bilan yaratilgan. Keng salonda yoʻlovchilar oʻzlarini siqilish va noqulayliklarsiz, maksimal qulay his qiladi. Texnik jihozlanish va kuch mexanizmlarining parametrlari hatto notekis yoʻllarda ham murosasiz tezlik va mutlaq xavfsizlikni taʼminlaydi. Haval F7-ni ijaraga oling va zavq hamda qulaylik bilan ishlang!
 
-### Haval F7 ning benuqson yurish sifati va amaliy ijarasi
+### Haval F7-ning benuqson yurish sifati va amaliy ijarasi
 
 Haval F7 salonida yoʻl tugashini kutish vaqtini oʻtkazishga yordam beradigan multimedia tizimlari integratsiya qilingan. Salon yeyilishga chidamli materiallardan sifatli qoplama bilan qoplangan. Ortopedik elastik toʻldirgichli, holati sozlanadigan va yigʻiladigan bosh tayanchli oʻrindiqlarning ergonomikasi yoʻlovchilarni xursand qiladi. Oynani tugmani bosib bemalol ochish mumkin, katta oynalar esa yurish paytida atrofni kuzatish imkonini beradi.
 
@@ -70,7 +70,7 @@ Haval F7 salonida yoʻl tugashini kutish vaqtini oʻtkazishga yordam beradigan m
 - Toʻliq yuritma.
 - Klirens 190 mm.
 - 0-100 tezlanish vaqti 11 soniya.
-- Haval F7 ning maksimal tezligi – soatiga 180 km gacha.
+- Haval F7-ning maksimal tezligi – soatiga 180 km gacha.
 
 ### Avtomobilni 3 qadamda qanday olish mumkin?
 

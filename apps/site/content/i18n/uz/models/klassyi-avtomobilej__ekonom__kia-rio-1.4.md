@@ -27,11 +27,11 @@ BREADCRUMBS: Bosh sahifa > Ekonom > Taksi uchun Kia Rio X-Line ijarasi
 
 ## Car Cityʼda Kia Rio 1.4 taksi ijarasi
 
-Agar darhol liniyaga chiqib, pul topishni boshlash mumkin boʻlgan avtomobil izlayotgan boʻlsangiz – Car City Kia Rio X-Line ni taklif qiladi. Mashina shahar ritmida oʻzini ishonchli tutadi, mayda-chuydaga ortiqcha eʼtibor talab qilmaydi va haydovchi hamda yoʻlovchilar uchun qulaylik yaratadi. Biz uni taksida ishlash uchun ijaraga beramiz – tayyor texnik xizmat, yordam, dasturlar va sotib olish imkoniyati bilan.
+Agar darhol liniyaga chiqib, pul topishni boshlash mumkin boʻlgan avtomobil izlayotgan boʻlsangiz – Car City Kia Rio X-Lineʼni taklif qiladi. Mashina shahar ritmida oʻzini ishonchli tutadi, mayda-chuydaga ortiqcha eʼtibor talab qilmaydi va haydovchi hamda yoʻlovchilar uchun qulaylik yaratadi. Biz uni taksida ishlash uchun ijaraga beramiz – tayyor texnik xizmat, yordam, dasturlar va sotib olish imkoniyati bilan.
 
-## Kia Rio X-Line ning foydali va amaliy ijarasi
+## Kia Rio X-Lineʼning foydali va amaliy ijarasi
 
-Rio X-Line klirensi sunʼiy notekisliklardan bemalol oʻtish va bordyur yonida toʻxtash imkonini beradi. Salonda – qulay haydovchi oʻrindigʻi, tushunarli asboblar paneli, konditsioner, rulning elektr kuchaytirgichi va USB li multimedia.
+Rio X-Line klirensi sunʼiy notekisliklardan bemalol oʻtish va bordyur yonida toʻxtash imkonini beradi. Salonda – qulay haydovchi oʻrindigʻi, tushunarli asboblar paneli, konditsioner, rulning elektr kuchaytirgichi va USBʼli multimedia.
 
 Oʻrindiqlar uzoq safarlarda haydovchi ham, yoʻlovchilar ham charchamasligi uchun moʻljallangan. Yukxona keng – sumkalar, chamadonlar yoki ish buyumlari bemalol sigʻadi. Bunday komplektatsiya bilan hech narsadan tashvishlanishingiz shart emas. Kompaniyamizda toʻliq texnik xizmat koʻrsatiladi, shuning uchun sizga faqat ishingizni qilish va Kia Rio X-Line ijarasi uchun toʻlovlarni oʻz vaqtida toʻlash kifoya.
 
@@ -100,7 +100,7 @@ Bizga yozing
 
 ## Kia Rio X-Line ijarasining afzalliklari
 
-Kamida uch yillik haydovchilik stajiga ega va 21 yoshdan katta haydovchilarga Kia Rio X-Line ni foydali ijara shartlarida olishni taklif qilamiz:
+Kamida uch yillik haydovchilik stajiga ega va 21 yoshdan katta haydovchilarga Kia Rio X-Lineʼni foydali ijara shartlarida olishni taklif qilamiz:
 
 - Kuniga 200 rubldan 9 ming rublgacha oshib boradigan jamgʻariladigan garov.
 - Eng kam ijara muddati – 30 kundan.

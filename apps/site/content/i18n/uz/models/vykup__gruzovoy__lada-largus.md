@@ -1,7 +1,7 @@
 ---
 url: https://car-city.pro/vykup/gruzovoy/lada-largus
-title: "Moskvada Lada Largus ni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
-h1: "Lada Largus ni sotib olish"
+title: "Moskvada Lada Largusʼni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
+h1: "Lada Largusʼni sotib olish"
 class: gruzovoy
 mode: vykup
 ---
@@ -10,7 +10,7 @@ mode: vykup
 
 BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Lada Largus
 
-# Lada Largus ni sotib olish
+# Lada Largusʼni sotib olish
 
 Yuklash uzunligi 1740 mm
 
@@ -24,7 +24,7 @@ kuniga 2491₽ dan
 
 [Кнопка: Avtomobilni 30 daqiqada olish]
 
-## Yuk tarifi uchun Lada Largus ni sotib olish huquqi bilan ijaraga olish
+## Yuk tarifi uchun Lada Largusʼni sotib olish huquqi bilan ijaraga olish
 
 Car Cityʼda Yuk tarifi uchun qulay avtomobillarni taklif qilamiz
 

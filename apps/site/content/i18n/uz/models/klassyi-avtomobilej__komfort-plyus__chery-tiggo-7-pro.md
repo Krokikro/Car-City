@@ -55,7 +55,7 @@ Taksida qulay shartlarda ishlashda davom etib, avtomobilni oʻz mulkingizga rasm
 
 [Кнопка: Avtomobilni band qilish]
 
-Bugun taksi bozorida qancha topishingiz emas, balki nimada yurishingiz ham muhim. Chery Tiggo 7 Pro — zich grafikka bardosh bera oladigan va shu bilan birga butun smena davomida qulaylikni taʼminlaydigan ish vositasi. Keng salon, ishonchli boshqaruv va tejamkor sarf — bularning barchasi Chery Tiggo 7 Pro ni taksida ishlash uchun amaliy tanlovga aylantiradi. Model shahar sharoitiga aʼlo mos keladi va murakkab xizmat talab qilmaydi.
+Bugun taksi bozorida qancha topishingiz emas, balki nimada yurishingiz ham muhim. Chery Tiggo 7 Pro — zich grafikka bardosh bera oladigan va shu bilan birga butun smena davomida qulaylikni taʼminlaydigan ish vositasi. Keng salon, ishonchli boshqaruv va tejamkor sarf — bularning barchasi Chery Tiggo 7 Proʼni taksida ishlash uchun amaliy tanlovga aylantiradi. Model shahar sharoitiga aʼlo mos keladi va murakkab xizmat talab qilmaydi.
 
 ## Nega Chery Tiggo 7 Pro taksida ishlash uchun mos?
 
@@ -67,7 +67,7 @@ Chery Tiggo 7 Pro taksi uchun ijaraga avtomobil izlayotganlarga aʼlo mos keladi
 - Yoqilgʻi sarfi — rejimga qarab 6,3 dan 9,9 l/100 km gacha.
 - 100 km/soat gacha tezlanish — taxminan 11,5 soniya.
 - Yukxona hajmi — 440 l: chamadonlar, sumkalar yoki yetkazib berish uchun yetarli.
-- 57 l li yoqilgʻi baki — bir necha smena yoqilgʻi quymasdan yurish imkonini beradi.
+- 57 litrli yoqilgʻi baki — bir necha smena yoqilgʻi quymasdan yurish imkonini beradi.
 - Maksimal tezlik — 185 km/soat.
 - Yuk koʻtarish quvvati 1100 kg gacha — yirik buyurtmalar bilan ishlashga toʻgʻri kelsa, qulay.
 
@@ -89,14 +89,14 @@ Chery Tiggo 7 Pro taksi uchun ijaraga avtomobil izlayotganlarga aʼlo mos keladi
 
 ### Bu avtomobil haqiqatan ham noqulayliklarga emas, ishga eʼtibor qaratishga yordam beradi.
 
-Agar taksida ishlash uchun Chery Tiggo 7 Pro ni koʻrib chiqayotgan boʻlsangiz, hoziroq ariza qoldiring — tez orada qulay va ishonchli avtomobil rulida smenaga chiqa olasiz. Agregatorlarga ulanishga yordam beramiz va barcha savollar boʻyicha maslahat beramiz.
+Agar taksida ishlash uchun Chery Tiggo 7 Proʼni koʻrib chiqayotgan boʻlsangiz, hoziroq ariza qoldiring — tez orada qulay va ishonchli avtomobil rulida smenaga chiqa olasiz. Agregatorlarga ulanishga yordam beramiz va barcha savollar boʻyicha maslahat beramiz.
 
 ## Haydovchiga qoʻyiladigan talablar
 
 - **Fuqarolik:** Hamkorlikka Rossiya, Belarus, Qirgʻiziston, Qozogʻiston, Janubiy Osetiya, Abxaziya fuqarolari qabul qilinadi.
 - **Yosh:** Haydovchining yoshi — 21 yoshdan.
 - **Staj:** Avtomobilni ijaraga olish yoki sotib olish uchun kamida 3 yillik haydovchilik staji talab qilinadi.
-- **Hujjatlar:** Quyidagilarni taqdim etish kerak: pasport, haydovchilik guvohnomasi, sudlanmaganlik haqida maʼlumotnoma, KIS «ART» da roʻyxatdan oʻtganlik.
+- **Hujjatlar:** Quyidagilarni taqdim etish kerak: pasport, haydovchilik guvohnomasi, sudlanmaganlik haqida maʼlumotnoma, KIS «ART»da roʻyxatdan oʻtganlik.
 - **Oʻzini oʻzi band qilgan yoki YaTT:** Oʻzini oʻzi band qilgan shaxs yoki yakka tartibdagi tadbirkor sifatida roʻyxatdan oʻtish majburiy.
 
 ## IMAGES

@@ -1,14 +1,14 @@
 ---
 url: https://car-city.pro/vykup/ekonom/kia-rio-1.6
 title: "Moskvada Kia Rio 1.6 taksisini eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
-h1: "Taksi uchun Kia Rio 1.6 ni sotib olish"
+h1: "Taksi uchun Kia Rio 1.6-ni sotib olish"
 class: ekonom
 mode: vykup
 ---
 
-BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Sotib olish uchun Ekonom avtomobillar > Taksi uchun Kia Rio 1.6 ni sotib olish
+BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Sotib olish uchun Ekonom avtomobillar > Taksi uchun Kia Rio 1.6-ni sotib olish
 
-# Taksi uchun Kia Rio 1.6 ni sotib olish
+# Taksi uchun Kia Rio 1.6-ni sotib olish
 
 Old gʻildirak yuritmasi
 
@@ -22,7 +22,7 @@ kuniga 2089₽ dan
 
 [Кнопка: Hamkorlikni boshlash]
 
-## Taksi uchun Kia Rio 1.6 ni sotib olish huquqi bilan ijaraga olish
+## Taksi uchun Kia Rio 1.6-ni sotib olish huquqi bilan ijaraga olish
 
 Car Cityʼda taksida ishlash uchun qulay Ekonom klassidagi avtomobillarni taklif qilamiz.
 

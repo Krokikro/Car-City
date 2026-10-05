@@ -1,14 +1,14 @@
 ---
 url: https://car-city.pro/vykup/gruzovoy/Sollers-Atlant-SF4-L4
 title: "Moskvada Sollers SF4 L4 Refrijeratorni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
-h1: "Sollers SF4 L4 ni sotib olish"
+h1: "Sollers SF4 L4-ni sotib olish"
 class: gruzovoy
 mode: vykup
 ---
 
 BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Sollers Atlant SF4 L4
 
-# Sollers SF4 L4 ni sotib olish
+# Sollers SF4 L4-ni sotib olish
 
 Yuklash uzunligi 4120 mm
 
@@ -59,7 +59,7 @@ Taksi, yetkazib berish yoki shaxsiy maqsadlar uchun
 
 ## Sollers SF4 L4 avtomobili haqida
 
-Refrijerator ustqurmali Sollers SF4 L4 ning tashqi koʻrinishi uning amaliyligi va professional tashishga moʻljallanganini taʼkidlaydi. Uzaytirilgan L4 bazasi shaharda foydalanish qulayligini saqlagan holda sigʻimli izotermik furgonni joylashtirish imkonini beradi. Avtomobil oziq-ovqat, muzlatilgan mahsulotlar, yarim tayyor mahsulotlar, gullar, dori-darmonlar va belgilangan harorat rejimini talab qiladigan boshqa yuklarni yetkazib berish uchun mos.
+Refrijerator ustqurmali Sollers SF4 L4-ning tashqi koʻrinishi uning amaliyligi va professional tashishga moʻljallanganini taʼkidlaydi. Uzaytirilgan L4 bazasi shaharda foydalanish qulayligini saqlagan holda sigʻimli izotermik furgonni joylashtirish imkonini beradi. Avtomobil oziq-ovqat, muzlatilgan mahsulotlar, yarim tayyor mahsulotlar, gullar, dori-darmonlar va belgilangan harorat rejimini talab qiladigan boshqa yuklarni yetkazib berish uchun mos.
 
 Kapot ostida — olti pogʻonali mexanik uzatmalar qutisi bilan birga ishlaydigan, hajmi 2,7 l, quvvati 150 o.k. va maksimal aylantiruvchi momenti 355 N·m boʻlgan dizel dvigatel. Orqa gʻildirak yuritmasi va yuqori aylantiruvchi moment toʻliq yuklanganda ham avtomobilning ishonchli ishlashini taʼminlaydi. Refrijerator qurilmasi yuk boʻlimi ichida kerakli haroratni ushlab turadi, L4 versiyasining kattalashtirilgan kuzovi esa avtomobildan muntazam shahar ichi va shaharlararo tashishlar uchun samarali foydalanish imkonini beradi.
 

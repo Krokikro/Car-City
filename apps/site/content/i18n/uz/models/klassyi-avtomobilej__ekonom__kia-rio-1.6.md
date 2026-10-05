@@ -48,7 +48,7 @@ Salonda konditsioner, klimat-nazorat tizimlari, radio mavjud, shuningdek navigat
 
 #### Texnik xususiyatlar
 
-Texnik jihozlanishi Kia Rio 1.6 ni har qanday ob-havoda, turli yoʻl qoplamalarida va hatto yoʻlsiz joylarda tez yurish uchun ijaraga olishga undaydi. Yuqori oʻtagʻonlik, yengil yurish va manyovrchanlikni quyidagilar taʼminlaydi:
+Texnik jihozlanishi Kia Rio 1.6-ni har qanday ob-havoda, turli yoʻl qoplamalarida va hatto yoʻlsiz joylarda tez yurish uchun ijaraga olishga undaydi. Yuqori oʻtagʻonlik, yengil yurish va manyovrchanlikni quyidagilar taʼminlaydi:
 
 - Shinalar R15 185/65
 - Mustaqil MakFerson amortizatsiya stoykasi
@@ -56,7 +56,7 @@ Texnik jihozlanishi Kia Rio 1.6 ni har qanday ob-havoda, turli yoʻl qoplamalari
 - 4 silindrli motor
 - Quvvati 123 o.k.
 
-Bundan tashqari, Kia Rio 1.6 ni ijaraga olishga undaydigan boshqa texnik xususiyatlar ham bor. Masalan – oʻrtacha yoqilgʻi sarfi 100 km ga 5,3-6,6 l atrofida, shuningdek maksimal tezlik 160 km/soat gacha.
+Bundan tashqari, Kia Rio 1.6-ni ijaraga olishga undaydigan boshqa texnik xususiyatlar ham bor. Masalan – oʻrtacha yoqilgʻi sarfi 100 km ga 5,3-6,6 l atrofida, shuningdek maksimal tezlik 160 km/soat gacha.
 
 #### CarCityʼda ijara narxi va shartlari
 
@@ -110,7 +110,7 @@ CarCity taksi haydovchilarini moslashuvchan va qulay toʻlov hamda ijara shartla
 
 - Sugʻurta badali kuniga atigi 200 rubl
 - 1900 rubldan boshlanadigan moslashuvchan ijara haqi
-- Kia Rio 1.6 ning eng kam ijara muddati – 30 kun
+- Kia Rio 1.6-ning eng kam ijara muddati – 30 kun
 
 Birinchi kun uchun ijara toʻlovi yoʻqligi hisobiga – aniq foyda 2000 rubl.
 

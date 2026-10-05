@@ -1,14 +1,14 @@
 ---
-url: https://car-city.pro/vykup/komfort/chery-tiggo-4-pro
-title: "Moskvada Chery Tiggo 4 PROʼni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
-h1: "Taksi uchun Chery Tiggo 4 PROʼni sotib olish"
+url: https://car-city.pro/vykup/komfort/geely-emgrand
+title: "Moskvada Geely Emgrandʼni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
+h1: "Taksi uchun Geely Emgrandʼni sotib olish"
 class: komfort
 mode: vykup
 ---
 
-BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Sotib olish uchun Komfort avtomobillar > Chery Tiggo 4 PRO
+BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Sotib olish uchun Komfort avtomobillar > Geely Emgrand
 
-# Taksi uchun Chery Tiggo 4 PROʼni sotib olish
+# Taksi uchun Geely Emgrandʼni sotib olish
 
 Old gʻildirak yuritmasi
 
@@ -16,28 +16,28 @@ Dvigatel hajmi 1,5 l
 
 2023-yil ishlab chiqarilgan
 
-Oʻrtacha sarf 7,2 l/100 km
+Oʻrtacha sarf 5,8 l/100 km
 
-kuniga 1848₽ dan
+kuniga 2 290₽ dan
 
 [Кнопка: Hamkorlikni boshlash]
 
-## Taksi uchun Chery Tiggo 4 Proʼni sotib olish huquqi bilan ijaraga olish
+## Taksi uchun Geely Emgrandʼni sotib olish huquqi bilan ijaraga olish
 
 Car Cityʼda taksida ishlash uchun qulay Komfort klassidagi avtomobillarni taklif qilamiz.
 
 Avtomobilning aʼlo texnik holatini, sotib olishning moslashuvchan formatini, shuningdek Car City jamoasidan doimiy texnik yordamni kafolatlaymiz!
 
-### Komfort klassidagi Chery Tiggo 4 Pro avtomobili narxlari
+### Komfort klassidagi Geely Emgrand avtomobili narxlari
 
 Avtomobilni sotib olish narxi siz tanlagan toʻlov formatiga bogʻliq:
 
 | Boshlangʻich toʻlov | Muddat | Toʻlov | Sotib olish toʻlovi |
 |---|---|---|---|
-| 100 000₽ | 1 yil | 3 529₽ | 60 000 ₽ |
-| 100 000₽ | 1,5 yil | 2 686₽ | 60 000 ₽ |
-| 100 000₽ | 2 yil | 2 268₽ | 60 000 ₽ |
-| 100 000₽ | 3 yil | 1 848₽ | 60 000 ₽ |
+| 100 000₽ | 1 yil | 4 373₽ | 60 000 ₽ |
+| 100 000₽ | 1,5 yil | 3 328₽ | 60 000 ₽ |
+| 100 000₽ | 2 yil | 2 811₽ | 60 000 ₽ |
+| 100 000₽ | 3 yil | 2 290₽ | 60 000 ₽ |
 
 - Boshlangʻich toʻlovni ofisdagi menejer bilan kelishgan holda qismlarga boʻlish mumkin
 - Sotib olish toʻlovi – sotib olish muddati oxirida toʻlanadigan va avtomobilning umumiy narxiga kiradigan summa. Bu toʻlov kunlik toʻlovlarni kamaytirish uchun qoʻshilgan
@@ -57,23 +57,22 @@ Taksi, yetkazib berish yoki shaxsiy maqsadlar uchun
 
 [Кнопка: Hisob-kitobni olish]
 
-## Chery Tiggo 4 Pro avtomobili haqida
+## Geely Emgrand avtomobili haqida
 
-Chery Tiggo 4 Pro – xitoylik ishlab chiqaruvchining eng ommabop modellaridan biri. Arzon ijara va oddiy xizmat koʻrsatish bilan bu krossover taksi haydovchisiga charchamasdan ishlash, har qanday yoʻlovchini, hatto yoʻllari yaxshi boʻlmagan joylarga ham olib borish imkonini beradi. Ixchamlik va krossoverlar uchun yengil vazn uning yurish xususiyatlarini yaxshilaydi, shuningdek shahar sharoitida yoqilgʻi tejashga yordam beradi.
+Geely Emgrandʼning tashqi koʻrinishi – zamonaviy avtomobil estetikasining timsoli, u dizayn elementlarini zamonaviy ixcham sedanning uygʻun qiyofasiga birlashtiradi. Jiddiy va zamonaviy Emgrand interyeri darhol eʼtiborni tortadi. Ikki rangli pardoz, perforatsiyalangan ekocharm qoʻshimchali oʻrindiqlar, shuningdek multimedia panelidagi katta ekranlar xuddi oʻz uyingizda boʻlgandek shinam muhit yaratadi.
 
-### Chery Tiggo 4-ni qulay sharoitda sotib olish
+Emgrand saloni ergonomikasi va kengligi bilan yoqimli hayratga soladi. Buni ayniqsa orqa qatordagi yoʻlovchilar qadrlaydi: salonning eni 1,5 metr, balandligi esa – 0,97 m.
 
-Avtomobil nafaqat haydovchi uchun yaxshi, balki yoʻlovchilar uchun ham qulay. Zamonaviy dizayndagi keng salonga toʻrt nafar yoʻlovchi bemalol sigʻadi. Bunga salonning aʼlo shovqin izolyatsiyasi va ravon yurishni qoʻshing: mijozlardan koʻplab ijobiy fikrlar olasiz, bu esa reytingingizni tez koʻtaradi.
+Keng yukxona har qanday safar uchun ideal va orqa oʻrindiqlar yigʻilganda 500 litrgacha sigʻdiradi.
 
 ### Modelning texnik xususiyatlari
 
-- **Dvigatel:** Benzin, 1.5 TCI, 147 o.k.
-- **Sigʻimi:** 5 oʻrin, yukxona 340 l
-- **Oʻlchamlari:** 4338x1830x1645 mm, gʻildirak bazasi – 2630 mm, klirens – 171 mm
-- **Yoqilgʻi sarfi:** aralash siklda 6,6 l
-- **Dinamika:** maksimal tezlik – 190 km/soat, 100 km/soat gacha tezlanish – 9,7 s
+- Hajmi 1,5 litr boʻlgan atmosfera dvigateli.
+- Optimal quvvat 122 o.k.
+- Yoqilgʻi sarfi 100 km ga 4,5 litrdan
+- Tezlik 180 km/soat gacha.
 
-### Avtomobilni 3 qadamda qanday olish mumkin?
+## Avtomobilni 3 qadamda qanday olish mumkin?
 
 1. Operator orqali ofisga yozilasiz
 2. Xavfsizlik xizmati tekshiruvidan oʻtasiz
@@ -96,11 +95,11 @@ Avtomobil nafaqat haydovchi uchun yaxshi, balki yoʻlovchilar uchun ham qulay. Z
 ## IMAGES
 
 Галерея модели (alt пустой):
-- https://car-city.pro/assets/gallery/komfort/chery-tiggo-4-pro/1.webp
-- https://car-city.pro/assets/gallery/komfort/chery-tiggo-4-pro/galery_1.webp
-- https://car-city.pro/assets/gallery/komfort/chery-tiggo-4-pro/galery_2.webp
-- https://car-city.pro/assets/gallery/komfort/chery-tiggo-4-pro/galery_3.webp
-- https://car-city.pro/assets/gallery/komfort/chery-tiggo-4-pro/galery_4.webp
+- https://car-city.pro/assets/gallery/komfort/geely-emgrand/1.webp
+- https://car-city.pro/assets/gallery/komfort/geely-emgrand/galery_1.webp
+- https://car-city.pro/assets/gallery/komfort/geely-emgrand/galery_2.webp
+- https://car-city.pro/assets/gallery/komfort/geely-emgrand/galery_3.webp
+- https://car-city.pro/assets/gallery/komfort/geely-emgrand/galery_4.webp
 
 Декоративные / общие:
 - https://car-city.pro/assets/gallery/car_logo.webp

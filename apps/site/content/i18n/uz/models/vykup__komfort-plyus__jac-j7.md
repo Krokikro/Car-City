@@ -1,14 +1,14 @@
 ---
 url: https://car-city.pro/vykup/komfort-plyus/jac-j7
-title: "Moskvada Jac J7 ni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
-h1: "Taksi uchun Jac J7 ni sotib olish"
+title: "Moskvada Jac J7-ni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
+h1: "Taksi uchun Jac J7-ni sotib olish"
 class: komfort-plyus
 mode: vykup
 ---
 
 BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Sotib olish uchun Komfort+ avtomobillar > Jac J7
 
-# Taksi uchun Jac J7 ni sotib olish
+# Taksi uchun Jac J7-ni sotib olish
 
 Old gʻildirak yuritmasi
 
@@ -22,9 +22,9 @@ kuniga 2022₽ dan
 
 [Кнопка: Hamkorlikni boshlash]
 
-## Taksi uchun JAC J7 ni sotib olish huquqi bilan ijaraga olish
+## Taksi uchun JAC J7-ni sotib olish huquqi bilan ijaraga olish
 
-Car Cityʼda JAC J7 ni taksida ishlash uchun ijaraga olib, avtomobilni asta-sekin sotib olishingiz mumkin. Tushunarli shartlar, qatʼiy toʻlovlar va avtomobilning har kungi safarlarga texnik tayyorligiga ishonch.
+Car Cityʼda JAC J7-ni taksida ishlash uchun ijaraga olib, avtomobilni asta-sekin sotib olishingiz mumkin. Tushunarli shartlar, qatʼiy toʻlovlar va avtomobilning har kungi safarlarga texnik tayyorligiga ishonch.
 
 ## Komfort+ klassidagi Jac J7 avtomobili narxlari
 
@@ -64,7 +64,7 @@ Salon toʻrt nafar yoʻlovchiga moʻljallangan va zamonaviy multimedia hamda xav
 
 Safar xavfsizligini aqlli modullar, jumladan favqulodda tormozlash, xavfsizlik yostiqchalari va pardalari, shuningdek orqani koʻrish kamerasi va koʻr zonalar datchiklari taʼminlaydi. Markaziy konsol va sensorli boshqaruv paneli avtomobildan foydalanishni oddiy va qulay qiladi.
 
-## JAC J7 ni qulay sharoitda sotib olish
+## JAC J7-ni qulay sharoitda sotib olish
 
 Sotib olish dasturi boʻyicha JAC J7 avtomobilni asta-sekin oʻz mulkingizga rasmiylashtirish imkonini beradi. Toʻlovlar mashina narxi hisobiga oʻtadi, toʻliq hisob-kitobdan keyin esa avtomobil sizning shaxsiy mulkingizga aylanadi.
 

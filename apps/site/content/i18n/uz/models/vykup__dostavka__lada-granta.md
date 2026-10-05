@@ -1,14 +1,14 @@
 ---
 url: https://car-city.pro/vykup/dostavka/lada-granta
-title: "Moskvada Lada Granta ni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
-h1: "Lada Granta ni sotib olish"
+title: "Moskvada Lada Grantaʼni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
+h1: "Lada Grantaʼni sotib olish"
 class: dostavka
 mode: vykup
 ---
 
 BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Lada Granta
 
-# Lada Granta ni sotib olish
+# Lada Grantaʼni sotib olish
 
 Old gʻildirak yuritmasi
 
@@ -22,7 +22,7 @@ kuniga 1808₽ dan
 
 [Кнопка: Avtomobilni 30 daqiqada olish]
 
-## Yetkazib berish uchun Lada Granta ni sotib olish
+## Yetkazib berish uchun Lada Grantaʼni sotib olish
 
 Car City sizga oʻz avtomobilingizda yetkazib berishda ishlash imkoniyatini ochadi — toʻlovlar ijaraga emas, mashina hisobiga oʻtadi.
 
@@ -59,7 +59,7 @@ Taksi, yetkazib berish yoki shaxsiy maqsadlar uchun
 
 ## Lada Granta avtomobili haqida
 
-Lada Granta 2025 ning tashqi koʻrinishi — ortiqcha detallarsiz oddiy va tanish shakllar. Yangilangan radiator panjarasi, ozoda chiroqlar va aniq kuzov chiziqlari avtomobilni avvalgi versiyalarga qaraganda zamonaviyroq qiladi.
+Lada Granta 2025-ning tashqi koʻrinishi — ortiqcha detallarsiz oddiy va tanish shakllar. Yangilangan radiator panjarasi, ozoda chiroqlar va aniq kuzov chiziqlari avtomobilni avvalgi versiyalarga qaraganda zamonaviyroq qiladi.
 
 Salon rul ortida uzoq ishlashga moʻljallangan. Sozlanadigan haydovchi oʻrindigʻi va yaxshi koʻrinish 10–12 soatlik smenada charchoqni kamaytiradi, buyumlar uchun joylar esa tartibni saqlashga yordam beradi: hujjatlar, suv, mayda buyurtmalar — hammasi oʻz joyida.
 

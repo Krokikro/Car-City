@@ -1,14 +1,14 @@
 ---
 url: https://car-city.pro/vykup/komfort-plyus/geely-atlas-pro
-title: "Moskvada Geely Atlas PRO ni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
-h1: "Taksi uchun Geely Atlas PRO ni sotib olish"
+title: "Moskvada Geely Atlas PROʼni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
+h1: "Taksi uchun Geely Atlas PROʼni sotib olish"
 class: komfort-plyus
 mode: vykup
 ---
 
 BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Sotib olish uchun Komfort+ avtomobillar > Geely Atlas Pro
 
-# Taksi uchun Geely Atlas PRO ni sotib olish
+# Taksi uchun Geely Atlas PROʼni sotib olish
 
 Old gʻildirak yuritmasi
 
@@ -22,7 +22,7 @@ kuniga 2900₽ dan
 
 [Кнопка: Hamkorlikni boshlash]
 
-## Taksi uchun Geely Atlas Pro ni sotib olish huquqi bilan ijaraga olish
+## Taksi uchun Geely Atlas Proʼni sotib olish huquqi bilan ijaraga olish
 
 Car Cityʼda taksida ishlash uchun qulay Komfort+ klassidagi avtomobillarni taklif qilamiz.
 
@@ -59,9 +59,9 @@ Taksi, yetkazib berish yoki shaxsiy maqsadlar uchun
 
 ## Geely Atlas Pro avtomobili haqida
 
-«Komfort+» toifasidagi besh oʻrinli keng Geely Atlas PRO krossoveri butun safar davomida ijobiy hissiyotlar bagʻishlab, har qanday yoʻlsizlikni yengib oʻtadi. Spoyler va kapotning oʻziga xos egilishlari bilan dinamik va shiddatli koʻrinadigan bu avtomobil ayniqsa yorqin va jozibador. Car Cityʼdagi real ijara stavkalari esa Geely Atlas PRO ni aniq foyda bilan ijaraga olish imkonini beradi.
+«Komfort+» toifasidagi besh oʻrinli keng Geely Atlas PRO krossoveri butun safar davomida ijobiy hissiyotlar bagʻishlab, har qanday yoʻlsizlikni yengib oʻtadi. Spoyler va kapotning oʻziga xos egilishlari bilan dinamik va shiddatli koʻrinadigan bu avtomobil ayniqsa yorqin va jozibador. Car Cityʼdagi real ijara stavkalari esa Geely Atlas PROʼni aniq foyda bilan ijaraga olish imkonini beradi.
 
-### Geely Atlas Pro ni sotib olishning ishonchliligi va amaliyligi
+### Geely Atlas Proʼni sotib olishning ishonchliligi va amaliyligi
 
 Bu model tezlikni yaxshi koʻradigan va qulaylikni qadrlaydiganlar uchun yaratilgan. Shu bilan birga avtomat uzatmalar qutisi haydashni osonlashtiradi va derazadan manzaralardan bahramand boʻlish imkonini beradi. Zamonaviy elektronika energetik xavfsizlikni va yoʻldagi xavfsizlikni samarali kuzatishni taʼminlaydi.
 
@@ -76,7 +76,7 @@ Hashamatli salonda haydovchi va yoʻlovchilar qulayligi uchun uzoq safarda dam o
 - Tezlik 225 km/soat gacha.
 - Yoqilgʻi sarfi 100 km ga 6,8 l.
 
-Bunday texnik parametrlar bilan Geely Atlas PRO dagi safar tejamkor, qulay va tez sayohatga aylanadi.
+Bunday texnik parametrlar bilan Geely Atlas PROʼdagi safar tejamkor, qulay va tez sayohatga aylanadi.
 
 ### Avtomobilni 3 qadamda qanday olish mumkin?
 

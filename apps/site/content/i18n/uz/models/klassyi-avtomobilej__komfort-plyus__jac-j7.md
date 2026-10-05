@@ -51,7 +51,7 @@ Taksida qulay shartlarda ishlashda davom etib, avtomobilni oʻz mulkingizga rasm
 
 [Кнопка: Avtomobilni band qilish]
 
-Car Cityʼda Jac J7 ni ijaraga olib, darhol liniyaga chiqish mumkin. Ortiqcha sarson-sargardonliksiz, sotib olish imkoniyati bilan va qulay grafikda.
+Car Cityʼda Jac J7-ni ijaraga olib, darhol liniyaga chiqish mumkin. Ortiqcha sarson-sargardonliksiz, sotib olish imkoniyati bilan va qulay grafikda.
 
 ## Jac J7 – har kun uchun ishonchli liftbek
 
@@ -72,7 +72,7 @@ Mashina yoʻlni ishonchli ushlaydi, yoʻl bilan ilashishni yoʻqotmaydi va doimi
 
 ## Ijara va sotib olish shartlari
 
-Car City Jac J7 ni qulay sxema boʻyicha ijaraga olishni taklif qiladi: faqat ishlagan kunlaringiz uchun toʻlaysiz. Mashina toza, toʻliq xizmatdan oʻtgan va liniyaga chiqishga tayyor holda beriladi. Taksi agregatorlariga ulanish – xohishga koʻra. Vaqt oʻtib avtomobil sizning mulkingizga oʻtishi uchun sotib olish sharti bilan ijarani rasmiylashtirish imkoniyati ham bor. Shartlarni individual kelishamiz.
+Car City Jac J7-ni qulay sxema boʻyicha ijaraga olishni taklif qiladi: faqat ishlagan kunlaringiz uchun toʻlaysiz. Mashina toza, toʻliq xizmatdan oʻtgan va liniyaga chiqishga tayyor holda beriladi. Taksi agregatorlariga ulanish – xohishga koʻra. Vaqt oʻtib avtomobil sizning mulkingizga oʻtishi uchun sotib olish sharti bilan ijarani rasmiylashtirish imkoniyati ham bor. Shartlarni individual kelishamiz.
 
 ## Avtomobilni 3 qadamda qanday olish mumkin?
 

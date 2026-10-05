@@ -1,14 +1,14 @@
 ---
 url: https://car-city.pro/vykup/komfort/Belgee-X50
-title: "Moskvada Belgee X50 ni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
-h1: "Taksi uchun Belgee X50 ni sotib olish"
+title: "Moskvada Belgee X50-ni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
+h1: "Taksi uchun Belgee X50-ni sotib olish"
 class: komfort
 mode: vykup
 ---
 
 BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Sotib olish uchun Komfort avtomobillar > Belgee X50
 
-# Taksi uchun Belgee X50 ni sotib olish
+# Taksi uchun Belgee X50-ni sotib olish
 
 Old gʻildirak yuritmasi
 
@@ -22,7 +22,7 @@ kuniga 2813₽ dan
 
 [Кнопка: Hamkorlikni boshlash]
 
-## Taksi uchun Belgee X50 ni sotib olish huquqi bilan ijaraga olish
+## Taksi uchun Belgee X50-ni sotib olish huquqi bilan ijaraga olish
 
 Car Cityʼda taksida ishlash uchun qulay Komfort klassidagi avtomobillarni taklif qilamiz.
 
@@ -56,11 +56,11 @@ Taksi, yetkazib berish yoki shaxsiy maqsadlar uchun
 
 ## Belgee X50 avtomobili haqida
 
-Belgee X50 ning tashqi koʻrinishi ixcham krossoverning dinamik dizaynini har kungi foydalanish uchun amaliylik bilan uygʻunlashtiradi. Ifodali old qism, ozoda faralar va ixcham oʻlchamlar avtomobilni shahar uchun ham, taksida ishlash uchun ham qulay qiladi.
+Belgee X50-ning tashqi koʻrinishi ixcham krossoverning dinamik dizaynini har kungi foydalanish uchun amaliylik bilan uygʻunlashtiradi. Ifodali old qism, ozoda faralar va ixcham oʻlchamlar avtomobilni shahar uchun ham, taksida ishlash uchun ham qulay qiladi.
 
 Belgee X50 saloni zamonaviy uslubda ishlangan va haydovchi hamda yoʻlovchilar nuqtai nazaridan yaxshi oʻylangan. Qulay oʻtirish holati, sifatli pardozlash materiallari, multimedia tizimi va salondagi yetarli joy uzoq smenalarni ham rul ortida qulay oʻtkazishga yordam beradi.
 
-### Belgee X50 ni qulay sharoitda sotib olish
+### Belgee X50-ni qulay sharoitda sotib olish
 
 Belgee X50 interyeri har kungi foydalanishdagi qulaylikka moʻljallangan. Salonda yoʻlovchilar uchun yetarli joy bor, yukxona esa chamadonlar, sumkalar va boshqa yuklarni tashish uchun mos.
 

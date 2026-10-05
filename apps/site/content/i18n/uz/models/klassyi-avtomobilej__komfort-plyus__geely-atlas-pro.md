@@ -63,7 +63,7 @@ Geely Atlas Pro — taksida ishlash uchun ideal krossover. U uslub, yuqori quvva
 
 Geely Atlas Pro — shahar va shahar tashqarisidagi yoʻnalishlar uchun universal avtomobil. Texnik xususiyatlari:
 
-- 177 o.k. li 1.5 litrli turboli dvigatel joyidan qoʻzgʻalishda aʼlo dinamika va ishonchli tortish kuchini taʼminlaydi.
+- 177 ot kuchiga ega 1.5 litrli turboli dvigatel joyidan qoʻzgʻalishda aʼlo dinamika va ishonchli tortish kuchini taʼminlaydi.
 - Ikki ilashishli 7 pogʻonali avtomat quti (7DCT) — ravon yurish, yuqori tejamkorlik.
 - Shahar sharoitida ishonchli ishlash uchun old gʻildirak yuritmasi.
 - 100 km/soat gacha 9,9 soniya — taksi uchun yetarlicha tez tezlanish.
@@ -75,7 +75,7 @@ Geely Atlas Pro — shahar va shahar tashqarisidagi yoʻnalishlar uchun universa
 2. Xavfsizlik xizmati tekshiruvidan oʻtasiz
 3. Avtomobilni olasiz!
 
-## Taksida ishlash uchun Geely Atlas Pro ning afzalliklari
+## Taksida ishlash uchun Geely Atlas Proʼning afzalliklari
 
 Geely Atlas Pro qulaylik, ishonchlilik va tejamkorlikni uygʻunlashtiradi, bu uni Moskvadagi taksi haydovchilari uchun aʼlo tanlovga aylantiradi.
 
@@ -84,14 +84,14 @@ Geely Atlas Pro qulaylik, ishonchlilik va tejamkorlikni uygʻunlashtiradi, bu un
 - Oʻrtacha sarf 100 km ga 6,8 l — yoqilgʻiga kamroq xarajat, taksi haydovchisi uchun koʻproq foyda.
 - 174 mm klirens tufayli krossover shahar yoʻllari yoki hovlilardagi notekisliklardan oson oʻtadi.
 
-Moskvada taksi uchun Geely Atlas Pro ni ijaraga oling va ishonchli, tejamkor avtomobilga ega boʻling.
+Moskvada taksi uchun Geely Atlas Proʼni ijaraga oling va ishonchli, tejamkor avtomobilga ega boʻling.
 
 ## Haydovchiga qoʻyiladigan talablar
 
 - **Fuqarolik:** Biz Rossiya, Belarus, Qozogʻiston, Qirgʻiziston, Janubiy Osetiya, Abxaziya fuqarolari bilan hamkorlik qilamiz.
 - **Yosh:** Avtomobil ijarasi uchun haydovchining yoshi — 21 yoshdan.
 - **Staj:** Kamida 3 yillik haydovchilik staji yetarli.
-- **Hujjatlar:** Kerak boʻladi: pasport, haydovchilik guvohnomasi, sudlanmaganlik haqida maʼlumotnoma, KIS «ART» da roʻyxatdan oʻtganlik.
+- **Hujjatlar:** Kerak boʻladi: pasport, haydovchilik guvohnomasi, sudlanmaganlik haqida maʼlumotnoma, KIS «ART»da roʻyxatdan oʻtganlik.
 - **Oʻzini oʻzi band qilgan yoki YaTT:** Oʻzini oʻzi band qilgan shaxs sifatida roʻyxatdan oʻtish yoki YaTT rasmiylashtirish kerak.
 
 ## IMAGES

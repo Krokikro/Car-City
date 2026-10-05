@@ -24,7 +24,7 @@ kuniga 2000₽ dan
 
 Taksida Geely Emgrand (Джили Эмгранд) — puxta oʻylangan ergonomika va keng yukxonaga ega ishonchli komfort-klass sedani. Car Cityʼda taksi uchun Geely Emgrand ijarasi toʻliq texnik tayyorgarlik, sugʻurta va agregatorlarga ulanishda yordam bilan ochiq. Garovlar va yashirin komissiyalarsiz ishlang — faqat qatʼiy ijara stavkasi va liniyada 24/7 yordam.
 
-## Komfort klassidagi Geely Emgrand ni taksi uchun ijaraga olish
+## Komfort klassidagi Geely Emgrandʼni taksi uchun ijaraga olish
 
 Car Cityʼda taksida ishlash uchun Geely Emgrand (Джили Эмгранд) ijarasi ochiq.
 
@@ -65,11 +65,11 @@ Taksida qulay shartlarda ishlashda davom etib, avtomobilni oʻz mulkingizga rasm
 
 ## Geely Emgrand avtomobili haqida
 
-Geely Emgrand ning tashqi koʻrinishi – ixcham sedanda nafislik va innovatsion dizayn elementlarining uygʻun birikmasi namunasi.
+Geely Emgrandʼning tashqi koʻrinishi – ixcham sedanda nafislik va innovatsion dizayn elementlarining uygʻun birikmasi namunasi.
 
 Avtomobil saloni jiddiy uslubda ishlangan va darhol eʼtiborni tortadi. Ikki rangli pardoz, perforatsiyalangan ekocharm qoʻshimchali oʻrindiqlar, shuningdek multimedia panelidagi katta ekranlar xuddi oʻz uyingizda boʻlgandek shinam muhit yaratadi.
 
-### Geely Emgrand ni qulay sharoitda ijaraga olish
+### Geely Emgrandʼni qulay sharoitda ijaraga olish
 
 Interyer ergonomikasi va kengligi bilan yoqimli hayratga soladi: salonning eni 1,5 metr, balandligi esa 0,97 m.
 

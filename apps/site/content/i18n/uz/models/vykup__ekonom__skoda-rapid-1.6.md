@@ -1,14 +1,14 @@
 ---
 url: https://car-city.pro/vykup/ekonom/skoda-rapid-1.6
-title: "Moskvada taksida ishlash uchun Skoda Rapid ni sotib olish | Car City"
-h1: "Taksi uchun Skoda Rapid ni sotib olish"
+title: "Moskvada taksida ishlash uchun Skoda Rapidʼni sotib olish | Car City"
+h1: "Taksi uchun Skoda Rapidʼni sotib olish"
 class: ekonom
 mode: vykup
 ---
 
 BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Sotib olish uchun Ekonom avtomobillar > Skoda Rapid
 
-# Taksi uchun Skoda Rapid ni sotib olish
+# Taksi uchun Skoda Rapidʼni sotib olish
 
 Old gʻildirak yuritmasi
 
@@ -24,7 +24,7 @@ kuniga 2089₽ dan
 
 <!-- так на сайте: выкуп — 1,5 л / 2022 г., тогда как страница аренды того же Rapid — 1,6 л / 2020 г. -->
 
-## Taksi uchun Skoda Rapid 1.6 ni sotib olish huquqi bilan ijaraga olish
+## Taksi uchun Skoda Rapid 1.6-ni sotib olish huquqi bilan ijaraga olish
 
 Car Cityʼda taksida ishlash uchun qulay Ekonom klassidagi avtomobillarni taklif qilamiz.
 

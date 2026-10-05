@@ -22,7 +22,7 @@ kuniga 2000₽ dan
 
 [Кнопка: Hamkorlikni boshlash]
 
-## Komfort klassidagi Chery Tiggo 4 Pro ni taksi uchun ijaraga olish
+## Komfort klassidagi Chery Tiggo 4 Proʼni taksi uchun ijaraga olish
 
 Car Cityʼda taksida ishlash uchun qulay Komfort klassidagi avtomobillarni taklif qilamiz.
 
@@ -87,7 +87,7 @@ Bizga yozing
 
 Chery Tiggo 4 Pro – xitoylik ishlab chiqaruvchining eng ommabop modellaridan biri. Arzon ijara va oddiy xizmat koʻrsatish bilan bu krossover taksi haydovchisiga charchamasdan ishlash, har qanday yoʻlovchini, hatto yoʻllari yaxshi boʻlmagan joylarga ham olib borish imkonini beradi. Ixchamlik va krossoverlar uchun yengil vazn uning yurish xususiyatlarini yaxshilaydi, shuningdek shahar sharoitida yoqilgʻi tejashga yordam beradi.
 
-### Chery Tiggo 4 Pro ni qulay sharoitda ijaraga olish
+### Chery Tiggo 4 Proʼni qulay sharoitda ijaraga olish
 
 Avtomobil nafaqat haydovchi uchun yaxshi, balki yoʻlovchilar uchun ham qulay. Zamonaviy dizayndagi keng salonga toʻrt nafar yoʻlovchi bemalol sigʻadi. Bunga salonning aʼlo shovqin izolyatsiyasi va ravon yurishni qoʻshing: mijozlardan koʻplab ijobiy fikrlar olasiz, bu esa reytingingizni tez koʻtaradi.
 

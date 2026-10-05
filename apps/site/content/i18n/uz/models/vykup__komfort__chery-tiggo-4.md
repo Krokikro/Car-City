@@ -1,14 +1,14 @@
 ---
 url: https://car-city.pro/vykup/komfort/chery-tiggo-4
-title: "Moskvada Chery Tiggo 4 ni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
-h1: "Taksi uchun Chery Tiggo 4 ni sotib olish"
+title: "Moskvada Chery Tiggo 4-ni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
+h1: "Taksi uchun Chery Tiggo 4-ni sotib olish"
 class: komfort
 mode: vykup
 ---
 
 BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Sotib olish uchun Komfort avtomobillar > Chery Tiggo 4
 
-# Taksi uchun Chery Tiggo 4 ni sotib olish
+# Taksi uchun Chery Tiggo 4-ni sotib olish
 
 Old gʻildirak yuritmasi
 
@@ -22,7 +22,7 @@ kuniga 2022₽ dan
 
 [Кнопка: Hamkorlikni boshlash]
 
-## Taksi uchun Chery Tiggo 4 ni sotib olish huquqi bilan ijaraga olish
+## Taksi uchun Chery Tiggo 4-ni sotib olish huquqi bilan ijaraga olish
 
 Car Cityʼda taksida ishlash uchun qulay Komfort klassidagi avtomobillarni taklif qilamiz.
 
@@ -62,7 +62,7 @@ Taksi, yetkazib berish yoki shaxsiy maqsadlar uchun
 
 Chery Tiggo 4 – xitoylik ishlab chiqaruvchining eng ommabop modellaridan biri. Arzon ijara va oddiy xizmat koʻrsatish bilan bu krossover taksi haydovchisiga charchamasdan ishlash, har qanday yoʻlovchini, hatto yoʻllari yaxshi boʻlmagan joylarga ham olib borish imkonini beradi. Ixchamlik va krossoverlar uchun yengil vazn uning yurish xususiyatlarini yaxshilaydi, shuningdek shahar sharoitida yoqilgʻi tejashga yordam beradi.
 
-### Chery Tiggo 4 ni qulay sharoitda sotib olish
+### Chery Tiggo 4-ni qulay sharoitda sotib olish
 
 Avtomobil nafaqat haydovchi uchun yaxshi, balki yoʻlovchilar uchun ham qulay. Zamonaviy dizayndagi keng salonga toʻrt nafar yoʻlovchi bemalol sigʻadi. Bunga salonning aʼlo shovqin izolyatsiyasi va ravon yurishni qoʻshing: mijozlardan koʻplab ijobiy fikrlar olasiz, bu esa reytingingizni tez koʻtaradi.
 
@@ -70,7 +70,7 @@ Avtomobil nafaqat haydovchi uchun yaxshi, balki yoʻlovchilar uchun ham qulay. Z
 
 - Quvvati 147 o.k. boʻlgan benzinli dvigatel — barqaror tortish kuchi va dinamika.
 - 5 pogʻonali avtomat uzatmalar qutisi — ravon va qulay yurish.
-- 57 l li yoqilgʻi baki tez-tez yoqilgʻi quymasdan ishlash imkonini beradi.
+- 57 litrli yoqilgʻi baki tez-tez yoqilgʻi quymasdan ishlash imkonini beradi.
 - Maksimal tezlik — 190 km/soat.
 - Yoqilgʻi sarfi — 7,2 dan 8,0 l/100 km gacha.
 

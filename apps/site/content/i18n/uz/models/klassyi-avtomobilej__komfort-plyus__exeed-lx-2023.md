@@ -74,7 +74,7 @@ Salon sifatli materiallar bilan pardozlangan, asboblar paneli raqamli, boshqaruv
 
 ## Exeed LX ijarasi shartlari
 
-Car Cityʼda Exeed LX ni shaffof shartlarda ijaraga olasiz. Faqat liniyaga chiqqan kunlaringiz uchun toʻlaysiz, majburiy smenalar va bekor turish uchun jarimalarsiz. Texnik xizmat, yuvish, sugʻurta, mavsumiy shinalar – hammasini oʻz zimmamizga olamiz. Kelajakda ijaradan egalik qilishga oʻtmoqchi boʻlsangiz, keyinchalik sotib olish sharti bilan ijara opsiyasi ham mavjud.
+Car Cityʼda Exeed LXʼni shaffof shartlarda ijaraga olasiz. Faqat liniyaga chiqqan kunlaringiz uchun toʻlaysiz, majburiy smenalar va bekor turish uchun jarimalarsiz. Texnik xizmat, yuvish, sugʻurta, mavsumiy shinalar – hammasini oʻz zimmamizga olamiz. Kelajakda ijaradan egalik qilishga oʻtmoqchi boʻlsangiz, keyinchalik sotib olish sharti bilan ijara opsiyasi ham mavjud.
 
 ### Avtomobilni 3 qadamda qanday olish mumkin?
 

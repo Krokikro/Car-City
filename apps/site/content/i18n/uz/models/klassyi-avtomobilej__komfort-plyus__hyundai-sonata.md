@@ -65,7 +65,7 @@ Avtomobil ijarasi taksi sifatida safarlarning ishonchliligini kafolatlaydi. Salo
 
 ### Texnik xususiyatlar
 
-Hyundai Sonata sedaniga turli diametrli shinalar toʻplami oʻrnatilgan. Oldida R16, orqada esa R17 shinalar turadi, bu yuqoriroq oʻtagʻonlik va manyovrchanlikni taʼminlaydi. Hyundai Sonata ni quyidagi xususiyatlar bilan ijaraga olishingiz mumkin:
+Hyundai Sonata sedaniga turli diametrli shinalar toʻplami oʻrnatilgan. Oldida R16, orqada esa R17 shinalar turadi, bu yuqoriroq oʻtagʻonlik va manyovrchanlikni taʼminlaydi. Hyundai Sonataʼni quyidagi xususiyatlar bilan ijaraga olishingiz mumkin:
 
 - Benzin motorining quvvati 131 kVt
 - Aylanishlar soni daqiqasiga 6000
@@ -94,7 +94,7 @@ Taksi uchun Hyundai Sonata — xotirjam va daromadli ishga sarmoya.
 
 ## Hyundai Sonata ijarasi shartlari
 
-Taksi uchun Hyundai Sonata ni ortiqcha byurokratiyasiz ijaraga olish mumkin. Biz yangi boshlovchilar uchun ham, tajribali haydovchilar uchun ham shartlar taklif qilamiz. Ijara narxi tanlangan tarif va muddatga bogʻliq.
+Taksi uchun Hyundai Sonataʼni ortiqcha byurokratiyasiz ijaraga olish mumkin. Biz yangi boshlovchilar uchun ham, tajribali haydovchilar uchun ham shartlar taklif qilamiz. Ijara narxi tanlangan tarif va muddatga bogʻliq.
 
 ## Haydovchiga qoʻyiladigan talablar
 

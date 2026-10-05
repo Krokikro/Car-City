@@ -24,7 +24,7 @@ kuniga 2800₽ dan
 
 ## Kia K5 ijarasi shartlari
 
-Car Cityʼda taksi uchun Kia K5 ni ijaraga olishingiz mumkin. Avtomobillar agregatorlarga ulangan va rasmiylashtirilgan kuniyoq ishga tayyor. Narxga sugʻurta, texnik xizmat va kecha-kunduz yordam kiradi. Barcha mashinalar muntazam tekshiruvdan oʻtadi va aʼlo texnik holatda.
+Car Cityʼda taksi uchun Kia K5-ni ijaraga olishingiz mumkin. Avtomobillar agregatorlarga ulangan va rasmiylashtirilgan kuniyoq ishga tayyor. Narxga sugʻurta, texnik xizmat va kecha-kunduz yordam kiradi. Barcha mashinalar muntazam tekshiruvdan oʻtadi va aʼlo texnik holatda.
 
 | Model | Grafik 7/0 | Grafik 6/1 | Grafik 5/2 |
 |--------|------------|------------|------------|
@@ -51,7 +51,7 @@ Taksida qulay shartlarda ishlashda davom etib, avtomobilni oʻz mulkingizga rasm
 
 [Кнопка: Avtomobilni band qilish]
 
-Agar ish uchun qulay, kuchli va shu bilan birga tejamkor avtomobil izlayotgan boʻlsangiz, taksi uchun Kia K5 ijarasi — eng yaxshi variantlardan biri. Bu biznes-sedan nafaqat salobatli koʻrinadi, balki har kungi foydalanishga ham aʼlo bardosh beradi. Keng salon, aʼlo shovqin izolyatsiyasi va yuqori darajadagi jihozlanish Kia K5 ni taksi haydovchilari uchun ham, yoʻlovchilar uchun ham jozibali tanlovga aylantiradi.
+Agar ish uchun qulay, kuchli va shu bilan birga tejamkor avtomobil izlayotgan boʻlsangiz, taksi uchun Kia K5 ijarasi — eng yaxshi variantlardan biri. Bu biznes-sedan nafaqat salobatli koʻrinadi, balki har kungi foydalanishga ham aʼlo bardosh beradi. Keng salon, aʼlo shovqin izolyatsiyasi va yuqori darajadagi jihozlanish Kia K5-ni taksi haydovchilari uchun ham, yoʻlovchilar uchun ham jozibali tanlovga aylantiradi.
 
 ## Nega Kia K5 — taksi uchun aʼlo tanlov
 

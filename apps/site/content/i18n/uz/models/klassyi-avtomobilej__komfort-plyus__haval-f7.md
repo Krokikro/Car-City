@@ -24,7 +24,7 @@ kuniga 2800₽ dan
 
 ## CarCityʼda Haval F7 ijarasi narxi va shartlari
 
-Haval F7 ni ijaraga oling va ijarasi uchun bir tiyin ham ortiqcha toʻlamasdan, vaqtincha foydalanishga ishonchli va qulay avtomobilga ega boʻling. Kompaniya faqat mashinadan foydalanish vaqtiga bogʻliq boʻlgan moslashuvchan tarif shartlarini taklif qiladi:
+Haval F7-ni ijaraga oling va ijarasi uchun bir tiyin ham ortiqcha toʻlamasdan, vaqtincha foydalanishga ishonchli va qulay avtomobilga ega boʻling. Kompaniya faqat mashinadan foydalanish vaqtiga bogʻliq boʻlgan moslashuvchan tarif shartlarini taklif qiladi:
 
 | Model | Grafik 7/0 | Grafik 6/1 | Grafik 5/2 |
 |--------|------------|------------|------------|
@@ -71,7 +71,7 @@ Haval F7 barcha parametrlar boʻyicha muvozanatli: juda ogʻir emas, injiq emas,
 
 ## Car Cityʼda Haval F7 ijarasi shartlari
 
-Haval F7 ni moslashuvchan shartlarda taklif qilamiz – toʻlov grafigini tanlash va sotib olish imkoniyati bilan. Depozit toʻlash, sugʻurta, texnik xizmat yoki sarf materiallari haqida qaygʻurish shart emas. Mashina ishga toʻliq tayyor – litsenziyali, xizmatdan oʻtgan, toza, yoqilgʻi quyilgan.
+Haval F7-ni moslashuvchan shartlarda taklif qilamiz – toʻlov grafigini tanlash va sotib olish imkoniyati bilan. Depozit toʻlash, sugʻurta, texnik xizmat yoki sarf materiallari haqida qaygʻurish shart emas. Mashina ishga toʻliq tayyor – litsenziyali, xizmatdan oʻtgan, toza, yoqilgʻi quyilgan.
 
 ### Avtomobilni 3 qadamda qanday olish mumkin?
 
@@ -89,7 +89,7 @@ Haval F7 ni moslashuvchan shartlarda taklif qilamiz – toʻlov grafigini tanlas
 - Yordam. Pul topishga yordam beramiz: oʻqitish, dasturlar bilan yordam, kecha-kunduz qoʻllab-quvvatlash.
 - Bonuslar. Yangi haydovchilar uchun muntazam aksiyalar va sovgʻalar oʻyini.
 
-Haval F7 taksida ishlash uchun mos: keng salon, tejamkor sarf, chiqishga hamma narsa tayyor. Mashina xizmatdan oʻtgan, litsenziyasi va dasturiy taʼminoti bor. Grafik va taksoparkni oʻzingiz tanlaysiz. Faqat ishlagan kunlaringiz uchun toʻlaysiz. Haval F7 ni sotib olish sharti bilan olish mumkin – asta-sekin toʻlab, egasiga aylanasiz.
+Haval F7 taksida ishlash uchun mos: keng salon, tejamkor sarf, chiqishga hamma narsa tayyor. Mashina xizmatdan oʻtgan, litsenziyasi va dasturiy taʼminoti bor. Grafik va taksoparkni oʻzingiz tanlaysiz. Faqat ishlagan kunlaringiz uchun toʻlaysiz. Haval F7-ni sotib olish sharti bilan olish mumkin – asta-sekin toʻlab, egasiga aylanasiz.
 
 ## Haydovchiga qoʻyiladigan talablar
 

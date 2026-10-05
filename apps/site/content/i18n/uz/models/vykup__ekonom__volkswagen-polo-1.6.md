@@ -1,14 +1,14 @@
 ---
 url: https://car-city.pro/vykup/ekonom/volkswagen-polo-1.6
-title: "Moskvada taksida ishlash uchun Volkswagen Polo ni sotib olish | Car City"
-h1: "Taksi uchun Volkswagen Polo ni sotib olish"
+title: "Moskvada taksida ishlash uchun Volkswagen Poloʼni sotib olish | Car City"
+h1: "Taksi uchun Volkswagen Poloʼni sotib olish"
 class: ekonom
 mode: vykup
 ---
 
 BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Sotib olish uchun Ekonom avtomobillar > Volkswagen Polo
 
-# Taksi uchun Volkswagen Polo ni sotib olish
+# Taksi uchun Volkswagen Poloʼni sotib olish
 
 Old gʻildirak yuritmasi
 
@@ -22,7 +22,7 @@ kuniga 2150₽ dan
 
 [Кнопка: Hamkorlikni boshlash]
 
-## Taksi uchun Volkswagen Polo 1.6 ni sotib olish huquqi bilan ijaraga olish
+## Taksi uchun Volkswagen Polo 1.6-ni sotib olish huquqi bilan ijaraga olish
 
 Car Cityʼda taksida ishlash uchun foydali Ekonom klassidagi avtomobillarni taklif qilamiz.
 

@@ -22,9 +22,9 @@ kuniga 2000₽ dan
 
 [Кнопка: Hamkorlikni boshlash]
 
-## Komfort klassidagi Omoda S5 ni taksi uchun ijaraga olish
+## Komfort klassidagi Omoda S5-ni taksi uchun ijaraga olish
 
-Car Cityʼda Omoda S5 ni taksida ishlash uchun ijaraga olishingiz mumkin. Avtomobil har kungi safarlarga tayyorlangan. Ijara haqi qatʼiy, Car City mutaxassislari esa kecha-kunduz texnik yordam koʻrsatadi.
+Car Cityʼda Omoda S5-ni taksida ishlash uchun ijaraga olishingiz mumkin. Avtomobil har kungi safarlarga tayyorlangan. Ijara haqi qatʼiy, Car City mutaxassislari esa kecha-kunduz texnik yordam koʻrsatadi.
 
 ## Komfort klassidagi Omoda S 5 avtomobili narxlari
 
@@ -85,7 +85,7 @@ Bizga yozing
 
 OMODA S5 — ifodali kupesimon kuzov va zamonaviy dizaynga ega besh oʻrinli sedan. Keng va qulay salon haydovchiga ham, yoʻlovchilarga ham qulaylik yaratadi: oʻrindiqlar oson sozlanadi, multimedia tizimi bor, panorama oynasi esa safar davomida yaxshi koʻrinish beradi. Ergonomikasi va puxta oʻylangan komplektatsiyasi tufayli OMODA S5 taksida ishlash uchun aʼlo mos keladi, uzoq safarlarda ham, shaharda har kungi foydalanishda ham qulaylikni taʼminlaydi.
 
-## OMODA S5 ni qulay sharoitda ijaraga olish
+## OMODA S5-ni qulay sharoitda ijaraga olish
 
 Mashina «Komfort» klassiga kiradi, bu uning toʻliq komplektatsiyasidan dalolat beradi. Salonda klimat-nazorat tizimlari, harorat, namlik va konditsionerlash datchiklari hamda regulyatorlari oʻrnatilgan.
 
@@ -95,15 +95,15 @@ Bundan tashqari, taksi uchun OMODA S5 ijarasi estetik jihatdan ham foydali. Sifa
 
 ## Texnik xususiyatlar
 
-OMODA S5 modelini ijaraga olish tezlik, quvvat va ishonchlilikka oʻrganganlar uchun qulay. Texnik xususiyatlari avtomobilni atigi 9,7 soniyada 100 km/soat gacha tezlashtirish imkonini beradi. U tez tezlik oladi va maksimal qiymatga – soatiga 180 km gacha yetadi. Yoʻlovchilar yuklarini olishlari mumkin, ular 482 l li keng yukxonaga bemalol sigʻadi.
+OMODA S5 modelini ijaraga olish tezlik, quvvat va ishonchlilikka oʻrganganlar uchun qulay. Texnik xususiyatlari avtomobilni atigi 9,7 soniyada 100 km/soat gacha tezlashtirish imkonini beradi. U tez tezlik oladi va maksimal qiymatga – soatiga 180 km gacha yetadi. Yoʻlovchilar yuklarini olishlari mumkin, ular 482 litrli keng yukxonaga bemalol sigʻadi.
 
-Tez va ishonchli yurishga OMODA S5 ning boshqa texnik parametrlari ham yordam beradi:
+Tez va ishonchli yurishga OMODA S5-ning boshqa texnik parametrlari ham yordam beradi:
 
 - Dvigatel quvvati 147 o.k.
 - Transmissiya – variator
 - Gʻildirak bazasi 2650 mm
 
-121 mm klirens esa silkinishlarsiz ravon harakatlanish imkonini beradi. 48 l li yoqilgʻi baki aralash siklda sarflanganda bir necha kunlik taksi xizmatiga yetadi.
+121 mm klirens esa silkinishlarsiz ravon harakatlanish imkonini beradi. 48 litrli yoqilgʻi baki aralash siklda sarflanganda bir necha kunlik taksi xizmatiga yetadi.
 
 ### Avtomobilni 3 qadamda qanday olish mumkin?
 

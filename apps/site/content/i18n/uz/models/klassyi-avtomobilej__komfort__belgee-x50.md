@@ -22,7 +22,7 @@ kuniga 2400₽ dan
 
 [Кнопка: Hamkorlikni boshlash]
 
-## Komfort klassidagi Belgee X50 ni taksi uchun ijaraga olish
+## Komfort klassidagi Belgee X50-ni taksi uchun ijaraga olish
 
 <!-- текст вводного абзаца WebFetch отдал только пересказом: «Belgee X50 в такси — компактный и удобный кроссовер комфорт-класса, подходящий для ежедневной работы в городе» + про техподготовку, страховку и помощь с подключением к агрегаторам без залогов и скрытых комиссий. Сверить с сайтом. -->
 
@@ -61,11 +61,11 @@ Taksida qulay shartlarda ishlashda davom etib, avtomobilni oʻz mulkingizga rasm
 
 ## Belgee X50 avtomobili haqida
 
-Belgee X50 ning tashqi koʻrinishi ixcham krossoverning dinamik dizaynini har kungi foydalanish uchun amaliylik bilan uygʻunlashtiradi. Ifodali old qism, ozoda faralar va ixcham oʻlchamlar avtomobilni shahar uchun ham, taksida ishlash uchun ham qulay qiladi.
+Belgee X50-ning tashqi koʻrinishi ixcham krossoverning dinamik dizaynini har kungi foydalanish uchun amaliylik bilan uygʻunlashtiradi. Ifodali old qism, ozoda faralar va ixcham oʻlchamlar avtomobilni shahar uchun ham, taksida ishlash uchun ham qulay qiladi.
 
 Belgee X50 saloni zamonaviy uslubda ishlangan va haydovchi hamda yoʻlovchilar nuqtai nazaridan yaxshi oʻylangan. Qulay oʻtirish holati, sifatli pardozlash materiallari, multimedia tizimi va salondagi yetarli joy uzoq smenalarni ham rul ortida qulay oʻtkazishga yordam beradi.
 
-### Belgee X50 ni qulay sharoitda ijaraga olish
+### Belgee X50-ni qulay sharoitda ijaraga olish
 
 Belgee X50 interyeri har kungi foydalanishdagi qulaylikka moʻljallangan. Salonda yoʻlovchilar uchun yetarli joy bor, yukxona esa chamadonlar, sumkalar va boshqa yuklarni tashish uchun mos.
 

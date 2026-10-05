@@ -57,7 +57,7 @@ Taksi, yetkazib berish yoki shaxsiy maqsadlar uchun
 
 ## Sollers Atlant 1.9 TD avtomobili haqida
 
-Sollers Atlant 1.9TD ning tashqi koʻrinishi – amaliylik va zamonaviy sanoat dizaynining uygʻunligi. Toʻgʻri chiziqlar, kuchli old panjara va baland gʻildirak arkalari ishonchlilik hamda jiddiy yuklamalarga tayyorlikni taʼkidlaydi. Uning qiyofasi ishonch uygʻotadi – bu ish uchun yaratilgan mehnatkash mashina.
+Sollers Atlant 1.9TDʼning tashqi koʻrinishi – amaliylik va zamonaviy sanoat dizaynining uygʻunligi. Toʻgʻri chiziqlar, kuchli old panjara va baland gʻildirak arkalari ishonchlilik hamda jiddiy yuklamalarga tayyorlikni taʼkidlaydi. Uning qiyofasi ishonch uygʻotadi – bu ish uchun yaratilgan mehnatkash mashina.
 
 Sollers Atlant interyeri jiddiy, funksional va eng mayda detallarigacha oʻylangan. Ergonomik asboblar paneli, yeyilishga chidamli pardozlash materiallari va qulay oʻrindiqlar uzoq ishlaganda ham qulay sharoit yaratadi. Markaziy konsol zamonaviy multimedia ekrani va iqlim nazorati tizimi bilan jihozlangan – ishonchli biznes hamkorida boʻlishi kerak boʻlganidek, hammasi qoʻl ostida.
 

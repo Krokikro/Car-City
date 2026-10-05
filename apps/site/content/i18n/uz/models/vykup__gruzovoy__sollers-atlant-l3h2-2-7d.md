@@ -1,14 +1,14 @@
 ---
 url: https://car-city.pro/vykup/gruzovoy/sollers-atlant-l3h2-2-7d
-title: "Moskvada Sollers Atlant L3H2 2.7D ni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
-h1: "Sollers Atlant L3H2 2.7D ni sotib olish"
+title: "Moskvada Sollers Atlant L3H2 2.7Dʼni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
+h1: "Sollers Atlant L3H2 2.7Dʼni sotib olish"
 class: gruzovoy
 mode: vykup
 ---
 
 BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Sollers Atlant L3H2 2.7D
 
-# Sollers Atlant L3H2 2.7D ni sotib olish
+# Sollers Atlant L3H2 2.7Dʼni sotib olish
 
 Umumiy uzunligi 5 990 mm
 
@@ -22,7 +22,7 @@ kuniga 4420₽ dan
 
 [Кнопка: Avtomobilni 30 daqiqada olish]
 
-## Yuk tarifi uchun Sollers Atlant L3H2 2.7D ni sotib olish huquqi bilan ijaraga olish
+## Yuk tarifi uchun Sollers Atlant L3H2 2.7Dʼni sotib olish huquqi bilan ijaraga olish
 
 Car Cityʼda Yuk tarifi uchun qulay avtomobillarni taklif qilamiz
 
@@ -61,7 +61,7 @@ Taksi, yetkazib berish yoki shaxsiy maqsadlar uchun
 
 ## Sollers Atlant L3H2 2.7D avtomobili haqida
 
-Hajmi 2.7 l (150 o.k.) dizel dvigatelli, 6 pogʻonali mexanik transmissiya va orqa gʻildirak yuritmasi bilan jihozlangan Sollers Atlant L3H2 ning tashqi koʻrinishi uning ish uchun moʻljallanganini taʼkidlaydi. Toʻgʻri va sodda chiziqlar, baland tom va katta oʻlchamlar (5990 mm × 2098 mm × 2675 mm) logistika uchun keng imkoniyatlarga ega ishonchli yuk furgoni ekanidan dalolat beradi.
+Hajmi 2.7 l (150 o.k.) dizel dvigatelli, 6 pogʻonali mexanik transmissiya va orqa gʻildirak yuritmasi bilan jihozlangan Sollers Atlant L3H2-ning tashqi koʻrinishi uning ish uchun moʻljallanganini taʼkidlaydi. Toʻgʻri va sodda chiziqlar, baland tom va katta oʻlchamlar (5990 mm × 2098 mm × 2675 mm) logistika uchun keng imkoniyatlarga ega ishonchli yuk furgoni ekanidan dalolat beradi.
 
 Kapot ostida — 3200 ayl/daq da 150 o.k. (110 kVt) quvvatli va 2600 ayl/daq da 355 N·m maksimal aylantiruvchi momentli turbonadduvli HFC4DE1-1D dizel motori. Yevro-5 ekologik standarti va Common Rail texnologiyasi samarali ishlash va yoqilgʻi tejamkorligini taʼminlaydi Drom.
 

@@ -1,14 +1,14 @@
 ---
 url: https://car-city.pro/vykup/biznes/Gac-M8
-title: "Moskvada taksida ishlash uchun GAC M8 ni sotib olish | Car City"
-h1: "GAC M8 ni sotib olish"
+title: "Moskvada taksida ishlash uchun GAC M8-ni sotib olish | Car City"
+h1: "GAC M8-ni sotib olish"
 class: biznes
 mode: vykup
 ---
 
 BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > GAC M8
 
-# GAC M8 ni sotib olish
+# GAC M8-ni sotib olish
 
 Old gʻildirak yuritmasi
 
@@ -22,9 +22,9 @@ kuniga 7635₽ dan
 
 [Кнопка: Avtomobilni 30 daqiqada olish]
 
-## Taksida ishlash uchun GAC M8 ni sotib olish
+## Taksida ishlash uchun GAC M8-ni sotib olish
 
-Car City sizga taksida GAC M8 da ishlash imkoniyatini ochadi — qulay safarlar, oilaviy buyurtmalar, transferlar va xizmat darajasiga yuqori talab qoʻyadigan mijozlar uchun mos keng premium miniven.
+Car City sizga taksida GAC M8-da ishlash imkoniyatini ochadi — qulay safarlar, oilaviy buyurtmalar, transferlar va xizmat darajasiga yuqori talab qoʻyadigan mijozlar uchun mos keng premium miniven.
 
 Avtomobillarni ishga toʻliq tayyor holda beramiz: texnik xizmat va kimyoviy tozalashdan keyin. Yashirin toʻlovlarsiz tushunarli ijara shartlarini taklif qilamiz, liniyaga tez chiqishga yordam beramiz va 24/7 aloqada boʻlamiz — avtomobilda xotirjam ishlashingiz uchun.
 
@@ -54,9 +54,9 @@ Taksi, yetkazib berish yoki shaxsiy maqsadlar uchun
 
 ## Gac M8 avtomobili haqida
 
-GAC M8 ning tashqi koʻrinishi uning premium xarakteri va qulay yoʻlovchi tashishga moʻljallanganini taʼkidlaydi. Katta kuzov, massiv radiator panjarasi, ifodali faralar va keng salon avtomobilni yuqori klassdagi taksi, transferlar, ish safarlari va oilalarni tashish uchun mos qiladi. Uch qatorli joylashuv yetti nafargacha yoʻlovchini qulay joylashtirish imkonini beradi, ikkinchi qatordagi alohida oʻrindiqlar esa uzoq safarlarda yuqori qulaylikni taʼminlaydi.
+GAC M8-ning tashqi koʻrinishi uning premium xarakteri va qulay yoʻlovchi tashishga moʻljallanganini taʼkidlaydi. Katta kuzov, massiv radiator panjarasi, ifodali faralar va keng salon avtomobilni yuqori klassdagi taksi, transferlar, ish safarlari va oilalarni tashish uchun mos qiladi. Uch qatorli joylashuv yetti nafargacha yoʻlovchini qulay joylashtirish imkonini beradi, ikkinchi qatordagi alohida oʻrindiqlar esa uzoq safarlarda yuqori qulaylikni taʼminlaydi.
 
-GAC M8 ravon yurish, yaxshi dinamika va yuqori darajadagi jihozlanishni uygʻunlashtiradi. Kuchli benzinli dvigatel, avtomat uzatmalar qutisi va qulay sozlangan osma zich shahar oqimida ham, trassada ham oʻzingizni ishonchli his qilish imkonini beradi. Keng salon, yaxshi shovqin izolyatsiyasi, iqlim tizimi va qulay yoʻlovchi oʻrindiqlari M8 ni liniyada uzoq ishlash uchun amaliy avtomobilga aylantiradi. Sigʻimi va salobatli koʻrinishi tufayli model yoʻlovchilar qulayligi va yuqori xizmat darajasi ayniqsa muhim boʻlgan buyurtmalar uchun juda mos.
+GAC M8 ravon yurish, yaxshi dinamika va yuqori darajadagi jihozlanishni uygʻunlashtiradi. Kuchli benzinli dvigatel, avtomat uzatmalar qutisi va qulay sozlangan osma zich shahar oqimida ham, trassada ham oʻzingizni ishonchli his qilish imkonini beradi. Keng salon, yaxshi shovqin izolyatsiyasi, iqlim tizimi va qulay yoʻlovchi oʻrindiqlari M8-ni liniyada uzoq ishlash uchun amaliy avtomobilga aylantiradi. Sigʻimi va salobatli koʻrinishi tufayli model yoʻlovchilar qulayligi va yuqori xizmat darajasi ayniqsa muhim boʻlgan buyurtmalar uchun juda mos.
 
 <!-- в заголовке «Об авто Gac M8» регистр отличается от «GAC M8» в остальном тексте -->
 

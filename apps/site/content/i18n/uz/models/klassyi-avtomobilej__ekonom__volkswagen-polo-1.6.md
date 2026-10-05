@@ -25,7 +25,7 @@ BREADCRUMBS: Bosh sahifa > Ekonom > Volkswagen Polo 1.6
 
 [Кнопка: Hamkorlikni boshlash]
 
-Taksi uchun Volkswagen Polo ni ijaraga tanlab, oʻzingiz va yoʻlovchilar uchun qulaylikka hamda avtomobil shahar ritmining kundalik yuklamalariga bardosh berishiga ishonchga ega boʻlasiz. Bu modelni boshqarish qulay, u yoqilgʻini tejaydi va tez-tez texnik xizmat talab qilmaydi.
+Taksi uchun Volkswagen Poloʼni ijaraga tanlab, oʻzingiz va yoʻlovchilar uchun qulaylikka hamda avtomobil shahar ritmining kundalik yuklamalariga bardosh berishiga ishonchga ega boʻlasiz. Bu modelni boshqarish qulay, u yoqilgʻini tejaydi va tez-tez texnik xizmat talab qilmaydi.
 
 ## Nega Volkswagen Polo taksida ishlash uchun mos keladi?
 
@@ -38,7 +38,7 @@ Texnik xususiyatlar:
 - Yoqilgʻi sarfi: 100 km ga 5,8 l dan — doimiy ish uchun tejamkor.
 - Hajmi 460 l boʻlgan yukxona — chamadonlar va posilkalar uchun yetarli joy.
 
-## Taksi uchun Polo ni tanlashning afzalliklari
+## Taksi uchun Poloʼni tanlashning afzalliklari
 
 Mana nima uchun Volkswagen Polo taksi ijarasida barqaror talabga ega:
 
@@ -48,7 +48,7 @@ Mana nima uchun Volkswagen Polo taksi ijarasida barqaror talabga ega:
 - Qulay salon. Qulay oʻtirish holati, tushunarli ergonomika, navigatsiyani qoʻllab-quvvatlaydigan multimedia.
 - Agregatorlarning ijobiy munosabati. Model koʻpchilik taksi servislarining oq roʻyxatlariga kiradi.
 
-Taksida ishlash uchun Polo ni ijaraga olishga qaror qildingizmi? Bu avtomobil buyurtmalar oqimida pand bermaydi va yoqilgʻi quyish hamda taʼmirda sizni xonavayron qilmaydi.
+Taksida ishlash uchun Poloʼni ijaraga olishga qaror qildingizmi? Bu avtomobil buyurtmalar oqimida pand bermaydi va yoqilgʻi quyish hamda taʼmirda sizni xonavayron qilmaydi.
 
 ## Ijara shartlari
 

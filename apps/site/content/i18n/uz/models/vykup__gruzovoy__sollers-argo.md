@@ -1,7 +1,7 @@
 ---
 url: https://car-city.pro/vykup/gruzovoy/sollers-argo
-title: "Moskvada Sollers Argo ni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
-h1: "Sollers Argo ni sotib olish"
+title: "Moskvada Sollers Argoʼni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
+h1: "Sollers Argoʼni sotib olish"
 class: gruzovoy
 mode: vykup
 ---
@@ -10,7 +10,7 @@ mode: vykup
 
 BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Sollers Argo
 
-# Sollers Argo ni sotib olish
+# Sollers Argoʼni sotib olish
 
 Umumiy uzunligi 5 990 mm
 
@@ -24,7 +24,7 @@ kuniga 4274₽ dan
 
 [Кнопка: Avtomobilni 30 daqiqada olish]
 
-## Yuk tarifi uchun Sollers Argo ni sotib olish huquqi bilan ijaraga olish
+## Yuk tarifi uchun Sollers Argoʼni sotib olish huquqi bilan ijaraga olish
 
 Car Cityʼda Yuk tarifi uchun qulay avtomobillarni taklif qilamiz
 

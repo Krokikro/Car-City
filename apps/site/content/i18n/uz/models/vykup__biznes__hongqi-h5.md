@@ -1,14 +1,14 @@
 ---
 url: https://car-city.pro/vykup/biznes/Hongqi-H5
-title: "Moskvada taksida ishlash uchun Hongqi H5 ni sotib olish | Car City"
-h1: "Hongqi H5 ni sotib olish"
+title: "Moskvada taksida ishlash uchun Hongqi H5-ni sotib olish | Car City"
+h1: "Hongqi H5-ni sotib olish"
 class: biznes
 mode: vykup
 ---
 
 BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Hongqi H5
 
-# Hongqi H5 ni sotib olish
+# Hongqi H5-ni sotib olish
 
 Old gʻildirak yuritmasi
 
@@ -22,9 +22,9 @@ kuniga 5260₽ dan
 
 [Кнопка: Avtomobilni 30 daqiqada olish]
 
-## Taksida ishlash uchun Hongqi H5 ni sotib olish
+## Taksida ishlash uchun Hongqi H5-ni sotib olish
 
-Car City sizga taksida Hongqi H5 da ishlash imkoniyatini ochadi — keng salon, yuqori qulaylik va salobatli koʻrinishga ega vakillik sedani.
+Car City sizga taksida Hongqi H5-da ishlash imkoniyatini ochadi — keng salon, yuqori qulaylik va salobatli koʻrinishga ega vakillik sedani.
 
 Avtomobillarni ishga toʻliq tayyor holda beramiz: texnik xizmat va kimyoviy tozalashdan keyin. Yashirin toʻlovlarsiz tushunarli ijara shartlarini taklif qilamiz, liniyaga tez chiqishga yordam beramiz va 24/7 aloqada boʻlamiz — xotirjam ishlashingiz va buyurtmalarda koʻproq vaqt oʻtkazishingiz uchun.
 
@@ -58,9 +58,9 @@ Taksi, yetkazib berish yoki shaxsiy maqsadlar uchun
 
 ## Hongqi H5 avtomobili haqida
 
-Hongqi H5 ning tashqi koʻrinishi uning vakillik xarakteri va qulay yoʻlovchi tashishga moʻljallanganini taʼkidlaydi. Ifodali old qism, katta radiator panjarasi, jiddiy faralar va choʻzinchoq siluet avtomobilni yuqori klassdagi taksi, ish safarlari va transferlar uchun ayniqsa mos qiladi. Keng salon haydovchiga ham, yoʻlovchilarga ham qulaylik yaratadi, ikkinchi qatordagi kattalashtirilgan joy esa uzoq safarlar uchun qulay.
+Hongqi H5-ning tashqi koʻrinishi uning vakillik xarakteri va qulay yoʻlovchi tashishga moʻljallanganini taʼkidlaydi. Ifodali old qism, katta radiator panjarasi, jiddiy faralar va choʻzinchoq siluet avtomobilni yuqori klassdagi taksi, ish safarlari va transferlar uchun ayniqsa mos qiladi. Keng salon haydovchiga ham, yoʻlovchilarga ham qulaylik yaratadi, ikkinchi qatordagi kattalashtirilgan joy esa uzoq safarlar uchun qulay.
 
-Hongqi H5 yaxshi dinamika, ravon yurish va yuqori darajadagi jihozlanishni uygʻunlashtiradi. Turboli benzinli dvigatel, avtomat uzatmalar qutisi va qulay sozlangan osma shahar oqimida ham, trassada ham oʻzingizni ishonchli his qilish imkonini beradi. Sifatli shovqin izolyatsiyasi, iqlim tizimi, qulay oʻrindiqlar va boy jihozlanish H5 ni liniyada har kungi ish uchun qulay avtomobilga aylantiradi. Salobatli koʻrinishi va keng saloni tufayli model yoʻlovchilar qulayligi va yuqori xizmat darajasi muhim boʻlgan buyurtmalar uchun juda mos.
+Hongqi H5 yaxshi dinamika, ravon yurish va yuqori darajadagi jihozlanishni uygʻunlashtiradi. Turboli benzinli dvigatel, avtomat uzatmalar qutisi va qulay sozlangan osma shahar oqimida ham, trassada ham oʻzingizni ishonchli his qilish imkonini beradi. Sifatli shovqin izolyatsiyasi, iqlim tizimi, qulay oʻrindiqlar va boy jihozlanish H5-ni liniyada har kungi ish uchun qulay avtomobilga aylantiradi. Salobatli koʻrinishi va keng saloni tufayli model yoʻlovchilar qulayligi va yuqori xizmat darajasi muhim boʻlgan buyurtmalar uchun juda mos.
 
 ## Avtomobilni 3 qadamda qanday olish mumkin?
 

@@ -1,14 +1,14 @@
 ---
 url: https://car-city.pro/vykup/komfort-plyus/kia-k5
-title: "Moskvada taksida ishlash uchun Kia K5 ni sotib olish | Car City"
-h1: "Taksi uchun Kia K5 ni sotib olish"
+title: "Moskvada taksida ishlash uchun Kia K5-ni sotib olish | Car City"
+h1: "Taksi uchun Kia K5-ni sotib olish"
 class: komfort-plyus
 mode: vykup
 ---
 
 BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Sotib olish uchun Komfort+ avtomobillar > Kia K5
 
-# Taksi uchun Kia K5 ni sotib olish
+# Taksi uchun Kia K5-ni sotib olish
 
 Old gʻildirak yuritmasi
 
@@ -22,7 +22,7 @@ kuniga 3420₽ dan
 
 [Кнопка: Hamkorlikni boshlash]
 
-## Taksi uchun Kia K5 ni sotib olish huquqi bilan ijaraga olish
+## Taksi uchun Kia K5-ni sotib olish huquqi bilan ijaraga olish
 
 Kia K5 Car Cityʼda sotib olish dasturi boʻyicha mavjud — taksida Komfort+ klassidagi avtomobilda ishlang va qisqa muddatda uning egasiga aylaning. Barcha transport vositalari muntazam texnik xizmatdan oʻtadi, Car City jamoasi esa yordam uchun doim aloqada.
 
@@ -55,11 +55,11 @@ Taksi, yetkazib berish yoki shaxsiy maqsadlar uchun
 
 [Кнопка: Hisob-kitobni olish]
 
-Car Cityʼda taksi uchun Kia K5 ni sotib olish imkoniyati bilan ijaraga olishingiz mumkin. Shartnoma tuzasiz, mashinada ishlaysiz, faqat ijara kunlari uchun toʻlaysiz — va asta-sekin egasiga aylanasiz. Rasmiy, depozitlarsiz, buyurtmalar boʻyicha talablarsiz va yashirin shartlarsiz.
+Car Cityʼda taksi uchun Kia K5-ni sotib olish imkoniyati bilan ijaraga olishingiz mumkin. Shartnoma tuzasiz, mashinada ishlaysiz, faqat ijara kunlari uchun toʻlaysiz — va asta-sekin egasiga aylanasiz. Rasmiy, depozitlarsiz, buyurtmalar boʻyicha talablarsiz va yashirin shartlarsiz.
 
 ## Kia K5 – taksi uchun ijara va sotib olishga qulay sedan
 
-Avtomobil oqimda oʻzini aʼlo his qiladi, trassada ishonchli yuradi va shaharda xotirjam harakatlanadi. Salon keng, haydovchi uchun ham, yoʻlovchilar uchun ham qulay. Yumshoq osma, sezgir boshqaruv va salondagi sokinlik tufayli Kia K5 da uzoq smenada ishlash qulay. Mashina salobatli koʻrinadi, silkinishlarsiz va kutilmagan syurprizlarsiz ishlaydi.
+Avtomobil oqimda oʻzini aʼlo his qiladi, trassada ishonchli yuradi va shaharda xotirjam harakatlanadi. Salon keng, haydovchi uchun ham, yoʻlovchilar uchun ham qulay. Yumshoq osma, sezgir boshqaruv va salondagi sokinlik tufayli Kia K5-da uzoq smenada ishlash qulay. Mashina salobatli koʻrinadi, silkinishlarsiz va kutilmagan syurprizlarsiz ishlaydi.
 
 Salon sifatli pardozlangan. Klimat-nazorat, isitgichlar, smartfonni qoʻllab-quvvatlaydigan ekran, puxta oʻylangan saqlash joylari — hech narsani qoʻshimcha qilish yoki oʻzingizga moslashtirish shart emas.
 
@@ -75,7 +75,7 @@ Kia K5 shahar sharoitiga oson moslashadi va tez-tez xizmat koʻrsatishni talab q
 
 ## Ijara va sotib olish shartlari
 
-Siz Kia K5 ni keyinchalik sotib olish imkoniyati bilan ijaraga olasiz. Yashirin toʻlovlar, depozitlar yoki «liniyaga chiqmaganlik» uchun jarimalarsiz. Faqat ishlagan kunlaringiz uchun toʻlaysiz. 3 ta ijara grafigi bor – sizga moslab tanlaymiz. Kia K5 ni sotib olish maʼlum muddatdan keyin mumkin.
+Siz Kia K5-ni keyinchalik sotib olish imkoniyati bilan ijaraga olasiz. Yashirin toʻlovlar, depozitlar yoki «liniyaga chiqmaganlik» uchun jarimalarsiz. Faqat ishlagan kunlaringiz uchun toʻlaysiz. 3 ta ijara grafigi bor – sizga moslab tanlaymiz. Kia K5-ni sotib olish maʼlum muddatdan keyin mumkin.
 
 ### Avtomobilni 3 qadamda qanday olish mumkin?
 
@@ -85,7 +85,7 @@ Siz Kia K5 ni keyinchalik sotib olish imkoniyati bilan ijaraga olasiz. Yashirin 
 
 ## Nega Car City bilan qulay
 
-- Mashina ishga tayyor. Kia K5 ni soz holatda, texnik xizmatdan oʻtgan, toza salon va toʻla bak bilan ijaraga olasiz.
+- Mashina ishga tayyor. Kia K5-ni soz holatda, texnik xizmatdan oʻtgan, toza salon va toʻla bak bilan ijaraga olasiz.
 - Moslashuvchan shartlar. Qachon ishlashni oʻzingiz tanlaysiz. Ijara haqini faqat chiqqan kunlaringiz uchun toʻlaysiz. Soatlar va smenalar soni boʻyicha bosim yoʻq.
 - Tanlov erkinligi. Istalgan taksoparkda ishlashingiz mumkin. Biz sizni muayyan platformaga bogʻlab qoʻymaymiz, lekin xohlasangiz qayerda buyurtmalar koʻproq ekanini aytib beramiz.
 - Hammasi kiritilgan. Kerakli dasturiy taʼminotni beramiz, dastlabki sozlashda yordam beramiz, oʻqitishni taklif qilamiz.

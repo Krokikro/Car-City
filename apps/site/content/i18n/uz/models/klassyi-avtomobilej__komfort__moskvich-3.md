@@ -22,7 +22,7 @@ kuniga 2000₽ dan
 
 [Кнопка: Hamkorlikni boshlash]
 
-## Komfort klassidagi Москвич 3 ni taksi uchun ijaraga olish
+## Komfort klassidagi Москвич 3-ni taksi uchun ijaraga olish
 
 Car Cityʼda taksida ishlash uchun qulay Komfort klassidagi avtomobillarni taklif qilamiz.
 
@@ -65,7 +65,7 @@ Yangi Москвич 3 modeli – dizayndagi uslub va yengillik, sport siluet va
 
 Avtomobil zamonaviy svetodiodli faralar, elektr yuritmali va pardali lyuk, puxta oʻylangan xavfsizlik tizimi bilan jihozlangan. Avtomobilning keng va qulay saloni (balandligi 1,66 m, eni – 1,8 m) taksida ishlash va turli safarlar uchun ideal. Hajmi 520 l boʻlgan keng yukxonaga sayohat yoki koʻchish uchun kerakli hamma narsani joylash mumkin.
 
-### Москвич 3 ni qulay sharoitda ijaraga olish
+### Москвич 3-ni qulay sharoitda ijaraga olish
 
 Avtomobil taksida ishlash, shahar ichidagi safarlar va uzoq masofali sayohatlar uchun ideal.
 

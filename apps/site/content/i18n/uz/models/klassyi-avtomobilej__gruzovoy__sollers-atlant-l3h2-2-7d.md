@@ -59,7 +59,7 @@ Taksi, yetkazib berish yoki shaxsiy maqsadlar uchun
 
 ## Sollers Atlant L3H2 2.7D avtomobili haqida
 
-Hajmi 2.7 l (150 o.k.) dizel dvigatelli, 6 pogʻonali mexanik transmissiya va orqa gʻildirak yuritmasi bilan jihozlangan Sollers Atlant L3H2 ning tashqi koʻrinishi uning ish uchun moʻljallanganini taʼkidlaydi. Toʻgʻri va sodda chiziqlar, baland tom va katta oʻlchamlar (5990 mm × 2098 mm × 2675 mm) logistika uchun keng imkoniyatlarga ega ishonchli yuk furgoni ekanidan dalolat beradi.
+Hajmi 2.7 l (150 o.k.) dizel dvigatelli, 6 pogʻonali mexanik transmissiya va orqa gʻildirak yuritmasi bilan jihozlangan Sollers Atlant L3H2-ning tashqi koʻrinishi uning ish uchun moʻljallanganini taʼkidlaydi. Toʻgʻri va sodda chiziqlar, baland tom va katta oʻlchamlar (5990 mm × 2098 mm × 2675 mm) logistika uchun keng imkoniyatlarga ega ishonchli yuk furgoni ekanidan dalolat beradi.
 
 Kapot ostida — 3200 ayl/daq da 150 o.k. (110 kVt) quvvatli va 2600 ayl/daq da 355 N·m maksimal aylantiruvchi momentli turbonadduvli HFC4DE1-1D dizel motori. Yevro-5 ekologik standarti va Common Rail texnologiyasi samarali ishlash va yoqilgʻi tejamkorligini taʼminlaydi Drom.
 
