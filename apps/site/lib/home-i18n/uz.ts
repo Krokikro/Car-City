@@ -1,4 +1,171 @@
 import type { HomeText } from "../home-text";
 
-// Перевод главной. Пока null — показываем русский текст.
-export const uz: HomeText | null = null;
+// Bosh sahifa tarjimasi: oʻzbekcha (lotin).
+export const uz: HomeText = {
+  hero: {
+    eyebrow: "Moskvadagi taksopark · 1000+ avto",
+    lines: ["Taksida ishlash uchun", "avto ijarasi", "Moskvada sotib olish bilan"],
+    sub: "Bugunoq 170 000 rubldan boshlab pul ishlang",
+    bullets: ["birinchi kun bepul", "garovsiz va depozitsiz", "yangi haydovchilarga chegirma"],
+    book: "Avtoni bron qilish",
+    pick: "Avto tanlash",
+    stats: [
+      { k: "Parkdagi avtolar", v: "1000+" },
+      { k: "Haydovchilar", v: "4000+" },
+      { k: "Avtosini sotib olganlar", v: "1400+" },
+      { k: "Komissiya", v: "4%" },
+    ],
+    scroll: "Pastga suring",
+  },
+  ticker: ["Birinchi kun bepul", "Garovsiz va depozitsiz", "Ariza bergan kuni avto", "Yordam 24/7", "Sotib olish 1 yildan", "Komissiya 4%"],
+  fleet: {
+    eyebrow: "Avtopark",
+    models: "model",
+    title: "Avto tanlash",
+    classLabel: "Avto klassi",
+    classes: { ekonom: "Ekonom", komfort: "Komfort", "komfort-plus": "Komfort+", biznes: "Biznes", gruzovoy: "Yuk", dostavka: "Yetkazib berish" },
+    engine: "Dvigatel hajmi",
+    gearbox: "Uzatmalar qutisi",
+    auto: "Avtomat",
+    from: "",
+    perDay: "/sutka",
+    rent: "Ijaraga olish",
+    buy: "Sotib olish",
+    hint: "Kursorni mashinaga olib boring — faralarni yoqamiz",
+    drag: "Suring",
+  },
+  benefits: {
+    eyebrow: "Afzalliklar",
+    title: "Nega biz bilan foydali?",
+    items: [
+      { icon: "wash", text: "Avtolarni muntazam tozalash va texnik xizmat" },
+      { icon: "book", text: "Yandex imtihoniga yordam" },
+      { icon: "gift", text: "Ijaraning birinchi sutkasi bepul" },
+      { icon: "wallet", text: "Garov va jamgʻarma depozitlar yoʻq" },
+      { icon: "support", text: "Texnik yordam va YTH paytida yordam 24/7" },
+      { icon: "taxi", text: "Ariza toʻldirgan kuniyoq avto olasiz" },
+      { icon: "sleep", text: "Bir oy ishlagandan keyin 2 dam olish kuni" },
+      { icon: "priority", text: "1-haftada buyurtmalarga yuqori ustuvorlik" },
+    ],
+  },
+  trust: {
+    title: "Bizga ishonishadi:",
+    stats: [
+      { value: 4000, suffix: "+", label: "haydovchi bizdan avto ijaraga olgan" },
+      { value: 1400, suffix: "+", label: "haydovchi bizdan avto sotib olgan" },
+    ],
+    owners: [
+      { name: "Aktilek", car: "Hyundai Solaris", photo: 24 },
+      { name: "Aleksey Frolov", car: "Hyundai Solaris", photo: 25 },
+      { name: "Mamasali", car: "Toyota Camry", photo: 27 },
+      { name: "Nurjigit", car: "Volkswagen Polo", photo: 26 },
+      { name: "Muzaffar", car: "Hyundai Sonata", photo: 29 },
+      { name: "Baktibekov Adilet", car: "Kia k5", photo: 23 },
+    ],
+    ctaTitle: "Ular bizdan avtosini sotib olib boʻlishdi",
+    ctaText: "Siz ham sotib oling",
+  },
+  promo: {
+    eyebrow: "Sovgʻa",
+    title: "Ijaraning birinchi kunini bepul beramiz!",
+    text: "Ariza qoldiring, menejerlarimiz 1 daqiqa ichida siz bilan bogʻlanadi",
+    button: "Menga qoʻngʻiroq qiling",
+  },
+  requirements: {
+    title: "Haydovchilarimizga talablar",
+    items: [
+      { k: "Staj", v: "3 yildan" },
+      { k: "Yosh", v: "21 yoshdan" },
+      { k: "Hujjatlar", v: "pasport, KIS «ART», sudlanmaganlik haqida maʼlumotnoma, haydovchilik guvohnomasi" },
+    ],
+  },
+  steps: {
+    title: "Avtoni 3 qadamda qanday olish mumkin?",
+    items: ["Ofisga yozilasiz", "Xavfsizlik xizmati tekshiruvidan oʻtasiz", "Avtoni olasiz!"],
+  },
+  calculator: {
+    title: "Taksoparkimizda qancha ishlashingizni hisoblang",
+    text: "Ish parametrlarini koʻrsating — biz taxminiy daromadingizni koʻrsatamiz",
+    q1: "Avto klassini tanlang",
+    q2: "Haftasiga necha kun ishlaysiz",
+    q3: "Kuniga necha soat ishlashni rejalashtiryapsiz",
+    resultPrefix: "Daromadingiz:",
+    resultSuffix: "oyiga",
+    note: "*ijara va komissiyalar ushlab qolingandan keyin",
+    formTitle: "Ariza qoldirish!",
+    formText: "menejerlarimiz barcha savollar boʻyicha maslahat beradi!",
+    formButton: "Hisob-kitobni olish",
+    eyebrow: "Daromad kalkulyatori",
+    demo: "Soatlik tushum va yoqilgʻi xarajati — taxminiy stavkalar, aniqlari admin panelda belgilanadi.",
+  },
+  media: {
+    eyebrow: "yoki",
+    title: "Bizga yozing",
+    youtube: "Avtolar, yangi aksiyalar haqida gapirib, taksopark yangiliklari bilan boʻlishamiz!",
+    watch: "Car City videolarini koʻrish",
+  },
+  whyUs: {
+    title: "Nega biz?",
+    items: [
+      { title: "Murojaat kuniyoq berish", text: "Ijaraning 1-kunini sovgʻa qilamiz va avtoni 30 daqiqa ichida beramiz", num: "30", unit: "daqiqa" },
+      { title: "Bozorda 7 yil", text: "7 yildan ortiq haydovchilarga yordam berib, taksoparkni kengaytirib, katta tadbirlar oʻtkazib kelyapmiz", num: "7", unit: "yil" },
+      { title: "Grafikni oʻzingiz tanlaysiz", text: "Moslashuvchan grafik: 5/2, 6/1, 7/0 (barcha avtolar uyda saqlanadi)", num: "7/0", unit: "grafik" },
+      { title: "Pulni darhol yechib olish", text: "15 000₽ gacha boʻlgan har qanday summaga atigi 50 rubl komissiya bilan pulni darhol yechib olish", num: "50", unit: "₽ komissiya" },
+    ],
+    button: "Hamkorlikni boshlash",
+  },
+  seo: {
+    eyebrow: "Taksopark haqida",
+    title: "Moskvada taksi uchun avto ijarasi",
+    intro: [
+      "Car City taksi uchun mashinani ijaraga olib, oʻzingizga qulay rejimda barqaror pul ishlashni taklif qiladi. Taksi uchun ijara avtoparkimizda tanlash uchun 1000+ avto bor.",
+      "Biz ijara bozorida 7 yildan ortiq ishlaymiz. Shu vaqt ichida 4000+ haydovchi ishni boshlash uchun bizni tanladi, ulardan 1500+ nafari sotib olish huquqidan foydalanib, avtomobilning toʻliq egasiga aylandi.",
+      "Taksi uchun mashina ijarasi xizmati Moskvada mavjud. Saytimizda ariza toʻldiring va avtoni bugunoq oling!",
+    ],
+    whyTitle: "Nega biz bilan hamkorlik qilish foydali",
+    whyLead: "Taksida ishlash uchun mashina ijarasini Car City saytida rasmiylashtiring! Biz sizga qulay hamkorlik shartlarini taklif qilamiz:",
+    why: [
+      ["Murojaat kuniyoq berish.", "Kutishingiz shart emas: ariza toʻldirgan kuniyoq avtomobil olish imkoniyati bor."],
+      ["Bepul start.", "Taksi ijarasining birinchi sutkasi bizning hisobimizdan. Ijaraning ikkinchi kunidan boshlab toʻlaysiz."],
+      ["Mukammal avtopark.", "Barcha mashinalar muntazam texnik xizmat va kimyoviy tozalashdan oʻtadi. Siz liniyada ishlashga toʻliq tayyor, ishonchli taksi avtomobilini olasiz."],
+      ["Yordam 24/7.", "Maslahatchilar kecha-kunduz aloqada. YTH yoki texnik muammo boʻlsa, mexaniklar yordam berishga doim tayyor."],
+      ["Yandex imtihoniga yordam.", "Ustuvor buyurtmalarga tezroq kirishingiz uchun sizni testga tayyorlaymiz."],
+      ["Pulni qulay yechib olish.", "Pulingizni istalgan vaqtda, cheklovlarsiz va yashirin limitlarsiz oling."],
+    ],
+    whyOutro: "Taksi uchun avto ijarasini bugunoq rasmiylashtiring va yuqori daromad uchun qulay avtomobil oling!",
+    fleetTitle: "Oʻzingizga mukammal avtomobilni toping",
+    fleet: [
+      "Taksoparkimizda taksi uchun ijaraga yangi mashinalar va probegi kam modellar bor. Taksi uchun eng yaxshi avto — bu tirband soatda buzilmaydigan avto ekanini tushunamiz. Shuning uchun bizda faqat ekonom, komfort va komfort+ klassidagi ishonchli mashinalar bor: Hyundai Solaris, Kia Rio, Skoda Octavia, Toyota Camry va yuk tashish uchun sigʻimli universallar.",
+      "Taksi uchun yangi mashinani taʼmirga pul sarflamasdan ijaraga olmoqchimisiz? Klassni tanlang va onlayn bron qiling. Moskvadagi taksi avtomobillari Mitino va Kuntsevodagi turargohlarda sizni kutmoqda.",
+    ],
+  },
+  reviews: { title: "Sharhlar", more: "Yana koʻrsatish", on: "·", label: "Haydovchilar sharhlari", stars: "5 dan 5" },
+  faq: {
+    title: "Koʻp beriladigan savollar",
+    items: [
+      {
+        q: "Car City bilan qanday ishlashni boshlash mumkin? Haydovchiga talablar",
+        a: [
+          "Car City kompaniyasida Moskvada taksi uchun avto ijaraga olish uchun bir nechta oddiy talablarga javob berish kifoya. Biz ortiqcha talab qoʻymaymiz, lekin safarlar xavfsizligini nazorat qilamiz.",
+          "**Fuqarolik.** Bizning avtomobillarda ishlash uchun quyidagi davlatlardan birining fuqaroligi mos keladi: RF, Belarus, Qirgʻiziston, Qozogʻiston, Janubiy Osetiya, Abxaziya",
+          "**Staj.** Avtomobilni ijaraga yoki sotib olishga olish uchun haydovchilik guvohnomasi staji 3 yildan kam boʻlmasligi kifoya",
+          "**Yosh.** Car City bilan hamkorlikni boshlash uchun eng kichik yosh — 21",
+          "**Hujjatlar.** Haydovchilik guvohnomasi, pasport, KIS «ART» va sudlanmaganlik haqida maʼlumotnoma. Toʻliq hujjatlar bilan rasmiylashtirgandan keyin darhol taksida ishlash uchun avtomobil olishingiz mumkin.",
+        ],
+      },
+      { q: "Boshqa parklardan salbiy sharhlar boʻlsa, mashina berishadimi?", a: ["Tekshiruvda parklarning sharhlariga eʼtibor beramiz, lekin yakuniy qarorni menejer shaxsiy suhbat natijasiga koʻra qabul qiladi."] },
+      { q: "Parkning komissiyasi qancha?", a: ["Parkimiz komissiyasi 4%. Bu taksi uchun avto ijarasini beruvchi taksoparklar orasidagi eng qulay takliflardan biri."] },
+      { q: "Ijaraning eng qisqa muddati qancha?", a: ["Har qanday avtomobilimiz ijarasining eng qisqa muddati 30 kun"] },
+      { q: "Boshqa parkda ishlash mumkinmi?", a: ["Moskvada oddiy taksi ijarasida — yoʻq, avtomobil Car City kompaniyasiga biriktirilgan. Lekin avtomobilni sotib olishni rejalashtirsangiz, agregator tanlashda cheklov yoʻq."] },
+      { q: "Hozir ishlayotgan haydovchilar uchun bonuslar bormi?", a: ["Ha, albatta. «Doʻstingni olib kel» aksiyasi boʻyicha biz bilan ijara shartnomasini tuzgan har bir yangi haydovchi uchun 5 ming rubl, sotib olish shartnomasi uchun 15 ming rubl olasiz."] },
+      {
+        q: "Taksi uchun mashinani qayerda ijaraga olish mumkin?",
+        a: [
+          "Moskvada taksi uchun mashinani vositachilarsiz va yashirin toʻlovlarsiz Car City taksoparkida olishingiz mumkin. Ofislarimiz va avto turargohlarimiz uchta manzilda joylashgan:",
+          "- Mitino metrosi (1-y Mitinskiy pereulok, 15-uy 3-bino);\n- Kuntsevskaya metrosi (Vitebskaya koʻchasi, 11-uy);\n- Michurinskiy prospekt metrosi (Udaltsova koʻchasi, 36-uy).",
+          "Agar litsenziyali va garovsiz taksi ijarasini qidirayotgan boʻlsangiz, butun Moskvani aylanib chiqishingiz shart emas. Taksi uchun avto ijaraga olish uchun hujjatlaringiz bilan eng yaqin Car City ofisiga keling.",
+        ],
+      },
+    ],
+  },
+};
