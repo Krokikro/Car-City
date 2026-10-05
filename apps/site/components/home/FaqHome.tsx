@@ -1,7 +1,8 @@
-import { faqHome } from "@/lib/home";
+import type { HomeText } from "@/lib/home-text";
 import { marked } from "marked";
 
-export function FaqHome() {
+export function FaqHome({ t }: { t: HomeText["faq"] }) {
+  const faqHome = t.items;
   const ld = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -12,7 +13,7 @@ export function FaqHome() {
       <div className="wrap split">
         <div className="sticky">
           <p className="mono eyebrow">FAQ</p>
-          <h2 id="faq-title" className="display" data-split>Частые вопросы</h2>
+          <h2 id="faq-title" className="display" data-split>{t.title}</h2>
         </div>
         <div className="faq">
           {faqHome.map((f, i) => (

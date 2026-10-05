@@ -6,11 +6,11 @@ import "./styles/header.css";
 import "./styles/hero.css";
 import "./styles/sections.css";
 import "./styles/pages.css";
+import "./styles/v2.css";
 import { gfxDetectScript } from "@/lib/gfx";
 import { company } from "@/lib/content";
 import { asset } from "@/lib/i18n";
 import { MotionRoot } from "@/components/motion/MotionRoot";
-import { Cursor } from "@/components/motion/Cursor";
 
 // Все три шрифта содержат кириллицу кыргызского и казахского и латиницу узбекского (проверено 2026-10-05).
 // Предзагружаем только кириллицу и латиницу: ext-наборы для ky/kk/uz подтянутся по unicode-range, когда понадобятся.
@@ -44,8 +44,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <MotionRoot />
-        <Cursor />
-        <div className="grain" aria-hidden="true" />
       </body>
     </html>
   );

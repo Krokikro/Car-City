@@ -12,6 +12,6 @@ var n=navigator,d=document.documentElement,c=n.connection||{};
 var mem=n.deviceMemory||4,cpu=n.hardwareConcurrency||4;
 var slowNet=c.saveData||/(^|-)2g|3g/.test(c.effectiveType||"");
 var rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
-var lvl=(rm||slowNet||mem<=2||cpu<=4)?"basic":(mem>=8&&cpu>=8)?"full":"light";
+var lvl=(rm||slowNet||mem<=2||cpu<=2)?"basic":(mem>=4&&cpu>=6)?"full":"light";
 var o=/[?&]gfx=(full|light|basic)/.exec(location.search);if(o)lvl=o[1];
 d.dataset.gfx=lvl;}catch(e){document.documentElement.dataset.gfx="basic";}})();`;

@@ -35,15 +35,15 @@ const PATHS: Record<Body, { body: string; glass: string; wheels: [number, number
   },
 };
 
-export function CarArt({ slug, name, priority = false }: { slug: string; name: string; priority?: boolean }) {
+export function CarArt({ slug, name, priority = false, sizes = "(max-width: 720px) 86vw, 560px" }: { slug: string; name: string; priority?: boolean; sizes?: string }) {
   const meta = carImages[slug];
   if (meta) {
     const base = asset(`/cars/${slug}`);
     return (
       <picture className="car-photo">
-        <source type="image/avif" srcSet={`${base}-480.avif 480w, ${base}-800.avif 800w`} sizes="(max-width: 720px) 86vw, 420px" />
-        <source type="image/webp" srcSet={`${base}-480.webp 480w, ${base}-800.webp 800w`} sizes="(max-width: 720px) 86vw, 420px" />
-        <img src={`${base}-800.webp`} alt={name} width={meta.w} height={meta.h} loading={priority ? "eager" : "lazy"} decoding="async" />
+        <source type="image/avif" srcSet={`${base}-640.avif 640w, ${base}-1200.avif ${meta.w}w`} sizes={sizes} />
+        <source type="image/webp" srcSet={`${base}-640.webp 640w, ${base}-1200.webp ${meta.w}w`} sizes={sizes} />
+        <img src={`${base}-1200.webp`} alt={name} width={meta.w} height={meta.h} loading={priority ? "eager" : "lazy"} decoding="async" fetchPriority={priority ? "high" : undefined} />
       </picture>
     );
   }

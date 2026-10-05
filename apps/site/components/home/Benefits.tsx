@@ -1,23 +1,24 @@
-import { benefits } from "@/lib/home";
+import type { HomeText } from "@/lib/home-text";
 import { Icon } from "./Icon";
 
-export function Benefits() {
+// Преимущества стопкой: каждая карточка прилипает чуть ниже предыдущей и накрывает её (CSS sticky, без JS).
+export function Benefits({ t }: { t: HomeText["benefits"] }) {
   return (
-    <section className="section benefits" aria-labelledby="benefits-title">
-      <div className="wrap">
-        <div className="section-head">
-          <p className="mono eyebrow">Преимущества</p>
-          <h2 id="benefits-title" className="display" data-split>Почему с нами выгодно?</h2>
+    <section className="section stack-sec" aria-labelledby="benefits-title">
+      <div className="wrap stack-grid">
+        <div className="stack-head">
+          <p className="mono eyebrow">{t.eyebrow}</p>
+          <h2 id="benefits-title" className="display" data-split>{t.title}</h2>
         </div>
-        <ul className="bento" data-reveal-stagger>
-          {benefits.map((b, i) => (
-            <li key={b.text} className={`bento-cell b${i}`}>
-              <span className="bento-n mono">{String(i + 1).padStart(2, "0")}</span>
+        <ol className="stack">
+          {t.items.map((b, i) => (
+            <li key={b.text} className="stack-card" style={{ ["--i" as string]: i }}>
+              <span className="stack-n">{String(i + 1).padStart(2, "0")}</span>
               <Icon name={b.icon} />
               <p>{b.text}</p>
             </li>
           ))}
-        </ul>
+        </ol>
       </div>
     </section>
   );

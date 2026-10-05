@@ -1,7 +1,8 @@
 import { Header } from "@/components/Header";
 import { HtmlLang } from "@/components/HtmlLang";
-import { Hero } from "@/components/hero/Hero";
-import { Fleet } from "@/components/home/Fleet";
+import { HeroVideo } from "@/components/home/HeroVideo";
+import { Ticker } from "@/components/home/Ticker";
+import { FleetShow } from "@/components/home/FleetShow";
 import { Benefits } from "@/components/home/Benefits";
 import { Trust } from "@/components/home/Trust";
 import { Promo } from "@/components/home/Promo";
@@ -18,6 +19,7 @@ import { StickyCta } from "@/components/StickyCta";
 import { company, offices } from "@/lib/content";
 import type { Lang } from "@/lib/i18n";
 import { ui } from "@/lib/ui";
+import { homeText } from "@/lib/home-text";
 
 
 const orgLd = {
@@ -33,24 +35,26 @@ const orgLd = {
 };
 
 export function HomePage({ lang = "ru" }: { lang?: Lang }) {
+  const h = homeText(lang);
   return (
     <>
       <HtmlLang lang={lang} />
       <a className="skip" href="#main">{ui(lang).skip}</a>
       <Header />
-      <main id="main">
-        <Hero />
-        <Fleet lang={lang} />
-        <Benefits />
-        <Trust lang={lang} />
-        <Promo />
-        <Steps />
-        <Calculator />
-        <Media />
-        <WhyUs />
-        <SeoText />
-        <Reviews lang={lang} />
-        <FaqHome />
+      <main id="main" className="home">
+        <HeroVideo t={h.hero} />
+        <Ticker items={h.ticker} />
+        <FleetShow t={h.fleet} lang={lang} />
+        <Benefits t={h.benefits} />
+        <Trust lang={lang} t={h.trust} />
+        <Promo t={h.promo} />
+        <Steps req={h.requirements} steps={h.steps} />
+        <Calculator t={h.calculator} classes={h.fleet.classes} />
+        <Media t={h.media} />
+        <WhyUs t={h.whyUs} />
+        <SeoText t={h.seo} />
+        <Reviews lang={lang} t={h.reviews} />
+        <FaqHome t={h.faq} />
         <FinalCta lang={lang} />
       </main>
       <Footer lang={lang} />

@@ -1,7 +1,7 @@
 import { href, type Lang } from "@/lib/i18n";
-import { trust } from "@/lib/home";
+import { ruHome, type HomeText } from "@/lib/home-text";
 
-export function Trust({ lang = "ru" }: { lang?: Lang }) {
+export function Trust({ lang = "ru", t: trust = ruHome.trust }: { lang?: Lang; t?: HomeText["trust"] }) {
   const row = [...trust.owners, ...trust.owners];
   return (
     <section className="section trust" aria-labelledby="trust-title">
@@ -16,7 +16,7 @@ export function Trust({ lang = "ru" }: { lang?: Lang }) {
           ))}
         </div>
       </div>
-      <div className="owners" aria-label={trust.cta.title}>
+      <div className="owners" aria-label={trust.ctaTitle}>
         <div className="owners-row">
           {row.map((o, i) => (
             <figure key={i} className="owner" aria-hidden={i >= trust.owners.length || undefined}>
@@ -27,8 +27,8 @@ export function Trust({ lang = "ru" }: { lang?: Lang }) {
         </div>
       </div>
       <div className="wrap trust-cta" data-reveal>
-        <p className="h1">{trust.cta.title}</p>
-        <a href={href("/vykup", lang)} className="btn btn-primary btn-lg" data-magnetic>{trust.cta.text} <span className="arrow">→</span></a>
+        <p className="h1">{trust.ctaTitle}</p>
+        <a href={href("/vykup", lang)} className="btn btn-primary btn-lg" data-magnetic>{trust.ctaText} <span className="arrow">→</span></a>
       </div>
     </section>
   );

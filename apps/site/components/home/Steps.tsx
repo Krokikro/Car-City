@@ -3,12 +3,12 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { requirementsBlock, steps } from "@/lib/home";
+import type { HomeText } from "@/lib/home-text";
 
 gsap.registerPlugin(ScrollTrigger);
 
 // «Как получить авто за 3 шага»: такси едет по дороге вслед за скроллом, шаги загораются по очереди.
-export function Steps() {
+export function Steps({ req: requirementsBlock, steps }: { req: HomeText["requirements"]; steps: HomeText["steps"] }) {
   const root = useRef<HTMLElement>(null);
   useEffect(() => {
     if (document.documentElement.dataset.gfx === "basic") return;

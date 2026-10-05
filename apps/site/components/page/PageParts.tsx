@@ -1,7 +1,6 @@
 import { marked } from "marked";
 import type { Block, Btn, Card, Fig } from "@/lib/blocks";
 import { CarArt } from "../CarArt";
-import { ShaderBackdrop } from "../motion/ShaderBackdrop";
 import { href, type Lang } from "@/lib/i18n";
 import { ui } from "@/lib/ui";
 
@@ -65,7 +64,7 @@ export function PageHero({ eyebrow, h1, crumbs, path, paras, btns, introHtml, la
   return (
     <>
       <section className="pg-hero" aria-labelledby="pg-h1">
-        <ShaderBackdrop />
+        <div className="pg-hero-bg" aria-hidden="true"><i /><i /><i /></div>
         <div className="pg-hero-veil" aria-hidden="true" />
         <div className="pg-hero-checker" aria-hidden="true" />
         <div className="wrap pg-hero-in">

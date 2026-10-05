@@ -1,10 +1,8 @@
-import { whyUs } from "@/lib/home";
-import { ShaderBackdrop } from "../motion/ShaderBackdrop";
+import type { HomeText } from "@/lib/home-text";
 
-export function WhyUs() {
+export function WhyUs({ t: whyUs }: { t: HomeText["whyUs"] }) {
   return (
     <section className="section why" aria-labelledby="why-title">
-      <ShaderBackdrop />
       <div className="why-veil" aria-hidden="true" />
       <div className="wrap">
         <div className="section-head">

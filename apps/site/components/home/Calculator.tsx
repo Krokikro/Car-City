@@ -1,33 +1,29 @@
 "use client";
 
 import { useState } from "react";
-import { calculator as t } from "@/lib/home";
+import { ruHome, type HomeText } from "@/lib/home-text";
 import { fleet } from "@/lib/fleet";
 import { incomeAssumptions as a, type CarClass } from "@/lib/content";
 import { Odometer } from "../Odometer";
 import { LeadForm } from "../LeadForm";
 
-const CLASSES: { id: CarClass; name: string }[] = [
-  { id: "ekonom", name: "Эконом" },
-  { id: "komfort", name: "Комфорт" },
-  { id: "komfort-plus", name: "Комфорт+" },
-];
+const CLASSES: CarClass[] = ["ekonom", "komfort", "komfort-plus"];
 const minRent = (c: CarClass) => Math.min(...fleet.filter((m) => m.cls === c).map((m) => m.price));
 
-export function Calculator() {
+export function Calculator({ t = ruHome.calculator, classes = ruHome.fleet.classes }: { t?: HomeText["calculator"]; classes?: Record<string, string> }) {
   const [cls, setCls] = useState<CarClass>("ekonom");
   const [days, setDays] = useState(6);
   const [hours, setHours] = useState(10);
   // Месяц = 30 дней: рабочие дни по выбранному графику, аренда за все 30 дней (мин. срок аренды 30 дней).
   const workDays = (days / 7) * 30;
   const month = (hours * a.revenuePerHour[cls] * (1 - a.parkCommission) - hours * a.fuelPerHour) * workDays - minRent(cls) * 30;
-  const name = CLASSES.find((c) => c.id === cls)!.name.toLowerCase();
+  const name = classes[cls].toLowerCase();
 
   return (
     <section className="section calc-sec" id="kalkulyator" aria-labelledby="calc-title">
       <div className="wrap">
         <div className="section-head">
-          <p className="mono eyebrow">Калькулятор дохода</p>
+          <p className="mono eyebrow">{t.eyebrow}</p>
           <h2 id="calc-title" className="display" data-split>{t.title}</h2>
           <p className="lead">{t.text}</p>
         </div>
@@ -37,7 +33,7 @@ export function Calculator() {
               <legend><span className="q-n">1.</span> {t.q1}</legend>
               <div className="seg">
                 {CLASSES.map((c) => (
-                  <button key={c.id} type="button" className="pill" aria-pressed={c.id === cls} onClick={() => setCls(c.id)}>{c.name}</button>
+                  <button key={c} type="button" className="pill" aria-pressed={c === cls} onClick={() => setCls(c)}>{classes[c]}</button>
                 ))}
               </div>
             </fieldset>
@@ -64,7 +60,7 @@ export function Calculator() {
               <Odometer value={Math.max(0, month)} />
               <p className="muted">{t.resultSuffix}</p>
               <p className="small muted">{t.note}</p>
-              <p className="demo-note">Выручка в час и расход на топливо — предварительные ставки, точные зададут в админке.</p>
+              <p className="demo-note">{t.demo}</p>
             </div>
             <div className="calc-form">
               <p className="h3">{t.formTitle}</p>
