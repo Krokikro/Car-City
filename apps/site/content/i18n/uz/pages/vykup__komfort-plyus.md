@@ -90,71 +90,71 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 [Sotib olish](https://car-city.pro/vykup/komfort-plyus/exeed-lx-2023)
 
-### Нам доверяют:
+### Bizga ishonishadi:
 
 4000+
 
-жүргізуші бізден көлік жалға алды
+haydovchi bizdan avtomobil ijaraga olgan
 
 1400+
 
-жүргізуші бізден көлік сатып алды
+haydovchi bizdan avtomobil sotib olgan
 
-![Актилек](https://car-city.pro/assets/components/gallery/connector.php?action=web/phpthumb&ctx=web&w=500&h=500&zc=0&far=&q=90&src=%2Fassets%2Fgallery%2F2%2F24.webp) Актилек Hyundai Solaris
+![Aktilek](https://car-city.pro/assets/components/gallery/connector.php?action=web/phpthumb&ctx=web&w=500&h=500&zc=0&far=&q=90&src=%2Fassets%2Fgallery%2F2%2F24.webp) Aktilek Hyundai Solaris
 
-![Алексей Фролов](https://car-city.pro/assets/components/gallery/connector.php?action=web/phpthumb&ctx=web&w=500&h=500&zc=0&far=&q=90&src=%2Fassets%2Fgallery%2F2%2F25.webp) Алексей Фролов Hyundai Solaris
+![Aleksey Frolov](https://car-city.pro/assets/components/gallery/connector.php?action=web/phpthumb&ctx=web&w=500&h=500&zc=0&far=&q=90&src=%2Fassets%2Fgallery%2F2%2F25.webp) Aleksey Frolov Hyundai Solaris
 
-![Олар бізден көлікті сатып алып үлгерді](https://car-city.pro/assets/components/gallery/connector.php?action=web/phpthumb&ctx=web&w=500&h=500&zc=0&far=&q=90&src=%2Fassets%2Fgallery%2F2%2F28.webp) Олар бізден көлікті сатып алып үлгерді. Сен де сатып ал
+![Ular avtomobilni bizdan allaqachon sotib olishgan](https://car-city.pro/assets/components/gallery/connector.php?action=web/phpthumb&ctx=web&w=500&h=500&zc=0&far=&q=90&src=%2Fassets%2Fgallery%2F2%2F28.webp) Ular avtomobilni bizdan allaqachon sotib olishgan Siz ham sotib oling
 
-![Мамасали](https://car-city.pro/assets/components/gallery/connector.php?action=web/phpthumb&ctx=web&w=500&h=500&zc=0&far=&q=90&src=%2Fassets%2Fgallery%2F2%2F27.webp) Мамасали Toyota Camry
+![Mamasali](https://car-city.pro/assets/components/gallery/connector.php?action=web/phpthumb&ctx=web&w=500&h=500&zc=0&far=&q=90&src=%2Fassets%2Fgallery%2F2%2F27.webp) Mamasali Toyota Camry
 
-![Нуржигит](https://car-city.pro/assets/components/gallery/connector.php?action=web/phpthumb&ctx=web&w=500&h=500&zc=0&far=&q=90&src=%2Fassets%2Fgallery%2F2%2F26.webp) Нуржигит Volkswagen Polo
+![Nurjigit](https://car-city.pro/assets/components/gallery/connector.php?action=web/phpthumb&ctx=web&w=500&h=500&zc=0&far=&q=90&src=%2Fassets%2Fgallery%2F2%2F26.webp) Nurjigit Volkswagen Polo
 
-![Музаффар](https://car-city.pro/assets/components/gallery/connector.php?action=web/phpthumb&ctx=web&w=500&h=500&zc=0&far=&q=90&src=%2Fassets%2Fgallery%2F2%2F29.webp) Музаффар Hyundai Sonata
+![Muzaffar](https://car-city.pro/assets/components/gallery/connector.php?action=web/phpthumb&ctx=web&w=500&h=500&zc=0&far=&q=90&src=%2Fassets%2Fgallery%2F2%2F29.webp) Muzaffar Hyundai Sonata
 
-![Бактыбеков Адилет](https://car-city.pro/assets/components/gallery/connector.php?action=web/phpthumb&ctx=web&w=500&h=500&zc=0&far=&q=90&src=%2Fassets%2Fgallery%2F2%2F23.webp) Бактыбеков Адилет Kia k5
+![Baktibekov Adilet](https://car-city.pro/assets/components/gallery/connector.php?action=web/phpthumb&ctx=web&w=500&h=500&zc=0&far=&q=90&src=%2Fassets%2Fgallery%2F2%2F23.webp) Baktibekov Adilet Kia k5
 
-![шахмат белгісі](https://car-city.pro/themes/imgs/banners/checkers.svg)
+![shashka](https://car-city.pro/themes/imgs/banners/checkers.svg)
 
-### Сатып алу кезіндегі сіздің пайдаңыз
+### Sotib olishdagi foydangiz
 
-![](https://car-city.pro/themes/imgs/vykupfirsticon.svg) Қолданыстағы ОСАГО полисі сыйлыққа
+![](https://car-city.pro/themes/imgs/vykupfirsticon.svg) Amaldagi OSAGO polisi sovgʻa
 
-![](https://car-city.pro/themes/img/icons/hospital-icon.svg) Ауырған немесе ЖКО болған жағдайда демалыс
+![](https://car-city.pro/themes/img/icons/hospital-icon.svg) Kasallik yoki YTH holatida taʼtil
 
-![](https://car-city.pro/themes/img/icons/portfel-icon.svg) Кез келген паркте жұмыс істеу мүмкіндігі
+![](https://car-city.pro/themes/img/icons/portfel-icon.svg) Istalgan taksoparkda ishlash imkoniyati
 
-![](https://car-city.pro/themes/imgs/icons/wallet-icon.svg) Парк комиссиясы небәрі 3%
+![](https://car-city.pro/themes/imgs/icons/wallet-icon.svg) Taksopark komissiyasi atigi 3%
 
-![](https://car-city.pro/themes/imgs/icons/24-call-icon.svg) Әр көлікке жеке шарт
+![](https://car-city.pro/themes/imgs/icons/24-call-icon.svg) Har bir avtomobil uchun individual shartnoma
 
-![](https://car-city.pro/themes/imgs/icons/taxi-icon.svg) Серіктеспен жұмыс істеу мүмкіндігі
+![](https://car-city.pro/themes/imgs/icons/taxi-icon.svg) Sherik bilan ishlash imkoniyati
 
-![](https://car-city.pro/themes/imgs/icons/snooze-zzz-icon.svg) Жыл сайын 14 күн демалыс
+![](https://car-city.pro/themes/imgs/icons/snooze-zzz-icon.svg) Har yili 14 kunlik taʼtil
 
-![](https://car-city.pro/themes/img/icons/messages-icon.svg) Кар Сити жабық клубына кіру мүмкіндігі
+![](https://car-city.pro/themes/img/icons/messages-icon.svg) Car City yopiq klubiga kirish
 
-## Сатып алу шарттары
+## Sotib olish shartlari
 
-### Жүргізушілерге қойылатын талаптар
+### Haydovchilarga qoʻyiladigan talablar
 
-Өтіл: 3 жылдан бастап
+Staj: 3 yildan
 
-Жас: 21 жастан бастап
+Yosh: 21 yoshdan
 
-Құжаттар: паспорт, КИС «АРТ», сотталмағаны туралы анықтама, жүргізуші куәлігі
+Hujjatlar: pasport, KIS «ART», sudlanmaganlik haqida maʼlumotnoma, haydovchilik guvohnomasi
 
-![жеке куәлік](https://car-city.pro/themes/img/icons/id-card-icon.svg)
+![ID-karta](https://car-city.pro/themes/img/icons/id-card-icon.svg)
 
-Құжаттар жүргізушіні қауіпсіздік қызметі арқылы тексеру үшін қажет
+Hujjatlar haydovchini xavfsizlik xizmati orqali tekshirish uchun kerak
 
-- Сатып алу мерзімі 1 жылдан 3 жылға дейін
-- Шартты мерзімінен бұрын жабу мүмкіндігі
-- Тапсырыс пен жүріс бойынша жоспар жоқ
-- Қарызға үш күннен аспайтын мерзімге жол беріледі
-- Бүкіл сатып алу мерзіміне лицензия және жол парақтары
-- Сатып алу бағасы мерзімге байланысты
-- Сатып алу төлемі сатып алу соңында енгізіледі
+- Sotib olish muddati 1 yildan 3 yilgacha
+- Shartnomani muddatidan oldin yopish imkoniyati
+- Buyurtmalar va yurish boʻyicha reja yoʻq
+- Qarz uch kundan ortiq boʻlmasligi kerak
+- Butun sotib olish muddatiga litsenziya va yoʻl varaqalari
+- Sotib olish narxi muddatga bogʻliq
+- Sotib olish toʻlovi sotib olish oxirida kiritiladi
 
 Agar taksida salobatli, zamonaviy va ishonchli mashinada ishlashni istasangiz — Car City’da Komfort Plyus sinfidagi avtomobilni sotib olish huquqi bilan ijaraga olish sizga juda mos keladi. Bu qulaylikni qadrlaydigan, uzoq ishlashni rejalashtirgan va kelajakda avtomobilni shaxsiy mulkka olishni istaganlar uchun format.
 
