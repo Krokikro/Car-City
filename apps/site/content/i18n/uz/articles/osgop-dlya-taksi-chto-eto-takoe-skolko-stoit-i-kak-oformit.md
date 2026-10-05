@@ -73,7 +73,7 @@ Oqibatlar uch toifaga boʻlinadi: moliyaviy, kasbiy va shaxsiy. Ularning har bir
 - Litsenziyani toʻxtatib turish. № 580‑FZ Federal qonunning 8-moddasi 4-bandiga koʻra, amaldagi polis boʻlmasa, ruxsatnomaning amal qilishi 30 kunga toʻxtatiladi. Agar shu vaqt ichida tashuvchi OSGOP ni rasmiylashtirmasa, litsenziya bekor qilinadi. Agregatorlar har kuni reyestr bilan solishtiradi va ruxsatnomasi haqiqiy boʻlmagan haydovchilarga buyurtma berishni toʻxtatadi.
 - Regress daʼvolari. Agar yoʻlovchi OSGOP siz mashinada jabrlansa, kompensatsiyani oʻz choʻntagingizdan toʻlashingizga toʻgʻri keladi. Summa ikki million rublgacha yetishi mumkin. Koʻpchilik haydovchilar uchun bu koʻp yillik qarzlar demakdir.
 
-## Savollar va javoblar
+## Tez-tez beriladigan savollar va javoblar
 
 ### Taksi uchun OSGOP va OSAGO oʻrtasida qanday farq bor?
 
