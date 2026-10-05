@@ -1,0 +1,133 @@
+1:"$Sreact.fragment"
+2:I[83134,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js","/Car-City/_next/static/chunks/1fgmzmoaaag10.js","/Car-City/_next/static/chunks/1iw258zef6l1p.js"],"Header"]
+3:T240c,<p>Узнайте, как правильно заключить договор аренды автомобиля для такси. Полезные советы, необходимые документы и важные нюансы.</p>
+<figure class="rimg" data-reveal><img src="https://car-city.pro/themes/imgs/banners/14.jpg" alt="Инструкции по оформлению аренды такси" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('noimg')"/></figure>
+<h2 id="кто-может-арендовать-автомобиль-для-такси">Кто может арендовать автомобиль для такси</h2><p>Требования к арендатору:</p>
+<ul class="ticks">
+<li>Гражданство и документы. Арендовать авто могут граждане РФ, РБ, Казахстана, Кыргызстана, Южной Осетии. Граждане других государств могут арендовать автомобиль только при наличии ВНЖ и ИП.</li>
+<li>Возраст. &quot;Минимальный возраст водителя — от 21 года&quot;</li>
+<li>Стаж вождения. &quot;Как правило, требуется стаж от 3 лет&quot;</li>
+</ul>
+<p>Дополнительные требования (в первую очередь — от агрегаторов):</p>
+<ul class="ticks">
+<li>Внешний вид. Водителю необходимо соблюдать деловой стиль одежды и ухоженный внешний вид, особенно при работе в классе Бизнес.</li>
+<li>Умение общаться с пассажирами. Вежливость, аккуратность, знание русского языка и умение пользоваться навигатором также входят в требования — особенно при работе в премиальных категориях.</li>
+</ul>
+<h2 id="основные-документы-для-аренды-автомобиля">Основные документы для аренды автомобиля</h2><h3>Договор аренды автомобиля</h3>
+<p>Основной юридический документ, на основании которого водитель получает право временного пользования транспортным средством. Он должен включать:</p>
+<ul class="tiles">
+<li>Полные наименования сторон (ФИО, паспортные данные или данные юрлица)</li>
+<li>Предмет договора (марка, модель, VIN автомобиля и госномер)</li>
+<li>Срок аренды и условия продления или расторжения</li>
+<li>Размер арендной платы и порядок оплаты</li>
+<li>Условия ответственности сторон и штрафы</li>
+<li>Подписи обеих сторон</li>
+</ul>
+<h3>Акт приёма-передачи автомобиля</h3>
+<p>Акт оформляется в день передачи автомобиля и содержит:</p>
+<ul class="tiles">
+<li>Подробное описание состояния авто</li>
+<li>Уровень топлива и пробег на момент передачи</li>
+<li>Отметки о наличии внешних повреждений</li>
+<li>Дату и подписи сторон</li>
+</ul>
+<h3>КИС АРТ</h3>
+<p>&quot;Водитель должен быть зарегистрирован в КИС АРТ (Комплексной информационной системе агрегаторов рынка такси)&quot;</p>
+<h3>СМЗ или ИП</h3>
+<p>Если вы планируете работать напрямую, необходимо зарегистрироваться в одном из форматов:</p>
+<ul class="ticks">
+<li>Самозанятый (СМЗ). Наиболее простой способ официально зарабатывать.</li>
+<li>Индивидуальный предприниматель (ИП). Актуален, если вы хотите работать с несколькими таксопарками.</li>
+</ul>
+<h2 id="пошаговая-инструкция-по-оформлению-аренды">Пошаговая инструкция по оформлению аренды</h2><h3>Внешний осмотр автомобиля</h3>
+<p>Перед подписанием документов арендатор должен внимательно осмотреть машину:</p>
+<ul class="tiles">
+<li>Проверить кузов на наличие царапин, вмятин, сколов</li>
+<li>Убедиться в исправности фар, стёкол, зеркал, дворников</li>
+<li>Проверить салон, багажник, состояние шин</li>
+<li>Зафиксировать все обнаруженные дефекты на фото/видео</li>
+</ul>
+<h3>Подписание договора аренды</h3>
+<p>После осмотра подписывается договор аренды, в котором фиксируются:</p>
+<ul class="tiles">
+<li>Модель автомобиля и срок аренды</li>
+<li>Стоимость и график платежей</li>
+<li>Условия ответственности за ДТП и неисправности</li>
+<li>Возможность продления аренды</li>
+</ul>
+<h3>Передача автомобиля</h3>
+<p>После подписания договора:</p>
+<ul class="tiles">
+<li>Стороны подписывают акт приёма-передачи</li>
+<li>Водитель получает ключи, СТС, полис ОСАГО и путевой лист</li>
+<li>Автомобиль считается официально переданным в аренду</li>
+</ul>
+<h3>Работа и возможный возврат автомобиля</h3>
+<p>&quot;Аренда действует на минимальный срок от 14 дней, но может быть продолжена на любое время&quot;</p>
+<p>Если водитель планирует завершить аренду:</p>
+<ul class="ticks">
+<li>Необходимо уведомить менеджера за 3 дня до предполагаемой даты возврата</li>
+<li>При сдаче автомобиля проводится финальный осмотр, подписывается акт возврата</li>
+</ul>
+<h2 id="важные-правила-и-ответственность">Важные правила и ответственность</h2><p>Водитель обязан бережно обращаться с автомобилем:</p>
+<ul class="tiles">
+<li>Следить за техническим состоянием и сообщать о неисправностях</li>
+<li>Не передавать авто третьим лицам без согласования с арендодателем</li>
+<li>Заправлять топливом надлежащего качества</li>
+<li>Поддерживать чистоту кузова и салона</li>
+</ul>
+<p>Если случилось ДТП:</p>
+<ol class="stepl">
+<li>Водитель обязан сообщить об этом в страховую компанию и арендодателю</li>
+<li>На месте ДТП необходимо зафиксировать все данные (фото, схемы, объяснения сторон)</li>
+<li>Вызвать сотрудников ГИБДД</li>
+</ol>
+<p>Кроме этого, водителю важно избегать следующих нарушений:</p>
+<ul class="tiles">
+<li>Просроченная диагностическая карта</li>
+<li>Неправильная парковка</li>
+<li>Нарушение условий работы с агрегатором (Яндекс, Ситимобил)</li>
+<li>Работа без действующей лицензии</li>
+</ul>
+<h2 id="заключение">Заключение</h2><p>&quot;Аренда автомобиля для работы в такси — это удобный способ начать зарабатывать без крупных вложений&quot;</p>
+<p>Car City предлагает помощь на всех этапах оформления:</p>
+<ul class="tiles">
+<li>Оформить необходимые документы для подключения к агрегаторам (КИС АРТ, аттестация, лицензия)</li>
+<li>Консультировать по вопросам договора и условий аренды</li>
+<li>Помочь с решением спорных ситуаций и восстановлением доступа в агрегаторах</li>
+</ul>
+b:X
+10:X
+10:C
+0:{"buildId":"FFSm9taSr5iBw7vDS9W4h","data":[{"rsc":["$","$1","c",{"children":[[null,["$","$L2",null,{}],["$","main",null,{"id":"main","className":"pg pg-article","children":[false,["$","article",null,{"className":"art","children":[["$","header",null,{"className":"art-hero","children":[["$","div",null,{"className":"art-hero-bg","aria-hidden":"true"}],["$","div",null,{"className":"wrap-narrow","children":[["$","nav",null,{"className":"crumbs mono","aria-label":"Хлебные крошки","children":[[["$","span","0",{"children":[["$","a",null,{"href":"/Car-City/","children":"Главная"}],["$","i",null,{"aria-hidden":"true","children":"/"}]]}],["$","span","1",{"children":[["$","a",null,{"href":"/Car-City/novosti","children":"Новости"}],["$","i",null,{"aria-hidden":"true","children":"/"}]]}],["$","span","2",{"children":[["$","span",null,{"aria-current":"page","children":"Инструкции по оформлению аренды такси"}],false]}]],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Главная\",\"item\":\"https://car-city.pro/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Новости\",\"item\":\"https://car-city.pro/novosti\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Инструкции по оформлению аренды такси\",\"item\":\"https://car-city.pro/novosti/instrukczii-po-oformleniyu-arendy-taksi\"}]}"}}]]}],["$","p",null,{"className":"mono eyebrow","children":"14.07.2025 · 3 мин чтения"}],["$","h1",null,{"className":"display art-h1","data-split":true,"children":"Инструкции по оформлению аренды такси"}]]}],["$","div",null,{"className":"art-progress","aria-hidden":"true","children":["$","i",null,{}]}]]}],["$","div",null,{"className":"wrap art-grid","children":[["$","nav",null,{"className":"art-toc mono","aria-label":"Содержание","children":[["$","p",null,{"children":"Содержание"}],["$","ol",null,{"children":[["$","li","Кто может арендовать автомобиль для такси",{"children":["$","a",null,{"href":"#кто-может-арендовать-автомобиль-для-такси","children":"Кто может арендовать автомобиль для такси"}]}],["$","li","Основные документы для аренды автомобиля",{"children":["$","a",null,{"href":"#основные-документы-для-аренды-автомобиля","children":"Основные документы для аренды автомобиля"}]}],["$","li","Пошаговая инструкция по оформлению аренды",{"children":["$","a",null,{"href":"#пошаговая-инструкция-по-оформлению-аренды","children":"Пошаговая инструкция по оформлению аренды"}]}],["$","li","Важные правила и ответственность",{"children":["$","a",null,{"href":"#важные-правила-и-ответственность","children":"Важные правила и ответственность"}]}],["$","li","Заключение",{"children":["$","a",null,{"href":"#заключение","children":"Заключение"}]}]]}]]}],["$","div",null,{"className":"prose art-body","dangerouslySetInnerHTML":{"__html":"$3"}}]]}],"$L4"]}],false,false,false,false]}],"$L5","$L6"],["$L7","$L8"],"$L9"]}],"isPartial":"$@a","staleTime":"$b","varyParams":null},{"rsc":"$Lc","isPartial":"$@d","staleTime":"$b","varyParams":null},{"rsc":"$Le","isPartial":"$@f","staleTime":"$b","varyParams":"$10"},{"rsc":"$L11","isPartial":"$@12","staleTime":"$b","varyParams":null}],"isUpgradeableISRFallback":false,"a":"$@13","rootVaryParams":null,"needsRuntimeRequest":"$@14"}
+15:I[54189,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"OutletBoundary"]
+16:"$Sreact.suspense"
+18:I[54189,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"ViewportBoundary"]
+19:I[54189,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"MetadataBoundary"]
+1a:I[64383,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"IconMark"]
+1b:I[9996,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"default"]
+1c:I[10543,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"default"]
+1d:I[19935,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"MotionRoot"]
+1e:I[6642,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"CookieNotice"]
+1f:I[98210,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"Analytics"]
+:HL["/Car-City/brand/emblem-96.webp","image",{"imageSrcSet":"/Car-City/brand/emblem-96.webp 1x, /Car-City/brand/emblem-192.webp 2x"}]
+:HL["/Car-City/brand/wordmark-320.webp","image"]
+:HL["/Car-City/_next/static/chunks/2pixcsp0sneok.css","style"]
+4:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Инструкции по оформлению аренды такси\",\"datePublished\":\"2025-07-14\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Car City\"},\"mainEntityOfPage\":\"https://car-city.pro/novosti/instrukczii-po-oformleniyu-arendy-taksi\"}"}}]
+5:["$","footer",null,{"className":"site-footer","children":[["$","div",null,{"className":"wrap footer-top","children":[["$","div",null,{"className":"footer-brand","children":[["$","span",null,{"className":"logo","children":[["$","img",null,{"src":"/Car-City/brand/emblem-96.webp","srcSet":"/Car-City/brand/emblem-96.webp 1x, /Car-City/brand/emblem-192.webp 2x","width":56,"height":56,"alt":"","className":"logo-emblem"}],["$","img",null,{"src":"/Car-City/brand/wordmark-320.webp","width":162,"height":31,"alt":"Car City","className":"logo-word"}]]}],["$","p",null,{"className":"muted","children":["Входит в группу Элит Кар",". ","ООО «ЭЛИТ-КАР»"]}],["$","div",null,{"className":"footer-phones","children":[[["$","a","+7 (499) 302-31-59",{"href":"tel:+74993023159","className":"mono-num","children":"+7 (499) 302-31-59"}],["$","a","+7 (499) 474-76-47",{"href":"tel:+74994747647","className":"mono-num","children":"+7 (499) 474-76-47"}]],["$","a",null,{"href":"mailto:support@car-city.pro","children":"support@car-city.pro"}]]}],["$","div",null,{"className":"footer-msg","children":[["$","a",null,{"href":"https://t.me/+79013479868","target":"_blank","rel":"noopener","children":"Telegram"}],["$","a",null,{"href":"https://wa.me/+79013479868","target":"_blank","rel":"noopener","children":"WhatsApp"}],["$","a",null,{"href":"https://max.ru/u/f9LHodD0cOJMl118MYnSxw-XC6C3ws3b8QXkTUY9wMS03jvBbptkzzwVG2Y","target":"_blank","rel":"noopener","children":"MAX"}],["$","a",null,{"href":"https://www.youtube.com/@CarCityTaxi","target":"_blank","rel":"noopener","children":"YouTube"}]]}]]}],[["$","nav","Аренда",{"aria-label":"Аренда","className":"footer-col","children":[["$","p",null,{"className":"mono","children":"Аренда"}],[["$","a","/ekonom",{"href":"/Car-City/ekonom","children":"Эконом"}],["$","a","/komfort",{"href":"/Car-City/komfort","children":"Комфорт"}],["$","a","/komfortplus",{"href":"/Car-City/komfortplus","children":"Комфорт+"}],["$","a","/gruzovoy",{"href":"/Car-City/gruzovoy","children":"Грузовой"}],["$","a","/arenda-taksi-ip",{"href":"/Car-City/arenda-taksi-ip","children":"Аренда такси для ИП"}]]]}],["$","nav","Выкуп",{"aria-label":"Выкуп","className":"footer-col","children":[["$","p",null,{"className":"mono","children":"Выкуп"}],[["$","a","/vykup",{"href":"/Car-City/vykup","children":"Аренда с правом выкупа"}],["$","a","/vykup/ekonom",{"href":"/Car-City/vykup/ekonom","children":"Выкуп эконом"}],["$","a","/vykup/komfort",{"href":"/Car-City/vykup/komfort","children":"Выкуп комфорт"}],["$","a","/vykup/komfort-plyus",{"href":"/Car-City/vykup/komfort-plyus","children":"Выкуп комфорт+"}]]]}],["$","nav","Компания",{"aria-label":"Компания","className":"footer-col","children":[["$","p",null,{"className":"mono","children":"Компания"}],[["$","a","/usloviya",{"href":"/Car-City/usloviya","children":"Условия"}],["$","a","/o-nas",{"href":"/Car-City/o-nas","children":"О нас"}],["$","a","/reviews",{"href":"/Car-City/reviews","children":"Отзывы"}],["$","a","/novosti",{"href":"/Car-City/novosti","children":"Новости"}],["$","a","/contact",{"href":"/Car-City/contact","children":"Контакты"}]]]}]],["$","div",null,{"className":"footer-col footer-offices","children":[["$","p",null,{"className":"mono","children":"Офисы"}],[["$","p","Проспект Вернадского",{"children":[["$","span",null,{"children":["м."," ","Проспект Вернадского"]}],["$","br",null,{}],["$","span",null,{"className":"muted small","children":["ул. Удальцова, д. 36",", ","с 9:00 до 21:00"]}]]}],["$","p","Митино",{"children":[["$","span",null,{"children":["м."," ","Митино"]}],["$","br",null,{}],["$","span",null,{"className":"muted small","children":["1-й Митинский пер., д. 15, стр. 3",", ","с 10:00 до 19:00"]}]]}],["$","p","Кунцевская",{"children":[["$","span",null,{"children":["м."," ","Кунцевская"]}],["$","br",null,{}],["$","span",null,{"className":"muted small","children":["ул. Витебская, д. 11",", ","с 10:00 до 19:00"]}]]}]]]}]]}],["$","div",null,{"className":"footer-giant","aria-hidden":"true","children":["$","span",null,{"children":"CAR CITY"}]}],["$","div",null,{"className":"wrap footer-bottom","children":[["$","span",null,{"className":"muted small","children":["© ",2026," ","ООО «ЭЛИТ-КАР»"]}],["$","a",null,{"href":"https://car-city.pro/themes/document/politika-konfedenczialnosti-kar-siti.pdf","className":"muted small","children":"Политика конфиденциальности"}],["$","a",null,{"href":"/Car-City/sitemap","className":"muted small","children":"Карта сайта"}]]}],["$","div",null,{"className":"checker-strip","aria-hidden":"true"}]]}]
+6:["$","div",null,{"className":"sticky-cta","role":"region","aria-label":"Быстрая связь","children":[["$","a",null,{"className":"btn btn-ghost","href":"tel:+74993023159","children":"Позвонить"}],["$","a",null,{"className":"btn btn-primary","href":"#zayavka","children":"Заявка"}]]}]
+7:["$","script","script-0",{"src":"/Car-City/_next/static/chunks/1fgmzmoaaag10.js","async":true}]
+8:["$","script","script-1",{"src":"/Car-City/_next/static/chunks/1iw258zef6l1p.js","async":true}]
+9:["$","$L15",null,{"children":["$","$16",null,{"name":"Next.MetadataOutlet","children":"$@17"}]}]
+c:["$","$1","h",{"children":[null,["$","$L18",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#0B0B0C"}],["$","meta","3",{"name":"color-scheme","content":"dark"}]]}],["$","div",null,{"hidden":true,"children":["$","$L19",null,{"children":["$","$16",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Инструкции по оформлению аренды такси"}],["$","meta","1",{"name":"description","content":"Узнайте, как правильно заключить договор аренды автомобиля для такси. Полезные советы, необходимые документы и важные нюансы."}],["$","link","2",{"rel":"canonical","href":"https://car-city.pro/novosti/instrukczii-po-oformleniyu-arendy-taksi/"}],["$","link","3",{"rel":"alternate","hrefLang":"ru","href":"https://car-city.pro/novosti/instrukczii-po-oformleniyu-arendy-taksi/"}],["$","link","4",{"rel":"alternate","hrefLang":"ky","href":"https://car-city.pro/ky/novosti/instrukczii-po-oformleniyu-arendy-taksi/"}],["$","link","5",{"rel":"alternate","hrefLang":"kk","href":"https://car-city.pro/kk/novosti/instrukczii-po-oformleniyu-arendy-taksi/"}],["$","link","6",{"rel":"alternate","hrefLang":"uz","href":"https://car-city.pro/uz/novosti/instrukczii-po-oformleniyu-arendy-taksi/"}],["$","link","7",{"rel":"alternate","hrefLang":"en","href":"https://car-city.pro/en/novosti/instrukczii-po-oformleniyu-arendy-taksi/"}],["$","link","8",{"rel":"alternate","hrefLang":"x-default","href":"https://car-city.pro/novosti/instrukczii-po-oformleniyu-arendy-taksi/"}],["$","meta","9",{"property":"og:title","content":"Инструкции по оформлению аренды такси"}],["$","meta","10",{"property":"og:description","content":"Узнайте, как правильно заключить договор аренды автомобиля для такси. Полезные советы, необходимые документы и важные нюансы."}],["$","meta","11",{"property":"og:url","content":"https://car-city.pro/novosti/instrukczii-po-oformleniyu-arendy-taksi/"}],["$","meta","12",{"property":"og:type","content":"article"}],["$","meta","13",{"name":"twitter:card","content":"summary"}],["$","meta","14",{"name":"twitter:title","content":"Инструкции по оформлению аренды такси"}],["$","meta","15",{"name":"twitter:description","content":"Узнайте, как правильно заключить договор аренды автомобиля для такси. Полезные советы, необходимые документы и важные нюансы."}],["$","link","16",{"rel":"icon","href":"/Car-City/brand/emblem-96.png"}],["$","link","17",{"rel":"apple-touch-icon","href":"/Car-City/brand/emblem-192.png"}],["$","$L1a","18",{}]]}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+e:["$","$1","c",{"children":[null,["$","$L1b",null,{"parallelRouterKey":"children","template":["$","$L1c",null,{}]}]]}]
+11:["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/Car-City/_next/static/chunks/2pixcsp0sneok.css","precedence":"next"}],["$","script","script-0",{"src":"/Car-City/_next/static/chunks/0ndinw58jiega.js","async":true}],["$","script","script-1",{"src":"/Car-City/_next/static/chunks/3r0050e_ph00s.js","async":true}],["$","script","script-2",{"src":"/Car-City/_next/static/chunks/2dei4arquq1zi.js","async":true}]],["$","html",null,{"lang":"ru","className":"unbounded_e831ec5b-module__qmzUta__variable onest_6d14aefc-module__5p693W__variable jetbrains_mono_f297befb-module__ngguMG__variable","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(function(){try{\nvar n=navigator,d=document.documentElement,c=n.connection||{};\nvar mem=n.deviceMemory||4,cpu=n.hardwareConcurrency||4;\nvar slowNet=c.saveData||/(^|-)2g|3g/.test(c.effectiveType||\"\");\nvar rm=matchMedia(\"(prefers-reduced-motion: reduce)\").matches;\nvar lvl=(rm||slowNet||mem<=2||cpu<=2)?\"basic\":(mem>=4&&cpu>=6)?\"full\":\"light\";\nvar o=/[?&]gfx=(full|light|basic)/.exec(location.search);if(o)lvl=o[1];\nd.dataset.gfx=lvl;}catch(e){document.documentElement.dataset.gfx=\"basic\";}})();"}}]}],["$","body",null,{"children":[["$","$L1b",null,{"parallelRouterKey":"children","template":["$","$L1c",null,{}],"notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]]}],["$","$L1d",null,{}],["$","$L1e",null,{}],["$","$L1f",null,{}]]}]]}]]}]
+17:null
+14:true
+b:300
+b:C
+13:0
+d:"$undefined"
+f:"$undefined"
+12:"$undefined"
+a:"$undefined"

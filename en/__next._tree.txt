@@ -1,0 +1,8 @@
+:HL["/Car-City/_next/static/chunks/2pixcsp0sneok.css","style"]
+:HL["/Car-City/_next/static/media/16d91c780434f2ce-s.p.0y1w0k24nk0rl.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/Car-City/_next/static/media/4e1c87b7aa9e2f2f-s.p.3o02-8iknf6dl.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/Car-City/_next/static/media/8800dfc60902df36-s.p.2sla2yow9-9p_.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/Car-City/_next/static/media/b59689b1142d37ce-s.p.1bk8_xp319hr4.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/Car-City/brand/emblem-96.webp","image",{"imageSrcSet":"/Car-City/brand/emblem-96.webp 1x, /Car-City/brand/emblem-192.webp 2x"}]
+:HL["/Car-City/brand/wordmark-320.webp","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"slug","param":{"type":"c","key":"en","siblings":["sitemap","sitemap.xml","spasibo","styles"]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"FFSm9taSr5iBw7vDS9W4h"}

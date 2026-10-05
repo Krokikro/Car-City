@@ -1,0 +1,133 @@
+1:"$Sreact.fragment"
+2:I[83134,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js","/Car-City/_next/static/chunks/1fgmzmoaaag10.js","/Car-City/_next/static/chunks/1iw258zef6l1p.js"],"Header"]
+3:T1582,<p>Find out how to sign a taxi car rental contract the right way. Useful tips, the documents you need and important details.</p>
+<figure class="rimg" data-reveal><img src="https://car-city.pro/themes/imgs/banners/14.jpg" alt="How to rent a taxi car: step-by-step paperwork guide" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('noimg')"/></figure>
+<h2 id="who-can-rent-a-car-for-taxi-work">Who can rent a car for taxi work</h2><p>Requirements for the renter:</p>
+<ul class="ticks">
+<li>Citizenship and documents. Citizens of Russia, Belarus, Kazakhstan, Kyrgyzstan and South Ossetia can rent a car. Citizens of other countries can rent a car only if they have a residence permit (VNZh) and are registered as a sole proprietor (IP).</li>
+<li>Age. &quot;The minimum driver age is 21&quot;</li>
+<li>Driving experience. &quot;As a rule, at least 3 years of driving experience is required&quot;</li>
+</ul>
+<p>Extra requirements (mainly from the aggregators):</p>
+<ul class="ticks">
+<li>Appearance. The driver needs to dress in a business style and look neat, especially when working in the Business class.</li>
+<li>Communicating with passengers. Politeness, tidiness, knowing Russian and being able to use a navigation app are also required, especially in premium categories.</li>
+</ul>
+<h2 id="main-documents-for-renting-a-car">Main documents for renting a car</h2><h3>Car rental contract</h3>
+<p>The main legal document that gives the driver the right to use the car temporarily. It must include:</p>
+<ul class="tiles">
+<li>Full names of the parties (full name and passport details, or company details)</li>
+<li>The subject of the contract (make, model, VIN and licence plate of the car)</li>
+<li>The rental term and the terms for extending or ending it</li>
+<li>The rental fee and how it is paid</li>
+<li>The parties&#39; liability and penalties</li>
+<li>Signatures of both parties</li>
+</ul>
+<h3>Car handover certificate</h3>
+<p>The certificate is drawn up on the day the car is handed over and contains:</p>
+<ul class="tiles">
+<li>A detailed description of the car&#39;s condition</li>
+<li>Fuel level and mileage at handover</li>
+<li>Notes on any external damage</li>
+<li>The date and signatures of the parties</li>
+</ul>
+<h3>KIS &quot;ART&quot;</h3>
+<p>&quot;The driver must be registered in KIS &quot;ART&quot; (the Integrated Information System of Taxi Market Aggregators)&quot;</p>
+<h3>Self-employed or IP</h3>
+<p>If you plan to work directly, you need to register in one of these forms:</p>
+<ul class="ticks">
+<li>Self-employed (SMZ). The simplest way to earn officially.</li>
+<li>Sole proprietor (IP). Useful if you want to work with several taxi fleets.</li>
+</ul>
+<h2 id="step-by-step-guide-to-renting">Step-by-step guide to renting</h2><h3>Checking the outside of the car</h3>
+<p>Before signing the documents, the renter should inspect the car carefully:</p>
+<ul class="tiles">
+<li>Check the body for scratches, dents and chips</li>
+<li>Make sure the headlights, windows, mirrors and wipers work</li>
+<li>Check the interior, the boot and the tyres</li>
+<li>Record all defects you find on photo/video</li>
+</ul>
+<h3>Signing the rental contract</h3>
+<p>After the inspection you sign the rental contract, which sets out:</p>
+<ul class="tiles">
+<li>The car model and the rental term</li>
+<li>The price and payment schedule</li>
+<li>Liability for accidents and breakdowns</li>
+<li>The option to extend the rental</li>
+</ul>
+<h3>Handing over the car</h3>
+<p>After the contract is signed:</p>
+<ul class="tiles">
+<li>The parties sign the handover certificate</li>
+<li>The driver gets the keys, the vehicle registration certificate (STS), the OSAGO policy and the waybill</li>
+<li>The car is officially considered rented out</li>
+</ul>
+<h3>Working and returning the car</h3>
+<p>&quot;The minimum rental term is 14 days, but it can be extended for any period&quot;</p>
+<p>If the driver plans to end the rental:</p>
+<ul class="ticks">
+<li>Notify the manager 3 days before the planned return date</li>
+<li>When you return the car, there&#39;s a final inspection and a return certificate is signed</li>
+</ul>
+<h2 id="important-rules-and-responsibility">Important rules and responsibility</h2><p>The driver must take good care of the car:</p>
+<ul class="tiles">
+<li>Keep an eye on its technical condition and report any faults</li>
+<li>Not hand the car over to third parties without the owner&#39;s consent</li>
+<li>Fill up with good quality fuel</li>
+<li>Keep the body and interior clean</li>
+</ul>
+<p>If there&#39;s an accident:</p>
+<ol class="stepl">
+<li>The driver must report it to the insurance company and to the car owner</li>
+<li>Record all the details at the scene (photos, diagrams, statements from both sides)</li>
+<li>Call the traffic police (GIBDD)</li>
+</ol>
+<p>Apart from that, the driver should avoid these violations:</p>
+<ul class="tiles">
+<li>An expired diagnostic card</li>
+<li>Wrong parking</li>
+<li>Breaking the terms of work with an aggregator (Yandex, Citymobil)</li>
+<li>Working without a valid licence</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2><p>&quot;Renting a car for taxi work is a convenient way to start earning without big investments&quot;</p>
+<p>Car City offers help at every stage:</p>
+<ul class="tiles">
+<li>Getting the documents you need to connect to aggregators (KIS &quot;ART&quot;, certification, licence)</li>
+<li>Advice on the contract and rental terms</li>
+<li>Help with resolving disputes and restoring access to aggregators</li>
+</ul>
+b:X
+10:X
+10:C
+0:{"buildId":"FFSm9taSr5iBw7vDS9W4h","data":[{"rsc":["$","$1","c",{"children":[[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"document.documentElement.lang=\"en\""}}],["$","$L2",null,{}],["$","main",null,{"id":"main","className":"pg pg-article","children":[false,["$","article",null,{"className":"art","children":[["$","header",null,{"className":"art-hero","children":[["$","div",null,{"className":"art-hero-bg","aria-hidden":"true"}],["$","div",null,{"className":"wrap-narrow","children":[["$","nav",null,{"className":"crumbs mono","aria-label":"Breadcrumbs","children":[[["$","span","0",{"children":[["$","a",null,{"href":"/Car-City/en","children":"Home"}],["$","i",null,{"aria-hidden":"true","children":"/"}]]}],["$","span","1",{"children":[["$","a",null,{"href":"/Car-City/en/novosti","children":"News"}],["$","i",null,{"aria-hidden":"true","children":"/"}]]}],["$","span","2",{"children":[["$","span",null,{"aria-current":"page","children":"How to rent a taxi car: step-by-step paperwork guide"}],false]}]],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://car-city.pro/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"News\",\"item\":\"https://car-city.pro/novosti\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"How to rent a taxi car: step-by-step paperwork guide\",\"item\":\"https://car-city.pro/novosti/instrukczii-po-oformleniyu-arendy-taksi\"}]}"}}]]}],["$","p",null,{"className":"mono eyebrow","children":"14.07.2025 · 4 min read"}],["$","h1",null,{"className":"display art-h1","data-split":true,"children":"How to rent a taxi car: step-by-step paperwork guide"}]]}],["$","div",null,{"className":"art-progress","aria-hidden":"true","children":["$","i",null,{}]}]]}],["$","div",null,{"className":"wrap art-grid","children":[["$","nav",null,{"className":"art-toc mono","aria-label":"Contents","children":[["$","p",null,{"children":"Contents"}],["$","ol",null,{"children":[["$","li","Who can rent a car for taxi work",{"children":["$","a",null,{"href":"#who-can-rent-a-car-for-taxi-work","children":"Who can rent a car for taxi work"}]}],["$","li","Main documents for renting a car",{"children":["$","a",null,{"href":"#main-documents-for-renting-a-car","children":"Main documents for renting a car"}]}],["$","li","Step-by-step guide to renting",{"children":["$","a",null,{"href":"#step-by-step-guide-to-renting","children":"Step-by-step guide to renting"}]}],["$","li","Important rules and responsibility",{"children":["$","a",null,{"href":"#important-rules-and-responsibility","children":"Important rules and responsibility"}]}],["$","li","Conclusion",{"children":["$","a",null,{"href":"#conclusion","children":"Conclusion"}]}]]}]]}],["$","div",null,{"className":"prose art-body","dangerouslySetInnerHTML":{"__html":"$3"}}]]}],"$L4"]}],false,false,false,false]}],"$L5","$L6"],["$L7","$L8"],"$L9"]}],"isPartial":"$@a","staleTime":"$b","varyParams":null},{"rsc":"$Lc","isPartial":"$@d","staleTime":"$b","varyParams":null},{"rsc":"$Le","isPartial":"$@f","staleTime":"$b","varyParams":"$10"},{"rsc":"$L11","isPartial":"$@12","staleTime":"$b","varyParams":null}],"isUpgradeableISRFallback":false,"a":"$@13","rootVaryParams":null,"needsRuntimeRequest":"$@14"}
+15:I[54189,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"OutletBoundary"]
+16:"$Sreact.suspense"
+18:I[54189,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"ViewportBoundary"]
+19:I[54189,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"MetadataBoundary"]
+1a:I[64383,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"IconMark"]
+1b:I[9996,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"default"]
+1c:I[10543,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"default"]
+1d:I[19935,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"MotionRoot"]
+1e:I[6642,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"CookieNotice"]
+1f:I[98210,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"Analytics"]
+:HL["/Car-City/brand/emblem-96.webp","image",{"imageSrcSet":"/Car-City/brand/emblem-96.webp 1x, /Car-City/brand/emblem-192.webp 2x"}]
+:HL["/Car-City/brand/wordmark-320.webp","image"]
+:HL["/Car-City/_next/static/chunks/2pixcsp0sneok.css","style"]
+4:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"How to rent a taxi car: step-by-step paperwork guide\",\"datePublished\":\"2025-07-14\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Car City\"},\"mainEntityOfPage\":\"https://car-city.pro/novosti/instrukczii-po-oformleniyu-arendy-taksi\"}"}}]
+5:["$","footer",null,{"className":"site-footer","children":[["$","div",null,{"className":"wrap footer-top","children":[["$","div",null,{"className":"footer-brand","children":[["$","span",null,{"className":"logo","children":[["$","img",null,{"src":"/Car-City/brand/emblem-96.webp","srcSet":"/Car-City/brand/emblem-96.webp 1x, /Car-City/brand/emblem-192.webp 2x","width":56,"height":56,"alt":"","className":"logo-emblem"}],["$","img",null,{"src":"/Car-City/brand/wordmark-320.webp","width":162,"height":31,"alt":"Car City","className":"logo-word"}]]}],["$","p",null,{"className":"muted","children":["Part of the Elit Car group",". ","ООО «ЭЛИТ-КАР»"]}],["$","div",null,{"className":"footer-phones","children":[[["$","a","+7 (499) 302-31-59",{"href":"tel:+74993023159","className":"mono-num","children":"+7 (499) 302-31-59"}],["$","a","+7 (499) 474-76-47",{"href":"tel:+74994747647","className":"mono-num","children":"+7 (499) 474-76-47"}]],["$","a",null,{"href":"mailto:support@car-city.pro","children":"support@car-city.pro"}]]}],["$","div",null,{"className":"footer-msg","children":[["$","a",null,{"href":"https://t.me/+79013479868","target":"_blank","rel":"noopener","children":"Telegram"}],["$","a",null,{"href":"https://wa.me/+79013479868","target":"_blank","rel":"noopener","children":"WhatsApp"}],["$","a",null,{"href":"https://max.ru/u/f9LHodD0cOJMl118MYnSxw-XC6C3ws3b8QXkTUY9wMS03jvBbptkzzwVG2Y","target":"_blank","rel":"noopener","children":"MAX"}],["$","a",null,{"href":"https://www.youtube.com/@CarCityTaxi","target":"_blank","rel":"noopener","children":"YouTube"}]]}]]}],[["$","nav","Rent",{"aria-label":"Rent","className":"footer-col","children":[["$","p",null,{"className":"mono","children":"Rent"}],[["$","a","/ekonom",{"href":"/Car-City/en/ekonom","children":"Economy"}],["$","a","/komfort",{"href":"/Car-City/en/komfort","children":"Comfort"}],["$","a","/komfortplus",{"href":"/Car-City/en/komfortplus","children":"Comfort+"}],["$","a","/gruzovoy",{"href":"/Car-City/en/gruzovoy","children":"Cargo"}],["$","a","/arenda-taksi-ip",{"href":"/Car-City/en/arenda-taksi-ip","children":"Taxi rental for sole proprietors"}]]]}],["$","nav","Rent-to-own",{"aria-label":"Rent-to-own","className":"footer-col","children":[["$","p",null,{"className":"mono","children":"Rent-to-own"}],[["$","a","/vykup",{"href":"/Car-City/en/vykup","children":"Rent-to-own"}],["$","a","/vykup/ekonom",{"href":"/Car-City/en/vykup/ekonom","children":"Rent-to-own Economy"}],["$","a","/vykup/komfort",{"href":"/Car-City/en/vykup/komfort","children":"Rent-to-own Comfort"}],["$","a","/vykup/komfort-plyus",{"href":"/Car-City/en/vykup/komfort-plyus","children":"Rent-to-own Comfort+"}]]]}],["$","nav","Company",{"aria-label":"Company","className":"footer-col","children":[["$","p",null,{"className":"mono","children":"Company"}],[["$","a","/usloviya",{"href":"/Car-City/en/usloviya","children":"Terms"}],["$","a","/o-nas",{"href":"/Car-City/en/o-nas","children":"About"}],["$","a","/reviews",{"href":"/Car-City/en/reviews","children":"Reviews"}],["$","a","/novosti",{"href":"/Car-City/en/novosti","children":"News"}],["$","a","/contact",{"href":"/Car-City/en/contact","children":"Contacts"}]]]}]],["$","div",null,{"className":"footer-col footer-offices","children":[["$","p",null,{"className":"mono","children":"Offices"}],[["$","p","Проспект Вернадского",{"children":[["$","span",null,{"children":["Metro"," ","Проспект Вернадского"]}],["$","br",null,{}],["$","span",null,{"className":"muted small","children":["ул. Удальцова, д. 36",", ","с 9:00 до 21:00"]}]]}],["$","p","Митино",{"children":[["$","span",null,{"children":["Metro"," ","Митино"]}],["$","br",null,{}],["$","span",null,{"className":"muted small","children":["1-й Митинский пер., д. 15, стр. 3",", ","с 10:00 до 19:00"]}]]}],["$","p","Кунцевская",{"children":[["$","span",null,{"children":["Metro"," ","Кунцевская"]}],["$","br",null,{}],["$","span",null,{"className":"muted small","children":["ул. Витебская, д. 11",", ","с 10:00 до 19:00"]}]]}]]]}]]}],["$","div",null,{"className":"footer-giant","aria-hidden":"true","children":["$","span",null,{"children":"CAR CITY"}]}],["$","div",null,{"className":"wrap footer-bottom","children":[["$","span",null,{"className":"muted small","children":["© ",2026," ","ООО «ЭЛИТ-КАР»"]}],["$","a",null,{"href":"https://car-city.pro/themes/document/politika-konfedenczialnosti-kar-siti.pdf","className":"muted small","children":"Privacy policy"}],["$","a",null,{"href":"/Car-City/en/sitemap","className":"muted small","children":"Sitemap"}]]}],["$","div",null,{"className":"checker-strip","aria-hidden":"true"}]]}]
+6:["$","div",null,{"className":"sticky-cta","role":"region","aria-label":"Quick contact","children":[["$","a",null,{"className":"btn btn-ghost","href":"tel:+74993023159","children":"Call"}],["$","a",null,{"className":"btn btn-primary","href":"#zayavka","children":"Request"}]]}]
+7:["$","script","script-0",{"src":"/Car-City/_next/static/chunks/1fgmzmoaaag10.js","async":true}]
+8:["$","script","script-1",{"src":"/Car-City/_next/static/chunks/1iw258zef6l1p.js","async":true}]
+9:["$","$L15",null,{"children":["$","$16",null,{"name":"Next.MetadataOutlet","children":"$@17"}]}]
+c:["$","$1","h",{"children":[null,["$","$L18",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#0B0B0C"}],["$","meta","3",{"name":"color-scheme","content":"dark"}]]}],["$","div",null,{"hidden":true,"children":["$","$L19",null,{"children":["$","$16",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"How to rent a taxi car: step-by-step paperwork guide"}],["$","meta","1",{"name":"description","content":"Find out how to sign a taxi car rental contract the right way. Useful tips, the documents you need and important details."}],["$","link","2",{"rel":"canonical","href":"https://car-city.pro/en/novosti/instrukczii-po-oformleniyu-arendy-taksi/"}],["$","link","3",{"rel":"alternate","hrefLang":"ru","href":"https://car-city.pro/novosti/instrukczii-po-oformleniyu-arendy-taksi/"}],["$","link","4",{"rel":"alternate","hrefLang":"ky","href":"https://car-city.pro/ky/novosti/instrukczii-po-oformleniyu-arendy-taksi/"}],["$","link","5",{"rel":"alternate","hrefLang":"kk","href":"https://car-city.pro/kk/novosti/instrukczii-po-oformleniyu-arendy-taksi/"}],["$","link","6",{"rel":"alternate","hrefLang":"uz","href":"https://car-city.pro/uz/novosti/instrukczii-po-oformleniyu-arendy-taksi/"}],["$","link","7",{"rel":"alternate","hrefLang":"en","href":"https://car-city.pro/en/novosti/instrukczii-po-oformleniyu-arendy-taksi/"}],["$","link","8",{"rel":"alternate","hrefLang":"x-default","href":"https://car-city.pro/novosti/instrukczii-po-oformleniyu-arendy-taksi/"}],["$","meta","9",{"property":"og:title","content":"How to rent a taxi car: step-by-step paperwork guide"}],["$","meta","10",{"property":"og:description","content":"Find out how to sign a taxi car rental contract the right way. Useful tips, the documents you need and important details."}],["$","meta","11",{"property":"og:url","content":"https://car-city.pro/en/novosti/instrukczii-po-oformleniyu-arendy-taksi/"}],["$","meta","12",{"property":"og:type","content":"article"}],["$","meta","13",{"name":"twitter:card","content":"summary"}],["$","meta","14",{"name":"twitter:title","content":"How to rent a taxi car: step-by-step paperwork guide"}],["$","meta","15",{"name":"twitter:description","content":"Find out how to sign a taxi car rental contract the right way. Useful tips, the documents you need and important details."}],["$","link","16",{"rel":"icon","href":"/Car-City/brand/emblem-96.png"}],["$","link","17",{"rel":"apple-touch-icon","href":"/Car-City/brand/emblem-192.png"}],["$","$L1a","18",{}]]}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]
+e:["$","$1","c",{"children":[null,["$","$L1b",null,{"parallelRouterKey":"children","template":["$","$L1c",null,{}]}]]}]
+11:["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/Car-City/_next/static/chunks/2pixcsp0sneok.css","precedence":"next"}],["$","script","script-0",{"src":"/Car-City/_next/static/chunks/0ndinw58jiega.js","async":true}],["$","script","script-1",{"src":"/Car-City/_next/static/chunks/3r0050e_ph00s.js","async":true}],["$","script","script-2",{"src":"/Car-City/_next/static/chunks/2dei4arquq1zi.js","async":true}]],["$","html",null,{"lang":"ru","className":"unbounded_e831ec5b-module__qmzUta__variable onest_6d14aefc-module__5p693W__variable jetbrains_mono_f297befb-module__ngguMG__variable","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(function(){try{\nvar n=navigator,d=document.documentElement,c=n.connection||{};\nvar mem=n.deviceMemory||4,cpu=n.hardwareConcurrency||4;\nvar slowNet=c.saveData||/(^|-)2g|3g/.test(c.effectiveType||\"\");\nvar rm=matchMedia(\"(prefers-reduced-motion: reduce)\").matches;\nvar lvl=(rm||slowNet||mem<=2||cpu<=2)?\"basic\":(mem>=4&&cpu>=6)?\"full\":\"light\";\nvar o=/[?&]gfx=(full|light|basic)/.exec(location.search);if(o)lvl=o[1];\nd.dataset.gfx=lvl;}catch(e){document.documentElement.dataset.gfx=\"basic\";}})();"}}]}],["$","body",null,{"children":[["$","$L1b",null,{"parallelRouterKey":"children","template":["$","$L1c",null,{}],"notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]]}],["$","$L1d",null,{}],["$","$L1e",null,{}],["$","$L1f",null,{}]]}]]}]]}]
+17:null
+14:true
+b:300
+b:C
+13:0
+d:"$undefined"
+f:"$undefined"
+12:"$undefined"
+a:"$undefined"

@@ -1,0 +1,129 @@
+1:"$Sreact.fragment"
+2:I[9996,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"default"]
+3:I[10543,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"default"]
+4:I[19935,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"MotionRoot"]
+5:I[6642,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"CookieNotice"]
+6:I[98210,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"Analytics"]
+8:I[54189,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"OutletBoundary"]
+9:"$Sreact.suspense"
+c:I[54189,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"ViewportBoundary"]
+e:I[54189,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"MetadataBoundary"]
+10:I[52409,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"default",1]
+:HL["/Car-City/_next/static/chunks/2pixcsp0sneok.css","style"]
+:HL["/Car-City/_next/static/media/16d91c780434f2ce-s.p.0y1w0k24nk0rl.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/Car-City/_next/static/media/4e1c87b7aa9e2f2f-s.p.3o02-8iknf6dl.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/Car-City/_next/static/media/8800dfc60902df36-s.p.2sla2yow9-9p_.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/Car-City/_next/static/media/b59689b1142d37ce-s.p.1bk8_xp319hr4.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+b:X
+0:{"P":null,"c":["","en","novosti","kakoj-klass-avtomobilya-vygodnee-dlya-raboty-v-taksi",""],"q":"","i":false,"f":[[["",{"children":[["slug","en/novosti/kakoj-klass-avtomobilya-vygodnee-dlya-raboty-v-taksi","c",["sitemap","sitemap.xml","spasibo","styles"]],{"children":["__PAGE__",{},"$undefined","$undefined",4608]},"$undefined","$undefined",4608]},"$undefined","$undefined",4624],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/Car-City/_next/static/chunks/2pixcsp0sneok.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/Car-City/_next/static/chunks/0ndinw58jiega.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/Car-City/_next/static/chunks/3r0050e_ph00s.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/Car-City/_next/static/chunks/2dei4arquq1zi.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"ru","className":"unbounded_e831ec5b-module__qmzUta__variable onest_6d14aefc-module__5p693W__variable jetbrains_mono_f297befb-module__ngguMG__variable","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(function(){try{\nvar n=navigator,d=document.documentElement,c=n.connection||{};\nvar mem=n.deviceMemory||4,cpu=n.hardwareConcurrency||4;\nvar slowNet=c.saveData||/(^|-)2g|3g/.test(c.effectiveType||\"\");\nvar rm=matchMedia(\"(prefers-reduced-motion: reduce)\").matches;\nvar lvl=(rm||slowNet||mem<=2||cpu<=2)?\"basic\":(mem>=4&&cpu>=6)?\"full\":\"light\";\nvar o=/[?&]gfx=(full|light|basic)/.exec(location.search);if(o)lvl=o[1];\nd.dataset.gfx=lvl;}catch(e){document.documentElement.dataset.gfx=\"basic\";}})();"}}]}],["$","body",null,{"children":[["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}]]}]]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L7",[["$","script","script-0",{"src":"/Car-City/_next/static/chunks/1fgmzmoaaag10.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/Car-City/_next/static/chunks/1iw258zef6l1p.js","async":true,"nonce":"$undefined"}]],["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]]}],{},null,false,null]},null,false,"$b"]},null,false,null],["$","$1","h",{"children":[null,["$","$Lc",null,{"children":"$Ld"}],["$","div",null,{"hidden":true,"children":["$","$Le",null,{"children":["$","$9",null,{"name":"Next.Metadata","children":"$Lf"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],false]],"m":"$undefined","G":["$10",[["$","link","0",{"rel":"stylesheet","href":"/Car-City/_next/static/chunks/2pixcsp0sneok.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]]],"S":true,"h":null,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"FFSm9taSr5iBw7vDS9W4h"}
+11:I[83134,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js","/Car-City/_next/static/chunks/1fgmzmoaaag10.js","/Car-City/_next/static/chunks/1iw258zef6l1p.js"],"Header"]
+b:C
+12:T1d01,<figure class="rimg" data-reveal><img src="https://car-city.pro/assets/gallery/222.png" alt="Which car class pays more: Economy, Comfort or Comfort+" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('noimg')"/></figure>
+<p>Which car pays more for taxi work: Economy, Comfort or Comfort+? We compare rent, commissions, order flow and driver income.</p>
+<p>When renting a car from a taxi fleet, the first thing to decide is the fare class. It&#39;s important to understand in advance which cars suit each class and to decide which fare class, Economy, Comfort or Comfort+, will pay more. Make this decision before signing the rental contract.</p>
+<p>Each fare class has its own car requirements and affects the flow of orders, the average fare and the aggregator&#39;s commission. Which class to choose depends on the type of car, how many hours you&#39;re ready to spend behind the wheel, and the level of service you plan to give passengers.</p>
+<h2 id="economy-fare-class">Economy fare class</h2><p>The basic fare class has the easiest car requirements and the biggest flow of orders. Compact 4-door sedans in good technical condition are suitable. In the Car City fleet the Economy class includes: Volkswagen Polo, Kia Rio X-Line, Kia Rio 1.6 and Skoda Rapid, from 1 500 rubles a day.</p>
+<p>Yandex Taxi&#39;s commission in Moscow for Economy is 22,37% of the order price (including VAT). That&#39;s lower than in Comfort. The average trip fare is the lowest of all classes, but the number of orders makes up for it: demand for Economy is always the highest.</p>
+<p>Pros of Economy:</p>
+<ul class="tiles">
+<li>The biggest flow of orders and the shortest waits between trips.</li>
+<li>Easy car requirements, so it&#39;s easy to get started.</li>
+<li>A lower aggregator commission than in Comfort.</li>
+<li>The lowest daily rental rate.</li>
+</ul>
+<p>Cons:</p>
+<ul class="tiles">
+<li>A low average fare.</li>
+<li>Strong competition between drivers.</li>
+<li>The car wears out faster because of many short city trips.</li>
+</ul>
+<p>Economy pays off when you work at peak hours (mornings, evenings, weekends) in busy city areas and are ready to work 8–10 hours a day.</p>
+<h2 id="comfort-fare-class">Comfort fare class</h2><p>Comfort is the second most popular fare class with passengers. Yandex Taxi&#39;s car requirements for Comfort are higher than for Economy: you need mid-size cars in good condition with a clean, well-kept interior. The class is assigned automatically by the Yandex classifier based on the make, model and year. To get access to the class you need to pass an online test on service standards.</p>
+<p>In the Car City fleet, Comfort class cars include Москвич 3, Geely Emgrand, Chery Tiggo 4, Chery Tiggo 4 Pro and Omoda S5, with rent from 2 000 rubles a day. These models are considered the best fit for Comfort thanks to their mix of reliability, affordable price and high interior comfort. Yandex Taxi automatically checks whether a car meets the Comfort requirements based on its make, model and year, so the driver doesn&#39;t need to apply separately.</p>
+<p>Yandex Taxi&#39;s commission in Moscow for Comfort is 25,42% of the order price (including VAT). That&#39;s higher than in Economy, but the average trip fare makes up the difference.</p>
+<p>Comfort gives higher income per trip, but you&#39;ll get fewer orders a day. Working 10 hours a day, an experienced Comfort driver in Moscow earns about the same as or more than in Economy, as long as they keep a high rating and get priority orders.</p>
+<p>Pros of Comfort:</p>
+<ul class="tiles">
+<li>Orders cost more than in Economy.</li>
+<li>Passengers are usually more polite and give low ratings less often.</li>
+<li>Less wear on the car: trips are longer and less frequent than in Economy.</li>
+<li>A wide choice of models: 5 cars in the Car City fleet.</li>
+</ul>
+<p>Cons:</p>
+<ul class="tiles">
+<li>The aggregator commission is ~3 p.p. higher.</li>
+<li>Stricter requirements for the car&#39;s cleanliness and condition.</li>
+<li>You need an online test to connect.</li>
+</ul>
+<p>Comfort suits those who prefer fewer short city trips and are ready to keep a high rating for priority orders with higher fares.</p>
+<h2 id="comfort-fare-class">Comfort+ fare class</h2><p>Comfort+ is the upper segment. In the Yandex Taxi classifier this class includes bigger, better-equipped cars: a roomy interior, leather trim, climate control and more electronics. To connect to this class you need an online test and a rating of at least 4,8.</p>
+<p>In the Car City fleet the Comfort+ class includes: Exeed LX 2023, Jac J7, Haval F7, Chery Tiggo 7 PRO, Chery Tiggo 7 PRO Max, Geely Atlas PRO, Hyundai Sonata and Kia K5, from 2 600 rubles a day.</p>
+<p>The commission in Moscow is the same 25,42% as in Comfort. But the average trip fare is higher, and passengers have more money to spend.</p>
+<p>Pros of Comfort+:</p>
+<ul class="tiles">
+<li>The highest average fare of the three classes.</li>
+<li>Fewer orders, but each costs more, so less mileage and wear.</li>
+<li>A chance to earn more without working more hours.</li>
+</ul>
+<p>Cons:</p>
+<ul class="tiles">
+<li>A higher daily rental rate.</li>
+<li>You need a rating of 4,8 or more and a car that fits the classifier.</li>
+<li>Passengers are pickier about service quality.</li>
+</ul>
+<p>Comfort+ pays off if you have a suitable car and are ready to keep a high standard of service.</p>
+<h2 id="which-car-is-best-to-take-for-taxi-work">Which car is best to take for taxi work</h2><p>Once you know which cars suit taxi work in each class, the main question remains: which car is best for you.</p>
+<div class="tbl" data-reveal><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Economy</th>
+<th>Comfort</th>
+<th>Comfort+</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Rent at Car City (from)</td>
+<td>1 500 ₽/day</td>
+<td>2 000 ₽/day</td>
+<td>2 600 ₽/day</td>
+</tr>
+<tr>
+<td>Yandex Taxi commission (Moscow)</td>
+<td>22,37%</td>
+<td>25,42%</td>
+<td>25,42%</td>
+</tr>
+<tr>
+<td>Order flow</td>
+<td>High</td>
+<td>Medium</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Average trip fare</td>
+<td>Low</td>
+<td>Medium</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Access to the class</td>
+<td>Automatic</td>
+<td>Online test</td>
+<td>Online test + rating from 4,8</td>
+</tr>
+</tbody></table></div>
+<p>If you&#39;re just starting and want to go on the line quickly without extra requirements, start with Economy. A low rental rate lowers your financial risk in the first weeks while you build your rating and learn how orders work.</p>
+<p>If you already have a rating or are ready to build it quickly, Comfort will pay off better when you work 8 hours a day or more. At Car City the difference in rent between Economy and Comfort is 100 rubles a day on a 7/0 schedule, and the average trip fare is noticeably higher. The maths works in Comfort&#39;s favour with any normal workload.</p>
+<p>Choosing a Comfort+ car for taxi work makes sense if your rating is steadily above 4,8 and you know exactly in which areas and at what times long, high-fare trips come most often. Otherwise the higher rental costs won&#39;t be covered by the difference in pay.</p>
+<p>Car City offers cars in all three classes with the first day of rent free, 24/7 technical support and handover on the day you apply. If you&#39;re not sure which class to start with, our managers will help you estimate your potential income for your work schedule.</p>
+7:[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"document.documentElement.lang=\"en\""}}],["$","$L11",null,{}],["$","main",null,{"id":"main","className":"pg pg-article","children":[false,["$","article",null,{"className":"art","children":[["$","header",null,{"className":"art-hero","children":[["$","div",null,{"className":"art-hero-bg","aria-hidden":"true"}],["$","div",null,{"className":"wrap-narrow","children":[["$","nav",null,{"className":"crumbs mono","aria-label":"Breadcrumbs","children":[[["$","span","0",{"children":[["$","a",null,{"href":"/Car-City/en","children":"Home"}],["$","i",null,{"aria-hidden":"true","children":"/"}]]}],["$","span","1",{"children":[["$","a",null,{"href":"/Car-City/en/novosti","children":"News"}],["$","i",null,{"aria-hidden":"true","children":"/"}]]}],["$","span","2",{"children":[["$","span",null,{"aria-current":"page","children":"Which car class pays more: Economy, Comfort or Comfort+"}],false]}]],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://car-city.pro/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"News\",\"item\":\"https://car-city.pro/novosti\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Which car class pays more: Economy, Comfort or Comfort+\",\"item\":\"https://car-city.pro/novosti/kakoj-klass-avtomobilya-vygodnee-dlya-raboty-v-taksi\"}]}"}}]]}],["$","p",null,{"className":"mono eyebrow","children":"20.08.2026 · 6 min read"}],["$","h1",null,{"className":"display art-h1","data-split":true,"children":"Which car class pays more: Economy, Comfort or Comfort+"}]]}],["$","div",null,{"className":"art-progress","aria-hidden":"true","children":["$","i",null,{}]}]]}],["$","div",null,{"className":"wrap art-grid","children":[["$","nav",null,{"className":"art-toc mono","aria-label":"Contents","children":[["$","p",null,{"children":"Contents"}],["$","ol",null,{"children":[["$","li","Economy fare class",{"children":["$","a",null,{"href":"#economy-fare-class","children":"Economy fare class"}]}],["$","li","Comfort fare class",{"children":["$","a",null,{"href":"#comfort-fare-class","children":"Comfort fare class"}]}],["$","li","Comfort+ fare class",{"children":["$","a",null,{"href":"#comfort-fare-class","children":"Comfort+ fare class"}]}],["$","li","Which car is best to take for taxi work",{"children":["$","a",null,{"href":"#which-car-is-best-to-take-for-taxi-work","children":"Which car is best to take for taxi work"}]}]]}]]}],["$","div",null,{"className":"prose art-body","dangerouslySetInnerHTML":{"__html":"$12"}}]]}],"$L13"]}],false,false,false,false]}],"$L14","$L15"]
+:HL["/Car-City/brand/emblem-96.webp","image",{"imageSrcSet":"/Car-City/brand/emblem-96.webp 1x, /Car-City/brand/emblem-192.webp 2x"}]
+:HL["/Car-City/brand/wordmark-320.webp","image"]
+13:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Which car class pays more: Economy, Comfort or Comfort+\",\"datePublished\":\"2026-08-20\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Car City\"},\"mainEntityOfPage\":\"https://car-city.pro/novosti/kakoj-klass-avtomobilya-vygodnee-dlya-raboty-v-taksi\"}"}}]
+14:["$","footer",null,{"className":"site-footer","children":[["$","div",null,{"className":"wrap footer-top","children":[["$","div",null,{"className":"footer-brand","children":[["$","span",null,{"className":"logo","children":[["$","img",null,{"src":"/Car-City/brand/emblem-96.webp","srcSet":"/Car-City/brand/emblem-96.webp 1x, /Car-City/brand/emblem-192.webp 2x","width":56,"height":56,"alt":"","className":"logo-emblem"}],["$","img",null,{"src":"/Car-City/brand/wordmark-320.webp","width":162,"height":31,"alt":"Car City","className":"logo-word"}]]}],["$","p",null,{"className":"muted","children":["Part of the Elit Car group",". ","ООО «ЭЛИТ-КАР»"]}],["$","div",null,{"className":"footer-phones","children":[[["$","a","+7 (499) 302-31-59",{"href":"tel:+74993023159","className":"mono-num","children":"+7 (499) 302-31-59"}],["$","a","+7 (499) 474-76-47",{"href":"tel:+74994747647","className":"mono-num","children":"+7 (499) 474-76-47"}]],["$","a",null,{"href":"mailto:support@car-city.pro","children":"support@car-city.pro"}]]}],["$","div",null,{"className":"footer-msg","children":[["$","a",null,{"href":"https://t.me/+79013479868","target":"_blank","rel":"noopener","children":"Telegram"}],["$","a",null,{"href":"https://wa.me/+79013479868","target":"_blank","rel":"noopener","children":"WhatsApp"}],["$","a",null,{"href":"https://max.ru/u/f9LHodD0cOJMl118MYnSxw-XC6C3ws3b8QXkTUY9wMS03jvBbptkzzwVG2Y","target":"_blank","rel":"noopener","children":"MAX"}],["$","a",null,{"href":"https://www.youtube.com/@CarCityTaxi","target":"_blank","rel":"noopener","children":"YouTube"}]]}]]}],[["$","nav","Rent",{"aria-label":"Rent","className":"footer-col","children":[["$","p",null,{"className":"mono","children":"Rent"}],[["$","a","/ekonom",{"href":"/Car-City/en/ekonom","children":"Economy"}],["$","a","/komfort",{"href":"/Car-City/en/komfort","children":"Comfort"}],["$","a","/komfortplus",{"href":"/Car-City/en/komfortplus","children":"Comfort+"}],["$","a","/gruzovoy",{"href":"/Car-City/en/gruzovoy","children":"Cargo"}],["$","a","/arenda-taksi-ip",{"href":"/Car-City/en/arenda-taksi-ip","children":"Taxi rental for sole proprietors"}]]]}],["$","nav","Rent-to-own",{"aria-label":"Rent-to-own","className":"footer-col","children":[["$","p",null,{"className":"mono","children":"Rent-to-own"}],[["$","a","/vykup",{"href":"/Car-City/en/vykup","children":"Rent-to-own"}],["$","a","/vykup/ekonom",{"href":"/Car-City/en/vykup/ekonom","children":"Rent-to-own Economy"}],["$","a","/vykup/komfort",{"href":"/Car-City/en/vykup/komfort","children":"Rent-to-own Comfort"}],["$","a","/vykup/komfort-plyus",{"href":"/Car-City/en/vykup/komfort-plyus","children":"Rent-to-own Comfort+"}]]]}],["$","nav","Company",{"aria-label":"Company","className":"footer-col","children":[["$","p",null,{"className":"mono","children":"Company"}],[["$","a","/usloviya",{"href":"/Car-City/en/usloviya","children":"Terms"}],["$","a","/o-nas",{"href":"/Car-City/en/o-nas","children":"About"}],["$","a","/reviews",{"href":"/Car-City/en/reviews","children":"Reviews"}],["$","a","/novosti",{"href":"/Car-City/en/novosti","children":"News"}],["$","a","/contact",{"href":"/Car-City/en/contact","children":"Contacts"}]]]}]],["$","div",null,{"className":"footer-col footer-offices","children":[["$","p",null,{"className":"mono","children":"Offices"}],[["$","p","Проспект Вернадского",{"children":[["$","span",null,{"children":["Metro"," ","Проспект Вернадского"]}],["$","br",null,{}],["$","span",null,{"className":"muted small","children":["ул. Удальцова, д. 36",", ","с 9:00 до 21:00"]}]]}],["$","p","Митино",{"children":[["$","span",null,{"children":["Metro"," ","Митино"]}],["$","br",null,{}],["$","span",null,{"className":"muted small","children":["1-й Митинский пер., д. 15, стр. 3",", ","с 10:00 до 19:00"]}]]}],["$","p","Кунцевская",{"children":[["$","span",null,{"children":["Metro"," ","Кунцевская"]}],["$","br",null,{}],["$","span",null,{"className":"muted small","children":["ул. Витебская, д. 11",", ","с 10:00 до 19:00"]}]]}]]]}]]}],["$","div",null,{"className":"footer-giant","aria-hidden":"true","children":["$","span",null,{"children":"CAR CITY"}]}],["$","div",null,{"className":"wrap footer-bottom","children":[["$","span",null,{"className":"muted small","children":["© ",2026," ","ООО «ЭЛИТ-КАР»"]}],["$","a",null,{"href":"https://car-city.pro/themes/document/politika-konfedenczialnosti-kar-siti.pdf","className":"muted small","children":"Privacy policy"}],["$","a",null,{"href":"/Car-City/en/sitemap","className":"muted small","children":"Sitemap"}]]}],["$","div",null,{"className":"checker-strip","aria-hidden":"true"}]]}]
+15:["$","div",null,{"className":"sticky-cta","role":"region","aria-label":"Quick contact","children":[["$","a",null,{"className":"btn btn-ghost","href":"tel:+74993023159","children":"Call"}],["$","a",null,{"className":"btn btn-primary","href":"#zayavka","children":"Request"}]]}]
+d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#0B0B0C"}],["$","meta","3",{"name":"color-scheme","content":"dark"}]]
+16:I[64383,["/Car-City/_next/static/chunks/0ndinw58jiega.js","/Car-City/_next/static/chunks/3r0050e_ph00s.js","/Car-City/_next/static/chunks/2dei4arquq1zi.js"],"IconMark"]
+a:null
+f:[["$","title","0",{"children":"Which car class pays more for taxi work: Economy, Comfort or Comfort+ | Car City"}],["$","meta","1",{"name":"description","content":"Which car pays more for taxi work: Economy, Comfort or Comfort+? We compare rent, commissions, order flow and driver income."}],["$","link","2",{"rel":"canonical","href":"https://car-city.pro/en/novosti/kakoj-klass-avtomobilya-vygodnee-dlya-raboty-v-taksi/"}],["$","link","3",{"rel":"alternate","hrefLang":"ru","href":"https://car-city.pro/novosti/kakoj-klass-avtomobilya-vygodnee-dlya-raboty-v-taksi/"}],["$","link","4",{"rel":"alternate","hrefLang":"ky","href":"https://car-city.pro/ky/novosti/kakoj-klass-avtomobilya-vygodnee-dlya-raboty-v-taksi/"}],["$","link","5",{"rel":"alternate","hrefLang":"kk","href":"https://car-city.pro/kk/novosti/kakoj-klass-avtomobilya-vygodnee-dlya-raboty-v-taksi/"}],["$","link","6",{"rel":"alternate","hrefLang":"uz","href":"https://car-city.pro/uz/novosti/kakoj-klass-avtomobilya-vygodnee-dlya-raboty-v-taksi/"}],["$","link","7",{"rel":"alternate","hrefLang":"en","href":"https://car-city.pro/en/novosti/kakoj-klass-avtomobilya-vygodnee-dlya-raboty-v-taksi/"}],["$","link","8",{"rel":"alternate","hrefLang":"x-default","href":"https://car-city.pro/novosti/kakoj-klass-avtomobilya-vygodnee-dlya-raboty-v-taksi/"}],["$","meta","9",{"property":"og:title","content":"Which car class pays more for taxi work: Economy, Comfort or Comfort+ | Car City"}],["$","meta","10",{"property":"og:description","content":"Which car pays more for taxi work: Economy, Comfort or Comfort+? We compare rent, commissions, order flow and driver income."}],["$","meta","11",{"property":"og:url","content":"https://car-city.pro/en/novosti/kakoj-klass-avtomobilya-vygodnee-dlya-raboty-v-taksi/"}],["$","meta","12",{"property":"og:type","content":"article"}],["$","meta","13",{"name":"twitter:card","content":"summary"}],["$","meta","14",{"name":"twitter:title","content":"Which car class pays more for taxi work: Economy, Comfort or Comfort+ | Car City"}],["$","meta","15",{"name":"twitter:description","content":"Which car pays more for taxi work: Economy, Comfort or Comfort+? We compare rent, commissions, order flow and driver income."}],["$","link","16",{"rel":"icon","href":"/Car-City/brand/emblem-96.png"}],["$","link","17",{"rel":"apple-touch-icon","href":"/Car-City/brand/emblem-192.png"}],["$","$L16","18",{}]]
