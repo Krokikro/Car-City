@@ -9,6 +9,10 @@ const RENT: Record<string, string> = {
   "/klassyi-avtomobilej/komfort": "/komfort",
   "/klassyi-avtomobilej/komfort-plyus": "/komfortplus",
   "/klassyi-avtomobilej/gruzovoy": "/gruzovoy",
+  // отдельных страниц этих классов выкупа на старом сайте нет — ведём в общий каталог
+  "/vykup/biznes": "/vykup",
+  "/vykup/dostavka": "/vykup",
+  "/vykup/gruzovoy": "/vykup",
 };
 
 const crumbHref = (i: number, n: number, path: string) => {
