@@ -69,7 +69,7 @@ Yuk boʻlimining oʻlchamlari katta: uzunligi 3600 mm, eni 1840 mm, balandligi 1
 
 ## Modelning texnik xususiyatlari
 
-- Sigʻimi 4 ta paddon (1200х800 mm).
+- Sigʻimi 4 ta paddon (1200x800 mm).
 - Yuk boʻlimining hajmi 12.4 m3.
 - Hajmi 2,7 litr.
 - Yoqilgʻi bakining hajmi: 80 litr.

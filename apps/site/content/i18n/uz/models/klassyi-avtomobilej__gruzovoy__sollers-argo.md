@@ -67,7 +67,7 @@ Standart versiyaning yuk boʻlimi ichki oʻlchamlari 3 120 × 1 720 × 1 720 mm 
 
 ## Modelning texnik xususiyatlari
 
-- Sigʻimi: 4 ta paddon (1200х800 mm)
+- Sigʻimi: 4 ta paddon (1200x800 mm)
 - Yuk boʻlimining hajmi: 12.4 m³
 - Hajmi: 2 litr
 - Yoqilgʻi bakining hajmi: 65 litr

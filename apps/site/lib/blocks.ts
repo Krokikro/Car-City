@@ -105,7 +105,7 @@ function render(md: string, twin?: string) {
     .replace(/<p>((?:\s*@@BTN\d+@@\s*)+)<\/p>/g, (_, g: string) => `<p class="btn-row">${g}</p>`)
     .replace(/@@BTN(\d+)@@/g, (_, i: string) => {
       const b = btns[+i];
-      const primary = b.href === "#zayavka" || /начать|забронир|получить|start|book|get/i.test(b.label);
+      const primary = b.href === "#zayavka" || /начать|забронир|получить|start|book|get|баста|брондо|броньда|алуу|алу|boshla|bron|olish/i.test(b.label);
       return `<a class="btn ${primary ? "btn-primary" : "btn-ghost"}" href="${b.href}">${b.label} <span class="arrow">→</span></a>`;
     })
     .replace(/<p>@@IMG([^|@]+)\|([^@]*)@@<\/p>/g, (_, u: string, c: string) => imgFig(decodeURIComponent(u), decodeURIComponent(c)))

@@ -128,9 +128,9 @@ Taksida ishonchli mashinada ishlash va uning egasiga aylanish imkoniyatini qidir
 
 Avtomobilni tanlang, shartnoma tuzing va birinchi kundan pul ishlashni boshlang. Barcha mashinalar taksida ishlashga toʻliq tayyor — litsenziya, brendlash, sugʻurta allaqachon kiritilgan.
 
-## Car City’da sotib olish sharti bilan ijaraning afzalliklari
+## Car Cityʼda sotib olish sharti bilan ijaraning afzalliklari
 
-Car City’da keyinchalik sotib olish sharti bilan avtomobil ijarasi — Komfort sinfidagi ishonchli avtomobilni ixtiyoringizga olish va 1–2 yil ichida uning egasiga aylanishning qulay va halol usuli. Siz ishga eʼtibor qaratishingiz va texnik hamda huquqiy tafsilotlar haqida qaygʻurmasligingiz uchun hamma narsani qilamiz.
+Car Cityʼda keyinchalik sotib olish sharti bilan avtomobil ijarasi — Komfort sinfidagi ishonchli avtomobilni ixtiyoringizga olish va 1–2 yil ichida uning egasiga aylanishning qulay va halol usuli. Siz ishga eʼtibor qaratishingiz va texnik hamda huquqiy tafsilotlar haqida qaygʻurmasligingiz uchun hamma narsani qilamiz.
 
 - Transport assortimenti. Ixtiyoringizda yuqori darajada qulay, yaxshi parvarishlangan va taksida ishlash uchun barcha ruxsatnomalarga ega ishonchli avtomobillar.
 - Shaffof shartlar. Banklar, kafillar va kredit tarixisiz. Siz sotib olish huquqi bilan individual ijara shartnomasini tuzasiz — halol va tushunarli.
@@ -139,7 +139,7 @@ Car City’da keyinchalik sotib olish sharti bilan avtomobil ijarasi — Komfort
 - Boshlashda tejash. OSAGO, brendlash, texnik koʻrik, roʻyxatdan oʻtkazish xarajatlarini oʻz zimmamizga olamiz. Sizning vazifangiz — pul ishlash va sotib olish sari harakat qilish.
 - Sherik bilan ishlash imkoniyati. Avtomobilni taksida ishlash uchun boshqa haydovchiga berishingiz mumkin. Bu smenali ish va daromadni oshirish uchun qulay.
 
-Biz koʻp yillardan beri taksida ishlash uchun mashinalar beramiz va har yili Car City’ni tanlaydigan haydovchilar soni ortib bormoqda. 300 dan ortiq haydovchi bizdan avtomobil sotib olgan va biz bilan hamkorlikni davom ettirmoqda. Nega Car City?
+Biz koʻp yillardan beri taksida ishlash uchun mashinalar beramiz va har yili Car Cityʼni tanlaydigan haydovchilar soni ortib bormoqda. 300 dan ortiq haydovchi bizdan avtomobil sotib olgan va biz bilan hamkorlikni davom ettirmoqda. Nega Car City?
 
 - Yashirin komissiyalar va majburiy xizmatlarsiz shaffof shartlar.
 - Yuzlab haqiqiy sotib olishlar.

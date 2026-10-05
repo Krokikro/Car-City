@@ -56,7 +56,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 [Ijaraga olish](https://car-city.pro/klassyi-avtomobilej/komfort/chery-tiggo-4)
 
-CarCity’da taksida ishlash uchun koʻrkam, qulay Komfort sinfidagi avtomobillarni ijaraga oling. Yoqimli ish uchun haydash tajribangiz va avtomobilning texnik xususiyatlaridan foydalaning. Avtomobilning mukammal texnik holati, moslashuvchan ijara formati, shuningdek CarCity’dan doimiy texnik yordamni kafolatlaymiz!
+CarCityʼda taksida ishlash uchun koʻrkam, qulay Komfort sinfidagi avtomobillarni ijaraga oling. Yoqimli ish uchun haydash tajribangiz va avtomobilning texnik xususiyatlaridan foydalaning. Avtomobilning mukammal texnik holati, moslashuvchan ijara formati, shuningdek CarCityʼdan doimiy texnik yordamni kafolatlaymiz!
 
 ## Komfort sinfidagi avtomobil ijarasi narxi
 

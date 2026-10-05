@@ -156,15 +156,15 @@ Hujjatlar haydovchini xavfsizlik xizmati orqali tekshirish uchun kerak
 - Sotib olish narxi muddatga bogʻliq
 - Sotib olish toʻlovi sotib olish oxirida kiritiladi
 
-Agar taksida salobatli, zamonaviy va ishonchli mashinada ishlashni istasangiz — Car City’da Komfort Plyus sinfidagi avtomobilni sotib olish huquqi bilan ijaraga olish sizga juda mos keladi. Bu qulaylikni qadrlaydigan, uzoq ishlashni rejalashtirgan va kelajakda avtomobilni shaxsiy mulkka olishni istaganlar uchun format.
+Agar taksida salobatli, zamonaviy va ishonchli mashinada ishlashni istasangiz — Car Cityʼda Komfort Plyus sinfidagi avtomobilni sotib olish huquqi bilan ijaraga olish sizga juda mos keladi. Bu qulaylikni qadrlaydigan, uzoq ishlashni rejalashtirgan va kelajakda avtomobilni shaxsiy mulkka olishni istaganlar uchun format.
 
 Taksi uchun toʻliq tayyorlangan avtomobillarni taklif qilamiz: litsenziya, brendlash, sugʻurta — shartlarga allaqachon kiritilgan. Sizga faqat rulga oʻtirib pul ishlashni boshlash qoladi — har bir toʻlov sizni mashina egasi boʻlishga yaqinlashtirishiga ishonch bilan.
 
 Bandligingizdan kelib chiqib, sotib olish muddatini — 12 oydan 24 oygacha — va toʻlov grafigini tanlashingiz mumkin. Bunda biz kredit tarixini talab qilmaymiz, banklar orqali tekshirmaymiz va qatʼiy cheklovlar qoʻymaymiz. Biz bilan ishlash — bu moslashuvchanlik, yordam va haqiqiy foyda.
 
-## Nega Car City’da sotib olish sharti bilan ijara qulay va foydali
+## Nega Car Cityʼda sotib olish sharti bilan ijara qulay va foydali
 
-Car City’ni tanlab, siz shunchaki sotib olish uchun avtomobil emas — ishonchli hamkorga ega boʻlasiz. Haydovchilar bizni tanlashining asosiy sabablari:
+Car Cityʼni tanlab, siz shunchaki sotib olish uchun avtomobil emas — ishonchli hamkorga ega boʻlasiz. Haydovchilar bizni tanlashining asosiy sabablari:
 
 - Lizing va kreditlarsiz oddiy shartlar. Banklar bilan bogʻlanmaysiz, kredit reytingiga bogʻliq boʻlmaysiz, ortiqcha xavf-xatarga yoʻl qoʻymaysiz.
 - Ish uchun toʻliq toʻplam. Avtomobillar allaqachon litsenziyali, agregatorlar uchun brendlangan, sugʻurtalangan, texnik koʻrikdan oʻtgan.

@@ -34,7 +34,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный"
 
 ## Moslashuvchan shartlar va har bosqichda yordam
 
-Car City’da barqaror mashinada pul ishlash uchun Kia Rio yoki Rio X-Line’ni keyinchalik sotib olish sharti bilan ijaraga olishingiz mumkin. Barcha avtomobillarga xizmat koʻrsatilgan, ular agregatorlarga ulangan, rasmiylashtirilgan va yoʻlga chiqishga tayyor. Biz garov va depozit talab qilmaymiz, shartnomani tez tuzamiz, mashinani esa oʻsha kuniyoq beramiz.
+Car Cityʼda barqaror mashinada pul ishlash uchun Kia Rio yoki Rio X-Lineʼni keyinchalik sotib olish sharti bilan ijaraga olishingiz mumkin. Barcha avtomobillarga xizmat koʻrsatilgan, ular agregatorlarga ulangan, rasmiylashtirilgan va yoʻlga chiqishga tayyor. Biz garov va depozit talab qilmaymiz, shartnomani tez tuzamiz, mashinani esa oʻsha kuniyoq beramiz.
 
 Taksida ishlash uchun Kia avtomobillari ijarasining narxi tanlangan formatga bogʻliq – har kuni, har hafta yoki individual grafik boʻyicha toʻlash mumkin. Siz yakuniy summani koʻrasiz va nima uchun toʻlayotganingizni tushunasiz. Texnik xizmat, rasmiylashtirish, sugʻurta va agregatorlarga ulanishni oʻz zimmamizga olamiz. Agar tajribangiz boʻlmasa – Yandex Taxi imtihonidan oʻtishga yordam beramiz va boshida buyurtmalarda ustuvorlik beramiz. Ijaraning birinchi kuni – bepul, sotib olishda har yarim yilda 7 kunlik taʼtil beramiz. Sotib olish toʻlovlari hisobdan yechilmaydi.
 
@@ -79,9 +79,9 @@ Taksida ishlash uchun Kia avtomobillari ijarasining narxi tanlangan formatga bog
 
 ### Taksida ishlash uchun qaysi Kia modellari mos keladi?
 
-Taksida ishlash uchun koʻpincha Kia Rio va Kia Rio X’ni tanlashadi. Bu modellar agregatorlar talablariga javob beradi, shu bilan birga chaqqon, yoqilgʻini tejaydigan, haydovchi va yoʻlovchilar uchun qulay. Ular imtihonlardan, taksopark tekshiruvidan muammosiz oʻtadi va shahardagi jadal foydalanishda oʻzini yaxshi koʻrsatadi.
+Taksida ishlash uchun koʻpincha Kia Rio va Kia Rio Xʼni tanlashadi. Bu modellar agregatorlar talablariga javob beradi, shu bilan birga chaqqon, yoqilgʻini tejaydigan, haydovchi va yoʻlovchilar uchun qulay. Ular imtihonlardan, taksopark tekshiruvidan muammosiz oʻtadi va shahardagi jadal foydalanishda oʻzini yaxshi koʻrsatadi.
 
-### Taksida ishlash uchun Kia’ni sotib olish huquqi bilan ijaraga olish narxiga nimalar kiradi?
+### Taksida ishlash uchun Kiaʼni sotib olish huquqi bilan ijaraga olish narxiga nimalar kiradi?
 
 Narxga asosiy va majburiy elementlar allaqachon kiritilgan:
 
@@ -117,7 +117,7 @@ Agar avtomobilni shaxsiy maqsadlar uchun (taksida ishlamasdan) sotib olishni rej
 
 ![Sovgʻa](https://car-city.pro/themes/imgs/gift.jpg)
 
-## Birinchi kun sovgʻa – bepul!
+## 1-kunni bepul sovgʻa qilamiz!
 
 Ariza qoldiring, menejerlarimiz barcha savollaringiz boʻyicha maslahat beradi!
 

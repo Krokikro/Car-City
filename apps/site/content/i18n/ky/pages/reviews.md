@@ -13,7 +13,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 <!-- 42 отзыва. Иконка источника: https://car-city.pro/assets/components/phpthumbof/cache/{ya|2gis|flamp|yell}.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP -->
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Крюков Евгений**
 
@@ -21,7 +21,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Прозрачные условия: Договор аренды понятный и прозрачный, нет скрытых платежей или условий. Все обсуждается заранее. Хороший вариант для аренды автомобиля под такси.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Михаил Никифоров**
 
@@ -29,7 +29,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Хорошая машинка, адекватные условия, заинтересованная администрация, всегда на связи, рекомендую. Понимаю о чем говорю потому что побегал по паркам, везде с улыбочкой но на отвали и желание побыстрее спихнуть машину, а здесь отношения человеческое.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/yell.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/yell.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Леон Покровский**
 
@@ -37,7 +37,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Отличная компания! Я арендовал машину для работы в такси и остался очень доволен. Быстро оформили все документы, а сам автомобиль в хорошей состоянии. Работаю, все отлично тут.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Петр Лопатов**
 
@@ -45,7 +45,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Отличный сервис аренды! Адекватные условия, техника в хорошем состоянии. Особенно хочется отметить заинтересованную администрацию, всегда оперативно решают вопросы. До этого был опыт работы с другими компаниями, где чувствовалась формальность и незаинтересованность.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Глеб Трутнов**
 
@@ -53,7 +53,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Давно искал возможность взять машину под выкуп для работы в такси. Условия вполне адекватные, менеджер все подробно объяснил. Машину подобрали быстро, оформили все документы оперативно. Уже работаю и доволен!
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Дмитрий Д.**
 
@@ -61,7 +61,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 В целом все хорошо, авто под такси с последующим выкупом идет без заморочек и подводных камней. Проблем не возникает, просто, понятно, выкуп по договору. В общем, обращаться можно.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Матвей Корочкин**
 
@@ -69,7 +69,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Брал машину с правом выкупа именно для работы в такси. Цены, как и везде, не самые низкие, но и не заоблачные. Обслуживание в офисе в принципе нормальное, менеджеры объясняют все понятно. Посмотрим, как дальше пойдет, но пока что доволен.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Виктор Романов**
 
@@ -77,7 +77,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Работаю на чери тигго 4 уже приличное время. Беру заказы комфорт и эконом. Машину забронировать несложно, правда самозанятость нужна обязательно, но это делается вообще махом. Жаловаться мне не приходиться заработок достойный.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Оля**
 
@@ -85,7 +85,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Сначала не понимала, как всё будет с арендой машины для такси, но оказалось проще, чем я думала. Всё объяснили, показали, документы прошли быстро. Села за руль и поняла, что теперь можно спокойно работать.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Василий Свечин**
 
@@ -93,7 +93,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Беру авто в аренду у Car City уже 3 месяца, пока всё чётко. Машины свежие, техобслуживание вовремя. Условия прозрачные, без подводных камней. Менеджер помог разобраться с договором. Однозначно рекомендую!
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Борис Моржов**
 
@@ -101,7 +101,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Отличная компания! Взял авто в аренду для такси: машина в полном порядке, без сюрпризов. Условия чёткие, сервис достойный. Поддержка всегда на связи, помогает быстро. Очень доволен, однозначно рекомендую другим водителям!
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Денис М.**
 
@@ -109,7 +109,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Никогда бы не поверил в чудеса, но они бывают. Позвонил, забронировали машину, думал как всегда, на месте все будет иначе. Нет, действительно был этот авто в наличии, но не устроил, перезвонили сами, отправили на Митинский за другим авто, тоже под…
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Шерзод Каримов**
 
@@ -117,7 +117,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Хороший парк. Сотрудники вежливые.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Павел Шаханов**
 
@@ -125,7 +125,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Хочу выразить респект и уважение, менеджерам по аренде Руслану, Бексултану и двум Максам за внимательность к каждому арендатору по всем нюансам. Всегда предупредят о всех проблемах, если есть, и решат быстро все вопросы возникающие во время работы.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Виктор Ж.**
 
@@ -133,7 +133,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Хороший парк! Машины исправные! На встречу идут!
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **салават газизов**
 
@@ -141,7 +141,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Добрый день всем! Хочу поблагодарить компанию! Отличные и лояльные условия! Индивидуальный подход к каждому реально! Сотрудники на высоте! Отдельное спасибо менеджеру Максиму, который мне помог…
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Андрей**
 
@@ -149,7 +149,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Компания Крутая. Полина-Умничка, Виктор-красавчик!!! Спасибо большое за выбор из ассортимента и подключения к комфорт+. Рад стараться, будем сотрудничать и дальше)))
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Анна Гришкова**
 
@@ -157,7 +157,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Самые класные менеджеры Анастасия и руководитель отдела Руслан таким добросовестным людям надо выписывать премию вдвойне.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Суюнбек Асилов**
 
@@ -165,7 +165,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Лаяльные условия на выкуп авто, отзывчевый персонал, машины всегда есть в наличии.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Берик С.**
 
@@ -173,7 +173,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Работаю в такси уже лет пять, долго перебирал парки, то одно, то другое, в итоге наткнулся на данный парк, в общем парк отличный, все понятно, без скрытых платежей, все прозрачно, быстро оформился и получил авто. Помогают практически во всем! Сотрудники…
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Андрей Окороков**
 
@@ -181,7 +181,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Отличный таксопарк, менеджеры работают как надо. Беру в аренду эксид уже 6 месяцев, проблем и нареканий по работе авто не выявил.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Эрлан Токоноев**
 
@@ -189,7 +189,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Беру авто под выкуп в данном таксопарке белджи х70. Достаточно выгодные условия по аренде и выкупу авто.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Светлана Ралина**
 
@@ -197,7 +197,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 У мужа отличный опыт с компанией и всем рекомендует! Аренда машины получается выгоднее, так как свою технику потом дорого чинить) Нравится, что выбирать есть из чего и транспорт ухоженный и еще ни разу не подвел в дороге.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Ренат Раисович**
 
@@ -205,7 +205,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Обращался к ним, брал машину для такси, очень удобно получается, работаю и выкупаю авто, плюс прибыльно и в целом все отлично. Не жалею, что выбрал именно Кар Сити. Оценка 5 звезд.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Александр Семёнович Б.**
 
@@ -213,7 +213,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Работаю на арендном автомобиле. Автомобили предоставляют на адекватных условиях. В каршеринг на убой авто не сдаются. Есть возможность выкупа автомобиля в дальнейшем. Об этом я как раз и задумываюсь, так как работаю в извозе и на одном и том же автомобиле.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Сергей Жуков**
 
@@ -221,7 +221,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 все-таки арендовать авто под такси как-то логичнее. Единственное что надо оформлять ОСАГО как при прочих вариантах, но тут помогает Сравни.ру. Никаких бумажек и бюрократии, все в онлайне.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Sonya Sapo**
 
@@ -229,7 +229,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Брали для работы в такси Geely Emgrand, машина ведет себя харашо, все в рабочем, отличном состоянии. Был договор на месяц, хотим попользоваться ещё пару месяцев и далее выкупать, условия нам в целом подошли, останется согласовать с руководством.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/flamp.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/flamp.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Александр**
 
@@ -237,7 +237,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Арендовал здесь машину на несколько месяцев для работы в такси. Все без проблем, машина в идеальном состоянии. Очень удобно, и условия выгодные. Ребята всегда готовы помочь и ответить на вопросы.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/flamp.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/flamp.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Rinat**
 
@@ -245,7 +245,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Созвонились, приехал, посмотрел несколько машин, выбрал подходящую. Все быстро оформили, условия прозрачные, без подводных камней. Авто отличное за свои деньги, для такси самое-то.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/yell.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/yell.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Артур Вешняков**
 
@@ -253,7 +253,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Машину арендовал для работы в такси. Отличное решение, предложение для меня оказалось очень выгодным. Быстро оформили, по каждому пункту объяснили. Сейчас работаю спокойно, и горя не знаю.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/yell.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/yell.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Сергей Юренко**
 
@@ -261,7 +261,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Отличная компания CarCityt! Предоставляют машины под выкуп и в аренду, но только для работы в такси. Честные условия, большой выбор автомобилей. Работа в такси теперь гораздо проще и выгоднее. Рекомендую!
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/yell.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/yell.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Гриша**
 
@@ -269,7 +269,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Брал авто под аренду для работы в такси. Машина в хорошем состоянии, все оформляется быстро, без лишней волокиты. Условия прозрачные, выплаты понятные. Уже советовал друзьям.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Владимир Волкодав**
 
@@ -277,7 +277,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Хочу выразить огромную благодарность этим ребятам - взял у них под выкуп отличный автомобиль на весьма привлекательных условиях. Особо выделю то, что ребята оставляют за собой хорошее впечатление и с ними приятно сотрудничать.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Колпаков Сергей**
 
@@ -285,7 +285,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Арендовал автомобиль в данном парке!Коллектив всегда идет на встречу!!!всем рекомендую!!!!!
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Тимур**
 
@@ -293,7 +293,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Лучший таксопарк! Особенно техотдел))
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Михаил**
 
@@ -301,7 +301,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Недавно стал клиентом этой компании. Сначала брал машину в аренду, так как мое авто было в ремонте. Понравилось, что выбор автомобилей большой, есть разные классы. Я выбрал Skoda Octavia, она просторная и комфортная для пассажиров, плюс вместительный…
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/yell.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/yell.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **serg837**
 
@@ -309,7 +309,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Недавно взял отсюда авто для работы в такси. В целом доволен. Авто в отличном состоянии, а условия аренды вполне адекватные. Поддержка компании на высшем уровне, всегда готовы помочь. В общем, работать можно.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Василий М**
 
@@ -317,7 +317,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Брал тут автомобиль в аренду для работы в такси. Узнал от знакомого об этой конторе, пришел посмотреть, оказалось очень хорошие условия, получилось реально выгодно с ними работать.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Саша**
 
@@ -325,7 +325,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Отличная компания! Взял автомобиль под выкуп для работы в такси — машина в идеальном состоянии, без скрытых нюансов. Условия прозрачные, обслуживание на высоком уровне. Поддержка всегда на связи и помогает в любых вопросах. Работаю с удовольствием…
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Андрей Прохоров**
 
@@ -333,7 +333,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Хороший парк, всё чётко, рекомендую!!
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Artyr M.**
 
@@ -341,7 +341,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 Хороший таксопарк, прозрачные условия работы. Авто практически всегда есть в наличии.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Октай Гаджиагаев**
 

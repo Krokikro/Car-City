@@ -65,7 +65,7 @@ Salon kengligi va ish joyining mantiqiy tashkil etilgani bilan yoqimli hayratga 
 
 ## Modelning texnik xususiyatlari
 
-- Sigʻimi 3 ta paddon (1200х800 mm).
+- Sigʻimi 3 ta paddon (1200x800 mm).
 - Yuk boʻlimining hajmi 7.1 m3.
 - Hajmi 1,9 litr.
 - Yoqilgʻi bakining hajmi: 80 litr.

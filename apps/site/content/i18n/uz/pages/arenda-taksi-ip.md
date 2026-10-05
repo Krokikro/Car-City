@@ -439,7 +439,7 @@ Har bir toifa taksida ishlashning real sharoitlarini hisobga olib oʻylab chiqil
 
 YaTT uchun avtomobil ijarasining narxi tanlangan sinf, ish formati va toʻlov usuliga bogʻliq. Bizda oylik toʻlov, faqat haqiqatda ishlagan smenalar uchun toʻlash imkoniyati bilan variantlar, shuningdek sotib olish dasturi bor. Eng qisqa ijara muddati – 14 kun. Rasmiylashtirish juda kam vaqt oladi, hujjatlarni murojaat qilgan kuningiz tayyorlash mumkin.
 
-## Nega YaTTlar Car City’ni tanlaydi
+## Nega YaTTlar Car Cityʼni tanlaydi
 
 ### Grafik boʻyicha ijara
 
@@ -491,7 +491,7 @@ Barcha avtomobillar Udaltsova koʻchasidagi bosh ofisda (Moskva) beriladi. Mashi
 
 ![Sovgʻa](https://car-city.pro/themes/imgs/gift.jpg)
 
-## Birinchi kun sovgʻa – bepul!
+## 1-kunni bepul sovgʻa qilamiz!
 
 Ariza qoldiring, menejerlarimiz barcha savollaringiz boʻyicha maslahat beradi!
 

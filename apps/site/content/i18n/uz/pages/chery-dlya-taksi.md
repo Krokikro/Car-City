@@ -2,7 +2,7 @@
 url: https://car-city.pro/chery-dlya-taksi
 title: "Moskvada taksi uchun Chery ijarasi — garovsiz va sotib olish huquqi bilan"
 h1: "Taksi uchun Chery avtomobillari ijarasi"
-description: "Taksi uchun Chery’ni garovsiz va yashirin toʻlovlarsiz ijaraga oling. Agregatorlarga ulanish. 5/2, 6/1, 7/0 grafikda ishlash. 24/7 servis. Birinchi kun bepul!"
+description: "Taksi uchun Cheryʼni garovsiz va yashirin toʻlovlarsiz ijaraga oling. Agregatorlarga ulanish. 5/2, 6/1, 7/0 grafikda ishlash. 24/7 servis. Birinchi kun bepul!"
 source: "WebFetch, извлечено 2026-10-05; текст дословный, сшит из трёх выборок"
 ---
 
@@ -46,7 +46,7 @@ Qatʼiy muddatlarga bogʻlanmagan ijara: avtomobilni 14 kunga yoki birdaniga bir
 
 Ijaraning oʻzidan tashqari siz texnik va axborot yordami, agregatorlarga ulanishda koʻmak, hujjatlar boʻyicha maslahatlar va ish natijalariga koʻra bonuslar olasiz. Har bir haydovchiga shaxsiy yondashuv va shaffof shartlar – xizmatimizning asosi.
 
-## Car City’da Chery ijarasining afzalliklari
+## Car Cityʼda Chery ijarasining afzalliklari
 
 - Mashinalar doim yurishga tayyor – muntazam yuviladi, xizmat koʻrsatiladi va tekshiriladi.
 - Boshlashda yordam beramiz: Yandex imtihonidan qanday oʻtishni aytib beramiz.
@@ -87,19 +87,19 @@ Ijaraning oʻzidan tashqari siz texnik va axborot yordami, agregatorlarga ulanis
 
 ### Taksida ishlash uchun qaysi Chery modellari mos keladi?
 
-Liniyada ishlash uchun Chery Tiggo 4 va Tiggo 7 Pro’ni tavsiya qilamiz. Bular yaxshi boshqariladigan, yetarli klirensli, keng salonli va qulay opsiyalarga ega krossoverlar: konditsioner, multimedia, telefon quvvatlagichi. Ular yoqilgʻini tejaydi va koʻpchilik agregatorlarda «Komfort» sinfiga bemalol oʻtadi.
+Liniyada ishlash uchun Chery Tiggo 4 va Tiggo 7 Proʼni tavsiya qilamiz. Bular yaxshi boshqariladigan, yetarli klirensli, keng salonli va qulay opsiyalarga ega krossoverlar: konditsioner, multimedia, telefon quvvatlagichi. Ular yoqilgʻini tejaydi va koʻpchilik agregatorlarda «Komfort» sinfiga bemalol oʻtadi.
 
 ### Garov toʻlash kerakmi?
 
-Yoʻq, Car City’da avtomobil ijarasi uchun garov talab qilinmaydi. Mashinalarni pul muzlatmasdan va depozitsiz beramiz – siz faqat tanlangan grafik boʻyicha ijara uchun toʻlaysiz. Endigina boshlayotgan va darhol katta summa sarflashni istamaganlar uchun qulay.
+Yoʻq, Car Cityʼda avtomobil ijarasi uchun garov talab qilinmaydi. Mashinalarni pul muzlatmasdan va depozitsiz beramiz – siz faqat tanlangan grafik boʻyicha ijara uchun toʻlaysiz. Endigina boshlayotgan va darhol katta summa sarflashni istamaganlar uchun qulay.
 
 ### Ijarani rasmiylashtirish uchun qanday hujjatlar kerak?
 
 Taksi uchun Chery ijarasiga minimal toʻplam kerak: pasport, haydovchilik guvohnomasi va rul ortida yangi emasligingizni tasdiqlash – 3 yildan ortiq staj. Qolgani – bizning zimmamizda. Rasmiylashtirish juda kam vaqt oladi va oʻsha kuniyoq liniyaga chiqishingiz mumkin.
 
-### Siz orqali Yandex Taxi’ga ulanish mumkinmi?
+### Siz orqali Yandex Taxiʼga ulanish mumkinmi?
 
-Ha, Yandex Taxi’da roʻyxatdan oʻtish va imtihonga tayyorlanishda yordam beramiz. Agar ilgari agregator bilan ishlamagan boʻlsangiz, ulanishdan oldin hammasi qanday ishlashini tushuntirib beramiz. Tajribali haydovchilarga – tezlashtirilgan rasmiylashtirish va arizalarga ustuvorlik.
+Ha, Yandex Taxiʼda roʻyxatdan oʻtish va imtihonga tayyorlanishda yordam beramiz. Agar ilgari agregator bilan ishlamagan boʻlsangiz, ulanishdan oldin hammasi qanday ishlashini tushuntirib beramiz. Tajribali haydovchilarga – tezlashtirilgan rasmiylashtirish va arizalarga ustuvorlik.
 
 ### Buzilish yoki YTH yuz bersa nima qilish kerak?
 

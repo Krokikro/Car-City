@@ -40,7 +40,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный"
 
 [Ijaraga olish](https://car-city.pro/klassyi-avtomobilej/ekonom/skoda-rapid-1.6)
 
-CarCity’da taksi uchun yurishi yaxshi, amaliy va ishonchli Ekonom sinfidagi avtomobillarni ijaraga oling – taksoparkimizda modellarning katta tanlovini topasiz. Eng koʻp talab qilinadigan yoʻnalishda ishlab, koʻproq pul toping. Sizga texnik va tashqi koʻrinishi mukammal holatdagi avtomobil, toʻlov grafigini tanlash imkoniyati, shuningdek haydovchilar uchun kafolatlangan texnik yordam va oʻqitishni taqdim etamiz.
+CarCityʼda taksi uchun yurishi yaxshi, amaliy va ishonchli Ekonom sinfidagi avtomobillarni ijaraga oling – taksoparkimizda modellarning katta tanlovini topasiz. Eng koʻp talab qilinadigan yoʻnalishda ishlab, koʻproq pul toping. Sizga texnik va tashqi koʻrinishi mukammal holatdagi avtomobil, toʻlov grafigini tanlash imkoniyati, shuningdek haydovchilar uchun kafolatlangan texnik yordam va oʻqitishni taqdim etamiz.
 
 ## Ekonom sinfidagi avtomobil ijarasi narxi
 

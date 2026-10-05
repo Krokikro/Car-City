@@ -89,7 +89,7 @@ OMODA S5 — ifodali kupesimon kuzov va zamonaviy dizaynga ega besh oʻrinli sed
 
 Mashina «Komfort» klassiga kiradi, bu uning toʻliq komplektatsiyasidan dalolat beradi. Salonda klimat-nazorat tizimlari, harorat, namlik va konditsionerlash datchiklari hamda regulyatorlari oʻrnatilgan.
 
-Qulay ergonomik oʻrindiqlar 2х3 formatida, alohida-alohida joylashgan, bu taksida bir nechta yoʻlovchini, ayniqsa uzoq masofaga tashishda juda qulay.
+Qulay ergonomik oʻrindiqlar 2x3 formatida, alohida-alohida joylashgan, bu taksida bir nechta yoʻlovchini, ayniqsa uzoq masofaga tashishda juda qulay.
 
 Bundan tashqari, taksi uchun OMODA S5 ijarasi estetik jihatdan ham foydali. Sifatli qoplama materiallari, dizaynning neytral ranglari va barcha interyer elementlarining keng joylashuvi tufayli salonda doim shinamlik seziladi.
 

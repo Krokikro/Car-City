@@ -95,7 +95,7 @@ Avtomobil nafaqat haydovchi uchun yaxshi, balki yoʻlovchilar uchun ham qulay. Z
 
 - Dvigatel: Benzin, 1.5 TCI, 147 o.k.
 - Sigʻimi: 5 oʻrin, yukxona 340 l
-- Oʻlchamlari: 4338х1830х1645 mm, gʻildirak bazasi – 2630 mm, klirens – 171 mm
+- Oʻlchamlari: 4338x1830x1645 mm, gʻildirak bazasi – 2630 mm, klirens – 171 mm
 - Yoqilgʻi sarfi: aralash siklda 6,6 l
 - Dinamika: maksimal tezlik – 190 km/soat, 100 km/soat gacha tezlanish – 9,7 s
 

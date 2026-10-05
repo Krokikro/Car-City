@@ -184,7 +184,7 @@ CarCity'де эконом класстагы такси үчүн жүрүмдү�
 
 ## Пикирлер
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Колпаков Сергей**
 
@@ -192,7 +192,7 @@ CarCity'де эконом класстагы такси үчүн жүрүмдү�
 
 Арендовал автомобиль в данном парке!Коллектив всегда идет на встречу!!!всем рекомендую!!!!!
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Тимур**
 
@@ -200,7 +200,7 @@ CarCity'де эконом класстагы такси үчүн жүрүмдү�
 
 Лучший таксопарк! Особенно техотдел))
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/ya.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Владимир Волкодав**
 
@@ -208,7 +208,7 @@ CarCity'де эконом класстагы такси үчүн жүрүмдү�
 
 Хочу выразить огромную благодарность этим ребятам - взял у них под выкуп отличный автомобиль на весьма привлекательных условиях. Особо выделю то, что ребята оставляют за собой хорошее впечатление и с ними приятно сотрудничать.
 
-![Review sourceImg](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
+![пикир булагы](https://car-city.pro/assets/components/phpthumbof/cache/2gis.457f5ec9ecb5cb4cfa0e5c2bc29dc0fc.webP)
 
 **Михаил**
 

@@ -8,7 +8,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный.
 
 # Yuk tarifida ishlash uchun avtomobil ijarasi
 
-Yuk avtomobili ijarasi — tijorat transportini sotib olmasdan yetkazib berish sohasida ishlashni boshlashning oddiy usuli. Car City’da yuk taksisi va boshqa tijorat vazifalari uchun avtomobil ijarasi mavjud: barcha avtomobillar ishga toʻliq tayyor va shartnoma rasmiylashtirilgandan soʻng darhol beriladi.
+Yuk avtomobili ijarasi — tijorat transportini sotib olmasdan yetkazib berish sohasida ishlashni boshlashning oddiy usuli. Car Cityʼda yuk taksisi va boshqa tijorat vazifalari uchun avtomobil ijarasi mavjud: barcha avtomobillar ishga toʻliq tayyor va shartnoma rasmiylashtirilgandan soʻng darhol beriladi.
 
 ![avtomobil rasmi](https://car-city.pro/assets/components/phpthumbof/cache/sollersatlant19td-%284%29.2011a68be1cf41027f5dfe4808290820.webP)
 

@@ -1,6 +1,6 @@
 ---
 url: https://car-city.pro/vykup
-title: "Moskvada lizingsiz sotib olish sharti bilan taksi ijarasi | Car City’da sotib olish sharti bilan taksi avtomobili"
+title: "Moskvada lizingsiz sotib olish sharti bilan taksi ijarasi | Car Cityʼda sotib olish sharti bilan taksi avtomobili"
 h1: "Sotib olish sharti bilan avtomobil"
 description: "Moskvada eng yaxshi shartlarda sotib olish sharti bilan taksi uchun avtomobil ijarasi, grafik tanlovingizga koʻra, 14 kunlik taʼtil, kecha-kunduz yordam..."
 source: "WebFetch, извлечено 2026-10-05; текст дословный, сшит из нескольких выборок. Meta description обрезан инструментом (многоточие)."
@@ -435,7 +435,7 @@ Ariza qoldiring, biz siz uchun eng yaxshi yechimni tanlaymiz!
 
 ## Moskvada sotib olish sharti bilan taksi uchun mashina ijarasi
 
-Car City’da taksi uchun avtomobilni sotib olish huquqi bilan ijaraga oling va narxini qismlarga boʻlib toʻlagan holda mashinani darhol ixtiyoringizga oling. Biz – avtomobil ijarasida yetti yillik tajribaga ega ishonchli hamkoringizmiz. 1500 dan ortiq mijozga taksida pul ishlash imkoniyatini ochib berdik, ulardan 300 nafari avtomobilni sotib olish sharti bilan olib, mashinaning toʻlaqonli egasiga aylandi.
+Car Cityʼda taksi uchun avtomobilni sotib olish huquqi bilan ijaraga oling va narxini qismlarga boʻlib toʻlagan holda mashinani darhol ixtiyoringizga oling. Biz – avtomobil ijarasida yetti yillik tajribaga ega ishonchli hamkoringizmiz. 1500 dan ortiq mijozga taksida pul ishlash imkoniyatini ochib berdik, ulardan 300 nafari avtomobilni sotib olish sharti bilan olib, mashinaning toʻlaqonli egasiga aylandi.
 
 Saytda ariza toʻldiring va Moskvada siz uchun mavjud boʻlgan katta taksoparkimizdan avtomobil tanlang. Avtomobilning mukammal texnik holati, mijozlarga minimal talablar va qulay hamkorlik shartlarini kafolatlaymiz.
 
@@ -475,7 +475,7 @@ Ha, biz banklar bilan ishlamaymiz, shuning uchun kredit tarixingiz biz uchun muh
 
 ### Qaysi fuqarolik bilan sotib olishni rasmiylashtirishim mumkin?
 
-Avtomobilni sotib olishda mijozlarga xayrixohroq yondashamiz, shuning uchun haydovchidan RF fuqaroligini talab qilmaymiz. Car City’da Oʻzbekiston, Armaniston va hatto Misr fuqarolari avtomobil sotib olishgan.
+Avtomobilni sotib olishda mijozlarga xayrixohroq yondashamiz, shuning uchun haydovchidan RF fuqaroligini talab qilmaymiz. Car Cityʼda Oʻzbekiston, Armaniston va hatto Misr fuqarolari avtomobil sotib olishgan.
 
 ### Avtomobillarni kim taʼmirlaydi va ularga xizmat koʻrsatadi?
 

@@ -1,6 +1,6 @@
 ---
 url: https://car-city.pro/komfortplus
-title: "Moskvada taksi uchun Komfort plyus avtomobil ijarasi garovsiz | Car City’da Komfort+ mashinasini oling"
+title: "Moskvada taksi uchun Komfort plyus avtomobil ijarasi garovsiz | Car Cityʼda Komfort+ mashinasini oling"
 h1: "Taksi uchun Komfort Plyus sinfidagi avtomobillar ijarasi"
 description: "Moskvada taksi uchun Komfort plyus avtomobil ijarasi garovsiz. Yangi avtomobillar, tez start, 1-kun bepul."
 source: "WebFetch, извлечено 2026-10-05; текст дословный. Общие блоки (калькулятор, форма обратного звонка, отзывы, финальная форма) совпадают с /komfort и подставлены из него — в выборке этой страницы они пришли сокращёнными."

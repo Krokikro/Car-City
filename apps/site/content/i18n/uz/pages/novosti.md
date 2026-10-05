@@ -106,13 +106,13 @@ Taksi uchun avtomobil ijarasi boʻyicha maslahatlar: mos avtomobilni qanday tanl
 
 19.11.2024
 
-Moskvada sotib olish huquqi bilan ijaraga Komfort taksi: CarCity’da Chery Tiggo, Geely, Москвич.
+Moskvada sotib olish huquqi bilan ijaraga Komfort taksi: CarCityʼda Chery Tiggo, Geely, Москвич.
 
 ### [Ekonom sinfidagi taksida ishlash uchun eng yaxshi avtomobillar](https://car-city.pro/novosti/luchshie-avtomobili-dlya-rabotyi-v-taksi-ekonom-klassa)
 
 18.10.2024
 
-Car City’da taksi uchun Ekonom sinfidagi avtomobilni sotib olish huquqi bilan ijaraga olish. Mashhur modellar: KIA RIO, Hyundai Solaris, Volkswagen Polo, Renault Logan.
+Car Cityʼda taksi uchun Ekonom sinfidagi avtomobilni sotib olish huquqi bilan ijaraga olish. Mashhur modellar: KIA RIO, Hyundai Solaris, Volkswagen Polo, Renault Logan.
 
 ### [Xitoy mashinalari: «nusxa koʻchirish»dan innovatsiyalargacha](https://car-city.pro/novosti/mashinyi-iz-kitaya-ot-kopipasta-do-innovaczij)
 
@@ -124,19 +124,19 @@ Rossiyada Xitoy avtomobillari bozori. Taksi uchun mukammal holatdagi, sotib olis
 
 09.09.2024
 
-Carcity’da qulay shartlarda sotib olish huquqi bilan avtomobil ijarasi. Taksi uchun mashinani qanday tanlash kerak.
+Carcityʼda qulay shartlarda sotib olish huquqi bilan avtomobil ijarasi. Taksi uchun mashinani qanday tanlash kerak.
 
 ### [JAC Motors – muvaffaqiyat tarixi](https://car-city.pro/novosti/jac-motors)
 
 09.07.2024
 
-CarCity’da taksi uchun Jac Motors avtomobillarini sotib olish huquqi bilan ijaraga olish. Yangi Jac J7 sedanini arzon narxda, moslashuvchan ijara grafigi va shaffof shartnoma shartlari bilan ijaraga olish.
+CarCityʼda taksi uchun Jac Motors avtomobillarini sotib olish huquqi bilan ijaraga olish. Yangi Jac J7 sedanini arzon narxda, moslashuvchan ijara grafigi va shaffof shartnoma shartlari bilan ijaraga olish.
 
 ### [JAC J7 – yangi taʼsirchan liftbek](https://car-city.pro/novosti/jac-j7-novyij-effektnyij-liftbek)
 
 09.07.2024
 
-Moskvada taksi uchun mukammal holatdagi Jac J7 ni sotib olish huquqi bilan ijaraga olish. CarCity’da Komfort+ sinfidagi liftbek ijarasi qulay shartlarda, kuniga 3400 rubldan.
+Moskvada taksi uchun mukammal holatdagi Jac J7 ni sotib olish huquqi bilan ijaraga olish. CarCityʼda Komfort+ sinfidagi liftbek ijarasi qulay shartlarda, kuniga 3400 rubldan.
 
 ### [Taksi uchun avtomobil tanlaymiz: tejamkorlikdan qulaylikkacha](https://car-city.pro/novosti/vyibiraem-avto-dlya-taksi-ot-ekonomii-do-komforta)
 
@@ -148,7 +148,7 @@ Taksi uchun Ekonom va Komfort sinfidagi arzon avtomobil ijarasi. Mashinani qanda
 
 09.07.2024
 
-Xitoy mashinalari ijaraga. Carcity’da arzon ijara. Qulay shartlar, sotib olish imkoniyati, past narxlar.
+Xitoy mashinalari ijaraga. Carcityʼda arzon ijara. Qulay shartlar, sotib olish imkoniyati, past narxlar.
 
 ### [Taksini ijaraga olib qancha pul ishlash mumkin?](https://car-city.pro/novosti/skolko-mozhno-zarabotat,-arenduya-taksi)
 

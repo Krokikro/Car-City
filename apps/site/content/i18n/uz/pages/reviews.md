@@ -353,7 +353,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 ![Sovgʻa](https://car-city.pro/themes/imgs/gift.jpg)
 
-## Birinchi kun sovgʻa – bepul!
+## 1-kunni bepul sovgʻa qilamiz!
 
 Ariza qoldiring, menejerlarimiz barcha savollaringiz boʻyicha maslahat beradi!
 
