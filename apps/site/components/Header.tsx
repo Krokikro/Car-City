@@ -49,7 +49,7 @@ export function Header() {
           <ul>
             {LANGS.map((l) => (
               <li key={l}>
-                <a href={href(path, l)} hrefLang={l} lang={l} aria-current={l === lang ? "true" : undefined}>
+                <a href={href(path === "/spasibo" ? "/" : path, l)} hrefLang={l} lang={l} aria-current={l === lang ? "true" : undefined}>
                   <b>{LANG_SHORT[l]}</b> {LANG_NAMES[l]}
                 </a>
               </li>
@@ -72,7 +72,7 @@ export function Header() {
         </nav>
         <div className="mobile-langs">
           {LANGS.map((l) => (
-            <a key={l} href={href(path, l)} hrefLang={l} aria-current={l === lang ? "true" : undefined}>{LANG_SHORT[l]}</a>
+            <a key={l} href={href(path === "/spasibo" ? "/" : path, l)} hrefLang={l} aria-current={l === lang ? "true" : undefined}>{LANG_SHORT[l]}</a>
           ))}
         </div>
         <div className="mobile-menu-foot">

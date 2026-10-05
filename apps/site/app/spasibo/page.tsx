@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { href } from "@/lib/i18n";
 import { company } from "@/lib/content";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -30,7 +31,7 @@ export default function Thanks() {
                 <a className="pill" href={company.whatsapp} target="_blank" rel="noopener">WhatsApp</a>
                 <a className="pill" href={company.max} target="_blank" rel="noopener">MAX</a>
               </div>
-              <a className="btn btn-ghost" href="/">На главную</a>
+              <a className="btn btn-ghost" href={href("/", "ru")}>На главную</a>
             </div>
           </div>
         </section>
