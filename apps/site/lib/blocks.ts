@@ -53,10 +53,14 @@ function prep(src: string) {
     const cut = Math.max(head.lastIndexOf("\n---"), head.lastIndexOf("![Gift]"));
     s = head.slice(0, cut >= 0 && fi - cut < 600 ? cut : fi);
   }
+  s = s.replace(/^\|[^\n]*\|\s*\((?:пусто|empty|бош|бос|bo[ʻ‘']sh)\)\s*\|[ \t]*$\n?/gm, "");
   let crumbs: string[] = [];
   s = s.replace(/^BREADCRUMBS:\s*(.+)$/m, (_, c: string) => { crumbs = c.split(">").map((x) => x.trim()); return ""; });
   s = s.replace(/^# .+$/m, "");
   s = s.replace(/^\[КАЛЬКУЛЯТОР[^\]]*\]\s*$/gm, "[[calc]]");
+  // на страницах классов калькулятор старого сайта узнаём по его картинке-календарю
+  s = s.replace(/^!\[[^\]]*\]\([^)\s]*themes\/img\/calendar\.png\)[ \t]*$/gm, "[[calc]]");
+  s = s.replace(/\[Кнопка:\s*([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, (_, l: string, u: string) => `[[btn:${l.trim()}|${u}]]`);
   s = s.replace(/\[Кнопка:\s*([^\]]+)\]/g, (_, l: string) => `[[btn:${l.trim()}]]`);
   s = s.replace(/^\[([^\]\n]+)\]\((https?:\/\/[^)\s]+)\)[ \t]*$/gm, (_, l: string, u: string) => `[[btn:${l.trim()}|${u}]]`);
   s = s.replace(/^\[([^\]\n[]+)\][ \t]*$/gm, (_, l: string) => `[[btn:${l.trim()}]]`);

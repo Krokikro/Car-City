@@ -4,6 +4,7 @@ import { allDocs, getDoc, twinOf, articles, type Doc } from "@/lib/docs";
 import { parseDoc, parseReviews } from "@/lib/blocks";
 import { ReviewsWall } from "@/components/page/ReviewsWall";
 import { fleet } from "@/lib/fleet";
+import { carImages } from "@/lib/car-images";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { StickyCta } from "@/components/StickyCta";
@@ -54,6 +55,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
+// Какие машины показать в шапке раздела: по классу из адреса или по марке из заголовка
+const CLASS_OF: [RegExp, string][] = [[/komfort-?pl/, "komfort-plus"], [/komfort/, "komfort"], [/ekonom/, "ekonom"], [/gruzov/, "gruzovoy"]];
+function heroCars(doc: Doc) {
+  const withPhoto = fleet.filter((f) => carImages[f.slug]);
+  const cls = CLASS_OF.find(([re]) => re.test(doc.path))?.[1];
+  const brand = doc.path.match(/^\/(kia|chery)-/)?.[1];
+  const pick = brand ? withPhoto.filter((f) => f.slug.startsWith(brand)) : cls ? withPhoto.filter((f) => f.cls === cls) : doc.path === "/vykup" ? withPhoto : [];
+  return pick.map((f) => ({ slug: f.slug, name: f.name }));
+}
+
 function eyebrowOf(doc: Doc, lang: Lang) {
   const t = ui(lang);
   if (doc.path.startsWith("/vykup")) return t.buy;
@@ -95,7 +106,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
         ) : isModel ? (
           <ModelHero h1={doc.h1} name={name} slug={car?.slug ?? ""} cls={doc.cls} mode={doc.mode} twin={twin} path={doc.path} crumbs={p.crumbs} specs={p.intro.specs} price={p.intro.price} btns={p.intro.btns} gallery={doc.gallery} lang={lang} />
         ) : (
-          <PageHero eyebrow={eyebrowOf(doc, lang)} h1={doc.h1} crumbs={p.crumbs} path={doc.path} paras={list ? [] : p.intro.paras} btns={p.intro.btns} introHtml={list ? "" : p.intro.html} lang={lang} />
+          <PageHero eyebrow={eyebrowOf(doc, lang)} h1={doc.h1} crumbs={p.crumbs} path={doc.path} paras={list ? [] : p.intro.paras} btns={p.intro.btns} introHtml={list ? "" : p.intro.html} cars={heroCars(doc)} lang={lang} />
         )}
         {doc.path === "/novosti" && <NewsGrid src={doc.body} list={articles(lang)} lang={lang} />}
         {doc.path === "/reviews" && <ReviewsWall items={parseReviews(doc.body)} lang={lang} />}

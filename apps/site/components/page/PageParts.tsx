@@ -1,7 +1,7 @@
 import { marked } from "marked";
 import type { Block, Btn, Card, Fig } from "@/lib/blocks";
 import { CarArt } from "../CarArt";
-import { href, type Lang } from "@/lib/i18n";
+import { asset, href, type Lang } from "@/lib/i18n";
 import { ui } from "@/lib/ui";
 
 const RENT: Record<string, string> = {
@@ -59,12 +59,26 @@ export function Buttons({ btns, size = "btn-lg" }: { btns: Btn[]; size?: string 
   );
 }
 
-export function PageHero({ eyebrow, h1, crumbs, path, paras, btns, introHtml, lang = "ru" }: { eyebrow: string; h1: string; crumbs: string[]; path: string; paras: string[]; btns: Btn[]; introHtml: string; lang?: Lang }) {
+// Визуал первого экрана внутренних страниц: у разделов с машинами — веер фото этих машин,
+// у остальных — кадр из видео парка с медленным наездом камеры.
+export function PageHero({ eyebrow, h1, crumbs, path, paras, btns, introHtml, cars = [], lang = "ru" }: { eyebrow: string; h1: string; crumbs: string[]; path: string; paras: string[]; btns: Btn[]; introHtml: string; cars?: { slug: string; name: string }[]; lang?: Lang }) {
   const rich = /<(ul|ol|table|h3|figure)/.test(introHtml);
   return (
     <>
-      <section className="pg-hero" aria-labelledby="pg-h1">
-        <div className="pg-hero-bg" aria-hidden="true"><i /><i /><i /></div>
+      <section className={`pg-hero${cars.length ? " pg-hero-cars" : ""}`} aria-labelledby="pg-h1">
+        <div className="pg-hero-bg" aria-hidden="true">
+          {!cars.length && <img className="pg-hero-photo" src={asset("/video/hero-poster.webp")} alt="" fetchPriority="high" />}
+          <i /><i /><i />
+        </div>
+        {cars.length > 0 && (
+          <div className="pg-fan" aria-hidden="true">
+            {cars.slice(0, 3).map((c, i) => (
+              <div key={c.slug} className="pg-fan-card" style={{ ["--i" as string]: i }}>
+                <CarArt slug={c.slug} name={c.name} priority={i === 0} sizes="(max-width: 900px) 70vw, 34vw" />
+              </div>
+            ))}
+          </div>
+        )}
         <div className="pg-hero-veil" aria-hidden="true" />
         <div className="pg-hero-checker" aria-hidden="true" />
         <div className="wrap pg-hero-in">

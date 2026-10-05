@@ -133,3 +133,29 @@ html[data-gfx="basic"] .ticker-row { animation: none; }
 .pg-hero-bg i:nth-child(3) { top: 10%; left: -10%; width: 50vmax; background: radial-gradient(closest-side, rgba(255, 220, 150, .25), transparent); animation-duration: 22s; animation-delay: -11s; }
 @keyframes beam { from { transform: translate3d(-20%, 0, 0) rotate(-8deg); } to { transform: translate3d(10%, -10%, 0) rotate(6deg); } }
 html[data-gfx="basic"] .pg-hero-bg i { animation: none; }
+
+/* Шапка внутренних страниц: кадр парка с медленным наездом или веер машин раздела */
+.pg-hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .55; transform-origin: 70% 40%; animation: pgKen 24s ease-out both; }
+.pg-hero:not(.pg-hero-cars) .pg-hero-veil { background: linear-gradient(90deg, rgba(5,7,10,.92) 0%, rgba(5,7,10,.55) 55%, rgba(5,7,10,.25) 100%), linear-gradient(180deg, transparent 50%, var(--bg) 100%); }
+@keyframes pgKen { from { transform: scale(1.18); } to { transform: scale(1.02); } }
+.pg-fan { position: absolute; right: max(var(--gutter), calc((100vw - 1440px) / 2)); top: calc(var(--header-h) + 56px); width: min(46vw, 640px); aspect-ratio: 4 / 3.4; z-index: 0; perspective: 1400px; }
+.pg-fan-card { position: absolute; inset: 0 0 auto auto; width: 78%; border-radius: 24px; overflow: hidden; border: 1px solid rgba(255,255,255,.08); box-shadow: 0 40px 80px rgba(0,0,0,.55), 0 0 0 1px rgba(255,183,0,.06);
+  transform: translate(calc(var(--i) * -18%), calc(var(--i) * 22%)) rotate(calc(4deg - var(--i) * 4deg)); z-index: calc(3 - var(--i));
+  animation: fanIn 1.3s var(--ease-out) both; animation-delay: calc(.15s + var(--i) * .12s); transition: transform .8s var(--ease-out); }
+.pg-fan-card .car-art, .pg-fan-card img { display: block; width: 100%; height: auto; }
+.pg-fan:hover .pg-fan-card { transform: translate(calc(var(--i) * -30%), calc(var(--i) * 26%)) rotate(calc(6deg - var(--i) * 6deg)); }
+@keyframes fanIn { from { opacity: 0; transform: translate(20%, 30%) rotate(12deg) scale(.9); } }
+.pg-hero-cars .pg-hero-in { position: relative; z-index: 1; }
+.pg-hero-cars h1 { max-width: 12ch; }
+@media (max-width: 899px) {
+  .pg-hero-cars { align-items: end; padding-top: calc(var(--header-h) + min(78vw, 420px)); }
+  .pg-fan { left: var(--gutter); right: auto; width: calc(100% - 2 * var(--gutter)); top: calc(var(--header-h) + 16px); aspect-ratio: auto; height: min(70vw, 380px); }
+  .pg-fan-card { width: 72%; }
+}
+html[data-gfx="basic"] .pg-hero-photo, html[data-gfx="basic"] .pg-fan-card { animation: none; }
+@media (prefers-reduced-motion: reduce) { .pg-hero-photo, .pg-fan-card { animation: none; } }
+@media (min-width: 900px) {
+  .pg-hero-cars .pg-hero-in > * { max-width: min(52%, 720px); }
+  .pg-hero-cars h1 { font-size: clamp(40px, 4.6vw, 76px); }
+  .pg-fan { top: 50%; translate: 0 -46%; width: min(44vw, 660px); }
+}
