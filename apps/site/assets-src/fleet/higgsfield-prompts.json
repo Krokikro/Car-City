@@ -1,9 +1,13 @@
 {
- "master_job": "b5cd0f75-fa96-48c9-8504-34049725b690",
+ "master_job": "4fb2ecc0-b836-4aec-a815-a80249a550c5",
  "logo_media": "2ec015a8-c38d-48c9-9920-c0604ab51363",
  "model": "gpt_image_2_5 medium 2k 4:3",
  "done": {
-  "kia-rio-1.4": "be7883d8-f144-49f5-aca1-87a7eaf6fe31"
+  "volkswagen-polo-1.6": "4fb2ecc0-b836-4aec-a815-a80249a550c5",
+  "kia-rio-1.4": "ca35c681-f143-42f7-b2af-4eb783a20102",
+  "kia-rio-1.6": "1b42f183-940a-497e-beec-48ca93945d56",
+  "moskvich-3": "9274bc9b-781a-4410-a37d-b292dfa447ad",
+  "chery-tiggo-4": "aff040ee-f147-412b-8c66-1694a5c73068"
  },
  "requests": [
   {
@@ -160,5 +164,6 @@
    ],
    "prompt": "Image 1 shows the exact car model: a Volkswagen Polo liftback (2020+). Image 2 is the Car City fleet master photo. Image 3 is the Car City logo. Create a new ultra-photorealistic commercial studio photograph that keeps EVERYTHING from the master photo identical - same dark studio background with the glowing yellow horizontal light line on the back wall, same polished dark reflective floor, same lighting, same camera angle (front three-quarter view, car facing left, lens at headlight height), same framing and car size in frame - but the car is replaced with the Volkswagen Polo liftback (2020+) exactly as in image 1 (body shape, headlights, grille, bumpers, wheels, proportions). Livery identical to the master photo: entire body solid glossy taxi yellow #FFB700, thin black-and-yellow checkerboard band along the side at door-handle level across both doors, on the front door the round Car City logo with bold black text CAR CITY under it and black text +7 (499) 302-31-59 under that. No Yandex branding, no other text or logos on the body. Front license plate area: the number plate is completely covered by a white plate-shaped Car City cover in a black frame, showing the round Car City logo and bold yellow-and-black text CAR CITY; no plate number, letters or digits visible (this is the one difference from the master photo). Headlights and daytime running lights on. Hyper-detailed, sharp, magazine car advertising quality, no people, no watermark."
   }
- ]
+ ],
+ "note": "Kia Rio X-Line — седан, не хэтчбек. Номер на всех машинах закрыт табличкой Car City. Новый эталон — Polo 4fb2ecc0."
 }

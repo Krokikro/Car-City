@@ -58,3 +58,4 @@
 - Готово по новой схеме: Kia Rio X-Line, задача `be7883d8-f144-49f5-aca1-87a7eaf6fe31`.
 - Остальные 16 запросов (промпты и media id) лежат в `apps/site/assets-src/fleet/higgsfield-prompts.json`. Упёрлись в дневной лимит генераций Higgsfield (тариф starter, «grace period»), кредиты есть (~44).
 - Скачать результаты по-прежнему нельзя: cloudfront Higgsfield закрыт политикой сети и в облаке, и в VM на Mac. Нужно добавить d8j0ntlcm91z4.cloudfront.net и d2ol7oe51mr4n9.cloudfront.net в разрешённые домены (Admin settings → Capabilities) или скачать файлы руками в ~/Pictures/CarCity-cars.
+- 6 октября: готовы 5 машин — Polo (новый эталон `4fb2ecc0`, номер закрыт табличкой Car City), Kia Rio X-Line седаном (`ca35c681`), Kia Rio (`1b42f183`), Москвич 3 (`9274bc9b`), Chery Tiggo 4 (`aff040ee`). Лимит Higgsfield — около 5 генераций в день, осталось 13 машин.
