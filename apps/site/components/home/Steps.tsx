@@ -47,7 +47,7 @@ export function Steps({ req: requirementsBlock, steps }: { req: HomeText["requir
               <svg viewBox="0 0 64 28"><path d="M4 20c0-3 2-5 5-6l10-2 8-7c2-1 4-2 6-2h14c3 0 5 1 7 3l6 6 2 1c2 1 3 3 3 5v2c0 1-1 2-2 2h-4a6 6 0 0 0-12 0H22a6 6 0 0 0-12 0H6c-1 0-2-1-2-2z" fill="#FFB700"/><rect x="26" y="15" width="16" height="3" fill="#0B0B0C"/><circle cx="16" cy="23" r="4.5" fill="#0B0B0C"/><circle cx="50" cy="23" r="4.5" fill="#0B0B0C"/></svg>
             </span>
           </div>
-          <ol className="step-list">
+          <ol className="step-list" data-tilt-in>
             {steps.items.map((s, i) => (
               <li key={s} className="step">
                 <span className="step-n">{i + 1}</span>

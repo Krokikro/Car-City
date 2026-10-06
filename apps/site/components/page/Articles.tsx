@@ -3,12 +3,17 @@ import { localHref, type Parsed } from "@/lib/blocks";
 import { Crumbs } from "./PageParts";
 import { href, type Lang } from "@/lib/i18n";
 import { ui } from "@/lib/ui";
+import { GenImage, hasGen } from "../GenImage";
 
 const words = (s: string) => s.replace(/[#*\[\]()!|>-]/g, " ").split(/\s+/).filter(Boolean).length;
 
 export function ArticleView({ doc, p, lang = "ru" }: { doc: Doc; p: Parsed; lang?: Lang }) {
   const t = ui(lang);
-  const html = [p.intro.html, ...p.blocks.map((b) => (b.t === "section" ? `<h2 id="${slugify(b.title)}">${b.title}</h2>${b.html}` : b.t === "faq" ? `<h2>${b.title || t.faq}</h2>${b.items.map((q) => `<h3>${q.q}</h3>${q.a}`).join("")}` : ""))].join("");
+  const slug = doc.path.split("/").pop() ?? "";
+  const cover = hasGen("news", slug);
+  // своя обложка есть — убираем из текста старую картинку с car-city.pro (первую в статье)
+  const intro = cover ? p.intro.html.replace(/<p>\s*<img[^>]*>\s*<\/p>|<img[^>]*>/, "") : p.intro.html;
+  const html = [intro, ...p.blocks.map((b) => (b.t === "section" ? `<h2 id="${slugify(b.title)}">${b.title}</h2>${b.html}` : b.t === "faq" ? `<h2>${b.title || t.faq}</h2>${b.items.map((q) => `<h3>${q.q}</h3>${q.a}`).join("")}` : ""))].join("");
   const toc = p.blocks.filter((b) => b.t === "section" && b.title).map((b) => (b as { title: string }).title);
   const min = Math.max(1, Math.round(words(doc.body) / 180));
   const ld = {
@@ -28,6 +33,7 @@ export function ArticleView({ doc, p, lang = "ru" }: { doc: Doc; p: Parsed; lang
           <p className="mono eyebrow">{[doc.date, `${min} ${t.readMin}`].filter(Boolean).join(" · ")}</p>
           <h1 className="display art-h1" data-split>{doc.h1}</h1>
         </div>
+        {cover && <GenImage kind="news" id={slug} className="art-cover" sizes="(max-width: 900px) 100vw, 900px" priority alt={doc.h1} />}
         <div className="art-progress" aria-hidden="true"><i /></div>
       </header>
       <div className="wrap art-grid">
@@ -59,6 +65,7 @@ export function NewsGrid({ src, list, lang = "ru" }: { src: string; list: (Doc &
       <div className="wrap news-grid" data-reveal-stagger>
         {cards.map((c, i) => (
           <a key={c.href} href={href(c.href, lang)} className={`news-card ${i === 0 ? "big" : ""}`} data-ready={have.has(c.href.toLowerCase())}>
+            <GenImage kind="news" id={c.href.split("/").pop() ?? ""} className="news-img" sizes="(max-width: 700px) 100vw, 33vw" />
             <span className="news-n mono">{String(i + 1).padStart(2, "0")}</span>
             {c.date && <time className="mono">{c.date}</time>}
             <h2>{c.title}</h2>

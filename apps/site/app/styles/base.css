@@ -48,7 +48,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 /* — Раскладка — */
 .wrap { width: min(100% - 2 * var(--gutter), 1440px); margin-inline: auto; }
 .wrap-narrow { width: min(100% - 2 * var(--gutter), 880px); margin-inline: auto; }
-.section { position: relative; overflow-x: clip; padding-block: clamp(72px, 9vw, 140px); background: var(--bg); color: var(--text-muted); }
+.section { position: relative; overflow-x: clip; padding-block: clamp(44px, 5.5vw, 92px); background: var(--bg); color: var(--text-muted); }
 .section-head { display: grid; gap: var(--space-6); margin-bottom: clamp(40px, 6vw, 80px); max-width: 980px; }
 .eyebrow { display: inline-flex; align-items: center; gap: 12px; }
 .eyebrow::before { content: ""; width: 28px; height: 10px; background: var(--cc-checker); background-size: 5px 5px; border-radius: 2px; }
@@ -110,3 +110,4 @@ button, input, select, textarea { font: inherit; color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+:root { --ff-display: "Unbounded Variable", "Unbounded", system-ui, sans-serif; --ff-text: "Onest Variable", "Onest", system-ui, sans-serif; --ff-mono: "JetBrains Mono", ui-monospace, monospace; }

@@ -48,7 +48,7 @@
 .car-visual { position: relative; aspect-ratio: 16 / 10; display: grid; place-items: end center; padding: 24px 22px 10px; background: radial-gradient(90% 70% at 50% 100%, rgba(68, 154, 207, .2), transparent 70%), radial-gradient(60% 40% at 50% 100%, rgba(255, 183, 0, .12), transparent 70%); }
 .car-floor { position: absolute; left: 10%; right: 10%; bottom: 14%; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent); }
 .car-art, .car-photo img { width: 100%; height: auto; transform: translateZ(40px); transition: transform .7s var(--ease-out); }
-.car-photo img { aspect-ratio: 16/10; object-fit: contain; }
+.car-photo img { aspect-ratio: 4/3; object-fit: cover; }
 .car-card:hover .car-art, .car-card:hover .car-photo img { transform: translateZ(60px) translateX(-3%) scale(1.04); }
 .car-info { display: grid; gap: 10px; align-content: start; padding: 8px 24px 24px; }
 .car-info h3 { font: 400 26px/1.1 var(--font-display); letter-spacing: -0.02em; }
@@ -103,7 +103,7 @@
 .owner figcaption { display: grid; }
 .owner strong { color: var(--text); font-weight: 500; }
 .owner figcaption span { font-size: 14px; color: var(--text-muted); }
-.trust-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; margin-top: clamp(48px, 6vw, 80px); }
+.trust-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; margin-top: clamp(28px, 3.5vw, 48px); }
 
 /* — Промо с формой — */
 .promo-card {
@@ -139,7 +139,7 @@
 .h3 { font: 500 22px/1.25 var(--font-text); color: var(--text); }
 
 /* — Требования и 3 шага — */
-.steps-sec .wrap { display: grid; gap: clamp(64px, 8vw, 120px); }
+.steps-sec .wrap { display: grid; gap: clamp(36px, 4.5vw, 64px); }
 .req { display: grid; gap: 32px; }
 .req-list { display: grid; margin: 0; border-top: 1px solid var(--line); }
 .req-list > div { display: grid; gap: 6px; padding: 22px 0; border-bottom: 1px solid var(--line); }
@@ -160,7 +160,7 @@
 .step-n { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; font: 300 24px/1 var(--font-display); color: var(--text); border: 1px solid var(--line); transition: background .4s, color .4s; }
 .step.on .step-n { background: var(--cc-signal); color: var(--cc-on-signal); border-color: var(--cc-signal); }
 .step-t { color: var(--text); font: 300 clamp(20px, 2vw, 28px)/1.2 var(--font-display); letter-spacing: -0.02em; }
-@media (min-width: 900px) { .step-list { grid-template-columns: repeat(3, 1fr); } .step { grid-template-columns: 1fr; align-content: space-between; min-height: 220px; } }
+@media (min-width: 900px) { .step-list { grid-template-columns: repeat(3, 1fr); } .step { grid-template-columns: 1fr; align-content: space-between; min-height: 170px; } }
 
 /* — Калькулятор — */
 .calc-grid { display: grid; gap: 20px; }

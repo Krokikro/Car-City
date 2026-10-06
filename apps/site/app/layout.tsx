@@ -1,5 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { Unbounded, Onest, JetBrains_Mono } from "next/font/google";
+import "@fontsource-variable/unbounded";
+import "@fontsource-variable/onest";
+import "@fontsource/jetbrains-mono/300.css";
+import "@fontsource/jetbrains-mono/400.css";
 import "@car-city/tokens/tokens.css";
 import "./styles/base.css";
 import "./styles/header.css";
@@ -15,11 +18,8 @@ import { MotionRoot } from "@/components/motion/MotionRoot";
 import { Analytics } from "@/components/analytics/Analytics";
 import { CookieNotice } from "@/components/CookieNotice";
 
-// Все три шрифта содержат кириллицу кыргызского и казахского и латиницу узбекского (проверено 2026-10-05).
-// Предзагружаем только кириллицу и латиницу: ext-наборы для ky/kk/uz подтянутся по unicode-range, когда понадобятся.
-const display = Unbounded({ subsets: ["cyrillic", "latin"], variable: "--ff-display", display: "optional" });
-const text = Onest({ subsets: ["cyrillic", "latin"], variable: "--ff-text", display: "swap" });
-const mono = JetBrains_Mono({ subsets: ["cyrillic", "latin"], weight: ["300", "400"], variable: "--ff-mono", display: "swap", preload: false });
+// Шрифты лежат в проекте (@fontsource): сборка не ходит в Google Fonts. Наборы cyrillic-ext/latin-ext для ky/kk/uz
+// подключаются браузером по unicode-range, только когда нужны.
 
 export const metadata: Metadata = {
   metadataBase: new URL(company.domain),
@@ -40,7 +40,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru" className={`${display.variable} ${text.variable} ${mono.variable}`} suppressHydrationWarning>
+    <html lang="ru" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: gfxDetectScript }} />
       </head>

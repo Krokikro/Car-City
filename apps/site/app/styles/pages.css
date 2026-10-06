@@ -190,3 +190,16 @@
 .lead strong { color: var(--text); font-weight: 500; }
 
 .pg-untranslated { position: relative; z-index: 3; margin-top: calc(var(--header-h) + 12px); margin-bottom: -40px; font-size: 12px; color: var(--text-muted); }
+
+/* Сгенерированные обложки: в карточке новости — фоном с затемнением, в статье — широким кадром */
+.news-img { position: absolute; inset: 0; z-index: 0; }
+.news-img img { width: 100%; height: 100%; object-fit: cover; opacity: .38; transform: scale(1.04); transition: opacity .6s var(--ease-out), transform 1.2s var(--ease-out); }
+.news-card:has(.news-img) > :not(.news-img) { position: relative; z-index: 1; }
+.news-card:has(.news-img)::after { content: ""; position: absolute; inset: 0; z-index: 0; background: linear-gradient(180deg, rgba(11,11,12,.35), rgba(11,11,12,.92) 70%); }
+.news-card:hover .news-img img { opacity: .6; transform: scale(1.1); }
+.art-cover { display: block; width: min(1100px, calc(100% - 2 * var(--gutter))); margin: clamp(20px, 3vw, 36px) auto 0; border-radius: var(--radius-card-lg); overflow: hidden; box-shadow: 0 40px 90px -40px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.06); }
+.art-cover img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; animation: pgKen 18s ease-out both; }
+.pg-hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+.pg-hero-in { position: relative; z-index: 2; }
+.pg-hero-photo { display: block; }
+

@@ -43,7 +43,8 @@ export function HeroVideo({ t }: { t: HomeText["hero"] }) {
           .to(".hv-giant", { opacity: 1, duration: 0.2 }, 0.1);
       });
       mm.add("(max-width: 719px)", () => {
-        gsap.to(".hv-frame", { scale: 0.92, borderRadius: 28, ease: "none", scrollTrigger: { trigger: el, start: "top top", end: "bottom bottom", scrub: 0.6 } });
+        // на телефоне кадр 16:9 целиком, без обрезки; при скролле лёгкий параллакс
+        gsap.to(".hv-video", { yPercent: 8, scale: 1.04, ease: "none", scrollTrigger: { trigger: el, start: "top top", end: "bottom top", scrub: 0.6 } });
       });
     }, el);
     return () => {
@@ -55,10 +56,13 @@ export function HeroVideo({ t }: { t: HomeText["hero"] }) {
   return (
     <section ref={root} className="hv" aria-labelledby="hero-title">
       <div className="hv-pin">
-        <div className="hv-frame">
+        <div className="hv-frame" style={{ ["--poster" as string]: `url(${asset("/video/hero-poster.webp")})` }}>
+          <div className="hv-fill" aria-hidden="true" />
           <video ref={video} className="hv-video" muted loop playsInline preload="metadata" poster={asset("/video/hero-poster.webp")} aria-hidden="true">
-            <source src={asset("/video/hero-960.mp4")} type="video/mp4" media="(max-width: 720px)" />
-            <source src={asset("/video/hero-1600.mp4")} type="video/mp4" />
+            <source src={asset("/video/hero-854.mp4")} type="video/mp4" media="(max-width: 720px)" />
+            <source src={asset("/video/hero-1280.mp4")} type="video/mp4" media="(max-width: 1366px)" />
+            <source src={asset("/video/hero-1920.webm")} type="video/webm" />
+            <source src={asset("/video/hero-1920.mp4")} type="video/mp4" />
           </video>
           <div className="hv-shade" aria-hidden="true" />
           <div className="hv-curtain" aria-hidden="true" />

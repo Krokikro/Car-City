@@ -52,12 +52,47 @@ export function MotionRoot() {
         gsap.from(el.querySelectorAll(".sw > span"), {
           yPercent: 110,
           rotate: 4,
+          filter: "blur(8px)",
           duration: 1,
           ease: "expo.out",
           stagger: 0.05,
           scrollTrigger: { trigger: el, start: "top 85%" },
         });
       });
+      // Вход каждой секции: секция «раскрывается» из скруглённой карточки во весь экран.
+      // Светлые секции заливаются кругом от верхнего края — резкой смены фона нет.
+      gsap.utils.toArray<HTMLElement>("main .section").forEach((sec, i) => {
+        if (i === 0 && !sec.closest(".home")) return;
+        const light = sec.dataset.surface === "light";
+        gsap.fromTo(
+          sec,
+          { clipPath: light ? "circle(12% at 50% 0%)" : "inset(6% 3.5% 0% 3.5% round 44px)" },
+          { clipPath: light ? "circle(150% at 50% 0%)" : "inset(0% 0% 0% 0% round 0px)", ease: "none",
+            scrollTrigger: { trigger: sec, start: "top 98%", end: "top 30%", scrub: 0.6 } },
+        );
+      });
+      // жёлтая линия над заголовком секции прорисовывается слева направо
+      gsap.utils.toArray<HTMLElement>(".eyebrow").forEach((el) => {
+        gsap.fromTo(el, { "--eb": 0 }, { "--eb": 1, duration: 1.2, ease: "expo.out", scrollTrigger: { trigger: el, start: "top 90%" } });
+      });
+      // карточки в сетках встают из глубины с лёгким 3D-поворотом
+      gsap.utils.toArray<HTMLElement>("[data-tilt-in]").forEach((el) => {
+        gsap.from(el.children, { rotateX: -24, y: 70, opacity: 0, transformPerspective: 900, transformOrigin: "50% 0%", duration: 1.1, ease: "expo.out", stagger: 0.07,
+          scrollTrigger: { trigger: el, start: "top 86%" } });
+      });
+      // бегущие ленты и треки реагируют на скорость прокрутки: наклон и ускорение
+      const skewTo = gsap.utils.toArray<HTMLElement>("[data-skew]").map((el) => gsap.quickTo(el, "skewX", { duration: 0.5, ease: "power3.out" }));
+      if (skewTo.length) {
+        ScrollTrigger.create({
+          onUpdate: (st) => {
+            const v = gsap.utils.clamp(-12, 12, st.getVelocity() / -280);
+            skewTo.forEach((f) => f(v));
+          },
+        });
+      }
+      // полоса прогресса чтения вверху экрана
+      const bar = document.querySelector<HTMLElement>(".scroll-progress");
+      if (bar) gsap.to(bar, { scaleX: 1, ease: "none", scrollTrigger: { start: 0, end: "max", scrub: 0.3 } });
       gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((el) => {
         gsap.from(el, { y: 48, opacity: 0, duration: 1.1, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 88%" } });
       });
@@ -109,5 +144,5 @@ export function MotionRoot() {
     };
   }, [path]);
 
-  return null;
+  return <div className="scroll-progress" aria-hidden="true" />;
 }

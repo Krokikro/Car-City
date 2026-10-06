@@ -21,7 +21,7 @@ export function Reviews({ lang = "ru", t }: { lang?: Lang; t: HomeText["reviews"
           </ul>
         </div>
       </div>
-      <div className="review-track" tabIndex={0} aria-label={t.label}>
+      <div className="review-track" data-tilt-in tabIndex={0} aria-label={t.label}>
         {reviews.map((r) => (
           <figure key={r.name} className="review">
             <blockquote>{r.text}</blockquote>

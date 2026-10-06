@@ -3,10 +3,10 @@ export function Ticker({ items }: { items: string[] }) {
   const row = [...items, ...items];
   return (
     <section className="ticker" aria-label={items.join(", ")}>
-      <div className="ticker-band" data-velocity>
+      <div className="ticker-band" data-velocity data-skew>
         <div className="ticker-row">{row.map((s, i) => <span key={i}>{s}<i aria-hidden="true" /></span>)}</div>
       </div>
-      <div className="ticker-band dark" data-velocity>
+      <div className="ticker-band dark" data-velocity data-skew>
         <div className="ticker-row rev">{row.map((s, i) => <span key={i}>{s}<i aria-hidden="true" /></span>)}</div>
       </div>
     </section>

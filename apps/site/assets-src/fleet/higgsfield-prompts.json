@@ -7,7 +7,29 @@
   "kia-rio-1.4": "ca35c681-f143-42f7-b2af-4eb783a20102",
   "kia-rio-1.6": "1b42f183-940a-497e-beec-48ca93945d56",
   "moskvich-3": "9274bc9b-781a-4410-a37d-b292dfa447ad",
-  "chery-tiggo-4": "aff040ee-f147-412b-8c66-1694a5c73068"
+  "chery-tiggo-4": "aff040ee-f147-412b-8c66-1694a5c73068",
+  "skoda-rapid-1.6": "37bd2d33-9c5b-4b1e-b1ec-12c354c5ee5d",
+  "belgee-x50": "e83f33c2-ce88-45e3-bac3-71dfa7817c6c",
+  "geely-emgrand": "bc534a47-4949-4b4a-8ab2-4fff135297b8",
+  "chery-tiggo-4-pro": "bbcc301b-69e5-4127-abb9-53fd622b2e66",
+  "omoda-s-5": "b1ca1df7-a3d5-4002-ada0-f9eb44d9e279",
+  "exeed-lx-2023": "bb8e8956-f408-4166-b096-ffd38b54ca93",
+  "jac-j7": "afd15085-7c96-4260-907b-ca650614e08e",
+  "haval-f7": "e3b8c62c-a966-400f-93af-14f73f85e607",
+  "chery-tiggo-7-pro-max": "13596434-e007-4ce4-b379-0a39ae879c9a",
+  "hyundai-sonata": "ae6a220c-2226-4756-84fc-fabb737864c3",
+  "kia-k5": "a60f8615-886c-4e93-a8ce-67a1480b9bb8",
+  "geely-atlas-pro": "16b980b2-14a0-4671-911f-441f3d7a53a5",
+  "chery-tiggo-7-pro": "64f7f486-3a72-4802-a92c-307f5a969c7e",
+  "hongqi-h5": "5a6ffdb1-75b6-43bc-a683-7230a2c3e29d",
+  "voyah-dream": "9877f778-a0eb-4b7a-847d-b52d8f5b9a06",
+  "gac-m8": "4283bf71-fdfc-47e2-8c29-8a9c72b247e2",
+  "sollers-atlant-19-td": "f14075ae-7c85-4302-a6fa-f3944cfea33c",
+  "sollers-atlant-l3h2-2-7d": "539100c3-f7bb-4e2b-92b1-94ed96c62df2",
+  "sollers-argo": "4c25aadd-ffa8-47cc-8b80-12755fda2d67",
+  "lada-largus": "8d40664c-ddb6-437f-aade-cf8649e56ae1",
+  "sollers-atlant-sf4-l4": "60c7a6e5-ed43-40dd-8f64-c0e7d2be5412",
+  "lada-granta": "6ebe2911-91e6-4742-897f-c12d12c36099"
  },
  "requests": [
   {
@@ -165,5 +187,42 @@
    "prompt": "Image 1 shows the exact car model: a Volkswagen Polo liftback (2020+). Image 2 is the Car City fleet master photo. Image 3 is the Car City logo. Create a new ultra-photorealistic commercial studio photograph that keeps EVERYTHING from the master photo identical - same dark studio background with the glowing yellow horizontal light line on the back wall, same polished dark reflective floor, same lighting, same camera angle (front three-quarter view, car facing left, lens at headlight height), same framing and car size in frame - but the car is replaced with the Volkswagen Polo liftback (2020+) exactly as in image 1 (body shape, headlights, grille, bumpers, wheels, proportions). Livery identical to the master photo: entire body solid glossy taxi yellow #FFB700, thin black-and-yellow checkerboard band along the side at door-handle level across both doors, on the front door the round Car City logo with bold black text CAR CITY under it and black text +7 (499) 302-31-59 under that. No Yandex branding, no other text or logos on the body. Front license plate area: the number plate is completely covered by a white plate-shaped Car City cover in a black frame, showing the round Car City logo and bold yellow-and-black text CAR CITY; no plate number, letters or digits visible (this is the one difference from the master photo). Headlights and daytime running lights on. Hyper-detailed, sharp, magazine car advertising quality, no people, no watermark."
   }
  ],
- "note": "Kia Rio X-Line — седан, не хэтчбек. Номер на всех машинах закрыт табличкой Car City. Новый эталон — Polo 4fb2ecc0."
+ "note": "Kia Rio X-Line — седан, не хэтчбек. Номер на всех машинах закрыт табличкой Car City. Новый эталон — Polo 4fb2ecc0.",
+ "pages": {
+  "about": "67478d4a-afd5-41da-a09f-d2dbde987b36",
+  "terms": "f8ef6664-fffc-41da-8653-14b43b9675a2",
+  "contacts": "e85bddac-b84e-42c8-97dc-b20006069d77",
+  "news": "e6d6be02-ea06-4fca-9cf0-40a1d7b5fabe",
+  "reviews": "e5984841-1803-4dbd-b281-810f7100d22f",
+  "ip": "73dd8325-b242-4f06-9fe9-6aaaec938c3b",
+  "general": "6d0280a9-0238-416d-931a-21e983c68213"
+ },
+ "news": {
+  "aktualnyie-sovetyi-voditelyam,-planiruyushhim-vzyat-v-arendu-avto-pod-taksi": "9df1b548-d573-46d3-8c4a-b86fc6c31697",
+  "arenda-avto-kitajskix-proizvoditelej-dlya-rabotyi-v-taksi": "72dfe95f-7dc1-4284-8ff8-cba89c6d4cda",
+  "arenda-avtomobilya-dlya-taksi-ili-sobstvennaya-mashina-chto-vyigodnee-v-2026-godu": "53787ec5-e556-45e1-a2e1-cde28e634d69",
+  "chto-takoe-arenda-s-pravom-vykupa-avto": "c03b2ad6-397d-40fb-88a2-4dd7965bf607",
+  "instrukczii-po-oformleniyu-arendy-taksi": "c9005168-26c1-4a0c-819b-333c60c0e82c",
+  "jac-j7-novyij-effektnyij-liftbek": "c5d8f210-aeb9-4483-9776-0543313fea5a",
+  "jac-motors": "66406b07-718a-4c14-a802-1e702c2c7dca",
+  "kak-podgotovit-avtomobil-k-rabote-v-taksi-polnyij-chek-list-voditelya": "e2543622-9df1-4483-8698-4bc63087406e",
+  "kak-stat-voditelem-taksi-v-2026-godu": "34248433-6d6e-4402-ac4d-a6c749a605ea",
+  "kak-vyibrat-avto-dlya-taksi-ot-trebovanij-agregatorov-taksi-do-finansovyix-aspektov": "d4c20812-f64c-4ef2-b747-27825d8072a4",
+  "kakie-avtomobili-chashhe-vsego-berut-pod-taksi": "d519f548-07b2-4ebb-bebd-448d49622361",
+  "kakoj-klass-avtomobilya-vygodnee-dlya-raboty-v-taksi": "e43ade6e-fb3c-4eef-9039-5eae71908ef8",
+  "kitajskie-avtomobili-dlya-taksi": "629a9b96-0bb9-4e96-bd74-ef6fc7b8091d",
+  "lokalizaciya-taksi-2026-kakie-avtomobili-podhodyat": "3e4d76ba-3ca4-41a7-b86b-31c5f5233aa6",
+  "luchshie-avtomobili-dlya-rabotyi-v-taksi-ekonom-klassa": "4194a393-44ca-4999-8d05-758b2ff52c85",
+  "mashinyi-iz-kitaya-ot-kopipasta-do-innovaczij": "823cf7d9-1459-4fc7-b4b1-9606f93501ce",
+  "na-chto-stoit-obratit-vnimanie-pri-arende-avto-pod-taksi": "dd2f92be-c5c7-40cc-9f19-09178ee55a91",
+  "naskolko-vyigodno-brat-v-arendu-avto-pod-taksi": "ab1a1446-c13d-4382-80f4-b65f79ffea13",
+  "osgop-dlya-taksi-chto-eto-takoe-skolko-stoit-i-kak-oformit": "ed0678b0-16f9-4efa-9b48-55bd2de87e6f",
+  "osobennosti-avto-komfort-klassa": "ec28dd60-ee94-48dc-a0db-ea29047ca916",
+  "podklyuchenie-k-agregatoram-taksi": "ad97e1b4-23ef-4e0d-b820-e8fce1cbba7b",
+  "skolko-mozhno-zarabotat,-arenduya-taksi": "9d467473-ad70-4fab-b9cc-1a6225c21f6f",
+  "spisok-mashin-dlya-taksi-2026-polnyij-razbor-trebovaniya-spisok-modelej-sravnenie-i-prognoz-ryinka": "87acd929-4bfc-412a-82e7-a95d1c0d4c96",
+  "top-10-oshibok-voditelej-pri-arende-avtomobilya-pod-taksi": "046c3b38-2509-471b-a99a-febe7a02352b",
+  "top-avtomobilej-dlya-arendyi-s-pravom-vyikupa-v-taksi": "ae063c11-b575-4a30-a52e-e167aef69da3",
+  "vyibiraem-avto-dlya-taksi-ot-ekonomii-do-komforta": "d9bcb6a5-709c-4b3b-b0b8-4ab99c2689b4"
+ }
 }

@@ -1,6 +1,7 @@
 import { marked } from "marked";
 import type { Block, Btn, Card, Fig } from "@/lib/blocks";
 import { CarArt } from "../CarArt";
+import { GenImage, pageKey } from "../GenImage";
 import { asset, href, type Lang } from "@/lib/i18n";
 import { ui } from "@/lib/ui";
 
@@ -67,7 +68,7 @@ export function PageHero({ eyebrow, h1, crumbs, path, paras, btns, introHtml, ca
     <>
       <section className={`pg-hero${cars.length ? " pg-hero-cars" : ""}`} aria-labelledby="pg-h1">
         <div className="pg-hero-bg" aria-hidden="true">
-          {!cars.length && <img className="pg-hero-photo" src={asset("/video/hero-poster.webp")} alt="" fetchPriority="high" />}
+          {!cars.length && <GenImage kind="pages" id={pageKey(path)} className="pg-hero-photo" priority />}
           <i /><i /><i />
         </div>
         {cars.length > 0 && (

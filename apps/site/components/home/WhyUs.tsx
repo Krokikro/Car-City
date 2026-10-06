@@ -9,7 +9,7 @@ export function WhyUs({ t: whyUs }: { t: HomeText["whyUs"] }) {
           <p className="mono eyebrow">Car City</p>
           <h2 id="why-title" className="display-xl" data-split>{whyUs.title}</h2>
         </div>
-        <div className="why-grid" data-reveal-stagger>
+        <div className="why-grid" data-tilt-in>
           {whyUs.items.map((it) => (
             <article key={it.title} className="why-card">
               <p className="why-num">{it.num}<small>{it.unit}</small></p>
