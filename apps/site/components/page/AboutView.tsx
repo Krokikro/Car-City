@@ -1,4 +1,5 @@
 import type { Parsed } from "@/lib/blocks";
+import { asset } from "@/lib/i18n";
 import { Figs } from "./PageParts";
 
 // «О нас»: текст и фото ёлочкой (слева-справа по очереди), фото раскрываются шторкой при прокрутке.
@@ -43,7 +44,7 @@ export function AboutView({ p }: { p: Parsed }) {
               </div>
               <figure className="about-media" data-clip={flip ? "left" : "right"}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={r.src} alt={r.alt} loading={i === 0 ? "eager" : "lazy"} decoding="async" />
+                <img src={asset(r.src)} alt={r.alt} loading={i === 0 ? "eager" : "lazy"} decoding="async" />
               </figure>
             </div>
           </section>

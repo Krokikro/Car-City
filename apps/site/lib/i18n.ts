@@ -10,8 +10,17 @@ export const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const isLang = (s: string | undefined): s is Lang => !!s && (LANGS as string[]).includes(s);
 
+/** Номер сборки: у картинок и видео одинаковые имена, а браузер держит их в кэше неделю.
+ *  ?v=сборка в адресе — новая выкладка сразу показывает новые файлы, а не старые из кэша. */
+export const BUILD = process.env.NEXT_PUBLIC_BUILD_ID ?? "";
+const MEDIA = /\.(webp|avif|png|jpe?g|svg|mp4|webm|gif)$/i;
+
 /** Файлы из public/: картинки, видео, иконки */
-export const asset = (p: string) => (p.startsWith("/") && !p.startsWith("//") ? BASE + p : p);
+export const asset = (p: string) => {
+  if (!p.startsWith("/") || p.startsWith("//")) return p;
+  const url = BASE && p.startsWith(BASE + "/") ? p : BASE + p;
+  return BUILD && MEDIA.test(p) ? `${url}?v=${BUILD}` : url;
+};
 
 /** Ссылка на страницу сайта на нужном языке. Внешние ссылки, якоря и tel: не трогает. */
 export function href(p: string | undefined, lang: Lang = "ru") {

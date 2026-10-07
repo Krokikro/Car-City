@@ -22,6 +22,8 @@ import { ArticleView, NewsGrid } from "@/components/page/Articles";
 import { SitemapView } from "@/components/page/SitemapView";
 import { ContactView } from "@/components/page/ContactView";
 import { AboutView } from "@/components/page/AboutView";
+import { TermsView } from "@/components/page/TermsView";
+import { termsOf } from "@/lib/terms";
 import { LANGS, isLang, type Lang } from "@/lib/i18n";
 import { alternates, homeMeta } from "@/lib/meta";
 import { ui } from "@/lib/ui";
@@ -125,6 +127,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
   const list = doc.path === "/novosti" || doc.path === "/reviews";
   const contact = doc.path === "/contact";
   const about = doc.path === "/o-nas";
+  const terms = doc.path === "/usloviya" ? termsOf(p) : undefined;
+  const own = contact || about || !!terms;
   const classVideo = doc.kind !== "article" && !isModel ? VIDEO_OF.find(([re]) => re.test(doc.path))?.[1] : undefined;
   let n = 0;
   return (
@@ -138,13 +142,14 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
         ) : isModel ? (
           <ModelHero h1={doc.h1} name={name} slug={car?.slug ?? ""} cls={doc.cls} mode={doc.mode} twin={twin} path={doc.path} crumbs={p.crumbs} specs={p.intro.specs} price={p.intro.price} btns={p.intro.btns} gallery={doc.gallery} lang={lang} panels={modelPanels(p, car, doc.cls ? ui(lang).cls[doc.cls] ?? undefined : undefined)} />
         ) : (
-          <PageHero eyebrow={eyebrowOf(doc, lang)} h1={doc.h1} crumbs={p.crumbs} path={doc.path} paras={list || contact || about ? [] : p.intro.paras} btns={p.intro.btns} introHtml={list || contact || about ? "" : p.intro.html} cars={heroCars(doc)} lang={lang} video={classVideo} stats={heroStats(doc, heroCars(doc), lang)} />
+          <PageHero eyebrow={eyebrowOf(doc, lang)} h1={doc.h1} crumbs={p.crumbs} path={doc.path} paras={list || own ? [] : p.intro.paras} btns={p.intro.btns} introHtml={list || own ? "" : p.intro.html} cars={heroCars(doc)} lang={lang} video={classVideo} stats={heroStats(doc, heroCars(doc), lang)} />
         )}
         {doc.path === "/novosti" && <NewsGrid src={doc.body} list={articles(lang)} lang={lang} />}
         {doc.path === "/reviews" && <ReviewsWall items={parseReviews(doc.body)} lang={lang} />}
         {contact && <ContactView lang={lang} />}
         {about && <AboutView p={p} />}
-        {doc.kind !== "article" && !contact && !about &&
+        {terms && <TermsView terms={terms} lang={lang} />}
+        {doc.kind !== "article" && !own &&
           p.blocks.map((b, i) => {
             if (b.t === "cards") return <CarCards key={i} groups={b.groups} lang={lang} />;
             if (b.t === "calculator") return <Calculator key={i} />;

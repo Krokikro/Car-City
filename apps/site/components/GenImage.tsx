@@ -12,13 +12,13 @@ export function GenImage({ kind, id, className, sizes = "100vw", priority = fals
   const set = SETS[kind];
   const m = set.meta[id];
   if (!m) return null;
-  const base = asset(`/${kind}/${id}`);
+  const f = (n: number, ext: string) => asset(`/${kind}/${id}-${n}.${ext}`);
   const [a, b] = set.sizes;
   return (
     <picture className={className}>
-      <source type="image/avif" srcSet={`${base}-${a}.avif ${a}w, ${base}-${b}.avif ${m.w}w`} sizes={sizes} />
-      <source type="image/webp" srcSet={`${base}-${a}.webp ${a}w, ${base}-${b}.webp ${m.w}w`} sizes={sizes} />
-      <img src={`${base}-${b}.webp`} alt={alt} width={m.w} height={m.h} loading={priority ? "eager" : "lazy"} decoding="async" fetchPriority={priority ? "high" : undefined} />
+      <source type="image/avif" srcSet={`${f(a, "avif")} ${a}w, ${f(b, "avif")} ${m.w}w`} sizes={sizes} />
+      <source type="image/webp" srcSet={`${f(a, "webp")} ${a}w, ${f(b, "webp")} ${m.w}w`} sizes={sizes} />
+      <img src={f(b, "webp")} alt={alt} width={m.w} height={m.h} loading={priority ? "eager" : "lazy"} decoding="async" fetchPriority={priority ? "high" : undefined} />
     </picture>
   );
 }

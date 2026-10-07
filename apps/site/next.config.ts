@@ -12,8 +12,12 @@ const securityHeaders = [
 const staticExport = process.env.STATIC_EXPORT === "1";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || undefined;
 
+// номер сборки для адресов картинок и видео (?v=…), см. asset() в lib/i18n.ts
+const buildId = (process.env.RAILWAY_GIT_COMMIT_SHA || process.env.GITHUB_SHA || "").slice(0, 8) || Date.now().toString(36);
+
 const config: NextConfig = {
   reactStrictMode: true,
+  env: { NEXT_PUBLIC_BUILD_ID: buildId },
   poweredByHeader: false,
   transpilePackages: ["@car-city/i18n"],
   basePath,
