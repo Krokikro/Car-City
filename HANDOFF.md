@@ -59,3 +59,10 @@
 - Остальные 16 запросов (промпты и media id) лежат в `apps/site/assets-src/fleet/higgsfield-prompts.json`. Упёрлись в дневной лимит генераций Higgsfield (тариф starter, «grace period»), кредиты есть (~44).
 - Скачать результаты по-прежнему нельзя: cloudfront Higgsfield закрыт политикой сети и в облаке, и в VM на Mac. Нужно добавить d8j0ntlcm91z4.cloudfront.net и d2ol7oe51mr4n9.cloudfront.net в разрешённые домены (Admin settings → Capabilities) или скачать файлы руками в ~/Pictures/CarCity-cars.
 - 6 октября: готовы 5 машин — Polo (новый эталон `4fb2ecc0`, номер закрыт табличкой Car City), Kia Rio X-Line седаном (`ca35c681`), Kia Rio (`1b42f183`), Москвич 3 (`9274bc9b`), Chery Tiggo 4 (`aff040ee`). Лимит Higgsfield — около 5 генераций в день, осталось 13 машин.
+
+## Демо на Railway (7 октября)
+
+- Код в GitHub (ветка `site/homepage`), Railway собирает его сам. Настройки сборки лежат в `railway.json` в корне: `pnpm install` → `pnpm --filter @car-city/site build`, запуск `next start` на `$PORT`. Это полноценный сервер: формы заявок (`/api/lead`) работают, в отличие от статики на GitHub Pages.
+- Переменные для форм (Telegram, Битрикс24, SmartCaptcha) — из `apps/site/.env.example`, задаются в Railway → Variables.
+- Шрифты теперь в проекте (@fontsource), сборка не ходит в Google Fonts.
+- Картинки сайта: исходники в `apps/site/assets-src/gen/{cars,pages,news}`, сжатие `node scripts/optimize-gen.mjs`, id задач Higgsfield — в `assets-src/fleet/higgsfield-prompts.json`.
