@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { youtube } from "@/lib/home";
 import type { HomeText } from "@/lib/home-text";
-import { company } from "@/lib/content";
+import { SocialRow } from "@/components/SocialIcons";
 
 // Мессенджеры и шортсы YouTube. Видео грузится только по клику (без трекеров до согласия).
 export function Media({ t }: { t: HomeText["media"] }) {
@@ -14,15 +14,8 @@ export function Media({ t }: { t: HomeText["media"] }) {
         <div className="media-copy">
           <p className="mono eyebrow">{t.eyebrow}</p>
           <h2 id="media-title" className="display" data-split>{t.title}</h2>
-          <div className="messengers" data-reveal-stagger>
-            <a href={company.telegram} target="_blank" rel="noopener" className="msg msg-tg"><span>Telegram</span><span className="mono-num">{company.messengerPhone}</span></a>
-            <a href={company.whatsapp} target="_blank" rel="noopener" className="msg msg-wa"><span>WhatsApp</span><span className="mono-num">{company.messengerPhone}</span></a>
-            <a href={company.max} target="_blank" rel="noopener" className="msg msg-max"><span>MAX</span><span className="mono-num">Car City</span></a>
-          </div>
-          <a href={company.youtube} target="_blank" rel="noopener" className="yt-link">
-            <span className="yt-badge" aria-hidden="true">▶</span>
-            <span>{t.youtube}</span>
-          </a>
+          <p className="media-note">{t.youtube}</p>
+          <SocialRow size={64} className="media-soc" />
         </div>
         <div className="shorts" data-reveal-stagger>
           {youtube.shorts.map((id, i) => (

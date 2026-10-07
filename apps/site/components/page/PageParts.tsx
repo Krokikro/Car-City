@@ -62,16 +62,20 @@ export function Buttons({ btns, size = "btn-lg" }: { btns: Btn[]; size?: string 
 
 // Визуал первого экрана внутренних страниц: у разделов с машинами — веер фото этих машин,
 // у остальных — кадр из видео парка с медленным наездом камеры.
-export function PageHero({ eyebrow, h1, crumbs, path, paras, btns, introHtml, cars = [], lang = "ru" }: { eyebrow: string; h1: string; crumbs: string[]; path: string; paras: string[]; btns: Btn[]; introHtml: string; cars?: { slug: string; name: string }[]; lang?: Lang }) {
+export function PageHero({ eyebrow, h1, crumbs, path, paras, btns, introHtml, cars = [], lang = "ru", video, stats = [] }: { eyebrow: string; h1: string; crumbs: string[]; path: string; paras: string[]; btns: Btn[]; introHtml: string; cars?: { slug: string; name: string }[]; lang?: Lang; video?: string; stats?: { k: string; v: string }[] }) {
   const rich = /<(ul|ol|table|h3|figure)/.test(introHtml);
   return (
     <>
-      <section className={`pg-hero${cars.length ? " pg-hero-cars" : ""}`} aria-labelledby="pg-h1">
+      <section className={`pg-hero${video ? " pg-hero-video" : cars.length ? " pg-hero-cars" : ""}`} aria-labelledby="pg-h1">
         <div className="pg-hero-bg" aria-hidden="true">
-          {!cars.length && <GenImage kind="pages" id={pageKey(path)} className="pg-hero-photo" priority />}
+          {video ? (
+            <video className="pg-hero-vid" src={asset(`/classes/${video}.mp4`)} poster={asset(`/classes/${video}.webp`)} autoPlay muted loop playsInline preload="auto" />
+          ) : (
+            !cars.length && <GenImage kind="pages" id={pageKey(path)} className="pg-hero-photo" priority />
+          )}
           <i /><i /><i />
         </div>
-        {cars.length > 0 && (
+        {!video && cars.length > 0 && (
           <div className="pg-fan" aria-hidden="true">
             {cars.slice(0, 3).map((c, i) => (
               <div key={c.slug} className="pg-fan-card" style={{ ["--i" as string]: i }}>
@@ -88,6 +92,11 @@ export function PageHero({ eyebrow, h1, crumbs, path, paras, btns, introHtml, ca
           <h1 id="pg-h1" className="display-xl" data-split>{h1}</h1>
           {!rich && paras.slice(0, 2).map((p, i) => <p key={i} className="lead" data-reveal dangerouslySetInnerHTML={{ __html: marked.parseInline(p, { async: false }) as string }} />)}
           <Buttons btns={btns} />
+          {stats.length > 0 && (
+            <dl className="pg-stats" data-reveal-stagger>
+              {stats.map((x) => <div key={x.k}><dt className="mono">{x.k}</dt><dd>{x.v}</dd></div>)}
+            </dl>
+          )}
         </div>
       </section>
       {(rich || paras.length > 2) && (
@@ -149,16 +158,20 @@ function CarTile({ c }: { c: Card }) {
 export function Figs({ figs }: { figs: Fig[] }) {
   if (!figs.length) return null;
   return (
-    <div className="pg-figs" data-reveal-stagger>
-      {figs.map((f, i) => (
+    <div className={`pg-figs${figs.every((f) => f.src.startsWith("/team/")) ? " pg-team" : ""}`} data-reveal-stagger>
+      {figs.map((f, i) => {
+        const m = f.caption.match(/^\*\*(.+?)\*\*\s*[—–-]?\s*(.*)$/);
+        const plain = f.caption.replace(/\*\*/g, "");
+        return (
         <figure key={i} className="pg-fig">
           <div className="pg-fig-img">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={f.src} alt={f.caption} loading="lazy" decoding="async" />
+            <img src={f.src.startsWith("/") ? asset(f.src) : f.src} alt={plain} loading="lazy" decoding="async" />
           </div>
-          <figcaption>{f.caption}</figcaption>
+          <figcaption>{m ? <><strong>{m[1]}</strong>{m[2]}</> : plain}</figcaption>
         </figure>
-      ))}
+        );
+      })}
     </div>
   );
 }

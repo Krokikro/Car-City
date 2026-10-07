@@ -146,21 +146,6 @@
 .req-list dd { margin: 0; color: var(--text); font: 300 clamp(22px, 2.4vw, 34px)/1.2 var(--font-display); letter-spacing: -0.02em; }
 @media (min-width: 900px) { .req { grid-template-columns: 5fr 7fr; } .req-list > div { grid-template-columns: 160px 1fr; align-items: baseline; } }
 .steps { display: grid; gap: 48px; }
-.steps-road { margin-inline: 44px; }
-.steps-road { position: relative; height: 72px; }
-.road-line, .road-fill { position: absolute; left: 0; right: 0; top: 50%; height: 6px; margin-top: -3px; border-radius: 3px; }
-.road-line { background: repeating-linear-gradient(90deg, var(--cc-hairline) 0 24px, transparent 24px 40px); }
-.road-fill { background: var(--cc-checker); background-size: 6px 6px; transform-origin: left; transform: scaleX(0); }
-[data-gfx="basic"] .road-fill { transform: none; }
-.road-car { position: absolute; top: 50%; left: 0; width: 88px; translate: -50% -78%; filter: drop-shadow(0 8px 18px rgba(255, 183, 0, .45)); }
-[data-gfx="basic"] .road-car { left: 100%; }
-.step-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
-.step { display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; padding: 22px 24px; border-radius: var(--radius-card); background: var(--surface); border: 1px solid var(--line); transition: border-color .4s, background .4s; }
-.step.on { border-color: rgba(255, 183, 0, .45); background: linear-gradient(135deg, rgba(255,183,0,.08), var(--surface) 60%); }
-.step-n { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; font: 300 24px/1 var(--font-display); color: var(--text); border: 1px solid var(--line); transition: background .4s, color .4s; }
-.step.on .step-n { background: var(--cc-signal); color: var(--cc-on-signal); border-color: var(--cc-signal); }
-.step-t { color: var(--text); font: 300 clamp(20px, 2vw, 28px)/1.2 var(--font-display); letter-spacing: -0.02em; }
-@media (min-width: 900px) { .step-list { grid-template-columns: repeat(3, 1fr); } .step { grid-template-columns: 1fr; align-content: space-between; min-height: 170px; } }
 
 /* — Калькулятор — */
 .calc-grid { display: grid; gap: 20px; }

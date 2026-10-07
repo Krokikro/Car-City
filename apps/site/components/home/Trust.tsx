@@ -1,4 +1,4 @@
-import { href, type Lang } from "@/lib/i18n";
+import { asset, href, type Lang } from "@/lib/i18n";
 import { ruHome, type HomeText } from "@/lib/home-text";
 
 export function Trust({ lang = "ru", t: trust = ruHome.trust }: { lang?: Lang; t?: HomeText["trust"] }) {
@@ -20,7 +20,12 @@ export function Trust({ lang = "ru", t: trust = ruHome.trust }: { lang?: Lang; t
         <div className="owners-row">
           {row.map((o, i) => (
             <figure key={i} className="owner" aria-hidden={i >= trust.owners.length || undefined}>
-              <span className="owner-ph" aria-hidden="true">{o.name.split(" ").map((w) => w[0]).join("").slice(0, 2)}</span>
+              {"photo" in o && o.photo ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img className="owner-ph owner-img" src={asset(`/owners/${o.photo}.webp`)} alt="" width={96} height={96} loading="lazy" decoding="async" />
+              ) : (
+                <span className="owner-ph" aria-hidden="true">{o.name.split(" ").map((w) => w[0]).join("").slice(0, 2)}</span>
+              )}
               <figcaption><strong>{o.name}</strong><span>{o.car}</span></figcaption>
             </figure>
           ))}

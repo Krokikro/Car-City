@@ -55,3 +55,13 @@ export const fleetClasses: { id: CarClass; name: string }[] = [
   { id: "gruzovoy", name: "грузовой" },
   { id: "dostavka", name: "доставка" },
 ];
+
+/** Популярные модели на главной: по две из каждого класса (в «Доставке» одна машина) */
+export const POPULAR = [
+  "volkswagen-polo-1.6", "kia-rio-1.6",
+  "moskvich-3", "chery-tiggo-4-pro",
+  "kia-k5", "haval-f7",
+  "hongqi-h5", "voyah-dream",
+  "sollers-atlant-19-td", "lada-largus",
+  "lada-granta",
+];

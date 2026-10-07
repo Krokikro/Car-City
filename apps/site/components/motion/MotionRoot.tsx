@@ -93,6 +93,15 @@ export function MotionRoot() {
       // полоса прогресса чтения вверху экрана
       const bar = document.querySelector<HTMLElement>(".scroll-progress");
       if (bar) gsap.to(bar, { scaleX: 1, ease: "none", scrollTrigger: { start: 0, end: "max", scrub: 0.3 } });
+      // фото раскрывается шторкой со своей стороны, внутри — лёгкий наезд камеры
+      gsap.utils.toArray<HTMLElement>("[data-clip]").forEach((el) => {
+        const fromLeft = el.dataset.clip === "left";
+        const img = el.querySelector("img, video");
+        const tl = gsap.timeline({ scrollTrigger: { trigger: el, start: "top 82%" } });
+        tl.fromTo(el, { clipPath: fromLeft ? "inset(0% 100% 0% 0% round 28px)" : "inset(0% 0% 0% 100% round 28px)" }, { clipPath: "inset(0% 0% 0% 0% round 28px)", duration: 1.3, ease: "expo.inOut" });
+        if (img) tl.fromTo(img, { scale: 1.25, xPercent: fromLeft ? -6 : 6 }, { scale: 1, xPercent: 0, duration: 1.8, ease: "expo.out" }, 0.15);
+        gsap.to(el, { yPercent: -6, ease: "none", scrollTrigger: { trigger: el, start: "top bottom", end: "bottom top", scrub: true } });
+      });
       gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((el) => {
         gsap.from(el, { y: 48, opacity: 0, duration: 1.1, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 88%" } });
       });

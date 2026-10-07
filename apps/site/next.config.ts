@@ -22,7 +22,12 @@ const config: NextConfig = {
     : {
         images: { formats: ["image/avif", "image/webp"] },
         async headers() {
-          return [{ source: "/:path*", headers: securityHeaders }];
+          // картинки и видео без хэша в имени: неделю из кэша, ещё месяц — фоновая проверка
+          const media = [{ key: "Cache-Control", value: "public, max-age=604800, stale-while-revalidate=2592000" }];
+          return [
+            { source: "/:path*", headers: securityHeaders },
+            ...["video", "cars", "pages", "news", "team", "owners", "orbit", "brand", "steps", "classes"].map((d) => ({ source: `/${d}/:file*`, headers: media })),
+          ];
         },
       }),
 };

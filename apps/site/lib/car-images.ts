@@ -4,6 +4,10 @@ export const carImages: Record<string, { w: number; h: number }> = {
     "w": 1200,
     "h": 896
   },
+  "belgee-x70": {
+    "w": 1200,
+    "h": 896
+  },
   "chery-tiggo-4-pro": {
     "w": 1200,
     "h": 896
@@ -97,6 +101,10 @@ export const carImages: Record<string, { w: number; h: number }> = {
     "h": 896
   },
   "sollers-atlant-sf4-l4": {
+    "w": 1200,
+    "h": 896
+  },
+  "tenet-t7": {
     "w": 1200,
     "h": 896
   },

@@ -11,10 +11,12 @@ import "./styles/sections.css";
 import "./styles/pages.css";
 import "./styles/lead.css";
 import "./styles/v2.css";
+import "./styles/v3.css";
 import { gfxDetectScript } from "@/lib/gfx";
 import { company } from "@/lib/content";
 import { asset } from "@/lib/i18n";
 import { MotionRoot } from "@/components/motion/MotionRoot";
+import { ChatWidget } from "@/components/ChatWidget";
 import { Analytics } from "@/components/analytics/Analytics";
 import { CookieNotice } from "@/components/CookieNotice";
 
@@ -48,6 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <MotionRoot />
         <CookieNotice />
+        <ChatWidget />
         <Analytics />
       </body>
     </html>

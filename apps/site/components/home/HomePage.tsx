@@ -2,7 +2,7 @@ import { Header } from "@/components/Header";
 import { HtmlLang } from "@/components/HtmlLang";
 import { HeroVideo } from "@/components/home/HeroVideo";
 import { Ticker } from "@/components/home/Ticker";
-import { FleetShow } from "@/components/home/FleetShow";
+import { FleetGrid } from "@/components/home/FleetGrid";
 import { Benefits } from "@/components/home/Benefits";
 import { Trust } from "@/components/home/Trust";
 import { Promo } from "@/components/home/Promo";
@@ -44,7 +44,7 @@ export function HomePage({ lang = "ru" }: { lang?: Lang }) {
       <main id="main" className="home">
         <HeroVideo t={h.hero} />
         <Ticker items={h.ticker} />
-        <FleetShow t={h.fleet} lang={lang} />
+        <FleetGrid t={h.fleet} lang={lang} />
         <Benefits t={h.benefits} />
         <Trust lang={lang} t={h.trust} />
         <Promo t={h.promo} />

@@ -2,6 +2,7 @@ import { company, offices } from "@/lib/content";
 import { href, type Lang } from "@/lib/i18n";
 import { ui } from "@/lib/ui";
 import { Logo } from "./Logo";
+import { SocialRow } from "./SocialIcons";
 
 export function Footer({ lang = "ru" }: { lang?: Lang }) {
   const t = ui(lang);
@@ -23,12 +24,7 @@ export function Footer({ lang = "ru" }: { lang?: Lang }) {
             ))}
             <a href={`mailto:${company.email}`}>{company.email}</a>
           </div>
-          <div className="footer-msg">
-            <a href={company.telegram} target="_blank" rel="noopener">Telegram</a>
-            <a href={company.whatsapp} target="_blank" rel="noopener">WhatsApp</a>
-            <a href={company.max} target="_blank" rel="noopener">MAX</a>
-            <a href={company.youtube} target="_blank" rel="noopener">YouTube</a>
-          </div>
+          <SocialRow size={44} className="footer-soc" />
         </div>
         {cols.map((c) => (
           <nav key={c.title} aria-label={c.title} className="footer-col">

@@ -1,5 +1,13 @@
 // Генерируется скриптом scripts/optimize-gen.mjs — не править руками.
 export const pageImages: Record<string, { w: number; h: number }> = {
+  "about-advantages": {
+    "w": 1920,
+    "h": 1275
+  },
+  "about-fleet": {
+    "w": 1920,
+    "h": 823
+  },
   "about": {
     "w": 1920,
     "h": 1086

@@ -29,7 +29,9 @@
     "sollers-argo": "4c25aadd-ffa8-47cc-8b80-12755fda2d67",
     "lada-largus": "8d40664c-ddb6-437f-aade-cf8649e56ae1",
     "sollers-atlant-sf4-l4": "60c7a6e5-ed43-40dd-8f64-c0e7d2be5412",
-    "lada-granta": "6ebe2911-91e6-4742-897f-c12d12c36099"
+    "lada-granta": "6ebe2911-91e6-4742-897f-c12d12c36099",
+    "tenet-t7": "1bf520cb-c6ac-4f4b-9733-67d719be7bb3",
+    "belgee-x70": "18ca6407-ed36-4cde-ad99-1e4b53cf0d4e"
   },
   "requests": [
     {
@@ -191,11 +193,13 @@
   "pages": {
     "about": "1a5bb0a0-90ff-47ce-b94a-3455664c7593",
     "terms": "f8ef6664-fffc-41da-8653-14b43b9675a2",
-    "contacts": "e85bddac-b84e-42c8-97dc-b20006069d77",
+    "contacts": "d764806e-c1a7-4bd1-bfb6-668dade3b1b3",
     "news": "e6d6be02-ea06-4fca-9cf0-40a1d7b5fabe",
     "reviews": "e5984841-1803-4dbd-b281-810f7100d22f",
     "ip": "73dd8325-b242-4f06-9fe9-6aaaec938c3b",
-    "general": "6d0280a9-0238-416d-931a-21e983c68213"
+    "general": "6d0280a9-0238-416d-931a-21e983c68213",
+    "about-fleet": "fd428b9b-147d-4ea4-b32f-8cee25d98d8c",
+    "about-advantages": "7d6b9dfe-ea66-434a-9755-742245e49a6e"
   },
   "news": {
     "aktualnyie-sovetyi-voditelyam,-planiruyushhim-vzyat-v-arendu-avto-pod-taksi": "9df1b548-d573-46d3-8c4a-b86fc6c31697",
@@ -224,5 +228,34 @@
     "top-10-oshibok-voditelej-pri-arende-avtomobilya-pod-taksi": "046c3b38-2509-471b-a99a-febe7a02352b",
     "top-avtomobilej-dlya-arendyi-s-pravom-vyikupa-v-taksi": "ae063c11-b575-4a30-a52e-e167aef69da3",
     "vyibiraem-avto-dlya-taksi-ot-ekonomii-do-komforta": "d9bcb6a5-709c-4b3b-b0b8-4ab99c2689b4"
+  },
+  "orbits": {
+    "volkswagen-polo-1.6": "6758d814-a2bc-4315-bff6-fdf0dd59d7a9",
+    "kia-rio-1.6": "3dfc81ac-5084-41ed-89c5-24c5c96fbcce",
+    "moskvich-3": "a46e9be9-162d-4893-af8f-efdfb78e1c36",
+    "chery-tiggo-4-pro": "a0d8ef95-92c4-47ac-8509-f4eb10771ba1",
+    "kia-k5": "3bf36ad0-7603-4bf4-bb10-dd87690f54fb",
+    "haval-f7": "22590876-d656-4f4f-875c-a48bc18e6a4a",
+    "hongqi-h5": "2b6fcb97-2db7-4282-b1bb-ac4b363e8821",
+    "voyah-dream": "93394579-116f-4b88-86d3-abdcb9c50a3d",
+    "sollers-atlant-19-td": "5b258b3f-fb28-429b-909c-7ba512559be0",
+    "lada-largus": "673bda31-07bd-4bc8-985c-d476f1b84e46",
+    "lada-granta": "f0bb8985-4edc-42e5-9713-bf0be22abd01"
+  },
+  "team": {
+    "zhitnikov": "5f3b507a-3813-4d40-a6f3-d2228a26dddb",
+    "mironov": "2d1c7948-6234-43a5-8368-885a68edc9f0",
+    "bogatyrev": "52af27d9-fbad-4bcc-ac6e-9c66eced3b27"
+  },
+  "class_videos": {
+    "vykup": "faa7a699-bbd9-47c7-836e-008e357e021f",
+    "ekonom": "cba84796-d699-4f80-b57f-bf75f892bdd5",
+    "komfort": "08314d25-9deb-4731-9b20-ae8d9c427788",
+    "komfort-plus": "7a25f3dd-9cce-4736-b32a-4ab9b5583718",
+    "gruzovoy": "09609900-d757-403d-83c9-6be2a814078b"
+  },
+  "steps_car": {
+    "image": "90750b32-91ed-4ef0-8e71-b5b470dc8d83",
+    "cutout": "2de03289-e022-48fc-9f18-fe2f0708a916"
   }
 }

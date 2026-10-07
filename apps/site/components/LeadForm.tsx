@@ -3,6 +3,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { company } from "@/lib/content";
+import { SocialIcon } from "@/components/SocialIcons";
 import { isLang, splitLang } from "@/lib/i18n";
 import { leadFormI18n } from "@/lib/lead/i18n";
 import { formatPhone, normalizePhone, phoneDigits } from "@/lib/lead/phone";
@@ -234,7 +235,7 @@ export function LeadForm({ button, source = "site", compact = false, extra, t: t
           {MESSENGERS.map((m) => (
             <label key={m} className="lead-chip">
               <input type="radio" name="messenger" value={m} />
-              <span className="pill">{t.messengers[m]}</span>
+              <span className="pill">{m === "call" ? <span className="soc-ico soc-call" aria-hidden="true"><svg viewBox="0 0 24 24" width="12" height="12"><path d="M6.6 3.5h2.6l1.3 3.6-1.8 1.4a10 10 0 0 0 6.8 6.8l1.4-1.8 3.6 1.3v2.6c0 1-.8 1.8-1.8 1.8A15.6 15.6 0 0 1 4.8 5.3c0-1 .8-1.8 1.8-1.8z" fill="#111"/></svg></span> : <SocialIcon kind={m} size={20} />}{t.messengers[m]}</span>
             </label>
           ))}
         </fieldset>

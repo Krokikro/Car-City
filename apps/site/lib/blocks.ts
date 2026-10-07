@@ -43,8 +43,20 @@ function btnHref(label: string, url?: string, twin?: string) {
   return "#zayavka";
 }
 
+// картинки старого сайта, которые мы перегенерировали: старый адрес → своё сжатое фото
+const REGEN: [RegExp, string][] = [
+  [/themes\/img\/supports\/image-5\.webp/, "/team/zhitnikov-960.webp"],
+  [/themes\/img\/supports\/image-6\.webp/, "/team/mironov-960.webp"],
+  [/themes\/img\/supports\/nikita_bogatyrev\.webp/, "/team/bogatyrev-960.webp"],
+  [/themes\/img\/about\/new\/about-intro\.webp/, "/pages/about-fleet-1920.webp"],
+  [/themes\/img\/about\/new\/cars\.webp/, "/pages/about-advantages-1920.webp"],
+];
+
 function prep(src: string) {
   let s = src.replace(/<!--[\s\S]*?-->/g, "").replace(/\r/g, "");
+  s = s.replace(/https?:\/\/(?:www\.)?car-city\.pro\/[^)\s]+/g, (u) => { const r = REGEN.find(([re]) => re.test(u)); return r ? r[1] : u; });
+  // фото машин каталога со старого сайта: у нас свои фото в карточках, старые не показываем
+  s = s.replace(/^!\[car Image\]\([^)\n]*\)[ \t]*$/gim, "");
   let final = false;
   const fi = s.search(/^Дарим 1-ый день бесплатно!?/m);
   if (fi >= 0) {
@@ -88,6 +100,15 @@ function listClass(html: string) {
     // три и больше пар «подзаголовок + короткий абзац» подряд → сетка карточек
     .replace(/(?:<h3[^>]*>[^<]*<\/h3>\s*<p>(?:(?!<\/p>)[\s\S]){0,400}<\/p>\s*){3,}/g, (g: string) =>
       `<div class="qgrid">${g.replace(/<h3([^>]*)>([^<]*)<\/h3>\s*(<p>[\s\S]*?<\/p>)/g, '<div class="qcard"><h3$1>$2</h3>$3</div>')}</div>`)
+    // ячейка с двумя ценами (старая и со скидкой): большая — новая, под ней мелко зачёркнутая старая
+    .replace(/<td>([^<]*₽[^<]*₽[^<]*)<\/td>/g, (m, cell: string) => {
+      const nums = cell.split("₽").map((x) => x.replace(/[^\d]/g, "")).filter(Boolean).map(Number);
+      if (nums.length !== 2) return m;
+      const [now, old] = [Math.min(...nums), Math.max(...nums)];
+      if (now === old) return m;
+      const f = (n: number) => n.toLocaleString("ru-RU").replace(/\s/g, "\u00a0") + "\u00a0₽";
+      return `<td class="td-price"><span class="pr-now">${f(now)}</span><s class="pr-old">${f(old)}</s></td>`;
+    })
     .replace(/<table>/g, '<div class="tbl" data-reveal><table>')
     .replace(/<\/table>/g, "</table></div>");
 }
@@ -121,11 +142,13 @@ function card(title: string, body: string): Card | null {
   const btn = body.match(/\[\[btn:([^\]|]+)\|([^\]]+)\]\]/);
   const href = btn ? localHref(btn[2]) : undefined;
   if (!btn || !href || !MODEL_LINK.test(href)) return null;
+  // раздел с таблицей — это условия, а не карточка каталога
+  if (/^\|/m.test(body)) return null;
   const price = body.match(/^([^\n\d]{0,14}\d[\d\s]*\s?₽[^\n]{0,30})$/m)?.[1];
   const specs = [...body.matchAll(/^(\p{Lu}[^:\n]{2,40}):\s*(.+)$/gmu)].map((m) => [m[1], m[2]] as [string, string]);
   const img = body.match(/\[\[img:([^|\]]+)/)?.[1];
   const f = fleet.find((x) => [x.rent, x.buy].some((p) => p?.toLowerCase() === href.toLowerCase()));
-  return { name: title, slug: f?.slug, specs, price, btn: { label: btn[1], href }, img };
+  return { name: title, slug: f?.slug ?? href.split("/").pop()!.toLowerCase(), specs, price, btn: { label: btn[1], href }, img };
 }
 
 export function parseDoc(src: string, opts: { twin?: string; model?: boolean; lang?: Lang } = {}): Parsed {
@@ -179,7 +202,7 @@ export function parseDoc(src: string, opts: { twin?: string; model?: boolean; la
     // карточка каталога заканчивается на «---» или на следующем подзаголовке
     const end = body.search(/^(---|### )/m);
     const head = end >= 0 ? body.slice(0, end) : body;
-    const c = card(title, head);
+    const c = opts.model ? null : card(title, head);
     if (c) {
       const last = blocks[blocks.length - 1];
       const grp = { label, cards: [c] };

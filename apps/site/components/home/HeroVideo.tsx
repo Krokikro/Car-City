@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { preload } from "react-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { asset } from "@/lib/i18n";
@@ -14,6 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
 export function HeroVideo({ t }: { t: HomeText["hero"] }) {
   const root = useRef<HTMLElement>(null);
   const video = useRef<HTMLVideoElement>(null);
+  preload(asset("/video/hero-poster.webp"), { as: "image", fetchPriority: "high" });
 
   useEffect(() => {
     const el = root.current!;
@@ -24,14 +26,8 @@ export function HeroVideo({ t }: { t: HomeText["hero"] }) {
     io.observe(el);
     if (basic) return () => io.disconnect();
 
+    // вступление (шторка, строки заголовка) идёт на CSS с первой отрисовки и не ждёт загрузки скриптов
     const ctx = gsap.context(() => {
-      const intro = gsap.timeline({ defaults: { ease: "expo.out" } });
-      intro
-        .fromTo(".hv-curtain", { scaleY: 1 }, { scaleY: 0, duration: 1.2, ease: "expo.inOut" })
-        .from(".hv-frame", { scale: 1.18, duration: 2.2 }, 0.2)
-        .from("[data-hv-line]", { yPercent: 115, rotate: 3, duration: 1.3, stagger: 0.09 }, 0.55)
-        .from("[data-hv-fade]", { opacity: 0, y: 26, duration: 1, stagger: 0.07 }, 0.9);
-
       const mm = gsap.matchMedia();
       mm.add("(min-width: 720px)", () => {
         const tl = gsap.timeline({ scrollTrigger: { trigger: el, start: "top top", end: "bottom bottom", scrub: 0.8 } });
@@ -58,7 +54,7 @@ export function HeroVideo({ t }: { t: HomeText["hero"] }) {
       <div className="hv-pin">
         <div className="hv-frame" style={{ ["--poster" as string]: `url(${asset("/video/hero-poster.webp")})` }}>
           <div className="hv-fill" aria-hidden="true" />
-          <video ref={video} className="hv-video" muted loop playsInline preload="metadata" poster={asset("/video/hero-poster.webp")} aria-hidden="true">
+          <video ref={video} className="hv-video" muted loop playsInline autoPlay preload="auto" poster={asset("/video/hero-poster.webp")} aria-hidden="true">
             <source src={asset("/video/hero-854.mp4")} type="video/mp4" media="(max-width: 720px)" />
             <source src={asset("/video/hero-1280.mp4")} type="video/mp4" media="(max-width: 1366px)" />
             <source src={asset("/video/hero-1920.webm")} type="video/webm" />
@@ -72,7 +68,7 @@ export function HeroVideo({ t }: { t: HomeText["hero"] }) {
           <p className="mono hv-eyebrow" data-hv-fade><span className="dot" /> {t.eyebrow}</p>
           <h1 id="hero-title" className="hv-title">
             {t.lines.map((l, i) => (
-              <span key={i} className="line"><span data-hv-line className={i === t.lines.length - 1 ? "accent" : undefined}>{l}</span></span>
+              <span key={i} className="line"><span data-hv-line style={{ ["--i" as string]: i }} className={i === t.lines.length - 1 ? "accent" : undefined}>{l}</span></span>
             ))}
           </h1>
           <p className="hv-sub" data-hv-fade>{t.sub}</p>
