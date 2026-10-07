@@ -17,6 +17,7 @@ import { Trust } from "@/components/home/Trust";
 import { HomePage } from "@/components/home/HomePage";
 import { PageHero, CarCards, Section, Faq } from "@/components/page/PageParts";
 import { ModelHero } from "@/components/page/ModelHero";
+import { modelPanels } from "@/lib/model-panels";
 import { ArticleView, NewsGrid } from "@/components/page/Articles";
 import { SitemapView } from "@/components/page/SitemapView";
 import { ContactView } from "@/components/page/ContactView";
@@ -135,7 +136,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
         {doc.kind === "article" ? (
           <ArticleView doc={doc} p={p} lang={lang} />
         ) : isModel ? (
-          <ModelHero h1={doc.h1} name={name} slug={car?.slug ?? ""} cls={doc.cls} mode={doc.mode} twin={twin} path={doc.path} crumbs={p.crumbs} specs={p.intro.specs} price={p.intro.price} btns={p.intro.btns} gallery={doc.gallery} lang={lang} />
+          <ModelHero h1={doc.h1} name={name} slug={car?.slug ?? ""} cls={doc.cls} mode={doc.mode} twin={twin} path={doc.path} crumbs={p.crumbs} specs={p.intro.specs} price={p.intro.price} btns={p.intro.btns} gallery={doc.gallery} lang={lang} panels={modelPanels(p, car, doc.cls ? ui(lang).cls[doc.cls] ?? undefined : undefined)} />
         ) : (
           <PageHero eyebrow={eyebrowOf(doc, lang)} h1={doc.h1} crumbs={p.crumbs} path={doc.path} paras={list || contact || about ? [] : p.intro.paras} btns={p.intro.btns} introHtml={list || contact || about ? "" : p.intro.html} cars={heroCars(doc)} lang={lang} video={classVideo} stats={heroStats(doc, heroCars(doc), lang)} />
         )}

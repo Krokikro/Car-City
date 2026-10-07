@@ -8,6 +8,10 @@ export const pageImages: Record<string, { w: number; h: number }> = {
     "w": 1920,
     "h": 823
   },
+  "about-why": {
+    "w": 1920,
+    "h": 823
+  },
   "about": {
     "w": 1920,
     "h": 1086

@@ -11,7 +11,6 @@ export function OrbitViewer({ slug, name }: { slug: string; name: string }) {
   const vid = useRef<HTMLVideoElement>(null);
   const [auto, setAuto] = useState(true);
   const [drag, setDrag] = useState(false);
-  const [pos, setPos] = useState(0);
   const autoRef = useRef(true);
   autoRef.current = auto;
 
@@ -30,10 +29,8 @@ export function OrbitViewer({ slug, name }: { slug: string; name: string }) {
       clearTimeout(scrollT);
       scrollT = setTimeout(tryPlay, 900);
     };
-    const onTime = () => setPos(v.duration ? v.currentTime / v.duration : 0);
     addEventListener("scroll", onScroll, { passive: true });
-    v.addEventListener("timeupdate", onTime);
-    return () => { io.disconnect(); removeEventListener("scroll", onScroll); v.removeEventListener("timeupdate", onTime); clearTimeout(scrollT); };
+    return () => { io.disconnect(); removeEventListener("scroll", onScroll); clearTimeout(scrollT); };
   }, []);
 
   useEffect(() => {
@@ -48,7 +45,6 @@ export function OrbitViewer({ slug, name }: { slug: string; name: string }) {
     if (!v.duration) return;
     const f = ((frac % 1) + 1) % 1;
     v.currentTime = f * (v.duration - 0.05);
-    setPos(f);
   };
   const onDown = (e: React.PointerEvent) => {
     const v = vid.current!;
@@ -94,15 +90,6 @@ export function OrbitViewer({ slug, name }: { slug: string; name: string }) {
           )}
         </button>
       </div>
-      <input
-        className="orbit-range"
-        type="range"
-        min={0}
-        max={1000}
-        value={Math.round(pos * 1000)}
-        aria-label="Повернуть машину"
-        onChange={(e) => { setAuto(false); seek(Number(e.target.value) / 1000); }}
-      />
     </div>
   );
 }

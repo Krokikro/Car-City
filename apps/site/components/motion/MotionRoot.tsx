@@ -91,8 +91,6 @@ export function MotionRoot() {
         });
       }
       // полоса прогресса чтения вверху экрана
-      const bar = document.querySelector<HTMLElement>(".scroll-progress");
-      if (bar) gsap.to(bar, { scaleX: 1, ease: "none", scrollTrigger: { start: 0, end: "max", scrub: 0.3 } });
       // фото раскрывается шторкой со своей стороны, внутри — лёгкий наезд камеры
       gsap.utils.toArray<HTMLElement>("[data-clip]").forEach((el) => {
         const fromLeft = el.dataset.clip === "left";
@@ -153,5 +151,5 @@ export function MotionRoot() {
     };
   }, [path]);
 
-  return <div className="scroll-progress" aria-hidden="true" />;
+  return null;
 }

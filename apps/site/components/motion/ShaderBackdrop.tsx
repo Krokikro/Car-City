@@ -52,7 +52,7 @@ const VERT = `attribute vec2 p; void main(){ gl_Position = vec4(p,0.,1.); }`;
 export function ShaderBackdrop({ className = "" }: { className?: string }) {
   const ref = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
-    if (document.documentElement.dataset.gfx === "basic") return;
+    if (document.documentElement.dataset.gfx !== "full") return;
     const cv = ref.current!;
     const gl = cv.getContext("webgl", { antialias: false, alpha: false, powerPreference: "low-power", preserveDrawingBuffer: true });
     if (!gl) return;

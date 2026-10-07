@@ -192,14 +192,15 @@
   "note": "Kia Rio X-Line — седан, не хэтчбек. Номер на всех машинах закрыт табличкой Car City. Новый эталон — Polo 4fb2ecc0.",
   "pages": {
     "about": "1a5bb0a0-90ff-47ce-b94a-3455664c7593",
-    "terms": "f8ef6664-fffc-41da-8653-14b43b9675a2",
-    "contacts": "d764806e-c1a7-4bd1-bfb6-668dade3b1b3",
-    "news": "e6d6be02-ea06-4fca-9cf0-40a1d7b5fabe",
-    "reviews": "e5984841-1803-4dbd-b281-810f7100d22f",
+    "terms": "ac28da5b-f57d-47b1-9551-986c8ffc2f5c",
+    "contacts": "c937239e-aeb5-4b92-b486-e3c9e21d4b7c",
+    "news": "80519315-4a5d-44d7-8f54-1b629fc2ebd6",
+    "reviews": "e51cd80e-e16e-41cc-ada4-89edd2a352d7",
     "ip": "73dd8325-b242-4f06-9fe9-6aaaec938c3b",
-    "general": "6d0280a9-0238-416d-931a-21e983c68213",
-    "about-fleet": "fd428b9b-147d-4ea4-b32f-8cee25d98d8c",
-    "about-advantages": "7d6b9dfe-ea66-434a-9755-742245e49a6e"
+    "general": "e5c1a8bd-571a-45a4-88f8-a035bd10ba24",
+    "about-fleet": "6959e998-30eb-4432-ae49-86c851e19647",
+    "about-advantages": "915a865e-ca4e-46f9-84c1-2f78c80b3bcf",
+    "about-why": "85f12a07-a91f-4daa-984e-fa70ea9ca6b2"
   },
   "news": {
     "aktualnyie-sovetyi-voditelyam,-planiruyushhim-vzyat-v-arendu-avto-pod-taksi": "9df1b548-d573-46d3-8c4a-b86fc6c31697",
@@ -248,7 +249,7 @@
     "bogatyrev": "52af27d9-fbad-4bcc-ac6e-9c66eced3b27"
   },
   "class_videos": {
-    "vykup": "faa7a699-bbd9-47c7-836e-008e357e021f",
+    "vykup": "b8829f37-0604-4dcc-9d50-cefcebefd57b",
     "ekonom": "cba84796-d699-4f80-b57f-bf75f892bdd5",
     "komfort": "08314d25-9deb-4731-9b20-ae8d9c427788",
     "komfort-plus": "7a25f3dd-9cce-4736-b32a-4ab9b5583718",

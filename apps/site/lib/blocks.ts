@@ -50,6 +50,7 @@ const REGEN: [RegExp, string][] = [
   [/themes\/img\/supports\/nikita_bogatyrev\.webp/, "/team/bogatyrev-960.webp"],
   [/themes\/img\/about\/new\/about-intro\.webp/, "/pages/about-fleet-1920.webp"],
   [/themes\/img\/about\/new\/cars\.webp/, "/pages/about-advantages-1920.webp"],
+  [/themes\/img\/about\/new\/why-vigoda\.webp/, "/pages/about-why-1920.webp"],
 ];
 
 function prep(src: string) {

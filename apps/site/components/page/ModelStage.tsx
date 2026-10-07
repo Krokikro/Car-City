@@ -4,6 +4,7 @@ import { useState } from "react";
 import { CarArt } from "../CarArt";
 import { carImages } from "@/lib/car-images";
 import { orbits } from "@/lib/orbits";
+import { realGallery } from "@/lib/gallery-real";
 import { OrbitViewer } from "./OrbitViewer";
 
 // Сцена модели: подиум со световым кольцом. Пока своих фото нет, показываем галерею со старого сайта,
@@ -13,7 +14,8 @@ export function ModelStage({ name, slug, gallery }: { name: string; slug: string
   const own = !!carImages[slug];
   // своё фото парка — главный кадр; фото со старого сайта идут следом миниатюрами
   const [cur, setCur] = useState(own ? -1 : 0);
-  const pics = gallery.filter((g) => ok[g] !== false);
+  // только настоящие фото со старого сайта, без рендеров и сгенерированных картинок
+  const pics = gallery.filter((g) => realGallery.has(g.replace(/^https?:\/\/(www\.)?car-city\.pro/, "")) && ok[g] !== false);
   const main = cur < 0 ? undefined : pics[cur] ?? (own ? undefined : pics[0]);
   const spin = cur < 0 && orbits.has(slug);
   return (

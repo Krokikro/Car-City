@@ -22,7 +22,7 @@ export function HeroVideo({ t }: { t: HomeText["hero"] }) {
     const v = video.current!;
     const basic = document.documentElement.dataset.gfx === "basic";
     // экономим трафик и батарею: видео играет, только пока первый экран виден
-    const io = new IntersectionObserver(([e]) => (e.isIntersecting && !basic ? v.play().catch(() => {}) : v.pause()), { threshold: 0.05 });
+    const io = new IntersectionObserver(([e]) => (e.isIntersecting ? v.play().catch(() => {}) : v.pause()), { threshold: 0.05 });
     io.observe(el);
     if (basic) return () => io.disconnect();
 

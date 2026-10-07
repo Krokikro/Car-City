@@ -118,8 +118,6 @@ html:not([data-gfx="basic"]) .hv-copy [data-hv-fade]:nth-of-type(3) { animation-
 .orbit-hint { flex: 1; color: rgba(255,255,255,.8); font-size: 13px; text-shadow: 0 1px 8px rgba(0,0,0,.8); }
 .orbit-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: var(--radius-pill); border: 0; background: var(--cc-signal); color: var(--cc-on-signal); font: 500 13px/1 var(--font-text); cursor: pointer; }
 .orbit-btn svg { width: 15px; height: 15px; }
-.orbit-range { position: absolute; left: 14px; right: 14px; top: 12px; width: calc(100% - 28px); height: 18px; margin: 0; opacity: .0; cursor: ew-resize; }
-.orbit:hover .orbit-range, .orbit-range:focus-visible { opacity: .9; accent-color: var(--cc-signal); }
 @media (max-width: 560px) { .orbit-hint { display: none; } }
 
 /* — Шаги: машина едет по извилистой дороге — */
@@ -313,3 +311,24 @@ a.ct-line:hover { border-color: rgba(255, 183, 0, .45); }
   .car-card.static .car-price { font-size: 17px; white-space: normal; }
   .car-card.static .car-info .btn { min-height: 38px; font-size: 13px; }
 }
+.scroll-progress { display: none !important; }
+
+/* — Страница модели: «Цена» и «Детали» рядом под фото — */
+.mdl-panels { display: grid; gap: 16px; margin-top: clamp(28px, 3.5vw, 48px); }
+@media (min-width: 960px) { .mdl-panels { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); align-items: start; } }
+.mp { padding: 22px 24px; border-radius: var(--radius-card-lg); background: linear-gradient(180deg, var(--surface-2), var(--surface)); border: 1px solid var(--glass-line); }
+.mp-title { margin-bottom: 14px; color: var(--cc-cyan); }
+.mp-price { border-color: rgba(255, 183, 0, .35); background: radial-gradient(120% 80% at 0% 0%, rgba(255, 183, 0, .12), transparent 60%), var(--surface); box-shadow: 0 30px 60px -36px rgba(255, 183, 0, .45); }
+.mp table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.mp thead th { padding: 0 10px 10px 0; text-align: left; font: 500 11px/1.3 var(--font-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--text-faint); }
+.mp tbody th, .mp tbody td { padding: 12px 10px 12px 0; border-top: 1px solid var(--line); text-align: left; vertical-align: top; }
+.mp tbody th { color: var(--text); font-weight: 500; }
+.mp-price tbody td { color: var(--text-muted); white-space: nowrap; }
+.mp-price .pm, .mp-price .pr-now { display: block; font: 500 19px/1.2 var(--font-mono); color: var(--cc-signal); }
+.mp-price .pr-old { display: block; margin-top: 3px; }
+.mp-details dl { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.mp-details dl > div { padding: 12px 14px; border-radius: 14px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); }
+.mp-details dt { color: var(--text-faint); font-size: 13px; margin-bottom: 4px; }
+.mp-details dd { margin: 0; color: var(--text); font-weight: 600; font-size: 16px; }
+@media (max-width: 560px) { .mp { padding: 18px 16px; } .mp table { font-size: 14px; } .mp-price .pm, .mp-price .pr-now { font-size: 16px; } }
+.pg-hero-photo img { object-position: 50% 28%; }
