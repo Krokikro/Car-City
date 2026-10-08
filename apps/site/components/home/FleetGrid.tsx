@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { fleet, fleetClasses, POPULAR, type FleetCar } from "@/lib/fleet";
+import { fleet as baseFleet, fleetClasses, POPULAR, type FleetCar } from "@/lib/fleet";
 import type { CarClass } from "@/lib/content";
 import { CarArt } from "../CarArt";
 import { href, type Lang } from "@/lib/i18n";
@@ -55,7 +55,8 @@ export function FleetTile({ m, t, lang, i = 0, priority = false }: { m: FleetCar
 }
 
 // Автопарк на главной: сначала по две популярные модели из каждого класса, по кнопке — весь парк с фильтром классов.
-export function FleetGrid({ t, lang }: { t: HomeText["fleet"]; lang: Lang }) {
+export function FleetGrid({ t, lang, cars }: { t: HomeText["fleet"]; lang: Lang; cars?: FleetCar[] }) {
+  const fleet = cars ?? baseFleet;
   const m = MORE[lang] ?? MORE.ru;
   const [open, setOpen] = useState(false);
   const [cls, setCls] = useState<CarClass | "all">("all");

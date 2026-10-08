@@ -3,6 +3,7 @@
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import type { Lang } from "./i18n";
+import { published, pageKey, splitKey, type Overlay } from "./admin/overlay";
 
 export type DocKind = "page" | "model" | "article";
 
@@ -55,6 +56,7 @@ function splitGallery(body: string) {
 }
 
 const cache = new Map<Lang, Map<string, Doc>>();
+const merged = new Map<string, Map<string, Doc>>();
 
 function readDir(dir: string, kind: DocKind, lang: Lang, into: Map<string, Doc>) {
   if (!existsSync(dir)) return;
@@ -80,38 +82,67 @@ function readDir(dir: string, kind: DocKind, lang: Lang, into: Map<string, Doc>)
   }
 }
 
-/** Все страницы на языке lang. Чего ещё нет в переводе, показываем по-русски по тому же адресу. */
-export function allDocs(lang: Lang = "ru"): Map<string, Doc> {
+/** Страницы только из файлов (content/), на одном языке */
+function fileDocs(lang: Lang): Map<string, Doc> {
   const hit = cache.get(lang);
   if (hit && process.env.NODE_ENV === "production") return hit;
   const map = new Map<string, Doc>();
-  for (const [dir, kind] of Object.entries(DIRS)) {
-    readDir(join(ROOT, dir), kind, "ru", map);
-    if (lang !== "ru") readDir(join(ROOT, "i18n", lang, dir), kind, lang, map);
-  }
+  for (const [dir, kind] of Object.entries(DIRS)) readDir(join(ROOT, lang === "ru" ? dir : join("i18n", lang, dir)), kind, lang, map);
   cache.set(lang, map);
   return map;
 }
 
-export function getDoc(path: string, lang: Lang = "ru") {
-  const all = allDocs(lang);
+/** Файлы + правки из админки на одном языке */
+function layer(lang: Lang, ov: Overlay): Map<string, Doc> {
+  const base = fileDocs(lang);
+  if (!ov.pages.size) return base;
+  const out = new Map(base);
+  for (const [k, p] of ov.pages) {
+    const [l, path] = splitKey(k);
+    if (l !== lang) continue;
+    if (p.hidden) { out.delete(path); continue; }
+    const was = base.get(path);
+    out.set(path, { kind: was?.kind ?? p.kind ?? "page", path, title: p.title, h1: p.h1, description: p.description, date: was?.date, cls: was?.cls, mode: was?.mode, body: p.body, gallery: was?.gallery ?? [], lang });
+  }
+  return out;
+}
+
+/** Все страницы на языке lang. Чего ещё нет в переводе, показываем по-русски по тому же адресу. */
+export function allDocs(lang: Lang = "ru", ov: Overlay = published()): Map<string, Doc> {
+  const key = `${lang}:${ov.version}`;
+  if (ov.cacheable && process.env.NODE_ENV === "production") {
+    const hit = merged.get(key);
+    if (hit) return hit;
+  }
+  const map = new Map(layer("ru", ov));
+  if (lang !== "ru") for (const [path, d] of layer(lang, ov)) map.set(path, d);
+  if (ov.cacheable) { for (const k of merged.keys()) if (!k.endsWith(`:${ov.version}`)) merged.delete(k); merged.set(key, map); }
+  return map;
+}
+
+export function getDoc(path: string, lang: Lang = "ru", ov: Overlay = published()) {
+  const all = allDocs(lang, ov);
   return all.get(path) ?? [...all.values()].find((d) => d.path.toLowerCase() === path.toLowerCase());
 }
 
-export function articles(lang: Lang = "ru") {
+export function articles(lang: Lang = "ru", ov: Overlay = published()) {
   const idx = join(ROOT, "articles", "_index.json");
   const meta: { slug: string; date?: string }[] = existsSync(idx) ? JSON.parse(readFileSync(idx, "utf8")) : [];
   const dates = new Map(meta.map((m) => [m.slug, m.date]));
-  return [...allDocs(lang).values()]
+  return [...allDocs(lang, ov).values()]
     .filter((d) => d.kind === "article")
     .map((d) => ({ ...d, date: d.date ?? dates.get(d.path.split("/").pop()!) }));
 }
 
+/** Файловые страницы без правок — для админки (что было до правок) */
+export { fileDocs };
+export { pageKey };
+
 /** Пара «аренда ↔ выкуп» для страницы модели */
-export function twinOf(doc: Doc, lang: Lang = "ru") {
+export function twinOf(doc: Doc, lang: Lang = "ru", ov: Overlay = published()) {
   if (doc.kind !== "model") return undefined;
   const parts = doc.path.split("/");
   const slug = parts.pop()!.toLowerCase();
   const want = doc.mode === "arenda" ? "vykup" : "arenda";
-  return [...allDocs(lang).values()].find((d) => d.kind === "model" && d.mode === want && d.path.split("/").pop()!.toLowerCase() === slug);
+  return [...allDocs(lang, ov).values()].find((d) => d.kind === "model" && d.mode === want && d.path.split("/").pop()!.toLowerCase() === slug);
 }

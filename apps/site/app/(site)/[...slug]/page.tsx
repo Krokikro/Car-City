@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { draftMode } from "next/headers";
+import { refreshOverlay, draftOverlay } from "@/lib/admin/overlay";
 import { allDocs, getDoc, twinOf, articles, type Doc } from "@/lib/docs";
 import { parseDoc, parseReviews } from "@/lib/blocks";
 import { ReviewsWall } from "@/components/page/ReviewsWall";
@@ -28,7 +30,13 @@ import { LANGS, isLang, type Lang } from "@/lib/i18n";
 import { alternates, homeMeta } from "@/lib/meta";
 import { ui } from "@/lib/ui";
 
-export const dynamicParams = false;
+// Содержимое можно менять из админки: новые адреса собираются по первому заходу, готовые страницы обновляются после публикации
+export const dynamicParams = true;
+export const revalidate = 300;
+
+async function overlayNow() {
+  return (await draftMode()).isEnabled ? draftOverlay() : refreshOverlay();
+}
 
 // Русские страницы — по адресам старого сайта, переводы — те же адреса под /en, /ky, /kk, /uz
 export function generateStaticParams() {
@@ -51,7 +59,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { lang, path } = resolve((await params).slug);
   if (path === "/") return homeMeta(lang);
   if (path === "/sitemap") return { title: ui(lang).sitemap, alternates: alternates(path, lang) };
-  const doc = getDoc(path, lang);
+  const doc = getDoc(path, lang, await overlayNow());
   if (!doc) return {};
   const alt = alternates(doc.path, lang);
   return {
@@ -105,19 +113,20 @@ function eyebrowOf(doc: Doc, lang: Lang) {
 
 export default async function Page({ params }: { params: Promise<{ slug: string[] }> }) {
   const { lang, path } = resolve((await params).slug);
+  const ov = await overlayNow();
   if (path === "/") return <HomePage lang={lang} />;
   if (path === "/sitemap")
     return (
       <>
         <HtmlLang lang={lang} />
         <Header />
-        <SitemapView lang={lang} />
+        <SitemapView lang={lang} ov={ov} />
         <Footer lang={lang} />
       </>
     );
-  const doc = getDoc(path, lang);
+  const doc = getDoc(path, lang, ov);
   if (!doc) notFound();
-  const twin = twinOf(doc, lang)?.path;
+  const twin = twinOf(doc, lang, ov)?.path;
   const isModel = doc.kind === "model";
   const p = parseDoc(doc.body, { twin, model: isModel, lang });
   const car = isModel ? fleet.find((f) => [f.rent, f.buy].some((x) => x?.toLowerCase() === doc.path.toLowerCase())) : undefined;
@@ -144,7 +153,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
         ) : (
           <PageHero eyebrow={eyebrowOf(doc, lang)} h1={doc.h1} crumbs={p.crumbs} path={doc.path} paras={list || own ? [] : p.intro.paras} btns={p.intro.btns} introHtml={list || own ? "" : p.intro.html} cars={heroCars(doc)} lang={lang} video={classVideo} stats={heroStats(doc, heroCars(doc), lang)} />
         )}
-        {doc.path === "/novosti" && <NewsGrid src={doc.body} list={articles(lang)} lang={lang} />}
+        {doc.path === "/novosti" && <NewsGrid src={doc.body} list={articles(lang, ov)} lang={lang} />}
         {doc.path === "/reviews" && <ReviewsWall items={parseReviews(doc.body)} lang={lang} />}
         {contact && <ContactView lang={lang} />}
         {about && <AboutView p={p} />}

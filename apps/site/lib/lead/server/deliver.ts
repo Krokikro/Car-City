@@ -3,6 +3,7 @@
 // упавший канал не мешает остальным.
 
 import { createHmac } from "node:crypto";
+import { dbEnabled, q } from "../../db";
 import { EXTRA_LABELS, MESSENGER_LABELS, MODE_LABELS, type Lead, type Touch } from "../types";
 
 const TIMEOUT = 5000;
@@ -121,8 +122,19 @@ function bitrix24(): Channel | null {
   };
 }
 
+// Своя база: заявка сохраняется в Postgres и видна в админке (раздел «Заявки»). Включается, когда задан DATABASE_URL.
+function database(): Channel | null {
+  if (!dbEnabled()) return null;
+  return {
+    name: "database",
+    async send(lead) {
+      await q("INSERT INTO leads (id, at, data) VALUES ($1,$2,$3) ON CONFLICT (id) DO NOTHING", [lead.id, lead.at, JSON.stringify(lead)]);
+    },
+  };
+}
+
 export function channels(): Channel[] {
-  return [telegram(), bitrix24(), webhook()].filter((c): c is Channel => c !== null);
+  return [database(), telegram(), bitrix24(), webhook()].filter((c): c is Channel => c !== null);
 }
 
 /** Отправляет во все каналы. Возвращает имена каналов, которые приняли и не приняли заявку. */

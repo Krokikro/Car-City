@@ -20,6 +20,7 @@ import { company, offices } from "@/lib/content";
 import type { Lang } from "@/lib/i18n";
 import { ui } from "@/lib/ui";
 import { homeText } from "@/lib/home-text";
+import { fleet } from "@/lib/fleet";
 
 
 const orgLd = {
@@ -44,12 +45,12 @@ export function HomePage({ lang = "ru" }: { lang?: Lang }) {
       <main id="main" className="home">
         <HeroVideo t={h.hero} />
         <Ticker items={h.ticker} />
-        <FleetGrid t={h.fleet} lang={lang} />
+        <FleetGrid t={h.fleet} lang={lang} cars={fleet.map((c) => ({ ...c }))} />
         <Benefits t={h.benefits} />
         <Trust lang={lang} t={h.trust} />
         <Promo t={h.promo} />
         <Steps req={h.requirements} steps={h.steps} />
-        <Calculator t={h.calculator} classes={h.fleet.classes} />
+        <Calculator t={h.calculator} classes={h.fleet.classes} cars={fleet.map((c) => ({ ...c }))} />
         <Media t={h.media} />
         <WhyUs t={h.whyUs} />
         <SeoText t={h.seo} />

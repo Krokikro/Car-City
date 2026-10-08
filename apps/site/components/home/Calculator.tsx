@@ -2,21 +2,21 @@
 
 import { useState } from "react";
 import { ruHome, type HomeText } from "@/lib/home-text";
-import { fleet } from "@/lib/fleet";
+import { fleet as baseFleet, type FleetCar } from "@/lib/fleet";
 import { incomeAssumptions as a, type CarClass } from "@/lib/content";
 import { Odometer } from "../Odometer";
 import { LeadForm } from "../LeadForm";
 
 const CLASSES: CarClass[] = ["ekonom", "komfort", "komfort-plus"];
-const minRent = (c: CarClass) => Math.min(...fleet.filter((m) => m.cls === c).map((m) => m.price));
+const minRent = (fleet: FleetCar[], c: CarClass) => Math.min(...fleet.filter((m) => m.cls === c).map((m) => m.price));
 
-export function Calculator({ t = ruHome.calculator, classes = ruHome.fleet.classes }: { t?: HomeText["calculator"]; classes?: Record<string, string> }) {
+export function Calculator({ t = ruHome.calculator, classes = ruHome.fleet.classes, cars }: { t?: HomeText["calculator"]; classes?: Record<string, string>; cars?: FleetCar[] }) {
   const [cls, setCls] = useState<CarClass>("ekonom");
   const [days, setDays] = useState(6);
   const [hours, setHours] = useState(10);
   // Месяц = 30 дней: рабочие дни по выбранному графику, аренда за все 30 дней (мин. срок аренды 30 дней).
   const workDays = (days / 7) * 30;
-  const month = (hours * a.revenuePerHour[cls] * (1 - a.parkCommission) - hours * a.fuelPerHour) * workDays - minRent(cls) * 30;
+  const month = (hours * a.revenuePerHour[cls] * (1 - a.parkCommission) - hours * a.fuelPerHour) * workDays - minRent(cars ?? baseFleet, cls) * 30;
   const name = classes[cls].toLowerCase();
 
   return (
