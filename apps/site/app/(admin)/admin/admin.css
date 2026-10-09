@@ -78,7 +78,7 @@ h3 { font-size: 15px; margin: 18px 0 8px; }
 .st-lost, .st-hidden { background: #f9dcdc; color: #8e1c1c; }
 
 /* кнопки и формы */
-.ad-btn { font: inherit; font-weight: 500; border: 1px solid var(--line); background: #fff; color: var(--ink); padding: 9px 15px; border-radius: 10px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; line-height: 1.2; }
+.ad-btn { font: inherit; font-weight: 500; border: 1px solid var(--line); background: #fff; color: var(--ink); padding: 9px 15px; border-radius: 10px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; text-align: center; gap: 6px; line-height: 1.2; }
 .ad-btn:hover { border-color: #bdbdb5; background: #fafaf8; }
 .ad-btn:focus-visible, .ad-form :is(input, select, textarea):focus-visible, .ad-link:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 .ad-btn-main { background: var(--y); border-color: var(--y); color: var(--y-ink); font-weight: 650; }
@@ -227,3 +227,12 @@ textarea { resize: vertical; }
   .ad-table th, .ad-table td { padding: 9px 10px; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* крупная заметная кнопка входа и подтверждений на страницах входа */
+.au-card .ad-btn-main { width: 100%; justify-content: center; min-height: 50px; font-size: 16px; background: var(--y); border: 2px solid #1a1400; color: #1a1400; box-shadow: 0 4px 0 #1a1400; margin-top: 4px; }
+.au-card .ad-btn-main:active { transform: translateY(2px); box-shadow: 0 2px 0 #1a1400; }
+.ad-start { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.ad-start a { background: #fffaf0; border: 1px solid #f0d58a; border-radius: 12px; padding: 14px 16px; text-decoration: none; color: var(--ink); display: flex; flex-direction: column; gap: 4px; }
+.ad-start a:hover { border-color: var(--y); }
+.ad-start b { font-size: 15.5px; }
+.ad-start span { color: var(--mute); font-size: 13.5px; }

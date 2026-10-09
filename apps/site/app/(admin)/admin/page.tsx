@@ -35,6 +35,16 @@ export default async function Dashboard({ searchParams }: { searchParams: Promis
           {drafts && <Link href="/admin/content" className="ad-stat"><b>{drafts.n}</b><span>черновиков{Number(drafts.sched) ? `, ${drafts.sched} по расписанию` : ""}</span></Link>}
         </div>
       )}
+      <section className="ad-card">
+        <h2>С чего начать</h2>
+        <div className="ad-start">
+          {can(user.role, "content", "read") && <Link href="/admin/content"><b>Тексты и SEO страниц</b><span>93 страницы сайта: правьте заголовки, описания и текст, публикуйте сразу или по расписанию</span></Link>}
+          {can(user.role, "catalog", "read") && <Link href="/admin/catalog"><b>Автопарк</b><span>Цены, классы и плашки машин. Изменения видны на главной и в калькуляторе</span></Link>}
+          {can(user.role, "media", "read") && <Link href="/admin/media"><b>Медиатека</b><span>Загрузите картинки и вставляйте их в тексты страниц</span></Link>}
+          {canLeads && <Link href="/admin/leads"><b>Заявки</b><span>Все обращения с форм сайта: статус, ответственный, комментарий</span></Link>}
+          {can(user.role, "users", "read") && <Link href="/admin/users"><b>Сотрудники</b><span>Добавьте коллег и выдайте роли</span></Link>}
+        </div>
+      </section>
       <div className="ad-cols">
         {canLeads && (
           <section className="ad-card">
