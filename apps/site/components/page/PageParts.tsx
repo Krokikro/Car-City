@@ -176,11 +176,11 @@ export function Figs({ figs }: { figs: Fig[] }) {
   );
 }
 
-export function Section({ b, n }: { b: Extract<Block, { t: "section" }>; n: number }) {
+export function Section({ b, n, center = false, extra = "" }: { b: Extract<Block, { t: "section" }>; n: number; center?: boolean; extra?: string }) {
   const wide = /class="(tbl|tiles)"/.test(b.html) || b.figs.length > 0;
   return (
-    <section className={`section pg-sec ${n % 2 ? "alt" : ""}`}>
-      <div className={`wrap ${wide ? "pg-wide" : "split"}`}>
+    <section className={`section pg-sec ${n % 2 ? "alt" : ""} ${extra}`}>
+      <div className={`wrap ${wide ? "pg-wide" : "split"}${center ? " pg-center" : ""}`}>
         <div className={wide ? "section-head" : "sticky"}>
           <p className="mono eyebrow">{String(n + 1).padStart(2, "0")}</p>
           {b.title && <h2 className="display" data-split>{b.title}</h2>}
@@ -209,7 +209,7 @@ export function Faq({ b, lang = "ru" }: { b: Extract<Block, { t: "faq" }>; lang?
         </div>
         <div className="faq">
           {b.items.map((f, i) => (
-            <details key={f.q} open={i === 0}>
+            <details key={f.q}>
               <summary><span>{f.q}</span><i aria-hidden="true" /></summary>
               <div className="faq-a" dangerouslySetInnerHTML={{ __html: f.a }} />
             </details>

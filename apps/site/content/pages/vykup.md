@@ -427,7 +427,6 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 ![](https://car-city.pro/themes/img/supports/image-6.webp) **Никита Миронов** — Менеджер отдела выкупа
 
-![](https://car-city.pro/themes/img/supports/nikita_bogatyrev.webp) **Никита Богатырев** — Менеджер отдела выкупа
 
 Оставьте заявку и мы подберём для вас лучшее решение!
 

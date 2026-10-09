@@ -427,7 +427,6 @@ Hujjatlar haydovchini xavfsizlik xizmati orqali tekshirish uchun kerak
 
 ![](https://car-city.pro/themes/img/supports/image-6.webp) **Nikita Mironov** — Sotib olish boʻlimi menejeri
 
-![](https://car-city.pro/themes/img/supports/nikita_bogatyrev.webp) **Nikita Bogatyryov** — Sotib olish boʻlimi menejeri
 
 Ariza qoldiring, biz siz uchun eng yaxshi yechimni tanlaymiz!
 

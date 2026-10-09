@@ -30,7 +30,7 @@ export function HeroVideo({ t }: { t: HomeText["hero"] }) {
     const ctx = gsap.context(() => {
       const mm = gsap.matchMedia();
       mm.add("(min-width: 720px)", () => {
-        const tl = gsap.timeline({ scrollTrigger: { trigger: el, start: "top top", end: "bottom bottom", scrub: 0.8 } });
+        const tl = gsap.timeline({ scrollTrigger: { trigger: el, start: "top top", end: "bottom bottom", scrub: true } });
         tl.to(".hv-frame", { scale: 0.84, borderRadius: 40, ease: "none" }, 0)
           .to(".hv-video", { scale: 1.12, ease: "none" }, 0)
           .to(".hv-copy", { yPercent: -40, opacity: 0, ease: "none" }, 0)
@@ -40,7 +40,7 @@ export function HeroVideo({ t }: { t: HomeText["hero"] }) {
       });
       mm.add("(max-width: 719px)", () => {
         // на телефоне кадр 16:9 целиком, без обрезки; при скролле лёгкий параллакс
-        gsap.to(".hv-video", { yPercent: 8, scale: 1.04, ease: "none", scrollTrigger: { trigger: el, start: "top top", end: "bottom top", scrub: 0.6 } });
+        gsap.to(".hv-video", { yPercent: 8, scale: 1.04, ease: "none", scrollTrigger: { trigger: el, start: "top top", end: "bottom top", scrub: true } });
       });
     }, el);
     return () => {
@@ -54,10 +54,9 @@ export function HeroVideo({ t }: { t: HomeText["hero"] }) {
       <div className="hv-pin">
         <div className="hv-frame" style={{ ["--poster" as string]: `url(${asset("/video/hero-poster.webp")})` }}>
           <div className="hv-fill" aria-hidden="true" />
-          <video ref={video} className="hv-video" muted loop playsInline autoPlay preload="auto" poster={asset("/video/hero-poster.webp")} aria-hidden="true">
+          <video ref={video} className="hv-video" muted loop playsInline autoPlay preload="metadata" poster={asset("/video/hero-poster.webp")} aria-hidden="true">
             <source src={asset("/video/hero-854.mp4")} type="video/mp4" media="(max-width: 720px)" />
-            <source src={asset("/video/hero-1280.mp4")} type="video/mp4" media="(max-width: 1366px)" />
-            <source src={asset("/video/hero-1920.webm")} type="video/webm" />
+            <source src={asset("/video/hero-1280.mp4")} type="video/mp4" media="(max-width: 1680px)" />
             <source src={asset("/video/hero-1920.mp4")} type="video/mp4" />
           </video>
           <div className="hv-shade" aria-hidden="true" />

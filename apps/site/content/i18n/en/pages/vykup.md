@@ -427,7 +427,6 @@ The documents are needed for the driver's security check
 
 ![](https://car-city.pro/themes/img/supports/image-6.webp) **Nikita Mironov** — Rent-to-own department manager
 
-![](https://car-city.pro/themes/img/supports/nikita_bogatyrev.webp) **Nikita Bogatyrev** — Rent-to-own department manager
 
 Leave a request and we'll find the best solution for you!
 

@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Lenis from "lenis";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,12 +22,8 @@ export function MotionRoot() {
     const gfx = document.documentElement.dataset.gfx;
     if (gfx === "basic") return;
 
-    const lenis = new Lenis({ lerp: 0.1, wheelMultiplier: 0.9 });
-    lenis.on("scroll", ScrollTrigger.update);
-    const tick = (t: number) => lenis.raf(t * 1000);
-    gsap.ticker.add(tick);
-    gsap.ticker.lagSmoothing(0);
-    // якорные ссылки — плавно через Lenis
+    // Прокрутка нативная: без «резиновой» инерции и лишней работы на каждый кадр.
+    // якорные ссылки — плавный, но короткий доезд до секции
     const onClick = (e: MouseEvent) => {
       const a = (e.target as HTMLElement).closest('a[href^="#"]') as HTMLAnchorElement | null;
       if (!a) return;
@@ -37,7 +32,8 @@ export function MotionRoot() {
       const target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
-      lenis.scrollTo(target as HTMLElement, { offset: -80, duration: 1.4 });
+      const y = (target as HTMLElement).getBoundingClientRect().top + scrollY - 80;
+      scrollTo({ top: y, behavior: "smooth" });
       history.replaceState(null, "", id);
     };
     document.addEventListener("click", onClick);
@@ -51,60 +47,35 @@ export function MotionRoot() {
         el.innerHTML = words.map((w) => `<span class="sw" aria-hidden="true"><span>${w}</span></span>`).join(" ");
         gsap.from(el.querySelectorAll(".sw > span"), {
           yPercent: 110,
-          rotate: 4,
-          filter: "blur(8px)",
-          duration: 1,
-          ease: "expo.out",
-          stagger: 0.05,
+          duration: 0.6,
+          ease: "power3.out",
+          stagger: 0.03,
           scrollTrigger: { trigger: el, start: "top 85%" },
         });
       });
-      // Вход каждой секции: секция «раскрывается» из скруглённой карточки во весь экран.
-      // Светлые секции заливаются кругом от верхнего края — резкой смены фона нет.
-      gsap.utils.toArray<HTMLElement>("main .section").forEach((sec, i) => {
-        if (i === 0 && !sec.closest(".home")) return;
-        const light = sec.dataset.surface === "light";
-        gsap.fromTo(
-          sec,
-          { clipPath: light ? "circle(12% at 50% 0%)" : "inset(6% 3.5% 0% 3.5% round 44px)" },
-          { clipPath: light ? "circle(150% at 50% 0%)" : "inset(0% 0% 0% 0% round 0px)", ease: "none",
-            scrollTrigger: { trigger: sec, start: "top 98%", end: "top 30%", scrub: 0.6 } },
-        );
-      });
       // жёлтая линия над заголовком секции прорисовывается слева направо
       gsap.utils.toArray<HTMLElement>(".eyebrow").forEach((el) => {
-        gsap.fromTo(el, { "--eb": 0 }, { "--eb": 1, duration: 1.2, ease: "expo.out", scrollTrigger: { trigger: el, start: "top 90%" } });
+        gsap.fromTo(el, { "--eb": 0 }, { "--eb": 1, duration: 0.7, ease: "power2.out", scrollTrigger: { trigger: el, start: "top 90%" } });
       });
       // карточки в сетках встают из глубины с лёгким 3D-поворотом
       gsap.utils.toArray<HTMLElement>("[data-tilt-in]").forEach((el) => {
-        gsap.from(el.children, { rotateX: -24, y: 70, opacity: 0, transformPerspective: 900, transformOrigin: "50% 0%", duration: 1.1, ease: "expo.out", stagger: 0.07,
+        gsap.from(el.children, { y: 36, opacity: 0, duration: 0.6, ease: "power2.out", stagger: 0.05,
           scrollTrigger: { trigger: el, start: "top 86%" } });
       });
-      // бегущие ленты и треки реагируют на скорость прокрутки: наклон и ускорение
-      const skewTo = gsap.utils.toArray<HTMLElement>("[data-skew]").map((el) => gsap.quickTo(el, "skewX", { duration: 0.5, ease: "power3.out" }));
-      if (skewTo.length) {
-        ScrollTrigger.create({
-          onUpdate: (st) => {
-            const v = gsap.utils.clamp(-12, 12, st.getVelocity() / -280);
-            skewTo.forEach((f) => f(v));
-          },
-        });
-      }
       // полоса прогресса чтения вверху экрана
       // фото раскрывается шторкой со своей стороны, внутри — лёгкий наезд камеры
       gsap.utils.toArray<HTMLElement>("[data-clip]").forEach((el) => {
         const fromLeft = el.dataset.clip === "left";
         const img = el.querySelector("img, video");
         const tl = gsap.timeline({ scrollTrigger: { trigger: el, start: "top 82%" } });
-        tl.fromTo(el, { clipPath: fromLeft ? "inset(0% 100% 0% 0% round 28px)" : "inset(0% 0% 0% 100% round 28px)" }, { clipPath: "inset(0% 0% 0% 0% round 28px)", duration: 1.3, ease: "expo.inOut" });
-        if (img) tl.fromTo(img, { scale: 1.25, xPercent: fromLeft ? -6 : 6 }, { scale: 1, xPercent: 0, duration: 1.8, ease: "expo.out" }, 0.15);
-        gsap.to(el, { yPercent: -6, ease: "none", scrollTrigger: { trigger: el, start: "top bottom", end: "bottom top", scrub: true } });
+        tl.fromTo(el, { clipPath: fromLeft ? "inset(0% 100% 0% 0% round 28px)" : "inset(0% 0% 0% 100% round 28px)" }, { clipPath: "inset(0% 0% 0% 0% round 28px)", duration: 0.8, ease: "power3.out" });
+        if (img) tl.fromTo(img, { scale: 1.12, xPercent: fromLeft ? -3 : 3 }, { scale: 1, xPercent: 0, duration: 1, ease: "power3.out" }, 0.1);
       });
       gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((el) => {
-        gsap.from(el, { y: 48, opacity: 0, duration: 1.1, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 88%" } });
+        gsap.from(el, { y: 28, opacity: 0, duration: 0.65, ease: "power2.out", scrollTrigger: { trigger: el, start: "top 88%" } });
       });
       gsap.utils.toArray<HTMLElement>("[data-reveal-stagger]").forEach((el) => {
-        gsap.from(el.children, { y: 40, opacity: 0, duration: 0.9, ease: "power3.out", stagger: 0.08, scrollTrigger: { trigger: el, start: "top 85%" } });
+        gsap.from(el.children, { y: 24, opacity: 0, duration: 0.55, ease: "power2.out", stagger: 0.05, scrollTrigger: { trigger: el, start: "top 85%" } });
       });
       gsap.utils.toArray<HTMLElement>("[data-parallax]").forEach((el) => {
         const k = Number(el.dataset.parallax) || 0.2;
@@ -116,7 +87,7 @@ export function MotionRoot() {
         const obj = { v: 0 };
         gsap.to(obj, {
           v: to,
-          duration: 2,
+          duration: 1.4,
           ease: "power2.out",
           scrollTrigger: { trigger: el, start: "top 90%" },
           onUpdate: () => (el.textContent = Math.round(obj.v).toLocaleString("ru-RU") + suffix),
@@ -146,8 +117,6 @@ export function MotionRoot() {
       offs.forEach((f) => f());
       ctx.revert();
       document.removeEventListener("click", onClick);
-      gsap.ticker.remove(tick);
-      lenis.destroy();
     };
   }, [path]);
 

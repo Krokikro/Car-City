@@ -6,6 +6,7 @@ import { Logo } from "./Logo";
 import { company } from "@/lib/content";
 import { LANGS, LANG_NAMES, LANG_SHORT, href, splitLang } from "@/lib/i18n";
 import { ui } from "@/lib/ui";
+import { SocialRow } from "./SocialIcons";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -57,6 +58,7 @@ export function Header() {
             ))}
           </ul>
         </details>
+        <SocialRow only={["telegram", "whatsapp", "max"]} size={32} className="header-soc" />
         <a href={`tel:${tel.replace(/[^\d+]/g, "")}`} className="header-tel mono-num"><span className="header-tel-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14"><path d="M6.6 3.5h2.6l1.3 3.6-1.8 1.4a10 10 0 0 0 6.8 6.8l1.4-1.8 3.6 1.3v2.6c0 1-.8 1.8-1.8 1.8A15.6 15.6 0 0 1 4.8 5.3c0-1 .8-1.8 1.8-1.8z" fill="currentColor"/></svg></span>{tel}</a>
         <a href="#zayavka" className="btn btn-primary btn-sm header-cta">{t.lead}</a>
         <button className="burger" aria-label={t.menu} aria-expanded={open} onClick={() => setOpen(!open)}>
@@ -76,6 +78,7 @@ export function Header() {
             <a key={l} href={href(path === "/spasibo" ? "/" : path, l)} hrefLang={l} aria-current={l === lang ? "true" : undefined}>{LANG_SHORT[l]}</a>
           ))}
         </div>
+        <SocialRow only={["telegram", "whatsapp", "max"]} size={44} className="mobile-soc" />
         <div className="mobile-menu-foot">
           {company.phones.map((p) => (
             <a key={p} href={`tel:${p.replace(/[^\d+]/g, "")}`} className="mono-num">{p}</a>

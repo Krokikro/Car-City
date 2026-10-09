@@ -17,7 +17,7 @@ export function FaqHome({ t }: { t: HomeText["faq"] }) {
         </div>
         <div className="faq">
           {faqHome.map((f, i) => (
-            <details key={f.q} open={i === 0}>
+            <details key={f.q}>
               <summary><span>{f.q}</span><i aria-hidden="true" /></summary>
               <div className="faq-a" dangerouslySetInnerHTML={{ __html: f.a.map((p) => marked.parse(p, { async: false }) as string).join("") }} />
             </details>

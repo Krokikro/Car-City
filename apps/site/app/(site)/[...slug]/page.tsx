@@ -13,6 +13,7 @@ import { StickyCta } from "@/components/StickyCta";
 import { HtmlLang } from "@/components/HtmlLang";
 import { FinalCta } from "@/components/home/FinalCta";
 import { Steps } from "@/components/home/Steps";
+import { VykupBenefits, VykupConditions, VykupTariffs, savingsHtml } from "@/components/page/VykupParts";
 import { homeText } from "@/lib/home-text";
 import { Calculator } from "@/components/home/Calculator";
 import { Trust } from "@/components/home/Trust";
@@ -140,11 +141,15 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
   const own = contact || about || !!terms;
   const classVideo = doc.kind !== "article" && !isModel ? VIDEO_OF.find(([re]) => re.test(doc.path))?.[1] : undefined;
   let n = 0;
+  // страница выкупа: выгоды, условия и тарифы — крупными карточками (тексты те же)
+  const vykup = doc.path === "/vykup";
+  const allCards = p.blocks.flatMap((x) => (x.t === "cards" ? x.groups.flatMap((g) => g.cards) : []));
+  let si = 0;
   return (
     <>
       <HtmlLang lang={doc.lang} />
       <Header />
-      <main id="main" className={`pg pg-${doc.kind}`}>
+      <main id="main" className={`pg pg-${doc.kind}${doc.path.startsWith("/vykup") ? " pg-vykup" : ""}`}>
         {lang !== "ru" && doc.lang === "ru" && <p className="wrap pg-untranslated mono">{ui(lang).notTranslated}</p>}
         {doc.kind === "article" ? (
           <ArticleView doc={doc} p={p} lang={lang} />
@@ -165,9 +170,18 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
             if (b.t === "trust") return <Trust key={i} lang={lang} />;
             if (b.t === "faq") return <Faq key={i} b={b} lang={lang} />;
             if (doc.path === "/novosti") return null;
+            if (vykup) {
+              const k = si++;
+              const tiles = /class="tiles"/.test(b.html);
+              if (k === 0 && tiles) return <VykupBenefits key={i} b={b} n={n++} />;
+              if (k === 1 && tiles && /<h3/.test(b.html)) return <VykupConditions key={i} b={b} n={n++} />;
+              if (k === 3) return <Section key={i} b={b} n={n++} center />;
+              if (k === 4) return <Section key={i} b={{ ...b, html: savingsHtml(b.html) }} n={n++} extra="vk-save" />;
+              if (k === 5 && /pill-row/.test(b.html)) return <VykupTariffs key={i} b={b} n={n++} cards={allCards} lang={lang} />;
+            }
             return <Section key={i} b={b} n={n++} />;
           })}
-        {classVideo && <Steps req={homeText(lang).requirements} steps={homeText(lang).steps} />}
+        {classVideo && <Steps req={homeText(lang).requirements} steps={homeText(lang).steps} variant={doc.path.startsWith("/vykup") ? "buy" : "rent"} />}
         {(p.final || isModel) && <FinalCta lang={lang} />}
       </main>
       <Footer lang={lang} />

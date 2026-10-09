@@ -427,7 +427,6 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 ![](https://car-city.pro/themes/img/supports/image-6.webp) **Никита Миронов** — Сатып алуу бөлүмүнүн менеджери
 
-![](https://car-city.pro/themes/img/supports/nikita_bogatyrev.webp) **Никита Богатырев** — Сатып алуу бөлүмүнүн менеджери
 
 Өтүнмө калтырыңыз, биз сиз үчүн эң жакшы чечимди табабыз!
 

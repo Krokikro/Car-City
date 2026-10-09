@@ -19,9 +19,7 @@ export function Footer({ lang = "ru" }: { lang?: Lang }) {
           <Logo size={56} />
           <p className="muted">{f.group}. {company.legalName}</p>
           <div className="footer-phones">
-            {company.phones.map((p) => (
-              <a key={p} href={`tel:${p.replace(/[^\d+]/g, "")}`} className="mono-num">{p}</a>
-            ))}
+            <a href={`tel:${company.phones[0].replace(/[^\d+]/g, "")}`} className="mono-num">{company.phones[0]}</a>
             <a href={`mailto:${company.email}`}>{company.email}</a>
           </div>
           <SocialRow size={44} className="footer-soc" />

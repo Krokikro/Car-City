@@ -131,7 +131,10 @@ html:not([data-gfx="basic"]) .hv-copy [data-hv-fade]:nth-of-type(3) { animation-
 .road-path { fill: none; stroke: none; }
 .road-car { position: absolute; left: 0; top: 0; width: 11%; z-index: 3; filter: drop-shadow(0 14px 18px rgba(0,0,0,.6)); will-change: transform; }
 .road-car img { display: block; width: 100%; height: auto; }
-.road-car::after { content: ""; position: absolute; left: 92%; top: 18%; width: 70%; height: 64%; background: radial-gradient(closest-side, rgba(255, 236, 170, .5), transparent); border-radius: 50%; }
+/* две фары: по лучу из каждого переднего угла (машина смотрит вправо, вид сверху) */
+.road-car::before, .road-car::after { content: ""; position: absolute; left: 93%; width: 60%; height: 30%; pointer-events: none; background: linear-gradient(90deg, rgba(255, 244, 205, .7), rgba(255, 244, 205, 0) 96%); clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 60%); filter: blur(2.5px); }
+.road-car::before { top: 3%; }
+.road-car::after { top: 67%; }
 .stp-list { list-style: none; margin: 0; padding: 0; }
 .stp { position: relative; display: block; }
 .stp-sign { display: block; width: 100%; height: auto; filter: brightness(.24) saturate(.45) contrast(1.1) drop-shadow(0 18px 24px rgba(0,0,0,.5)); transition: filter .6s var(--ease-out); }
@@ -510,3 +513,41 @@ a.ct-line:hover { border-color: rgba(255, 183, 0, .45); }
   .tm-years i::after { transform: none; } .tm-ring-on { stroke-dashoffset: 21; } .tm-check { stroke-dashoffset: 0; } .tm-age-n { background-position: 0 100%; }
 }
 .tm-cit .tm-num { font-size: clamp(110px, 14vw, 210px); }
+
+/* значки мессенджеров в хедере: рядом с телефоном, на узких экранах — только в меню */
+.soc-brand { background: none; box-shadow: none; border-radius: 0; }
+.soc-brand svg { display: block; border-radius: inherit; }
+.soc-telegram, .soc-telegram svg { border-radius: 50%; }
+.soc-whatsapp, .soc-whatsapp svg { border-radius: 26%; }
+.soc-max, .soc-max svg { border-radius: 14%; }
+.soc-link:has(.soc-brand) { border-radius: 26%; }
+.header-soc { display: none; flex-wrap: nowrap; gap: 8px; }
+.header-soc .soc-link:hover { transform: translateY(-2px) scale(1.08); }
+.mobile-soc { margin: 8px 0 4px; gap: 14px; }
+@media (min-width: 900px) { .header-soc { display: flex; } }
+
+/* кнопка «наверх» */
+.to-top { position: fixed; right: max(24px, env(safe-area-inset-right)); bottom: 92px; z-index: 94; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; cursor: pointer; color: var(--cc-signal); background: rgba(16, 17, 19, .82); border: 1px solid rgba(255, 255, 255, .18); backdrop-filter: blur(10px); box-shadow: 0 10px 30px -10px rgba(0, 0, 0, .7); opacity: 0; translate: 0 14px; pointer-events: none; transition: opacity .3s var(--ease-out), translate .3s var(--ease-out), background .2s, color .2s; }
+.to-top.is-on { opacity: 1; translate: 0 0; pointer-events: auto; }
+.to-top:hover { background: var(--cc-signal); color: #111; }
+@media (max-width: 719px) { .to-top { right: 14px; bottom: calc(max(12px, env(safe-area-inset-bottom)) + 140px); width: 42px; height: 42px; } }
+
+/* подсказка «можно листать вбок» */
+.sh-arrow { position: absolute; z-index: 6; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; padding: 0; cursor: pointer; color: var(--cc-signal); background: rgba(11, 11, 12, .78); border: 1px solid rgba(255, 255, 255, .22); backdrop-filter: blur(8px); box-shadow: 0 8px 24px -8px rgba(0, 0, 0, .7); animation: shBlink 1.5s ease-in-out infinite; }
+.sh-arrow[hidden] { display: none; }
+.sh-arrow svg { animation: shNudge 1.5s ease-in-out infinite; }
+@keyframes shBlink { 0%, 100% { opacity: .4; } 50% { opacity: 1; } }
+@keyframes shNudge { 0%, 100% { transform: translateX(-2px); } 50% { transform: translateX(4px); } }
+@media (prefers-reduced-motion: reduce) { .sh-arrow, .sh-arrow svg { animation: none; } }
+
+/* шапка: всё в одну строку, без переносов */
+.nav-link, .header-tel, .header-cta { white-space: nowrap; }
+.header-actions { gap: 14px; flex: none; }
+@media (min-width: 1100px) and (max-width: 1599px) {
+  .nav-link { padding: 10px 8px; font-size: 14px; }
+  .nav-link::after { left: 8px; right: 8px; }
+  .header-tel { font-size: 15px; padding: 8px 12px 8px 8px; gap: 8px; }
+  .header-soc { gap: 6px; }
+  .header-actions { gap: 10px; }
+}
+@media (min-width: 1100px) and (max-width: 1365px) { .header-tel { display: none; } }

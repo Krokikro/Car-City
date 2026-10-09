@@ -47,7 +47,6 @@ function btnHref(label: string, url?: string, twin?: string) {
 const REGEN: [RegExp, string][] = [
   [/themes\/img\/supports\/image-5\.webp/, "/team/zhitnikov-960.webp"],
   [/themes\/img\/supports\/image-6\.webp/, "/team/mironov-960.webp"],
-  [/themes\/img\/supports\/nikita_bogatyrev\.webp/, "/team/bogatyrev-960.webp"],
   [/themes\/img\/about\/new\/about-intro\.webp/, "/pages/about-fleet-1920.webp"],
   [/themes\/img\/about\/new\/cars\.webp/, "/pages/about-advantages-1920.webp"],
   [/themes\/img\/about\/new\/why-vigoda\.webp/, "/pages/about-why-1920.webp"],
