@@ -10,7 +10,10 @@ export const metadata: Metadata = {
 export default function AdminRoot({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ru">
-      <body>{children}</body>
+      <body>
+        {children}
+        <noscript><p style={{ padding: 24, font: "16px system-ui" }}>Для работы админки включите JavaScript в браузере.</p></noscript>
+      </body>
     </html>
   );
 }
