@@ -607,3 +607,14 @@ button.owner:hover, button.owner:focus-visible { border-color: rgba(255,183,0,.5
 @media (min-width: 960px) { .gift-card { grid-template-columns: 1.15fr 1fr; align-items: stretch; } }
 @media (max-width: 560px) { .gift-card { border-radius: 26px; } .gift-big { right: 18px; top: 10px; } }
 @media (prefers-reduced-motion: reduce) { .gift-box { animation: none; } }
+
+/* — Первый экран страниц с видео: плашки под видео, видео сдвинуто вправо, чтобы не лезть под заголовок — */
+.pg-stats-strip { position: relative; z-index: 2; margin-top: -28px; padding-bottom: 8px; }
+.pg-stats-strip .pg-stats { max-width: none; margin: 0; }
+.pg-stats-strip .pg-stats > div { background: #121417; backdrop-filter: none; min-height: 84px; display: grid; align-content: center; }
+.pg-stats-strip .pg-stats dd { white-space: normal; }
+@media (min-width: 900px) {
+  .pg-hero-video .pg-hero-vid { inset: 0 0 0 22%; width: 78%; animation: none; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 28%); mask-image: linear-gradient(90deg, transparent 0, #000 28%); }
+  .pg-hero-video .pg-hero-veil { background: linear-gradient(90deg, rgba(5,7,10,.78) 0%, rgba(5,7,10,.35) 38%, transparent 62%), linear-gradient(180deg, rgba(5,7,10,.65) 0%, transparent 24%, transparent 70%, var(--bg) 100%); }
+  .pg-hero-video .pg-hero-in > * { max-width: min(46%, 620px); }
+}

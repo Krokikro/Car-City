@@ -70,7 +70,8 @@ export function PageHero({ eyebrow, h1, crumbs, path, paras, btns, introHtml, ca
       <section className={`pg-hero${video ? " pg-hero-video" : cars.length ? " pg-hero-cars" : ""}`} aria-labelledby="pg-h1">
         <div className="pg-hero-bg" aria-hidden="true">
           {video ? (
-            <video className="pg-hero-vid" src={asset(`/classes/${video}.mp4`)} poster={asset(`/classes/${video}.webp`)} autoPlay muted loop playsInline preload="auto" />
+            // атрибут muted должен быть в самом HTML: React на сервере его не выводит, и браузер не запускает видео до гидрации — отсюда «картинка вместо видео» первые секунды
+            <div style={{ display: "contents" }} dangerouslySetInnerHTML={{ __html: `<video class="pg-hero-vid" src="${asset(`/classes/${video}.mp4`)}?v=2" poster="${asset(`/classes/${video}.webp`)}?v=2" autoplay muted loop playsinline preload="auto"></video>` }} />
           ) : (
             !cars.length && <GenImage kind="pages" id={pageKey(path)} className="pg-hero-photo" priority />
           )}
@@ -93,13 +94,20 @@ export function PageHero({ eyebrow, h1, crumbs, path, paras, btns, introHtml, ca
           <h1 id="pg-h1" className="display-xl" data-split>{h1}</h1>
           {!rich && paras.slice(0, 2).map((p, i) => <p key={i} className="lead" data-reveal dangerouslySetInnerHTML={{ __html: marked.parseInline(p, { async: false }) as string }} />)}
           <Buttons btns={btns} />
-          {stats.length > 0 && (
+          {stats.length > 0 && !video && (
             <dl className="pg-stats" data-reveal-stagger>
               {stats.map((x) => <div key={x.k}><dt className="mono">{x.k}</dt><dd>{x.v}</dd></div>)}
             </dl>
           )}
         </div>
       </section>
+      {stats.length > 0 && video && (
+        <div className="wrap pg-stats-strip">
+          <dl className="pg-stats">
+            {stats.map((x) => <div key={x.k}><dt className="mono">{x.k}</dt><dd>{x.v}</dd></div>)}
+          </dl>
+        </div>
+      )}
       {(rich || paras.length > 2) && (
         <section className="section pg-sec">
           <div className="wrap-narrow prose" dangerouslySetInnerHTML={{ __html: introHtml }} />
