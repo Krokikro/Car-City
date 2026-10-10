@@ -9,6 +9,7 @@ const NAV: { s: Section; href: string; icon: string }[] = [
   { s: "leads", href: "/admin/leads", icon: "M4 5h16v11H8l-4 4zM8 9h8M8 12h5" },
   { s: "content", href: "/admin/content", icon: "M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7" },
   { s: "catalog", href: "/admin/catalog", icon: "M3 14l2-5a2 2 0 012-1h10a2 2 0 012 1l2 5v4h-3v-2H6v2H3zM7 14h.01M17 14h.01" },
+  { s: "reviews", href: "/admin/reviews", icon: "M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z" },
   { s: "media", href: "/admin/media", icon: "M4 5h16v14H4zM4 15l5-5 4 4 3-3 4 4M9 9h.01" },
   { s: "users", href: "/admin/users", icon: "M9 11a4 4 0 100-8 4 4 0 000 8zM2 21c0-4 3-6 7-6s7 2 7 6M17 11a3 3 0 100-6M18 15c3 .5 4 2.5 4 6" },
   { s: "audit", href: "/admin/audit", icon: "M12 8v5l3 2M21 12a9 9 0 11-3-6.7M21 4v5h-5" },

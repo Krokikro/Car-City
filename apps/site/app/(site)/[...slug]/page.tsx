@@ -5,6 +5,7 @@ import { draftMode } from "next/headers";
 import { refreshOverlay, draftOverlay } from "@/lib/admin/overlay";
 import { allDocs, getDoc, twinOf, articles, type Doc } from "@/lib/docs";
 import { parseDoc, parseReviews } from "@/lib/blocks";
+import { siteReviews } from "@/lib/reviews";
 import { ReviewsWall } from "@/components/page/ReviewsWall";
 import { fleet } from "@/lib/fleet";
 import { carImages } from "@/lib/car-images";
@@ -162,7 +163,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
           <PageHero eyebrow={eyebrowOf(doc, lang)} h1={doc.h1} crumbs={p.crumbs} path={doc.path} paras={list || own ? [] : p.intro.paras} btns={p.intro.btns} introHtml={list || own ? "" : p.intro.html} cars={heroCars(doc)} lang={lang} video={classVideo} stats={heroStats(doc, heroCars(doc), lang)} />
         )}
         {doc.path === "/novosti" && <NewsGrid src={doc.body} list={articles(lang, ov)} lang={lang} />}
-        {doc.path === "/reviews" && <ReviewsWall items={parseReviews(doc.body)} lang={lang} />}
+        {doc.path === "/reviews" && <ReviewsWall items={await siteReviews(parseReviews(doc.body))} lang={lang} />}
         {contact && <ContactView lang={lang} />}
         {about && <AboutView p={p} />}
         {terms && <TermsView terms={terms} lang={lang} />}

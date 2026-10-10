@@ -10,7 +10,7 @@ export const ROLE_NAMES: Record<Role, string> = {
   callcenter: "Колл-центр",
 };
 
-export const SECTIONS = ["dashboard", "leads", "catalog", "content", "media", "users", "audit"] as const;
+export const SECTIONS = ["dashboard", "leads", "catalog", "reviews", "content", "media", "users", "audit"] as const;
 export type Section = (typeof SECTIONS)[number];
 export type Level = "none" | "read" | "write";
 
@@ -18,6 +18,7 @@ export const SECTION_NAMES: Record<Section, string> = {
   dashboard: "Дашборд",
   leads: "Заявки",
   catalog: "Автопарк",
+  reviews: "Отзывы",
   content: "Контент и SEO",
   media: "Медиатека",
   users: "Пользователи и роли",
@@ -26,11 +27,11 @@ export const SECTION_NAMES: Record<Section, string> = {
 
 // «Свои» заявки — те, что назначены на сотрудника; колл-центр видит ещё нераспределённые.
 const MATRIX: Record<Role, Record<Section, Level>> = {
-  admin: { dashboard: "write", leads: "write", catalog: "write", content: "write", media: "write", users: "write", audit: "read" },
-  owner: { dashboard: "read", leads: "read", catalog: "read", content: "none", media: "none", users: "write", audit: "read" },
-  commercial: { dashboard: "read", leads: "write", catalog: "write", content: "read", media: "read", users: "none", audit: "read" },
-  manager: { dashboard: "read", leads: "write", catalog: "read", content: "none", media: "none", users: "none", audit: "none" },
-  callcenter: { dashboard: "read", leads: "write", catalog: "read", content: "none", media: "none", users: "none", audit: "none" },
+  admin: { dashboard: "write", leads: "write", catalog: "write", reviews: "write", content: "write", media: "write", users: "write", audit: "read" },
+  owner: { dashboard: "read", leads: "read", catalog: "read", reviews: "read", content: "none", media: "none", users: "write", audit: "read" },
+  commercial: { dashboard: "read", leads: "write", catalog: "write", reviews: "write", content: "read", media: "read", users: "none", audit: "read" },
+  manager: { dashboard: "read", leads: "write", catalog: "read", reviews: "none", content: "none", media: "none", users: "none", audit: "none" },
+  callcenter: { dashboard: "read", leads: "write", catalog: "read", reviews: "none", content: "none", media: "none", users: "none", audit: "none" },
 };
 
 export const levelOf = (role: Role, s: Section): Level => MATRIX[role]?.[s] ?? "none";

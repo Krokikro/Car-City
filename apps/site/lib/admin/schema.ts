@@ -55,6 +55,21 @@ CREATE TABLE IF NOT EXISTS fleet_overrides (
   updated_at timestamptz NOT NULL DEFAULT now(),
   updated_by text
 );
+CREATE TABLE IF NOT EXISTS reviews (
+  id bigserial PRIMARY KEY,
+  key text UNIQUE NOT NULL,
+  source text NOT NULL,
+  name text NOT NULL,
+  date_text text NOT NULL DEFAULT '',
+  text text NOT NULL,
+  url text NOT NULL DEFAULT '',
+  status text NOT NULL DEFAULT 'new',
+  origin text NOT NULL DEFAULT 'manual',
+  created_at timestamptz NOT NULL DEFAULT now(),
+  published_at timestamptz,
+  updated_by text
+);
+CREATE INDEX IF NOT EXISTS reviews_status ON reviews(status, published_at DESC);
 CREATE TABLE IF NOT EXISTS media (
   id text PRIMARY KEY,
   name text NOT NULL,

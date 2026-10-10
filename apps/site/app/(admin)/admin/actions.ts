@@ -17,6 +17,7 @@ import { leadScope } from "@/lib/admin/scope";
 import { BASE_FLEET } from "@/lib/admin/overlay";
 import { fleetClasses } from "@/lib/fleet";
 import { draftMode } from "next/headers";
+import { reviewKey } from "@/lib/reviews";
 
 const f = (fd: FormData, k: string) => String(fd.get(k) ?? "").trim();
 function go(path: string, kind: "e" | "ok" | null = null, msg = ""): never {
@@ -417,4 +418,56 @@ export async function saveHomeFleetAction(fd: FormData) {
   await bust();
   await audit(u, "Порядок машин на главной изменён", "fleet", "home", null, { order: slugs });
   go("/admin/catalog#home", "ok", `На главной: ${slugs.length} машин`);
+}
+
+// ───────────── отзывы ─────────────
+
+const REVIEW_SOURCES = ["Яндекс.Карты", "2GIS", "Flamp", "Yell"];
+const cleanUrl = (s: string) => (/^https?:\/\/[^\s]+$/i.test(s) && s.length < 500 ? s : "");
+
+async function reviewsBust() {
+  const { revalidatePath } = await import("next/cache");
+  revalidatePath("/", "layout");
+}
+
+/** Кнопки у отзыва: publish / ignore / unpublish / restore (по id) и hide / show (по ключу — для отзывов из файла сайта) */
+export async function reviewAction(fd: FormData) {
+  const u = await requireCan("reviews", "write");
+  const op = f(fd, "op");
+  const id = f(fd, "id");
+  const key = f(fd, "key");
+  if (op === "hide") {
+    const name = f(fd, "name").slice(0, 200), text = f(fd, "text").slice(0, 5000), source = f(fd, "source").slice(0, 60);
+    if (!key || !text) go("/admin/reviews", "e", "Не хватает данных отзыва");
+    await q("INSERT INTO reviews (key, source, name, date_text, text, url, status, origin, updated_by) VALUES ($1,$2,$3,$4,$5,$6,'hidden','file',$7) ON CONFLICT (key) DO UPDATE SET status='hidden', updated_by=$7", [key, source, name, f(fd, "date").slice(0, 60), text, cleanUrl(f(fd, "url")), u.email]);
+    await audit(u, "Отзыв скрыт с сайта", "review", key);
+  } else if (op === "show") {
+    await q("DELETE FROM reviews WHERE key=$1 AND origin='file'", [key]);
+    await audit(u, "Отзыв возвращён на сайт", "review", key);
+  } else if (id && /^\d+$/.test(id)) {
+    const st = op === "publish" ? "published" : op === "ignore" ? "ignored" : op === "unpublish" ? "ignored" : op === "restore" ? "new" : "";
+    if (!st) go("/admin/reviews", "e", "Неизвестное действие");
+    await q("UPDATE reviews SET status=$2, published_at=CASE WHEN $2='published' THEN now() ELSE published_at END, updated_by=$3 WHERE id=$1", [id, st, u.email]);
+    await audit(u, `Отзыв: ${op}`, "review", id);
+  } else if (op === "delete" && id) {
+    go("/admin/reviews", "e", "Удаление не поддерживается: используйте «Игнорировать»");
+  }
+  await reviewsBust();
+  go("/admin/reviews", "ok", op === "publish" ? "Отзыв опубликован: он первый в своём источнике" : "Готово");
+}
+
+/** Добавить отзыв руками (скопировать с Яндекса, 2ГИС и т.д.) — сразу на сайт или в очередь */
+export async function addReviewAction(fd: FormData) {
+  const u = await requireCan("reviews", "write");
+  const source = f(fd, "source");
+  const name = f(fd, "name").slice(0, 120);
+  const text = f(fd, "text").slice(0, 5000);
+  if (!REVIEW_SOURCES.includes(source) || !name || text.length < 3) go("/admin/reviews", "e", "Укажите источник, имя и текст отзыва");
+  const date = f(fd, "date").slice(0, 60);
+  const key = reviewKey({ source, name, date, text });
+  const publish = f(fd, "publish") === "1";
+  await q("INSERT INTO reviews (key, source, name, date_text, text, url, status, origin, published_at, updated_by) VALUES ($1,$2,$3,$4,$5,$6,$7,'manual',$8,$9) ON CONFLICT (key) DO NOTHING", [key, source, name, date, text, cleanUrl(f(fd, "url")), publish ? "published" : "new", publish ? new Date() : null, u.email]);
+  await audit(u, publish ? "Отзыв добавлен и опубликован" : "Отзыв добавлен в очередь", "review", key);
+  await reviewsBust();
+  go("/admin/reviews", "ok", publish ? "Отзыв добавлен и показан на сайте" : "Отзыв добавлен в «Новые»");
 }
