@@ -106,7 +106,9 @@ html:not([data-gfx="basic"]) .hv-copy [data-hv-fade]:nth-of-type(3) { animation-
 
 /* — Облёт машины 360° — */
 .mdl-visual.has-orbit { aspect-ratio: 4 / 3; padding: 0; display: block; border: 1px solid var(--glass-line); box-shadow: 0 40px 120px -40px rgba(0,0,0,.8); background: #07090c; }
-.orbit { position: absolute; inset: 0; }
+.orbit { position: absolute; inset: 0; z-index: 5; background: #07090c; }
+.mdl-thumbs .mdl-thumb-360 { position: relative; }
+.mdl-thumb-360 b { position: absolute; inset: auto 0 0 0; padding: 14px 0 4px; font: 600 11px/1 var(--font-mono); letter-spacing: .08em; color: var(--cc-signal); text-align: center; background: linear-gradient(transparent, rgba(0,0,0,.78)); }
 .orbit-video { width: 100%; height: 100%; object-fit: cover; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-drag: none; }
 .orbit.is-drag .orbit-video { cursor: grabbing; }
 .orbit-ui { position: absolute; left: 14px; right: 14px; bottom: 14px; display: flex; align-items: center; gap: 10px; pointer-events: none; }

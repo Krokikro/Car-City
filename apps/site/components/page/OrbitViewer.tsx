@@ -16,7 +16,7 @@ export function OrbitViewer({ slug, name }: { slug: string; name: string }) {
 
   useEffect(() => {
     const v = vid.current!;
-    v.playbackRate = 0.62;
+    v.playbackRate = 0.75;
     let visible = false;
     let scrollT: ReturnType<typeof setTimeout> | undefined;
     const tryPlay = () => { if (autoRef.current && visible && !document.hidden) v.play().catch(() => {}); };
@@ -35,7 +35,7 @@ export function OrbitViewer({ slug, name }: { slug: string; name: string }) {
 
   useEffect(() => {
     const v = vid.current!;
-    if (auto) { v.playbackRate = 0.62; v.play().catch(() => {}); } else v.pause();
+    if (auto) { v.playbackRate = 0.75; v.play().catch(() => {}); } else v.pause();
   }, [auto]);
 
   // ручное вращение: ширина кадра = полный оборот
