@@ -22,7 +22,7 @@ export function ModelStage({ name, slug }: { name: string; slug: string }) {
       <div className="mdl-ring" aria-hidden="true"><i /><i /><i /></div>
       <div className="mdl-podium" aria-hidden="true" />
       <div className={`mdl-visual ${own ? "own-photo" : ""}`}>
-        <CarArt slug={slug} name={name} priority />
+        <CarArt slug={slug} name={name} priority lit />
         {pics.map((g, i) => (
           // все три кадра лежат в разметке сразу, поэтому переключение мгновенное и без вспышки главного фото
           // eslint-disable-next-line @next/next/no-img-element

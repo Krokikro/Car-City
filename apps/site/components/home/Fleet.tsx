@@ -81,7 +81,7 @@ export function Fleet({ lang = "ru" }: { lang?: Lang }) {
               {m.badge && <span className="car-badge">{m.badge}</span>}
               <div className="car-visual">
                 <span className="car-floor" aria-hidden="true" />
-                <CarArt slug={m.slug} name={m.name} priority={i < 2} />
+                <CarArt slug={m.slug} name={m.name} priority={i < 2} lit />
               </div>
               <div className="car-info">
                 <h3>{m.name}</h3>

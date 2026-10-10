@@ -35,16 +35,23 @@ const PATHS: Record<Body, { body: string; glass: string; wheels: [number, number
   },
 };
 
-export function CarArt({ slug, name, priority = false, sizes = "(max-width: 720px) 86vw, 560px" }: { slug: string; name: string; priority?: boolean; sizes?: string }) {
+// lit — при наведении на карточку включаются фары: поверх фото лежит прозрачный слой со светом, собранный по положению ламп именно этой машины
+export function CarArt({ slug, name, priority = false, lit = false, sizes = "(max-width: 720px) 86vw, 560px" }: { slug: string; name: string; priority?: boolean; lit?: boolean; sizes?: string }) {
   const meta = carImages[slug];
   if (meta) {
     const f = (n: number, ext: string) => asset(`/cars/${slug}-${n}.${ext}`);
     return (
-      <picture className="car-photo">
-        <source type="image/avif" srcSet={`${f(640, "avif")} 640w, ${f(1200, "avif")} ${meta.w}w`} sizes={sizes} />
-        <source type="image/webp" srcSet={`${f(640, "webp")} 640w, ${f(1200, "webp")} ${meta.w}w`} sizes={sizes} />
-        <img src={f(1200, "webp")} alt={name} width={meta.w} height={meta.h} loading={priority ? "eager" : "lazy"} decoding="async" fetchPriority={priority ? "high" : undefined} />
-      </picture>
+      <span className="car-photo">
+        <picture>
+          <source type="image/avif" srcSet={`${f(640, "avif")} 640w, ${f(1200, "avif")} ${meta.w}w`} sizes={sizes} />
+          <source type="image/webp" srcSet={`${f(640, "webp")} 640w, ${f(1200, "webp")} ${meta.w}w`} sizes={sizes} />
+          <img src={f(1200, "webp")} alt={name} width={meta.w} height={meta.h} loading={priority ? "eager" : "lazy"} decoding="async" fetchPriority={priority ? "high" : undefined} />
+        </picture>
+        {lit && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img className="car-lit" src={asset(`/cars/${slug}-lit.webp`)} alt="" aria-hidden="true" width={800} height={597} loading="lazy" decoding="async" />
+        )}
+      </span>
     );
   }
   const p = PATHS[bodyOf(name)];

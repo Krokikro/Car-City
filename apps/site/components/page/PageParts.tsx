@@ -148,7 +148,7 @@ function CarTile({ c }: { c: Card }) {
       <a className="car-card-in" href={c.btn?.href}>
         <div className="car-visual">
           <span className="car-floor" aria-hidden="true" />
-          <CarArt slug={c.slug ?? ""} name={c.name} />
+          <CarArt slug={c.slug ?? ""} name={c.name} lit />
           {sale && <span className="ft-sale"><i aria-hidden="true">%</i>{sale}</span>}
         </div>
         <div className="car-info">

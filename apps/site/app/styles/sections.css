@@ -47,7 +47,13 @@
 .car-badge { position: absolute; top: 18px; left: 18px; z-index: 2; padding: 7px 12px; border-radius: var(--radius-pill); background: var(--cc-signal); color: var(--cc-on-signal); font: 500 12px/1 var(--font-mono); text-transform: uppercase; letter-spacing: .06em; }
 .car-visual { position: relative; aspect-ratio: 16 / 10; display: grid; place-items: end center; padding: 24px 22px 10px; background: radial-gradient(90% 70% at 50% 100%, rgba(68, 154, 207, .2), transparent 70%), radial-gradient(60% 40% at 50% 100%, rgba(255, 183, 0, .12), transparent 70%); }
 .car-floor { position: absolute; left: 10%; right: 10%; bottom: 14%; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent); }
-.car-art, .car-photo img { width: 100%; height: auto; transform: translateZ(40px); transition: transform .7s var(--ease-out); }
+.car-photo { position: relative; display: block; }
+.car-photo > picture { display: block; }
+.car-art, .car-photo img { width: 100%; height: auto; transform: translateZ(40px); transition: transform .7s var(--ease-out), opacity .45s ease; }
+/* Включение фар при наведении: прозрачный слой света лежит в той же рамке, что и фото, и двигается вместе с ним */
+.car-photo img.car-lit { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; opacity: 0; pointer-events: none; }
+.car-card:hover .car-lit, .ft:hover .car-lit, .mdl-visual:hover .car-lit { opacity: 1; }
+@media (hover: none) { .car-photo img.car-lit { display: none; } }
 .car-photo img { aspect-ratio: 4/3; object-fit: cover; }
 .car-card:hover .car-art, .car-card:hover .car-photo img { transform: translateZ(60px) translateX(-3%) scale(1.04); }
 .car-info { display: grid; gap: 10px; align-content: start; padding: 8px 24px 24px; }
