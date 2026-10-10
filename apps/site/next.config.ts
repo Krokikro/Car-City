@@ -32,7 +32,7 @@ const config: NextConfig = {
             { source: "/:path*", headers: securityHeaders },
             // админка: не в поиск, не в кэш, не во фрейм чужого сайта
             { source: "/admin/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }, { key: "Cache-Control", value: "no-store" }, { key: "X-Frame-Options", value: "SAMEORIGIN" }] },
-            ...["video", "cars", "pages", "news", "team", "owners", "orbit", "brand", "steps", "classes"].map((d) => ({ source: `/${d}/:file*`, headers: media })),
+            ...["video", "cars", "pages", "news", "team", "owners", "brand", "steps", "classes"].map((d) => ({ source: `/${d}/:file*`, headers: media })),
           ];
         },
       }),
