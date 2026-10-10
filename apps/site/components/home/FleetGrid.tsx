@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { fleet as baseFleet, fleetClasses, popularOf, saleLabel, type FleetCar } from "@/lib/fleet";
 import type { CarClass } from "@/lib/content";
 import { CarArt } from "../CarArt";
@@ -62,13 +63,24 @@ export function FleetGrid({ t, lang, cars }: { t: HomeText["fleet"]; lang: Lang;
   const m = MORE[lang] ?? MORE.ru;
   const [open, setOpen] = useState(false);
   const [cls, setCls] = useState<CarClass | "all">("all");
+  const sec = useRef<HTMLElement>(null);
+  // Когда автопарк раскрывается или сворачивается, высота страницы меняется: блоки ниже, которые прикрепляются
+  // к экрану при прокрутке («3 шага»), должны пересчитать своё место, иначе они наезжают на машины.
+  useEffect(() => {
+    const el = sec.current;
+    if (!el || typeof ResizeObserver === "undefined") return;
+    let t: ReturnType<typeof setTimeout>;
+    const ro = new ResizeObserver(() => { clearTimeout(t); t = setTimeout(() => ScrollTrigger.refresh(), 120); });
+    ro.observe(el);
+    return () => { clearTimeout(t); ro.disconnect(); };
+  }, []);
   const popular = popularOf(fleet);
   const popularSlugs = new Set(popular.map((f) => f.slug));
   const rest = fleet.filter((f) => !popularSlugs.has(f.slug) && (cls === "all" || f.cls === cls));
   const shown = open ? (cls === "all" ? [...popular, ...rest] : fleet.filter((f) => f.cls === cls)) : popular;
 
   return (
-    <section className="section fg" id="avtopark" aria-labelledby="fleet-title">
+    <section ref={sec} className="section fg" id="avtopark" aria-labelledby="fleet-title">
       <div className="wrap">
         <div className="fg-head">
           <div>
