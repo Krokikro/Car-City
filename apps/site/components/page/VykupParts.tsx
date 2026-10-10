@@ -1,6 +1,4 @@
-import type { Block, Card } from "@/lib/blocks";
-import { CarArt } from "../CarArt";
-import type { Lang } from "@/lib/i18n";
+import type { Block } from "@/lib/blocks";
 
 type Sec = Extract<Block, { t: "section" }>;
 
@@ -117,47 +115,6 @@ export function VykupConditions({ b, n }: { b: Sec; n: number }) {
             ))}
           </ol>
         )}
-      </div>
-    </section>
-  );
-}
-
-const TARIFF_CAR: Record<string, string> = { ekonom: "volkswagen-polo-1.6", komfort: "geely-emgrand", "komfort-plus": "haval-f7" };
-const TARIFF_CTA: Record<string, string> = { ru: "Смотреть авто", en: "See cars", ky: "Унааларды көрүү", kk: "Көліктерді көру", uz: "Avtomobillarni ko‘rish" };
-const classOf = (h: string) => (/komfort-?pl/i.test(h) ? "komfort-plus" : /komfort/i.test(h) ? "komfort" : /ekonom/i.test(h) ? "ekonom" : "");
-const priceNum = (s?: string) => Number((s ?? "").replace(/[^\d]/g, "")) || Infinity;
-
-/** «У нас доступны разные тарифы» — три тарифные карточки с машиной, ценой и составом класса */
-export function VykupTariffs({ b, n, cards, lang }: { b: Sec; n: number; cards: Card[]; lang: Lang }) {
-  const links = [...b.html.matchAll(/<a [^>]*href="([^"]+)"[^>]*>([^<]+)<\/a>/g)].map((m) => ({ href: m[1], label: m[2].trim() }));
-  const tiers = links
-    .map((l) => {
-      const cls = classOf(l.href);
-      const own = cards.filter((c) => classOf(c.btn?.href ?? "") === cls);
-      const cheapest = own.slice().sort((a, c) => priceNum(a.price) - priceNum(c.price))[0];
-      return { ...l, cls, own, price: cheapest?.price };
-    })
-    .filter((t) => t.cls);
-  return (
-    <section className="section vk-sec vk-tar">
-      <div className="wrap">
-        <Head n={n} title={b.title} />
-        <div className="vk-tar-grid" data-reveal-stagger>
-          {tiers.map((t, i) => (
-            <a key={t.href} href={t.href} className={`vk-tier${i === 1 ? " is-mid" : ""}`}>
-              <span className="vk-tier-media">
-                <CarArt slug={TARIFF_CAR[t.cls]} name={t.label} sizes="(max-width: 720px) 92vw, 380px" />
-                <span className="vk-tier-n mono">{String(i + 1).padStart(2, "0")}</span>
-              </span>
-              <span className="vk-tier-body">
-                <span className="vk-tier-name">{t.label}</span>
-                {t.price && <span className="vk-tier-price" dangerouslySetInnerHTML={{ __html: nb(t.price.replace(/(\d)(\d{3})(?!\d)/, "$1 $2")) }} />}
-                <span className="vk-tier-cars">{t.own.slice(0, 5).map((c) => c.name).join(" · ")}</span>
-                <span className="vk-tier-cta">{TARIFF_CTA[lang] ?? TARIFF_CTA.ru} <i aria-hidden="true">→</i></span>
-              </span>
-            </a>
-          ))}
-        </div>
       </div>
     </section>
   );

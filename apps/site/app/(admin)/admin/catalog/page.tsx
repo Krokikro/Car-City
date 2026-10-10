@@ -4,7 +4,8 @@ import { can } from "@/lib/admin/roles";
 import { BASE_FLEET, patches } from "@/lib/admin/fleet";
 import { fleetClasses } from "@/lib/fleet";
 import { carImages } from "@/lib/car-images";
-import { saveCarAction } from "../actions";
+import { saveCarAction, saveHomeFleetAction } from "../actions";
+import { HomeFleetOrder } from "@/components/admin/HomeFleetOrder";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Автопарк" };
@@ -16,6 +17,12 @@ export default async function Catalog({ searchParams }: { searchParams: Promise<
   const p = await patches();
   return (
     <Shell user={user} active="catalog" title="Автопарк" sub={`${BASE_FLEET.length} моделей. Цена, класс, подпись и показ на сайте. Изменения сразу попадают на главную, в калькулятор и в тарифы.`} flash={sp}>
+      <HomeFleetOrder
+        all={BASE_FLEET.filter((c) => !p.get(c.slug)?.hidden).map((c) => ({ slug: c.slug, name: { ...c, ...(p.get(c.slug) ?? {}) }.name, cls: { ...c, ...(p.get(c.slug) ?? {}) }.cls }))}
+        initial={[...BASE_FLEET].filter((c) => !p.get(c.slug)?.hidden).map((c) => ({ slug: c.slug, pos: p.get(c.slug)?.featured ?? c.featured ?? 0 })).filter((x) => x.pos > 0).sort((a, b) => a.pos - b.pos).map((x) => x.slug)}
+        action={saveHomeFleetAction}
+        canWrite={write}
+      />
       <p className="ad-muted">Тексты и таблицы цен на самих страницах моделей правятся в разделе «Контент и SEO». Фотографии машин пока подставляются из кода сайта.</p>
       <div className="ad-cars">
         {BASE_FLEET.map((c) => {
@@ -36,6 +43,9 @@ export default async function Catalog({ searchParams }: { searchParams: Promise<
                   <label>Двигатель<input name="engine" defaultValue={v.engine ?? ""} /></label>
                   <label>Коробка<input name="gearbox" defaultValue={v.gearbox ?? ""} /></label>
                   <label>Плашка<input name="badge" defaultValue={v.badge ?? ""} placeholder="Например, Супер-скидка" /></label>
+                  <label>Старая цена в сутки, ₽<input name="old" type="number" min={0} max={100000} step={1} defaultValue={v.old ?? ""} placeholder="Зачёркнутая цена" /></label>
+                  <label>Скидка, %<input name="off" type="number" min={0} max={90} step={1} defaultValue={v.off ?? ""} placeholder="Считается по старой цене" /></label>
+                  <input type="hidden" name="featured" value={String(v.featured ?? 0)} />
                 </div>
                 <div className="ad-car-foot">
                   <label className="ad-check"><input type="checkbox" name="hidden" defaultChecked={Boolean(o?.hidden)} /> Скрыть с сайта (из каталога, калькулятора и тарифов)</label>

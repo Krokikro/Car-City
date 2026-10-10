@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { fleet as baseFleet, fleetClasses, POPULAR, type FleetCar } from "@/lib/fleet";
+import { fleet as baseFleet, fleetClasses, popularOf, saleLabel, type FleetCar } from "@/lib/fleet";
 import type { CarClass } from "@/lib/content";
 import { CarArt } from "../CarArt";
 import { href, type Lang } from "@/lib/i18n";
@@ -15,12 +15,13 @@ const MORE: Record<string, { all: string; less: string; popular: string; allCls:
 /** Плитка машины — как на странице выкупа: фото целиком, класс, заметные характеристики, цена, две кнопки */
 export function FleetTile({ m, t, lang, i = 0, priority = false }: { m: FleetCar; t: HomeText["fleet"]; lang: Lang; i?: number; priority?: boolean }) {
   const link = href(m.rent ?? m.buy, lang);
+  const sale = saleLabel(m);
   return (
-    <article className="ft" style={{ ["--i" as string]: i }}>
+    <article className={`ft${sale ? " has-sale" : ""}`} style={{ ["--i" as string]: i }}>
       <a className="ft-media" href={link} aria-label={m.name}>
         <CarArt slug={m.slug} name={m.name} priority={priority} sizes="(max-width: 640px) 92vw, (max-width: 1100px) 46vw, 340px" />
         <span className="ft-cls">{t.classes[m.cls] ?? m.cls}</span>
-        {m.badge && <span className="ft-badge">{m.badge}</span>}
+        {sale && <span className="ft-sale" title={sale}><i aria-hidden="true">%</i>{sale}</span>}
       </a>
       <div className="ft-info">
         <h3><a href={link}>{m.name}</a></h3>
@@ -43,6 +44,7 @@ export function FleetTile({ m, t, lang, i = 0, priority = false }: { m: FleetCar
         <p className="ft-price">
           {t.from && <span className="ft-from">{t.from}</span>}
           <b>{m.price.toLocaleString("ru-RU")}&nbsp;₽</b>
+          {m.old && m.old > m.price && <s className="ft-old">{m.old.toLocaleString("ru-RU")}&nbsp;₽</s>}
           <span className="ft-per">{t.perDay}</span>
         </p>
         <div className="ft-actions">
@@ -60,8 +62,9 @@ export function FleetGrid({ t, lang, cars }: { t: HomeText["fleet"]; lang: Lang;
   const m = MORE[lang] ?? MORE.ru;
   const [open, setOpen] = useState(false);
   const [cls, setCls] = useState<CarClass | "all">("all");
-  const popular = POPULAR.map((s) => fleet.find((f) => f.slug === s)!).filter(Boolean);
-  const rest = fleet.filter((f) => !POPULAR.includes(f.slug) && (cls === "all" || f.cls === cls));
+  const popular = popularOf(fleet);
+  const popularSlugs = new Set(popular.map((f) => f.slug));
+  const rest = fleet.filter((f) => !popularSlugs.has(f.slug) && (cls === "all" || f.cls === cls));
   const shown = open ? (cls === "all" ? [...popular, ...rest] : fleet.filter((f) => f.cls === cls)) : popular;
 
   return (

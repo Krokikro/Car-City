@@ -14,7 +14,7 @@ export interface PageData {
   /** для новой страницы; у существующей берётся из файла */
   kind?: "page" | "model" | "article";
 }
-export type FleetPatch = Partial<Pick<FleetCar, "name" | "price" | "badge" | "engine" | "gearbox" | "cls">> & { hidden?: boolean };
+export type FleetPatch = Partial<Pick<FleetCar, "name" | "price" | "badge" | "engine" | "gearbox" | "cls" | "old" | "off">> & { hidden?: boolean; /** место на главной; 0 — не показывать на главной */ featured?: number };
 
 export interface Overlay {
   /** растёт при каждой загрузке, по нему кэшируется собранный список страниц */
@@ -50,6 +50,9 @@ function applyFleet(rows: { slug: string; data: FleetPatch }[]) {
       if (p.gearbox !== undefined) car.gearbox = p.gearbox || undefined;
       if (p.cls) car.cls = p.cls;
       if (p.badge !== undefined) car.badge = p.badge || undefined;
+      if (p.old !== undefined) car.old = p.old > 0 ? p.old : undefined;
+      if (p.off !== undefined) car.off = p.off > 0 ? p.off : undefined;
+      if (p.featured !== undefined) car.featured = p.featured > 0 ? p.featured : undefined;
     }
     next.push(car);
   }

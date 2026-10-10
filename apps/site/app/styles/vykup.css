@@ -51,25 +51,6 @@
 @media (max-width: 760px) { .vk-terms { grid-template-columns: 1fr; } .vk-req-grid { grid-template-columns: 1fr; } }
 
 /* — 03 Тарифы — */
-.vk-tar::after { background: radial-gradient(50% 60% at 50% 100%, rgba(255, 183, 0, .12), transparent 70%); }
-.vk-tar-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 1.6vw, 24px); align-items: stretch; }
-.vk-tier { position: relative; display: flex; flex-direction: column; border-radius: 30px; overflow: hidden; color: var(--text); text-decoration: none; border: 1px solid rgba(255, 255, 255, .1); background: linear-gradient(170deg, #1a1c20, #0f1012); transition: transform .45s var(--ease-out), border-color .3s, box-shadow .45s; }
-.vk-tier:hover { transform: translateY(-8px); border-color: rgba(255, 183, 0, .6); box-shadow: 0 34px 70px -34px rgba(255, 183, 0, .4); }
-.vk-tier.is-mid { border-color: rgba(255, 183, 0, .45); background: linear-gradient(170deg, #22201a, #0f1012); }
-.vk-tier-media { position: relative; display: block; aspect-ratio: 4 / 3; overflow: hidden; }
-.vk-tier-media .car-photo, .vk-tier-media img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease-out); }
-.vk-tier:hover .vk-tier-media img { transform: scale(1.05); }
-.vk-tier-media::after { content: ""; position: absolute; inset: auto 0 0 0; height: 40%; background: linear-gradient(0deg, #101113, transparent); pointer-events: none; }
-.vk-tier-n { position: absolute; z-index: 2; left: 18px; top: 16px; padding: 6px 12px; border-radius: 999px; background: rgba(11, 11, 12, .7); backdrop-filter: blur(8px); color: var(--cc-signal); font-size: 13px; letter-spacing: .08em; }
-.vk-tier-body { display: grid; gap: 10px; padding: clamp(20px, 2vw, 30px); flex: 1; align-content: start; }
-.vk-tier-name { font: 500 clamp(30px, 3vw, 46px)/1 var(--font-display); letter-spacing: -.03em; text-transform: capitalize; }
-.vk-tier-price { font: 500 clamp(18px, 1.6vw, 24px)/1.2 var(--font-display); color: var(--cc-signal); }
-.vk-tier-cars { color: var(--text-muted); font-size: 15px; line-height: 1.5; }
-.vk-tier-cta { margin-top: 8px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 22px; border-radius: 999px; background: var(--cc-signal); color: #141000; font: 600 15px/1 var(--font-text); transition: gap .3s var(--ease-out), box-shadow .3s; }
-.vk-tier:hover .vk-tier-cta { gap: 16px; box-shadow: 0 12px 30px -10px rgba(255, 183, 0, .7); }
-.vk-tier-cta i { font-style: normal; }
-@media (max-width: 900px) { .vk-tar-grid { grid-template-columns: 1fr; } .vk-tier { flex-direction: row; } .vk-tier-media { width: 42%; aspect-ratio: auto; flex: none; } .vk-tier-body { padding: 18px; } }
-@media (max-width: 560px) { .vk-tier { flex-direction: column; } .vk-tier-media { width: 100%; aspect-ratio: 4 / 3; } }
 
 /* — Экономия («Почему с нами выгодно») — крупные карточки с суммой — */
 .pg-vykup .tiles-save { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; list-style: none; padding: 0; margin: 28px 0 0; }

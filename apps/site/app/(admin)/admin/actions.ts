@@ -259,9 +259,16 @@ export async function saveCarAction(fd: FormData) {
   if (!Number.isFinite(price) || price < 500 || price > 50000) go(`/admin/catalog#${slug}`, "e", "Цена в сутки — от 500 до 50 000 ₽");
   const cls = f(fd, "cls");
   if (!fleetClasses.some((c) => c.id === cls)) go(`/admin/catalog#${slug}`, "e", "Неизвестный класс");
+  const old = Math.round(Number(f(fd, "old") || 0));
+  if (old && (!Number.isFinite(old) || old <= price || old > 100000)) go(`/admin/catalog#${slug}`, "e", "Старая цена должна быть больше текущей");
+  // скидка в процентах: либо введена вручную, либо считается по старой цене
+  let off = Math.round(Number(f(fd, "off") || 0));
+  if (old) off = Math.round((1 - price / old) * 100);
+  if (!Number.isFinite(off) || off < 0 || off > 90) go(`/admin/catalog#${slug}`, "e", "Скидка — от 0 до 90%");
+  const featured = Math.max(0, Math.round(Number(f(fd, "featured") || 0)));
   const before = await q1<{ data: unknown }>("SELECT data FROM fleet_overrides WHERE slug=$1", [slug]);
   const diff = await savePatch(slug, {
-    name: f(fd, "name") || car!.name, price, cls: cls as never, engine: f(fd, "engine"), gearbox: f(fd, "gearbox"), badge: f(fd, "badge"), hidden: fd.get("hidden") === "on",
+    name: f(fd, "name") || car!.name, price, cls: cls as never, engine: f(fd, "engine"), gearbox: f(fd, "gearbox"), badge: f(fd, "badge"), old, off, featured, hidden: fd.get("hidden") === "on",
   }, u.email);
   await bust();
   await audit(u, "Автомобиль изменён", "car", slug, before?.data ?? null, diff);
@@ -392,4 +399,22 @@ export async function reset2faAction(fd: FormData) {
   await q("DELETE FROM sessions WHERE user_id::text=$1", [t.id]);
   await audit(u, "Сброшена 2FA", "user", t.email);
   go("/admin/users", "ok", "2FA сброшена, при следующем входе её нужно подключить заново");
+}
+
+/** Главная: какие машины показываются первыми и в каком порядке. Приходит список slug по порядку. */
+export async function saveHomeFleetAction(fd: FormData) {
+  const u = await requireCan("catalog", "write");
+  const order = String(fd.get("order") ?? "").split(",").map((x) => x.trim()).filter(Boolean);
+  const known = new Set(BASE_FLEET.map((c) => c.slug));
+  const slugs = order.filter((s, i) => known.has(s) && order.indexOf(s) === i);
+  const before = await q<{ slug: string; data: Record<string, unknown> }>("SELECT slug, data FROM fleet_overrides");
+  const cur = new Map(before.map((r) => [r.slug, r.data]));
+  for (const c of BASE_FLEET) {
+    const pos = slugs.indexOf(c.slug) + 1; // 0 — не на главной
+    const o = (cur.get(c.slug) ?? {}) as Parameters<typeof savePatch>[1];
+    await savePatch(c.slug, { ...c, ...o, featured: pos }, u.email);
+  }
+  await bust();
+  await audit(u, "Порядок машин на главной изменён", "fleet", "home", null, { order: slugs });
+  go("/admin/catalog#home", "ok", `На главной: ${slugs.length} машин`);
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import { notFound } from "next/navigation";
 import { draftMode } from "next/headers";
 import { refreshOverlay, draftOverlay } from "@/lib/admin/overlay";
@@ -12,12 +13,13 @@ import { Footer } from "@/components/Footer";
 import { StickyCta } from "@/components/StickyCta";
 import { HtmlLang } from "@/components/HtmlLang";
 import { FinalCta } from "@/components/home/FinalCta";
-import { Steps } from "@/components/home/Steps";
-import { VykupBenefits, VykupConditions, VykupTariffs, savingsHtml } from "@/components/page/VykupParts";
+import { Steps, Requirements } from "@/components/home/Steps";
+import { VykupBenefits, VykupConditions, savingsHtml } from "@/components/page/VykupParts";
 import { homeText } from "@/lib/home-text";
 import { Calculator } from "@/components/home/Calculator";
 import { Trust } from "@/components/home/Trust";
 import { HomePage } from "@/components/home/HomePage";
+import { GiftCta, isGift } from "@/components/page/GiftCta";
 import { PageHero, CarCards, Section, Faq } from "@/components/page/PageParts";
 import { ModelHero } from "@/components/page/ModelHero";
 import { modelPanels } from "@/lib/model-panels";
@@ -143,8 +145,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
   let n = 0;
   // страница выкупа: выгоды, условия и тарифы — крупными карточками (тексты те же)
   const vykup = doc.path === "/vykup";
-  const allCards = p.blocks.flatMap((x) => (x.t === "cards" ? x.groups.flatMap((g) => g.cards) : []));
   let si = 0;
+  const buyPage = doc.path.startsWith("/vykup");
+  const steps = <Steps steps={homeText(lang).steps} variant={buyPage ? "buy" : "rent"} />;
   return (
     <>
       <HtmlLang lang={doc.lang} />
@@ -167,7 +170,13 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
           p.blocks.map((b, i) => {
             if (b.t === "cards") return <CarCards key={i} groups={b.groups} lang={lang} />;
             if (b.t === "calculator") return <Calculator key={i} />;
-            if (b.t === "trust") return <Trust key={i} lang={lang} />;
+            if (b.t === "trust")
+              return (
+                <Fragment key={i}>
+                  <Trust lang={lang} buy={buyPage} />
+                  {vykup && steps}
+                </Fragment>
+              );
             if (b.t === "faq") return <Faq key={i} b={b} lang={lang} />;
             if (doc.path === "/novosti") return null;
             if (vykup) {
@@ -177,11 +186,14 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
               if (k === 1 && tiles && /<h3/.test(b.html)) return <VykupConditions key={i} b={b} n={n++} />;
               if (k === 3) return <Section key={i} b={b} n={n++} center />;
               if (k === 4) return <Section key={i} b={{ ...b, html: savingsHtml(b.html) }} n={n++} extra="vk-save" />;
-              if (k === 5 && /pill-row/.test(b.html)) return <VykupTariffs key={i} b={b} n={n++} cards={allCards} lang={lang} />;
+              // «У нас доступны разные тарифы»: блок убран, тарифы уже есть в начале страницы
+              if (/pill-row/.test(b.html)) return null;
             }
+            if (isGift(b)) return <GiftCta key={i} b={b} />;
             return <Section key={i} b={b} n={n++} />;
           })}
-        {classVideo && <Steps req={homeText(lang).requirements} steps={homeText(lang).steps} variant={doc.path.startsWith("/vykup") ? "buy" : "rent"} />}
+        {classVideo && !vykup && steps}
+        {classVideo && !buyPage && <Requirements req={homeText(lang).requirements} />}
         {(p.final || isModel) && <FinalCta lang={lang} />}
       </main>
       <Footer lang={lang} />

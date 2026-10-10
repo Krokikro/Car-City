@@ -19,6 +19,7 @@ import { asset } from "@/lib/i18n";
 import { MotionRoot } from "@/components/motion/MotionRoot";
 import { ToTop } from "@/components/motion/ToTop";
 import { ScrollHints } from "@/components/motion/ScrollHints";
+import { LeadModal } from "@/components/LeadModal";
 import { ChatWidget } from "@/components/ChatWidget";
 import { Analytics } from "@/components/analytics/Analytics";
 import { CookieNotice } from "@/components/CookieNotice";
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <MotionRoot />
         <ScrollHints />
         <ToTop />
+        <LeadModal />
         <CookieNotice />
         <ChatWidget />
         <Analytics />

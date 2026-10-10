@@ -1,3 +1,4 @@
+import { fleet, saleLabel } from "@/lib/fleet";
 import { marked } from "marked";
 import type { Block, Btn, Card, Fig } from "@/lib/blocks";
 import { CarArt } from "../CarArt";
@@ -132,12 +133,15 @@ export function CarCards({ groups, lang = "ru" }: { groups: Extract<Block, { t: 
 }
 
 function CarTile({ c }: { c: Card }) {
+  const car = c.slug ? fleet.find((f) => f.slug === c.slug) : undefined;
+  const sale = car ? saleLabel(car) : undefined;
   return (
-    <article className="car-card static">
+    <article className={`car-card static${sale ? " has-sale" : ""}`}>
       <a className="car-card-in" href={c.btn?.href}>
         <div className="car-visual">
           <span className="car-floor" aria-hidden="true" />
           <CarArt slug={c.slug ?? ""} name={c.name} />
+          {sale && <span className="ft-sale"><i aria-hidden="true">%</i>{sale}</span>}
         </div>
         <div className="car-info">
           <h3>{c.name}</h3>

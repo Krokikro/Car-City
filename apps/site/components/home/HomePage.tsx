@@ -6,7 +6,7 @@ import { FleetGrid } from "@/components/home/FleetGrid";
 import { Benefits } from "@/components/home/Benefits";
 import { Trust } from "@/components/home/Trust";
 import { Promo } from "@/components/home/Promo";
-import { Steps } from "@/components/home/Steps";
+import { Steps, Requirements } from "@/components/home/Steps";
 import { Calculator } from "@/components/home/Calculator";
 import { Media } from "@/components/home/Media";
 import { WhyUs } from "@/components/home/WhyUs";
@@ -46,11 +46,12 @@ export function HomePage({ lang = "ru" }: { lang?: Lang }) {
         <HeroVideo t={h.hero} />
         <Ticker items={h.ticker} />
         <FleetGrid t={h.fleet} lang={lang} cars={fleet.map((c) => ({ ...c }))} />
+        <Steps steps={h.steps} />
+        <Requirements req={h.requirements} />
         <Benefits t={h.benefits} />
+        <Calculator t={h.calculator} classes={h.fleet.classes} cars={fleet.map((c) => ({ ...c }))} />
         <Trust lang={lang} t={h.trust} />
         <Promo t={h.promo} />
-        <Steps req={h.requirements} steps={h.steps} />
-        <Calculator t={h.calculator} classes={h.fleet.classes} cars={fleet.map((c) => ({ ...c }))} />
         <Media t={h.media} />
         <WhyUs t={h.whyUs} />
         <SeoText t={h.seo} />

@@ -519,7 +519,9 @@ a.ct-line:hover { border-color: rgba(255, 183, 0, .45); }
 .soc-brand svg { display: block; border-radius: inherit; }
 .soc-telegram, .soc-telegram svg { border-radius: 50%; }
 .soc-whatsapp, .soc-whatsapp svg { border-radius: 26%; }
-.soc-max, .soc-max svg { border-radius: 14%; }
+.soc-max, .soc-max svg { border-radius: 25%; }
+.soc-youtube, .soc-youtube svg { border-radius: 0; }
+.soc-link:has(.soc-youtube) { border-radius: 8px; align-items: center; }
 .soc-link:has(.soc-brand) { border-radius: 26%; }
 .header-soc { display: none; flex-wrap: nowrap; gap: 8px; }
 .header-soc .soc-link:hover { transform: translateY(-2px) scale(1.08); }
@@ -551,3 +553,57 @@ a.ct-line:hover { border-color: rgba(255, 183, 0, .45); }
   .header-actions { gap: 10px; }
 }
 @media (min-width: 1100px) and (max-width: 1365px) { .header-tel { display: none; } }
+
+/* Всплывающая форма заявки */
+.lead-modal { position: fixed; inset: 0; z-index: 400; display: grid; place-items: center; padding: 16px; background: rgba(5,5,6,.72); backdrop-filter: blur(6px); animation: lm-fade .25s ease-out both; overflow-y: auto; }
+.lead-modal-box { position: relative; width: min(520px, 100%); max-height: calc(100dvh - 32px); overflow-y: auto; background: linear-gradient(180deg, #17171a, #101012); border: 1px solid rgba(255,255,255,.1); border-radius: 28px; padding: 36px 32px 30px; box-shadow: 0 40px 120px -20px rgba(0,0,0,.8), 0 0 0 1px rgba(255,183,0,.12) inset; animation: lm-rise .35s var(--ease-out) both; }
+.lead-modal-box::before { content: ""; position: absolute; left: 32px; right: 32px; top: 0; height: 3px; border-radius: 0 0 4px 4px; background: var(--cc-signal); }
+.lead-modal-box .h2 { margin: 6px 0 8px; font-size: clamp(24px, 3vw, 30px); line-height: 1.1; }
+.lead-modal-text { margin: 0 0 22px; font-size: 15px; line-height: 1.5; }
+.lead-modal-x { position: absolute; right: 14px; top: 14px; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); color: #fff; cursor: pointer; transition: background .2s, transform .2s; }
+.lead-modal-x:hover { background: rgba(255,255,255,.12); transform: rotate(90deg); }
+@keyframes lm-fade { from { opacity: 0 } }
+@keyframes lm-rise { from { opacity: 0; transform: translateY(24px) scale(.98) } }
+@media (max-width: 560px) { .lead-modal { align-items: end; padding: 0; } .lead-modal-box { border-radius: 26px 26px 0 0; padding: 32px 20px 24px; max-height: 94dvh; } }
+
+/* Нам доверяют: клик по выкупнику */
+button.owner { font: inherit; color: inherit; text-align: left; cursor: pointer; appearance: none; transition: border-color .25s, background .25s, transform .25s var(--ease-out); }
+button.owner:hover, button.owner:focus-visible { border-color: rgba(255,183,0,.55); background: var(--surface-2, rgba(255,255,255,.06)); transform: translateY(-2px); outline: none; }
+.owner-cap { display: grid; }
+.owner-cap strong { color: var(--text); font-weight: 500; }
+.owner-cap span { font-size: 14px; color: var(--text-muted); }
+.trust-stats.one { grid-template-columns: 1fr !important; }
+.owner-modal { width: min(460px, 100%); }
+.owner-modal-ph { display: block; width: 132px; height: 132px; object-fit: cover; border-radius: 50%; margin: 0 0 18px; box-shadow: 0 0 0 3px var(--cc-signal), 0 0 0 9px rgba(255,183,0,.15); }
+.owner-modal .btn { width: 100%; justify-content: center; }
+
+/* Скидки в каталоге: мягкая жёлтая ленточка, зачёркнутая старая цена и лёгкий блик по фото */
+.ft-sale { position: absolute; right: 0; top: 14px; z-index: 2; display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px 7px 8px; border-radius: 999px 0 0 999px; background: linear-gradient(90deg, #ffd24d, var(--cc-signal)); color: #141414; font: 600 12px/1 var(--font-mono); letter-spacing: .05em; text-transform: uppercase; box-shadow: 0 10px 26px -8px rgba(255, 183, 0, .7); }
+.ft-sale i { display: grid; place-items: center; width: 19px; height: 19px; border-radius: 50%; background: #141414; color: var(--cc-signal); font: 700 11px/1 var(--font-text); font-style: normal; }
+.ft.has-sale, .car-card.has-sale { border-color: rgba(255, 183, 0, .38); box-shadow: 0 0 0 1px rgba(255, 183, 0, .12), 0 22px 56px -32px rgba(255, 183, 0, .55); }
+.ft.has-sale .ft-media::after, .car-card.has-sale .car-visual::after { content: ""; position: absolute; inset: -10% -30%; pointer-events: none; background: linear-gradient(105deg, transparent 42%, rgba(255, 224, 140, .2) 50%, transparent 58%); transform: translateX(-100%); animation: saleSheen 6s ease-in-out infinite; }
+@keyframes saleSheen { 0%, 62% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+.ft-old { color: var(--text-muted); font-size: 15px; text-decoration: line-through; text-decoration-color: rgba(255, 110, 90, .95); text-decoration-thickness: 1.5px; }
+.car-visual { position: relative; }
+.car-card.has-sale .ft-sale { top: 14px; }
+@media (max-width: 640px) { .ft-sale { top: 8px; padding: 5px 9px 5px 6px; font-size: 10px; gap: 5px; } .ft-sale i { width: 15px; height: 15px; font-size: 9px; } }
+@media (prefers-reduced-motion: reduce) { .ft.has-sale .ft-media::after, .car-card.has-sale .car-visual::after { animation: none; opacity: 0; } }
+
+/* Блок «Дарим 1-ый день бесплатно» на внутренних страницах */
+.gift-sec { padding-block: clamp(48px, 7vw, 110px); }
+.gift-card { position: relative; display: grid; gap: clamp(28px, 4vw, 56px); padding: clamp(32px, 5vw, 72px); border-radius: 36px; overflow: hidden; border: 1px solid rgba(255, 183, 0, .28); background: radial-gradient(70% 90% at 100% 0%, rgba(255, 183, 0, .22), transparent 62%), radial-gradient(60% 80% at 0% 100%, rgba(255, 183, 0, .08), transparent 60%), linear-gradient(160deg, #19191c, #0e0e10); }
+.gift-checker { position: absolute; left: 0; right: 0; top: 0; height: 14px; background: repeating-conic-gradient(#0b0b0c 0 25%, var(--cc-signal) 0 50%) 0 0 / 14px 14px; opacity: .9; }
+.gift-copy { display: grid; gap: 18px; align-content: center; }
+.gift-copy .display { font-size: clamp(36px, 4.6vw, 68px); line-height: .98; max-width: 11ch; }
+.gift-copy .lead { max-width: 30ch; margin: 0; }
+.gift-side { position: relative; display: grid; justify-items: start; align-content: center; gap: 18px; padding: clamp(22px, 2.4vw, 34px); border-radius: 28px; background: rgba(255, 255, 255, .045); border: 1px solid rgba(255, 255, 255, .1); backdrop-filter: blur(8px); }
+.gift-box { width: clamp(120px, 11vw, 170px); height: auto; margin: -6px 0 -2px; filter: drop-shadow(0 18px 30px rgba(255, 183, 0, .35)); animation: giftFloat 5s ease-in-out infinite; }
+.gift-big { position: absolute; right: 26px; top: 14px; margin: 0; display: flex; align-items: baseline; gap: 4px; font: 300 clamp(54px, 6vw, 92px)/1 var(--font-display); letter-spacing: -.04em; color: var(--cc-signal); text-shadow: 0 0 40px rgba(255, 183, 0, .35); }
+.gift-big span { font-size: .5em; }
+.gift-side .btn { width: 100%; justify-content: center; }
+.gift-consent { margin: 0; color: var(--text-muted); font-size: 13px; line-height: 1.45; }
+.gift-consent a { color: var(--cc-signal); }
+@keyframes giftFloat { 50% { transform: translateY(-8px) rotate(-2deg); } }
+@media (min-width: 960px) { .gift-card { grid-template-columns: 1.15fr 1fr; align-items: stretch; } }
+@media (max-width: 560px) { .gift-card { border-radius: 26px; } .gift-big { right: 18px; top: 10px; } }
+@media (prefers-reduced-motion: reduce) { .gift-box { animation: none; } }

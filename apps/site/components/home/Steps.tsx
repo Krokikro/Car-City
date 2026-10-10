@@ -82,9 +82,30 @@ function Flag() {
   );
 }
 
+/** Требования к водителям: отдельный блок (на главной идёт сразу после дороги) */
+export function Requirements({ req }: { req: HomeText["requirements"] }) {
+  return (
+    <section className="section req-sec" aria-labelledby="req-title">
+      <div className="wrap">
+        <div className="req">
+          <h2 id="req-title" className="h1" data-split>{req.title}</h2>
+          <dl className="req-list" data-reveal-stagger>
+            {req.items.map((r) => (
+              <div key={r.k}>
+                <dt className="mono">{r.k}:</dt>
+                <dd>{r.v}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // «Как получить авто за 3 шага»: настоящая машина (вид сверху) едет по извилистой дороге от таблички к табличке.
 // Каждый шаг — большая шашка такси с надписью; загорается, когда к ней подъезжает машина. Четвёртая — «в путь».
-export function Steps({ req: requirementsBlock, steps, variant = "rent" }: { req: HomeText["requirements"]; steps: HomeText["steps"]; variant?: "rent" | "buy" }) {
+export function Steps({ steps, variant = "rent" }: { steps: HomeText["steps"]; variant?: "rent" | "buy" }) {
   const root = useRef<HTMLElement>(null);
   const { lang } = splitLang(usePathname() || "/");
   const buy = variant === "buy";
@@ -126,10 +147,25 @@ export function Steps({ req: requirementsBlock, steps, variant = "rent" }: { req
         };
         apply();
         if (basic) return;
+        // Компьютер: блок «прилипает» к экрану, машина едет от прокрутки, дальше страница листается сама.
+        // Телефон: дорога длиннее экрана — машина едет, пока блок проезжает мимо.
+        const wrap = el.querySelector<HTMLElement>(".stp-wrap")!;
+        const pin = kind === "wide";
         gsap.to(state, {
           p: b,
           ease: "none",
-          scrollTrigger: { trigger: box, start: "top 80%", end: "bottom 45%", scrub: 0.9, invalidateOnRefresh: true },
+          scrollTrigger: pin
+            ? {
+                trigger: wrap,
+                start: () => (wrap.offsetHeight < innerHeight - 110 ? "center center+=30" : "top 96px"),
+                end: () => `+=${Math.round(innerHeight * 1.25)}`,
+                pin: true,
+                pinSpacing: true,
+                anticipatePin: 1,
+                scrub: 0.35,
+                invalidateOnRefresh: true,
+              }
+            : { trigger: box, start: "top 80%", end: "bottom 45%", scrub: 0.6, invalidateOnRefresh: true },
           onUpdate: apply,
         });
       };
@@ -155,21 +191,10 @@ export function Steps({ req: requirementsBlock, steps, variant = "rent" }: { req
   );
 
   return (
-    <section ref={root} className="section steps-sec" aria-labelledby="req-title">
+    <section ref={root} className="section steps-sec" aria-labelledby="stp-title">
       <div className="wrap">
-        <div className="req">
-          <h2 id="req-title" className="h1" data-split>{requirementsBlock.title}</h2>
-          <dl className="req-list" data-reveal-stagger>
-            {requirementsBlock.items.map((r) => (
-              <div key={r.k}>
-                <dt className="mono">{r.k}:</dt>
-                <dd>{r.v}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
         <div className="stp-wrap">
-          <h2 className="display stp-title" data-split>{buy ? bt.title : steps.title}</h2>
+          <h2 id="stp-title" className="display stp-title" data-split>{buy ? bt.title : steps.title}</h2>
           <div className={`stp-board${buy ? " stp-buy" : ""}`}>
             {road("wide")}
             {road("narrow")}

@@ -14,16 +14,22 @@ export interface FleetCar {
   /** файл в car-city.pro/assets/components/phpthumbof/cache/ */
   img: string;
   badge?: string;
+  /** старая цена за сутки (зачёркнутая рядом с ценой «от») */
+  old?: number;
+  /** скидка, %: ярлык в каталоге. Если задана старая цена — «−10%», иначе «до −22%» (скидка на отдельные графики) */
+  off?: number;
+  /** место на главной среди «популярных» (1, 2, 3…). Нет — на главной не показывается, только в полном списке. */
+  featured?: number;
 }
 
 // prettier-ignore
 export const fleet: FleetCar[] = [
   {"slug": "moskvich-3", "name": "Москвич 3", "cls": "komfort", "price": 2000, "engine": "1,5 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort/moskvich-3", "buy": "/vykup/komfort/moskvich-3", "img": "galery_1.4ed97933a441f71d34ec658ae61c46d2.webP", "badge": "Супер-скидка"},
-  {"slug": "belgee-x50", "name": "Belgee X50", "cls": "komfort", "price": 2400, "engine": "1,5 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort/Belgee-X50", "buy": "/vykup/komfort/Belgee-X50", "img": "1779871454282-019e689a-8084-712a-9a88-52e0a0f26c2a.2011a68be1cf41027f5dfe4808290820.webP"},
-  {"slug": "geely-emgrand", "name": "Geely Emgrand", "cls": "komfort", "price": 2000, "engine": "1,5 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort/geely-emgrand", "buy": "/vykup/komfort/geely-emgrand", "img": "galery_1.f283fd76e86f617377a25dac7d55d9e6.webP"},
-  {"slug": "chery-tiggo-4-pro", "name": "Chery Tiggo 4 Pro", "cls": "komfort", "price": 2000, "engine": "1.5 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort/chery-tiggo-4-pro", "buy": "/vykup/komfort/chery-tiggo-4-pro", "img": "galery_1.1f10554a7a159c40bc2095e910274595.webP"},
-  {"slug": "omoda-s-5", "name": "Omoda S5", "cls": "komfort", "price": 2000, "engine": "1.5 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort/omoda-s-5", "buy": "/vykup/komfort/omoda-s-5", "img": "galery_1.470d58934fe7dcc7c1ce0bec385f13c6.webP"},
-  {"slug": "chery-tiggo-4", "name": "Chery Tiggo 4", "cls": "komfort", "price": 2000, "engine": "1.5 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort/chery-tiggo-4", "buy": "/vykup/komfort/chery-tiggo-4", "img": "galery_1.0b7e9ad0e27884dfbfe2415a8cae4c43.webP"},
+  {"slug": "belgee-x50", "name": "Belgee X50", "cls": "komfort", "price": 2400, "engine": "1,5 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort/Belgee-X50", "buy": "/vykup/komfort/Belgee-X50", "img": "1779871454282-019e689a-8084-712a-9a88-52e0a0f26c2a.2011a68be1cf41027f5dfe4808290820.webP", "off": 7},
+  {"slug": "geely-emgrand", "name": "Geely Emgrand", "cls": "komfort", "price": 2000, "engine": "1,5 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort/geely-emgrand", "buy": "/vykup/komfort/geely-emgrand", "img": "galery_1.f283fd76e86f617377a25dac7d55d9e6.webP", "off": 22},
+  {"slug": "chery-tiggo-4-pro", "name": "Chery Tiggo 4 Pro", "cls": "komfort", "price": 2000, "engine": "1.5 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort/chery-tiggo-4-pro", "buy": "/vykup/komfort/chery-tiggo-4-pro", "img": "galery_1.1f10554a7a159c40bc2095e910274595.webP", "off": 22},
+  {"slug": "omoda-s-5", "name": "Omoda S5", "cls": "komfort", "price": 2000, "engine": "1.5 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort/omoda-s-5", "buy": "/vykup/komfort/omoda-s-5", "img": "galery_1.470d58934fe7dcc7c1ce0bec385f13c6.webP", "off": 22},
+  {"slug": "chery-tiggo-4", "name": "Chery Tiggo 4", "cls": "komfort", "price": 2000, "engine": "1.5 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort/chery-tiggo-4", "buy": "/vykup/komfort/chery-tiggo-4", "img": "galery_1.0b7e9ad0e27884dfbfe2415a8cae4c43.webP", "off": 29},
   {"slug": "exeed-lx-2023", "name": "Exeed LX 2023", "cls": "komfort-plus", "price": 2600, "engine": "1,5 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort-plyus/exeed-lx-2023", "buy": "/vykup/komfort-plyus/exeed-lx-2023", "img": "exeed-lx1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP", "badge": "Супер-скидка"},
   {"slug": "jac-j7", "name": "Jac J7", "cls": "komfort-plus", "price": 2600, "engine": "1.5 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort-plyus/jac-j7", "buy": "/vykup/komfort-plyus/jac-j7", "img": "jac-j7-sajt.d8b2e6a8fec082c2f3f75da8a3eeb859.webP"},
   {"slug": "haval-f7", "name": "Haval F7", "cls": "komfort-plus", "price": 2600, "engine": "1,6 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort-plyus/haval-f7", "buy": "/vykup/komfort-plyus/haval-f7", "img": "havalf7.d8b2e6a8fec082c2f3f75da8a3eeb859.webP"},
@@ -32,9 +38,9 @@ export const fleet: FleetCar[] = [
   {"slug": "kia-k5", "name": "Kia K5", "cls": "komfort-plus", "price": 2800, "engine": "2 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort-plyus/kia-k5", "buy": "/vykup/komfort-plyus/kia-k5", "img": "kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP"},
   {"slug": "geely-atlas-pro", "name": "Geely Atlas PRO", "cls": "komfort-plus", "price": 2600, "engine": "1,5 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort-plyus/geely-atlas-pro", "buy": "/vykup/komfort-plyus/geely-atlas-pro", "img": "atlas-sajt.d8b2e6a8fec082c2f3f75da8a3eeb859.webP"},
   {"slug": "chery-tiggo-7-pro", "name": "Chery Tiggo 7 PRO", "cls": "komfort-plus", "price": 2600, "engine": "1,5 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort-plyus/chery-tiggo-7-pro", "buy": "/vykup/komfort-plyus/chery-tiggo-7-pro", "img": "chery-tiggo-7-pro-sajt-%281%29.d8b2e6a8fec082c2f3f75da8a3eeb859.webP"},
-  {"slug": "volkswagen-polo-1.6", "name": "Volkswagen Polo", "cls": "ekonom", "price": 1900, "engine": "1,6 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/ekonom/volkswagen-polo-1.6", "buy": "/vykup/ekonom/volkswagen-polo-1.6", "img": "volkswagen-polo-1.6-min-1-.b595af2fc264eb695187af35ed92f08a.webP"},
-  {"slug": "kia-rio-1.4", "name": "Kia Rio X-Line", "cls": "ekonom", "price": 1900, "engine": "1,4 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/ekonom/kia-rio-1.4", "buy": "/vykup/ekonom/kia-rio-1.4", "img": "kia-rio-x-line.35a929b65d3c68686e9bf508d3b31825.webP"},
-  {"slug": "kia-rio-1.6", "name": "Kia Rio", "cls": "ekonom", "price": 1900, "engine": "1,6 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/ekonom/kia-rio-1.6", "buy": "/vykup/ekonom/kia-rio-1.6", "img": "kia-rio-1.6-new.35a929b65d3c68686e9bf508d3b31825.webP"},
+  {"slug": "volkswagen-polo-1.6", "name": "Volkswagen Polo", "cls": "ekonom", "price": 1900, "engine": "1,6 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/ekonom/volkswagen-polo-1.6", "buy": "/vykup/ekonom/volkswagen-polo-1.6", "img": "volkswagen-polo-1.6-min-1-.b595af2fc264eb695187af35ed92f08a.webP", "old": 2100, "off": 10},
+  {"slug": "kia-rio-1.4", "name": "Kia Rio X-Line", "cls": "ekonom", "price": 1900, "engine": "1,4 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/ekonom/kia-rio-1.4", "buy": "/vykup/ekonom/kia-rio-1.4", "img": "kia-rio-x-line.35a929b65d3c68686e9bf508d3b31825.webP", "old": 2100, "off": 10},
+  {"slug": "kia-rio-1.6", "name": "Kia Rio", "cls": "ekonom", "price": 1900, "engine": "1,6 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/ekonom/kia-rio-1.6", "buy": "/vykup/ekonom/kia-rio-1.6", "img": "kia-rio-1.6-new.35a929b65d3c68686e9bf508d3b31825.webP", "old": 2100, "off": 10},
   {"slug": "skoda-rapid-1.6", "name": "Skoda Rapid", "cls": "ekonom", "price": 1500, "engine": "1,6 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/ekonom/skoda-rapid-1.6", "buy": "/vykup/ekonom/skoda-rapid-1.6", "img": "skoda-rapid-1.b595af2fc264eb695187af35ed92f08a.webP"},
   {"slug": "hongqi-h5", "name": "Hongqi H5", "cls": "biznes", "price": 5260, "engine": "1,6-3,3 л", "gearbox": "Автомат", "rent": "/vykup/biznes/Hongqi-H5", "buy": "/vykup/biznes/Hongqi-H5", "img": "ChatGPT-Image-20-avg.-2026-g.%2C-12-20-40.98aa3db669bf25f45cb463d62fb8c53c.webP"},
   {"slug": "voyah-dream", "name": "Voyah Dream", "cls": "biznes", "price": 9041, "engine": "1,6-3,3 л", "gearbox": "Автомат", "rent": "/vykup/biznes/Voyah-Dream", "buy": "/vykup/biznes/Voyah-Dream", "img": "ChatGPT-Image-19-avg.-2026-g.%2C-16-41-33.98aa3db669bf25f45cb463d62fb8c53c.webP"},
@@ -65,3 +71,19 @@ export const POPULAR = [
   "sollers-atlant-19-td", "lada-largus",
   "lada-granta",
 ];
+
+// Начальный порядок «популярных» на главной; в админке место на главной задаётся у каждой машины
+POPULAR.forEach((slug, i) => { const c = fleet.find((f) => f.slug === slug); if (c) c.featured = i + 1; });
+
+/** Машины для первого экрана каталога на главной в заданном порядке */
+export function popularOf(list: FleetCar[]): FleetCar[] {
+  const picked = list.filter((c) => (c.featured ?? 0) > 0).sort((a, b) => (a.featured ?? 0) - (b.featured ?? 0));
+  return picked.length ? picked : POPULAR.map((s) => list.find((c) => c.slug === s)).filter((c): c is FleetCar => !!c);
+}
+
+/** Ярлык скидки на плитке: своя плашка, иначе процент */
+export function saleLabel(c: FleetCar): string | undefined {
+  if (c.badge) return c.badge;
+  if (c.off && c.off > 0) return c.old ? `−${c.off}%` : `до −${c.off}%`;
+  return undefined;
+}

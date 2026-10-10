@@ -17,6 +17,9 @@ export async function savePatch(slug: string, data: FleetPatch, by: string) {
   if ((data.engine ?? "") !== (base.engine ?? "")) diff.engine = data.engine ?? "";
   if ((data.gearbox ?? "") !== (base.gearbox ?? "")) diff.gearbox = data.gearbox ?? "";
   if ((data.badge ?? "") !== (base.badge ?? "")) diff.badge = data.badge ?? "";
+  if ((data.old ?? 0) !== (base.old ?? 0)) diff.old = data.old ?? 0;
+  if ((data.off ?? 0) !== (base.off ?? 0)) diff.off = data.off ?? 0;
+  if ((data.featured ?? 0) !== (base.featured ?? 0)) diff.featured = data.featured ?? 0;
   if (data.hidden) diff.hidden = true;
   if (!Object.keys(diff).length) {
     await q("DELETE FROM fleet_overrides WHERE slug=$1", [slug]);

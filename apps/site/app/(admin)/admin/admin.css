@@ -236,3 +236,11 @@ textarea { resize: vertical; }
 .ad-start a:hover { border-color: var(--y); }
 .ad-start b { font-size: 15.5px; }
 .ad-start span { color: var(--mute); font-size: 13.5px; }
+
+.ad-home-list { list-style: none; margin: 0 0 14px; padding: 0; display: grid; gap: 8px; }
+.ad-home-list li { display: flex; align-items: center; gap: 12px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+.ad-home-list img { width: 64px; height: 48px; object-fit: cover; border-radius: 6px; background: #eee; }
+.ad-home-n { width: 26px; height: 26px; display: grid; place-items: center; border-radius: 50%; background: var(--y); font-weight: 700; font-size: 13px; }
+.ad-home-btns { margin-left: auto; display: flex; gap: 6px; }
+.ad-home-add { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.ad-home-add select { flex: 1; min-width: 220px; padding: 9px 10px; border: 1px solid var(--line); border-radius: 8px; }

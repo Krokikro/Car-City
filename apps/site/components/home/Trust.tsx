@@ -1,14 +1,16 @@
-import { asset, href, type Lang } from "@/lib/i18n";
+import { href, type Lang } from "@/lib/i18n";
+import { TrustOwners } from "./TrustOwners";
 import { ruHome, type HomeText } from "@/lib/home-text";
 
-export function Trust({ lang = "ru", t: trust = ruHome.trust }: { lang?: Lang; t?: HomeText["trust"] }) {
-  const row = [...trust.owners, ...trust.owners];
+export function Trust({ lang = "ru", t: trust = ruHome.trust, buy = false }: { lang?: Lang; t?: HomeText["trust"]; buy?: boolean }) {
+  // На странице выкупа счётчик «арендовали авто» не нужен: остаётся только «выкупили»
+  const stats = buy ? trust.stats.slice(1) : trust.stats;
   return (
     <section className="section trust" aria-labelledby="trust-title">
       <div className="wrap">
         <h2 id="trust-title" className="mono eyebrow">{trust.title}</h2>
-        <div className="trust-stats">
-          {trust.stats.map((s) => (
+        <div className={`trust-stats${buy ? " one" : ""}`}>
+          {stats.map((s) => (
             <div key={s.label} className="trust-stat" data-reveal>
               <span className="trust-num"><span data-count={s.value} data-suffix={s.suffix}>{s.value.toLocaleString("ru-RU")}{s.suffix}</span></span>
               <span className="trust-label">{s.label}</span>
@@ -16,24 +18,10 @@ export function Trust({ lang = "ru", t: trust = ruHome.trust }: { lang?: Lang; t
           ))}
         </div>
       </div>
-      <div className="owners" aria-label={trust.ctaTitle}>
-        <div className="owners-row">
-          {row.map((o, i) => (
-            <figure key={i} className="owner" aria-hidden={i >= trust.owners.length || undefined}>
-              {"photo" in o && o.photo ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img className="owner-ph owner-img" src={asset(`/owners/${o.photo}.webp`)} alt="" width={96} height={96} loading="lazy" decoding="async" />
-              ) : (
-                <span className="owner-ph" aria-hidden="true">{o.name.split(" ").map((w) => w[0]).join("").slice(0, 2)}</span>
-              )}
-              <figcaption><strong>{o.name}</strong><span>{o.car}</span></figcaption>
-            </figure>
-          ))}
-        </div>
-      </div>
+      <TrustOwners owners={trust.owners as never} lang={lang} label={trust.ctaTitle} />
       <div className="wrap trust-cta" data-reveal>
         <p className="h1">{trust.ctaTitle}</p>
-        <a href={href("/vykup", lang)} className="btn btn-primary btn-lg" data-magnetic>{trust.ctaText} <span className="arrow">→</span></a>
+        <a href={href("/vykup", lang)} className="btn btn-primary btn-lg" data-magnetic data-lead="buyout">{trust.ctaText} <span className="arrow">→</span></a>
       </div>
     </section>
   );

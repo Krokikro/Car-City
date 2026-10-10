@@ -29,6 +29,7 @@ export function MotionRoot() {
       if (!a) return;
       const id = a.getAttribute("href")!;
       if (id.length < 2) return;
+      if (id === "#zayavka" || a.hasAttribute("data-lead")) return; // эти кнопки открывают всплывающую форму (LeadModal)
       const target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
