@@ -1,0 +1,148 @@
+// Все страницы сайта, кроме главной, собираются из текстов, снятых с car-city.pro (content/*.md).
+// Адрес страницы берётся из поля url как есть, с исходным регистром, чтобы не потерять SEO.
+import { readFileSync, readdirSync, existsSync } from "node:fs";
+import { join } from "node:path";
+import type { Lang } from "./i18n";
+import { published, pageKey, splitKey, type Overlay } from "./admin/overlay";
+
+export type DocKind = "page" | "model" | "article";
+
+export interface Doc {
+  kind: DocKind;
+  /** путь без хоста и без завершающего слеша, например /vykup/komfort/moskvich-3 */
+  path: string;
+  title: string;
+  h1: string;
+  description?: string;
+  date?: string;
+  cls?: string;
+  mode?: "arenda" | "vykup";
+  body: string;
+  /** фото модели из блока IMAGES («Галерея модели») */
+  gallery: string[];
+  /** язык текста; у непереведённой страницы остаётся ru */
+  lang: Lang;
+}
+
+const ROOT = join(process.cwd(), "content");
+const DIRS: Record<string, DocKind> = { pages: "page", models: "model", articles: "article" };
+
+function parseFront(src: string) {
+  const m = src.match(/^---\n([\s\S]*?)\n---\n?/);
+  const meta: Record<string, string> = {};
+  if (!m) return { meta, body: src };
+  for (const line of m[1].split("\n")) {
+    const i = line.indexOf(":");
+    if (i < 1) continue;
+    let v = line.slice(i + 1).trim();
+    if (v.startsWith('"') && v.endsWith('"')) v = v.slice(1, -1).replace(/\\"/g, '"');
+    meta[line.slice(0, i).trim()] = v;
+  }
+  return { meta, body: src.slice(m[0].length) };
+}
+
+export function toPath(url: string) {
+  const p = decodeURI(url.replace(/^https?:\/\/(www\.)?car-city\.pro/, "")).replace(/\/+$/, "");
+  return p || "/";
+}
+
+function splitGallery(body: string) {
+  const i = body.search(/^## IMAGES\s*$/m);
+  if (i < 0) return { body, gallery: [] as string[] };
+  const tail = body.slice(i);
+  const gal = tail.split(/Декоративные/)[0];
+  const gallery = [...gal.matchAll(/https:\/\/car-city\.pro\/[^\s)]+/g)].map((x) => x[0]);
+  return { body: body.slice(0, i), gallery };
+}
+
+const cache = new Map<Lang, Map<string, Doc>>();
+const merged = new Map<string, Map<string, Doc>>();
+
+function readDir(dir: string, kind: DocKind, lang: Lang, into: Map<string, Doc>) {
+  if (!existsSync(dir)) return;
+  for (const f of readdirSync(dir)) {
+    if (!f.endsWith(".md") || f.startsWith("_") || f === "index.md") continue;
+    const { meta, body: raw } = parseFront(readFileSync(join(dir, f), "utf8"));
+    if (!meta.url) continue;
+    const { body, gallery } = splitGallery(raw);
+    const path = toPath(meta.url);
+    into.set(path, {
+      kind,
+      path,
+      title: meta.title || meta.h1 || "",
+      h1: meta.h1 || meta.title || "",
+      description: meta.description,
+      date: meta.date,
+      cls: meta.class,
+      mode: meta.mode === "vykup" ? "vykup" : meta.mode === "arenda" ? "arenda" : undefined,
+      body,
+      gallery,
+      lang,
+    });
+  }
+}
+
+/** Страницы только из файлов (content/), на одном языке */
+function fileDocs(lang: Lang): Map<string, Doc> {
+  const hit = cache.get(lang);
+  if (hit && process.env.NODE_ENV === "production") return hit;
+  const map = new Map<string, Doc>();
+  for (const [dir, kind] of Object.entries(DIRS)) readDir(join(ROOT, lang === "ru" ? dir : join("i18n", lang, dir)), kind, lang, map);
+  cache.set(lang, map);
+  return map;
+}
+
+/** Файлы + правки из админки на одном языке */
+function layer(lang: Lang, ov: Overlay): Map<string, Doc> {
+  const base = fileDocs(lang);
+  if (!ov.pages.size) return base;
+  const out = new Map(base);
+  for (const [k, p] of ov.pages) {
+    const [l, path] = splitKey(k);
+    if (l !== lang) continue;
+    if (p.hidden) { out.delete(path); continue; }
+    const was = base.get(path);
+    out.set(path, { kind: was?.kind ?? p.kind ?? "page", path, title: p.title, h1: p.h1, description: p.description, date: was?.date, cls: was?.cls, mode: was?.mode, body: p.body, gallery: was?.gallery ?? [], lang });
+  }
+  return out;
+}
+
+/** Все страницы на языке lang. Чего ещё нет в переводе, показываем по-русски по тому же адресу. */
+export function allDocs(lang: Lang = "ru", ov: Overlay = published()): Map<string, Doc> {
+  const key = `${lang}:${ov.version}`;
+  if (ov.cacheable && process.env.NODE_ENV === "production") {
+    const hit = merged.get(key);
+    if (hit) return hit;
+  }
+  const map = new Map(layer("ru", ov));
+  if (lang !== "ru") for (const [path, d] of layer(lang, ov)) map.set(path, d);
+  if (ov.cacheable) { for (const k of merged.keys()) if (!k.endsWith(`:${ov.version}`)) merged.delete(k); merged.set(key, map); }
+  return map;
+}
+
+export function getDoc(path: string, lang: Lang = "ru", ov: Overlay = published()) {
+  const all = allDocs(lang, ov);
+  return all.get(path) ?? [...all.values()].find((d) => d.path.toLowerCase() === path.toLowerCase());
+}
+
+export function articles(lang: Lang = "ru", ov: Overlay = published()) {
+  const idx = join(ROOT, "articles", "_index.json");
+  const meta: { slug: string; date?: string }[] = existsSync(idx) ? JSON.parse(readFileSync(idx, "utf8")) : [];
+  const dates = new Map(meta.map((m) => [m.slug, m.date]));
+  return [...allDocs(lang, ov).values()]
+    .filter((d) => d.kind === "article")
+    .map((d) => ({ ...d, date: d.date ?? dates.get(d.path.split("/").pop()!) }));
+}
+
+/** Файловые страницы без правок — для админки (что было до правок) */
+export { fileDocs };
+export { pageKey };
+
+/** Пара «аренда ↔ выкуп» для страницы модели */
+export function twinOf(doc: Doc, lang: Lang = "ru", ov: Overlay = published()) {
+  if (doc.kind !== "model") return undefined;
+  const parts = doc.path.split("/");
+  const slug = parts.pop()!.toLowerCase();
+  const want = doc.mode === "arenda" ? "vykup" : "arenda";
+  return [...allDocs(lang, ov).values()].find((d) => d.kind === "model" && d.mode === want && d.path.split("/").pop()!.toLowerCase() === slug);
+}

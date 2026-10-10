@@ -1,0 +1,39 @@
+.hero3d { position: relative; min-height: 100svh; display: grid; grid-template-rows: 1fr auto; overflow: clip; background: #07090c; isolation: isolate; }
+.hero3d-poster {
+  position: absolute; inset: 0; z-index: -3;
+  background:
+    radial-gradient(60% 40% at 50% 58%, rgba(68, 154, 207, .22), transparent 70%),
+    radial-gradient(30% 18% at 50% 92%, rgba(255, 183, 0, .25), transparent 70%),
+    linear-gradient(180deg, #05070a 0%, #0c1820 55%, #07090c 100%);
+}
+.hero3d-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -2; opacity: 0; transition: opacity 1.4s var(--ease-out); touch-action: pan-y; }
+.hero3d[data-ready] .hero3d-canvas { opacity: 1; }
+.hero3d-shade { position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(7,9,12,.88) 0%, rgba(7,9,12,.55) 38%, rgba(7,9,12,0) 65%),
+    linear-gradient(180deg, rgba(7,9,12,.6) 0%, transparent 22%, transparent 70%, var(--bg) 100%); }
+.hero3d-copy { align-self: center; display: grid; gap: clamp(20px, 2.6vw, 32px); padding-top: calc(var(--header-h) + 40px); padding-bottom: 40px; pointer-events: none; }
+.hero3d-copy a, .hero3d-copy button { pointer-events: auto; }
+.hero3d-eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--text-muted); }
+.hero3d-eyebrow .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--cc-success); box-shadow: 0 0 0 4px rgba(76, 194, 122, .18); animation: pulse 2s infinite; }
+@keyframes pulse { 50% { box-shadow: 0 0 0 9px rgba(76, 194, 122, 0); } }
+.hero3d-title { font: 200 clamp(44px, 7.4vw, 128px)/.95 var(--font-display); letter-spacing: -0.04em; max-width: 14ch; }
+.hero3d-title .line { display: block; overflow: hidden; padding-bottom: .04em; }
+.hero3d-title .line > span { display: inline-block; }
+.hero3d-title .accent { color: var(--cc-signal); }
+.hero3d-sub { font-size: clamp(18px, 1.8vw, 24px); color: var(--text); max-width: 34ch; }
+.hero3d-sub .mono-num { color: var(--cc-signal); }
+.hero3d-bottom { display: flex; align-items: end; justify-content: space-between; gap: 24px; padding-bottom: clamp(24px, 4vw, 48px); }
+.hero-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; margin: 0; flex: 1; max-width: 860px; border-top: 1px solid var(--glass-line); }
+.hero-stats > div { padding: 18px 20px 0 0; }
+.hero-stats dt { margin-bottom: 6px; }
+.hero-stats dd { margin: 0; font: 300 clamp(26px, 3vw, 44px)/1 var(--font-display); color: var(--text); letter-spacing: -0.02em; }
+.hero-hint { display: none; }
+@media (min-width: 900px) { .hero-stats { grid-template-columns: repeat(4, 1fr); } }
+@media (pointer: fine) and (min-width: 900px) { .hero-hint { display: block; writing-mode: vertical-rl; rotate: 180deg; opacity: .7; } }
+@media (max-width: 719px) {
+  .hero3d-copy { align-self: end; padding-top: 46svh; padding-bottom: 24px; gap: 18px; }
+  .hero3d-title { font-size: clamp(38px, 11vw, 56px); }
+  .hero3d-shade { background: linear-gradient(180deg, rgba(7,9,12,.55) 0%, transparent 14%, transparent 30%, rgba(7,9,12,.82) 48%, rgba(7,9,12,.94) 70%, var(--bg) 100%); }
+  .hero3d .row .btn { flex: 1 1 100%; }
+}
