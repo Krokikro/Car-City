@@ -43,7 +43,7 @@ export function ModelHero(p: {
           )}
           <Buttons btns={p.btns} />
         </div>
-        <ModelStage name={p.name} slug={p.slug} gallery={p.gallery} />
+        <ModelStage name={p.name} slug={p.slug} />
       </div>
       {p.panels && (p.panels.price || p.panels.details.length > 0) && (
         <div className="wrap mdl-panels" data-reveal-stagger>
