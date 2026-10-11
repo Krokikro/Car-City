@@ -54,7 +54,7 @@ html:not([data-gfx="basic"]) .hv-copy [data-hv-fade]:nth-of-type(3) { animation-
 .fg-filter .pill[aria-pressed="true"] .pill-count { color: inherit; opacity: .7; }
 .fg-foot { display: flex; justify-content: center; margin-top: 32px; }
 .ft-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr)); }
-.ft { position: relative; display: grid; grid-template-rows: auto 1fr; min-width: 0; border-radius: var(--radius-card-lg); background: linear-gradient(180deg, var(--surface-2), var(--surface)); border: 1px solid var(--glass-line); overflow: hidden; transition: transform .5s var(--ease-out), border-color .3s, box-shadow .5s var(--ease-out); animation: ftIn .7s var(--ease-out) backwards; animation-delay: calc(var(--i, 0) * 45ms); }
+.ft { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr; min-width: 0; border-radius: var(--radius-card-lg); background: linear-gradient(180deg, var(--surface-2), var(--surface)); border: 1px solid var(--glass-line); overflow: hidden; transition: transform .5s var(--ease-out), border-color .3s, box-shadow .5s var(--ease-out); animation: ftIn .7s var(--ease-out) backwards; animation-delay: calc(var(--i, 0) * 45ms); }
 @keyframes ftIn { from { opacity: 0; transform: translateY(26px) scale(.98); } }
 .ft:hover { transform: translateY(-6px); border-color: rgba(255, 183, 0, .4); box-shadow: 0 30px 60px -30px rgba(255, 183, 0, .35); }
 .ft-media { position: relative; display: block; aspect-ratio: 4 / 3; overflow: hidden; background: #07090c; }
@@ -570,7 +570,15 @@ button.owner:hover, button.owner:focus-visible { border-color: rgba(255,183,0,.5
 .ft-old { color: var(--text-muted); font-size: 15px; text-decoration: line-through; text-decoration-color: rgba(255, 110, 90, .95); text-decoration-thickness: 1.5px; }
 .car-visual { position: relative; }
 .car-card.has-sale .ft-sale { top: 14px; }
-@media (max-width: 640px) { .ft-sale { top: 8px; padding: 5px 9px 5px 6px; font-size: 10px; gap: 5px; } .ft-sale i { width: 15px; height: 15px; font-size: 9px; } }
+.ft-sale-m { display: none; }
+@media (max-width: 640px) {
+  .ft .ft-sale { display: none; }
+  .ft-sale-m { display: inline-flex; align-items: center; gap: 6px; justify-self: start; max-width: 100%; padding: 4px 9px 4px 5px; border-radius: 999px; background: linear-gradient(90deg, #ffd24d, var(--cc-signal)); color: #141414; font: 600 10px/1.1 var(--font-mono); letter-spacing: .04em; text-transform: uppercase; }
+  .ft-sale-m i { display: grid; place-items: center; flex: none; width: 15px; height: 15px; border-radius: 50%; background: #141414; color: var(--cc-signal); font: 700 9px/1 var(--font-text); font-style: normal; }
+  .ft-price { flex-wrap: wrap; row-gap: 2px; white-space: normal; }
+  .ft-old { font-size: 13px; }
+  .car-card .ft-sale { top: 8px; padding: 5px 9px 5px 6px; font-size: 10px; gap: 5px; } .car-card .ft-sale i { width: 15px; height: 15px; font-size: 9px; }
+}
 @media (prefers-reduced-motion: reduce) { .ft.has-sale .ft-media::after, .car-card.has-sale .car-visual::after { animation: none; opacity: 0; } }
 
 /* Блок «Дарим 1-ый день бесплатно» на внутренних страницах */

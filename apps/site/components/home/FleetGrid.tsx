@@ -48,6 +48,7 @@ export function FleetTile({ m, t, lang, i = 0, priority = false }: { m: FleetCar
           {m.old && m.old > m.price && <s className="ft-old">{m.old.toLocaleString("ru-RU")}&nbsp;₽</s>}
           <span className="ft-per">{t.perDay}</span>
         </p>
+        {sale && <span className="ft-sale-m"><i aria-hidden="true">%</i>{sale}</span>}
         <div className="ft-actions">
           {m.rent && <a className="btn btn-primary btn-sm" href={href(m.rent, lang)}>{t.rent}</a>}
           {m.buy && <a className="btn btn-ghost btn-sm" href={href(m.buy, lang)}>{t.buy}</a>}
