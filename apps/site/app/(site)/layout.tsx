@@ -18,6 +18,7 @@ import { company } from "@/lib/content";
 import { asset } from "@/lib/i18n";
 import { MotionRoot } from "@/components/motion/MotionRoot";
 import { ToTop } from "@/components/motion/ToTop";
+import { OffscreenPause } from "@/components/motion/OffscreenPause";
 import { ScrollHints } from "@/components/motion/ScrollHints";
 import { LeadModal } from "@/components/LeadModal";
 import { ChatWidget } from "@/components/ChatWidget";
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <MotionRoot />
+        <OffscreenPause />
         <ScrollHints />
         <ToTop />
         <LeadModal />
