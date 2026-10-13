@@ -58,6 +58,14 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 [Sotib olish](https://car-city.pro/vykup/komfort/moskvich-3)
 
+![avtomobil rasmi](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
+
+## Kia K5
+
+3420₽/kundan
+
+[Sotib olish](https://car-city.pro/vykup/komfort/kia-k5)
+
 ### Bizga ishonishadi:
 
 4000+

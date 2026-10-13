@@ -48,13 +48,6 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный.
 
 [Арендовать](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/hyundai-sonata)
 
-![car Image](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
-
-## Kia K5
-
-от 2800 ₽/сутки
-
-[Арендовать](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/kia-k5)
 
 ![car Image](https://car-city.pro/assets/components/phpthumbof/cache/atlas-sajt.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 
@@ -81,7 +74,6 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный.
 | Модель                | График 7/0 | График 6/1 | График 5/2 |
 | --------------------- | ---------- | ---------- | ---------- |
 | Hyundai Sonata        | 2 800 ₽    | 4 100 ₽    | 4 900 ₽    |
-| Kia K5                | 2 800 ₽    | 4 100 ₽    | 4 900 ₽    |
 | Jac J7                | 2 600 ₽    | 3 040 ₽    | 3 640 ₽    |
 | HAVAL F7              | 2 600 ₽    | 3 040 ₽    | 3 640 ₽    |
 | Geely Atlas PRO       | 2 600 ₽    | 3 040 ₽    | 3 640 ₽    |
@@ -178,7 +170,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный.
 Наш автопарк оснащен следующими моделями для аренды в Москве:
 
 - [Hyundai Sonata.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/hyundai-sonata) Премиум-седан с элегантным, струящимся дизайном корпуса, производительным мотором и современной электроникой. Есть 2 поколения, 2020 и 2021 года выпуска
-- [Kia K5.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/kia-k5) Южнокорейский седан бизнес-класса, созданный на одной платформе с Hyundai Sonata, но имеющий свой, эксклюзивный дизайн в спортивном, футуристичном виде.
+- [Kia K5.](https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5) Южнокорейский седан бизнес-класса, созданный на одной платформе с Hyundai Sonata, но имеющий свой, эксклюзивный дизайн в спортивном, футуристичном виде.
 - [Jac J7.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/jac-j7) Переднеприводной лифтбек с продуманным, эргономичным салоном, обеспечивающим максимальный комфорт даже при перевозке пятого пассажира.
 - [HAVAL F7.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/haval-f7) Среднеразмерный китайский кроссовер, подходящий даже для поездок по бездорожью.
 - [GEELY ATLAS PRO.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/geely-atlas-pro) Уникальный внедорожник с гибридным двигателем, климат-контролем, подогревом всех сидений и кожаным салоном.

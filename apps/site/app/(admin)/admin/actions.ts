@@ -266,10 +266,14 @@ export async function saveCarAction(fd: FormData) {
   let off = Math.round(Number(f(fd, "off") || 0));
   if (old) off = Math.round((1 - price / old) * 100);
   if (!Number.isFinite(off) || off < 0 || off > 90) go(`/admin/catalog#${slug}`, "e", "Скидка — от 0 до 90%");
+  const buyPrice = Math.round(Number(f(fd, "buyPrice") || 0));
+  if (buyPrice && (!Number.isFinite(buyPrice) || buyPrice < 500 || buyPrice > 50000)) go(`/admin/catalog#${slug}`, "e", "Цена выкупа в сутки — от 500 до 50 000 ₽");
+  const buyOld = Math.round(Number(f(fd, "buyOld") || 0));
+  if (buyOld && (!Number.isFinite(buyOld) || buyOld <= buyPrice || buyOld > 100000)) go(`/admin/catalog#${slug}`, "e", "Старая цена выкупа должна быть больше текущей");
   const featured = Math.max(0, Math.round(Number(f(fd, "featured") || 0)));
   const before = await q1<{ data: unknown }>("SELECT data FROM fleet_overrides WHERE slug=$1", [slug]);
   const diff = await savePatch(slug, {
-    name: f(fd, "name") || car!.name, price, cls: cls as never, engine: f(fd, "engine"), gearbox: f(fd, "gearbox"), badge: f(fd, "badge"), old, off, featured, hidden: fd.get("hidden") === "on",
+    name: f(fd, "name") || car!.name, price, cls: cls as never, engine: f(fd, "engine"), gearbox: f(fd, "gearbox"), badge: f(fd, "badge"), old, off, buyPrice, buyOld, featured, hidden: fd.get("hidden") === "on",
   }, u.email);
   await bust();
   await audit(u, "Автомобиль изменён", "car", slug, before?.data ?? null, diff);

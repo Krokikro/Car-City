@@ -13,10 +13,27 @@ const MORE: Record<string, { all: string; less: string; popular: string; allCls:
   en: { all: "See the whole fleet", less: "Show less", popular: "Popular models from every class", allCls: "All", models: "models" },
 };
 
+function Price({ label, price, old, t }: { label?: string; price: number; old?: number; t: HomeText["fleet"] }) {
+  return (
+    <p className="ft-pr">
+      {label && <span className="ft-pl">{label}</span>}
+      <span className="ft-pv">
+        <span className="ft-main"><span className="ft-from">{t.from}</span> <b>{price.toLocaleString("ru-RU")}&nbsp;₽</b></span>
+        <span className="ft-sub">
+          {old && old > price && <s className="ft-old">{old.toLocaleString("ru-RU")}&nbsp;₽</s>}
+          <span className="ft-per">{t.perDay}</span>
+        </span>
+      </span>
+    </p>
+  );
+}
+
 /** Плитка машины — как на странице выкупа: фото целиком, класс, заметные характеристики, цена, две кнопки */
 export function FleetTile({ m, t, lang, i = 0, priority = false }: { m: FleetCar; t: HomeText["fleet"]; lang: Lang; i?: number; priority?: boolean }) {
   const link = href(m.rent ?? m.buy, lang);
   const sale = saleLabel(m);
+  // у части машин страница аренды и выкупа — одна (или есть только выкуп): тогда цена одна и без подписи
+  const single = !m.rent || m.rent === m.buy;
   return (
     <article className={`ft${sale ? " has-sale" : ""}`} style={{ ["--i" as string]: i }}>
       <a className="ft-media" href={link} aria-label={m.name}>
@@ -42,12 +59,14 @@ export function FleetTile({ m, t, lang, i = 0, priority = false }: { m: FleetCar
             )}
           </ul>
         )}
-        <p className="ft-price">
-          {t.from && <span className="ft-from">{t.from}</span>}
-          <b>{m.price.toLocaleString("ru-RU")}&nbsp;₽</b>
-          {m.old && m.old > m.price && <s className="ft-old">{m.old.toLocaleString("ru-RU")}&nbsp;₽</s>}
-          <span className="ft-per">{t.perDay}</span>
-        </p>
+        <div className="ft-prices">
+          {single ? <Price price={m.rent ? m.price : (m.buyPrice ?? m.price)} old={m.rent ? m.old : m.buyOld} t={t} /> : (
+            <>
+              <Price label={t.priceRent} price={m.price} old={m.old} t={t} />
+              <Price label={t.priceBuy} price={m.buyPrice ?? m.price} old={m.buyOld} t={t} />
+            </>
+          )}
+        </div>
         {sale && <span className="ft-sale-m"><i aria-hidden="true">%</i>{sale}</span>}
         <div className="ft-actions">
           {m.rent && <a className="btn btn-primary btn-sm" href={href(m.rent, lang)}>{t.rent}</a>}
@@ -76,9 +95,9 @@ export function FleetGrid({ t, lang, cars }: { t: HomeText["fleet"]; lang: Lang;
     return () => { clearTimeout(t); ro.disconnect(); };
   }, []);
   const popular = popularOf(fleet);
-  const popularSlugs = new Set(popular.map((f) => f.slug));
-  const rest = fleet.filter((f) => !popularSlugs.has(f.slug) && (cls === "all" || f.cls === cls));
-  const shown = open ? (cls === "all" ? [...popular, ...rest] : fleet.filter((f) => f.cls === cls)) : popular;
+  // раскрытый парк идёт по порядку классов: эконом, комфорт, комфорт+, бизнес, грузовой, доставка
+  const order = (a: FleetCar, b: FleetCar) => fleetClasses.findIndex((c) => c.id === a.cls) - fleetClasses.findIndex((c) => c.id === b.cls);
+  const shown = open ? (cls === "all" ? [...fleet].sort(order) : fleet.filter((f) => f.cls === cls)) : popular;
 
   return (
     <section ref={sec} className="section fg" id="avtopark" aria-labelledby="fleet-title">
@@ -88,7 +107,7 @@ export function FleetGrid({ t, lang, cars }: { t: HomeText["fleet"]; lang: Lang;
             <p className="mono eyebrow">{t.eyebrow} · {fleet.length} {m.models}</p>
             <h2 id="fleet-title" className="display" data-split>{t.title}</h2>
           </div>
-          <p className="fg-sub">{open ? null : m.popular}</p>
+          
         </div>
         {open && (
           <div className="fg-filter" role="group" aria-label={t.classLabel}>

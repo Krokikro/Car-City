@@ -35,6 +35,8 @@ export const ruHome = {
     auto: "Автомат",
     from: "от",
     perDay: "/сутки",
+    priceRent: "Аренда",
+    priceBuy: "Выкуп",
     rent: "Арендовать",
     buy: "Выкупить",
     hint: "Наведите на машину — включим фары",

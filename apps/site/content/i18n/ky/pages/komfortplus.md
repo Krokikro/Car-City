@@ -48,13 +48,6 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный.
 
 [Ижарага алуу](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/hyundai-sonata)
 
-![унаанын сүрөтү](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
-
-## Kia K5
-
-2800 ₽/суткадан
-
-[Ижарага алуу](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/kia-k5)
 
 ![унаанын сүрөтү](https://car-city.pro/assets/components/phpthumbof/cache/atlas-sajt.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 
@@ -81,7 +74,6 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный.
 | Модель                | 7/0 графиги | 6/1 графиги | 5/2 графиги |
 | --------------------- | ---------- | ---------- | ---------- |
 | Hyundai Sonata        | 2 800 ₽    | 4 100 ₽    | 4 900 ₽    |
-| Kia K5                | 2 800 ₽    | 4 100 ₽    | 4 900 ₽    |
 | Jac J7                | 2 600 ₽    | 3 040 ₽    | 3 640 ₽    |
 | HAVAL F7              | 2 600 ₽    | 3 040 ₽    | 3 640 ₽    |
 | Geely Atlas PRO       | 2 600 ₽    | 3 040 ₽    | 3 640 ₽    |
@@ -178,7 +170,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный.
 Автопаркыбызда Москвада ижарага алуу үчүн төмөнкү моделдер бар:
 
 - [Hyundai Sonata.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/hyundai-sonata) Көркөм, агымдуу кузов дизайны, кубаттуу мотору жана заманбап электроникасы бар премиум-седан. 2 мууну бар, 2020 жана 2021-жылы чыгарылган
-- [Kia K5.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/kia-k5) Hyundai Sonata менен бир платформада түзүлгөн, бирок спорттук, футуристтик көрүнүштөгү өзүнүн эксклюзивдүү дизайны бар түштүк кореялык бизнес-класстагы седан.
+- [Kia K5.](https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5) Hyundai Sonata менен бир платформада түзүлгөн, бирок спорттук, футуристтик көрүнүштөгү өзүнүн эксклюзивдүү дизайны бар түштүк кореялык бизнес-класстагы седан.
 - [Jac J7.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/jac-j7) Бешинчи жүргүнчүнү ташыганда да максималдуу ыңгайлуулукту камсыз кылган ойлонулган, эргономикалык салону бар алдыңкы дөңгөлөктөрү жетектөөчү лифтбек.
 - [HAVAL F7.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/haval-f7) Жолсуз жерлерде жүрүүгө да ылайыктуу орто өлчөмдөгү кытай кроссовери.
 - [GEELY ATLAS PRO.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/geely-atlas-pro) Гибриддик кыймылдаткычы, климат-контролу, бардык отургучтарын жылытуусу жана тери салону бар өзгөчө жол тандабас.

@@ -32,7 +32,7 @@ export function Calculator({ t = ruHome.calculator, classes = ruHome.fleet.class
   const parts = [
     { k: "net", label: "Вам на руки", v: Math.max(0, month) },
     { k: "rent", label: "Аренда авто", v: rent },
-    { k: "fuel", label: "Топливо", v: fuel },
+    { k: "fuel", label: "Топливо (350 км в смену)", v: fuel },
     { k: "fee", label: `Комиссия парка ${Math.round(a.parkCommission * 100)}%`, v: commission },
   ];
   const total = parts.reduce((s, p) => s + p.v, 0) || 1;

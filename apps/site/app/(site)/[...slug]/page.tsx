@@ -148,7 +148,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
   const vykup = doc.path === "/vykup";
   let si = 0;
   const buyPage = doc.path.startsWith("/vykup");
-  const steps = <Steps steps={homeText(lang).steps} variant={buyPage ? "buy" : "rent"} />;
+  const steps = <Steps steps={homeText(lang).steps} variant={buyPage ? "buy" : "rent"} vehicle={/^\/gruzov/.test(doc.path) ? "truck" : "taxi"} />;
   return (
     <>
       <HtmlLang lang={doc.lang} />

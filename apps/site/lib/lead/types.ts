@@ -78,6 +78,7 @@ export const EXTRA_LABELS: Record<string, string> = {
   office: "Офис",
   calc: "Калькулятор",
   price: "Цена",
+  message: "Сообщение в чате",
 };
 
 export const MODE_LABELS: Record<string, string> = { rent: "Аренда", buyout: "Выкуп" };

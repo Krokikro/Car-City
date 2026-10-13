@@ -58,13 +58,6 @@ from 3315₽/day
 
 [Buy out](https://car-city.pro/vykup/komfort-plyus/chery-tiggo-7-pro-max)
 
-![car Image](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
-
-## Kia K5
-
-from 3420₽/day
-
-[Buy out](https://car-city.pro/vykup/komfort-plyus/kia-k5)
 
 ![car Image](https://car-city.pro/assets/components/phpthumbof/cache/sonata.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 

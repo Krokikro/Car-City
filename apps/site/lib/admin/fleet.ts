@@ -19,6 +19,8 @@ export async function savePatch(slug: string, data: FleetPatch, by: string) {
   if ((data.badge ?? "") !== (base.badge ?? "")) diff.badge = data.badge ?? "";
   if ((data.old ?? 0) !== (base.old ?? 0)) diff.old = data.old ?? 0;
   if ((data.off ?? 0) !== (base.off ?? 0)) diff.off = data.off ?? 0;
+  if ((data.buyPrice ?? 0) !== (base.buyPrice ?? 0)) diff.buyPrice = data.buyPrice ?? 0;
+  if ((data.buyOld ?? 0) !== (base.buyOld ?? 0)) diff.buyOld = data.buyOld ?? 0;
   if ((data.featured ?? 0) !== (base.featured ?? 0)) diff.featured = data.featured ?? 0;
   if (data.hidden) diff.hidden = true;
   if (!Object.keys(diff).length) {

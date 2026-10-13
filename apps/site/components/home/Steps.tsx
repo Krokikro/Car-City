@@ -72,13 +72,26 @@ const BUY_TEXT: Record<string, { title: string; extra: [string, string] }> = {
   uz: { title: "Sotib olish bilan avtomobilni 5 qadamda qanday olish mumkin?", extra: ["Avtomobilni tanlaysiz", "Birinchi to‘lovni qilasiz"] },
 };
 
-function Flag() {
+const METER: Record<string, { free: string; busy: string }> = {
+  ru: { free: "Свободно", busy: "В пути" },
+  en: { free: "Free", busy: "On trip" },
+  ky: { free: "Бош", busy: "Жолдо" },
+  kk: { free: "Бос", busy: "Жолда" },
+  uz: { free: "Bo‘sh", busy: "Yo‘lda" },
+};
+
+/** Таксометр вместо последней таблички: на нём «Свободно», когда подъезжает машина, загорается «В пути» и бежит счётчик */
+function Meter({ lang }: { lang: string }) {
+  const m = METER[lang] ?? METER.ru;
   return (
-    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-      <path d="M5 21V3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <path d="M5 4h14l-3 4.5 3 4.5H5z" fill="currentColor" opacity=".25" />
-      <path d="M5 4h4.7v3H5zM14.4 4H19l-1.3 2-.4.9h-2.9zM9.7 7h4.7v3H9.7zM5 10h4.7v3H5zM14.4 10h2.9l1.7 3h-4.6z" fill="currentColor" />
-    </svg>
+    <span className="mt" aria-hidden="true">
+      <span className="mt-top"><i className="mt-lamp" /><b>TAXI</b></span>
+      <span className="mt-screen">
+        <span className="mt-state"><span className="mt-free">{m.free}</span><span className="mt-busy">{m.busy}</span></span>
+        <span className="mt-digits"><span className="mt-num" /><small>₽</small></span>
+      </span>
+      <span className="mt-keys"><i /><i /><i /></span>
+    </span>
   );
 }
 
@@ -105,7 +118,7 @@ export function Requirements({ req }: { req: HomeText["requirements"] }) {
 
 // «Как получить авто за 3 шага»: настоящая машина (вид сверху) едет по извилистой дороге от таблички к табличке.
 // Каждый шаг — большая шашка такси с надписью; загорается, когда к ней подъезжает машина. Четвёртая — «в путь».
-export function Steps({ steps, variant = "rent" }: { steps: HomeText["steps"]; variant?: "rent" | "buy" }) {
+export function Steps({ steps, variant = "rent", vehicle = "taxi" }: { steps: HomeText["steps"]; variant?: "rent" | "buy"; vehicle?: "taxi" | "truck" }) {
   const root = useRef<HTMLElement>(null);
   const { lang } = splitLang(usePathname() || "/");
   const buy = variant === "buy";
@@ -185,7 +198,7 @@ export function Steps({ steps, variant = "rent" }: { steps: HomeText["steps"]; v
       </svg>
       <span className="road-car">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={asset("/steps/taxi-top.webp")} alt="" width={520} height={236} loading="lazy" decoding="async" />
+        <img src={asset(vehicle === "truck" ? "/steps/truck-top.webp" : "/steps/taxi-top.webp")} alt="" width={520} height={236} loading="lazy" decoding="async" />
       </span>
     </div>
   );
@@ -205,12 +218,21 @@ export function Steps({ steps, variant = "rent" }: { steps: HomeText["steps"]; v
                 return (
                   <li key={s} className={`stp${above ? " stp-up" : " stp-down"}${i === items.length - 1 ? " stp-finish" : ""}`}
                     style={{ ["--x" as string]: `${(x / roads.wide.w) * 100}%`, ["--y" as string]: `${((y + (above ? -36 : 36)) / roads.wide.h) * 100}%` }}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img className="stp-sign" src={asset("/steps/roof-sign.webp")} alt="" width={900} height={368} loading="lazy" decoding="async" />
-                    <span className="stp-panel">
-                      <span className="stp-n">{i === items.length - 1 ? <Flag /> : i + 1}</span>
-                      <span className="stp-t">{s}</span>
-                    </span>
+                    {i === items.length - 1 ? (
+                      <>
+                        <Meter lang={lang} />
+                        <span className="stp-cap">{s}</span>
+                      </>
+                    ) : (
+                      <>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img className="stp-sign" src={asset("/steps/roof-sign.webp")} alt="" width={900} height={368} loading="lazy" decoding="async" />
+                        <span className="stp-panel">
+                          <span className="stp-n">{i + 1}</span>
+                          <span className="stp-t">{s}</span>
+                        </span>
+                      </>
+                    )}
                   </li>
                 );
               })}

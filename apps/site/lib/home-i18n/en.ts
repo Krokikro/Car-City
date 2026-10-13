@@ -29,6 +29,8 @@ export const en: HomeText = {
     auto: "Automatic",
     from: "from",
     perDay: "/day",
+    priceRent: "Rent",
+    priceBuy: "Buy",
     rent: "Rent",
     buy: "Rent-to-own",
     hint: "Hover over a car to turn on the headlights",

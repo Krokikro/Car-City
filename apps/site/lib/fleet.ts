@@ -14,6 +14,10 @@ export interface FleetCar {
   /** файл в car-city.pro/assets/components/phpthumbof/cache/ */
   img: string;
   badge?: string;
+  /** цена выкупа за сутки (график на 3 года): «от … ₽» на странице выкупа модели */
+  buyPrice?: number;
+  /** старая цена выкупа за сутки (зачёркнутая) */
+  buyOld?: number;
   /** старая цена за сутки (зачёркнутая рядом с ценой «от») */
   old?: number;
   /** скидка, %: ярлык в каталоге. Если задана старая цена — «−10%», иначе «до −22%» (скидка на отдельные графики) */
@@ -35,7 +39,7 @@ export const fleet: FleetCar[] = [
   {"slug": "haval-f7", "name": "Haval F7", "cls": "komfort-plus", "price": 2600, "engine": "1,6 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort-plyus/haval-f7", "buy": "/vykup/komfort-plyus/haval-f7", "img": "havalf7.d8b2e6a8fec082c2f3f75da8a3eeb859.webP"},
   {"slug": "chery-tiggo-7-pro-max", "name": "Chery Tiggo 7 PRO Max", "cls": "komfort-plus", "price": 2600, "engine": "1,5 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort-plyus/chery-tiggo-7-pro-max", "buy": "/vykup/komfort-plyus/chery-tiggo-7-pro-max", "img": "7-pro-max.d8b2e6a8fec082c2f3f75da8a3eeb859.webP"},
   {"slug": "hyundai-sonata", "name": "Hyundai Sonata", "cls": "komfort-plus", "price": 2800, "engine": "1,6-3,3 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort-plyus/hyundai-sonata", "buy": "/vykup/komfort-plyus/hyundai-sonata", "img": "sonata.d8b2e6a8fec082c2f3f75da8a3eeb859.webP"},
-  {"slug": "kia-k5", "name": "Kia K5", "cls": "komfort-plus", "price": 2800, "engine": "2 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort-plyus/kia-k5", "buy": "/vykup/komfort-plyus/kia-k5", "img": "kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP"},
+  {"slug": "kia-k5", "name": "Kia K5", "cls": "komfort", "price": 2800, "engine": "2 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort/kia-k5", "buy": "/vykup/komfort/kia-k5", "img": "kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP"},
   {"slug": "geely-atlas-pro", "name": "Geely Atlas PRO", "cls": "komfort-plus", "price": 2600, "engine": "1,5 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort-plyus/geely-atlas-pro", "buy": "/vykup/komfort-plyus/geely-atlas-pro", "img": "atlas-sajt.d8b2e6a8fec082c2f3f75da8a3eeb859.webP"},
   {"slug": "chery-tiggo-7-pro", "name": "Chery Tiggo 7 PRO", "cls": "komfort-plus", "price": 2600, "engine": "1,5 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/komfort-plyus/chery-tiggo-7-pro", "buy": "/vykup/komfort-plyus/chery-tiggo-7-pro", "img": "chery-tiggo-7-pro-sajt-%281%29.d8b2e6a8fec082c2f3f75da8a3eeb859.webP"},
   {"slug": "volkswagen-polo-1.6", "name": "Volkswagen Polo", "cls": "ekonom", "price": 1900, "engine": "1,6 л", "gearbox": "Автомат", "rent": "/klassyi-avtomobilej/ekonom/volkswagen-polo-1.6", "buy": "/vykup/ekonom/volkswagen-polo-1.6", "img": "volkswagen-polo-1.6-min-1-.b595af2fc264eb695187af35ed92f08a.webP", "old": 2100, "off": 10},
@@ -66,11 +70,20 @@ export const fleetClasses: { id: CarClass; name: string }[] = [
 export const POPULAR = [
   "volkswagen-polo-1.6", "kia-rio-1.6",
   "moskvich-3", "chery-tiggo-4-pro",
-  "kia-k5", "haval-f7",
+  "haval-f7", "hyundai-sonata",
   "hongqi-h5", "voyah-dream",
   "sollers-atlant-19-td", "lada-largus",
   "lada-granta",
 ];
+
+// Цены выкупа в сутки — из шапок страниц /vykup/... старого сайта (минимальный платёж по графику на 3 года)
+const BUY: Record<string, number> = {"moskvich-3": 2000, "belgee-x50": 2813, "geely-emgrand": 2290, "chery-tiggo-4-pro": 1848, "omoda-s-5": 2342, "chery-tiggo-4": 2022, "exeed-lx-2023": 2836, "jac-j7": 2022, "haval-f7": 2836, "chery-tiggo-7-pro-max": 3315, "hyundai-sonata": 3200, "kia-k5": 3420, "geely-atlas-pro": 2900, "chery-tiggo-7-pro": 2511, "volkswagen-polo-1.6": 2150, "kia-rio-1.4": 2089, "kia-rio-1.6": 2089, "skoda-rapid-1.6": 2089, "hongqi-h5": 5260, "voyah-dream": 9041, "gac-m8": 7635, "sollers-atlant-19-td": 2813, "sollers-atlant-l3h2-2-7d": 4420, "sollers-argo": 4274, "lada-largus": 2491, "sollers-atlant-sf4-l4": 6329, "lada-granta": 1808};
+// У машин со скидкой на аренду старая цена выкупа считается с тем же процентом, округление до 10 ₽
+fleet.forEach((c) => {
+  const b = BUY[c.slug];
+  if (b) c.buyPrice = b;
+  if (b && c.old && c.off) c.buyOld = Math.round(b / (1 - c.off / 100) / 10) * 10;
+});
 
 // Начальный порядок «популярных» на главной; в админке место на главной задаётся у каждой машины
 POPULAR.forEach((slug, i) => { const c = fleet.find((f) => f.slug === slug); if (c) c.featured = i + 1; });

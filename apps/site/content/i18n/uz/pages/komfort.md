@@ -56,6 +56,14 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 [Ijaraga olish](https://car-city.pro/klassyi-avtomobilej/komfort/chery-tiggo-4)
 
+![avtomobil rasmi](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
+
+## Kia K5
+
+2800 ₽/kundan
+
+[Ijaraga olish](https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5)
+
 CarCityʼda taksida ishlash uchun koʻrkam, qulay Komfort sinfidagi avtomobillarni ijaraga oling. Yoqimli ish uchun haydash tajribangiz va avtomobilning texnik xususiyatlaridan foydalaning. Avtomobilning mukammal texnik holati, moslashuvchan ijara formati, shuningdek CarCityʼdan doimiy texnik yordamni kafolatlaymiz!
 
 ## Komfort sinfidagi avtomobil ijarasi narxi
@@ -69,6 +77,7 @@ Komfort sinfidagi avtomobil ijarasi narxlari siz tanlagan toʻlov formatiga bog�
 | Chery Tiggo 4 PRO | 2 000 ₽     | 2 340 ₽     | 2 800 ₽     |
 | Geely Emgrand     | 2 000 ₽     | 2 340 ₽     | 2 800 ₽     |
 | OMODA S 5         | 2 000 ₽     | 2 340 ₽     | 2 800 ₽     |
+| Kia K5                | 2 800 ₽     | 4 100 ₽     | 4 900 ₽     |
 
 ## Taksoparkimizda daromadingizni hisoblab koʻring
 

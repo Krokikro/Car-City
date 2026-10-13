@@ -1,12 +1,12 @@
 ---
-url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/kia-k5
+url: https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5
 title: "Rent a Kia K5 for taxi work in Moscow | Car City"
 h1: "Rent a Kia K5 for taxi"
-class: komfort-plyus
+class: komfort
 mode: arenda
 ---
 
-BREADCRUMBS: Home > Comfort+ > Kia K5
+BREADCRUMBS: Home > Comfort > Kia K5
 
 # Rent a Kia K5 for taxi
 

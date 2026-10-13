@@ -17,7 +17,7 @@ export function Footer({ lang = "ru" }: { lang?: Lang }) {
       <div className="wrap footer-top">
         <div className="footer-brand">
           <Logo size={56} />
-          <p className="muted">{f.group}. {company.legalName}</p>
+          <p className="muted">{f.group}.<br />{company.legalName}</p>
           <div className="footer-phones">
             <a href={`tel:${company.phones[0].replace(/[^\d+]/g, "")}`} className="mono-num">{company.phones[0]}</a>
             <a href={`mailto:${company.email}`}>{company.email}</a>

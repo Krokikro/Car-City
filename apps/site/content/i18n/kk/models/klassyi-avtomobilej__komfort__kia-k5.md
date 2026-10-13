@@ -1,12 +1,12 @@
 ---
-url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/kia-k5
+url: https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5
 title: "Мәскеуде таксиде жұмыс істеу үшін Kia K5 жалға алу | Car City"
 h1: "Таксиге Kia K5 жалға алу"
-class: komfort-plyus
+class: komfort
 mode: arenda
 ---
 
-BREADCRUMBS: Басты бет > Комфорт плюс > Kia K5
+BREADCRUMBS: Басты бет > Комфорт > Kia K5
 
 # Таксиге Kia K5 жалға алу
 

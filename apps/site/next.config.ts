@@ -25,6 +25,11 @@ const config: NextConfig = {
     ? { output: "export", trailingSlash: true, images: { unoptimized: true } }
     : {
         images: { formats: ["image/avif", "image/webp"] },
+        async redirects() {
+          // Kia K5 перешла из «Комфорт+» в «Комфорт»: старые адреса ведут на новые
+          const k5 = [["klassyi-avtomobilej", "komfort-plyus"], ["vykup", "komfort-plyus"]];
+          return ["", "/en", "/ky", "/kk", "/uz"].flatMap((l) => k5.map(([a, b]) => ({ source: `${l}/${a}/${b}/kia-k5`, destination: `${l}/${a}/komfort/kia-k5`, permanent: true })));
+        },
         async headers() {
           // картинки и видео без хэша в имени: неделю из кэша, ещё месяц — фоновая проверка
           const media = [{ key: "Cache-Control", value: "public, max-age=604800, stale-while-revalidate=2592000" }];

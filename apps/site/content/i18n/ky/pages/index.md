@@ -175,7 +175,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный 
 
 2800  ₽/суткадан
 
-[Ижарага алуу](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/kia-k5) [Сатып алуу](https://car-city.pro/vykup/komfort-plyus/kia-k5)
+[Ижарага алуу](https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5) [Сатып алуу](https://car-city.pro/vykup/komfort/kia-k5)
 
 ![унаанын сүрөтү](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 

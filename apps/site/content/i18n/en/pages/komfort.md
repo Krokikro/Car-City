@@ -56,6 +56,14 @@ from 2000 ₽/day
 
 [Rent](https://car-city.pro/klassyi-avtomobilej/komfort/chery-tiggo-4)
 
+![car Image](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
+
+## Kia K5
+
+from 2800 ₽/day
+
+[Rent](https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5)
+
 Rent presentable, comfortable Comfort class cars for taxi work at CarCity. Use your driving experience and the car's features to enjoy your work. We guarantee perfect technical condition, a flexible rental format and ongoing tech support from CarCity!
 
 ## Comfort class car rental prices
@@ -69,6 +77,7 @@ Comfort class rental prices depend on the payment format you choose:
 | Chery Tiggo 4 PRO | 2 000 ₽      | 2 340 ₽      | 2 800 ₽      |
 | Geely Emgrand     | 2 000 ₽      | 2 340 ₽      | 2 800 ₽      |
 | OMODA S 5         | 2 000 ₽      | 2 340 ₽      | 2 800 ₽      |
+| Kia K5                | 2 800 ₽      | 4 100 ₽      | 4 900 ₽      |
 
 ## Calculate your earnings in our taxi fleet
 

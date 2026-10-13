@@ -30,7 +30,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный"
 
 2800 ₽/kundan
 
-[Ijaraga olish](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/kia-k5)
+[Ijaraga olish](https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5)
 
 ## Moslashuvchan shartlar va har bosqichda yordam
 

@@ -44,6 +44,8 @@ export default async function Catalog({ searchParams }: { searchParams: Promise<
                   <label>Коробка<input name="gearbox" defaultValue={v.gearbox ?? ""} /></label>
                   <label>Плашка<input name="badge" defaultValue={v.badge ?? ""} placeholder="Например, Супер-скидка" /></label>
                   <label>Старая цена в сутки, ₽<input name="old" type="number" min={0} max={100000} step={1} defaultValue={v.old ?? ""} placeholder="Зачёркнутая цена" /></label>
+                  <label>Цена выкупа в сутки, ₽<input name="buyPrice" type="number" min={0} max={50000} step={1} defaultValue={v.buyPrice ?? ""} placeholder="От какой суммы выкуп" /></label>
+                  <label>Старая цена выкупа, ₽<input name="buyOld" type="number" min={0} max={100000} step={1} defaultValue={v.buyOld ?? ""} placeholder="Зачёркнутая цена" /></label>
                   <label>Скидка, %<input name="off" type="number" min={0} max={90} step={1} defaultValue={v.off ?? ""} placeholder="Считается по старой цене" /></label>
                   <input type="hidden" name="featured" value={String(v.featured ?? 0)} />
                 </div>

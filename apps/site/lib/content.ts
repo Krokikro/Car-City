@@ -72,7 +72,7 @@ export const models: Model[] = [
   { slug: "jac-j7", name: "JAC J7", cls: "komfort-plus", engine: "1.5 АКПП", rentFrom: 2600, buyoutFrom: 2022, src: "jac-j7-sajt.d8b2e6a8fec082c2f3f75da8a3eeb859.webP" },
   { slug: "chery-tiggo-7-pro-max", name: "Chery Tiggo 7 Pro Max", cls: "komfort-plus", engine: "1.5 АКПП", rentFrom: 2600, buyoutFrom: 3315, src: "7-pro-max.d8b2e6a8fec082c2f3f75da8a3eeb859.webP" },
   { slug: "hyundai-sonata", name: "Hyundai Sonata", cls: "komfort-plus", engine: "АКПП", rentFrom: 2800, buyoutFrom: 3200, src: "sonata.d8b2e6a8fec082c2f3f75da8a3eeb859.webP" },
-  { slug: "kia-k5", name: "Kia K5", cls: "komfort-plus", engine: "2.0 АКПП", rentFrom: 2800, buyoutFrom: 3420, src: "kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP" },
+  { slug: "kia-k5", name: "Kia K5", cls: "komfort", engine: "2.0 АКПП", rentFrom: 2800, buyoutFrom: 3420, src: "kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP" },
   { slug: "hongqi-h5", name: "Hongqi H5", cls: "biznes", engine: "АКПП", rentFrom: 5260, buyoutFrom: 5260, src: "ChatGPT-Image-20-avg.-2026-g.-12-20-40.98aa3db669bf25f45cb463d62fb8c53c.webP" },
   { slug: "gac-m8", name: "GAC M8", cls: "biznes", engine: "АКПП", rentFrom: 7635, buyoutFrom: 7635, src: "ChatGPT-Image-19-avg.-2026-g.-16-43-56.98aa3db669bf25f45cb463d62fb8c53c.webP" },
   { slug: "voyah-dream", name: "Voyah Dream", cls: "biznes", engine: "АКПП", rentFrom: 9041, buyoutFrom: 9041, src: "ChatGPT-Image-19-avg.-2026-g.-16-41-33.98aa3db669bf25f45cb463d62fb8c53c.webP" },
@@ -121,7 +121,12 @@ export const perks = [
 export const incomeAssumptions = {
   revenuePerHour: { ekonom: 900, komfort: 1100, "komfort-plus": 1300, biznes: 1900, gruzovoy: 1400, dostavka: 950 } as Record<CarClass, number>,
   parkCommission: 0.04,
-  fuelPerHour: 220,
+  /** Топливо: в среднем за 12-часовую смену водитель проезжает 350 км, тратит около 35 л бензина по 70 ₽ за литр */
+  shiftHours: 12,
+  shiftKm: 350,
+  shiftLiters: 35,
+  fuelPrice: 70,
+  get fuelPerHour() { return (this.shiftLiters * this.fuelPrice) / this.shiftHours; },
 };
 
 export const requirements = [

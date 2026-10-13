@@ -30,7 +30,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный"
 
 2800 ₽/тәулік бастап
 
-[Жалға алу](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/kia-k5)
+[Жалға алу](https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5)
 
 ## Икемді шарттар және бүкіл жол бойы қолдау
 

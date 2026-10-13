@@ -14,7 +14,7 @@ function cleanExtra(v: unknown): Record<string, string> {
   if (!v || typeof v !== "object") return out;
   for (const [k, val] of Object.entries(v as Record<string, unknown>).slice(0, 12)) {
     if (!KEY_RE.test(k)) continue;
-    const s = typeof val === "number" || typeof val === "boolean" ? String(val) : str(val);
+    const s = typeof val === "number" || typeof val === "boolean" ? String(val) : str(val, k === "message" ? 600 : 200);
     if (s) out[k] = s;
   }
   return out;

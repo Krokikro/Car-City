@@ -58,6 +58,14 @@ from 2000₽/day
 
 [Buy out](https://car-city.pro/vykup/komfort/moskvich-3)
 
+![car Image](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
+
+## Kia K5
+
+from 3420₽/day
+
+[Buy out](https://car-city.pro/vykup/komfort/kia-k5)
+
 ### They trust us:
 
 4000+

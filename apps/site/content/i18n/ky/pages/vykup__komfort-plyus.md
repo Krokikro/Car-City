@@ -58,13 +58,6 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 [Сатып алуу](https://car-city.pro/vykup/komfort-plyus/chery-tiggo-7-pro-max)
 
-![унаанын сүрөтү](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
-
-## Kia K5
-
-3420₽/суткадан
-
-[Сатып алуу](https://car-city.pro/vykup/komfort-plyus/kia-k5)
 
 ![унаанын сүрөтү](https://car-city.pro/assets/components/phpthumbof/cache/sonata.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 

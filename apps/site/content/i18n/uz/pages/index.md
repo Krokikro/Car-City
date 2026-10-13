@@ -175,7 +175,7 @@ Uzatmalar qutisi: Avtomat
 
 2800 ₽/kundan
 
-[Ijaraga olish](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/kia-k5) [Sotib olish](https://car-city.pro/vykup/komfort-plyus/kia-k5)
+[Ijaraga olish](https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5) [Sotib olish](https://car-city.pro/vykup/komfort/kia-k5)
 
 ![avtomobil rasmi](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 

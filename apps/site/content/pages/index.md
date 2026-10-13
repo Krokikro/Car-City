@@ -175,7 +175,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный 
 
 от 2800 ₽/сутки
 
-[Арендовать](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/kia-k5) [Выкупить](https://car-city.pro/vykup/komfort-plyus/kia-k5)
+[Арендовать](https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5) [Выкупить](https://car-city.pro/vykup/komfort/kia-k5)
 
 ![car Image](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 

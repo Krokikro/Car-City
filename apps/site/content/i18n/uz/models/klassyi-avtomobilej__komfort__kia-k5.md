@@ -1,12 +1,12 @@
 ---
-url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/kia-k5
+url: https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5
 title: "Moskvada taksida ishlash uchun Kia K5 ijarasi | Car City"
 h1: "Taksi uchun Kia K5 ijarasi"
-class: komfort-plyus
+class: komfort
 mode: arenda
 ---
 
-BREADCRUMBS: Bosh sahifa > Komfort+ > Kia K5
+BREADCRUMBS: Bosh sahifa > Komfort > Kia K5
 
 # Taksi uchun Kia K5 ijarasi
 

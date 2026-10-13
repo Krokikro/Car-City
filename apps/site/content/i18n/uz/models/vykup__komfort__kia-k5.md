@@ -1,12 +1,12 @@
 ---
-url: https://car-city.pro/vykup/komfort-plyus/kia-k5
+url: https://car-city.pro/vykup/komfort/kia-k5
 title: "Moskvada taksida ishlash uchun Kia K5-ni sotib olish | Car City"
 h1: "Taksi uchun Kia K5-ni sotib olish"
-class: komfort-plyus
+class: komfort
 mode: vykup
 ---
 
-BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Sotib olish uchun Komfort+ avtomobillar > Kia K5
+BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Sotib olish uchun Komfort avtomobillar > Kia K5
 
 # Taksi uchun Kia K5-ni sotib olish
 
@@ -24,9 +24,9 @@ kuniga 3420₽ dan
 
 ## Taksi uchun Kia K5-ni sotib olish huquqi bilan ijaraga olish
 
-Kia K5 Car Cityʼda sotib olish dasturi boʻyicha mavjud — taksida Komfort+ klassidagi avtomobilda ishlang va qisqa muddatda uning egasiga aylaning. Barcha transport vositalari muntazam texnik xizmatdan oʻtadi, Car City jamoasi esa yordam uchun doim aloqada.
+Kia K5 Car Cityʼda sotib olish dasturi boʻyicha mavjud — taksida Komfort klassidagi avtomobilda ishlang va qisqa muddatda uning egasiga aylaning. Barcha transport vositalari muntazam texnik xizmatdan oʻtadi, Car City jamoasi esa yordam uchun doim aloqada.
 
-## Komfort+ klassidagi Kia K5 avtomobili narxlari
+## Komfort klassidagi Kia K5 avtomobili narxlari
 
 Kia K5 avtomobilini sotib olish narxi siz tanlagan toʻlov formatiga bogʻliq:
 

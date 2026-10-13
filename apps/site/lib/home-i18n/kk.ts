@@ -29,6 +29,8 @@ export const kk: HomeText = {
     auto: "Автомат",
     from: "",
     perDay: "/тәулік",
+    priceRent: "Жалға алу",
+    priceBuy: "Сатып алу",
     rent: "Жалға алу",
     buy: "Сатып алу",
     hint: "Көлікке курсорды апарыңыз — шамдарды қосамыз",

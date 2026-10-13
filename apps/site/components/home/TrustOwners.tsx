@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { asset, type Lang } from "@/lib/i18n";
 
 type Owner = { name: string; car: string; photo?: number; story?: string };
@@ -84,7 +85,7 @@ export function TrustOwners({ owners, lang, label }: { owners: Owner[]; lang: La
           ))}
         </div>
       </div>
-      {cur && (
+      {cur && typeof document !== "undefined" && createPortal(
         <div className="lead-modal" role="presentation" onMouseDown={(e) => { if (e.target === e.currentTarget) setCur(null); }}>
           <div className="lead-modal-box owner-modal" role="dialog" aria-modal="true" aria-labelledby="owner-title">
             <button type="button" className="lead-modal-x" aria-label={t.close} onClick={() => setCur(null)}>
@@ -99,7 +100,8 @@ export function TrustOwners({ owners, lang, label }: { owners: Owner[]; lang: La
             <p className="muted lead-modal-text">{cur.story || t.story(cur.name, cur.car)}</p>
             <button type="button" className="btn btn-primary btn-lg" data-lead="buyout" onClick={() => setCur(null)}>{t.cta}</button>
           </div>
-        </div>
+        </div>,
+        document.body,
       )}
     </>
   );

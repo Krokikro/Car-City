@@ -30,7 +30,7 @@ from 1900 ₽/day
 
 from 2800 ₽/day
 
-[Rent](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/kia-k5)
+[Rent](https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5)
 
 ## Flexible terms and support all the way
 

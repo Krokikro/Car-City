@@ -29,6 +29,8 @@ export const uz: HomeText = {
     auto: "Avtomat",
     from: "",
     perDay: "/sutka",
+    priceRent: "Ijara",
+    priceBuy: "Sotib olish",
     rent: "Ijaraga olish",
     buy: "Sotib olish",
     hint: "Kursorni mashinaga olib boring — faralarni yoqamiz",

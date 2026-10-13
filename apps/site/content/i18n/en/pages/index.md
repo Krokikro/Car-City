@@ -175,7 +175,7 @@ Gearbox: Automatic
 
 from 2800 ₽/day
 
-[Rent](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/kia-k5) [Buy out](https://car-city.pro/vykup/komfort-plyus/kia-k5)
+[Rent](https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5) [Buy out](https://car-city.pro/vykup/komfort/kia-k5)
 
 ![car Image](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 

@@ -1,12 +1,12 @@
 ---
-url: https://car-city.pro/vykup/komfort-plyus/kia-k5
+url: https://car-city.pro/vykup/komfort/kia-k5
 title: "Kia K5 rent-to-own for taxi work in Moscow | Car City"
 h1: "Kia K5 rent-to-own for taxi"
-class: komfort-plyus
+class: komfort
 mode: vykup
 ---
 
-BREADCRUMBS: Home > Rent-to-own cars > Comfort+ rent-to-own cars > Kia K5
+BREADCRUMBS: Home > Rent-to-own cars > Comfort rent-to-own cars > Kia K5
 
 # Kia K5 rent-to-own for taxi
 
@@ -24,9 +24,9 @@ from 3420₽ per day
 
 ## Kia K5 rent-to-own for taxi
 
-The Kia K5 is available at Car City on our rent-to-own programme — work in taxi on a Comfort+ class car and become its owner in a short time. All vehicles get regular servicing, and the Car City team is always in touch to help.
+The Kia K5 is available at Car City on our rent-to-own programme — work in taxi on a Comfort class car and become its owner in a short time. All vehicles get regular servicing, and the Car City team is always in touch to help.
 
-## Rates for the Comfort+ class Kia K5
+## Rates for the Comfort class Kia K5
 
 Kia K5 rent-to-own prices depend on the payment format you choose:
 

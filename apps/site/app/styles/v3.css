@@ -74,6 +74,15 @@ html:not([data-gfx="basic"]) .hv-copy [data-hv-fade]:nth-of-type(3) { animation-
 .ft-price { display: flex; align-items: baseline; gap: 6px; margin-top: 2px; white-space: nowrap; }
 .ft-price b { font: 400 clamp(24px, 2vw, 28px)/1 var(--font-display); color: var(--cc-signal); letter-spacing: -.02em; }
 .ft-from, .ft-per { color: var(--text-muted); font-size: 14px; }
+.ft-prices { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 10px 14px; margin-top: 2px; }
+.ft-pr { display: grid; gap: 3px; margin: 0; min-width: 0; align-content: start; }
+.ft-prices:has(.ft-pr:nth-child(2)) .ft-pr + .ft-pr { padding-left: 14px; border-left: 1px solid rgba(255,255,255,.1); }
+.ft-pl { font: 500 11px/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--cc-cyan); }
+.ft-pv { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 6px; }
+.ft-main { display: inline-flex; align-items: baseline; gap: 5px; white-space: nowrap; }
+.ft-sub { display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap; }
+.ft-prices:has(.ft-pr + .ft-pr) .ft-sub { flex-basis: 100%; }
+.ft-pv b { font: 400 clamp(19px, 1.5vw, 23px)/1 var(--font-display); color: var(--cc-signal); letter-spacing: -.02em; white-space: nowrap; }
 .ft-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 2px; }
 .ft-actions .btn { justify-content: center; }
 .ft-actions .btn:only-child { grid-column: 1 / -1; }
@@ -150,6 +159,37 @@ html:not([data-gfx="basic"]) .hv-copy [data-hv-fade]:nth-of-type(3) { animation-
   .stp { align-self: center; }
   .stp-t { font-size: clamp(14px, 4vw, 17px); }
 }
+
+/* — Последний пункт дороги — таксометр, а не табличка — */
+@property --mt-n { syntax: "<integer>"; inherits: false; initial-value: 0; }
+.stp-finish::after { display: none; }
+.stp-finish .mt { position: relative; display: grid; gap: 7px; width: 100%; padding: 9px 10px 10px; border-radius: 14px; background: linear-gradient(180deg, #23262c, #0f1114); border: 1px solid rgba(255,255,255,.14); box-shadow: 0 18px 28px -10px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.08); transition: box-shadow .6s var(--ease-out), border-color .6s; }
+.stp-finish .mt-top { display: flex; align-items: center; justify-content: space-between; font: 600 10px/1 var(--font-mono); letter-spacing: .18em; color: rgba(255,255,255,.4); }
+.stp-finish .mt-top b { font-weight: 600; }
+.stp-finish .mt-lamp { width: 9px; height: 9px; border-radius: 50%; background: #2f6b3d; box-shadow: 0 0 0 2px rgba(0,0,0,.4); transition: background .4s, box-shadow .4s; }
+.stp-finish .mt-screen { position: relative; display: grid; gap: 4px; padding: 7px 9px 8px; border-radius: 8px; background: #06130a; border: 1px solid rgba(255,255,255,.06); box-shadow: inset 0 0 14px rgba(0,0,0,.8); overflow: hidden; }
+.stp-finish .mt-state { position: relative; height: 12px; font: 600 10px/12px var(--font-mono); letter-spacing: .12em; text-transform: uppercase; }
+.stp-finish .mt-free, .stp-finish .mt-busy { position: absolute; left: 0; top: 0; transition: opacity .3s; }
+.stp-finish .mt-free { color: #4be07a; }
+.stp-finish .mt-busy { color: var(--cc-signal); opacity: 0; }
+.stp-finish .mt-digits { display: flex; align-items: baseline; justify-content: flex-end; gap: 4px; color: #3a5d44; font: 600 clamp(22px, 2.3vw, 32px)/1 var(--font-mono); letter-spacing: .04em; transition: color .4s, text-shadow .4s; }
+.stp-finish .mt-digits small { font-size: .55em; opacity: .8; }
+.stp-finish .mt-num { counter-reset: mtn var(--mt-n); }
+.stp-finish .mt-num::before { content: counter(mtn); }
+.stp-finish .mt-keys { display: flex; justify-content: center; gap: 6px; }
+.stp-finish .mt-keys i { width: 22%; height: 6px; border-radius: 3px; background: rgba(255,255,255,.12); }
+.stp-cap { display: block; margin-top: 10px; text-align: center; color: rgba(255,255,255,.55); font: 600 clamp(14px, 1.15vw, 18px)/1.15 var(--font-text); letter-spacing: -.01em; text-wrap: balance; transition: color .5s; }
+.stp-finish.on .mt { border-color: rgba(255, 183, 0, .55); box-shadow: 0 0 26px rgba(255, 183, 0, .35), 0 18px 28px -10px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.1); }
+.stp-finish.on .mt-lamp { background: #ff4a3d; box-shadow: 0 0 10px #ff4a3d, 0 0 0 2px rgba(0,0,0,.4); }
+.stp-finish.on .mt-free { opacity: 0; }
+.stp-finish.on .mt-busy { opacity: 1; }
+.stp-finish.on .mt-digits { color: var(--cc-signal); text-shadow: 0 0 12px rgba(255, 183, 0, .6); }
+.stp-finish.on .mt-num { animation: mtCount 7s linear infinite; }
+.stp-finish.on .stp-cap { color: #fff; }
+@keyframes mtCount { 0% { --mt-n: 0; } 85%, 100% { --mt-n: 486; } }
+@media (prefers-reduced-motion: reduce) { .stp-finish.on .mt-num { animation: none; --mt-n: 486; } }
+@media (min-width: 900px) { .stp.stp-finish { width: 15%; } .stp-buy .stp.stp-finish { width: 14%; } }
+@media (max-width: 899px) { .stp.stp-finish { display: flex; align-items: center; gap: 14px; } .stp-finish .mt { width: 132px; flex: none; } .stp-cap { margin: 0; text-align: left; font-size: clamp(15px, 4.2vw, 18px); } }
 html[data-gfx="basic"] .stp { opacity: 1; }
 
 /* — Меньше переносов: заголовки чуть компактнее, длинные — шире колонкой — */
@@ -280,7 +320,10 @@ a.ct-line:hover { border-color: rgba(255, 183, 0, .45); }
   .ft-info h3 { font-size: 15.5px; }
   .ft-specs li { padding: 4px 7px 4px 6px; font-size: 12px; gap: 4px; border-radius: 8px; }
   .ft-specs svg { width: 13px; height: 13px; }
-  .ft-price b { font-size: 19px; }
+  .ft-prices { grid-template-columns: 1fr; gap: 8px; }
+  .ft-prices:has(.ft-pr:nth-child(2)) .ft-pr + .ft-pr { padding: 8px 0 0; border-left: 0; border-top: 1px solid rgba(255,255,255,.1); }
+  .ft-pv b { font-size: 19px; }
+  .ft-pl { font-size: 10px; }
   .ft-from, .ft-per { font-size: 12px; }
   .ft-actions { grid-template-columns: 1fr; gap: 6px; }
   .ft-actions .btn { min-height: 38px; padding-inline: 10px; font-size: 13px; }
@@ -575,7 +618,6 @@ button.owner:hover, button.owner:focus-visible { border-color: rgba(255,183,0,.5
   .ft .ft-sale { display: none; }
   .ft-sale-m { display: inline-flex; align-items: center; gap: 6px; justify-self: start; max-width: 100%; padding: 4px 9px 4px 5px; border-radius: 999px; background: linear-gradient(90deg, #ffd24d, var(--cc-signal)); color: #141414; font: 600 10px/1.1 var(--font-mono); letter-spacing: .04em; text-transform: uppercase; }
   .ft-sale-m i { display: grid; place-items: center; flex: none; width: 15px; height: 15px; border-radius: 50%; background: #141414; color: var(--cc-signal); font: 700 9px/1 var(--font-text); font-style: normal; }
-  .ft-price { flex-wrap: wrap; row-gap: 2px; white-space: normal; }
   .ft-old { font-size: 13px; }
   .car-card .ft-sale { top: 8px; padding: 5px 9px 5px 6px; font-size: 10px; gap: 5px; } .car-card .ft-sale i { width: 15px; height: 15px; font-size: 9px; }
 }
@@ -610,3 +652,20 @@ button.owner:hover, button.owner:focus-visible { border-color: rgba(255,183,0,.5
   .pg-hero-video .pg-hero-veil { background: linear-gradient(90deg, rgba(5,7,10,.78) 0%, rgba(5,7,10,.35) 38%, transparent 62%), linear-gradient(180deg, rgba(5,7,10,.65) 0%, transparent 24%, transparent 70%, var(--bg) 100%); }
   .pg-hero-video .pg-hero-in > * { max-width: min(46%, 620px); }
 }
+
+/* чат: поле для сообщений и мини-форма контактов */
+.chat-input { display: flex; gap: 8px; }
+.chat-input input { flex: 1; min-width: 0; height: 44px; padding: 0 16px; border-radius: var(--radius-pill); border: 1px solid var(--glass-line); background: rgba(255,255,255,.05); color: var(--text); font: inherit; font-size: 14.5px; }
+.chat-input input:focus { outline: 0; border-color: var(--cc-signal); }
+.chat-input button { flex: none; width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--cc-signal); color: #111; display: grid; place-items: center; cursor: pointer; transition: opacity .2s; }
+.chat-input button:disabled { opacity: .35; cursor: default; }
+.chat-input button svg { width: 20px; height: 20px; }
+.chat-form { display: grid; gap: 8px; justify-self: stretch; padding: 12px; border-radius: 16px; background: var(--surface-2); }
+.chat-form input[type="text"], .chat-form input:not([type]), .chat-form input[type="tel"] { height: 42px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--glass-line); background: rgba(0,0,0,.25); color: var(--text); font: inherit; font-size: 15px; }
+.chat-form input:focus { outline: 0; border-color: var(--cc-signal); }
+.chat-agree { display: flex; gap: 8px; align-items: flex-start; font-size: 12px; line-height: 1.35; color: var(--text-muted); }
+.chat-agree input { margin-top: 2px; accent-color: var(--cc-signal); }
+.chat-err { margin: 0; font-size: 12.5px; color: #ff8a80; }
+.chat-form .btn { justify-content: center; }
+.chat-typing { opacity: .7; }
+.chat-body { max-height: min(40vh, 320px); }
