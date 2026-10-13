@@ -96,7 +96,7 @@ export function PageHero({ eyebrow, h1, crumbs, path, paras, btns, introHtml, ca
         <div className="pg-hero-bg" aria-hidden="true">
           {video ? (
             // атрибут muted должен быть в самом HTML: React на сервере его не выводит, и браузер не запускает видео до гидрации — отсюда «картинка вместо видео» первые секунды
-            <div style={{ display: "contents" }} dangerouslySetInnerHTML={{ __html: `<video class="pg-hero-vid" src="${asset(`/classes/${video}.mp4`)}?v=4" poster="${asset(`/classes/${video}.webp`)}?v=4" autoplay muted loop playsinline preload="auto"></video>` }} />
+            <div style={{ display: "contents" }} dangerouslySetInnerHTML={{ __html: `<video class="pg-hero-vid" src="${asset(`/classes/${video}.mp4`)}?v=5" poster="${asset(`/classes/${video}.webp`)}?v=5" autoplay muted loop playsinline preload="auto"></video>` }} />
           ) : (
             !cars.length && <GenImage kind="pages" id={pageKey(path)} className="pg-hero-photo" priority />
           )}
