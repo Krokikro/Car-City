@@ -4,19 +4,21 @@ import { useState } from "react";
 import { CarArt } from "../CarArt";
 import { carImages } from "@/lib/car-images";
 import { asset } from "@/lib/i18n";
+import { carInteriors } from "@/lib/car-interiors";
 
 // Сцена модели: подиум со световым кольцом. Главный кадр — фото парка из каталога,
-// следом три уличных фото той же машины: спереди, сзади и сбоку.
+// следом уличные фото той же машины: спереди, сзади, сбоку и салон через открытую водительскую дверь.
 const SHOTS = [
   { key: "front", label: "Спереди" },
   { key: "rear", label: "Сзади" },
   { key: "side", label: "Сбоку" },
+  { key: "interior", label: "Салон" },
 ] as const;
 
 export function ModelStage({ name, slug }: { name: string; slug: string }) {
   const own = !!carImages[slug];
   const [cur, setCur] = useState(-1); // -1 главное фото, 0..2 уличные
-  const pics = own ? SHOTS.map((s) => ({ ...s, big: asset(`/cars/${slug}-${s.key}-1000.webp`), thumb: asset(`/cars/${slug}-${s.key}-480.webp`) })) : [];
+  const pics = own ? SHOTS.filter((s) => s.key !== "interior" || carInteriors.has(slug)).map((s) => ({ ...s, big: asset(`/cars/${slug}-${s.key}-1000.webp`), thumb: asset(`/cars/${slug}-${s.key}-480.webp`) })) : [];
   return (
     <div className="mdl-stage" data-reveal>
       <div className="mdl-ring" aria-hidden="true"><i /><i /><i /></div>
