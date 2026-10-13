@@ -16,6 +16,7 @@ const ru = {
   footer: {
     rent: "Аренда", buy: "Выкуп", company: "Компания", offices: "Офисы", metro: "м.",
     privacy: "Политика конфиденциальности", sitemap: "Карта сайта", group: "Входит в группу Элит Кар",
+    club: "Закрытый клуб",
     rentIp: "Аренда такси для ИП", rto: "Аренда с правом выкупа", buyEkonom: "Выкуп эконом", buyKomfort: "Выкуп комфорт", buyKomfortPlus: "Выкуп комфорт+",
   },
   cls: { ekonom: "Эконом", komfort: "Комфорт", "komfort-plyus": "Комфорт+", komfortplus: "Комфорт+", biznes: "Бизнес", gruzovoy: "Грузовой", dostavka: "Доставка" } as Record<string, string>,
@@ -65,6 +66,7 @@ const en: Ui = {
   footer: {
     rent: "Rent", buy: "Rent-to-own", company: "Company", offices: "Offices", metro: "Metro",
     privacy: "Privacy policy", sitemap: "Sitemap", group: "Part of the Elit Car group",
+    club: "Closed club",
     rentIp: "Taxi rental for sole proprietors", rto: "Rent-to-own", buyEkonom: "Rent-to-own Economy", buyKomfort: "Rent-to-own Comfort", buyKomfortPlus: "Rent-to-own Comfort+",
   },
   cls: { ekonom: "Economy", komfort: "Comfort", "komfort-plyus": "Comfort+", komfortplus: "Comfort+", biznes: "Business", gruzovoy: "Cargo", dostavka: "Delivery" },
@@ -112,6 +114,7 @@ const ky: Ui = {
   footer: {
     rent: "Ижара", buy: "Сатып алуу", company: "Компания", offices: "Кеңселер", metro: "м.",
     privacy: "Купуялык саясаты", sitemap: "Сайттын картасы", group: "Элит Кар тобуна кирет",
+    club: "Жабык клуб",
     rentIp: "ЖИ үчүн такси ижарасы", rto: "Сатып алуу укугу менен ижара", buyEkonom: "Эконом сатып алуу", buyKomfort: "Комфорт сатып алуу", buyKomfortPlus: "Комфорт+ сатып алуу",
   },
   cls: { ekonom: "Эконом", komfort: "Комфорт", "komfort-plyus": "Комфорт+", komfortplus: "Комфорт+", biznes: "Бизнес", gruzovoy: "Жүк ташуучу", dostavka: "Жеткирүү" },
@@ -159,6 +162,7 @@ const kk: Ui = {
   footer: {
     rent: "Жалға алу", buy: "Сатып алу", company: "Компания", offices: "Кеңселер", metro: "м.",
     privacy: "Құпиялылық саясаты", sitemap: "Сайт картасы", group: "Элит Кар тобына кіреді",
+    club: "Жабық клуб",
     rentIp: "ЖК үшін такси жалға алу", rto: "Сатып алу құқығымен жалға алу", buyEkonom: "Эконом сатып алу", buyKomfort: "Комфорт сатып алу", buyKomfortPlus: "Комфорт+ сатып алу",
   },
   cls: { ekonom: "Эконом", komfort: "Комфорт", "komfort-plyus": "Комфорт+", komfortplus: "Комфорт+", biznes: "Бизнес", gruzovoy: "Жүк", dostavka: "Жеткізу" },
@@ -206,6 +210,7 @@ const uz: Ui = {
   footer: {
     rent: "Ijara", buy: "Sotib olish", company: "Kompaniya", offices: "Ofislar", metro: "m.",
     privacy: "Maxfiylik siyosati", sitemap: "Sayt xaritasi", group: "Elit Kar guruhiga kiradi",
+    club: "Yopiq klub",
     rentIp: "YaTT uchun taksi ijarasi", rto: "Sotib olish huquqi bilan ijara", buyEkonom: "Ekonom sotib olish", buyKomfort: "Komfort sotib olish", buyKomfortPlus: "Komfort+ sotib olish",
   },
   cls: { ekonom: "Ekonom", komfort: "Komfort", "komfort-plyus": "Komfort+", komfortplus: "Komfort+", biznes: "Biznes", gruzovoy: "Yuk", dostavka: "Yetkazib berish" },

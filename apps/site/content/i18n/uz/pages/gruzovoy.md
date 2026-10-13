@@ -40,7 +40,7 @@ Yuk avtomobili ijarasi — tijorat transportini sotib olmasdan yetkazib berish s
 
 2000 ₽/kundan
 
-<!-- у Lada Largus кнопки «Арендовать» нет -->
+[Sotib olish](https://car-city.pro/vykup/gruzovoy/lada-largus)
 
 ![avtomobil rasmi](https://car-city.pro/assets/components/phpthumbof/cache/ChatGPT-Image-12-avg.-2026-g.-12-35-04.2011a68be1cf41027f5dfe4808290820.webP)
 
@@ -50,17 +50,22 @@ Yuk avtomobili ijarasi — tijorat transportini sotib olmasdan yetkazib berish s
 
 [Ijaraga olish](https://car-city.pro/klassyi-avtomobilej/gruzovoy/Sollers-Atlant-SF4-L4)
 
-![](https://car-city.pro/assets/gallery/truck/people_truck.webp)
+## Yuk avtomobilini ijaraga olish narxlari
+
+Kunlik narx ijara muddatiga bogʻliq: avtomobilni qancha uzoq olsangiz, kun shuncha arzon.
+
+| Model | 1–2 kun | 3–7 kun | 8–15 kun | 16–29 kun | 30 kundan |
+| --- | --- | --- | --- | --- | --- |
+| Sollers Atlant 1.9 TD | 3 825 ₽ | 3 825 ₽ | 3 825 ₽ | 3 525 ₽ | 3 375 ₽ |
+| Sollers Atlant L3H2 2.7D | 4 650 ₽ | 4 125 ₽ | 3 975 ₽ | 3 900 ₽ | 3 600 ₽ |
+| Sollers Argo | 3 600 ₽ | 3 525 ₽ | 3 975 ₽ | 3 300 ₽ | 3 150 ₽ |
+| Sollers SF4 L4 | 6 500 ₽ | 6 100 ₽ | 5 900 ₽ | 5 700 ₽ | 5 500 ₽ |
 
 ## Hoziroq biz bilan pul ishlashni boshlang
 
 - Yuk tarifi yoki shaxsiy maqsadlar uchun mavjud avtomobillardan tanlab beramiz.
 - Yetkazib berish xizmatiga ulanishda yordam beramiz.
 - Avtomobilning mukammal texnik holatini, shuningdek jamoamizdan doimiy texnik yordamni kafolatlaymiz.
-
-![](https://car-city.pro/assets/gallery/truck/boxes_people_truck.webp)
-
-![](https://car-city.pro/assets/gallery/truck/boxes_truck.webp)
 
 ## Nega biz bilan ishlash foydali?
 
@@ -80,10 +85,6 @@ Yuk mashinasini ijaraga olish uchun saytda ariza qoldiring yoki menejerlarimiz b
 - Yuqori va barqaror talab. Yetkazib berish va yuk tashishga talab yil fasliga bogʻliq emas — odamlar va bizneslarga doim nimadir tashish kerak: mebel, texnika, qurilish materiallari, tovarlar. Bu doimiy buyurtmalar oqimi va haydovchi uchun minimal boʻsh turishni kafolatlaydi.
 - Mijozlar bilan minimal muloqot. Odamlar bilan doimiy muloqot muhim boʻlgan yoʻlovchi tashishdan farqli oʻlaroq, yuk tarifida asosiy eʼtibor logistika va aniqlikka qaratiladi. Bu «ortiqcha gapsiz» ishlashni va vazifaga eʼtibor qaratishni afzal koʻradiganlar uchun ideal variant.
 - Foydali toʻlov. Yuk avtomobili ijarasi yengil avtomobilnikidan qimmatroq boʻlishi mumkin boʻlsa-da, haydovchilar soatbay yoki kilometr boʻyicha toʻlanadigan yuqori haqli buyurtmalarga ega boʻladi. Ichki statistikaga koʻra, aynan yuk tarifi buyurtmalar hajmi kattaligi va xizmatlarga doimiy talab tufayli barqaror va yuqori daromad beradi.
-
-## Bizda turli tariflar mavjud
-
-[ekonom](https://car-city.pro/ekonom) [komfort](https://car-city.pro/komfort) [komfort+](https://car-city.pro/komfortplus)
 
 ## Savollar va javoblar
 

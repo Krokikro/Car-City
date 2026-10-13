@@ -16,12 +16,16 @@ import { HtmlLang } from "@/components/HtmlLang";
 import { FinalCta } from "@/components/home/FinalCta";
 import { Steps, Requirements } from "@/components/home/Steps";
 import { VykupBenefits, VykupConditions, savingsHtml } from "@/components/page/VykupParts";
+import { BenefitsView, FleetNotes, PriceTable } from "@/components/page/ClassParts";
+import { TariffCards } from "@/components/page/TariffCards";
+import { Reviews } from "@/components/home/Reviews";
+import { tariffsOf } from "@/lib/terms";
 import { homeText } from "@/lib/home-text";
 import { Calculator } from "@/components/home/Calculator";
 import { Trust } from "@/components/home/Trust";
 import { HomePage } from "@/components/home/HomePage";
 import { GiftCta, isGift } from "@/components/page/GiftCta";
-import { PageHero, CarCards, Section, Faq } from "@/components/page/PageParts";
+import { PageHero, CarCards, Section, Faq, type HeroStat } from "@/components/page/PageParts";
 import { ModelHero } from "@/components/page/ModelHero";
 import { modelPanels } from "@/lib/model-panels";
 import { ArticleView, NewsGrid } from "@/components/page/Articles";
@@ -90,21 +94,21 @@ const VIDEO_OF: [RegExp, string][] = [
   [/^\/ekonom/, "ekonom"], [/^\/kia-/, "ekonom"], [/^\/komfortplus/, "komfort-plus"], [/^\/komfort/, "komfort"], [/^\/chery-/, "komfort"],
   [/^\/gruzov/, "gruzovoy"], [/^\/arenda-taksi-ip/, "komfort-plus"],
 ];
-const STAT_T: Record<string, { models: string; from: string; day: string; fast: string; fastV: string; gift: string; giftV: string; rest: string; restV: string }> = {
-  ru: { models: "Моделей", from: "Цена", day: "₽/сутки", fast: "Выдача", fastV: "в день заявки", gift: "Первый день", giftV: "бесплатно", rest: "Отпуск", restV: "14 дней в год" },
-  en: { models: "Models", from: "Price", day: "₽/day", fast: "Pick-up", fastV: "same day", gift: "First day", giftV: "free", rest: "Vacation", restV: "14 days a year" },
+const STAT_T: Record<string, { models: string; from: string; pre: string; day: string; fast: string; fastV: string; fastU: string; gift: string; giftV: string; giftU: string; rest: string; restV: string; restU: string }> = {
+  ru: { models: "Моделей", from: "Цена", pre: "от", day: "₽ в сутки", fast: "Выдача", fastV: "В день", fastU: "заявки", gift: "Первый день", giftV: "0 ₽", giftU: "бесплатно", rest: "Отпуск", restV: "14 дней", restU: "в году" },
+  en: { models: "Models", from: "Price", pre: "from", day: "₽ / day", fast: "Pick-up", fastV: "Same day", fastU: "as you apply", gift: "First day", giftV: "Free", giftU: "on rent", rest: "Vacation", restV: "14 days", restU: "a year" },
 };
-function heroStats(doc: Doc, cars: { slug: string }[], lang: Lang) {
+function heroStats(doc: Doc, cars: { slug: string }[], lang: Lang): HeroStat[] {
   if (!cars.length) return [];
   const t = STAT_T[lang] ?? STAT_T.ru;
-  const prices = cars.map((c) => fleet.find((f) => f.slug === c.slug)?.price ?? 0).filter(Boolean);
-  const min = prices.length ? Math.min(...prices) : 0;
   const buy = doc.path.startsWith("/vykup");
+  const prices = cars.map((c) => { const f = fleet.find((x) => x.slug === c.slug); return (buy ? f?.buyPrice : f?.price) ?? 0; }).filter(Boolean);
+  const min = prices.length ? Math.min(...prices) : 0;
   return [
-    { k: t.models, v: String(cars.length) },
-    ...(min ? [{ k: t.from, v: `от ${min.toLocaleString("ru-RU")} ${t.day}` }] : []),
-    { k: t.fast, v: t.fastV },
-    buy ? { k: t.rest, v: t.restV } : { k: t.gift, v: t.giftV },
+    { k: t.models, v: String(cars.length), i: "car" },
+    ...(min ? [{ k: t.from, pre: t.pre, v: min.toLocaleString("ru-RU"), u: t.day, i: "tag" as const }] : []),
+    { k: t.fast, v: t.fastV, u: t.fastU, i: "bolt" },
+    buy ? { k: t.rest, v: t.restV, u: t.restU, i: "sun" } : { k: t.gift, v: t.giftV, u: t.giftU, i: "gift" },
   ];
 }
 
@@ -148,6 +152,10 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
   const vykup = doc.path === "/vykup";
   let si = 0;
   const buyPage = doc.path.startsWith("/vykup");
+  const ipPage = doc.path === "/arenda-taksi-ip";
+  const truckPage = /^\/gruzov/.test(doc.path);
+  const classPage = !!classVideo && !isModel && !vykup;
+  let reqDone = false;
   const steps = <Steps steps={homeText(lang).steps} variant={buyPage ? "buy" : "rent"} vehicle={/^\/gruzov/.test(doc.path) ? "truck" : "taxi"} />;
   return (
     <>
@@ -165,11 +173,18 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
         {doc.path === "/novosti" && <NewsGrid src={doc.body} list={articles(lang, ov)} lang={lang} />}
         {doc.path === "/reviews" && <ReviewsWall items={await siteReviews(parseReviews(doc.body))} lang={lang} />}
         {contact && <ContactView lang={lang} />}
-        {about && <AboutView p={p} />}
+        {about && <AboutView p={p} lang={lang} />}
         {terms && <TermsView terms={terms} lang={lang} />}
         {doc.kind !== "article" && !own &&
           p.blocks.map((b, i) => {
-            if (b.t === "cards") return <CarCards key={i} groups={b.groups} lang={lang} />;
+            if (b.t === "cards")
+              return (
+                <Fragment key={i}>
+                  <CarCards groups={b.groups} lang={lang} />
+                  {/* «Аренда такси для ИП»: требования к водителям сразу под машинами */}
+                  {ipPage && !reqDone && (reqDone = true) && <Requirements req={homeText(lang).requirements} />}
+                </Fragment>
+              );
             if (b.t === "calculator") return <Calculator key={i} />;
             if (b.t === "trust")
               return (
@@ -183,18 +198,42 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
             if (vykup) {
               const k = si++;
               const tiles = /class="tiles"/.test(b.html);
-              if (k === 0 && tiles) return <VykupBenefits key={i} b={b} n={n++} />;
+              if (k === 0 && tiles) return <VykupBenefits key={i} b={b} n={n++} lang={lang} />;
               if (k === 1 && tiles && /<h3/.test(b.html)) return <VykupConditions key={i} b={b} n={n++} />;
               if (k === 3) return <Section key={i} b={b} n={n++} center />;
               if (k === 4) return <Section key={i} b={{ ...b, html: savingsHtml(b.html) }} n={n++} extra="vk-save" />;
               // «У нас доступны разные тарифы»: блок убран, тарифы уже есть в начале страницы
               if (/pill-row/.test(b.html)) return null;
             }
-            if (isGift(b)) return <GiftCta key={i} b={b} />;
+            if (isGift(b)) return <GiftCta key={i} b={b} lang={lang} />;
+            // страницы классов, выкупа и ИП: блоки с тем же текстом, но крупнее и нагляднее
+            if (classPage) {
+              const t = b.title;
+              if (/(^|\s)(Ваша выгода при выкупе|Your (savings|benefits))/i.test(t) && /class="tiles"/.test(b.html)) return <VykupBenefits key={i} b={b} n={n++} lang={lang} />;
+              if (/^(Условия выкупа|Buy-?out (terms|conditions))/i.test(t) && /<h3/.test(b.html)) return <VykupConditions key={i} b={b} n={n++} />;
+              if (/<table/.test(b.html)) {
+                const place = !reqDone && !buyPage && !ipPage;
+                if (place) reqDone = true;
+                return (
+                  <Fragment key={i}>
+                    <PriceTable b={b} n={n++} lang={lang} />
+                    {place && <Requirements req={homeText(lang).requirements} />}
+                  </Fragment>
+                );
+              }
+              if (/class="tiles"/.test(b.html) && /<a href="[^"]+">/.test(b.html) && /(Парк авто|Автопарк|fleet)/i.test(t)) return <FleetNotes key={i} b={b} n={n++} lang={lang} />;
+              if (/pill-row/.test(b.html)) {
+                const tariffs = tariffsOf(b.html);
+                return tariffs.length && !truckPage ? <TariffCards key={i} terms={{ title: b.title, tariffs, btn: b.btns?.[0] }} lang={lang} /> : null;
+              }
+              if (/^(Отзывы|Reviews|Пікірлер|Пикирлер|Fikrlar)$/i.test(t)) return <Reviews key={i} lang={lang} t={homeText(lang).reviews} />;
+              if (/(Почему с нами выгодно|Почему аренда с выкупом|Преимущества аренды (авто )?с выкупом|Преимущества грузового|Начни зарабатывать|Why (it pays|rent)|Benefits of|Advantages of)/i.test(t) && !/<table|class="qgrid"/.test(b.html))
+                return <BenefitsView key={i} b={b} n={n++} lang={lang} cta={!/Почему с нами выгодно\?/.test(t)} />;
+            }
             return <Section key={i} b={b} n={n++} />;
           })}
         {classVideo && !vykup && steps}
-        {classVideo && !buyPage && <Requirements req={homeText(lang).requirements} />}
+        {classVideo && !buyPage && !reqDone && <Requirements req={homeText(lang).requirements} />}
         {(p.final || isModel) && <FinalCta lang={lang} />}
       </main>
       <Footer lang={lang} />

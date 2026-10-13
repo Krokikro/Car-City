@@ -581,7 +581,7 @@ To rent a taxi car in Moscow from Car City, you just need to meet a few simple c
 
 **Citizenship**
 
-To drive our cars, you need citizenship of one of these countries: Russia, Belarus, Kyrgyzstan, Kazakhstan, South Ossetia, Abkhazia
+To drive our cars, you need citizenship of one of these countries: Russia, Belarus, Kyrgyzstan, Kazakhstan, South Ossetia, Abkhazia, Azerbaijan, Tajikistan, Uzbekistan, Turkmenistan
 
 **Experience**
 

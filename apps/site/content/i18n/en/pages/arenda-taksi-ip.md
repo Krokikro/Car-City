@@ -13,7 +13,6 @@ Looking for a way to earn steadily in a taxi? Car City has a working solution fo
 Our fleet has hundreds of cars for every taste and task: from reliable budget models to modern high-class cars. They are fully ready for work, with full maintenance and a clean interior.
 
 <!-- Вкладки классов -->
-economy · comfort · comfort+ · business · cargo · delivery
 
 <!-- Карточки (все вкладки; на сайте картинка стоит перед заголовком карточки). На этой странице порядок вкладок: эконом, комфорт, комфорт+, бизнес, грузовой, доставка. Значения «Коробка»/«Объем» для части моделей отличаются от /vykup — оставлены как на этой странице. -->
 

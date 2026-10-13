@@ -14,7 +14,7 @@ On top of that, we offer our drivers a unique option: a rent-to-own contract, so
 
 ![about-intro](https://car-city.pro/themes/img/about/new/about-intro.webp)
 
-## Our advantages
+## Why drivers choose us
 
 - A large choice of cars in different classes
 - Regular discounts for new and current drivers

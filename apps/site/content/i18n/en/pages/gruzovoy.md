@@ -40,7 +40,7 @@ from 4000 ₽/day
 
 from 2000 ₽/day
 
-<!-- у Lada Largus кнопки «Арендовать» нет -->
+[Buy out](https://car-city.pro/vykup/gruzovoy/lada-largus)
 
 ![car Image](https://car-city.pro/assets/components/phpthumbof/cache/ChatGPT-Image-12-avg.-2026-g.-12-35-04.2011a68be1cf41027f5dfe4808290820.webP)
 
@@ -50,17 +50,22 @@ from 5500 ₽/day
 
 [Rent](https://car-city.pro/klassyi-avtomobilej/gruzovoy/Sollers-Atlant-SF4-L4)
 
-![](https://car-city.pro/assets/gallery/truck/people_truck.webp)
+## Cargo van rental prices
+
+The daily rate depends on the rental term: the longer you take the car, the cheaper the day.
+
+| Model | 1–2 days | 3–7 days | 8–15 days | 16–29 days | 30+ days |
+| --- | --- | --- | --- | --- | --- |
+| Sollers Atlant 1.9 TD | 3 825 ₽ | 3 825 ₽ | 3 825 ₽ | 3 525 ₽ | 3 375 ₽ |
+| Sollers Atlant L3H2 2.7D | 4 650 ₽ | 4 125 ₽ | 3 975 ₽ | 3 900 ₽ | 3 600 ₽ |
+| Sollers Argo | 3 600 ₽ | 3 525 ₽ | 3 975 ₽ | 3 300 ₽ | 3 150 ₽ |
+| Sollers SF4 L4 | 6 500 ₽ | 6 100 ₽ | 5 900 ₽ | 5 700 ₽ | 5 500 ₽ |
 
 ## Start earning with us now
 
 - We'll pick an available vehicle for the Cargo tariff or for personal use.
 - We'll help you connect to a delivery service.
 - We guarantee the vehicle is in perfect technical condition, plus ongoing tech support from our team.
-
-![](https://car-city.pro/assets/gallery/truck/boxes_people_truck.webp)
-
-![](https://car-city.pro/assets/gallery/truck/boxes_truck.webp)
 
 ## Why is it worth working with us?
 
@@ -80,10 +85,6 @@ To rent a cargo vehicle, leave a request on the website or contact our managers.
 - High and steady demand. Demand for delivery and freight does not depend on the season — people and businesses always need to move something: furniture, appliances, building materials, goods. This means a constant flow of orders and minimal downtime for the driver.
 - Minimal contact with customers. Unlike passenger rides, where constant communication with people matters, the Cargo tariff is about logistics and precision. It's ideal for those who prefer to work "without extra small talk" and focus on the job.
 - Good pay. Although renting a cargo vehicle can cost more than a passenger car, drivers get access to well-paid orders paid by the hour or by the kilometre. According to our internal statistics, it's the Cargo tariff that gives a stable and high income thanks to the larger volume of orders and constant demand.
-
-## We offer different tariffs
-
-[economy](https://car-city.pro/ekonom) [comfort](https://car-city.pro/komfort) [comfort+](https://car-city.pro/komfortplus)
 
 ## Questions and answers
 

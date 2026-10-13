@@ -149,7 +149,7 @@ export const en: HomeText = {
         q: "How do I start working with Car City? Driver requirements",
         a: [
           "To rent a taxi car in Moscow at Car City, you only need to meet a few simple requirements. We don't ask too much, but we care about safe trips.",
-          "**Citizenship.** To work on our cars, you need citizenship of one of these countries: Russia, Belarus, Kyrgyzstan, Kazakhstan, South Ossetia, Abkhazia",
+          "**Citizenship.** To work on our cars, you need citizenship of one of these countries: Russia, Belarus, Kyrgyzstan, Kazakhstan, South Ossetia, Abkhazia, Azerbaijan, Tajikistan, Uzbekistan, Turkmenistan",
           "**Experience.** To rent a car or rent-to-own, you need a driver's licence held for at least 3 years",
           "**Age.** The minimum age to start working with Car City is 21",
           "**Documents.** Driver's licence, passport, KIS \"ART\" and a certificate of no criminal record. With the full set of documents you can take a car for taxi work right after signing up.",

@@ -581,7 +581,7 @@ Moskvada Car Cityʼda taksi uchun avtomobil ijaraga olish uchun bir nechta oddiy
 
 **Fuqarolik**
 
-Avtomobillarimizda ishlash uchun quyidagi davlatlardan birining fuqaroligi mos keladi: RF, Belarus, Qirgʻiziston, Qozogʻiston, Janubiy Osetiya, Abxaziya
+Avtomobillarimizda ishlash uchun quyidagi davlatlardan birining fuqaroligi mos keladi: RF, Belarus, Qirgʻiziston, Qozogʻiston, Janubiy Osetiya, Abxaziya, Ozarbayjon, Tojikiston, Oʻzbekiston, Turkmaniston
 
 **Staj**
 

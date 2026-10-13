@@ -1,4 +1,5 @@
 import { fleet, saleLabel } from "@/lib/fleet";
+import type { ReactNode } from "react";
 import { marked } from "marked";
 import type { Block, Btn, Card, Fig } from "@/lib/blocks";
 import { CarArt } from "../CarArt";
@@ -63,7 +64,31 @@ export function Buttons({ btns, size = "btn-lg" }: { btns: Btn[]; size?: string 
 
 // Визуал первого экрана внутренних страниц: у разделов с машинами — веер фото этих машин,
 // у остальных — кадр из видео парка с медленным наездом камеры.
-export function PageHero({ eyebrow, h1, crumbs, path, paras, btns, introHtml, cars = [], lang = "ru", video, stats = [] }: { eyebrow: string; h1: string; crumbs: string[]; path: string; paras: string[]; btns: Btn[]; introHtml: string; cars?: { slug: string; name: string }[]; lang?: Lang; video?: string; stats?: { k: string; v: string }[] }) {
+export type HeroStat = { k: string; v: string; pre?: string; u?: string; i?: "car" | "tag" | "bolt" | "gift" | "sun" };
+
+const STAT_ICON: Record<NonNullable<HeroStat["i"]>, ReactNode> = {
+  car: <path d="M5 16l1.6-5A2 2 0 0 1 8.5 9.6h7a2 2 0 0 1 1.9 1.4L19 16M4 16h16v3h-2.5v-1.5h-11V19H4zM8 13h.01M16 13h.01" />,
+  tag: <path d="M3 12V4h8l10 10-8 8zM7.5 8.5h.01" />,
+  bolt: <path d="M13 2 4 14h7l-1 8 9-12h-7z" />,
+  gift: <path d="M4 11h16v9H4zM3 7.5h18V11H3zM12 7.5V20M12 7.5C9.500 7.500 8 6.500 8 5.200 8 4 9 3.500 10 3.800c1.200.4 2 2 2 3.700zm0 0c2.500 0 4-1 4-2.300C16 4 15 3.500 14 3.800c-1.200.4-2 2-2 3.700z" />,
+  sun: <path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zM12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.500 1.500M17.500 17.500 19 19M5 19l1.500-1.500M17.500 6.500 19 5" />,
+};
+
+function StatTiles({ stats, strip }: { stats: HeroStat[]; strip?: boolean }) {
+  return (
+    <dl className={`pg-stats${strip ? " pg-stats-big" : ""}`}>
+      {stats.map((x) => (
+        <div key={x.k}>
+          {x.i && <svg className="pg-stat-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{STAT_ICON[x.i]}</svg>}
+          <dt className="mono">{x.k}</dt>
+          <dd>{x.pre && <small>{x.pre}</small>}<b>{x.v}</b>{x.u && <small>{x.u}</small>}</dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
+
+export function PageHero({ eyebrow, h1, crumbs, path, paras, btns, introHtml, cars = [], lang = "ru", video, stats = [] }: { eyebrow: string; h1: string; crumbs: string[]; path: string; paras: string[]; btns: Btn[]; introHtml: string; cars?: { slug: string; name: string }[]; lang?: Lang; video?: string; stats?: HeroStat[] }) {
   const rich = /<(ul|ol|table|h3|figure)/.test(introHtml);
   return (
     <>
@@ -71,7 +96,7 @@ export function PageHero({ eyebrow, h1, crumbs, path, paras, btns, introHtml, ca
         <div className="pg-hero-bg" aria-hidden="true">
           {video ? (
             // атрибут muted должен быть в самом HTML: React на сервере его не выводит, и браузер не запускает видео до гидрации — отсюда «картинка вместо видео» первые секунды
-            <div style={{ display: "contents" }} dangerouslySetInnerHTML={{ __html: `<video class="pg-hero-vid" src="${asset(`/classes/${video}.mp4`)}?v=3" poster="${asset(`/classes/${video}.webp`)}?v=3" autoplay muted loop playsinline preload="auto"></video>` }} />
+            <div style={{ display: "contents" }} dangerouslySetInnerHTML={{ __html: `<video class="pg-hero-vid" src="${asset(`/classes/${video}.mp4`)}?v=4" poster="${asset(`/classes/${video}.webp`)}?v=4" autoplay muted loop playsinline preload="auto"></video>` }} />
           ) : (
             !cars.length && <GenImage kind="pages" id={pageKey(path)} className="pg-hero-photo" priority />
           )}
@@ -94,20 +119,9 @@ export function PageHero({ eyebrow, h1, crumbs, path, paras, btns, introHtml, ca
           <h1 id="pg-h1" className="display-xl" data-split>{h1}</h1>
           {!rich && paras.slice(0, 2).map((p, i) => <p key={i} className="lead" data-reveal dangerouslySetInnerHTML={{ __html: marked.parseInline(p, { async: false }) as string }} />)}
           <Buttons btns={btns} />
-          {stats.length > 0 && !video && (
-            <dl className="pg-stats" data-reveal-stagger>
-              {stats.map((x) => <div key={x.k}><dt className="mono">{x.k}</dt><dd>{x.v}</dd></div>)}
-            </dl>
-          )}
+          {stats.length > 0 && <StatTiles stats={stats} strip={!!video} />}
         </div>
       </section>
-      {stats.length > 0 && video && (
-        <div className="wrap pg-stats-strip">
-          <dl className="pg-stats">
-            {stats.map((x) => <div key={x.k}><dt className="mono">{x.k}</dt><dd>{x.v}</dd></div>)}
-          </dl>
-        </div>
-      )}
       {(rich || paras.length > 2) && (
         <section className="section pg-sec">
           <div className="wrap-narrow prose" dangerouslySetInnerHTML={{ __html: introHtml }} />
@@ -167,7 +181,7 @@ function CarTile({ c }: { c: Card }) {
   );
 }
 
-export function Figs({ figs }: { figs: Fig[] }) {
+export function Figs({ figs, to }: { figs: Fig[]; to?: string }) {
   if (!figs.length) return null;
   return (
     <div className={`pg-figs${figs.every((f) => f.src.startsWith("/team/")) ? " pg-team" : ""}`} data-reveal-stagger>
@@ -176,11 +190,18 @@ export function Figs({ figs }: { figs: Fig[] }) {
         const plain = f.caption.replace(/\*\*/g, "");
         return (
         <figure key={i} className="pg-fig">
-          <div className="pg-fig-img">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={f.src.startsWith("/") ? asset(f.src) : f.src} alt={plain} loading="lazy" decoding="async" />
-          </div>
-          <figcaption>{m ? <><strong>{m[1]}</strong>{m[2]}</> : plain}</figcaption>
+          {(() => {
+            const inner = (
+              <>
+                <div className="pg-fig-img">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={f.src.startsWith("/") ? asset(f.src) : f.src} alt={plain} loading="lazy" decoding="async" />
+                </div>
+                <figcaption>{m ? <><strong>{m[1]}</strong>{m[2]}</> : plain}</figcaption>
+              </>
+            );
+            return to ? <a className="pg-fig-link" href={to}>{inner}</a> : inner;
+          })()}
         </figure>
         );
       })}

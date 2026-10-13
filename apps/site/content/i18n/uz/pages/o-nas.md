@@ -14,7 +14,7 @@ Bundan tashqari, ijarachilarga noyob imkoniyat taklif qilamiz – sotib olish op
 
 ![biz haqimizda](https://car-city.pro/themes/img/about/new/about-intro.webp)
 
-## Bizning afzalliklarimiz
+## Haydovchilar nega bizni tanlaydi
 
 - Turli sinfdagi avtomobillarning katta tanlovi
 - Yangi va hozir ishlayotgan haydovchilar uchun muntazam chegirmalar

@@ -10,7 +10,7 @@ source: "WebFetch, extracted 2026-10-05; text is verbatim"
 
 ### Citizenship
 
-To drive our cars, you need citizenship of one of these countries: Russia, Belarus, Kyrgyzstan, Kazakhstan, South Ossetia, Abkhazia
+To drive our cars, you need citizenship of one of these countries: Russia, Belarus, Kyrgyzstan, Kazakhstan, South Ossetia, Abkhazia, Azerbaijan, Tajikistan, Uzbekistan, Turkmenistan
 
 ### Driving experience
 

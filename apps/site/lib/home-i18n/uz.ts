@@ -149,7 +149,7 @@ export const uz: HomeText = {
         q: "Car City bilan qanday ishlashni boshlash mumkin? Haydovchiga talablar",
         a: [
           "Car City kompaniyasida Moskvada taksi uchun avto ijaraga olish uchun bir nechta oddiy talablarga javob berish kifoya. Biz ortiqcha talab qoʻymaymiz, lekin safarlar xavfsizligini nazorat qilamiz.",
-          "**Fuqarolik.** Bizning avtomobillarda ishlash uchun quyidagi davlatlardan birining fuqaroligi mos keladi: RF, Belarus, Qirgʻiziston, Qozogʻiston, Janubiy Osetiya, Abxaziya",
+          "**Fuqarolik.** Bizning avtomobillarda ishlash uchun quyidagi davlatlardan birining fuqaroligi mos keladi: RF, Belarus, Qirgʻiziston, Qozogʻiston, Janubiy Osetiya, Abxaziya, Ozarbayjon, Tojikiston, Oʻzbekiston, Turkmaniston",
           "**Staj.** Avtomobilni ijaraga yoki sotib olishga olish uchun haydovchilik guvohnomasi staji 3 yildan kam boʻlmasligi kifoya",
           "**Yosh.** Car City bilan hamkorlikni boshlash uchun eng kichik yosh — 21",
           "**Hujjatlar.** Haydovchilik guvohnomasi, pasport, KIS «ART» va sudlanmaganlik haqida maʼlumotnoma. Toʻliq hujjatlar bilan rasmiylashtirgandan keyin darhol taksida ishlash uchun avtomobil olishingiz mumkin.",

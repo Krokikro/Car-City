@@ -13,7 +13,6 @@ Taksida barqaror pul ishlash yoʻlini qidiryapsizmi? Car City YaTT uchun ishlayd
 Taksoparkimizda har qanday didga va vazifaga mos yuzlab avtomobillar bor: ishonchli byudjet modellaridan tortib yuqori sinfdagi zamonaviy mashinalargacha. Ular toʻliq xizmat koʻrsatilgan va saloni toza holda ishga toʻliq tayyor.
 
 <!-- Вкладки классов -->
-ekonom · komfort · komfort+ · biznes · yuk · yetkazib berish
 
 <!-- Карточки (все вкладки; на сайте картинка стоит перед заголовком карточки). На этой странице порядок вкладок: эконом, комфорт, комфорт+, бизнес, грузовой, доставка. Значения «Коробка»/«Объем» для части моделей отличаются от /vykup — оставлены как на этой странице. -->
 

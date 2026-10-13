@@ -1,5 +1,5 @@
 import type { Parsed } from "@/lib/blocks";
-import { asset } from "@/lib/i18n";
+import { asset, href, type Lang } from "@/lib/i18n";
 import { Figs } from "./PageParts";
 
 // «О нас»: текст и фото ёлочкой (слева-справа по очереди), фото раскрываются шторкой при прокрутке.
@@ -12,7 +12,7 @@ function splitMedia(html: string) {
   return { text: html.replace(FIG, "").trim(), src: img?.[1], alt: img?.[2] ?? "" };
 }
 
-export function AboutView({ p }: { p: Parsed }) {
+export function AboutView({ p, lang = "ru" }: { p: Parsed; lang?: Lang }) {
   const intro = splitMedia(p.intro.html);
   const rows = [
     { title: "", ...intro, figs: [] as Parsed["intro"]["figs"] },
@@ -28,7 +28,7 @@ export function AboutView({ p }: { p: Parsed }) {
               <div className="wrap">
                 {r.title && <h2 className="display" data-split>{r.title}</h2>}
                 {r.text && <div className="prose about-text" data-reveal dangerouslySetInnerHTML={{ __html: r.text }} />}
-                <Figs figs={r.figs} />
+                <Figs figs={r.figs} to={/жизнь|life|өмір|жашоо|hayot/i.test(r.title) ? href("/klub", lang) : undefined} />
               </div>
             </section>
           );

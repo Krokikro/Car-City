@@ -1,4 +1,5 @@
 import type { Block } from "@/lib/blocks";
+import { href, type Lang } from "@/lib/i18n";
 
 type Sec = Extract<Block, { t: "section" }>;
 
@@ -45,7 +46,7 @@ function Head({ n, title }: { n: number; title: string }) {
 }
 
 /** «Ваша выгода при выкупе» — мозаика крупных карточек */
-export function VykupBenefits({ b, n }: { b: Sec; n: number }) {
+export function VykupBenefits({ b, n, lang = "ru" }: { b: Sec; n: number; lang?: Lang }) {
   const list = items(b.html);
   // ширина карточек в мозаике из четырёх колонок (в сумме по строкам — 4)
   const span = [2, 1, 1, 1, 2, 1, 2, 2];
@@ -58,7 +59,11 @@ export function VykupBenefits({ b, n }: { b: Sec; n: number }) {
           {list.map((t, i) => (
             <li key={i} className={`vk-bcard${accent.has(i) ? " is-accent" : ""}`} style={{ ["--span" as string]: list.length === 8 ? span[i] : 1 }}>
               <span className="vk-bico"><Ico d={ICONS[i % ICONS.length]} /></span>
-              <span className="vk-btext" dangerouslySetInnerHTML={{ __html: hot(t) }} />
+              {/клуб|club|klub/i.test(text(t)) ? (
+                <a className="vk-btext vk-club" href={href("/klub", lang)}><span dangerouslySetInnerHTML={{ __html: hot(t) }} /><i aria-hidden="true">→</i></a>
+              ) : (
+                <span className="vk-btext" dangerouslySetInnerHTML={{ __html: hot(t) }} />
+              )}
               <span className="vk-bnum" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
             </li>
           ))}
@@ -102,7 +107,8 @@ export function VykupConditions({ b, n }: { b: Sec; n: number }) {
                 </div>
               ))}
             </div>
-            {note.length > 0 && <p className="vk-note"><span aria-hidden="true">i</span>{note.join(" ")}</p>}
+            {note.length > 0 && <p className="vk-note"><span aria-hidden="true">i</span>{note[0]}</p>}
+            {note.slice(1).map((x, i) => <p key={i} className="vk-seo" dangerouslySetInnerHTML={{ __html: nb(x) }} />)}
           </div>
         )}
         {terms.length > 0 && (
