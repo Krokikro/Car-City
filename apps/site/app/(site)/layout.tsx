@@ -13,6 +13,9 @@ import "../styles/lead.css";
 import "../styles/v2.css";
 import "../styles/v3.css";
 import "../styles/vykup.css";
+import "../styles/light.gen.css";
+import "../styles/light.css";
+import { LIGHT } from "@/lib/theme";
 import { gfxDetectScript } from "@/lib/gfx";
 import { company } from "@/lib/content";
 import { asset } from "@/lib/i18n";
@@ -38,16 +41,18 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: { type: "website", locale: "ru_RU", siteName: "Car City" },
   icons: { icon: asset("/brand/emblem-96.png"), apple: asset("/brand/emblem-192.png") },
+  // светлая копия для опроса — не индексируем, чтобы не было дублей
+  ...(LIGHT ? { robots: { index: false, follow: false } } : {}),
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0B0B0C",
-  colorScheme: "dark",
+  themeColor: LIGHT ? "#F5F5F2" : "#0B0B0C",
+  colorScheme: LIGHT ? "light" : "dark",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru" suppressHydrationWarning>
+    <html lang="ru" data-theme={LIGHT ? "light" : undefined} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: gfxDetectScript }} />
       </head>
