@@ -103,6 +103,18 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный 
 
 ![көлік суреті](https://car-city.pro/assets/components/phpthumbof/cache/galery_1.0b7e9ad0e27884dfbfe2415a8cae4c43.webP)
 
+## Kia K5
+
+Қозғалтқыш көлемі: 2 л
+
+Беріліс қорабы: Автомат
+
+2800 ₽/тәулік бастап
+
+[Жалға алу](https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5) [Сатып алу](https://car-city.pro/vykup/komfort/kia-k5)
+
+![көлік суреті](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
+
 ### Комфорт+
 
 Супер-жеңілдік
@@ -166,18 +178,6 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный 
 [Жалға алу](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/hyundai-sonata) [Сатып алу](https://car-city.pro/vykup/komfort-plyus/hyundai-sonata)
 
 ![көлік суреті](https://car-city.pro/assets/components/phpthumbof/cache/sonata.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
-
-## Kia K5
-
-Қозғалтқыш көлемі: 2 л
-
-Беріліс қорабы: Автомат
-
-2800 ₽/тәулік бастап
-
-[Жалға алу](https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5) [Сатып алу](https://car-city.pro/vykup/komfort/kia-k5)
-
-![көлік суреті](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 
 ## Geely Atlas PRO
 

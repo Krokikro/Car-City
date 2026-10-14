@@ -103,6 +103,18 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный 
 
 ![унаанын сүрөтү](https://car-city.pro/assets/components/phpthumbof/cache/galery_1.0b7e9ad0e27884dfbfe2415a8cae4c43.webP)
 
+## Kia K5
+
+Кыймылдаткычтын көлөмү: 2 л
+
+Берүү кутусу: Автомат
+
+2800  ₽/суткадан
+
+[Ижарага алуу](https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5) [Сатып алуу](https://car-city.pro/vykup/komfort/kia-k5)
+
+![унаанын сүрөтү](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
+
 ### Комфорт+
 
 Супер-арзандатуу
@@ -166,18 +178,6 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный 
 [Ижарага алуу](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/hyundai-sonata) [Сатып алуу](https://car-city.pro/vykup/komfort-plyus/hyundai-sonata)
 
 ![унаанын сүрөтү](https://car-city.pro/assets/components/phpthumbof/cache/sonata.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
-
-## Kia K5
-
-Кыймылдаткычтын көлөмү: 2 л
-
-Берүү кутусу: Автомат
-
-2800  ₽/суткадан
-
-[Ижарага алуу](https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5) [Сатып алуу](https://car-city.pro/vykup/komfort/kia-k5)
-
-![унаанын сүрөтү](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 
 ## Geely Atlas PRO
 

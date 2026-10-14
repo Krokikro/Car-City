@@ -103,6 +103,18 @@ from 2000 ₽/day
 
 ![car Image](https://car-city.pro/assets/components/phpthumbof/cache/galery_1.0b7e9ad0e27884dfbfe2415a8cae4c43.webP)
 
+## Kia K5
+
+Engine size: 2 l
+
+Gearbox: Automatic
+
+from 2800 ₽/day
+
+[Rent](https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5) [Buy out](https://car-city.pro/vykup/komfort/kia-k5)
+
+![car Image](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
+
 ### Comfort+
 
 Super discount
@@ -166,18 +178,6 @@ from 2800 ₽/day
 [Rent](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/hyundai-sonata) [Buy out](https://car-city.pro/vykup/komfort-plyus/hyundai-sonata)
 
 ![car Image](https://car-city.pro/assets/components/phpthumbof/cache/sonata.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
-
-## Kia K5
-
-Engine size: 2 l
-
-Gearbox: Automatic
-
-from 2800 ₽/day
-
-[Rent](https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5) [Buy out](https://car-city.pro/vykup/komfort/kia-k5)
-
-![car Image](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 
 ## Geely Atlas PRO
 

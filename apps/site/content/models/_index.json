@@ -286,9 +286,9 @@
   ]
  },
  {
-  "url": "https://car-city.pro/klassyi-avtomobilej/komfort-plyus/kia-k5",
+  "url": "https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5",
   "mode": "arenda",
-  "class": "komfort-plyus",
+  "class": "komfort",
   "slug": "kia-k5",
   "name": "Kia K5",
   "price_text": "от 2800₽ в сутки",
@@ -747,9 +747,9 @@
   ]
  },
  {
-  "url": "https://car-city.pro/vykup/komfort-plyus/kia-k5",
+  "url": "https://car-city.pro/vykup/komfort/kia-k5",
   "mode": "vykup",
-  "class": "komfort-plyus",
+  "class": "komfort",
   "slug": "kia-k5",
   "name": "Kia K5",
   "price_text": "от 3420₽ в сутки",

@@ -87,6 +87,18 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 ![көлік суреті](https://car-city.pro/assets/components/phpthumbof/cache/galery_1.4ed97933a441f71d34ec658ae61c46d2.webP)
 
+## Kia K5
+
+Қозғалтқыш көлемі: 2 л
+
+Беріліс қорабы: Автомат
+
+3420 ₽/тәулік бастап
+
+[Сатып алу](https://car-city.pro/vykup/komfort/kia-k5)
+
+![көлік суреті](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
+
 ### Комфорт+
 
 ## Jac J7
@@ -160,18 +172,6 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 [Сатып алу](https://car-city.pro/vykup/komfort-plyus/chery-tiggo-7-pro-max)
 
 ![көлік суреті](https://car-city.pro/assets/components/phpthumbof/cache/7-pro-max.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
-
-## Kia K5
-
-Қозғалтқыш көлемі: 2 л
-
-Беріліс қорабы: Автомат
-
-3420 ₽/тәулік бастап
-
-[Сатып алу](https://car-city.pro/vykup/komfort/kia-k5)
-
-![көлік суреті](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 
 ## Hyundai Sonata
 

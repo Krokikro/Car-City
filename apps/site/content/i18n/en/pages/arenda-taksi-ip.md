@@ -140,6 +140,18 @@ from 2000 ₽/day
 
 ![car Image](https://car-city.pro/assets/components/phpthumbof/cache/galery_1.4ed97933a441f71d34ec658ae61c46d2.webP)
 
+## Kia K5
+
+Engine size: 2 l
+
+Gearbox: Automatic
+
+from 3420 ₽/day
+
+[Buy out](https://car-city.pro/vykup/komfort/kia-k5)
+
+![car Image](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
+
 ### Comfort+
 
 ## Jac J7
@@ -213,18 +225,6 @@ from 3315 ₽/day
 [Buy out](https://car-city.pro/vykup/komfort-plyus/chery-tiggo-7-pro-max)
 
 ![car Image](https://car-city.pro/assets/components/phpthumbof/cache/7-pro-max.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
-
-## Kia K5
-
-Engine size: 2 l
-
-Gearbox: Automatic
-
-from 3420 ₽/day
-
-[Buy out](https://car-city.pro/vykup/komfort/kia-k5)
-
-![car Image](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 
 ## Hyundai Sonata
 

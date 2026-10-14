@@ -44,7 +44,7 @@ export function TermsView({ terms, lang = "ru" }: { terms: Terms; lang?: Lang })
   if (docs) rows.push({ key: "docs", title: docs.title, body: (
     <ul className="tm2-docs">
       {docList.map((d, i) => (
-        <li key={d}><DocIcon i={i} /><span>{d}</span></li>
+        <li key={d}><DocIcon i={i} /><span>{d.charAt(0).toUpperCase() + d.slice(1)}</span></li>
       ))}
     </ul>
   ) });
@@ -56,7 +56,7 @@ export function TermsView({ terms, lang = "ru" }: { terms: Terms; lang?: Lang })
         <div className="wrap">
           <ol className="tm2-list">
             {rows.map((r, i) => (
-              <li key={r.key} className={`tm2-row tm2-${r.key}`}>
+              <li key={r.key} className={`tm2-row tm2-row-${r.key}`}>
                 <span className="tm2-n mono">{String(i + 1).padStart(2, "0")}</span>
                 <h3 className="tm2-h">{r.title}</h3>
                 <div className="tm2-body">

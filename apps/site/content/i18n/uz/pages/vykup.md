@@ -87,6 +87,18 @@ Uzatmalar qutisi: Robot
 
 ![avtomobil rasmi](https://car-city.pro/assets/components/phpthumbof/cache/galery_1.4ed97933a441f71d34ec658ae61c46d2.webP)
 
+## Kia K5
+
+Dvigatel hajmi: 2 l
+
+Uzatmalar qutisi: Avtomat
+
+3420 ₽/kundan
+
+[Sotib olish](https://car-city.pro/vykup/komfort/kia-k5)
+
+![avtomobil rasmi](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
+
 ### Komfort+
 
 ## Jac J7
@@ -160,18 +172,6 @@ Uzatmalar qutisi: Avtomat
 [Sotib olish](https://car-city.pro/vykup/komfort-plyus/chery-tiggo-7-pro-max)
 
 ![avtomobil rasmi](https://car-city.pro/assets/components/phpthumbof/cache/7-pro-max.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
-
-## Kia K5
-
-Dvigatel hajmi: 2 l
-
-Uzatmalar qutisi: Avtomat
-
-3420 ₽/kundan
-
-[Sotib olish](https://car-city.pro/vykup/komfort/kia-k5)
-
-![avtomobil rasmi](https://car-city.pro/assets/components/phpthumbof/cache/kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 
 ## Hyundai Sonata
 
