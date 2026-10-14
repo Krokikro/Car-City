@@ -17,7 +17,7 @@ const FACE: Record<string, string> = { ekonom: "kia-rio-1.6", komfort: "belgee-x
 export function tariffsOf(html: string): Tariff[] {
   return [...html.matchAll(/<a class="pill" href="([^"]+)">([\s\S]*?)<\/a>/g)].map((m) => {
     const cls = CLS.find(([re]) => re.test(m[1]))?.[1] ?? "";
-    const cars = fleet.filter((f) => f.cls === cls);
+    const cars = fleet.filter((f) => f.cls === cls && (f.rent || /vykup/.test(m[1])));
     const face = cars.find((f) => f.slug === FACE[cls]) ?? cars.find((f) => carImages[f.slug]);
     return {
       label: strip(m[2]),

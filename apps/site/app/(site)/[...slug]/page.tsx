@@ -81,7 +81,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 // Какие машины показать в шапке раздела: по классу из адреса или по марке из заголовка
 const CLASS_OF: [RegExp, string][] = [[/komfort-?pl/, "komfort-plus"], [/komfort/, "komfort"], [/ekonom/, "ekonom"], [/gruzov/, "gruzovoy"]];
 function heroCars(doc: Doc) {
-  const withPhoto = fleet.filter((f) => carImages[f.slug]);
+  // на страницах аренды не показываем машины, которые есть только под выкуп
+  const withPhoto = fleet.filter((f) => carImages[f.slug] && (f.rent || doc.path.startsWith("/vykup")));
   const cls = CLASS_OF.find(([re]) => re.test(doc.path))?.[1];
   const brand = doc.path.match(/^\/(kia|chery)-/)?.[1];
   const pick = brand ? withPhoto.filter((f) => f.slug.startsWith(brand)) : cls ? withPhoto.filter((f) => f.cls === cls) : doc.path === "/vykup" ? withPhoto : [];
