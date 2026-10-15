@@ -15,7 +15,7 @@ import "../styles/v3.css";
 import "../styles/vykup.css";
 import "../styles/light.gen.css";
 import "../styles/light.css";
-import { LIGHT } from "@/lib/theme";
+import { LIGHT, LIGHT_VARIANT } from "@/lib/theme";
 import { gfxDetectScript } from "@/lib/gfx";
 import { company } from "@/lib/content";
 import { asset } from "@/lib/i18n";
@@ -46,13 +46,13 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: LIGHT ? "#F5F5F2" : "#0B0B0C",
+  themeColor: LIGHT ? "#F1F2F4" : "#0B0B0C",
   colorScheme: LIGHT ? "light" : "dark",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru" data-theme={LIGHT ? "light" : undefined} suppressHydrationWarning>
+    <html lang="ru" data-theme={LIGHT ? "light" : undefined} data-variant={LIGHT ? LIGHT_VARIANT : undefined} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: gfxDetectScript }} />
       </head>

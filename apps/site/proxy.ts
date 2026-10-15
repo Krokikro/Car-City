@@ -15,5 +15,5 @@ export function proxy(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next/|cars/|cars-light/|classes/|steps/|brand/|favicon).*)"],
+  matcher: ["/((?!_next/|cars/|cars-light/|cars-light-a/|classes/|steps/|brand/|favicon).*)"],
 };

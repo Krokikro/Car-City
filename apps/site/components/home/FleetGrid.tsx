@@ -38,7 +38,7 @@ export function FleetTile({ m, t, lang, i = 0, priority = false }: { m: FleetCar
     <article className={`ft${sale ? " has-sale" : ""}`} style={{ ["--i" as string]: i }}>
       <a className="ft-media" href={link} aria-label={m.name}>
         <CarArt slug={m.slug} name={m.name} priority={priority} lit sizes="(max-width: 640px) 92vw, (max-width: 1100px) 46vw, 340px" />
-        <span className="ft-cls">{t.classes[m.cls] ?? m.cls}</span>
+        <span className={`ft-cls ft-cls-${m.cls}`}>{t.classes[m.cls] ?? m.cls}</span>
         {sale && <span className="ft-sale" title={sale}><i aria-hidden="true">%</i>{sale}</span>}
       </a>
       <div className="ft-info">

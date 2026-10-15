@@ -62,9 +62,9 @@
 [data-theme="light"] .btn-primary { box-shadow: 0 10px 24px -12px rgba(201, 140, 0, .55); }
 [data-theme="light"] .btn-primary::after { background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.6) 50%, transparent 70%); }
 [data-theme="light"] .btn-glass,
-[data-theme="light"] .btn-ghost { background: var(--paper); color: var(--ink); border-color: rgba(15,17,21,.16); backdrop-filter: none; }
+[data-theme="light"] .btn-ghost { background: var(--graphite); color: #fff; border-color: var(--graphite); backdrop-filter: none; }
 [data-theme="light"] .btn-glass:hover,
-[data-theme="light"] .btn-ghost:hover { background: var(--paper); border-color: var(--ink); }
+[data-theme="light"] .btn-ghost:hover { background: #2C2D32; border-color: #2C2D32; }
 [data-theme="light"] .pill { background: var(--paper); border-color: var(--hair); }
 [data-theme="light"] .pill[aria-selected="true"], [data-theme="light"] .pill[aria-pressed="true"] { background: var(--graphite); color: #fff; border-color: var(--graphite); }
 [data-theme="light"] .pill-count { color: var(--ink-3); }
@@ -161,8 +161,59 @@
 [data-theme="light"] .news-card time { color: var(--ink-3); }
 [data-theme="light"] .art-cover { box-shadow: var(--shadow-lift); }
 
-/* ── Подвал: белый, с большой надписью тонким контуром ── */
-[data-theme="light"] .site-footer { background: var(--paper); color: var(--ink-2); border-top: 1px solid var(--hair); }
-[data-theme="light"] .site-footer .mono { color: var(--ink-3); }
-[data-theme="light"] .footer-bottom { border-top-color: var(--hair); }
-[data-theme="light"] .footer-giant span { background: linear-gradient(180deg, rgba(15,17,21,.1), rgba(15,17,21,0)); -webkit-background-clip: text; background-clip: text; }
+/* ── Подвал: графитовый остров — отсылка к тёмной версии ── */
+[data-theme="light"] .site-footer { background: var(--graphite); color: rgba(255,255,255,.62); border-top: 0; }
+[data-theme="light"] .site-footer a, [data-theme="light"] .site-footer h3, [data-theme="light"] .site-footer h4, [data-theme="light"] .site-footer strong, [data-theme="light"] .site-footer b { color: #fff; }
+[data-theme="light"] .site-footer p, [data-theme="light"] .site-footer small, [data-theme="light"] .site-footer address, [data-theme="light"] .site-footer span:not(.soc-ico) { color: rgba(255,255,255,.62); }
+[data-theme="light"] .site-footer .mono { color: rgba(255,255,255,.45); }
+[data-theme="light"] .footer-bottom { border-top-color: rgba(255,255,255,.1); }
+[data-theme="light"] .footer-giant span { background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,0)); -webkit-background-clip: text; background-clip: text; }
+
+/* ── Метки классов цветом класса ── */
+[data-theme="light"] .ft-cls-ekonom { background: var(--cls-ekonom); color: var(--cls-ekonom-ink); }
+[data-theme="light"] .ft-cls-komfort { background: var(--cls-komfort); color: var(--cls-komfort-ink); }
+[data-theme="light"] .ft-cls-komfort-plus { background: var(--cls-komfort-plus); color: var(--cls-komfort-plus-ink); }
+[data-theme="light"] .ft-cls-biznes { background: var(--cls-biznes); color: var(--cls-biznes-ink); }
+[data-theme="light"] .ft-cls-gruzovoy { background: var(--cls-gruzovoy); color: var(--cls-gruzovoy-ink); }
+[data-theme="light"] .ft-cls-dostavka { background: var(--cls-dostavka); color: var(--cls-dostavka-ink); }
+[data-theme="light"] [class*="ft-cls-"] { box-shadow: 0 0 0 1px rgba(255,255,255,.6) inset; }
+
+/* ── Видео в шапках классов и выкупа: на всю рамку, без смещения и маски ── */
+[data-theme="light"] .pg-hero-video .pg-hero-vid { inset: 0; width: 100%; -webkit-mask-image: none; mask-image: none; animation: none; }
+
+/* ── Цифры первого экрана: в одну строку под текстом ── */
+@media (min-width: 720px) {
+  [data-theme="light"] .hv-stats dl { grid-template-columns: repeat(4, 1fr); }
+  [data-theme="light"] .hv-stats dd { font-size: clamp(22px, 2.2vw, 34px); }
+  [data-theme="light"] .hv-stats dl > div { padding-right: 12px; }
+}
+
+/* ════ Варианты для опроса (data-variant на <html>). Базовые правила выше — смешанный вариант M. ════ */
+
+/* A — «тёплый бетон»: тёплый каменный холст, все машины на сером бетоне, метки классов нейтральные */
+:root[data-theme="light"][data-variant="A"] {
+  --stone: #ECEAE4; --stone-2: #E4E1D9; --surface-2: #F3F1EC;
+  --ink: #141518; --ink-2: #55575D; --ink-3: #7A7C82; --hair: rgba(20, 21, 24, .09);
+}
+[data-theme="light"][data-variant="A"] .site-header[data-scrolled] { background: rgba(236, 234, 228, .92); }
+[data-theme="light"][data-variant="A"] [class*="ft-cls-"] { background: rgba(255,255,255,.85); color: var(--ink); }
+[data-theme="light"][data-variant="A"] .ft-more { background: var(--graphite); color: #fff; }
+[data-theme="light"][data-variant="A"] .ft-more-n { color: var(--cc-signal); }
+[data-theme="light"][data-variant="A"] .ft-more-arrow { background: var(--cc-signal); color: var(--ink); }
+
+/* B — «цвета классов»: белые кнопки с обводкой, светлый подвал */
+[data-theme="light"][data-variant="B"] .btn-glass,
+[data-theme="light"][data-variant="B"] .btn-ghost { background: var(--paper); color: var(--ink); border-color: rgba(15,17,21,.16); }
+[data-theme="light"][data-variant="B"] .btn-glass:hover,
+[data-theme="light"][data-variant="B"] .btn-ghost:hover { background: var(--paper); border-color: var(--ink); }
+[data-theme="light"][data-variant="B"] .site-footer { background: var(--paper); color: var(--ink-2); border-top: 1px solid var(--hair); }
+[data-theme="light"][data-variant="B"] .site-footer a, [data-theme="light"][data-variant="B"] .site-footer h3, [data-theme="light"][data-variant="B"] .site-footer h4,
+[data-theme="light"][data-variant="B"] .site-footer strong, [data-theme="light"][data-variant="B"] .site-footer b { color: var(--ink); }
+[data-theme="light"][data-variant="B"] .site-footer p, [data-theme="light"][data-variant="B"] .site-footer small, [data-theme="light"][data-variant="B"] .site-footer address,
+[data-theme="light"][data-variant="B"] .site-footer span:not(.soc-ico) { color: var(--ink-2); }
+[data-theme="light"][data-variant="B"] .site-footer .mono { color: var(--ink-3); }
+[data-theme="light"][data-variant="B"] .footer-bottom { border-top-color: var(--hair); }
+[data-theme="light"][data-variant="B"] .footer-giant span { background: linear-gradient(180deg, rgba(15,17,21,.1), rgba(15,17,21,0)); -webkit-background-clip: text; background-clip: text; }
+[data-theme="light"] .site-footer .footer-giant span { color: transparent; }
+@media (min-width: 700px) { [data-theme="light"] .news-card.big h2 { font-size: clamp(26px, 2.6vw, 42px); } }
+[data-theme="light"] .news-card.big { overflow: hidden; }
