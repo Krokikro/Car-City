@@ -1,84 +1,168 @@
-/* Светлая тема (NEXT_PUBLIC_THEME=light): токены и ручные правки поверх light.gen.css.
-   Всё под [data-theme="light"], тёмная версия эти правила не видит. */
+/* Светлая тема (NEXT_PUBLIC_THEME=light). Поверх light.gen.css (механический пересчёт цветов тёмных стилей)
+   здесь собственная светлая подача: тёплый «бетонный» холст, белые карточки на мягких тенях,
+   графит вместо чёрного, жёлтый — только заливкой (кнопки, маркер, шашка), а не цветом текста.
+   Фото и видео — в рамках, а не под белой вуалью. Всё под [data-theme="light"], тёмная версия эти правила не видит. */
 
 :root[data-theme="light"] {
   color-scheme: light;
-  --bg: var(--cc-fog);
-  --surface: var(--cc-paper);
-  --surface-2: var(--cc-wash);
-  --line: var(--cc-line-light);
-  --text: var(--cc-ink);
-  --text-muted: var(--cc-ink-muted);
-  --text-faint: #6B7175;
-  --accent-text: var(--cc-signal-ink);
-  --cc-signal-text: #B07A00;
-  --cc-cyan-text: #0E7490;
+  --stone: #F1F2F4;          /* холст: прохладный светло-серый */
+  --stone-2: #E5E8EC;        /* подложки, чередующиеся секции */
+  --paper: #FFFFFF;          /* карточки */
+  --graphite: #17181B;       /* тёмные острова, вторичные кнопки */
+  --graphite-2: #232428;
+  --ink: #0F1115;
+  --ink-2: #545862;
+  --ink-3: #7B7F88;
+  --hair: rgba(15, 17, 21, .08);
+  /* цвета классов — дневная замена неона: фоны фото, метки, плашки */
+  --cls-ekonom: #C4D6EE;  --cls-ekonom-ink: #1F4E8C;
+  --cls-komfort: #BFE2DB; --cls-komfort-ink: #136B5E;
+  --cls-komfort-plus: #D2C9EE; --cls-komfort-plus-ink: #4B3A9A;
+  --cls-biznes: #D9D1C3;  --cls-biznes-ink: #6A5634;
+  --cls-gruzovoy: #C8D0DA; --cls-gruzovoy-ink: #34495F;
+  --cls-dostavka: #ECC9C5; --cls-dostavka-ink: #8E2F27;
+  --shadow-card: 0 1px 2px rgba(20, 21, 24, .05), 0 18px 40px -24px rgba(20, 21, 24, .28);
+  --shadow-lift: 0 2px 4px rgba(20, 21, 24, .06), 0 30px 60px -28px rgba(20, 21, 24, .38);
+  --marker: #FFC21A;
+
+  --bg: var(--stone);
+  --surface: var(--paper);
+  --surface-2: #F1F3F6;
+  --line: var(--hair);
+  --text: var(--ink);
+  --text-muted: var(--ink-2);
+  --text-faint: var(--ink-3);
+  --accent-text: var(--ink);
+  --cc-signal-text: var(--ink);       /* жёлтый текст на светлом не читается — заменяем графитом */
+  --cc-cyan-text: #0B6E86;
   --cc-error: var(--cc-error-light);
   --cc-success: var(--cc-success-light);
-  --glass: rgba(255, 255, 255, .72);
-  --glass-line: rgba(20, 22, 26, .1);
-  --cc-checker: repeating-conic-gradient(var(--cc-signal) 0 25%, #0B0B0C 0 50%) 0 0 / 12px 12px;
+  --glass: rgba(255, 255, 255, .78);
+  --glass-line: rgba(20, 21, 24, .08);
+  --cc-checker: repeating-conic-gradient(var(--cc-signal) 0 25%, #17181B 0 50%) 0 0 / 12px 12px;
 }
 
-/* блик на жёлтой кнопке остаётся светлым */
-[data-theme="light"] .btn-primary::after { background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.55) 50%, transparent 70%); }
+/* ── База ── */
+[data-theme="light"] body { background: var(--bg); color: var(--text-muted); }
+[data-theme="light"] ::selection { background: var(--marker); color: var(--ink); }
+[data-theme="light"] .cursor-dot { mix-blend-mode: normal; background: var(--ink); }
+[data-theme="light"] .cursor-glow { display: none; }
 
-/* — Первый экран: светлая вуаль только слева, видео справа остаётся живым — */
-[data-theme="light"] .hv-frame { background: #e9e9e4; }
-[data-theme="light"] .hv-fill { filter: blur(40px) saturate(1.1) brightness(1.1); }
-[data-theme="light"] .hv-shade {
-  background:
-    linear-gradient(90deg, rgba(245,245,242,.9) 0%, rgba(245,245,242,.62) 38%, rgba(245,245,242,.08) 68%, rgba(245,245,242,0) 80%),
-    linear-gradient(180deg, rgba(245,245,242,.5) 0%, transparent 22%, transparent 64%, rgba(245,245,242,.95) 100%);
+/* маркер: жёлтое выделение строк вместо жёлтого текста */
+[data-theme="light"] .hv-title .accent { color: var(--ink); font-weight: 300; }
+[data-theme="light"] .hv-title .accent .mk,
+[data-theme="light"] .mark {
+  color: var(--ink);
+  background: linear-gradient(transparent 58%, var(--marker) 58%, var(--marker) 92%, transparent 92%);
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  font-weight: 300;
 }
-@media (max-width: 899px) { [data-theme="light"] .hv-shade { background: linear-gradient(180deg, transparent 60%, rgba(245,245,242,.5) 100%); } }
-[data-theme="light"] .hv-giant { mix-blend-mode: multiply; -webkit-text-stroke-color: rgba(176,122,0,.35); }
 
-/* — Дорога «3 шага»: асфальт тёмный, таблички на крышах светлые до активации — */
-[data-theme="light"] .stp-sign { filter: grayscale(.9) brightness(1.55) contrast(.85) drop-shadow(0 16px 20px rgba(24,28,36,.18)); }
-[data-theme="light"] .stp.on .stp-sign { filter: brightness(1.04) saturate(1.05) drop-shadow(0 0 22px rgba(255,200,90,.45)) drop-shadow(0 16px 20px rgba(24,28,36,.18)); }
-[data-theme="light"] .stp-t { color: rgba(20,20,20,.62); }
-[data-theme="light"] .stp-n { color: rgba(20,20,20,.62); border-color: rgba(20,20,20,.3); }
+/* ── Кнопки ── */
+[data-theme="light"] .btn-primary { box-shadow: 0 10px 24px -12px rgba(201, 140, 0, .55); }
+[data-theme="light"] .btn-primary::after { background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.6) 50%, transparent 70%); }
+[data-theme="light"] .btn-glass,
+[data-theme="light"] .btn-ghost { background: var(--paper); color: var(--ink); border-color: rgba(15,17,21,.16); backdrop-filter: none; }
+[data-theme="light"] .btn-glass:hover,
+[data-theme="light"] .btn-ghost:hover { background: var(--paper); border-color: var(--ink); }
+[data-theme="light"] .pill { background: var(--paper); border-color: var(--hair); }
+[data-theme="light"] .pill[aria-selected="true"], [data-theme="light"] .pill[aria-pressed="true"] { background: var(--graphite); color: #fff; border-color: var(--graphite); }
+[data-theme="light"] .pill-count { color: var(--ink-3); }
+[data-theme="light"] .pill[aria-selected="true"] .pill-count, [data-theme="light"] .pill[aria-pressed="true"] .pill-count { color: rgba(255,255,255,.6); }
+
+/* ── Шапка ── */
+[data-theme="light"] .site-header[data-scrolled] { background: rgba(241, 242, 244, .92); border-bottom-color: var(--hair); }
+
+/* ── Первый экран главной: текст слева на холсте, видео в рамке справа ── */
+@media (min-width: 720px) {
+  [data-theme="light"] .hv-frame {
+    inset: calc(var(--header-h) + 8px) var(--gutter) clamp(18px, 3vh, 36px) 50%;
+    border-radius: 32px; background: var(--stone-2); box-shadow: var(--shadow-lift);
+  }
+  [data-theme="light"] .hv-video { object-fit: cover; }
+  [data-theme="light"] .hv-fill, [data-theme="light"] .hv-shade { display: none; }
+  [data-theme="light"] .hv-copy > * { max-width: min(46vw, 640px); }
+  [data-theme="light"] .hv-title { font-size: clamp(40px, 5.2vw, 96px); max-width: 11ch; }
+  [data-theme="light"] .hv-stats dl { max-width: min(46vw, 640px); grid-template-columns: repeat(2, 1fr); border-top-color: var(--hair); }
+  [data-theme="light"] .hv-giant { mix-blend-mode: normal; -webkit-text-stroke: 1.5px rgba(20,21,24,.12); }
+}
+[data-theme="light"] .hv-stats dt { color: var(--ink-3); }
+@media (max-width: 719px) {
+  [data-theme="light"] .hv-frame { width: calc(100% - 2 * var(--gutter)); margin-inline: auto; border-radius: 22px; box-shadow: var(--shadow-card); }
+  [data-theme="light"] .hv-shade, [data-theme="light"] .hv-fill { display: none; }
+  [data-theme="light"] .hv-video { object-fit: cover; }
+}
+[data-theme="light"] .hv-curtain { background: var(--stone-2); }
+
+/* ── Лента условий: жёлтая и графитовая полосы ── */
+[data-theme="light"] .ticker-band { box-shadow: 0 24px 50px -24px rgba(20,21,24,.35); }
+
+/* ── Карточки: белые на мягкой тени вместо обводки ── */
+[data-theme="light"] .ft, [data-theme="light"] .car-card, [data-theme="light"] .news-card, [data-theme="light"] .tf-card {
+  background: var(--paper); border-color: transparent; box-shadow: var(--shadow-card);
+}
+[data-theme="light"] .ft:hover, [data-theme="light"] .car-card:hover, [data-theme="light"] .tf-card:hover { box-shadow: var(--shadow-lift); border-color: transparent; }
+[data-theme="light"] .ft.has-sale, [data-theme="light"] .car-card.has-sale { box-shadow: var(--shadow-card); border-color: transparent; }
+[data-theme="light"] .ft-media { background: var(--stone-2); }
+[data-theme="light"] .ft-cls { color: var(--ink); background: rgba(255,255,255,.82); border-color: transparent; backdrop-filter: blur(6px); }
+[data-theme="light"] .ft-pl { color: var(--ink-3); }
+[data-theme="light"] .ft-specs li { background: var(--surface-2); border-color: transparent; color: var(--ink-2); }
+[data-theme="light"] .ft-specs svg { color: var(--ink-3); }
+[data-theme="light"] .ft-pv b, [data-theme="light"] .ft-price b, [data-theme="light"] .car-price { color: var(--ink); }
+[data-theme="light"] .ft-prices:has(.ft-pr:nth-child(2)) .ft-pr + .ft-pr { border-left-color: var(--hair); }
+[data-theme="light"] .ft-more { background: var(--marker); color: var(--ink); box-shadow: var(--shadow-card); }
+[data-theme="light"] .ft-more-n { color: var(--ink); }
+[data-theme="light"] .ft-more-arrow { background: var(--ink); color: var(--marker); }
+[data-theme="light"] .ft-sale { background: var(--marker); color: var(--ink); }
+[data-theme="light"] .ft-sale i { background: var(--ink); color: var(--marker); }
+/* свет фар на светлом фоне не читается и пачкает фото */
+[data-theme="light"] .car-photo img.car-lit { display: none; }
+
+/* ── Дорога «3 шага»: асфальт остаётся тёмным, таблички на крышах светлые до активации ── */
+[data-theme="light"] .stp-sign { filter: grayscale(.9) brightness(1.5) contrast(.85) drop-shadow(0 16px 20px rgba(20,21,24,.16)); }
+[data-theme="light"] .stp.on .stp-sign { filter: brightness(1.04) saturate(1.05) drop-shadow(0 0 22px rgba(255,200,90,.4)) drop-shadow(0 16px 20px rgba(20,21,24,.16)); }
+[data-theme="light"] .stp-t { color: rgba(20,21,24,.62); }
+[data-theme="light"] .stp-n { color: rgba(20,21,24,.62); border-color: rgba(20,21,24,.3); }
 [data-theme="light"] .stp.on .stp-t { color: #1a1406; }
 [data-theme="light"] .stp.on .stp-n { background: #111; color: var(--cc-signal); border-color: #111; }
 [data-theme="light"] .stp-finish.on .stp-cap { color: var(--text); }
 
-/* — Шапки страниц с фото: светлая вуаль поверх фото, иначе тёмный текст ложится на тёмную картинку — */
-[data-theme="light"] .pg-hero:not(.pg-hero-cars) .pg-hero-veil { z-index: 1; }
-[data-theme="light"] .pg-hero:not(.pg-hero-cars):not(.pg-hero-video) .pg-hero-veil {
-  background: linear-gradient(90deg, rgba(245,245,242,.94) 0%, rgba(245,245,242,.72) 42%, rgba(245,245,242,.18) 78%, rgba(245,245,242,.05) 100%),
-              linear-gradient(180deg, rgba(245,245,242,.55) 0%, transparent 24%, transparent 55%, var(--bg) 100%);
+/* ── Шапки внутренних страниц: фото и видео в рамке справа, текст на холсте ── */
+@media (min-width: 900px) {
+  [data-theme="light"] .pg-hero:not(.pg-hero-cars) .pg-hero-bg {
+    inset: calc(var(--header-h) + 12px) var(--gutter) clamp(24px, 4vw, 56px) 52%;
+    border-radius: 32px; background: var(--stone-2); box-shadow: var(--shadow-lift);
+  }
+  [data-theme="light"] .pg-hero:not(.pg-hero-cars) .pg-hero-in > :not(.pg-stats-big):not(.pg-stats) { max-width: 46%; }
+  [data-theme="light"] .pg-hero:not(.pg-hero-cars) h1 { font-size: clamp(38px, 4.6vw, 80px); }
 }
-[data-theme="light"] .pg-hero-photo { opacity: 1; }
-@media (max-width: 899px) {
-  [data-theme="light"] .pg-hero:not(.pg-hero-cars) .pg-hero-veil { background: none; }
-}
+[data-theme="light"] .pg-hero { background: var(--bg); }
+[data-theme="light"] .pg-hero-photo { opacity: 1; animation: none; }
+[data-theme="light"] .pg-hero:not(.pg-hero-cars) .pg-hero-veil,
+[data-theme="light"] .pg-hero.pg-hero-video .pg-hero-veil { background: none; }
+[data-theme="light"] .pg-hero-video .pg-hero-vid { -webkit-mask-image: none; mask-image: none; }
+[data-theme="light"] .pg-hero-bg i { display: none; }
 
-/* — Карточки тарифов: название и цена цветом класса, но тёмнее, чтобы читались на белом — */
-[data-theme="light"] .tf-card { --tf-acc-text: #B07A00; color: var(--text); }
-[data-theme="light"] .tf-komfort { --tf-acc-text: #0E7490; }
-[data-theme="light"] .tf-komfort-plus { --tf-acc-text: #9A6A00; }
-[data-theme="light"] .tf-name { background: linear-gradient(180deg, #1A1919 25%, var(--tf-acc-text) 130%); -webkit-background-clip: text; background-clip: text; }
-[data-theme="light"] .tf-price b, [data-theme="light"] .tf-k { color: var(--tf-acc-text); }
-[data-theme="light"] .tf-beam { mix-blend-mode: normal; }
+/* ── Карточки тарифов ── */
+[data-theme="light"] .tf-card { --tf-acc-text: var(--ink); color: var(--text); }
+[data-theme="light"] .tf-name { background: none; -webkit-background-clip: border-box; background-clip: border-box; color: var(--ink); }
+[data-theme="light"] .tf-price b, [data-theme="light"] .tf-k { color: var(--ink); }
+[data-theme="light"] .tf-beam, [data-theme="light"] .tf-speed { display: none; }
 
-/* — Карточки статей: обложка чистой полосой сверху (у большой — справа), текст на белом — */
-[data-theme="light"] .news-card { background: var(--surface); }
+/* ── Статьи: обложка полосой сверху, текст на белом ── */
 [data-theme="light"] .news-card:has(.news-img) { padding-top: calc(clamp(150px, 15vw, 210px) + 22px); }
 [data-theme="light"] .news-card:has(.news-img)::after { display: none; }
 [data-theme="light"] .news-img { inset: 0 0 auto 0; height: clamp(150px, 15vw, 210px); overflow: hidden; border-radius: var(--radius-card) var(--radius-card) 0 0; }
-[data-theme="light"] .news-img img { opacity: 1; }
-[data-theme="light"] .news-card:hover .news-img img { opacity: 1; }
+[data-theme="light"] .news-img img, [data-theme="light"] .news-card:hover .news-img img { opacity: 1; }
 @media (min-width: 700px) {
   [data-theme="light"] .news-card.big:has(.news-img) { padding-top: 28px; padding-right: 50%; }
   [data-theme="light"] .news-card.big .news-img { inset: 0 0 0 48%; height: auto; border-radius: 0 var(--radius-card) var(--radius-card) 0; }
 }
-[data-theme="light"] .art-cover { box-shadow: 0 30px 70px -40px rgba(24,28,36,.35); }
+[data-theme="light"] .news-card time { color: var(--ink-3); }
+[data-theme="light"] .art-cover { box-shadow: var(--shadow-lift); }
 
-/* — Шапки с видео (классы, выкуп, грузовой): текст слева на светлой вуали — */
-@media (min-width: 900px) {
-  [data-theme="light"] .pg-hero.pg-hero-video .pg-hero-veil {
-    background: linear-gradient(90deg, var(--bg) 24%, rgba(245,245,242,.88) 34%, rgba(245,245,242,.45) 52%, rgba(245,245,242,0) 70%),
-                linear-gradient(180deg, transparent 70%, var(--bg) 100%);
-  }
-}
+/* ── Подвал: белый, с большой надписью тонким контуром ── */
+[data-theme="light"] .site-footer { background: var(--paper); color: var(--ink-2); border-top: 1px solid var(--hair); }
+[data-theme="light"] .site-footer .mono { color: var(--ink-3); }
+[data-theme="light"] .footer-bottom { border-top-color: var(--hair); }
+[data-theme="light"] .footer-giant span { background: linear-gradient(180deg, rgba(15,17,21,.1), rgba(15,17,21,0)); -webkit-background-clip: text; background-clip: text; }
