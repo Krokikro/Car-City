@@ -217,3 +217,4 @@
 [data-theme="light"] .site-footer .footer-giant span { color: transparent; }
 @media (min-width: 700px) { [data-theme="light"] .news-card.big h2 { font-size: clamp(26px, 2.6vw, 42px); } }
 [data-theme="light"] .news-card.big { overflow: hidden; }
+[data-theme="light"][data-variant="B"] .site-footer .footer-giant span { color: transparent; }
