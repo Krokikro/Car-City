@@ -16,8 +16,9 @@ const cheapest = (fleet: FleetCar[], c: CarClass) => {
 };
 const rub = (n: number) => Math.round(n).toLocaleString("ru-RU").replace(/ /g, " ");
 
-export function Calculator({ t = ruHome.calculator, classes = ruHome.fleet.classes, cars }: { t?: HomeText["calculator"]; classes?: Record<string, string>; cars?: FleetCar[] }) {
-  const [cls, setCls] = useState<CarClass>("ekonom");
+export function Calculator({ t = ruHome.calculator, classes = ruHome.fleet.classes, cars, initial }: { t?: HomeText["calculator"]; classes?: Record<string, string>; cars?: FleetCar[]; initial?: CarClass }) {
+  // на странице модели калькулятор сразу открыт на её классе (если класс есть в калькуляторе)
+  const [cls, setCls] = useState<CarClass>(initial && CLASSES.includes(initial) ? initial : "ekonom");
   const [days, setDays] = useState(6);
   const [hours, setHours] = useState(10);
   const fleet = cars ?? baseFleet;

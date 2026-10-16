@@ -2028,6 +2028,25 @@
   background: linear-gradient(90deg, var(--bg) 22%, rgba(245,245,242,0.9) 26%, rgba(245,245,242,0.6) 31%, rgba(245,245,242,0.25) 40%, rgba(245,245,242,0) 50%), linear-gradient(180deg, rgba(245,245,242,0.55) 0%, transparent 22%, transparent 72%, var(--bg) 100%);
 }
 }
+[data-theme="light"] .mc-card {
+  background: radial-gradient(80% 120% at 100% 0%, rgba(255,183,0,0.18), transparent 60%), linear-gradient(180deg, var(--surface-2), var(--surface));
+  border: 1px solid var(--glass-line);
+}
+[data-theme="light"] .mc-body p {
+  color: var(--text-muted);
+}
+[data-theme="light"] .mc-body .mc-lead {
+  color: var(--text);
+}
+[data-theme="light"] .mp-details dl > div {
+  background: linear-gradient(180deg, rgba(15,17,20,0.045), rgba(15,17,20,0.018));
+}
+[data-theme="light"] .mp-details dt {
+  color: var(--text-faint);
+}
+[data-theme="light"] .mp-details dt svg {
+  color: var(--cc-signal-text);
+}
 
 /* ── vykup.css ── */
 [data-theme="light"] .vk-sec::before {

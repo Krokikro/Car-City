@@ -825,3 +825,48 @@ button.owner:hover, button.owner:focus-visible { border-color: rgba(255,183,0,.5
 }
 .pg-hero-video .pg-hero-bg { z-index: -3; }
 .pg-hero-video .pg-hero-veil { z-index: -2; }
+
+/* — Страница модели: текстовые блоки (описание, комплектация, характеристики) — */
+.mt-sec { padding-block: clamp(48px, 7vw, 110px); }
+.mt-grid { display: grid; gap: clamp(24px, 4vw, 72px); }
+@media (min-width: 1000px) { .mt-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; } .mt-head { position: sticky; top: calc(var(--header-h) + 32px); } }
+.mt-head { display: grid; gap: 18px; align-content: start; }
+.mt-head .display { font-size: clamp(34px, 4vw, 64px); line-height: 1.02; }
+.mt-lead { margin: 6px 0 0; color: var(--text); font-size: clamp(18px, 1.45vw, 21px); line-height: 1.5; max-width: 44ch; }
+.mt-body { display: grid; gap: 16px; color: var(--text-muted); font-size: 16.5px; line-height: 1.65; }
+.mt-body > p { margin: 0; max-width: 68ch; }
+.mt-h { margin: 22px 0 2px; display: flex; align-items: center; gap: 12px; font: 400 clamp(22px, 1.9vw, 28px)/1.15 var(--font-display); letter-spacing: -.02em; color: var(--text); }
+.mt-h::before { content: ""; flex: none; width: 22px; height: 12px; background: var(--cc-checker); background-size: 6px 6px; border-radius: 2px; }
+.mt-h:first-child { margin-top: 0; }
+.mt-list { list-style: none; margin: 4px 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); column-gap: 28px; border-top: 1px solid var(--line); }
+.mt-list li { display: flex; gap: 14px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--line); color: var(--text); font-size: 16.5px; line-height: 1.45; }
+.mt-list svg { flex: none; margin-top: 1px; }
+.mt-specs { list-style: none; margin: 4px 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); gap: 10px; }
+.mt-specs li { display: grid; gap: 12px; align-content: start; padding: 18px 18px 20px; border-radius: 20px; background: linear-gradient(180deg, var(--surface-2), var(--surface)); border: 1px solid var(--glass-line); color: var(--text); font: 400 clamp(17px, 1.3vw, 19px)/1.3 var(--font-display); letter-spacing: -.01em; }
+.mt-specs svg { color: var(--cc-signal); }
+.mt-twin { position: relative; overflow: hidden; display: grid; gap: 8px; margin-top: 18px; padding: clamp(22px, 2.6vw, 34px); border-radius: var(--radius-card-lg); background: radial-gradient(120% 90% at 100% 0%, rgba(255, 183, 0, .16), transparent 60%), var(--surface); border: 1px solid rgba(255, 183, 0, .32); }
+.mt-twin::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 8px; background: var(--cc-checker); background-size: 8px 8px; opacity: .9; }
+.mt-twin-h { font: 400 clamp(24px, 2.2vw, 34px)/1.1 var(--font-display); letter-spacing: -.02em; color: var(--text); margin-top: 6px; }
+.mt-twin p { margin: 0; color: var(--text-muted); }
+.mt-twin .btn-row { margin-top: 10px; }
+
+/* «Не нашли то, что искали?» */
+.mc-sec { padding-block: clamp(24px, 4vw, 56px); }
+.mc-card { position: relative; overflow: hidden; display: grid; gap: 20px 48px; align-items: center; padding: clamp(28px, 4vw, 56px); border-radius: var(--radius-media); background: radial-gradient(80% 120% at 100% 0%, rgba(255, 183, 0, .18), transparent 60%), linear-gradient(180deg, var(--surface-2), var(--surface)); border: 1px solid var(--glass-line); }
+@media (min-width: 900px) { .mc-card { grid-template-columns: 1.1fr 1fr; } }
+.mc-card .display { font-size: clamp(32px, 3.6vw, 56px); line-height: 1.04; }
+.mc-body { display: grid; gap: 10px; }
+.mc-body p { margin: 0; color: var(--text-muted); }
+.mc-body .mc-lead { color: var(--text); font-size: clamp(18px, 1.5vw, 22px); }
+.mc-body .btn-row { margin-top: 10px; }
+
+/* Шапка модели: таблица цен крупнее, детали — плитки с подписью и крупным значением */
+.mp-price .pm, .mp-price .pr-now { font: 400 clamp(22px, 1.9vw, 28px)/1.1 var(--font-display); letter-spacing: -.02em; }
+.mp-price .pr-old { font-size: 14px; }
+.mp tbody th { font: 400 clamp(17px, 1.3vw, 19px)/1.2 var(--font-display); }
+.mp tbody th, .mp tbody td { padding-block: 14px; vertical-align: middle; }
+.mp-details dl > div { display: grid; gap: 6px; padding: 14px 16px; background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); }
+.mp-details dt { display: flex; align-items: center; gap: 8px; font: 500 11px/1.2 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--text-faint); margin: 0; }
+.mp-details dt svg { flex: none; color: var(--cc-signal); }
+.mp-details dd { font: 400 clamp(17px, 1.4vw, 21px)/1.2 var(--font-display); letter-spacing: -.01em; font-weight: 400; }
+@media (max-width: 640px) { .mt-specs { grid-template-columns: repeat(2, minmax(0, 1fr)); } .mt-specs li { font-size: 15px; padding: 14px; } }
