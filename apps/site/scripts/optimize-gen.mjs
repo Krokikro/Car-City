@@ -11,6 +11,8 @@ const kinds = [
   { dir: "cars", sizes: [640, 1200], out: "lib/car-images.ts", name: "carImages" },
   { dir: "pages", sizes: [960, 1920], out: "lib/page-images.ts", name: "pageImages" },
   { dir: "news", sizes: [640, 1200], out: "lib/news-images.ts", name: "newsImages" },
+  // обложки статей для светлой версии сайта: дневные фото и фото с инфографикой (Higgsfield)
+  { dir: "news-light", sizes: [640, 1200], out: "lib/news-light-images.ts", name: "newsLightImages" },
   { dir: "team", sizes: [480, 960], out: "lib/team-images.ts", name: "teamImages" },
 ];
 // пропускаем файлы, у которых готовые размеры новее исходника

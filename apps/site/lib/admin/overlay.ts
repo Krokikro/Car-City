@@ -45,7 +45,7 @@ function applyFleet(rows: { slug: string; data: FleetPatch }[]) {
     const car: FleetCar = { ...base };
     if (p) {
       if (p.name) car.name = p.name;
-      if (typeof p.price === "number" && p.price > 0) car.price = p.price;
+      if (typeof p.price === "number") car.price = p.price > 0 ? p.price : 0;
       if (p.engine !== undefined) car.engine = p.engine || undefined;
       if (p.gearbox !== undefined) car.gearbox = p.gearbox || undefined;
       if (p.cls) car.cls = p.cls;

@@ -2,6 +2,7 @@
 // Берём таблицы из текста страницы старого сайта и убираем их из разделов ниже, чтобы не повторять.
 import type { Parsed } from "./blocks";
 import type { FleetCar } from "./fleet";
+import { rentRows, buyRows, type PriceRow } from "./prices";
 
 export interface PriceTable { head: string[]; rows: string[][] }
 export interface Panels { price?: PriceTable; details: [string, string][] }
@@ -34,7 +35,29 @@ function specPair(s: string): [string, string] | null {
   return null;
 }
 
-export function modelPanels(p: Parsed, car?: FleetCar, clsName?: string): Panels {
+const fmt = (n: number) => n.toLocaleString("ru-RU").replace(/\s/g, "\u00a0");
+const cell = (r: PriceRow) => (r.o && r.o > r.p ? `<span class="pr-now">${fmt(r.p)}&nbsp;₽</span><s class="pr-old">${fmt(r.o)}&nbsp;₽</s>` : `<b class="pm">${fmt(r.p)}&nbsp;₽</b>`);
+const H: Record<string, { sched: string; term: string; dep: string; pay: string; perDay: string }> = {
+  ru: { sched: "График", term: "Срок", dep: "Взнос", pay: "Платёж в сутки", perDay: "Цена в сутки" },
+  en: { sched: "Schedule", term: "Term", dep: "Down payment", pay: "Daily payment", perDay: "Price per day" },
+};
+
+/** Таблица цен машины из единого источника (lib/prices.ts): аренда по графикам/срокам или выкуп без выкупного платежа */
+export function priceTable(car: FleetCar, mode: "arenda" | "vykup" | undefined, lang = "ru"): PriceTable | undefined {
+  const h = H[lang] ?? H.ru;
+  if (mode === "vykup") {
+    const rows = buyRows(car);
+    if (!rows.length) return undefined;
+    const dep = rows.some((r) => r.dep);
+    return { head: dep ? [h.dep, h.term, h.pay] : [h.term, h.pay], rows: rows.map((r) => (dep ? [r.dep ? `${fmt(r.dep)}&nbsp;₽` : "—", r.k, cell(r)] : [r.k, cell(r)])) };
+  }
+  const rows = rentRows(car);
+  if (!rows.length) return undefined;
+  const truck = rows.some((r) => r.dep);
+  return { head: [truck ? h.term : h.sched, h.perDay], rows: rows.map((r) => [r.k, cell(r)]) };
+}
+
+export function modelPanels(p: Parsed, car?: FleetCar, clsName?: string, mode?: "arenda" | "vykup", lang = "ru"): Panels {
   let price: PriceTable | undefined;
   let details: [string, string][] = [];
   for (const b of p.blocks) {
@@ -54,6 +77,13 @@ export function modelPanels(p: Parsed, car?: FleetCar, clsName?: string): Panels
       }
       return whole;
     });
+  }
+  // цены — из единого источника, чтобы совпадали с карточками и страницами классов
+  if (car) price = priceTable(car, mode, lang) ?? price;
+  // выкупной платёж в таблицах не показываем
+  if (price) {
+    const drop = price.head.findIndex((x) => /выкупн|buyout|redemption/i.test(x));
+    if (drop >= 0) price = { head: price.head.filter((_, i) => i !== drop), rows: price.rows.map((r) => r.filter((_, i) => i !== drop)) };
   }
   // нет таблицы характеристик — собираем из строк под заголовком и данных автопарка
   const have = new Set(details.map(([k]) => k.toLowerCase()));

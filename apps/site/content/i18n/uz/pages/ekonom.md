@@ -138,8 +138,7 @@ Taksi xizmatlaridan juda koʻp odamlar foydalanadi va ularning aksariyati «Ekon
 - Narx. «Ekonom» sinfi taksoparkimizdagi modellar orasida eng arzoni.
 - Mijozlar orasida mashhurlik. Safar arzon tushadi, shuning uchun koʻp odamlar manzilga tezroq yetib olish uchun taksichiga pul toʻlashga tayyor.
 
-![biz haqimizda](https://car-city.pro/themes/img/about/comfort-about.webp)
-![biz haqimizda](https://car-city.pro/themes/img/about/comfort-about-mobile.webp)
+![Kia Rio](/cars/kia-rio-1.6-front-1000.webp)
 
 ## Ekonom sinfidagi avtomobillar parki
 

@@ -162,8 +162,7 @@ Agar barqarorlik va xavfsizlikni qadrlasangiz, uzoq safarlardan zavq olsangiz, K
 - Boshqarishning soddaligi. Kuzov turi yoki uzatmalar qutisidan qatʼi nazar, taksi uchun ijaraga beriladigan Komfort sinfidagi avtomobil odatda haydovchiga yordam beruvchi qoʻshimcha tizimlar bilan jihozlangan. U haydashda minimal kuch talab qiladi, shuning uchun bir necha soatlik ishdan keyin ham tetik va gʻayratli boʻlasiz.
 - Narx. Avtomobil ijarasi qimmatga tushmaydi. Tashish tarifi ham mijozlarni choʻchitmaydi, shuning uchun yaxshi pul ishlay olasiz.
 
-![biz haqimizda](https://car-city.pro/themes/img/about/comfort-about.webp)
-![biz haqimizda](https://car-city.pro/themes/img/about/comfort-about-mobile.webp)
+![Kia K5](/cars/kia-k5-front-1000.webp)
 
 ## Taksi ijarasi uchun Komfort sinfidagi avtomobillar parki
 

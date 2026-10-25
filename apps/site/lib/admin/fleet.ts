@@ -12,7 +12,7 @@ export async function savePatch(slug: string, data: FleetPatch, by: string) {
   // Хранится только то, что отличается от файла
   const diff: FleetPatch = {};
   if (data.name && data.name !== base.name) diff.name = data.name;
-  if (data.price && data.price !== base.price) diff.price = data.price;
+  if (data.price !== undefined && data.price !== base.price) diff.price = data.price;
   if (data.cls && data.cls !== base.cls) diff.cls = data.cls;
   if ((data.engine ?? "") !== (base.engine ?? "")) diff.engine = data.engine ?? "";
   if ((data.gearbox ?? "") !== (base.gearbox ?? "")) diff.gearbox = data.gearbox ?? "";

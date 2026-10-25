@@ -65,7 +65,7 @@ export function HeroVideo({ t }: { t: HomeText["hero"] }) {
         <p className="hv-giant" aria-hidden="true">CAR CITY</p>
         <div className="hv-copy wrap">
           <p className="mono hv-eyebrow" data-hv-fade><span className="dot" /> {t.eyebrow}</p>
-          <h1 id="hero-title" className="hv-title">
+          <h1 id="hero-title" className="hv-title" style={{ ["--ch" as string]: Math.min(20, Math.max(12, ...t.lines.map((l) => l.length))) }}>
             {t.lines.map((l, i) => (
               <span key={i} className="line"><span data-hv-line style={{ ["--i" as string]: i }} className={i === t.lines.length - 1 ? "accent" : undefined}>{i === t.lines.length - 1 ? <span className="mk">{l}</span> : l}</span></span>
             ))}

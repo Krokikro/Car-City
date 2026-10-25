@@ -163,7 +163,7 @@ Comfort+ class cars have special features. For example, the interiors have USB p
 
 Some aggregators' rules cover not only the car's specs but also the service. Sometimes they require water or other amenities for passengers.
 
-![about](https://car-city.pro/themes/img/about/comfort-about.webp)
+![Haval F7](/cars/haval-f7-front-1000.webp)
 
 ## Comfort+ class fleet
 

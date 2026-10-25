@@ -8,7 +8,7 @@ export function Footer({ lang = "ru" }: { lang?: Lang }) {
   const t = ui(lang);
   const f = t.footer;
   const cols = [
-    { title: f.rent, links: [[t.cls.ekonom, "/ekonom"], [t.cls.komfort, "/komfort"], [t.cls.komfortplus, "/komfortplus"], [t.cls.gruzovoy, "/gruzovoy"], [f.rentIp, "/arenda-taksi-ip"]] },
+    { title: f.rent, links: [[t.cls.ekonom, "/ekonom"], [t.cls.komfort, "/komfort"], [t.cls.komfortplus, "/komfortplus"], [t.cls.biznes, "/biznes"], [t.cls.gruzovoy, "/gruzovoy"], [f.rentIp, "/arenda-taksi-ip"]] },
     { title: f.buy, links: [[f.rto, "/vykup"], [f.buyEkonom, "/vykup/ekonom"], [f.buyKomfort, "/vykup/komfort"], [f.buyKomfortPlus, "/vykup/komfort-plyus"]] },
     { title: f.company, links: [[t.nav.usloviya, "/usloviya"], [t.nav.onas, "/o-nas"], [t.nav.reviews, "/reviews"], [f.club, "/klub"], [t.nav.news, "/novosti"], [t.nav.contact, "/contact"]] },
   ];

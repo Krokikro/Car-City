@@ -10,6 +10,14 @@ const OFFICES = [
   { addr: "г. Москва, ул. Витебская, д.11", metro: ["Кунцевская"], hours: "с 10:00 до 19:00", days: "пн-вс", map: "Москва, ул. Витебская, 11" },
 ];
 
+// Значки линий метро: номер линии в круге её цвета, как на схемах и указателях в метро
+const LINES: Record<string, [string, string]> = {
+  "1": ["#E42313", "#fff"], "3": ["#0072BA", "#fff"], "4": ["#1EBCEF", "#fff"], "8": ["#FFCD1C", "#1a1a1a"], "11": ["#88CDCF", "#1a1a1a"],
+};
+const STATION: Record<string, string[]> = {
+  "Проспект Вернадского": ["1", "11"], "Мичуринский проспект": ["8", "11"], "Митино": ["3"], "Кунцевская": ["3", "4", "11"],
+};
+
 const T = {
   ru: { offices: "Адреса офисов:", hours: "Режим работы:", route: "Маршрут", call: "Позвонить", write: "Написать", mail: "Почта", phone: "Телефон", open: "Открыто каждый день" },
   en: { offices: "Office addresses:", hours: "Opening hours:", route: "Directions", call: "Call", write: "Message us", mail: "Email", phone: "Phone", open: "Open every day" },
@@ -42,7 +50,14 @@ export function ContactView({ lang = "ru" }: { lang?: Lang }) {
               <span className="ct-n mono">0{i + 1}</span>
               <h3>{o.addr}</h3>
               <ul className="ct-metro">
-                {o.metro.map((m) => <li key={m}><i aria-hidden="true">М</i>м. {m}</li>)}
+                {o.metro.map((m) => (
+                  <li key={m}>
+                    <span className="ct-lines" aria-hidden="true">
+                      {(STATION[m] ?? []).map((l) => <i key={l} style={{ background: LINES[l][0], color: LINES[l][1] }}>{l}</i>)}
+                    </span>
+                    м. {m}
+                  </li>
+                ))}
               </ul>
               <div className="ct-hours">
                 <span className="mono">{t.hours}</span>

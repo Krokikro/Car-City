@@ -162,8 +162,7 @@ If you value stability and safety and enjoy longer trips, choose a Comfort class
 - Easy to drive. Whatever the body type or gearbox, a Comfort class taxi rental car usually has extra driver-assistance systems. It takes minimal effort to drive, so even after several hours of work you'll still feel fresh and full of energy.
 - Price. Renting the car doesn't cost much. The fare doesn't scare customers away either, so you can earn well.
 
-![about](https://car-city.pro/themes/img/about/comfort-about.webp)
-![about](https://car-city.pro/themes/img/about/comfort-about-mobile.webp)
+![Kia K5](/cars/kia-k5-front-1000.webp)
 
 ## Comfort class fleet for taxi rental
 

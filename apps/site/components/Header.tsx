@@ -36,7 +36,7 @@ export function Header() {
   return (
     <header className="site-header" data-scrolled={scrolled || undefined}>
       <a href={href("/", lang)} className="brand" aria-label={t.toHome}>
-        <Logo size={40} />
+        <Logo size={40} emblem={1.4} />
       </a>
       <nav aria-label={t.mainMenu} className="nav">
         {nav.map((item) => (

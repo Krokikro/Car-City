@@ -4,6 +4,7 @@ import { ModelStage } from "./ModelStage";
 import { href, type Lang } from "@/lib/i18n";
 import { ui } from "@/lib/ui";
 import type { Panels } from "@/lib/model-panels";
+import type { SaleChip } from "@/lib/prices";
 
 // значки к строкам «Деталей»: по названию характеристики
 const DETAIL_ICONS: [RegExp, string][] = [
@@ -22,7 +23,7 @@ const DetailIco = ({ k }: { k: string }) => {
 
 export function ModelHero(p: {
   h1: string; name: string; slug: string; cls?: string; mode?: "arenda" | "vykup"; twin?: string; path: string;
-  crumbs: string[]; specs: string[]; price?: string; btns: Btn[]; gallery: string[]; lang?: Lang; panels?: Panels;
+  crumbs: string[]; specs: string[]; price?: string; oldPrice?: number; chips?: SaleChip[]; btns: Btn[]; gallery: string[]; lang?: Lang; panels?: Panels;
 }) {
   const lang = p.lang ?? "ru";
   const t = ui(lang);
@@ -43,7 +44,7 @@ export function ModelHero(p: {
             })}
           </div>
           <p className="mono eyebrow">{p.cls ? t.cls[p.cls] ?? p.cls : "Car City"}</p>
-          <h1 id="pg-h1" className="display mdl-h1" data-split>{p.h1}</h1>
+          <h1 id="pg-h1" className={`display mdl-h1${p.h1.length > 30 ? " h1-long" : ""}`} data-split>{p.h1}</h1>
           {p.specs.length > 0 && !p.panels?.details.length && (
             <ul className="mdl-specs" data-reveal-stagger>
               {p.specs.map((s) => <li key={s}>{s}</li>)}
@@ -54,7 +55,11 @@ export function ModelHero(p: {
               {t.from && <span className="mono">{t.from}</span>}
               {priceNum ? <b data-count={priceNum} data-suffix=" ₽">{Number(priceNum).toLocaleString("ru-RU")} ₽</b> : <b>{p.price}</b>}
               {priceTail && <small>{priceTail.replace(/^₽\s*/, "")}</small>}
+              {p.oldPrice && priceNum && p.oldPrice > Number(priceNum) ? <s className="mdl-old">{p.oldPrice.toLocaleString("ru-RU")} ₽</s> : null}
             </p>
+          )}
+          {p.chips && p.chips.length > 0 && (
+            <p className="mdl-sales">{p.chips.map((c) => <span key={c.text} className={`ft-sale mdl-sale sale-${c.kind}`}><i aria-hidden="true">%</i>{c.text}</span>)}</p>
           )}
           <Buttons btns={p.btns} />
         </div>

@@ -2,7 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { fleet as baseFleet, fleetClasses, popularOf, saleLabel, type FleetCar } from "@/lib/fleet";
+import { fleet as baseFleet, fleetClasses, popularOf, type FleetCar } from "@/lib/fleet";
+import { saleChips, hasRent, hasBuy } from "@/lib/prices";
+import { SaleChips } from "../SaleChips";
 import type { CarClass } from "@/lib/content";
 import { CarArt } from "../CarArt";
 import { href, type Lang } from "@/lib/i18n";
@@ -30,16 +32,18 @@ function Price({ label, price, old, t }: { label?: string; price: number; old?: 
 
 /** Плитка машины — как на странице выкупа: фото целиком, класс, заметные характеристики, цена, две кнопки */
 export function FleetTile({ m, t, lang, i = 0, priority = false }: { m: FleetCar; t: HomeText["fleet"]; lang: Lang; i?: number; priority?: boolean }) {
-  const link = href(m.rent ?? m.buy, lang);
-  const sale = saleLabel(m);
-  // у части машин страница аренды и выкупа — одна (или есть только выкуп): тогда цена одна и без подписи
-  const single = !m.rent || m.rent === m.buy;
+  const rent = hasRent(m), buy = hasBuy(m);
+  const link = href(rent ? m.rent : m.buy, lang);
+  const chips = saleChips(m, lang);
+  const sale = chips.length > 0;
+  // доступна только аренда или только выкуп: цена одна и без подписи, кнопка тоже одна
+  const single = !(rent && buy);
   return (
     <article className={`ft${sale ? " has-sale" : ""}`} style={{ ["--i" as string]: i }}>
       <a className="ft-media" href={link} aria-label={m.name}>
         <CarArt slug={m.slug} name={m.name} priority={priority} lit sizes="(max-width: 640px) 92vw, (max-width: 1100px) 46vw, 340px" />
         <span className={`ft-cls ft-cls-${m.cls}`}>{t.classes[m.cls] ?? m.cls}</span>
-        {sale && <span className="ft-sale" title={sale}><i aria-hidden="true">%</i>{sale}</span>}
+        <SaleChips chips={chips} />
       </a>
       <div className="ft-info">
         <h3><a href={link}>{m.name}</a></h3>
@@ -60,17 +64,17 @@ export function FleetTile({ m, t, lang, i = 0, priority = false }: { m: FleetCar
           </ul>
         )}
         <div className="ft-prices">
-          {single ? <Price price={m.rent ? m.price : (m.buyPrice ?? m.price)} old={m.rent ? m.old : m.buyOld} t={t} /> : (
+          {single ? <Price price={rent ? m.price : (m.buyPrice ?? m.price)} old={rent ? m.old : m.buyOld} t={t} /> : (
             <>
               <Price label={t.priceRent} price={m.price} old={m.old} t={t} />
               <Price label={t.priceBuy} price={m.buyPrice ?? m.price} old={m.buyOld} t={t} />
             </>
           )}
         </div>
-        {sale && <span className="ft-sale-m"><i aria-hidden="true">%</i>{sale}</span>}
+        {sale && <SaleChips chips={chips} mobile />}
         <div className="ft-actions">
-          {m.rent && <a className="btn btn-primary btn-sm" href={href(m.rent, lang)}>{t.rent}</a>}
-          {m.buy && <a className="btn btn-ghost btn-sm" href={href(m.buy, lang)}>{t.buy}</a>}
+          {rent && <a className="btn btn-primary btn-sm" href={href(m.rent, lang)}>{t.rent}</a>}
+          {buy && <a className={`btn ${rent ? "btn-ghost" : "btn-primary"} btn-sm`} href={href(m.buy, lang)}>{t.buy}</a>}
         </div>
       </div>
     </article>

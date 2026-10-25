@@ -1,9 +1,12 @@
-import { fleet, saleLabel } from "@/lib/fleet";
+import { fleet } from "@/lib/fleet";
+import { saleChips, hasRent, hasBuy } from "@/lib/prices";
+import { SaleChips } from "../SaleChips";
 import type { ReactNode } from "react";
 import { marked } from "marked";
 import type { Block, Btn, Card, Fig } from "@/lib/blocks";
 import { CarArt } from "../CarArt";
 import { GenImage, pageKey } from "../GenImage";
+import { HeroExtra } from "./HeroExtra";
 import { asset, href, type Lang } from "@/lib/i18n";
 import { ui } from "@/lib/ui";
 
@@ -88,7 +91,7 @@ function StatTiles({ stats, strip }: { stats: HeroStat[]; strip?: boolean }) {
   );
 }
 
-export function PageHero({ eyebrow, h1, crumbs, path, paras, btns, introHtml, cars = [], lang = "ru", video, stats = [] }: { eyebrow: string; h1: string; crumbs: string[]; path: string; paras: string[]; btns: Btn[]; introHtml: string; cars?: { slug: string; name: string }[]; lang?: Lang; video?: string; stats?: HeroStat[] }) {
+export function PageHero({ eyebrow, h1, crumbs, path, paras, btns, introHtml, cars = [], lang = "ru", video, stats = [], count }: { count?: number; eyebrow: string; h1: string; crumbs: string[]; path: string; paras: string[]; btns: Btn[]; introHtml: string; cars?: { slug: string; name: string }[]; lang?: Lang; video?: string; stats?: HeroStat[] }) {
   const rich = /<(ul|ol|table|h3|figure)/.test(introHtml);
   return (
     <>
@@ -116,10 +119,11 @@ export function PageHero({ eyebrow, h1, crumbs, path, paras, btns, introHtml, ca
         <div className="wrap pg-hero-in">
           <Crumbs items={crumbs} path={path} lang={lang} />
           <p className="mono eyebrow">{eyebrow}</p>
-          <h1 id="pg-h1" className="display-xl" data-split>{h1}</h1>
+          <h1 id="pg-h1" className={`display-xl pg-h1${h1.length > 34 ? " h1-long" : ""}${h1.length > 56 ? " h1-xlong" : ""}`} data-split>{h1}</h1>
+          {!video && !cars.length && !paras.length && <HeroExtra k={pageKey(path)} lang={lang} count={count} />}
           {!rich && paras.slice(0, 2).map((p, i) => <p key={i} className="lead" data-reveal dangerouslySetInnerHTML={{ __html: marked.parseInline(p, { async: false }) as string }} />)}
           <Buttons btns={btns} />
-          {stats.length > 0 && <StatTiles stats={stats} strip={!!video} />}
+          {stats.length > 0 && <StatTiles stats={stats} strip />}
         </div>
       </section>
       {(rich || paras.length > 2) && (
@@ -145,7 +149,7 @@ export function CarCards({ groups, lang = "ru" }: { groups: Extract<Block, { t: 
           <div key={gi} className="pg-group" id={`cls-${gi}`}>
             {g.label && <h2 className="display pg-group-title" data-split>{g.label}</h2>}
             <div className="car-grid" data-reveal-stagger>
-              {g.cards.map((c) => <CarTile key={c.btn?.href ?? c.name} c={c} />)}
+              {g.cards.map((c) => <CarTile lang={lang} key={c.btn?.href ?? c.name} c={c} />)}
             </div>
           </div>
         ))}
@@ -154,16 +158,22 @@ export function CarCards({ groups, lang = "ru" }: { groups: Extract<Block, { t: 
   );
 }
 
-function CarTile({ c }: { c: Card }) {
+function CarTile({ c, lang = "ru" }: { c: Card; lang?: Lang }) {
   const car = c.slug ? fleet.find((f) => f.slug === c.slug) : undefined;
-  const sale = car ? saleLabel(car) : undefined;
+  // цена и скидка — из автопарка (как на главной и на странице машины), а не из текста страницы
+  const buy = /\/vykup\//.test(c.btn?.href ?? "") || (car ? !hasRent(car) : false);
+  if (car && (buy ? !hasBuy(car) : !hasRent(car))) return null; // эта опция у машины выключена в админке
+  const chips = car ? saleChips(car, lang, buy ? "buy" : "rent") : [];
+  const now = car ? (buy ? car.buyPrice : car.price) : undefined;
+  const old = car ? (buy ? car.buyOld : car.old) : undefined;
+  const t = ui(lang);
   return (
-    <article className={`car-card static${sale ? " has-sale" : ""}`}>
+    <article className={`car-card static${chips.length ? " has-sale" : ""}`}>
       <a className="car-card-in" href={c.btn?.href}>
         <div className="car-visual">
           <span className="car-floor" aria-hidden="true" />
           <CarArt slug={c.slug ?? ""} name={c.name} lit />
-          {sale && <span className="ft-sale"><i aria-hidden="true">%</i>{sale}</span>}
+          <SaleChips chips={chips} />
         </div>
         <div className="car-info">
           <h3>{c.name}</h3>
@@ -172,7 +182,12 @@ function CarTile({ c }: { c: Card }) {
               {c.specs.map(([k, v]) => <div key={k}><dt>{k}:</dt><dd>{v}</dd></div>)}
             </dl>
           )}
-          {c.price && <p className="car-price">{c.price}</p>}
+          {now ? (
+            <p className="car-price">
+              {t.from && <span>{t.from} </span>}{now.toLocaleString("ru-RU")}&nbsp;₽<small>{t.perDay.replace(/^₽/, "")}</small>
+              {old && old > now ? <s className="car-old">{old.toLocaleString("ru-RU")}&nbsp;₽</s> : null}
+            </p>
+          ) : c.price && <p className="car-price">{c.price}</p>}
           {c.btn && <span className="btn btn-primary btn-sm">{c.btn.label} <span className="arrow">→</span></span>}
         </div>
         <span className="car-glare" aria-hidden="true" />

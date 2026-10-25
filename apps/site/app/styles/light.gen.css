@@ -2047,6 +2047,90 @@
 [data-theme="light"] .mp-details dt svg {
   color: var(--cc-signal-text);
 }
+[data-theme="light"] .ft-sale.sale-buy {
+  background: linear-gradient(90deg, #ffe08a, #ffc94d);
+}
+[data-theme="light"] .car-old {
+  color: var(--text-faint);
+}
+[data-theme="light"] .mdl-old {
+  color: var(--text-faint);
+}
+[data-theme="light"] .tf-biznes {
+  --tf-tint: rgba(45,45,55,0.16);
+  --tf-acc: #d7dae0;
+}
+[data-theme="light"] .tf-gruzovoy {
+  --tf-tint: rgba(110,160,220,0.18);
+  --tf-acc: #8fb8e6;
+}
+[data-theme="light"] .tf-dostavka {
+  --tf-tint: rgba(255,120,110,0.16);
+  --tf-acc: #ff9a8f;
+}
+[data-theme="light"] .seo-cards li {
+  background: linear-gradient(180deg, var(--surface-2), var(--surface));
+  border: 1px solid var(--glass-line);
+}
+[data-theme="light"] .seo-cards strong {
+  color: var(--text);
+}
+[data-theme="light"] .seo-ico {
+  background: var(--cc-signal);
+  color: #111111;
+  box-shadow: 0 8px 24px -10px rgba(255,183,0,0.49);
+}
+[data-theme="light"] .seo-outro {
+  border-left: 3px solid var(--cc-signal);
+  background: rgba(255,183,0,0.06);
+  color: var(--text);
+}
+[data-theme="light"] .seo-fleet {
+  border: 1px solid var(--glass-line);
+  background: var(--surface);
+}
+[data-theme="light"] .ct-metro .ct-lines i {
+  box-shadow: 0 0 0 1.5px rgba(255,255,255,0.85);
+}
+[data-theme="light"] .kl-head .lead {
+  color: var(--text-muted);
+}
+[data-theme="light"] .kl-tile {
+  border: 1px solid var(--glass-line);
+  background: var(--surface);
+}
+[data-theme="light"] .kl-tile figcaption {
+  color: #1a1a1a;
+  background: linear-gradient(180deg, rgba(245,245,242,0), rgba(245,245,242,0.82));
+}
+[data-theme="light"] .kl-tile figcaption span {
+  color: rgba(26,26,26,0.82);
+}
+[data-theme="light"] .kl-note {
+  background: var(--cc-signal);
+  color: #141518;
+}
+[data-theme="light"] .kl-note span {
+  color: rgba(20,21,24,0.75);
+}
+[data-theme="light"] .kl-note .btn {
+  background: #ffffff;
+  color: #1a1a1a;
+  border-color: #d8d8d4;
+}
+[data-theme="light"] .kl-ev {
+  border: 1px solid var(--glass-line);
+  background: linear-gradient(180deg, var(--surface-2), var(--surface));
+}
+[data-theme="light"] .kl-ev-txt .mono {
+  color: var(--text-faint, var(--text-muted));
+}
+[data-theme="light"] .kl-ev-txt h3 {
+  color: var(--text);
+}
+[data-theme="light"] .kl-ev-txt p {
+  color: var(--text-muted);
+}
 
 /* ── vykup.css ── */
 [data-theme="light"] .vk-sec::before {

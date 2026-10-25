@@ -38,13 +38,13 @@ export default async function Catalog({ searchParams }: { searchParams: Promise<
                 </div>
                 <div className="ad-car-grid">
                   <label>Название<input name="name" defaultValue={v.name} required /></label>
-                  <label>Цена в сутки, ₽<input name="price" type="number" min={500} max={50000} step={1} defaultValue={v.price} required /></label>
+                  <label>Цена аренды в сутки, ₽<input name="price" type="number" min={0} max={50000} step={1} defaultValue={v.price || ""} placeholder="Пусто — без аренды" /></label>
                   <label>Класс<select name="cls" defaultValue={v.cls}>{fleetClasses.map((k) => <option key={k.id} value={k.id}>{k.name}</option>)}</select></label>
                   <label>Двигатель<input name="engine" defaultValue={v.engine ?? ""} /></label>
                   <label>Коробка<input name="gearbox" defaultValue={v.gearbox ?? ""} /></label>
                   <label>Плашка<input name="badge" defaultValue={v.badge ?? ""} placeholder="Например, Супер-скидка" /></label>
                   <label>Старая цена в сутки, ₽<input name="old" type="number" min={0} max={100000} step={1} defaultValue={v.old ?? ""} placeholder="Зачёркнутая цена" /></label>
-                  <label>Цена выкупа в сутки, ₽<input name="buyPrice" type="number" min={0} max={50000} step={1} defaultValue={v.buyPrice ?? ""} placeholder="От какой суммы выкуп" /></label>
+                  <label>Цена выкупа в сутки, ₽<input name="buyPrice" type="number" min={0} max={50000} step={1} defaultValue={v.buyPrice ?? ""} placeholder="Пусто — без выкупа" /></label>
                   <label>Старая цена выкупа, ₽<input name="buyOld" type="number" min={0} max={100000} step={1} defaultValue={v.buyOld ?? ""} placeholder="Зачёркнутая цена" /></label>
                   <label>Скидка, %<input name="off" type="number" min={0} max={90} step={1} defaultValue={v.off ?? ""} placeholder="Считается по старой цене" /></label>
                   <input type="hidden" name="featured" value={String(v.featured ?? 0)} />

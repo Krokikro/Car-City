@@ -7,7 +7,9 @@ import { allDocs, getDoc, twinOf, articles, type Doc } from "@/lib/docs";
 import { parseDoc, parseReviews } from "@/lib/blocks";
 import { siteReviews } from "@/lib/reviews";
 import { ReviewsWall } from "@/components/page/ReviewsWall";
-import { fleet } from "@/lib/fleet";
+import { fleet, type FleetCar } from "@/lib/fleet";
+import { saleChips, hasRent, hasBuy } from "@/lib/prices";
+import { syncPriceTables } from "@/lib/price-sync";
 import { carImages } from "@/lib/car-images";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -33,6 +35,7 @@ import { ArticleView, NewsGrid } from "@/components/page/Articles";
 import { SitemapView } from "@/components/page/SitemapView";
 import { ContactView } from "@/components/page/ContactView";
 import { AboutView } from "@/components/page/AboutView";
+import { KlubView } from "@/components/page/KlubView";
 import { TermsView } from "@/components/page/TermsView";
 import { termsOf } from "@/lib/terms";
 import { LANGS, isLang, type Lang } from "@/lib/i18n";
@@ -80,7 +83,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 // Какие машины показать в шапке раздела: по классу из адреса или по марке из заголовка
-const CLASS_OF: [RegExp, string][] = [[/komfort-?pl/, "komfort-plus"], [/komfort/, "komfort"], [/ekonom/, "ekonom"], [/gruzov/, "gruzovoy"]];
+const CLASS_OF: [RegExp, string][] = [[/biznes/, "biznes"], [/komfort-?pl/, "komfort-plus"], [/komfort/, "komfort"], [/ekonom/, "ekonom"], [/gruzov/, "gruzovoy"]];
 function heroCars(doc: Doc) {
   // на страницах аренды не показываем машины, которые есть только под выкуп
   const withPhoto = fleet.filter((f) => carImages[f.slug] && (f.rent || doc.path.startsWith("/vykup")));
@@ -99,11 +102,14 @@ const VIDEO_OF: [RegExp, string][] = [
 const STAT_T: Record<string, { models: string; from: string; pre: string; day: string; fast: string; fastV: string; fastU: string; gift: string; giftV: string; giftU: string; rest: string; restV: string; restU: string }> = {
   ru: { models: "Моделей", from: "Цена", pre: "от", day: "₽ в сутки", fast: "Выдача", fastV: "В день", fastU: "заявки", gift: "Первый день", giftV: "0 ₽", giftU: "бесплатно", rest: "Отпуск", restV: "14 дней", restU: "в году" },
   en: { models: "Models", from: "Price", pre: "from", day: "₽ / day", fast: "Pick-up", fastV: "Same day", fastU: "as you apply", gift: "First day", giftV: "Free", giftU: "on rent", rest: "Vacation", restV: "14 days", restU: "a year" },
+  kk: { models: "Модельдер", from: "Баға", pre: "", day: "₽/тәулік бастап", fast: "Беру", fastV: "Өтінім", fastU: "күні", gift: "Бірінші күн", giftV: "0 ₽", giftU: "тегін", rest: "Демалыс", restV: "14 күн", restU: "жылына" },
+  ky: { models: "Моделдер", from: "Баасы", pre: "", day: "₽/суткадан", fast: "Берүү", fastV: "Кайрылган", fastU: "күнү", gift: "Биринчи күн", giftV: "0 ₽", giftU: "акысыз", rest: "Эс алуу", restV: "14 күн", restU: "жылына" },
+  uz: { models: "Modellar", from: "Narx", pre: "", day: "₽/kundan", fast: "Berish", fastV: "Ariza", fastU: "kuni", gift: "Birinchi kun", giftV: "0 ₽", giftU: "bepul", rest: "Dam olish", restV: "14 kun", restU: "yiliga" },
 };
 function heroStats(doc: Doc, cars: { slug: string }[], lang: Lang): HeroStat[] {
   if (!cars.length) return [];
   const t = STAT_T[lang] ?? STAT_T.ru;
-  const buy = doc.path.startsWith("/vykup");
+  const buy = doc.path.startsWith("/vykup") || doc.path.startsWith("/biznes");
   const prices = cars.map((c) => { const f = fleet.find((x) => x.slug === c.slug); return (buy ? f?.buyPrice : f?.price) ?? 0; }).filter(Boolean);
   const min = prices.length ? Math.min(...prices) : 0;
   return [
@@ -122,8 +128,8 @@ function eyebrowOf(doc: Doc, lang: Lang) {
 }
 
 // Цена «от …» в шапке модели, когда её нет во вступлении страницы (у части арендных моделей она стояла в блоке «Детали»)
-function modelPrice(car: { price: number; buyPrice?: number } | undefined, mode: string | undefined, lang: Lang): string | undefined {
-  const v = mode === "vykup" ? car?.buyPrice ?? car?.price : car?.price;
+function modelPrice(car: FleetCar | undefined, mode: string | undefined, lang: Lang): string | undefined {
+  const v = mode === "vykup" ? car?.buyPrice : car && hasRent(car) ? car.price : car?.buyPrice;
   return v ? `${ui(lang).from} ${v} ${ui(lang).perDay}`.trim() : undefined;
 }
 
@@ -142,28 +148,35 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
     );
   const doc = getDoc(path, lang, ov);
   if (!doc) notFound();
-  const twin = twinOf(doc, lang, ov)?.path;
+  let twin = twinOf(doc, lang, ov)?.path;
   const isModel = doc.kind === "model";
   const p = parseDoc(doc.body, { twin, model: isModel, lang });
+  // таблицы цен по моделям — из единого источника цен
+  for (const b of p.blocks) if (b.t === "section") b.html = syncPriceTables(b.html);
   const car = isModel ? fleet.find((f) => [f.rent, f.buy].some((x) => x?.toLowerCase() === doc.path.toLowerCase())) : undefined;
   const name = car?.name ?? p.crumbs[p.crumbs.length - 1] ?? doc.h1;
+  // вторая опция (аренда ↔ выкуп) выключена в админке — убираем переключатель и ссылки на неё
+  const twinOk = !car || (doc.mode === "vykup" ? hasRent(car) : hasBuy(car));
+  if (!twinOk) twin = undefined;
 
   // у ленты новостей и стены отзывов вступление — это сам список, его рисуют отдельные компоненты
   const list = doc.path === "/novosti" || doc.path === "/reviews";
   const contact = doc.path === "/contact";
   const about = doc.path === "/o-nas";
-  const terms = doc.path === "/usloviya" ? termsOf(p) : undefined;
+  const terms = doc.path === "/usloviya" ? termsOf(p, lang) : undefined;
   const own = contact || about || !!terms;
   const classVideo = doc.kind !== "article" && !isModel ? VIDEO_OF.find(([re]) => re.test(doc.path))?.[1] : undefined;
   let n = 0;
   // страница выкупа: выгоды, условия и тарифы — крупными карточками (тексты те же)
   const vykup = doc.path === "/vykup";
   let si = 0;
-  const buyPage = doc.path.startsWith("/vykup");
+  const bizPage = doc.path === "/biznes";
+  const buyPage = doc.path.startsWith("/vykup") || bizPage;
   const ipPage = doc.path === "/arenda-taksi-ip";
   const truckPage = /^\/gruzov/.test(doc.path);
-  const classPage = !!classVideo && !isModel && !vykup;
+  const classPage = (!!classVideo || doc.path === "/biznes") && !isModel && !vykup;
   let reqDone = false;
+  let stepsDone = false;
   const steps = <Steps steps={homeText(lang).steps} variant={buyPage ? "buy" : "rent"} vehicle={/^\/gruzov/.test(doc.path) || doc.cls === "gruzovoy" ? "truck" : "taxi"} />;
   return (
     <>
@@ -174,14 +187,15 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
         {doc.kind === "article" ? (
           <ArticleView doc={doc} p={p} lang={lang} />
         ) : isModel ? (
-          <ModelHero h1={doc.h1} name={name} slug={car?.slug ?? ""} cls={doc.cls} mode={doc.mode} twin={twin} path={doc.path} crumbs={p.crumbs} specs={p.intro.specs} price={p.intro.price ?? modelPrice(car, doc.mode, lang)} btns={p.intro.btns.length ? p.intro.btns : [{ label: ui(lang).modelStart, href: "#zayavka" }]} gallery={doc.gallery} lang={lang} panels={modelPanels(p, car, doc.cls ? ui(lang).cls[doc.cls] ?? undefined : undefined)} />
+          <ModelHero h1={doc.h1} name={name} slug={car?.slug ?? ""} cls={doc.cls} mode={doc.mode} twin={twin} path={doc.path} crumbs={p.crumbs} specs={p.intro.specs} price={modelPrice(car, doc.mode, lang) ?? p.intro.price} oldPrice={car ? (doc.mode === "vykup" ? car.buyOld : car.old) : undefined} chips={car ? saleChips(car, lang, doc.mode === "vykup" ? "buy" : "rent") : []} btns={p.intro.btns.length ? p.intro.btns : [{ label: ui(lang).modelStart, href: "#zayavka" }]} gallery={doc.gallery} lang={lang} panels={modelPanels(p, car, doc.cls ? ui(lang).cls[doc.cls] ?? undefined : undefined, doc.mode, lang)} />
         ) : (
-          <PageHero eyebrow={eyebrowOf(doc, lang)} h1={doc.h1} crumbs={p.crumbs} path={doc.path} paras={list || own ? [] : p.intro.paras} btns={p.intro.btns} introHtml={list || own ? "" : p.intro.html} cars={heroCars(doc)} lang={lang} video={classVideo} stats={heroStats(doc, heroCars(doc), lang)} />
+          <PageHero eyebrow={eyebrowOf(doc, lang)} h1={doc.h1} crumbs={p.crumbs} path={doc.path} paras={list || own ? [] : p.intro.paras} btns={p.intro.btns} introHtml={list || own ? "" : p.intro.html} cars={heroCars(doc)} lang={lang} video={classVideo} stats={heroStats(doc, heroCars(doc), lang)} count={doc.path === "/novosti" ? articles(lang, ov).length : undefined} />
         )}
         {doc.path === "/novosti" && <NewsGrid src={doc.body} list={articles(lang, ov)} lang={lang} />}
         {doc.path === "/reviews" && <ReviewsWall items={await siteReviews(parseReviews(doc.body))} lang={lang} />}
         {contact && <ContactView lang={lang} />}
         {about && <AboutView p={p} lang={lang} />}
+        {doc.path === "/klub" && <KlubView lang={lang} />}
         {terms && <TermsView terms={terms} lang={lang} />}
         {doc.kind !== "article" && !own &&
           p.blocks.map((b, i) => {
@@ -209,12 +223,12 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
               if (/^(Детали|Details|Мәліметтер|Маалымат|Tafsilotlar)$/i.test(t)) return null; // цена и кнопка уже в шапке модели
               if (/(Рассчитайте свой заработок|Calculate your earnings|табысыңызды есептеңіз|эсептеңиз|daromadingizni hisoblang)/i.test(t))
                 return <Calculator key={i} t={homeText(lang).calculator} classes={homeText(lang).fleet.classes} cars={fleet.map((c) => ({ ...c }))} initial={car?.cls} />;
-              if (/(за 3 шага|in 3 steps|3 қадамда|3 кадамда|3 qadamda)/i.test(t)) return <Fragment key={i}>{steps}</Fragment>;
+              if (/(за 3 шага|in 3 steps|3 қадамда|3 кадамда|3 qadamda)/i.test(t)) { stepsDone = true; return <Fragment key={i}>{steps}</Fragment>; }
               if (/^(Требования к водител|Driver requirements|Жүргізушіге қойылатын|Айдоочуга коюлган|Haydovchiga)/i.test(t)) { reqDone = true; return <Requirements key={i} req={homeText(lang).requirements} />; }
               if (/^(Не нашли то|Didn.t find|Іздегеніңізді|Издегениңизди|Izlaganingizni)/i.test(t)) return <ModelCta key={i} b={b} />;
               if (/(Преимущества|Почему с нами|Почему водители|Почему выбирают Car City|Почему с Car City|вы получаете|Что получает водитель|Benefits|Why is it worth|Why drivers|артықшылық|артыкчылык|afzallik|Неге бізбен|Эмне үчүн биз|Nega biz)/i.test(t) && /<(ul|ol)/.test(b.html) && !/<table/.test(b.html))
                 return <BenefitsView key={i} b={b} n={n++} lang={lang} cta={!/^Дополнительные/i.test(t)} />;
-              return <ModelText key={i} b={b} n={n++} />;
+              return <ModelText key={i} b={b} n={n++} twinOk={twinOk} />;
             }
             if (vykup) {
               const k = si++;
@@ -244,7 +258,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
               }
               if (/class="tiles"/.test(b.html) && /<a href="[^"]+">/.test(b.html) && /(Парк авто|Автопарк|fleet)/i.test(t)) return <FleetNotes key={i} b={b} n={n++} lang={lang} />;
               if (/pill-row/.test(b.html)) {
-                const tariffs = tariffsOf(b.html);
+                const tariffs = tariffsOf(b.html, lang, CLASS_OF.find(([re]) => re.test(doc.path))?.[1]);
                 return tariffs.length && !truckPage ? <TariffCards key={i} terms={{ title: b.title, tariffs, btn: b.btns?.[0] }} lang={lang} /> : null;
               }
               if (/^(Отзывы|Reviews|Пікірлер|Пикирлер|Fikrlar)$/i.test(t)) return <Reviews key={i} lang={lang} t={homeText(lang).reviews} />;
@@ -253,8 +267,11 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
             }
             return <Section key={i} b={b} n={n++} />;
           })}
-        {classVideo && !vykup && steps}
-        {classVideo && !buyPage && !reqDone && <Requirements req={homeText(lang).requirements} />}
+        {(classVideo || bizPage) && !vykup && steps}
+        {/* в карточке каждой машины — дорога из 3 шагов (аренда) или 5 шагов (выкуп) и требования */}
+        {isModel && !stepsDone && steps}
+        {isModel && !reqDone && <Requirements req={homeText(lang).requirements} />}
+        {((classVideo && !buyPage) || bizPage) && !reqDone && <Requirements req={homeText(lang).requirements} />}
         {(p.final || isModel) && <FinalCta lang={lang} />}
       </main>
       <Footer lang={lang} />

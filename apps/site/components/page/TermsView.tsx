@@ -34,13 +34,13 @@ export function TermsView({ terms, lang = "ru" }: { terms: Terms; lang?: Lang })
   const expN = exp ? num(exp.text) : 0;
   const ageN = age ? num(age.text) : 0;
   const rows: { key: string; title: string; text?: string; body: React.ReactNode }[] = [];
-  if (cit) rows.push({ key: "cit", title: cit.title, text: cit.text, body: (
+  if (cit) rows.push({ key: "cit", title: cit.title, text: cit.text.split(":")[0].trim(), body: (
     <ul className="tm2-flags">
       {countries.map((c, i) => <li key={c}><i className={`flag flag-${FLAGS[i] ?? "x"}`} aria-hidden="true" />{c}</li>)}
     </ul>
   ) });
-  if (exp) rows.push({ key: "exp", title: exp.title, text: exp.text, body: <p className="tm2-num"><b>{expN}</b><sup>+</sup><span>{unitAfter(exp.text)}</span></p> });
-  if (age) rows.push({ key: "age", title: age.title, text: age.text, body: <p className="tm2-num"><b>{ageN}</b><sup>+</sup></p> });
+  if (exp) rows.push({ key: "exp", title: exp.title, body: <p className="tm2-num"><b>{expN}</b><sup>+</sup><span>{unitAfter(exp.text)}</span></p> });
+  if (age) rows.push({ key: "age", title: age.title, body: <p className="tm2-num"><b>{ageN}</b><sup>+</sup></p> });
   if (docs) rows.push({ key: "docs", title: docs.title, body: (
     <ul className="tm2-docs">
       {docList.map((d, i) => (

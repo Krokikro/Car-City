@@ -81,10 +81,10 @@
   }
   [data-theme="light"] .hv-video { object-fit: cover; }
   [data-theme="light"] .hv-fill, [data-theme="light"] .hv-shade { display: none; }
-  [data-theme="light"] .hv-copy > * { max-width: min(46vw, 640px); }
-  [data-theme="light"] .hv-title { font-size: clamp(40px, 5.2vw, 96px); max-width: 11ch; }
+  [data-theme="light"] .hv-copy > * { max-width: min(46vw, 720px); }
+  [data-theme="light"] .hv-title { --hv-w: min(46vw, 720px); max-width: var(--hv-w); }
   [data-theme="light"] .hv-stats dl { max-width: min(46vw, 640px); grid-template-columns: repeat(2, 1fr); border-top-color: var(--hair); }
-  [data-theme="light"] .hv-giant { mix-blend-mode: normal; -webkit-text-stroke: 1.5px rgba(20,21,24,.12); }
+  [data-theme="light"] .hv-giant { mix-blend-mode: normal; -webkit-text-stroke: 2px rgba(20,21,24,.3); }
 }
 [data-theme="light"] .hv-stats dt { color: var(--ink-3); }
 @media (max-width: 719px) {
@@ -155,8 +155,8 @@
 [data-theme="light"] .news-img { inset: 0 0 auto 0; height: clamp(150px, 15vw, 210px); overflow: hidden; border-radius: var(--radius-card) var(--radius-card) 0 0; }
 [data-theme="light"] .news-img img, [data-theme="light"] .news-card:hover .news-img img { opacity: 1; }
 @media (min-width: 700px) {
-  [data-theme="light"] .news-card.big:has(.news-img) { padding-top: 28px; padding-right: 50%; }
-  [data-theme="light"] .news-card.big .news-img { inset: 0 0 0 48%; height: auto; border-radius: 0 var(--radius-card) var(--radius-card) 0; }
+  [data-theme="light"] .news-card.big:has(.news-img) { padding-top: 28px; padding-right: calc(52% + 8px); }
+  [data-theme="light"] .news-card.big .news-img { inset: 0 0 0 52%; height: auto; border-radius: 0 var(--radius-card) var(--radius-card) 0; }
 }
 [data-theme="light"] .news-card time { color: var(--ink-3); }
 [data-theme="light"] .art-cover { box-shadow: var(--shadow-lift); }
@@ -215,6 +215,53 @@
 [data-theme="light"][data-variant="B"] .footer-bottom { border-top-color: var(--hair); }
 [data-theme="light"][data-variant="B"] .footer-giant span { background: linear-gradient(180deg, rgba(15,17,21,.1), rgba(15,17,21,0)); -webkit-background-clip: text; background-clip: text; }
 [data-theme="light"] .site-footer .footer-giant span { color: transparent; }
-@media (min-width: 700px) { [data-theme="light"] .news-card.big h2 { font-size: clamp(26px, 2.6vw, 42px); } }
+@media (min-width: 700px) { [data-theme="light"] .news-card.big h2 { font-size: clamp(24px, 2.2vw, 36px); hyphens: auto; } }
 [data-theme="light"] .news-card.big { overflow: hidden; }
 [data-theme="light"][data-variant="B"] .site-footer .footer-giant span { color: transparent; }
+
+/* Звёзды рейтингов — всегда жёлтые (агрегаторы, карточки отзывов) */
+[data-theme="light"] .stars,
+[data-theme="light"] .rwall-stars { color: #F5B000; text-shadow: 0 0 0 #F5B000; }
+
+/* Дорога в блоке «3 шага / 5 шагов»: серый асфальт и белая прерывистая разметка */
+[data-theme="light"] .road-bed { stroke: #6c717a; }
+[data-theme="light"] .road-dash { stroke: rgba(255,255,255,.95); stroke-width: 2.5; stroke-dasharray: 16 14; }
+[data-theme="light"] .road-car { filter: drop-shadow(0 12px 14px rgba(20,21,24,.28)); }
+
+/* «Нам доверяют»: счётчики разными цветами */
+[data-theme="light"] .trust-stat:nth-child(1) .trust-num { color: #E9A100; }
+[data-theme="light"] .trust-stat:nth-child(2) .trust-num { color: #1A8C9C; }
+[data-theme="light"] .trust-stats.one .trust-stat:nth-child(1) .trust-num { color: #1A8C9C; }
+[data-theme="light"] .trust-stat:nth-child(1) { border-top: 2px solid #E9A100; }
+[data-theme="light"] .trust-stat:nth-child(2), [data-theme="light"] .trust-stats.one .trust-stat { border-top: 2px solid #1A8C9C; }
+
+/* Шапки «О нас / Отзывы / Новости / Контакты»: описание и факты */
+[data-theme="light"] .pg-hero-extra { display: grid; gap: clamp(18px, 2vw, 26px); margin-top: 6px; }
+[data-theme="light"] .pg-hero-extra .lead { margin: 0; color: var(--ink-2, #3a3d44); max-width: 34ch; }
+[data-theme="light"] .pg-hero-facts { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
+[data-theme="light"] .pg-hero-facts li { display: grid; gap: 2px; min-width: 120px; padding: 14px 18px; border-radius: 18px; background: #fff; box-shadow: 0 1px 0 rgba(20,21,24,.06), 0 10px 24px -14px rgba(20,21,24,.25); }
+[data-theme="light"] .pg-hero-facts b { font: 600 clamp(22px, 2vw, 30px)/1 var(--font-display); letter-spacing: -.02em; color: #141518; white-space: nowrap; }
+[data-theme="light"] .pg-hero-facts b i { font-style: normal; color: #F5B000; font-size: .8em; }
+[data-theme="light"] .pg-hero-facts span { font-size: 13px; color: #6a6d74; }
+[data-theme="light"] .pg-hero-facts li:first-child { background: #FFB700; }
+[data-theme="light"] .pg-hero-facts li:first-child span { color: #3b2f00; }
+
+/* Подвал: при наведении ссылка подсвечивается жёлтым, а не уходит в чёрный на графите */
+[data-theme="light"] .site-footer a:not(.btn):hover,
+[data-theme="light"] .site-footer a:not(.btn):focus-visible { color: #FFB700; }
+[data-theme="light"] .site-footer .footer-msg a:hover { border-color: #FFB700; }
+[data-theme="light"] .pg-hero-facts li:first-child b i { color: #141518; }
+
+/* Заголовок первого экрана: размер шрифта подбирается так, чтобы самая длинная строка помещалась в колонку
+   (--ch — длина самой длинной строки, но не больше 20 знаков: очень длинные строки на казахском и др. переносятся) */
+[data-theme="light"] .hv-title { --hv-w: calc(100vw - 2 * var(--gutter)); font-size: clamp(30px, calc(var(--hv-w) / (var(--ch, 18) * .72)), 84px); line-height: 1; }
+@media (min-width: 720px) { [data-theme="light"] .hv-title { --hv-w: min(46vw, 720px); max-width: var(--hv-w); } }
+
+/* «Закрытый клуб» */
+[data-theme="light"] .kl-tile, [data-theme="light"] .kl-ev { background: #fff; border-color: transparent; box-shadow: var(--shadow-card); }
+[data-theme="light"] .kl-note { background: #FFB700; }
+[data-theme="light"] .kl-note .btn { background: #141518; color: #fff; }
+[data-theme="light"] .kl-tile figcaption, [data-theme="light"] .kl-tile figcaption b { color: #fff; }
+[data-theme="light"] .kl-tile figcaption { background: linear-gradient(180deg, rgba(10,11,13,0), rgba(10,11,13,.78)); }
+[data-theme="light"] .kl-tile figcaption span { color: rgba(255,255,255,.85); }
+[data-theme="light"] .kl-note .btn { border-color: #141518; }

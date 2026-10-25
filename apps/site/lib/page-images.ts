@@ -16,6 +16,34 @@ export const pageImages: Record<string, { w: number; h: number }> = {
     "w": 1920,
     "h": 1086
   },
+  "club-gym": {
+    "w": 1920,
+    "h": 1433
+  },
+  "club-holiday": {
+    "w": 1920,
+    "h": 1433
+  },
+  "club-openday": {
+    "w": 1920,
+    "h": 1433
+  },
+  "club-pingpong": {
+    "w": 1920,
+    "h": 1433
+  },
+  "club-ps5": {
+    "w": 1920,
+    "h": 1433
+  },
+  "club-tt": {
+    "w": 1920,
+    "h": 1433
+  },
+  "club": {
+    "w": 1920,
+    "h": 1086
+  },
   "contacts": {
     "w": 1920,
     "h": 1086

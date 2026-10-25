@@ -138,8 +138,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный"
 - Цена. Класс «Эконом» самый недорогой из доступных в нашем парке моделей.
 - Популярность среди клиентов. Поездка обходится дешево, поэтому многие люди готовы заплатить таксисту, чтобы быстрее добраться до места назначения.
 
-![about](https://car-city.pro/themes/img/about/comfort-about.webp)
-![about](https://car-city.pro/themes/img/about/comfort-about-mobile.webp)
+![Kia Rio](/cars/kia-rio-1.6-front-1000.webp)
 
 ## Парк авто Эконом класса
 

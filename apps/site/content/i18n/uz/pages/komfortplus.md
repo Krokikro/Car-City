@@ -163,7 +163,7 @@ Komfort+ sinfidagi avtomobillar noyob imkoniyatlarga ega. Masalan, salonlar quvv
 
 Baʼzi agregatorlarning qoidalari nafaqat avtomobil parametrlarini, balki servisni ham nazarda tutadi. Baʼzan xizmatlar yoʻlovchilar uchun suv yoki boshqa qulayliklar boʻlishini talab qiladi.
 
-![biz haqimizda](https://car-city.pro/themes/img/about/comfort-about.webp)
+![Haval F7](/cars/haval-f7-front-1000.webp)
 
 ## Komfort Plyus sinfidagi avtopark
 

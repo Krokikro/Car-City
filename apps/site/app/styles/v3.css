@@ -870,3 +870,84 @@ button.owner:hover, button.owner:focus-visible { border-color: rgba(255,183,0,.5
 .mp-details dt svg { flex: none; color: var(--cc-signal); }
 .mp-details dd { font: 400 clamp(17px, 1.4vw, 21px)/1.2 var(--font-display); letter-spacing: -.01em; font-weight: 400; }
 @media (max-width: 640px) { .mt-specs { grid-template-columns: repeat(2, minmax(0, 1fr)); } .mt-specs li { font-size: 15px; padding: 14px; } }
+
+/* Плашки скидки: подписанные, по одной на аренду и на выкуп */
+.ft-sales { position: absolute; right: 0; top: 14px; z-index: 2; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; pointer-events: none; }
+.ft-sales .ft-sale { position: static; }
+.ft-sale.sale-buy { background: linear-gradient(90deg, #ffe08a, #ffc94d); }
+.ft-sales-m { display: none; }
+@media (max-width: 640px) {
+  .ft .ft-sales { display: none; }
+  .ft-sales-m { display: flex; flex-wrap: wrap; gap: 6px; }
+  .ft-sales-m .ft-sale-m { display: inline-flex; }
+}
+.car-old { margin-left: 10px; font: 400 14px/1 var(--font-text); color: var(--text-faint); text-decoration: line-through; }
+.mdl-old { align-self: center; font: 400 clamp(16px, 1.4vw, 20px)/1 var(--font-text); color: var(--text-faint); text-decoration: line-through; }
+.mdl-sales { display: flex; flex-wrap: wrap; gap: 8px; margin: 2px 0 6px; }
+.mdl-sales .mdl-sale { position: static; border-radius: 999px; }
+.tf-biznes { --tf-tint: rgba(200,200,210,.16); --tf-acc: #D7DAE0; }
+.tf-gruzovoy { --tf-tint: rgba(110,160,220,.18); --tf-acc: #8FB8E6; }
+.tf-dostavka { --tf-tint: rgba(255,120,110,.16); --tf-acc: #FF9A8F; }
+/* шапка с веером машин (бизнес, бренды): цифры плитками 2×2 рядом с заголовком */
+@media (min-width: 900px) { .pg-hero-cars .pg-stats-big { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: min(52%, 640px); } }
+
+/* Заголовки в шапках страниц: не больше 2–3 строк — длинные набираются мельче и шире */
+.pg-hero h1.pg-h1 { font-size: clamp(36px, 5.2vw, 88px); max-width: 18ch; overflow-wrap: break-word; hyphens: manual; }
+.pg-hero h1.pg-h1.h1-long { font-size: clamp(32px, 4vw, 66px); max-width: 22ch; }
+.pg-hero h1.pg-h1.h1-xlong { font-size: clamp(28px, 3.3vw, 54px); max-width: 26ch; }
+@media (min-width: 900px) { .pg-hero-video h1.pg-h1 { max-width: min(62%, 14em); } .pg-hero-cars h1.pg-h1 { max-width: min(52%, 14em); } }
+.mdl-h1 { font-size: clamp(34px, 4.2vw, 68px); max-width: 18ch; overflow-wrap: break-word; }
+.mdl-h1.h1-long { font-size: clamp(30px, 3.4vw, 54px); max-width: 22ch; }
+@media (max-width: 560px) {
+  .pg-hero h1.pg-h1 { font-size: clamp(30px, 9vw, 44px); }
+  .pg-hero h1.pg-h1.h1-long { font-size: clamp(26px, 7.4vw, 36px); }
+  .pg-hero h1.pg-h1.h1-xlong { font-size: clamp(24px, 6.6vw, 32px); }
+  .mdl-h1, .mdl-h1.h1-long { font-size: clamp(28px, 7.6vw, 38px); }
+}
+
+/* Главная, «О таксопарке»: преимущества плитками, карточка парка с фото */
+.seo-body { gap: 18px; }
+.seo-why h3 { margin: 0 0 6px; }
+.seo-cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.seo-cards li { position: relative; display: grid; gap: 8px; align-content: start; padding: 18px 18px 20px; border-radius: 20px; background: linear-gradient(180deg, var(--surface-2), var(--surface)); border: 1px solid var(--glass-line); font-size: 15px; line-height: 1.5; }
+.seo-cards strong { color: var(--text); font: 400 18px/1.2 var(--font-display); letter-spacing: -.01em; }
+.seo-ico { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--cc-signal); color: #111; box-shadow: 0 8px 24px -10px rgba(255,183,0,.7); margin-bottom: 4px; }
+.seo-outro { padding: 16px 18px; border-left: 3px solid var(--cc-signal); background: rgba(255,183,0,.06); border-radius: 0 14px 14px 0; color: var(--text); }
+.seo-fleet { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); overflow: hidden; border-radius: 24px; border: 1px solid var(--glass-line); background: var(--surface); margin-top: 6px; }
+.seo-fleet-img { min-height: 260px; background: center / cover no-repeat; }
+.seo-fleet-txt { display: grid; gap: 12px; align-content: start; padding: 22px 24px; font-size: 15.5px; }
+.seo-fleet-txt h3 { margin: 0; }
+@media (max-width: 760px) { .seo-cards { grid-template-columns: 1fr; } .seo-fleet { grid-template-columns: 1fr; } .seo-fleet-img { min-height: 200px; } }
+
+/* Контакты: значки линий метро */
+.ct-lines { display: inline-flex; gap: 3px; }
+.ct-metro .ct-lines i { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; font: 700 11px/1 var(--font-text); font-style: normal; box-shadow: 0 0 0 1.5px rgba(255,255,255,.85); }
+
+/* Шапки «О нас / Отзывы / Новости / Контакты»: описание и факты — только в светлой версии (light.css) */
+.pg-hero-extra { display: none; }
+
+/* «Закрытый клуб»: плитки «что есть в клубе» и карточки событий */
+.kl-head { display: grid; gap: 14px; margin-bottom: clamp(24px, 3vw, 40px); }
+.kl-head .lead { margin: 0; max-width: 52ch; color: var(--text-muted); }
+.kl-bento { display: grid; gap: 14px; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .kl-bento { grid-template-columns: 1.5fr 1fr 1fr; grid-template-rows: auto auto; } .kl-big { grid-row: span 2; } .kl-note { grid-column: span 2; } }
+.kl-tile { position: relative; margin: 0; overflow: hidden; border-radius: 24px; border: 1px solid var(--glass-line); background: var(--surface); min-height: 260px; isolation: isolate; }
+.kl-tile .kl-img, .kl-ev .kl-img { display: block; }
+.kl-tile .kl-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease-out); }
+.kl-tile:hover .kl-img img { transform: scale(1.04); }
+.kl-tile figcaption { position: absolute; left: 0; right: 0; bottom: 0; display: grid; gap: 4px; padding: 56px 20px 18px; color: #fff; background: linear-gradient(180deg, rgba(10,11,13,0), rgba(10,11,13,.82)); }
+.kl-tile figcaption b { font: 600 clamp(19px, 1.6vw, 24px)/1.15 var(--font-display); letter-spacing: -.01em; }
+.kl-tile figcaption span { font-size: 14px; line-height: 1.45; color: rgba(255,255,255,.82); max-width: 40ch; }
+.kl-big { min-height: 420px; }
+.kl-note { display: grid; align-content: end; gap: 10px; padding: 24px; background: var(--cc-signal); color: #141518; border-color: transparent; min-height: 220px; }
+.kl-note b { font: 600 clamp(20px, 1.7vw, 26px)/1.15 var(--font-display); }
+.kl-note span { font-size: 14px; line-height: 1.45; color: rgba(20,21,24,.75); }
+.kl-note .btn { justify-self: start; margin-top: 6px; background: #141518; color: #fff; border-color: #141518; }
+.kl-events { display: grid; gap: 14px; margin-top: clamp(24px, 3vw, 40px); }
+@media (min-width: 800px) { .kl-events { grid-template-columns: repeat(3, 1fr); } }
+.kl-ev { overflow: hidden; border-radius: 24px; border: 1px solid var(--glass-line); background: linear-gradient(180deg, var(--surface-2), var(--surface)); }
+.kl-ev .kl-img img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.kl-ev-txt { display: grid; gap: 6px; padding: 18px 20px 22px; }
+.kl-ev-txt .mono { color: var(--text-faint, var(--text-muted)); font-size: 12px; }
+.kl-ev-txt h3 { margin: 0; font: 600 22px/1.15 var(--font-display); letter-spacing: -.01em; color: var(--text); }
+.kl-ev-txt p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--text-muted); }

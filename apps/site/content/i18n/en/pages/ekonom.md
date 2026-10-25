@@ -138,8 +138,7 @@ A lot of people use taxis, and most of them choose the "Economy" class. They lik
 - Price. "Economy" is the cheapest class of models in our fleet.
 - Popular with customers. Rides are cheap, so many people are happy to pay a taxi driver to get where they're going faster.
 
-![about](https://car-city.pro/themes/img/about/comfort-about.webp)
-![about](https://car-city.pro/themes/img/about/comfort-about-mobile.webp)
+![Kia Rio](/cars/kia-rio-1.6-front-1000.webp)
 
 ## Economy class fleet
 

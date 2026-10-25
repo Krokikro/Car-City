@@ -256,12 +256,13 @@ export async function saveCarAction(fd: FormData) {
   const slug = f(fd, "slug");
   const car = BASE_FLEET.find((c) => c.slug === slug);
   if (!car) go("/admin/catalog", "e", "Нет такой машины");
-  const price = Math.round(Number(f(fd, "price")));
-  if (!Number.isFinite(price) || price < 500 || price > 50000) go(`/admin/catalog#${slug}`, "e", "Цена в сутки — от 500 до 50 000 ₽");
+  // пустая цена аренды — машины нет в аренде: на сайте пропадают цена и кнопка «Арендовать»
+  const price = Math.round(Number(f(fd, "price") || 0));
+  if (!Number.isFinite(price) || (price !== 0 && (price < 500 || price > 50000))) go(`/admin/catalog#${slug}`, "e", "Цена в сутки — от 500 до 50 000 ₽ (или пусто, если аренды нет)");
   const cls = f(fd, "cls");
   if (!fleetClasses.some((c) => c.id === cls)) go(`/admin/catalog#${slug}`, "e", "Неизвестный класс");
   const old = Math.round(Number(f(fd, "old") || 0));
-  if (old && (!Number.isFinite(old) || old <= price || old > 100000)) go(`/admin/catalog#${slug}`, "e", "Старая цена должна быть больше текущей");
+  if (old && (!price || !Number.isFinite(old) || old <= price || old > 100000)) go(`/admin/catalog#${slug}`, "e", "Старая цена должна быть больше текущей");
   // скидка в процентах: либо введена вручную, либо считается по старой цене
   let off = Math.round(Number(f(fd, "off") || 0));
   if (old) off = Math.round((1 - price / old) * 100);
