@@ -21,8 +21,8 @@ export const newsLightImages: Record<string, { w: number; h: number }> = {
     "h": 679
   },
   "jac-j7-novyij-effektnyij-liftbek": {
-    "w": 1000,
-    "h": 562
+    "w": 1200,
+    "h": 675
   },
   "jac-motors": {
     "w": 1200,

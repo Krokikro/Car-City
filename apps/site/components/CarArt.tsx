@@ -41,7 +41,7 @@ export function CarArt({ slug, name, priority = false, lit = false, sizes = "(ma
   const meta = carImages[slug];
   if (meta) {
     // ?v= — сброс кэша браузера после перекраски части машин в белый (картинки кэшируются на неделю)
-    const f = (n: number, ext: string) => asset(`/${CARS_DIR}/${slug}-${n}.${ext}`) + "?v=2";
+    const f = (n: number, ext: string) => asset(`/${CARS_DIR}/${slug}-${n}.${ext}`) + "?v=3";
     return (
       <span className="car-photo">
         <picture>
