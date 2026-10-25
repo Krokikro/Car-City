@@ -18,7 +18,7 @@ const SHOTS = [
 export function ModelStage({ name, slug }: { name: string; slug: string }) {
   const own = !!carImages[slug];
   const [cur, setCur] = useState(-1); // -1 главное фото, 0..2 уличные
-  const pics = own ? SHOTS.filter((s) => s.key !== "interior" || carInteriors.has(slug)).map((s) => ({ ...s, big: asset(`/cars/${slug}-${s.key}-1000.webp`) + "?v=3", thumb: asset(`/cars/${slug}-${s.key}-480.webp`) + "?v=3" })) : [];
+  const pics = own ? SHOTS.filter((s) => s.key !== "interior" || carInteriors.has(slug)).map((s) => ({ ...s, big: asset(`/cars/${slug}-${s.key}-1000.webp`), thumb: asset(`/cars/${slug}-${s.key}-480.webp`) })) : [];
   return (
     <div className="mdl-stage" data-reveal>
       <div className="mdl-ring" aria-hidden="true"><i /><i /><i /></div>

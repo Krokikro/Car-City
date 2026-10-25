@@ -40,8 +40,7 @@ const PATHS: Record<Body, { body: string; glass: string; wheels: [number, number
 export function CarArt({ slug, name, priority = false, lit = false, sizes = "(max-width: 720px) 86vw, 560px" }: { slug: string; name: string; priority?: boolean; lit?: boolean; sizes?: string }) {
   const meta = carImages[slug];
   if (meta) {
-    // ?v= — сброс кэша браузера после перекраски части машин в белый (картинки кэшируются на неделю)
-    const f = (n: number, ext: string) => asset(`/${CARS_DIR}/${slug}-${n}.${ext}`) + "?v=3";
+    const f = (n: number, ext: string) => asset(`/${CARS_DIR}/${slug}-${n}.${ext}`);
     return (
       <span className="car-photo">
         <picture>
