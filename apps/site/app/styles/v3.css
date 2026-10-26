@@ -905,19 +905,16 @@ button.owner:hover, button.owner:focus-visible { border-color: rgba(255,183,0,.5
   .mdl-h1, .mdl-h1.h1-long { font-size: clamp(28px, 7.6vw, 38px); }
 }
 
-/* Главная, «О таксопарке»: преимущества плитками, карточка парка с фото */
+/* Главная, «О таксопарке»: преимущества плитками, под ними итоговое предложение */
 .seo-body { gap: 18px; }
 .seo-why h3 { margin: 0 0 6px; }
 .seo-cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .seo-cards li { position: relative; display: grid; gap: 8px; align-content: start; padding: 18px 18px 20px; border-radius: 20px; background: linear-gradient(180deg, var(--surface-2), var(--surface)); border: 1px solid var(--glass-line); font-size: 15px; line-height: 1.5; }
 .seo-cards strong { color: var(--text); font: 400 18px/1.2 var(--font-display); letter-spacing: -.01em; }
 .seo-ico { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--cc-signal); color: #111; box-shadow: 0 8px 24px -10px rgba(255,183,0,.7); margin-bottom: 4px; }
-.seo-outro { padding: 16px 18px; border-left: 3px solid var(--cc-signal); background: rgba(255,183,0,.06); border-radius: 0 14px 14px 0; color: var(--text); }
-.seo-fleet { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); overflow: hidden; border-radius: 24px; border: 1px solid var(--glass-line); background: var(--surface); margin-top: 6px; }
-.seo-fleet-img { min-height: 260px; background: center / cover no-repeat; }
-.seo-fleet-txt { display: grid; gap: 12px; align-content: start; padding: 22px 24px; font-size: 15.5px; }
-.seo-fleet-txt h3 { margin: 0; }
-@media (max-width: 760px) { .seo-cards { grid-template-columns: 1fr; } .seo-fleet { grid-template-columns: 1fr; } .seo-fleet-img { min-height: 200px; } }
+/* итоговое предложение — плашкой на всю ширину блока */
+.seo-outro { margin: clamp(28px, 4vw, 48px) 0 0; padding: clamp(26px, 3.4vw, 44px) clamp(24px, 4vw, 56px); border-radius: 28px; background: var(--cc-signal); color: #141518; font: 400 clamp(22px, 2.6vw, 38px)/1.2 var(--font-display); letter-spacing: -.015em; text-wrap: balance; }
+@media (max-width: 760px) { .seo-cards { grid-template-columns: 1fr; } }
 
 /* Контакты: значки линий метро */
 .ct-lines { display: inline-flex; gap: 3px; }

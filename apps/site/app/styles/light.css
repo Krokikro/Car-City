@@ -265,3 +265,4 @@
 [data-theme="light"] .kl-tile figcaption { background: linear-gradient(180deg, rgba(10,11,13,0), rgba(10,11,13,.78)); }
 [data-theme="light"] .kl-tile figcaption span { color: rgba(255,255,255,.85); }
 [data-theme="light"] .kl-note .btn { border-color: #141518; }
+[data-theme="light"] .seo-outro { background: #FFB700; color: #141518; }

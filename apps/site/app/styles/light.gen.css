@@ -2081,13 +2081,8 @@
   box-shadow: 0 8px 24px -10px rgba(255,183,0,0.49);
 }
 [data-theme="light"] .seo-outro {
-  border-left: 3px solid var(--cc-signal);
-  background: rgba(255,183,0,0.06);
-  color: var(--text);
-}
-[data-theme="light"] .seo-fleet {
-  border: 1px solid var(--glass-line);
-  background: var(--surface);
+  background: var(--cc-signal);
+  color: #141518;
 }
 [data-theme="light"] .ct-metro .ct-lines i {
   box-shadow: 0 0 0 1.5px rgba(255,255,255,0.85);

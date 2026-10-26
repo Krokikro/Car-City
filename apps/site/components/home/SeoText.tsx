@@ -1,8 +1,7 @@
 import type { HomeText } from "@/lib/home-text";
-import { asset } from "@/lib/i18n";
 
 // «О таксопарке»: слева заголовок и вступление, справа — преимущества плитками со значками
-// и карточка «Найдите свой автомобиль» с фото парка. Тексты прежние (SEO), меняется только подача.
+// под ними — итоговое предложение на всю ширину блока. Тексты прежние (SEO), меняется только подача.
 const ICONS = [
   "M12 8v4l3 2M12 21a9 9 0 100-18 9 9 0 000 18z", // часы — в день обращения
   "M20 12v8H4v-8M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z", // подарок
@@ -35,15 +34,10 @@ export function SeoText({ t: seo }: { t: HomeText["seo"] }) {
               </li>
             ))}
           </ul>
-          <p className="seo-outro">{seo.whyOutro}</p>
-          <div className="seo-fleet" data-reveal>
-            <div className="seo-fleet-img" style={{ backgroundImage: `url(${asset("/pages/about-fleet-960.webp")})` }} aria-hidden="true" />
-            <div className="seo-fleet-txt">
-              <h3>{seo.fleetTitle}</h3>
-              {seo.fleet.map((p) => <p key={p.slice(0, 20)}>{p}</p>)}
-            </div>
-          </div>
         </div>
+      </div>
+      <div className="wrap">
+        <p className="seo-outro" data-reveal>{seo.whyOutro}</p>
       </div>
     </section>
   );
