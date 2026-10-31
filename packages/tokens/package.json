@@ -1,0 +1,6 @@
+{
+  "name": "@car-city/tokens",
+  "version": "0.2.0",
+  "private": true,
+  "exports": { "./tokens.css": "./tokens.css", "./tokens.json": "./tokens.json" }
+}
