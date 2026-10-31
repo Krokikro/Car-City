@@ -82,17 +82,17 @@ export function FleetTile({ m, t, lang, i = 0, priority = false }: { m: FleetCar
   );
 }
 
-type PromoText = { orderTitle: string; orderText: string; orderBtn: string; friendTitle: [string, string, string]; friendText: string; friendNote: string; friendBtn: string; copied: string; shareText: string };
+type PromoText = { orderTitle: string; orderText: string; orderBtn: string; friendTitle: [string, string, string]; friendText: string; friendNote: string; friendBtn: string; copied: string; shareText: string; upTo: string };
 const PROMO: Record<string, PromoText> = {
   ru: {
     orderTitle: "Не устраивает авто из наличия?", orderText: "Приобретём автомобиль на заказ под ваши пожелания", orderBtn: "Выкупить",
     friendTitle: ["Получай ", "бонус", " за каждого друга"], friendText: "Количество выплат на одного человека не ограничено", friendNote: "*действует на аренду и выкуп",
-    friendBtn: "Поделиться ссылкой", copied: "Ссылка скопирована", shareText: "Car City — аренда и выкуп авто для такси в Москве",
+    friendBtn: "Поделиться ссылкой", copied: "Ссылка скопирована", shareText: "Car City — аренда и выкуп авто для такси в Москве", upTo: "до",
   },
   en: {
     orderTitle: "Nothing suitable in stock?", orderText: "We will buy a car to order for your needs", orderBtn: "Buy out",
     friendTitle: ["Get a ", "bonus", " for every friend"], friendText: "No limit on the number of payouts per person", friendNote: "*valid for rental and rent-to-own",
-    friendBtn: "Share the link", copied: "Link copied", shareText: "Car City — taxi car rental and rent-to-own in Moscow",
+    friendBtn: "Share the link", copied: "Link copied", shareText: "Car City — taxi car rental and rent-to-own in Moscow", upTo: "up to",
   },
 };
 
@@ -125,7 +125,7 @@ function PromoTile({ kind, lang, i }: { kind: "order" | "friend"; lang: Lang; i:
       <div className="ft-promo-body">
         <h3>{p.friendTitle[0]}<em>{p.friendTitle[1]}</em>{p.friendTitle[2]}<sup>*</sup></h3>
         <p>{p.friendText}</p>
-        <p className="ft-promo-sum">15&nbsp;000&nbsp;₽</p>
+        <p className="ft-promo-sum"><small>{p.upTo}</small>15&nbsp;000&nbsp;₽</p>
         <p className="ft-promo-note">{p.friendNote}</p>
         <button type="button" className="btn btn-primary btn-sm" onClick={share}>{copied ? p.copied : p.friendBtn}</button>
       </div>

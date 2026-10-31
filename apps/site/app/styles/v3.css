@@ -990,6 +990,7 @@ button.owner:hover, button.owner:focus-visible { border-color: rgba(255,183,0,.5
 .ft-promo-friend h3 sup { font-size: .5em; }
 .ft-promo-friend p { color: rgba(255, 255, 255, .82); font-size: 14px; }
 .ft-promo-friend .ft-promo-sum { margin-top: 6px; color: var(--cc-signal); font: 700 clamp(38px, 3.4vw, 50px)/1 var(--font-display); letter-spacing: -.02em; }
+.ft-promo-friend .ft-promo-sum small { margin-right: .22em; font-size: .5em; font-weight: 600; letter-spacing: 0; vertical-align: .12em; }
 .ft-promo-friend .ft-promo-note { color: rgba(255, 255, 255, .6); font-size: 12px; }
 .ft-promo:hover { transform: translateY(-6px); }
 
