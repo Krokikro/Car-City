@@ -31,11 +31,11 @@ export default async function LeadPage({ params, searchParams }: { params: Promi
   const tel = d.phone.replace(/[^\d+]/g, "");
 
   return (
-    <Shell user={user} active="leads" title={d.name} sub={`Заявка № ${l.id} · ${fmt(l.at, true)}`} flash={sp} actions={<Link className="ad-btn" href="/admin/leads">← К заявкам</Link>}>
-      <div className="ad-cols">
-        <section className="ad-card">
+    <Shell user={user} active="leads" title={d.name} sub={`Заявка № ${l.id} · ${fmt(l.at, true)}`} flash={sp} actions={<Link className="pnl-btn" href="/admin/leads">← К заявкам</Link>}>
+      <div className="pnl-cols">
+        <section className="pnl-card">
           <h2>Клиент</h2>
-          <dl className="ad-dl">
+          <dl className="pnl-dl">
             <dt>Телефон</dt><dd><a href={`tel:${tel}`}>{d.phone}</a></dd>
             {d.messenger && <><dt>Как связаться</dt><dd>{MESSENGER_LABELS[d.messenger]}</dd></>}
             {Object.entries(d.extra ?? {}).map(([k, v]) => <><dt key={`k${k}`}>{EXTRA_LABELS[k] ?? k}</dt><dd key={`v${k}`}>{k === "mode" ? (MODE_LABELS[v] ?? v) : v}</dd></>)}
@@ -47,9 +47,9 @@ export default async function LeadPage({ params, searchParams }: { params: Promi
             <dt>Согласие ПДн</dt><dd>да, ред. {d.consent?.version}{d.consent?.marketing ? ", реклама: да" : ""}</dd>
           </dl>
         </section>
-        <section className="ad-card">
+        <section className="pnl-card">
           <h2>Работа с заявкой</h2>
-          <form action={updateLeadAction} className="ad-form">
+          <form action={updateLeadAction} className="pnl-form">
             <input type="hidden" name="id" value={l.id} />
             <fieldset disabled={!write}>
               <label>Статус<select name="status" defaultValue={l.status}>{LEAD_STATUSES.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}</select></label>
@@ -66,15 +66,15 @@ export default async function LeadPage({ params, searchParams }: { params: Promi
                 )}
               </label>
               <label>Комментарий<textarea name="comment" rows={5} defaultValue={l.comment} maxLength={LIM.leadComment} /></label>
-              {write && <button className="ad-btn ad-btn-main" type="submit">Сохранить</button>}
+              {write && <button className="pnl-btn pnl-btn-main" type="submit">Сохранить</button>}
             </fieldset>
           </form>
         </section>
       </div>
       {hist.length > 0 && (
-        <section className="ad-card">
+        <section className="pnl-card">
           <h2>История</h2>
-          <ul className="ad-list">{hist.map((h, i) => <li key={i}><span>{h.action}</span><em>{h.user_email ?? ""}</em><time>{fmt(h.at, true)}</time></li>)}</ul>
+          <ul className="pnl-list">{hist.map((h, i) => <li key={i}><span>{h.action}</span><em>{h.user_email ?? ""}</em><time>{fmt(h.at, true)}</time></li>)}</ul>
         </section>
       )}
     </Shell>

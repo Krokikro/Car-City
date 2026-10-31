@@ -13,11 +13,11 @@ export default async function Code({ searchParams }: { searchParams: Promise<{ e
   if (s.stage === "full") redirect("/admin");
   return (
     <AuthCard title="Код из приложения" sub="Откройте приложение-аутентификатор и введите шестизначный код для Car City." flash={sp}>
-      <form action={codeAction} className="ad-form">
-        <label>Код<input name="code" inputMode="numeric" autoComplete="one-time-code" pattern="[0-9 ]{6,7}" maxLength={7} required autoFocus className="ad-code" /></label>
-        <button className="ad-btn ad-btn-main" type="submit">Подтвердить</button>
+      <form action={codeAction} className="pnl-form">
+        <label>Код<input name="code" inputMode="numeric" autoComplete="one-time-code" pattern="[0-9 ]{6,7}" maxLength={7} required autoFocus className="pnl-code" /></label>
+        <button className="pnl-btn pnl-btn-main" type="submit">Подтвердить</button>
       </form>
-      <form action={logoutAction}><button className="ad-link" type="submit">Назад ко входу</button></form>
+      <form action={logoutAction}><button className="pnl-link" type="submit">Назад ко входу</button></form>
     </AuthCard>
   );
 }

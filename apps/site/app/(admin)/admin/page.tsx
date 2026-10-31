@@ -31,25 +31,25 @@ export default async function Dashboard({ searchParams }: { searchParams: Promis
   return (
     <Shell user={user} active="dashboard" title={`Здравствуйте, ${user.name?.split(" ")[0] || "коллега"}`} sub={user.roleName} flash={{ e: sp.e || (sp.denied ? "Этот раздел вам недоступен" : undefined), ok: sp.ok }}>
       {stat && (
-        <div className="ad-stats">
-          <Link href="/admin/leads?status=new" className="ad-stat"><b>{stat.fresh}</b><span>новых заявок</span></Link>
-          <Link href="/admin/leads" className="ad-stat"><b>{stat.today}</b><span>заявок сегодня</span></Link>
-          <Link href="/admin/leads" className="ad-stat"><b>{stat.week}</b><span>за 7 дней</span></Link>
-          {user.leadScope !== "all" && <Link href="/admin/leads?mine=1" className="ad-stat"><b>{stat.mine}</b><span>в работе у вас</span></Link>}
-          {drafts && <Link href="/admin/content?st=draft&kind=all" className="ad-stat"><b>{drafts.n}</b><span>черновиков{Number(drafts.sched) ? `, ${drafts.sched} по расписанию` : ""}</span></Link>}
+        <div className="pnl-stats">
+          <Link href="/admin/leads?status=new" className="pnl-stat"><b>{stat.fresh}</b><span>новых заявок</span></Link>
+          <Link href="/admin/leads" className="pnl-stat"><b>{stat.today}</b><span>заявок сегодня</span></Link>
+          <Link href="/admin/leads" className="pnl-stat"><b>{stat.week}</b><span>за 7 дней</span></Link>
+          {user.leadScope !== "all" && <Link href="/admin/leads?mine=1" className="pnl-stat"><b>{stat.mine}</b><span>в работе у вас</span></Link>}
+          {drafts && <Link href="/admin/content?st=draft&kind=all" className="pnl-stat"><b>{drafts.n}</b><span>черновиков{Number(drafts.sched) ? `, ${drafts.sched} по расписанию` : ""}</span></Link>}
         </div>
       )}
       {!stat && (drafts || seoStat) && (
-        <div className="ad-stats">
-          {drafts && <Link href="/admin/content?st=draft&kind=all" className="ad-stat"><b>{drafts.n}</b><span>черновиков{Number(drafts.sched) ? `, ${drafts.sched} по расписанию` : ""}</span></Link>}
-          {seoStat && <Link href="/admin/redirects?tab=404" className="ad-stat"><b>{seoStat.nf}</b><span>адресов с ошибкой 404{Number(seoStat.nf_new) ? `, ${seoStat.nf_new} за сутки` : ""}</span></Link>}
-          {seoStat && <Link href="/admin/redirects" className="ad-stat"><b>{seoStat.rd}</b><span>редиректов работает</span></Link>}
-          {seoStat && <Link href="/admin/seo?tab=pages" className="ad-stat"><b>{seoStat.seo}</b><span>страниц с ручным SEO</span></Link>}
+        <div className="pnl-stats">
+          {drafts && <Link href="/admin/content?st=draft&kind=all" className="pnl-stat"><b>{drafts.n}</b><span>черновиков{Number(drafts.sched) ? `, ${drafts.sched} по расписанию` : ""}</span></Link>}
+          {seoStat && <Link href="/admin/redirects?tab=404" className="pnl-stat"><b>{seoStat.nf}</b><span>адресов с ошибкой 404{Number(seoStat.nf_new) ? `, ${seoStat.nf_new} за сутки` : ""}</span></Link>}
+          {seoStat && <Link href="/admin/redirects" className="pnl-stat"><b>{seoStat.rd}</b><span>редиректов работает</span></Link>}
+          {seoStat && <Link href="/admin/seo?tab=pages" className="pnl-stat"><b>{seoStat.seo}</b><span>страниц с ручным SEO</span></Link>}
         </div>
       )}
-      <section className="ad-card">
+      <section className="pnl-card">
         <h2>С чего начать</h2>
-        <div className="ad-start">
+        <div className="pnl-start">
           {can(user, "pages", "read") && <Link href="/admin/content?kind=page"><b>Страницы</b><span>Тексты страниц сайта: правьте H1 и текст, публикуйте сразу или по расписанию</span></Link>}
           {can(user, "articles", "read") && <Link href="/admin/content?kind=article"><b>Статьи и блог</b><span>Новые статьи и правка старых: черновик, публикация, история версий</span></Link>}
           {can(user, "seo", "read") && <Link href="/admin/seo"><b>SEO</b><span>Title, description, canonical, robots.txt, sitemap, микроразметка, счётчики и верификация</span></Link>}
@@ -62,12 +62,12 @@ export default async function Dashboard({ searchParams }: { searchParams: Promis
           {can(user, "roles", "read") && <Link href="/admin/roles"><b>Роли и права</b><span>Что доступно каждой роли — по каждому разделу</span></Link>}
         </div>
       </section>
-      <div className="ad-cols">
+      <div className="pnl-cols">
         {canLeads && (
-          <section className="ad-card">
+          <section className="pnl-card">
             <h2>Последние заявки</h2>
-            {recent.length === 0 ? <p className="ad-muted">Заявок пока нет. Как только кто-то оставит их на сайте, они появятся здесь.</p> : (
-              <ul className="ad-list">
+            {recent.length === 0 ? <p className="pnl-muted">Заявок пока нет. Как только кто-то оставит их на сайте, они появятся здесь.</p> : (
+              <ul className="pnl-list">
                 {recent.map((l) => (
                   <li key={l.id}><Link href={`/admin/leads/${l.id}`}><b>{l.data.name}</b> <span>{l.data.phone}</span></Link><em className={`st st-${l.status}`}>{LEAD_STATUS_NAME[l.status]}</em><time>{fmt(l.at)}</time></li>
                 ))}
@@ -76,9 +76,9 @@ export default async function Dashboard({ searchParams }: { searchParams: Promis
           </section>
         )}
         {log.length > 0 && (
-          <section className="ad-card">
+          <section className="pnl-card">
             <h2>Что менялось</h2>
-            <ul className="ad-list">
+            <ul className="pnl-list">
               {log.map((a, i) => <li key={i}><span><b>{a.action}</b> {a.entity_id && <code>{a.entity_id}</code>}</span><em>{a.user_email ?? "—"}</em><time>{fmt(a.at)}</time></li>)}
             </ul>
             <p><Link href="/admin/audit">Весь журнал →</Link></p>

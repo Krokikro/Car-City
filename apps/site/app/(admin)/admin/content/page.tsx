@@ -43,22 +43,22 @@ export default async function Content({ searchParams }: { searchParams: Promise<
 
   return (
     <Shell user={user} active={kindSel === "article" ? "articles" : "pages"} title={kindSel === "article" ? "Статьи и блог" : kindSel === "model" ? "Страницы моделей" : "Страницы"} sub={kindSel === "article" ? "Статьи и новости: черновики, публикация по расписанию, история версий" : "Тексты страниц сайта, H1, черновики и публикация"} flash={sp}
-      actions={write ? <Link className="ad-btn ad-btn-main" href={`/admin/content/new${kindSel === "article" ? "?kind=article" : ""}`}>{kindSel === "article" ? "Новая статья" : "Новая страница"}</Link> : undefined}>
-      <div className="ad-tools">
-        <div className="ad-tabs">
+      actions={write ? <Link className="pnl-btn pnl-btn-main" href={`/admin/content/new${kindSel === "article" ? "?kind=article" : ""}`}>{kindSel === "article" ? "Новая статья" : "Новая страница"}</Link> : undefined}>
+      <div className="pnl-tools">
+        <div className="pnl-tabs">
           {LANGS.map((l) => <Link key={l} href={`/admin/content?lang=${l}&kind=${kindSel || "all"}`} className={l === lang ? "on" : ""}>{LANG_NAMES[l] ?? l}</Link>)}
         </div>
-        <form className="ad-filter" action="/admin/content">
+        <form className="pnl-filter" action="/admin/content">
           <input type="hidden" name="lang" value={lang} />
           <input name="q" placeholder="Поиск по названию или адресу" defaultValue={sp.q} />
           <select name="kind" defaultValue={kindSel || "all"}>{seePages && seeArticles && <option value="all">Все типы</option>}{Object.entries(KINDS).filter(([k]) => (k === "article" ? seeArticles : seePages)).map(([k, v]) => <option key={k} value={k}>{v}</option>)}</select>
           <select name="st" defaultValue={sp.st ?? ""}><option value="">Любой статус</option><option value="draft">Черновики</option><option value="sched">По расписанию</option><option value="edited">Изменённые</option><option value="hidden">Скрытые</option></select>
-          <button className="ad-btn" type="submit">Найти</button>
+          <button className="pnl-btn" type="submit">Найти</button>
         </form>
       </div>
-      {lang !== "ru" && <p className="ad-muted">Здесь только страницы, переведённые на этот язык. Чтобы перевести ещё одну, откройте русскую страницу и выберите язык в редакторе или создайте её по тому же адресу.</p>}
-      <div className="ad-table-wrap">
-        <table className="ad-table">
+      {lang !== "ru" && <p className="pnl-muted">Здесь только страницы, переведённые на этот язык. Чтобы перевести ещё одну, откройте русскую страницу и выберите язык в редакторе или создайте её по тому же адресу.</p>}
+      <div className="pnl-table-wrap">
+        <table className="pnl-table">
           <thead><tr><th>Страница</th><th>Адрес</th><th>Тип</th><th>Статус</th><th>Изменена</th></tr></thead>
           <tbody>
             {list.map((x) => (
@@ -67,14 +67,14 @@ export default async function Content({ searchParams }: { searchParams: Promise<
                 <td><code>{x.path}</code></td>
                 <td>{KINDS[x.kind] ?? x.kind}</td>
                 <td>{label[x.status] && <em className={`st st-${x.status}`}>{label[x.status]}{x.sched ? ` · ${fmt(x.sched)}` : ""}</em>}</td>
-                <td className="ad-muted">{x.at ? `${fmt(x.at)} · ${x.by ?? ""}` : ""}</td>
+                <td className="pnl-muted">{x.at ? `${fmt(x.at)} · ${x.by ?? ""}` : ""}</td>
               </tr>
             ))}
-            {list.length === 0 && <tr><td colSpan={5} className="ad-muted">Ничего не найдено</td></tr>}
+            {list.length === 0 && <tr><td colSpan={5} className="pnl-muted">Ничего не найдено</td></tr>}
           </tbody>
         </table>
       </div>
-      <p className="ad-muted">Тексты главной страницы (первый экран, калькулятор, шаги, FAQ и т.д.) правятся в разделе <Link href={`/admin/texts?s=home&lang=${lang}`}>«Главная (тексты)»</Link>, подписи интерфейса, контакты и форма заявки — в <Link href="/admin/texts?s=ui">«Тексты сайта»</Link>.</p>
+      <p className="pnl-muted">Тексты главной страницы (первый экран, калькулятор, шаги, FAQ и т.д.) правятся в разделе <Link href={`/admin/texts?s=home&lang=${lang}`}>«Главная (тексты)»</Link>, подписи интерфейса, контакты и форма заявки — в <Link href="/admin/texts?s=ui">«Тексты сайта»</Link>.</p>
     </Shell>
   );
 }

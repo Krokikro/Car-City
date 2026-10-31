@@ -54,33 +54,33 @@ export default async function Migration({ searchParams }: { searchParams: Promis
 
   return (
     <Shell user={user} active="migration" title="Переезд с car-city.pro" sub={b ? `Снимок старого сайта: ${b.pages.length} адресов, ${fmt(b.takenAt, true)}` : "Снимка старого сайта нет"} flash={sp}
-      actions={write ? <form action={runLiveCheckAction}><button className="ad-btn ad-btn-main" type="submit" title="Запросить каждый старый адрес у нового сайта, как это сделает робот">Проверить все адреса</button></form> : undefined}>
-      {!b && <p className="ad-msg ad-err">Нет файла content/seo/baseline.json. Снимите его: <code>node scripts/seo-baseline.mjs</code></p>}
-      <div className="ad-stats">
-        <Link href="/admin/migration?f=ok" className="ad-stat"><b>{count("ok")}</b><span>открываются как раньше</span></Link>
-        <Link href="/admin/migration?f=redirect" className="ad-stat"><b>{count("redirect")}</b><span>перенаправлены</span></Link>
-        <Link href="/admin/migration?f=bad" className="ad-stat"><b className={count("missing") ? "warn" : ""}>{count("missing") + count("loop")}</b><span>потеряны</span></Link>
-        <Link href="/admin/migration?f=meta" className="ad-stat"><b>{diffT + diffD}</b><span>отличий в title/description</span></Link>
-        {can(user, "redirects", "read") && <Link href="/admin/redirects?tab=404" className="ad-stat"><b>{nf?.n ?? 0}</b><span>адресов 404 за неделю</span></Link>}
+      actions={write ? <form action={runLiveCheckAction}><button className="pnl-btn pnl-btn-main" type="submit" title="Запросить каждый старый адрес у нового сайта, как это сделает робот">Проверить все адреса</button></form> : undefined}>
+      {!b && <p className="pnl-msg pnl-err">Нет файла content/seo/baseline.json. Снимите его: <code>node scripts/seo-baseline.mjs</code></p>}
+      <div className="pnl-stats">
+        <Link href="/admin/migration?f=ok" className="pnl-stat"><b>{count("ok")}</b><span>открываются как раньше</span></Link>
+        <Link href="/admin/migration?f=redirect" className="pnl-stat"><b>{count("redirect")}</b><span>перенаправлены</span></Link>
+        <Link href="/admin/migration?f=bad" className="pnl-stat"><b className={count("missing") ? "warn" : ""}>{count("missing") + count("loop")}</b><span>потеряны</span></Link>
+        <Link href="/admin/migration?f=meta" className="pnl-stat"><b>{diffT + diffD}</b><span>отличий в title/description</span></Link>
+        {can(user, "redirects", "read") && <Link href="/admin/redirects?tab=404" className="pnl-stat"><b>{nf?.n ?? 0}</b><span>адресов 404 за неделю</span></Link>}
       </div>
 
-      <section className="ad-card">
+      <section className="pnl-card">
         <h2>Готовность к переезду</h2>
-        <ul className="ad-checklist">
+        <ul className="pnl-checklist">
           {checklist.map(([ok, t, d]) => <li key={t} className={ok === null ? "info" : ok ? "ok" : "bad"}><b>{t}</b><span>{d}</span></li>)}
         </ul>
         {seoWrite && (diffT > 0 || diffD > 0) && (
-          <form action={adoptOldMetaAction} className="ad-tools-row">
+          <form action={adoptOldMetaAction} className="pnl-tools-row">
             <input type="hidden" name="what" value="both" />
-            <button className="ad-btn ad-btn-main" type="submit">Вернуть старые title и description везде, где отличаются</button>
-            <span className="ad-muted">Сниппеты в выдаче останутся прежними. Потом их можно менять по одной странице в SEO.</span>
+            <button className="pnl-btn pnl-btn-main" type="submit">Вернуть старые title и description везде, где отличаются</button>
+            <span className="pnl-muted">Сниппеты в выдаче останутся прежними. Потом их можно менять по одной странице в SEO.</span>
           </form>
         )}
       </section>
 
-      <details className="ad-card">
+      <details className="pnl-card">
         <summary>День переезда: что сделать по шагам</summary>
-        <ol className="ad-steps">
+        <ol className="pnl-steps">
           <li>Проверить здесь, что потерянных адресов 0, нажать «Проверить все адреса» — ошибок 0.</li>
           <li>В Railway в сервисе Car-City добавить домены car-city.pro и www.car-city.pro (Settings → Networking → Custom Domain), записать выданные DNS-записи.</li>
           <li>У регистратора домена заменить A/CNAME-записи на записи Railway. TTL заранее снизить до 300 секунд, чтобы переключение заняло минуты.</li>
@@ -94,8 +94,8 @@ export default async function Migration({ searchParams }: { searchParams: Promis
         </ol>
       </details>
 
-      <div className="ad-table-wrap">
-        <table className="ad-table ad-mig">
+      <div className="pnl-table-wrap">
+        <table className="pnl-table pnl-mig">
           <thead><tr><th>Старый адрес</th><th>На новом сайте</th><th>Title / description: было → стало</th><th>Живая проверка</th></tr></thead>
           <tbody>
             {list.map((c) => {
@@ -103,38 +103,38 @@ export default async function Migration({ searchParams }: { searchParams: Promis
               const [vt, vc] = V[c.verdict];
               return (
                 <tr key={c.path} id={encodeURIComponent(c.path)}>
-                  <td><code>{c.path}</code><br /><span className="ad-muted">было: {c.old.status}{c.old.inSitemap ? " · в sitemap" : ""}</span></td>
+                  <td><code>{c.path}</code><br /><span className="pnl-muted">было: {c.old.status}{c.old.inSitemap ? " · в sitemap" : ""}</span></td>
                   <td>
                     <em className={`st ${vc}`}>{vt}</em>
-                    {c.hops.length > 0 && <><br /><span className="ad-muted">→ {c.hops.join(" → ")}</span></>}
+                    {c.hops.length > 0 && <><br /><span className="pnl-muted">→ {c.hops.join(" → ")}</span></>}
                     {c.verdict === "missing" && redWrite && (
-                      <form action={fixMissingAction} className="ad-inline">
+                      <form action={fixMissingAction} className="pnl-inline">
                         <input type="hidden" name="from" value={c.path} />
-                        <input name="to" placeholder="/куда-вести" required className="ad-inline-l" />
-                        <button className="ad-btn ad-btn-sm ad-btn-main" type="submit">301</button>
+                        <input name="to" placeholder="/куда-вести" required className="pnl-inline-l" />
+                        <button className="pnl-btn pnl-btn-sm pnl-btn-main" type="submit">301</button>
                       </form>
                     )}
                   </td>
-                  <td className="ad-meta-cmp">
+                  <td className="pnl-meta-cmp">
                     {c.titleSame !== undefined ? (
                       <>
                         <span className={c.titleSame ? "same" : "diff"}><b>T:</b> {c.titleSame ? c.newTitle : <>{c.old.title} <i>→</i> {c.newTitle}</>}</span>
                         <span className={c.descSame ? "same" : "diff"}><b>D:</b> {c.descSame ? (c.newDescription || "—").slice(0, 140) : <>{(c.old.description || "—").slice(0, 120)} <i>→</i> {(c.newDescription || "—").slice(0, 120)}</>}</span>
                         {seoWrite && (c.titleSame === false || c.descSame === false) && (
-                          <form action={adoptOldMetaAction}><input type="hidden" name="path" value={c.path} /><input type="hidden" name="what" value="both" /><button className="ad-btn ad-btn-sm" type="submit">Вернуть как было</button></form>
+                          <form action={adoptOldMetaAction}><input type="hidden" name="path" value={c.path} /><input type="hidden" name="what" value="both" /><button className="pnl-btn pnl-btn-sm" type="submit">Вернуть как было</button></form>
                         )}
                       </>
-                    ) : <span className="ad-muted">—</span>}
+                    ) : <span className="pnl-muted">—</span>}
                   </td>
                   <td>
                     {l ? (
                       <>
                         <em className={`st ${l.result.finalStatus === 200 ? "st-issued" : "st-lost"}`}>{l.result.status}{l.result.status !== l.result.finalStatus ? ` → ${l.result.finalStatus}` : ""}</em>
-                        {l.result.final && l.result.final !== c.path && <><br /><span className="ad-muted">{l.result.final}</span></>}
+                        {l.result.final && l.result.final !== c.path && <><br /><span className="pnl-muted">{l.result.final}</span></>}
                         {(l.result.robots?.includes("noindex") || l.result.xRobots?.includes("noindex")) && <><br /><em className="st st-call" title="На служебном адресе это нормально; на car-city.pro — нет">noindex{l.result.xRobots ? " (заголовок)" : ""}</em></>}
-                        <br /><span className="ad-muted">{l.result.ms} мс</span>
+                        <br /><span className="pnl-muted">{l.result.ms} мс</span>
                       </>
-                    ) : <span className="ad-muted">—</span>}
+                    ) : <span className="pnl-muted">—</span>}
                   </td>
                 </tr>
               );

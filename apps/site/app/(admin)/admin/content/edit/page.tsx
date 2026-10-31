@@ -35,7 +35,7 @@ export default async function Edit({ searchParams }: { searchParams: Promise<{ e
 
   return (
     <Shell user={user} active={sec} title={cur.h1 || path} sub={`${path} · ${state}`} flash={sp}
-      actions={<><Link className="ad-btn" href={`/admin/content?lang=${lang}&kind=${kind}`}>← К списку</Link>{can(user, "seo", "read") && <Link className="ad-btn" href={`/admin/seo/page?lang=${lang}&path=${encodeURIComponent(path)}`}>SEO страницы</Link>}<a className="ad-btn" href={siteHref} target="_blank" rel="noreferrer">Открыть на сайте ↗</a></>}>
+      actions={<><Link className="pnl-btn" href={`/admin/content?lang=${lang}&kind=${kind}`}>← К списку</Link>{can(user, "seo", "read") && <Link className="pnl-btn" href={`/admin/seo/page?lang=${lang}&path=${encodeURIComponent(path)}`}>SEO страницы</Link>}<a className="pnl-btn" href={siteHref} target="_blank" rel="noreferrer">Открыть на сайте ↗</a></>}>
       <PageEditor
         lang={lang} path={path} kind={kind} readOnly={!write} seoReadOnly={!seoWrite}
         initial={{ title: cur.title, h1: cur.h1, description: cur.description ?? "", body: cur.body }}
@@ -43,19 +43,19 @@ export default async function Edit({ searchParams }: { searchParams: Promise<{ e
         previewTo={siteHref}
       />
       {write && (
-        <details className="ad-card">
+        <details className="pnl-card">
           <summary>Версии и сброс</summary>
-          <div className="ad-tools-row">
-            {row?.draft && <form action={pageToolAction}><input type="hidden" name="lang" value={lang} /><input type="hidden" name="path" value={path} /><input type="hidden" name="act" value="discard" /><input type="hidden" name="kind" value={kind} /><button className="ad-btn" type="submit">Отбросить черновик</button></form>}
-            {row && file && <form action={pageToolAction}><input type="hidden" name="lang" value={lang} /><input type="hidden" name="path" value={path} /><input type="hidden" name="act" value="reset" /><input type="hidden" name="kind" value={kind} /><button className="ad-btn ad-btn-warn" type="submit">Вернуть исходный текст сайта</button></form>}
+          <div className="pnl-tools-row">
+            {row?.draft && <form action={pageToolAction}><input type="hidden" name="lang" value={lang} /><input type="hidden" name="path" value={path} /><input type="hidden" name="act" value="discard" /><input type="hidden" name="kind" value={kind} /><button className="pnl-btn" type="submit">Отбросить черновик</button></form>}
+            {row && file && <form action={pageToolAction}><input type="hidden" name="lang" value={lang} /><input type="hidden" name="path" value={path} /><input type="hidden" name="act" value="reset" /><input type="hidden" name="kind" value={kind} /><button className="pnl-btn pnl-btn-warn" type="submit">Вернуть исходный текст сайта</button></form>}
           </div>
           <h3>История публикаций</h3>
-          {vers.length === 0 ? <p className="ad-muted">Публикаций из админки пока не было.</p> : (
-            <ul className="ad-list">
+          {vers.length === 0 ? <p className="pnl-muted">Публикаций из админки пока не было.</p> : (
+            <ul className="pnl-list">
               {vers.map((v) => (
                 <li key={v.id}>
-                  <span><b>{fmt(v.at, true)}</b> · {v.by ?? "—"} · {v.note ?? ""}<br /><span className="ad-muted">{v.data.h1}</span></span>
-                  <form action={pageToolAction}><input type="hidden" name="lang" value={lang} /><input type="hidden" name="path" value={path} /><input type="hidden" name="act" value="rollback" /><input type="hidden" name="kind" value={kind} /><input type="hidden" name="version" value={v.id} /><button className="ad-btn" type="submit">В черновик</button></form>
+                  <span><b>{fmt(v.at, true)}</b> · {v.by ?? "—"} · {v.note ?? ""}<br /><span className="pnl-muted">{v.data.h1}</span></span>
+                  <form action={pageToolAction}><input type="hidden" name="lang" value={lang} /><input type="hidden" name="path" value={path} /><input type="hidden" name="act" value="rollback" /><input type="hidden" name="kind" value={kind} /><input type="hidden" name="version" value={v.id} /><button className="pnl-btn" type="submit">В черновик</button></form>
                 </li>
               ))}
             </ul>

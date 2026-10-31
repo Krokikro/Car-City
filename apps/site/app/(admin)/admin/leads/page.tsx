@@ -31,38 +31,38 @@ export default async function Leads({ searchParams }: { searchParams: Promise<{ 
 
   return (
     <Shell user={user} active="leads" title="Заявки" sub={user.role === "manager" ? "Заявки, назначенные на вас" : user.role === "callcenter" ? "Ваши и нераспределённые заявки" : `Всего по фильтру: ${total}`} flash={sp}>
-      <div className="ad-tools">
-        <div className="ad-tabs">
+      <div className="pnl-tools">
+        <div className="pnl-tabs">
           <Link href={qs({ status: undefined })} className={!sp.status ? "on" : ""}>Все</Link>
           {LEAD_STATUSES.map((s) => <Link key={s.id} href={qs({ status: s.id, page: undefined })} className={sp.status === s.id ? "on" : ""}>{s.name}</Link>)}
         </div>
-        <form className="ad-filter" action="/admin/leads">
+        <form className="pnl-filter" action="/admin/leads">
           {sp.status && <input type="hidden" name="status" value={sp.status} />}
           <input name="q" placeholder="Имя, телефон или номер" defaultValue={sp.q} />
-          <label className="ad-check"><input type="checkbox" name="mine" value="1" defaultChecked={Boolean(sp.mine)} /> Только мои</label>
-          <button className="ad-btn" type="submit">Найти</button>
+          <label className="pnl-check"><input type="checkbox" name="mine" value="1" defaultChecked={Boolean(sp.mine)} /> Только мои</label>
+          <button className="pnl-btn" type="submit">Найти</button>
         </form>
       </div>
-      <div className="ad-table-wrap">
-        <table className="ad-table">
+      <div className="pnl-table-wrap">
+        <table className="pnl-table">
           <thead><tr><th>Когда</th><th>Клиент</th><th>Что хотел</th><th>Откуда</th><th>Статус</th><th>Ответственный</th></tr></thead>
           <tbody>
             {rows.map((l) => (
               <tr key={l.id}>
                 <td>{fmt(l.at)}</td>
-                <td><Link href={`/admin/leads/${l.id}`}><b>{l.data.name}</b></Link><br /><span className="ad-muted">{l.data.phone}</span></td>
+                <td><Link href={`/admin/leads/${l.id}`}><b>{l.data.name}</b></Link><br /><span className="pnl-muted">{l.data.phone}</span></td>
                 <td>{[l.data.extra?.model, l.data.extra?.mode === "buyout" ? "выкуп" : l.data.extra?.mode === "rent" ? "аренда" : "", l.data.extra?.cls].filter(Boolean).join(", ") || "—"}</td>
                 <td>{l.data.first?.utm_source || l.data.source}</td>
                 <td><em className={`st st-${l.status}`}>{LEAD_STATUS_NAME[l.status]}</em></td>
-                <td>{l.assignee_name ?? <span className="ad-muted">не назначен</span>}</td>
+                <td>{l.assignee_name ?? <span className="pnl-muted">не назначен</span>}</td>
               </tr>
             ))}
-            {rows.length === 0 && <tr><td colSpan={6} className="ad-muted">Заявок нет. Здесь появятся обращения из форм на сайте.</td></tr>}
+            {rows.length === 0 && <tr><td colSpan={6} className="pnl-muted">Заявок нет. Здесь появятся обращения из форм на сайте.</td></tr>}
           </tbody>
         </table>
       </div>
       {total > SIZE && (
-        <p className="ad-pager">
+        <p className="pnl-pager">
           {page > 1 && <Link href={qs({ page: String(page - 1) })}>← Новее</Link>}
           <span>{(page - 1) * SIZE + 1}–{Math.min(page * SIZE, total)} из {total}</span>
           {page * SIZE < total && <Link href={qs({ page: String(page + 1) })}>Старее →</Link>}

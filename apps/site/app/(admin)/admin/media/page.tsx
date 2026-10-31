@@ -17,17 +17,17 @@ export default async function MediaPage({ searchParams }: { searchParams: Promis
   return (
     <Shell user={user} active="media" title="Медиатека" sub="Картинки для страниц. Вставляются в текст кнопкой «Картинка» в редакторе." flash={sp}>
       {write && <MediaUploader />}
-      {items.length === 0 ? <p className="ad-muted">Пока ничего не загружено.</p> : (
-        <ul className="ad-grid ad-grid-media">
+      {items.length === 0 ? <p className="pnl-muted">Пока ничего не загружено.</p> : (
+        <ul className="pnl-grid pnl-grid-media">
           {items.map((m) => (
             <li key={m.id}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <a href={`/media/${m.id}`} target="_blank" rel="noreferrer"><img src={`/media/${m.id}`} alt={m.name} loading="lazy" /></a>
               <span title={m.name}>{m.name}</span>
               <small>{m.w}×{m.h} · {Math.round(m.size / 1024)} КБ · {fmt(m.at)}</small>
-              <div className="ad-row">
+              <div className="pnl-row">
                 <CopyButton text={`/media/${m.id}`} />
-                {write && <form action={deleteMediaAction}><input type="hidden" name="id" value={m.id} /><button className="ad-btn ad-btn-sm ad-btn-warn" type="submit">Удалить</button></form>}
+                {write && <form action={deleteMediaAction}><input type="hidden" name="id" value={m.id} /><button className="pnl-btn pnl-btn-sm pnl-btn-warn" type="submit">Удалить</button></form>}
               </div>
             </li>
           ))}

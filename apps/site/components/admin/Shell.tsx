@@ -49,16 +49,16 @@ export async function Shell({ user, active, title, sub, actions, children, flash
   const site = await getSite().catch(() => ({ theme: "dark" as const, variant: "M" as const }));
   const canTheme = can(user, "settings", "write") && !themeForced();
   return (
-    <div className="ad">
-      <aside className="ad-side">
-        <Link href="/admin" className="ad-logo"><b>Car City</b><span>админка</span></Link>
+    <div className="pnl">
+      <aside className="pnl-side">
+        <Link href="/admin" className="pnl-logo"><b>Car City</b><span>админка</span></Link>
         <nav>
           {NAV.map((g) => {
             const items = g.items.filter((n) => can(user, n.s, "read"));
             if (!items.length) return null;
             return (
-              <div key={g.group} className="ad-nav-group">
-                {g.group && <p className="ad-nav-h">{g.group}</p>}
+              <div key={g.group} className="pnl-nav-group">
+                {g.group && <p className="pnl-nav-h">{g.group}</p>}
                 {items.map((n) => (
                   <Link key={n.href} href={n.href} className={active === (n.id ?? n.s) ? "on" : ""}>
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d={n.icon} /></svg>
@@ -70,36 +70,36 @@ export async function Shell({ user, active, title, sub, actions, children, flash
           })}
         </nav>
         {can(user, "settings", "read") && (
-          <form action={setThemeAction} className="ad-theme" title="Какая версия сайта видна посетителям">
+          <form action={setThemeAction} className="pnl-theme" title="Какая версия сайта видна посетителям">
             <input type="hidden" name="back" value="/admin" />
-            <span className="ad-theme-l">Сайт сейчас</span>
-            <span className={`ad-theme-sw ${site.theme}`} aria-hidden="true"><i /></span>
+            <span className="pnl-theme-l">Сайт сейчас</span>
+            <span className={`pnl-theme-sw ${site.theme}`} aria-hidden="true"><i /></span>
             <b>{site.theme === "light" ? "Светлый" : "Тёмный"}</b>
-            {canTheme && <button className="ad-btn ad-btn-sm" type="submit" name="theme" value={site.theme === "light" ? "dark" : "light"}>Переключить на {site.theme === "light" ? "тёмный" : "светлый"}</button>}
+            {canTheme && <button className="pnl-btn pnl-btn-sm" type="submit" name="theme" value={site.theme === "light" ? "dark" : "light"}>Переключить на {site.theme === "light" ? "тёмный" : "светлый"}</button>}
           </form>
         )}
-        <div className="ad-me">
+        <div className="pnl-me">
           <Link href="/admin/security" className={active === "security" ? "on" : ""}><b>{user.name || user.login}</b><span>{user.roleName}</span></Link>
-          <form action={logoutAction}><button className="ad-link" type="submit">Выйти</button></form>
-          <a className="ad-link" href="/" target="_blank" rel="noreferrer">Открыть сайт ↗</a>
+          <form action={logoutAction}><button className="pnl-link" type="submit">Выйти</button></form>
+          <a className="pnl-link" href="/" target="_blank" rel="noreferrer">Открыть сайт ↗</a>
         </div>
       </aside>
-      <main className="ad-main">
+      <main className="pnl-main">
         {preview && (
-          <div className="ad-banner">
+          <div className="pnl-banner">
             В этом браузере включён предпросмотр черновиков: сайт показывает неопубликованные правки.
             <a href="/admin/preview/off">Выключить</a>
           </div>
         )}
-        <header className="ad-head">
+        <header className="pnl-head">
           <div>
             <h1>{title}</h1>
             {sub && <p>{sub}</p>}
           </div>
-          {actions && <div className="ad-actions">{actions}</div>}
+          {actions && <div className="pnl-actions">{actions}</div>}
         </header>
-        {flash?.e && <p className="ad-msg ad-err" role="alert">{flash.e}</p>}
-        {flash?.ok && <p className="ad-msg ad-ok" role="status">{flash.ok}</p>}
+        {flash?.e && <p className="pnl-msg pnl-err" role="alert">{flash.e}</p>}
+        {flash?.ok && <p className="pnl-msg pnl-ok" role="status">{flash.ok}</p>}
         {children}
       </main>
       <AdminEnhance />

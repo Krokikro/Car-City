@@ -33,14 +33,14 @@ export function MediaUploader() {
 
   return (
     <div
-      className={`ad-drop${over ? " over" : ""}`}
+      className={`pnl-drop${over ? " over" : ""}`}
       onDragOver={(e) => { e.preventDefault(); setOver(true); }}
       onDragLeave={() => setOver(false)}
       onDrop={(e) => { e.preventDefault(); setOver(false); send(e.dataTransfer.files); }}
     >
       <p><b>{busy ? "Загружаю…" : "Перетащите картинки сюда"}</b></p>
-      <p className="ad-muted">JPG, PNG или WebP до 12 МБ. Мы сожмём их в WebP не шире 2400 px.</p>
-      <button type="button" className="ad-btn ad-btn-main" disabled={busy} onClick={() => input.current?.click()}>Выбрать файлы</button>
+      <p className="pnl-muted">JPG, PNG или WebP до 12 МБ. Мы сожмём их в WebP не шире 2400 px.</p>
+      <button type="button" className="pnl-btn pnl-btn-main" disabled={busy} onClick={() => input.current?.click()}>Выбрать файлы</button>
       <input ref={input} type="file" accept="image/jpeg,image/png,image/webp,image/avif" multiple hidden onChange={(e) => e.target.files && send(e.target.files)} />
       {msg && <p role="status">{msg}</p>}
     </div>
@@ -50,7 +50,7 @@ export function MediaUploader() {
 export function CopyButton({ text, label = "Копировать адрес" }: { text: string; label?: string }) {
   const [done, setDone] = useState(false);
   return (
-    <button type="button" className="ad-btn ad-btn-sm" onClick={async () => { try { await navigator.clipboard.writeText(text.startsWith("/") ? location.origin + text : text); setDone(true); setTimeout(() => setDone(false), 1500); } catch { prompt("Скопируйте адрес", text); } }}>
+    <button type="button" className="pnl-btn pnl-btn-sm" onClick={async () => { try { await navigator.clipboard.writeText(text.startsWith("/") ? location.origin + text : text); setDone(true); setTimeout(() => setDone(false), 1500); } catch { prompt("Скопируйте адрес", text); } }}>
       {done ? "Скопировано" : label}
     </button>
   );

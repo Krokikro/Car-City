@@ -16,25 +16,25 @@ interface Row { id: string; key: string; source: string; name: string; date_text
 
 function Card({ r, children }: { r: { source: string; name: string; date: string; text: string; url?: string; badge?: string }; children: React.ReactNode }) {
   return (
-    <article className="ad-rev">
+    <article className="pnl-rev">
       <header>
         <b>{r.name}</b>
-        <span className="ad-muted">{r.source}{r.date ? ` · ${r.date}` : ""}{r.badge ? ` · ${r.badge}` : ""}</span>
-        {r.url && <a className="ad-link" href={r.url} target="_blank" rel="noreferrer">открыть на источнике ↗</a>}
+        <span className="pnl-muted">{r.source}{r.date ? ` · ${r.date}` : ""}{r.badge ? ` · ${r.badge}` : ""}</span>
+        {r.url && <a className="pnl-link" href={r.url} target="_blank" rel="noreferrer">открыть на источнике ↗</a>}
       </header>
       <p>{r.text}</p>
-      <div className="ad-row">{children}</div>
+      <div className="pnl-row">{children}</div>
     </article>
   );
 }
 
 const Btn = ({ op, id, k, main, warn, children, extra }: { op: string; id?: string; k?: string; main?: boolean; warn?: boolean; children: React.ReactNode; extra?: Record<string, string> }) => (
-  <form action={reviewAction} className="ad-inline-form">
+  <form action={reviewAction} className="pnl-inline-form">
     <input type="hidden" name="op" value={op} />
     {id && <input type="hidden" name="id" value={id} />}
     {k && <input type="hidden" name="key" value={k} />}
     {extra && Object.entries(extra).map(([n, v]) => <input key={n} type="hidden" name={n} value={v} />)}
-    <button className={`ad-btn ad-btn-sm${main ? " ad-btn-main" : ""}${warn ? " ad-btn-warn" : ""}`} type="submit">{children}</button>
+    <button className={`pnl-btn pnl-btn-sm${main ? " pnl-btn-main" : ""}${warn ? " pnl-btn-warn" : ""}`} type="submit">{children}</button>
   </form>
 );
 
@@ -54,33 +54,33 @@ export default async function Reviews({ searchParams }: { searchParams: Promise<
 
   return (
     <Shell user={user} active="reviews" title="Отзывы" sub="Новые отзывы из Яндекс.Карт, 2ГИС, Flamp и Yell приходят сюда. Нажмите «Опубликовать» — отзыв появится на сайте первым в своём источнике. «Игнорировать» — на сайте его не будет." flash={sp}>
-      <div className="ad-tools"><div className="ad-tabs">{tabs.map(([id, name]) => <Link key={id} href={`/admin/reviews?tab=${id}`} className={tab === id ? "on" : ""}>{name}</Link>)}</div></div>
+      <div className="pnl-tools"><div className="pnl-tabs">{tabs.map(([id, name]) => <Link key={id} href={`/admin/reviews?tab=${id}`} className={tab === id ? "on" : ""}>{name}</Link>)}</div></div>
 
       {tab === "new" && (
         <>
-          {!fresh.length && <p className="ad-card ad-muted">Новых отзывов нет. Когда в одном из источников появится отзыв, он будет здесь с кнопками «Опубликовать» и «Игнорировать». Если отзыв нужно добавить вручную — вкладка «Добавить отзыв».</p>}
+          {!fresh.length && <p className="pnl-card pnl-muted">Новых отзывов нет. Когда в одном из источников появится отзыв, он будет здесь с кнопками «Опубликовать» и «Игнорировать». Если отзыв нужно добавить вручную — вкладка «Добавить отзыв».</p>}
           {fresh.map((r) => (
             <Card key={r.id} r={{ source: r.source, name: r.name, date: r.date_text, text: r.text, url: r.url || SOURCE_URL[r.source] }}>
               {write && <><Btn op="publish" id={r.id} main>Опубликовать на сайте</Btn><Btn op="ignore" id={r.id}>Игнорировать</Btn></>}
             </Card>
           ))}
-          <details className="ad-card">
+          <details className="pnl-card">
             <summary>Как отзывы попадают в этот список</summary>
-            <p className="ad-muted">У Яндекс.Карт, 2ГИС, Flamp и Yell нет открытого доступа к чужим отзывам без договора, поэтому сайт сам их не читает. Есть два способа: добавлять отзыв вручную (вкладка «Добавить отзыв»), либо подключить сборщик — сервис вроде Make/n8n или скрипт, который раз в несколько часов шлёт новые отзывы на адрес <code>POST /api/reviews/ingest</code> с заголовком <code>Authorization: Bearer &lt;токен&gt;</code> и телом <code>{`{"reviews":[{"source":"Яндекс.Карты","name":"…","date":"…","text":"…","url":"…"}]}`}</code>. Токен задаётся переменной окружения <code>REVIEWS_INGEST_TOKEN</code>; повторы отсекаются сами.</p>
+            <p className="pnl-muted">У Яндекс.Карт, 2ГИС, Flamp и Yell нет открытого доступа к чужим отзывам без договора, поэтому сайт сам их не читает. Есть два способа: добавлять отзыв вручную (вкладка «Добавить отзыв»), либо подключить сборщик — сервис вроде Make/n8n или скрипт, который раз в несколько часов шлёт новые отзывы на адрес <code>POST /api/reviews/ingest</code> с заголовком <code>Authorization: Bearer &lt;токен&gt;</code> и телом <code>{`{"reviews":[{"source":"Яндекс.Карты","name":"…","date":"…","text":"…","url":"…"}]}`}</code>. Токен задаётся переменной окружения <code>REVIEWS_INGEST_TOKEN</code>; повторы отсекаются сами.</p>
           </details>
         </>
       )}
 
       {tab === "site" && (
         <>
-          <h2 className="ad-h2">Добавлены через админку ({pub.length})</h2>
-          {!pub.length && <p className="ad-muted">Пока нет.</p>}
+          <h2 className="pnl-h2">Добавлены через админку ({pub.length})</h2>
+          {!pub.length && <p className="pnl-muted">Пока нет.</p>}
           {pub.map((r) => (
             <Card key={r.id} r={{ source: r.source, name: r.name, date: r.date_text, text: r.text, url: r.url || SOURCE_URL[r.source] }}>
               {write && <Btn op="unpublish" id={r.id} warn>Снять с сайта</Btn>}
             </Card>
           ))}
-          <h2 className="ad-h2">Из первоначальных отзывов сайта ({file.length - hiddenKeys.size})</h2>
+          <h2 className="pnl-h2">Из первоначальных отзывов сайта ({file.length - hiddenKeys.size})</h2>
           {file.filter((r) => !hiddenKeys.has(reviewKey(r))).map((r) => (
             <Card key={reviewKey(r)} r={r}>
               {write && <Btn op="hide" k={reviewKey(r)} warn extra={{ name: r.name, date: r.date, source: r.source, text: r.text, url: r.url ?? "" }}>Скрыть с сайта</Btn>}
@@ -91,7 +91,7 @@ export default async function Reviews({ searchParams }: { searchParams: Promise<
 
       {tab === "off" && (
         <>
-          {!ign.length && !hid.length && <p className="ad-card ad-muted">Пусто.</p>}
+          {!ign.length && !hid.length && <p className="pnl-card pnl-muted">Пусто.</p>}
           {ign.map((r) => (
             <Card key={r.id} r={{ source: r.source, name: r.name, date: r.date_text, text: r.text, url: r.url || SOURCE_URL[r.source], badge: "игнор" }}>
               {write && <><Btn op="publish" id={r.id} main>Опубликовать</Btn><Btn op="restore" id={r.id}>Вернуть в «Новые»</Btn></>}
@@ -106,7 +106,7 @@ export default async function Reviews({ searchParams }: { searchParams: Promise<
       )}
 
       {tab === "add" && (
-        <form action={addReviewAction} className="ad-card ad-form">
+        <form action={addReviewAction} className="pnl-card pnl-form">
           <fieldset disabled={!write}>
             <label>Источник
               <select name="source" required>{SOURCES.map((s) => <option key={s}>{s}</option>)}</select>
@@ -115,8 +115,8 @@ export default async function Reviews({ searchParams }: { searchParams: Promise<
             <label>Дата, как в источнике<input name="date" placeholder="например, 5 октября 2026" maxLength={LIM.reviewDate} /></label>
             <label>Текст отзыва<textarea name="text" rows={5} required maxLength={LIM.reviewText} /></label>
             <label>Ссылка на этот отзыв в источнике<input name="url" type="url" maxLength={LIM.url} placeholder="https://… (если пусто, откроется страница отзывов источника)" /></label>
-            <label className="ad-check"><input type="checkbox" name="publish" value="1" defaultChecked /> Сразу показать на сайте</label>
-            <div><button className="ad-btn ad-btn-main" type="submit">Добавить</button></div>
+            <label className="pnl-check"><input type="checkbox" name="publish" value="1" defaultChecked /> Сразу показать на сайте</label>
+            <div><button className="pnl-btn pnl-btn-main" type="submit">Добавить</button></div>
           </fieldset>
         </form>
       )}

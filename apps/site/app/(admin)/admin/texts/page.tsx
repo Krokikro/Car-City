@@ -52,33 +52,33 @@ export default async function Texts({ searchParams }: { searchParams: Promise<{ 
 
   return (
     <Shell user={user} active={sc.section === "pages" ? "texts-home" : "texts"} title={`Тексты: ${sc.title}`} sub={sc.sub} flash={sp}>
-      <div className="ad-tools">
-        <div className="ad-tabs">{visible.map((s) => <Link key={s.id} href={`/admin/texts?s=${s.id}`} className={s.id === sc.id ? "on" : ""}>{s.title}</Link>)}</div>
-        {sc.langs.length > 1 && <div className="ad-tabs">{sc.langs.map((l) => <Link key={l} href={`/admin/texts?s=${sc.id}&lang=${l}`} className={l === lang ? "on" : ""}>{LANG_NAMES[l]}</Link>)}</div>}
+      <div className="pnl-tools">
+        <div className="pnl-tabs">{visible.map((s) => <Link key={s.id} href={`/admin/texts?s=${s.id}`} className={s.id === sc.id ? "on" : ""}>{s.title}</Link>)}</div>
+        {sc.langs.length > 1 && <div className="pnl-tabs">{sc.langs.map((l) => <Link key={l} href={`/admin/texts?s=${sc.id}&lang=${l}`} className={l === lang ? "on" : ""}>{LANG_NAMES[l]}</Link>)}</div>}
       </div>
-      <p className="ad-muted">
+      <p className="pnl-muted">
         У каждого поля указан предел символов: больше ввести нельзя, чтобы текст не ломал вёрстку. Пустое поле — вернётся исходный текст.
         Изменено полей: <b>{changedN}</b>{last ? ` · последнее сохранение ${fmt(last, true)}` : ""}. <Link href={`/admin/texts?s=${sc.id}&lang=${lang}${sp.only ? "" : "&only=changed"}`}>{sp.only ? "Показать все поля" : "Показать только изменённые"}</Link>
         {lang !== "ru" && " Переводы публикуйте после вычитки носителем языка."}
       </p>
-      {hasDraft && <p className="ad-msg ad-warn">Есть неопубликованный черновик: в полях показан он. На сайте пока опубликованная версия.</p>}
-      <form action={saveTextsAction} className="ad-form ad-texts">
+      {hasDraft && <p className="pnl-msg pnl-warn">Есть неопубликованный черновик: в полях показан он. На сайте пока опубликованная версия.</p>}
+      <form action={saveTextsAction} className="pnl-form pnl-texts">
         <input type="hidden" name="screen" value={sc.id} />
         <input type="hidden" name="lang" value={lang} />
-        <fieldset disabled={!write} className="ad-plain">
+        <fieldset disabled={!write} className="pnl-plain">
           {[...groups].map(([g, fields]) => (
-            <details key={g} className="ad-card ad-tgroup" open={groups.size <= 3 || fields.some((x) => x.changed)}>
-              <summary><b>{g}</b> <span className="ad-muted">{fields.length} полей{fields.some((x) => x.changed) ? ` · изменено ${fields.filter((x) => x.changed).length}` : ""}</span></summary>
-              <div className="ad-tfields">
+            <details key={g} className="pnl-card pnl-tgroup" open={groups.size <= 3 || fields.some((x) => x.changed)}>
+              <summary><b>{g}</b> <span className="pnl-muted">{fields.length} полей{fields.some((x) => x.changed) ? ` · изменено ${fields.filter((x) => x.changed).length}` : ""}</span></summary>
+              <div className="pnl-tfields">
                 {fields.map((x) => {
                   const name = `f:${x.bundle}:${x.path}`;
                   return (
-                    <label key={name} className={`ad-tfield${x.changed ? " is-changed" : ""}${x.multiline ? " wide" : ""}`}>
-                      <span className="ad-tlabel">{x.label}{x.changed && <em className="st st-qual">изменено</em>}{x.draft && <em className="st st-call">черновик</em>}</span>
+                    <label key={name} className={`pnl-tfield${x.changed ? " is-changed" : ""}${x.multiline ? " wide" : ""}`}>
+                      <span className="pnl-tlabel">{x.label}{x.changed && <em className="st st-qual">изменено</em>}{x.draft && <em className="st st-call">черновик</em>}</span>
                       {x.multiline
                         ? <textarea name={name} defaultValue={x.value} maxLength={x.max} rows={Math.min(8, Math.max(2, Math.ceil(x.max / 110)))} placeholder={x.def} data-default={x.def} />
                         : <input name={name} defaultValue={x.value} maxLength={x.max} placeholder={x.def} data-default={x.def} />}
-                      {x.changed && <small className="ad-tdef">Исходный: {x.def} <button type="button" className="ad-link-btn" data-reset={name}>вернуть</button></small>}
+                      {x.changed && <small className="pnl-tdef">Исходный: {x.def} <button type="button" className="pnl-link-btn" data-reset={name}>вернуть</button></small>}
                     </label>
                   );
                 })}
@@ -86,23 +86,23 @@ export default async function Texts({ searchParams }: { searchParams: Promise<{ 
             </details>
           ))}
           {write && (
-            <div className="ad-publish-bar">
-              <button className="ad-btn" type="submit" name="intent" value="draft">Сохранить черновик</button>
-              <button className="ad-btn ad-btn-main" type="submit" name="intent" value="publish">Опубликовать</button>
-              {hasDraft && <button className="ad-btn ad-btn-warn" type="submit" name="intent" value="discard" formNoValidate>Отбросить черновик</button>}
-              <a className="ad-btn" href={lang === "ru" ? "/" : `/${lang}`} target="_blank" rel="noreferrer">Открыть сайт ↗</a>
+            <div className="pnl-publish-bar">
+              <button className="pnl-btn" type="submit" name="intent" value="draft">Сохранить черновик</button>
+              <button className="pnl-btn pnl-btn-main" type="submit" name="intent" value="publish">Опубликовать</button>
+              {hasDraft && <button className="pnl-btn pnl-btn-warn" type="submit" name="intent" value="discard" formNoValidate>Отбросить черновик</button>}
+              <a className="pnl-btn" href={lang === "ru" ? "/" : `/${lang}`} target="_blank" rel="noreferrer">Открыть сайт ↗</a>
             </div>
           )}
         </fieldset>
       </form>
       {vers.length > 0 && (
-        <details className="ad-card">
+        <details className="pnl-card">
           <summary>История публикаций</summary>
-          <ul className="ad-list">
+          <ul className="pnl-list">
             {vers.map((v) => (
               <li key={v.id}>
                 <span><b>{fmt(v.at, true)}</b> · {v.by ?? "—"} · {v.bundle} · изменённых полей: {v.n}</span>
-                {write && <form action={rollbackTextsAction}><input type="hidden" name="screen" value={sc.id} /><input type="hidden" name="id" value={v.id} /><button className="ad-btn ad-btn-sm" type="submit">В черновик</button></form>}
+                {write && <form action={rollbackTextsAction}><input type="hidden" name="screen" value={sc.id} /><input type="hidden" name="id" value={v.id} /><button className="pnl-btn pnl-btn-sm" type="submit">В черновик</button></form>}
               </li>
             ))}
           </ul>

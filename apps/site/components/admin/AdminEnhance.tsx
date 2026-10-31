@@ -11,12 +11,12 @@ function attach(el: HTMLInputElement | HTMLTextAreaElement) {
   const max = el.maxLength;
   const warn = Number(el.dataset.warn) || 0;
   const out = document.createElement("small");
-  out.className = "ad-cc";
+  out.className = "pnl-cc";
   out.setAttribute("aria-live", "polite");
   const upd = () => {
     const n = len(el.value);
     out.textContent = `${n} из ${max} символов${warn && n > warn ? ` · лучше до ${warn}` : ""}`;
-    out.classList.toggle("ad-cc-warn", n >= max * 0.9 || (warn > 0 && n > warn));
+    out.classList.toggle("pnl-cc-warn", n >= max * 0.9 || (warn > 0 && n > warn));
   };
   el.addEventListener("input", upd);
   el.insertAdjacentElement("afterend", out);

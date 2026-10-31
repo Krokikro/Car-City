@@ -13,11 +13,11 @@ export default async function Invite({ params, searchParams }: { params: Promise
   if (!u) return <AuthCard title="Ссылка не действует" sub="Она устарела или уже использована. Попросите администратора выдать новую." />;
   return (
     <AuthCard title="Добро пожаловать" sub={`${u.email} · ${u.role}. Придумайте пароль для входа.`} flash={sp}>
-      <form action={inviteAcceptAction} className="ad-form" autoComplete="off">
+      <form action={inviteAcceptAction} className="pnl-form" autoComplete="off">
         <input type="hidden" name="token" value={token} />
         <label>Пароль<input name="password" type="password" autoComplete="new-password" minLength={10} required autoFocus /><small>От 10 символов, буквы и цифры</small></label>
         <label>Пароль ещё раз<input name="password2" type="password" autoComplete="new-password" minLength={10} required /></label>
-        <button className="ad-btn ad-btn-main" type="submit">Сохранить и войти</button>
+        <button className="pnl-btn pnl-btn-main" type="submit">Сохранить и войти</button>
       </form>
     </AuthCard>
   );

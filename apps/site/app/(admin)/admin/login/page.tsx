@@ -16,10 +16,10 @@ export default async function Login({ searchParams }: { searchParams: Promise<{ 
   if (none && process.env.ADMIN_SETUP_TOKEN) redirect("/admin/setup");
   return (
     <AuthCard title="Вход" sub="Рабочее место Car City" flash={sp}>
-      <form action={loginAction} className="ad-form">
+      <form action={loginAction} className="pnl-form">
         <label>Логин или почта<input name="login" autoComplete="username" autoCapitalize="none" spellCheck={false} required autoFocus /></label>
         <label>Пароль<input name="password" type="password" autoComplete="current-password" required /></label>
-        <button className="ad-btn ad-btn-main" type="submit">Войти</button>
+        <button className="pnl-btn pnl-btn-main" type="submit">Войти</button>
       </form>
       {none && <p className="au-sub">Пользователей пока нет. Чтобы создать первого администратора, задайте в Railway переменную ADMIN_SETUP_TOKEN.</p>}
     </AuthCard>

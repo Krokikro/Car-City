@@ -5,8 +5,8 @@ export function AuthCard({ title, sub, flash, children }: { title: string; sub?:
         <p className="au-brand"><b>Car City</b> админка</p>
         <h1>{title}</h1>
         {sub && <p className="au-sub">{sub}</p>}
-        {flash?.e && <p className="ad-msg ad-err" role="alert">{flash.e}</p>}
-        {flash?.ok && <p className="ad-msg ad-ok" role="status">{flash.ok}</p>}
+        {flash?.e && <p className="pnl-msg pnl-err" role="alert">{flash.e}</p>}
+        {flash?.ok && <p className="pnl-msg pnl-ok" role="status">{flash.ok}</p>}
         {children}
       </div>
     </div>
