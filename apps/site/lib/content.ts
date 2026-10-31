@@ -1,9 +1,10 @@
+import { live, patched } from "./texts";
 // Контент главной до подключения админки.
 // По PRD (раздел 4) все цифры и условия берутся из одного справочника в админке.
 // Пока админки нет, они живут здесь и взяты с действующего car-city.pro (снято 2026-10-05).
 // Что помечено DEMO — допущение для вёрстки, а не данные парка.
 
-export const company = {
+export const BASE_COMPANY = {
   name: "Car City",
   legalName: "ООО «ЭЛИТ-КАР»",
   domain: "https://car-city.pro",
@@ -23,11 +24,16 @@ export const company = {
   privacyUrl: "https://car-city.pro/themes/document/politika-konfedenczialnosti-kar-siti.pdf",
 };
 
-export const offices = [
+export const BASE_OFFICES = [
   { name: "Проспект Вернадского", address: "ул. Удальцова, д. 36", metro: "Проспект Вернадского", hours: "с 9:00 до 21:00" },
   { name: "Митино", address: "1-й Митинский пер., д. 15, стр. 3", metro: "Митино", hours: "с 10:00 до 19:00" },
   { name: "Кунцевская", address: "ул. Витебская, д. 11", metro: "Кунцевская", hours: "с 10:00 до 19:00" },
 ];
+
+// Контакты и офисы правятся в админке (Тексты → Контакты); здесь — значения по умолчанию.
+// company и offices всегда отдают текущие данные с правками (и на сервере, и в браузере).
+export const company = live(() => patched("company", "ru", BASE_COMPANY));
+export const offices = live(() => patched("offices", "ru", BASE_OFFICES));
 
 export type CarClass = "ekonom" | "komfort" | "komfort-plus" | "biznes" | "gruzovoy" | "dostavka";
 

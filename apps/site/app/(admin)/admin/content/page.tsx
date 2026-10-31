@@ -74,9 +74,7 @@ export default async function Content({ searchParams }: { searchParams: Promise<
           </tbody>
         </table>
       </div>
-      {lang === "ru" && (
-        <p className="ad-muted">Тексты главной страницы (первый экран, преимущества, отзывы и т.д.) пока лежат в коде сайта и в этом списке не показываются; их мы вынесем следующим шагом.</p>
-      )}
+      <p className="ad-muted">Тексты главной страницы (первый экран, калькулятор, шаги, FAQ и т.д.) правятся в разделе <Link href={`/admin/texts?s=home&lang=${lang}`}>«Главная (тексты)»</Link>, подписи интерфейса, контакты и форма заявки — в <Link href="/admin/texts?s=ui">«Тексты сайта»</Link>.</p>
     </Shell>
   );
 }

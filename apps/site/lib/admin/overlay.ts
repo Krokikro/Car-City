@@ -5,6 +5,7 @@ import { dbEnabled, q } from "../db";
 import { fleet, type FleetCar } from "../fleet";
 import { DEFAULT_SEO, DEFAULT_SITE, mergeSeo, mergeSite, type PageSeo, type SeoSettings, type SiteSettings } from "../site-settings";
 import { setSiteTheme } from "../theme";
+import { setTexts, type TextsData } from "../texts";
 
 export interface PageData {
   title: string;
@@ -102,6 +103,12 @@ async function load(): Promise<Overlay> {
     const t = new Date(r.updated_at).toISOString();
     if (!updated.has(k) || updated.get(k)! < t) updated.set(k, t);
   }
+  // тексты сайта (главная, интерфейс, контакты, форма) — опубликованные правки
+  const texts: TextsData = {};
+  for (const r of await q<{ bundle: string; lang: string; published: Record<string, string> }>("SELECT bundle, lang, published FROM texts WHERE published IS NOT NULL")) {
+    (texts[r.bundle] ??= {})[r.lang] = r.published;
+  }
+  setTexts(texts);
   return { version: cur.version + 1, cacheable: true, pages, site, seo, seoPages, updated };
 }
 

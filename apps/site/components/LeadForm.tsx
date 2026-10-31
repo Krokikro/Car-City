@@ -1,5 +1,8 @@
 "use client";
 
+import { patched } from "@/lib/texts";
+import { leadFormRu, type LeadFormText } from "@/lib/text-defaults";
+export type { LeadFormText } from "@/lib/text-defaults";
 import { useEffect, useId, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { company } from "@/lib/content";
@@ -15,51 +18,9 @@ import { MESSENGERS, type LeadErrorCode, type LeadRequest, type Messenger } from
 type State = "idle" | "sending" | "done" | "error";
 
 /** Тексты формы. Русские по умолчанию; языковые версии передают свой словарь. */
-export interface LeadFormText {
-  name: string;
-  phone: string;
-  messenger: string;
-  messengers: Record<Messenger, string>;
-  consentPrefix: string;
-  consentLink: string;
-  marketing: string;
-  submit: string;
-  sending: string;
-  doneTitle: string;
-  doneText: string;
-  doneWrite: string;
-  demoNote: string;
-  errors: Record<LeadErrorCode | "network", string>;
-}
 
-export const leadFormRu: LeadFormText = {
-  name: "Имя",
-  phone: "Телефон",
-  messenger: "Как удобнее связаться",
-  messengers: { call: "Звонок", telegram: "Telegram", whatsapp: "WhatsApp", max: "MAX" },
-  consentPrefix: "Даю согласие на",
-  consentLink: "обработку персональных данных",
-  marketing: "Согласен получать рекламные предложения и на передачу номера телефона рекламным сервисам",
-  submit: "Перезвоните мне",
-  sending: "Отправляем…",
-  doneTitle: "Заявка принята",
-  doneText: "Менеджер свяжется с вами в течение 1 минуты в рабочее время офиса.",
-  doneWrite: "Или напишите нам сами:",
-  demoNote: "Демо-версия сайта: заявка никуда не отправлена.",
-  errors: {
-    format: "Не получилось отправить, обновите страницу",
-    name: "Проверьте имя: только буквы",
-    phone: "Проверьте номер телефона",
-    consent: "Нужно согласие на обработку персональных данных",
-    too_fast: "Форма отправлена слишком быстро, попробуйте ещё раз",
-    rate: "Слишком много заявок. Попробуйте позже или позвоните нам",
-    captcha: "Не прошли проверку на робота, попробуйте ещё раз",
-    captcha_required: "Нужна проверка на робота, попробуйте ещё раз",
-    origin: "Не получилось отправить, обновите страницу",
-    delivery: `Не получилось отправить заявку. Позвоните нам: ${company.phones[0]}`,
-    network: "Нет связи с сервером. Проверьте интернет и попробуйте ещё раз",
-  },
-};
+
+
 
 type Text = Partial<Omit<LeadFormText, "errors" | "messengers">> & { errors?: Partial<LeadFormText["errors"]>; messengers?: Partial<LeadFormText["messengers"]> };
 
@@ -96,7 +57,9 @@ class LeadError extends Error {
 // капча — только если сервер счёл отправку подозрительной.
 export function LeadForm({ button, source = "site", compact = false, extra, t: tp, lang, askMessenger = true, askMarketing = true, consentUrl = company.privacyUrl }: Props) {
   const pathLang = splitLang(usePathname() || "/").lang;
-  const base = leadFormI18n[isLang(lang) ? lang : pathLang] ?? leadFormRu;
+  const fl = isLang(lang) ? lang : pathLang;
+  // тексты формы правятся в админке (Тексты → Форма заявки и cookie)
+  const base = patched("form", fl, leadFormI18n[fl] ?? leadFormRu);
   const t: LeadFormText = { ...base, ...tp, errors: { ...base.errors, ...tp?.errors }, messengers: { ...base.messengers, ...tp?.messengers } };
   const id = useId();
   const [state, setState] = useState<State>("idle");

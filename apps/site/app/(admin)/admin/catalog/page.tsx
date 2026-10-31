@@ -6,6 +6,7 @@ import { fleetClasses } from "@/lib/fleet";
 import { carImages } from "@/lib/car-images";
 import { saveCarAction, saveHomeFleetAction } from "../actions";
 import { HomeFleetOrder } from "@/components/admin/HomeFleetOrder";
+import { LIM } from "@/lib/admin/limits";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Автопарк" };
@@ -37,12 +38,12 @@ export default async function Catalog({ searchParams }: { searchParams: Promise<
                   <div><b>{c.name}</b><span className="ad-muted"><code>{c.slug}</code>{o && Object.keys(o).length ? " · изменено" : ""}</span></div>
                 </div>
                 <div className="ad-car-grid">
-                  <label>Название<input name="name" defaultValue={v.name} required /></label>
+                  <label>Название<input name="name" defaultValue={v.name} required maxLength={LIM.carName} /></label>
                   <label>Цена аренды в сутки, ₽<input name="price" type="number" min={0} max={50000} step={1} defaultValue={v.price || ""} placeholder="Пусто — без аренды" /></label>
                   <label>Класс<select name="cls" defaultValue={v.cls}>{fleetClasses.map((k) => <option key={k.id} value={k.id}>{k.name}</option>)}</select></label>
-                  <label>Двигатель<input name="engine" defaultValue={v.engine ?? ""} /></label>
-                  <label>Коробка<input name="gearbox" defaultValue={v.gearbox ?? ""} /></label>
-                  <label>Плашка<input name="badge" defaultValue={v.badge ?? ""} placeholder="Например, Супер-скидка" /></label>
+                  <label>Двигатель<input name="engine" defaultValue={v.engine ?? ""} maxLength={LIM.engine} placeholder="1,6 л" /></label>
+                  <label>Коробка<input name="gearbox" defaultValue={v.gearbox ?? ""} maxLength={LIM.gearbox} placeholder="Автомат" /></label>
+                  <label>Плашка<input name="badge" defaultValue={v.badge ?? ""} placeholder="Например, Супер-скидка" maxLength={LIM.badge} /></label>
                   <label>Старая цена в сутки, ₽<input name="old" type="number" min={0} max={100000} step={1} defaultValue={v.old ?? ""} placeholder="Зачёркнутая цена" /></label>
                   <label>Цена выкупа в сутки, ₽<input name="buyPrice" type="number" min={0} max={50000} step={1} defaultValue={v.buyPrice ?? ""} placeholder="Пусто — без выкупа" /></label>
                   <label>Старая цена выкупа, ₽<input name="buyOld" type="number" min={0} max={100000} step={1} defaultValue={v.buyOld ?? ""} placeholder="Зачёркнутая цена" /></label>

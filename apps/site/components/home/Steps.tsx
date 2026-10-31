@@ -7,16 +7,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { asset, splitLang } from "@/lib/i18n";
 import type { HomeText } from "@/lib/home-text";
+import { patched } from "@/lib/texts";
+import { BUY_TEXT, FINALE, METER } from "@/lib/text-defaults";
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
-const FINALE: Record<string, string> = {
-  ru: "Отправляйтесь в путь",
-  en: "Hit the road",
-  ky: "Жолго чыгыңыз",
-  kk: "Жолға шығыңыз",
-  uz: "Yo‘lga chiqing",
-};
+// Подписи дороги «3/5 шагов» и таксометра правятся в админке (Тексты → Главная → Дорога шагов)
+
 
 // Извилистая дорога. На компьютере — волной слева направо, таблички шагов попеременно над и под дорогой.
 // На телефоне — змейкой сверху вниз по левому краю, таблички справа.
@@ -64,25 +61,13 @@ const BUY_ROADS = {
 };
 
 // Выкуп — дорога длиннее: после проверки СБ ещё два шага.
-const BUY_TEXT: Record<string, { title: string; extra: [string, string] }> = {
-  ru: { title: "Как получить авто под выкуп за 5 шагов?", extra: ["Выбираете автомобиль", "Вносите первый взнос"] },
-  en: { title: "How to get a car on rent-to-own in 5 steps?", extra: ["Choose a car", "Pay the first instalment"] },
-  ky: { title: "Сатып алуу менен унааны 5 кадамда кантип алса болот?", extra: ["Унааны тандайсыз", "Биринчи төлөмдү төлөйсүз"] },
-  kk: { title: "Сатып алумен көлікті 5 қадамда қалай алуға болады?", extra: ["Көлікті таңдайсыз", "Алғашқы жарнаны төлейсіз"] },
-  uz: { title: "Sotib olish bilan avtomobilni 5 qadamda qanday olish mumkin?", extra: ["Avtomobilni tanlaysiz", "Birinchi to‘lovni qilasiz"] },
-};
 
-const METER: Record<string, { free: string; busy: string }> = {
-  ru: { free: "Свободно", busy: "В пути" },
-  en: { free: "Free", busy: "On trip" },
-  ky: { free: "Бош", busy: "Жолдо" },
-  kk: { free: "Бос", busy: "Жолда" },
-  uz: { free: "Bo‘sh", busy: "Yo‘lda" },
-};
+
+
 
 /** Таксометр вместо последней таблички: на нём «Свободно», когда подъезжает машина, загорается «В пути» и бежит счётчик */
 function Meter({ lang }: { lang: string }) {
-  const m = METER[lang] ?? METER.ru;
+  const m = stepsX(lang);
   return (
     <span className="mt" aria-hidden="true">
       <span className="mt-top"><i className="mt-lamp" /><b>TAXI</b></span>
@@ -122,9 +107,10 @@ export function Steps({ steps, variant = "rent", vehicle = "taxi" }: { steps: Ho
   const root = useRef<HTMLElement>(null);
   const { lang } = splitLang(usePathname() || "/");
   const buy = variant === "buy";
-  const bt = BUY_TEXT[lang] ?? BUY_TEXT.ru;
+  const sx = stepsX(lang);
+  const bt = { title: sx.buyTitle, extra: sx.buyExtra };
   const base = buy ? [...steps.items.slice(0, 2), ...bt.extra, ...steps.items.slice(2)] : steps.items;
-  const items = [...base, FINALE[lang] ?? FINALE.ru];
+  const items = [...base, sx.finish];
   const roads = buy ? BUY_ROADS : ROADS;
 
   useEffect(() => {
@@ -242,4 +228,11 @@ export function Steps({ steps, variant = "rent", vehicle = "taxi" }: { steps: Ho
       </div>
     </section>
   );
+}
+
+export type StepsX = { finish: string; buyTitle: string; buyExtra: [string, string]; free: string; busy: string };
+/** Подписи дороги на языке lang с правками из админки */
+export function stepsX(lang: string): StepsX {
+  const bt = BUY_TEXT[lang] ?? BUY_TEXT.ru, m = METER[lang] ?? METER.ru;
+  return patched("steps-x", lang, { finish: FINALE[lang] ?? FINALE.ru, buyTitle: bt.title, buyExtra: [...bt.extra] as [string, string], free: m.free, busy: m.busy });
 }

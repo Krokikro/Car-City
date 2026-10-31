@@ -5,6 +5,7 @@ import { can } from "@/lib/admin/roles";
 import { q } from "@/lib/db";
 import { fmt } from "@/lib/admin/format";
 import { importRedirectsAction, notFoundToolAction, redirectToolAction, saveRedirectAction } from "../actions-site";
+import { LIM } from "@/lib/admin/limits";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Редиректы и 404" };
@@ -30,11 +31,11 @@ export default async function Redirects({ searchParams }: { searchParams: Promis
     <form action={saveRedirectAction} className="ad-form ad-redirect-form">
       {r && <input type="hidden" name="id" value={r.id} />}
       <input type="hidden" name="back" value={tab === "404" ? "/admin/redirects?tab=404" : "/admin/redirects"} />
-      <label>Откуда<input name="from" defaultValue={r?.from_path ?? from ?? ""} required placeholder="/staryj-adres" /></label>
-      <label>Куда<input name="to" defaultValue={r?.to_path ?? ""} placeholder="/novyj-adres или https://…" /></label>
+      <label>Откуда<input name="from" maxLength={LIM.redirectPath} defaultValue={r?.from_path ?? from ?? ""} required placeholder="/staryj-adres" /></label>
+      <label>Куда<input name="to" maxLength={LIM.redirectPath} defaultValue={r?.to_path ?? ""} placeholder="/novyj-adres или https://…" /></label>
       <label>Код<select name="code" defaultValue={r?.code ?? 301}><option value={301}>301 — навсегда</option><option value={302}>302 — временно</option><option value={410}>410 — удалено навсегда</option><option value={308}>308</option><option value={307}>307</option></select></label>
       <label>Тип<select name="match" defaultValue={r?.match ?? "exact"}>{Object.entries(MATCH).map(([k, v]) => <option key={k} value={k}>{v}</option>)}</select></label>
-      <label>Заметка<input name="note" defaultValue={r?.note ?? ""} placeholder="зачем" /></label>
+      <label>Заметка<input name="note" maxLength={LIM.redirectNote} defaultValue={r?.note ?? ""} placeholder="зачем" /></label>
       <button className="ad-btn ad-btn-main" type="submit">{r ? "Сохранить" : "Добавить"}</button>
       {r && <Link className="ad-btn" href="/admin/redirects">Отмена</Link>}
     </form>

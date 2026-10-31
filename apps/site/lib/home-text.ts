@@ -2,6 +2,7 @@
 // Русские тексты — дословно с car-city.pro (lib/home.ts), подписи блоков — нового дизайна.
 import * as h from "./home";
 import type { Lang } from "./i18n";
+import { patched } from "./texts";
 import { en } from "./home-i18n/en";
 import { ky } from "./home-i18n/ky";
 import { kk } from "./home-i18n/kk";
@@ -72,4 +73,6 @@ export const ruHome = {
 export type HomeText = typeof ruHome;
 
 const BY_LANG: Record<Lang, HomeText | null> = { ru: ruHome, en, ky, kk, uz };
-export const homeText = (lang: Lang): HomeText => BY_LANG[lang] ?? ruHome;
+export const BASE_HOME = BY_LANG;
+/** Тексты главной с правками из админки (Тексты → Главная) */
+export const homeText = (lang: Lang): HomeText => patched("home", lang, BY_LANG[lang] ?? ruHome);

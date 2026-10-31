@@ -4,42 +4,12 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { splitLang, type Lang } from "@/lib/i18n";
 import { LeadForm } from "./LeadForm";
+import { patched } from "@/lib/texts";
+import { LEAD_MODAL } from "@/lib/text-defaults";
 
 // Всплывающая форма заявки. Любая кнопка со ссылкой #zayavka (или с data-lead="rent|buyout")
 // открывает её поверх страницы, ничего не прокручивая. Тип заявки — по странице и по тексту кнопки.
 type Kind = "rent" | "buyout";
-const T: Record<Lang, Record<Kind, { title: string; text: string }> & { close: string; button: string }> = {
-  ru: {
-    rent: { title: "Заявка на аренду", text: "Оставьте телефон: менеджер перезвонит за минуту, подберёт машину и расскажет условия." },
-    buyout: { title: "Заявка на выкуп", text: "Оставьте телефон: менеджер расскажет про выкуп, взнос и подберёт автомобиль." },
-    close: "Закрыть",
-    button: "Перезвоните мне",
-  },
-  en: {
-    rent: { title: "Rental request", text: "Leave your phone: a manager will call back within a minute, pick a car and explain the terms." },
-    buyout: { title: "Buyout request", text: "Leave your phone: a manager will explain the buyout, the first payment and help choose a car." },
-    close: "Close",
-    button: "Call me back",
-  },
-  ky: {
-    rent: { title: "Ижарага өтүнмө", text: "Телефонуңузду калтырыңыз: менеджер бир мүнөттө чалып, унаа тандап, шарттарды түшүндүрөт." },
-    buyout: { title: "Сатып алууга өтүнмө", text: "Телефонуңузду калтырыңыз: менеджер сатып алуу, баштапкы төлөм жөнүндө айтып, унаа тандайт." },
-    close: "Жабуу",
-    button: "Мага чалыңыз",
-  },
-  kk: {
-    rent: { title: "Жалға алу өтінімі", text: "Телефоныңызды қалдырыңыз: менеджер бір минутта қоңырау шалып, көлік таңдап, шарттарды түсіндіреді." },
-    buyout: { title: "Сатып алу өтінімі", text: "Телефоныңызды қалдырыңыз: менеджер сатып алу, алғашқы жарна туралы айтып, көлік таңдайды." },
-    close: "Жабу",
-    button: "Маған қоңырау шалыңыз",
-  },
-  uz: {
-    rent: { title: "Ijara uchun ariza", text: "Telefon raqamingizni qoldiring: menejer bir daqiqada qo‘ng‘iroq qilib, mashina tanlaydi va shartlarni tushuntiradi." },
-    buyout: { title: "Sotib olish uchun ariza", text: "Telefon raqamingizni qoldiring: menejer sotib olish, boshlang‘ich to‘lov haqida aytib, mashina tanlaydi." },
-    close: "Yopish",
-    button: "Menga qo‘ng‘iroq qiling",
-  },
-};
 
 const BUY_RE = /выкуп|buyout|sotib|сатып|buy\b/i;
 
@@ -49,7 +19,7 @@ export function LeadModal() {
   const [open, setOpen] = useState<null | { kind: Kind; from: string }>(null);
   const boxRef = useRef<HTMLDivElement>(null);
   const lastFocus = useRef<HTMLElement | null>(null);
-  const t = T[lang] ?? T.ru;
+  const t = patched("modal", lang, LEAD_MODAL[lang] ?? LEAD_MODAL.ru);
 
   const close = useCallback(() => {
     setOpen(null);

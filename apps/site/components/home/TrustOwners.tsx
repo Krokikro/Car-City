@@ -3,51 +3,20 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { asset, type Lang } from "@/lib/i18n";
+import { patched } from "@/lib/texts";
+import { OWNERS_X } from "@/lib/text-defaults";
 
 type Owner = { name: string; car: string; photo?: number; story?: string };
 
-const L: Record<Lang, { title: (n: string) => string; story: (n: string, c: string) => string; cta: string; close: string; more: string }> = {
-  ru: {
-    title: (n) => `${n} выкупил(а) авто`,
-    story: (n, c) => `${n} уже выкупил у нас ${c}. Как и у каждого нашего клиента, на машину был отдельный договор выкупа, а в работе — отпуск 14 дней в год, комиссия парка 3% и возможность работать в любом парке.`,
-    cta: "Хочу так же — выкупить авто",
-    close: "Закрыть",
-    more: "Открыть историю",
-  },
-  en: {
-    title: (n) => `${n} bought a car`,
-    story: (n, c) => `${n} has already bought a ${c} from us. Like every client, there was a separate buyout contract for the car, 14 days of vacation a year, a 3% fleet fee and the freedom to work in any fleet.`,
-    cta: "I want the same — buy a car",
-    close: "Close",
-    more: "Open story",
-  },
-  ky: {
-    title: (n) => `${n} унааны сатып алды`,
-    story: (n, c) => `${n} бизден ${c} унаасын сатып алды. Ар бир кардарыбыздай, унаага өзүнчө келишим түзүлдү, жылына 14 күн эс алуу жана парктын 3% комиссиясы бар.`,
-    cta: "Мен да ушундай — унаа сатып алгым келет",
-    close: "Жабуу",
-    more: "Окуяны ачуу",
-  },
-  kk: {
-    title: (n) => `${n} көлікті сатып алды`,
-    story: (n, c) => `${n} бізден ${c} көлігін сатып алды. Әр клиентіміз сияқты, көлікке жеке келісімшарт жасалды, жылына 14 күн демалыс және парктің 3% комиссиясы бар.`,
-    cta: "Мен де осылай — көлік сатып алғым келеді",
-    close: "Жабу",
-    more: "Әңгімені ашу",
-  },
-  uz: {
-    title: (n) => `${n} avtomobil sotib oldi`,
-    story: (n, c) => `${n} bizdan ${c} avtomobilini sotib oldi. Har bir mijozimiz kabi, mashinaga alohida shartnoma tuzildi, yiliga 14 kun ta’til va parkning 3% komissiyasi bor.`,
-    cta: "Men ham shunday — avtomobil sotib olmoqchiman",
-    close: "Yopish",
-    more: "Hikoyani ochish",
-  },
-};
+// Тексты окна истории выкупщика; {name} — имя, {car} — машина. Правятся в админке (Тексты → Главная).
+
 
 /** Бегущая строка «Нам доверяют»: клик по выкупнику открывает фото и короткую историю */
 export function TrustOwners({ owners, lang, label }: { owners: Owner[]; lang: Lang; label: string }) {
   const [cur, setCur] = useState<Owner | null>(null);
-  const t = L[lang] ?? L.ru;
+  const t0 = patched("owners-x", lang, OWNERS_X[lang] ?? OWNERS_X.ru);
+  const fill = (s: string, o: Owner) => s.replace(/\{name\}/g, o.name).replace(/\{car\}/g, o.car);
+  const t = { ...t0, title: (n: string) => fill(t0.title, { name: n, car: "" }), story: (n: string, c: string) => fill(t0.story, { name: n, car: c }) };
   const row = [...owners, ...owners];
   const last = useRef<HTMLElement | null>(null);
 

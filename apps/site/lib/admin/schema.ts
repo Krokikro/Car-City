@@ -161,6 +161,26 @@ CREATE TABLE IF NOT EXISTS not_found (
   referer text,
   ignored boolean NOT NULL DEFAULT false
 );
+-- тексты сайта из админки (Тексты): правки поверх исходных текстов, черновик и опубликованное
+CREATE TABLE IF NOT EXISTS texts (
+  bundle text NOT NULL,
+  lang text NOT NULL,
+  published jsonb,
+  draft jsonb,
+  updated_at timestamptz NOT NULL DEFAULT now(),
+  updated_by text,
+  PRIMARY KEY (bundle, lang)
+);
+CREATE TABLE IF NOT EXISTS text_versions (
+  id bigserial PRIMARY KEY,
+  bundle text NOT NULL,
+  lang text NOT NULL,
+  data jsonb NOT NULL,
+  note text,
+  at timestamptz NOT NULL DEFAULT now(),
+  by text
+);
+CREATE INDEX IF NOT EXISTS text_versions_key ON text_versions(bundle, lang, id DESC);
 CREATE TABLE IF NOT EXISTS migration_checks (
   path text PRIMARY KEY,
   result jsonb NOT NULL,

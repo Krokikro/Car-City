@@ -19,6 +19,7 @@ import { fleetClasses } from "@/lib/fleet";
 import { draftMode } from "next/headers";
 import { reviewKey } from "@/lib/reviews";
 
+import { LIM, lenError } from "@/lib/admin/limits";
 const f = (fd: FormData, k: string) => String(fd.get(k) ?? "").trim();
 function go(path: string, kind: "e" | "ok" | null = null, msg = ""): never {
   if (!kind) redirect(path);
@@ -176,6 +177,7 @@ export async function savePageAction(fd: FormData) {
   const path = f(fd, "path");
   if (!isLangId(lang) || !cleanPath(path)) go("/admin/content", "e", "Неверный адрес страницы");
   const here = `/admin/content/edit?lang=${lang}&path=${encodeURIComponent(path)}`;
+  { const le = lenError(fd, { title: ["Title", LIM.title], description: ["Description", LIM.description], h1: ["Заголовок H1", LIM.h1], body: ["Текст страницы", LIM.body] }); if (le) go(here, "e", le); }
   const intent = f(fd, "intent");
   const row = await rowOf(lang, path);
   const before = row?.published ?? fileData(lang, path) ?? null;
@@ -252,6 +254,7 @@ export async function createPageAction(fd: FormData) {
   const lang = f(fd, "lang");
   const path = cleanPath(f(fd, "path"));
   if (!isLangId(lang) || !path) go("/admin/content/new", "e", "Адрес: латиница, цифры и дефис, например /akcii/osen");
+  { const le = lenError(fd, { h1: ["Заголовок H1", LIM.h1], path: ["Адрес", LIM.pagePath] }); if (le) go("/admin/content/new", "e", le); }
   if ((await rowOf(lang, path!)) || fileData(lang, path!)) go("/admin/content/new", "e", "Такая страница уже есть");
   const h1 = f(fd, "h1") || "Новая страница";
   await saveDraft(lang, path!, cleanData({ title: f(fd, "title") || h1, h1, body: `# ${h1}\n\n`, kind }), u.login, null);
@@ -266,6 +269,7 @@ export async function saveCarAction(fd: FormData) {
   const slug = f(fd, "slug");
   const car = BASE_FLEET.find((c) => c.slug === slug);
   if (!car) go("/admin/catalog", "e", "Нет такой машины");
+  { const le = lenError(fd, { name: ["Название", LIM.carName], engine: ["Двигатель", LIM.engine], gearbox: ["Коробка", LIM.gearbox], badge: ["Плашка", LIM.badge] }); if (le) go("/admin/catalog", "e", le); }
   // пустая цена аренды — машины нет в аренде: на сайте пропадают цена и кнопка «Арендовать»
   const price = Math.round(Number(f(fd, "price") || 0));
   if (!Number.isFinite(price) || (price !== 0 && (price < 500 || price > 50000))) go(`/admin/catalog#${slug}`, "e", "Цена в сутки — от 500 до 50 000 ₽ (или пусто, если аренды нет)");
@@ -332,7 +336,7 @@ export async function updateLeadAction(fd: FormData) {
     else if (want === "none" && cur!.assignee === u.id) assignee = null;
     else go(here, "e", "Назначать заявки на других может роль, которой видны все заявки");
   }
-  const comment = String(fd.get("comment") ?? "").slice(0, 4000);
+  const comment = String(fd.get("comment") ?? "").slice(0, LIM.leadComment);
   await q("UPDATE leads SET status=$2, reason=$3, assignee=$4, comment=$5, updated_at=now() WHERE id=$1", [id, status, reason || null, assignee, comment]);
   await audit(u, "Заявка обновлена", "lead", id, cur, { status, reason: reason || null, assignee, comment });
   go(here, "ok", "Сохранено");
@@ -374,6 +378,7 @@ export async function createUserAction(fd: FormData) {
   const login = f(fd, "login").toLowerCase();
   const email = f(fd, "email").toLowerCase();
   const role = f(fd, "role");
+  { const le = lenError(fd, { name: ["Имя", LIM.personName], login: ["Логин", LIM.login], email: ["Почта", LIM.email] }); if (le) go("/admin/users", "e", le); }
   if (!loginValid(login)) go("/admin/users", "e", "Логин: 3–60 символов, латиница, цифры, точка, дефис, подчёркивание");
   if (email && !emailOk(email)) go("/admin/users", "e", "Проверьте адрес почты или оставьте поле пустым");
   if (!(await roleExists(role))) go("/admin/users", "e", "Выберите роль");
@@ -409,6 +414,7 @@ export async function resetPasswordAction(fd: FormData) {
 export async function updateUserAction(fd: FormData) {
   const u = await requireCan("users", "write");
   const t = await target(u, f(fd, "id"));
+  { const le = lenError(fd, { name: ["Имя", LIM.personName], login: ["Логин", LIM.login], email: ["Почта", LIM.email] }); if (le) go("/admin/users", "e", le); }
   const login = f(fd, "login").toLowerCase();
   const email = f(fd, "email").toLowerCase();
   if (!loginValid(login)) go("/admin/users", "e", "Логин: 3–60 символов, латиница, цифры, точка, дефис, подчёркивание");
@@ -538,8 +544,9 @@ export async function reviewAction(fd: FormData) {
 export async function addReviewAction(fd: FormData) {
   const u = await requireCan("reviews", "write");
   const source = f(fd, "source");
-  const name = f(fd, "name").slice(0, 120);
-  const text = f(fd, "text").slice(0, 5000);
+  { const le = lenError(fd, { name: ["Имя автора", LIM.reviewName], date: ["Дата", LIM.reviewDate], text: ["Текст отзыва", LIM.reviewText], url: ["Ссылка", LIM.url] }); if (le) go("/admin/reviews", "e", le); }
+  const name = f(fd, "name").slice(0, LIM.reviewName);
+  const text = f(fd, "text").slice(0, LIM.reviewText);
   if (!REVIEW_SOURCES.includes(source) || !name || text.length < 3) go("/admin/reviews", "e", "Укажите источник, имя и текст отзыва");
   const date = f(fd, "date").slice(0, 60);
   const key = reviewKey({ source, name, date, text });

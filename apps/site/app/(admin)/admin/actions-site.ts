@@ -14,6 +14,7 @@ import { baseline, liveCheck, oldUrls, quickCheck } from "@/lib/admin/migration"
 import { normFrom } from "@/lib/edge-rules";
 import { themeForced } from "@/lib/theme";
 
+import { LIM, lenError } from "@/lib/admin/limits";
 const f = (fd: FormData, k: string) => String(fd.get(k) ?? "").trim();
 const on = (fd: FormData, k: string) => fd.get(k) === "on" || fd.get(k) === "1";
 function go(path: string, kind: "e" | "ok" | null = null, msg = ""): never {
@@ -27,6 +28,7 @@ function go(path: string, kind: "e" | "ok" | null = null, msg = ""): never {
 export async function saveRolesAction(fd: FormData) {
   const u = await requireCan("roles", "write");
   const ids = String(fd.get("ids") ?? "").split(",").filter(Boolean);
+  if (ids.some((id) => [...f(fd, `${id}:name`)].length > LIM.roleName)) go("/admin/roles", "e", `Название роли — не больше ${LIM.roleName} символов`);
   for (const id of ids) {
     if (id === "admin") continue; // права администратора не меняются
     const perms = Object.fromEntries(SECTIONS.map((s) => { const v = f(fd, `${id}:${s}`); return [s, isLevel(v) ? v : "none"]; })) as Perms;
@@ -47,6 +49,7 @@ export async function saveRolesAction(fd: FormData) {
 export async function createRoleAction(fd: FormData) {
   const u = await requireCan("roles", "write");
   const id = f(fd, "id").toLowerCase();
+  { const le = lenError(fd, { name: ["Название роли", LIM.roleName] }); if (le) go("/admin/roles", "e", le); }
   const name = f(fd, "name").slice(0, 60);
   if (!roleIdOk(id)) go("/admin/roles", "e", "Код роли: латиница, цифры, дефис, от 2 символов (например, editor)");
   if (!name) go("/admin/roles", "e", "Укажите название роли");
@@ -99,6 +102,8 @@ export async function saveSeoAction(fd: FormData) {
   const cur = await getSeo();
   const next: SeoSettings = structuredClone(cur);
   const back = `/admin/seo?tab=${tab}`;
+  { const le = lenError(fd, { canonicalOrigin: ["Основной адрес", LIM.origin], indexHosts: ["Домены", LIM.hosts], siteName: ["Название сайта", LIM.siteName], titleTemplate: ["Шаблон title", LIM.titleTemplate], defaultDescription: ["Description по умолчанию", LIM.description], ogImage: ["Картинка", LIM.ogImage], yandexVerification: ["Яндекс", LIM.verification], googleVerification: ["Google", LIM.verification], bingVerification: ["Bing", LIM.verification], mailruVerification: ["Mail.ru", LIM.verification], metrikaId: ["Метрика", LIM.counterId], gaId: ["GA4", LIM.counterId], gtmId: ["GTM", LIM.counterId], headHtml: ["Код в head", LIM.headHtml], robotsTxt: ["robots.txt", LIM.robotsTxt], exclude: ["Исключить адреса", LIM.sitemapExclude] }); if (le) go(back, "e", le); }
+  for (const k of [...fd.keys()]) { const v = String(fd.get(k) ?? ""); if ((k.startsWith("t:") && [...v].length > LIM.tplTitle) || (k.startsWith("d:") && [...v].length > LIM.tplDescription)) go(back, "e", `Шаблон слишком длинный: title до ${LIM.tplTitle}, description до ${LIM.tplDescription} символов`); }
   if (tab === "general") {
     const origin = f(fd, "canonicalOrigin").replace(/\/+$/, "");
     if (!/^https:\/\/[a-z0-9.-]+\.[a-z]{2,}$/i.test(origin)) go(back, "e", "Основной адрес: https://домен без слеша в конце");
@@ -166,12 +171,13 @@ export async function savePageSeoAction(fd: FormData) {
   const path = cleanPath(f(fd, "path")) ?? (f(fd, "path") === "/" ? "/" : null);
   if (!isLangId(lang) || !path) go("/admin/seo?tab=pages", "e", "Неверный адрес страницы");
   const back = `/admin/seo/page?lang=${lang}&path=${encodeURIComponent(path!)}`;
+  { const le = lenError(fd, { title: ["Title", LIM.title], description: ["Description", LIM.description], keywords: ["Keywords", LIM.keywords], canonical: ["Canonical", LIM.canonical], ogTitle: ["OG заголовок", LIM.ogTitle], ogDescription: ["OG описание", LIM.ogDescription], ogImage: ["OG картинка", LIM.ogImage], jsonLd: ["JSON-LD", LIM.jsonLd] }); if (le) go(back, "e", le); }
   const jsonLd = String(fd.get("jsonLd") ?? "").trim();
   if (jsonLd) { try { JSON.parse(jsonLd); } catch { go(back, "e", "Микроразметка: это не корректный JSON"); } }
   const pr = f(fd, "priority");
   const data: PageSeo = {
-    title: f(fd, "title").slice(0, 300),
-    description: f(fd, "description").slice(0, 600),
+    title: f(fd, "title").slice(0, LIM.title),
+    description: f(fd, "description").slice(0, LIM.description),
     keywords: f(fd, "keywords").slice(0, 300),
     canonical: f(fd, "canonical").slice(0, 500),
     noindex: on(fd, "noindex"),
@@ -212,6 +218,7 @@ function cleanTo(s: string) {
 export async function saveRedirectAction(fd: FormData) {
   const u = await requireCan("redirects", "write");
   const id = f(fd, "id");
+  { const le = lenError(fd, { from: ["Откуда", LIM.redirectPath], to: ["Куда", LIM.redirectPath], note: ["Заметка", LIM.redirectNote] }); if (le) go("/admin/redirects", "e", le); }
   const match = ["exact", "prefix", "regex"].includes(f(fd, "match")) ? f(fd, "match") : "exact";
   const from = match === "regex" ? f(fd, "from").slice(0, 500) : cleanFrom(f(fd, "from"));
   const code = CODES.includes(Number(f(fd, "code"))) ? Number(f(fd, "code")) : 301;
@@ -343,4 +350,65 @@ export async function fixMissingAction(fd: FormData) {
   await q("INSERT INTO redirects (from_path, to_path, code, match, note, created_by) VALUES ($1,$2,301,'exact','переезд',$3) ON CONFLICT DO NOTHING", [from, to, u.login]);
   await audit(u, "Редирект для старого адреса", "redirect", from, undefined, { to });
   go("/admin/migration", "ok", `${from} → ${to}`);
+}
+
+// ───────────── тексты сайта (главная, интерфейс, контакты, форма) ─────────────
+
+export async function saveTextsAction(fd: FormData) {
+  const { screenOf, fieldsOf } = await import("@/lib/admin/text-bundles");
+  const sc = screenOf(f(fd, "screen"));
+  if (!sc) go("/admin", "e", "Неизвестный раздел текстов");
+  const u = await requireCan(sc!.section, "write");
+  const lang = f(fd, "lang");
+  if (!sc!.langs.includes(lang as Lang)) go(`/admin/texts?s=${sc!.id}`, "e", "Неизвестный язык");
+  const back = `/admin/texts?s=${sc!.id}&lang=${lang}`;
+  const intent = f(fd, "intent");
+  if (intent === "discard") {
+    for (const b of sc!.bundles) await q("UPDATE texts SET draft=NULL WHERE bundle=$1 AND lang=$2", [b.id, lang]);
+    await audit(u, "Черновик текстов отброшен", "texts", `${sc!.id}:${lang}`);
+    go(back, "ok", "Черновик отброшен");
+  }
+  const tooLong: string[] = [];
+  const patches = new Map<string, Record<string, string>>();
+  for (const b of sc!.bundles) {
+    const patch: Record<string, string> = {};
+    for (const fl of fieldsOf(b)) {
+      const raw = fd.get(`f:${b.id}:${fl.path}`);
+      if (raw === null) continue;
+      const v = String(raw).replace(/\r\n/g, "\n");
+      const def = fl.def[lang] ?? fl.def.ru ?? "";
+      if ([...v].length > fl.max) tooLong.push(`${fl.group} → ${fl.label}: ${[...v].length} из ${fl.max}`);
+      if (!v.trim()) continue; // пустое поле — исходный текст
+      if (v !== def) patch[fl.path] = v;
+    }
+    patches.set(b.id, patch);
+  }
+  if (tooLong.length) go(back, "e", `Слишком длинно (не сохранено): ${tooLong.slice(0, 5).join("; ")}`);
+  for (const [bundle, patch] of patches) {
+    const row = await q1<{ published: Record<string, string> | null }>("SELECT published FROM texts WHERE bundle=$1 AND lang=$2", [bundle, lang]);
+    const same = JSON.stringify(patch) === JSON.stringify(row?.published ?? {});
+    if (intent === "publish") {
+      if (same) { await q("UPDATE texts SET draft=NULL WHERE bundle=$1 AND lang=$2", [bundle, lang]); continue; }
+      await q("INSERT INTO texts (bundle, lang, published, draft, updated_at, updated_by) VALUES ($1,$2,$3,NULL,now(),$4) ON CONFLICT (bundle, lang) DO UPDATE SET published=$3, draft=NULL, updated_at=now(), updated_by=$4", [bundle, lang, JSON.stringify(patch), u.login]);
+      await q("INSERT INTO text_versions (bundle, lang, data, note, by) VALUES ($1,$2,$3,'Публикация',$4)", [bundle, lang, JSON.stringify(patch), u.login]);
+      await audit(u, "Тексты опубликованы", "texts", `${bundle}:${lang}`, row?.published ?? {}, patch);
+    } else {
+      await q("INSERT INTO texts (bundle, lang, draft, updated_at, updated_by) VALUES ($1,$2,$3,now(),$4) ON CONFLICT (bundle, lang) DO UPDATE SET draft=$3, updated_at=now(), updated_by=$4", [bundle, lang, JSON.stringify(patch), u.login]);
+    }
+  }
+  if (intent === "publish") { await bust(); go(back, "ok", "Опубликовано, на сайте уже новые тексты"); }
+  await audit(u, "Черновик текстов сохранён", "texts", `${sc!.id}:${lang}`);
+  go(back, "ok", "Черновик сохранён. На сайте пока без изменений.");
+}
+
+export async function rollbackTextsAction(fd: FormData) {
+  const { bundleOf, screenOf } = await import("@/lib/admin/text-bundles");
+  const sc = screenOf(f(fd, "screen"));
+  if (!sc) go("/admin", "e", "Неизвестный раздел текстов");
+  const u = await requireCan(sc!.section, "write");
+  const v = await q1<{ bundle: string; lang: string; data: Record<string, string> }>("SELECT bundle, lang, data FROM text_versions WHERE id=$1", [f(fd, "id")]);
+  if (!v || !bundleOf(v.bundle) || !sc!.bundles.some((b) => b.id === v.bundle)) go(`/admin/texts?s=${sc!.id}`, "e", "Версия не найдена");
+  await q("INSERT INTO texts (bundle, lang, draft, updated_at, updated_by) VALUES ($1,$2,$3,now(),$4) ON CONFLICT (bundle, lang) DO UPDATE SET draft=$3, updated_at=now(), updated_by=$4", [v!.bundle, v!.lang, JSON.stringify(v!.data), u.login]);
+  await audit(u, "Версия текстов загружена в черновик", "texts", `${v!.bundle}:${v!.lang}`);
+  go(`/admin/texts?s=${sc!.id}&lang=${v!.lang}`, "ok", "Старая версия загружена в черновик. Проверьте и опубликуйте.");
 }

@@ -1,5 +1,8 @@
 "use client";
 
+import { patched } from "@/lib/texts";
+import { cookieNoticeRu, type CookieNoticeText } from "@/lib/text-defaults";
+export type { CookieNoticeText } from "@/lib/text-defaults";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { company } from "@/lib/content";
@@ -8,43 +11,15 @@ import { cookieNoticeI18n } from "@/lib/lead/i18n";
 import { getConsent, onOpenCookieSettings, setConsent } from "@/lib/lead/consent";
 
 /** Тексты баннера. Русские по умолчанию; формулировки сверить с юристом (PRD 8.2). */
-export interface CookieNoticeText {
-  title: string;
-  text: string;
-  policy: string;
-  acceptAll: string;
-  necessaryOnly: string;
-  settings: string;
-  save: string;
-  necessary: string;
-  necessaryNote: string;
-  analytics: string;
-  analyticsNote: string;
-  marketing: string;
-  marketingNote: string;
-}
 
-export const cookieNoticeRu: CookieNoticeText = {
-  title: "Мы используем cookie",
-  text: "Необходимые cookie нужны для работы сайта. Аналитику и рекламные cookie включим только с вашего согласия.",
-  policy: "Политика обработки данных",
-  acceptAll: "Принять все",
-  necessaryOnly: "Только необходимые",
-  settings: "Настроить",
-  save: "Сохранить выбор",
-  necessary: "Необходимые",
-  necessaryNote: "Работа сайта и форм. Всегда включены.",
-  analytics: "Аналитика",
-  analyticsNote: "Яндекс Метрика с вебвизором: как пользуются сайтом.",
-  marketing: "Маркетинг",
-  marketingNote: "Показ нашей рекламы тем, кто уже был на сайте.",
-};
+
+
 
 // Cookie-баннер с тремя категориями (PRD 8.2, 14.4). До выбора работают только необходимые.
 // Открыть заново: openCookieSettings() из lib/lead/consent.
 export function CookieNotice({ t: tp, policyUrl = company.privacyUrl }: { t?: Partial<CookieNoticeText>; policyUrl?: string }) {
   const lang = splitLang(usePathname() || "/").lang;
-  const t: CookieNoticeText = { ...(cookieNoticeI18n[lang] ?? cookieNoticeRu), ...tp };
+  const t: CookieNoticeText = { ...patched("cookie", lang, cookieNoticeI18n[lang] ?? cookieNoticeRu), ...tp };
   const [open, setOpen] = useState(false);
   const [details, setDetails] = useState(false);
   const [analytics, setAnalytics] = useState(false);

@@ -9,11 +9,10 @@ import type { CarClass } from "@/lib/content";
 import { CarArt } from "../CarArt";
 import { asset, href, type Lang } from "@/lib/i18n";
 import type { HomeText } from "@/lib/home-text";
+import { patched } from "@/lib/texts";
+import { MORE, PROMO } from "@/lib/text-defaults";
 
-const MORE: Record<string, { all: string; less: string; popular: string; popularShort: string; allCls: string; models: string }> = {
-  ru: { all: "Смотреть весь автопарк", less: "Свернуть", popular: "Популярные модели из каждого класса", popularShort: "Популярные", allCls: "Все", models: "моделей" },
-  en: { all: "See the whole fleet", less: "Show less", popular: "Popular models from every class", popularShort: "Popular", allCls: "All", models: "models" },
-};
+
 
 function Price({ label, price, old, t }: { label?: string; price: number; old?: number; t: HomeText["fleet"] }) {
   return (
@@ -82,23 +81,11 @@ export function FleetTile({ m, t, lang, i = 0, priority = false }: { m: FleetCar
   );
 }
 
-type PromoText = { orderTitle: string; orderText: string; orderBtn: string; friendTitle: [string, string, string]; friendText: string; friendNote: string; friendBtn: string; copied: string; shareText: string; upTo: string };
-const PROMO: Record<string, PromoText> = {
-  ru: {
-    orderTitle: "Не устраивает авто из наличия?", orderText: "Приобретём автомобиль на заказ под ваши пожелания", orderBtn: "Выкупить",
-    friendTitle: ["Получай ", "бонус", " за каждого друга"], friendText: "Количество выплат на одного человека не ограничено", friendNote: "*действует на аренду и выкуп",
-    friendBtn: "Поделиться ссылкой", copied: "Ссылка скопирована", shareText: "Car City — аренда и выкуп авто для такси в Москве", upTo: "до",
-  },
-  en: {
-    orderTitle: "Nothing suitable in stock?", orderText: "We will buy a car to order for your needs", orderBtn: "Buy out",
-    friendTitle: ["Get a ", "bonus", " for every friend"], friendText: "No limit on the number of payouts per person", friendNote: "*valid for rental and rent-to-own",
-    friendBtn: "Share the link", copied: "Link copied", shareText: "Car City — taxi car rental and rent-to-own in Moscow", upTo: "up to",
-  },
-};
+
 
 /** Промо-карточки внутри каталога: «авто под заказ» и «бонус за друга» (реальные программы Car City) */
 function PromoTile({ kind, lang, i }: { kind: "order" | "friend"; lang: Lang; i: number }) {
-  const p = PROMO[lang] ?? PROMO.ru;
+  const p = patched("promo-x", lang, PROMO[lang] ?? PROMO.ru);
   const [copied, setCopied] = useState(false);
   if (kind === "order")
     return (
@@ -139,7 +126,7 @@ type View = "popular" | "all" | CarClass;
 // класс — только его машины, «Все» — весь парк по порядку классов. Между машинами — две промо-карточки.
 export function FleetGrid({ t, lang, cars }: { t: HomeText["fleet"]; lang: Lang; cars?: FleetCar[] }) {
   const fleet = cars ?? baseFleet;
-  const m = MORE[lang] ?? MORE.ru;
+  const m = patched("fleet-x", lang, MORE[lang] ?? MORE.ru);
   const [view, setView] = useState<View>("popular");
   const sec = useRef<HTMLElement>(null);
   // Когда автопарк раскрывается или сворачивается, высота страницы меняется: блоки ниже, которые прикрепляются

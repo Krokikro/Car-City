@@ -11,6 +11,7 @@ import { defaultRobots } from "@/lib/hosts";
 import { FREQS, PAGE_TYPE_NAMES, pageType, type PageType } from "@/lib/site-settings";
 import { homeMeta } from "@/lib/meta";
 import { saveSeoAction } from "../actions-site";
+import { LIM } from "@/lib/admin/limits";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "SEO" };
@@ -39,8 +40,8 @@ export default async function Seo({ searchParams }: { searchParams: Promise<{ e?
         <fieldset disabled={!write} className="ad-plain">
           <section className="ad-card">
             <h2>Домен и индексация</h2>
-            <label>Основной адрес сайта<input name="canonicalOrigin" defaultValue={s.canonicalOrigin} required /><small>На него указывают canonical, sitemap, hreflang и Open Graph. Для переезда — https://car-city.pro, как у старого сайта.</small></label>
-            <label>Домены, которые можно индексировать<textarea name="indexHosts" rows={2} defaultValue={s.indexHosts.join("\n")} /><small>По одному в строке. На всех остальных адресах (служебные адреса Railway, копии под опрос) сайт закрыт от поисковиков: noindex и запрет в robots.txt — чтобы не было дублей.</small></label>
+            <label>Основной адрес сайта<input name="canonicalOrigin" maxLength={LIM.origin} defaultValue={s.canonicalOrigin} required /><small>На него указывают canonical, sitemap, hreflang и Open Graph. Для переезда — https://car-city.pro, как у старого сайта.</small></label>
+            <label>Домены, которые можно индексировать<textarea name="indexHosts" rows={2} maxLength={LIM.hosts} defaultValue={s.indexHosts.join("\n")} /><small>По одному в строке. На всех остальных адресах (служебные адреса Railway, копии под опрос) сайт закрыт от поисковиков: noindex и запрет в robots.txt — чтобы не было дублей.</small></label>
             <label className="ad-check"><input type="checkbox" name="wwwRedirect" defaultChecked={s.wwwRedirect} /> www.car-city.pro → car-city.pro (301)</label>
             <label className="ad-check"><input type="checkbox" name="lowercaseRedirect" defaultChecked={s.lowercaseRedirect} /> Адреса с заглавными буквами → строчные (301), как делал старый сайт</label>
             <label className="ad-check"><input type="checkbox" name="hreflang" defaultChecked={s.hreflang} /> hreflang-ссылки на переводы (en, ky, kk, uz)</label>
@@ -49,10 +50,10 @@ export default async function Seo({ searchParams }: { searchParams: Promise<{ e?
           </section>
           <section className="ad-card">
             <h2>Заголовки и описания по умолчанию</h2>
-            <label>Название сайта<input name="siteName" defaultValue={s.siteName} /><small>Для Open Graph и шаблона title</small></label>
-            <label>Шаблон title<input name="titleTemplate" defaultValue={s.titleTemplate} placeholder="%s — Car City" /><small>Пусто — title как в тексте страницы (так сейчас: заголовки перенесены со старого сайта без изменений). %s — заголовок страницы. Не применяется к title, заданным вручную.</small></label>
-            <label>Description по умолчанию<textarea name="defaultDescription" rows={2} defaultValue={s.defaultDescription} /><small>Для страниц без своего описания</small></label>
-            <label>Картинка для соцсетей по умолчанию<input name="ogImage" defaultValue={s.ogImage} /><small>Путь (/video/hero-poster.webp) или адрес картинки из медиатеки</small></label>
+            <label>Название сайта<input name="siteName" maxLength={LIM.siteName} defaultValue={s.siteName} /><small>Для Open Graph и шаблона title</small></label>
+            <label>Шаблон title<input name="titleTemplate" maxLength={LIM.titleTemplate} defaultValue={s.titleTemplate} placeholder="%s — Car City" /><small>Пусто — title как в тексте страницы (так сейчас: заголовки перенесены со старого сайта без изменений). %s — заголовок страницы. Не применяется к title, заданным вручную.</small></label>
+            <label>Description по умолчанию<textarea name="defaultDescription" rows={2} maxLength={LIM.description} data-warn={LIM.descriptionWarn} defaultValue={s.defaultDescription} /><small>Для страниц без своего описания</small></label>
+            <label>Картинка для соцсетей по умолчанию<input name="ogImage" maxLength={LIM.ogImage} defaultValue={s.ogImage} /><small>Путь (/video/hero-poster.webp) или адрес картинки из медиатеки</small></label>
             <label>Карточка Twitter/X<select name="twitterCard" defaultValue={s.twitterCard}><option value="summary_large_image">Большая картинка</option><option value="summary">Маленькая</option></select></label>
             {Save}
           </section>
@@ -70,8 +71,8 @@ export default async function Seo({ searchParams }: { searchParams: Promise<{ e?
             {(Object.keys(PAGE_TYPE_NAMES) as PageType[]).map((k) => (
               <div key={k} className="ad-tpl">
                 <h3>{PAGE_TYPE_NAMES[k]}</h3>
-                <label>Title<input name={`t:${k}`} defaultValue={s.templates[k]?.title ?? ""} placeholder={k === "model" ? "{name} в аренду под такси от {price} ₽/сутки — Car City" : ""} /></label>
-                <label>Description<input name={`d:${k}`} defaultValue={s.templates[k]?.description ?? ""} /></label>
+                <label>Title<input name={`t:${k}`} maxLength={LIM.tplTitle} defaultValue={s.templates[k]?.title ?? ""} placeholder={k === "model" ? "{name} в аренду под такси от {price} ₽/сутки — Car City" : ""} /></label>
+                <label>Description<input name={`d:${k}`} maxLength={LIM.tplDescription} defaultValue={s.templates[k]?.description ?? ""} /></label>
               </div>
             ))}
             {Save}
@@ -87,22 +88,22 @@ export default async function Seo({ searchParams }: { searchParams: Promise<{ e?
           <section className="ad-card">
             <h2>Подтверждение прав (верификация)</h2>
             <p className="ad-muted">Коды перенесены со старого car-city.pro: Яндекс.Вебмастер и Google Search Console продолжат считать сайт подтверждённым после переезда.</p>
-            <label>Яндекс (yandex-verification)<input name="yandexVerification" defaultValue={s.yandexVerification} /></label>
-            <label>Google (google-site-verification)<input name="googleVerification" defaultValue={s.googleVerification} /></label>
-            <label>Bing (msvalidate.01)<input name="bingVerification" defaultValue={s.bingVerification} /></label>
-            <label>Mail.ru (pmail-verification)<input name="mailruVerification" defaultValue={s.mailruVerification} /></label>
+            <label>Яндекс (yandex-verification)<input name="yandexVerification" maxLength={LIM.verification} defaultValue={s.yandexVerification} /></label>
+            <label>Google (google-site-verification)<input name="googleVerification" maxLength={LIM.verification} defaultValue={s.googleVerification} /></label>
+            <label>Bing (msvalidate.01)<input name="bingVerification" maxLength={LIM.verification} defaultValue={s.bingVerification} /></label>
+            <label>Mail.ru (pmail-verification)<input name="mailruVerification" maxLength={LIM.verification} defaultValue={s.mailruVerification} /></label>
           </section>
           <section className="ad-card">
             <h2>Счётчики</h2>
             <p className="ad-muted">Включаются только после согласия посетителя на аналитику (баннер cookie). Номер Метрики — тот же, что на старом сайте: история посещений и цели сохранятся.</p>
-            <label>Яндекс Метрика, номер счётчика<input name="metrikaId" defaultValue={s.metrikaId} inputMode="numeric" /></label>
-            <label>Google Analytics 4<input name="gaId" defaultValue={s.gaId} placeholder="G-XXXXXXX" /></label>
-            <label>Google Tag Manager<input name="gtmId" defaultValue={s.gtmId} placeholder="GTM-XXXXXX" /></label>
+            <label>Яндекс Метрика, номер счётчика<input name="metrikaId" maxLength={LIM.counterId} defaultValue={s.metrikaId} inputMode="numeric" /></label>
+            <label>Google Analytics 4<input name="gaId" maxLength={LIM.counterId} defaultValue={s.gaId} placeholder="G-XXXXXXX" /></label>
+            <label>Google Tag Manager<input name="gtmId" maxLength={LIM.counterId} defaultValue={s.gtmId} placeholder="GTM-XXXXXX" /></label>
           </section>
           <section className="ad-card">
             <h2>Свой код в &lt;head&gt;</h2>
             <p className="ad-muted">Мета-теги, ссылки и скрипты на всех страницах (пиксели, чаты, проверка прав другими сервисами).{user.role !== "admin" && " Менять может только администратор."}</p>
-            <label>Код<textarea name="headHtml" rows={6} defaultValue={s.headHtml} disabled={user.role !== "admin"} className="ad-mono" placeholder={'<meta name="..." content="..." />'} /></label>
+            <label>Код<textarea name="headHtml" rows={6} maxLength={LIM.headHtml} defaultValue={s.headHtml} disabled={user.role !== "admin"} className="ad-mono" placeholder={'<meta name="..." content="..." />'} /></label>
             {Save}
           </section>
         </fieldset>
@@ -116,7 +117,7 @@ export default async function Seo({ searchParams }: { searchParams: Promise<{ e?
           <section className="ad-card">
             <h2>robots.txt</h2>
             <p className="ad-muted">Пусто — собирается автоматически (ниже). На служебных адресах Railway сайт всегда закрыт целиком, независимо от этого текста. <a href="/robots.txt" target="_blank" rel="noreferrer">Открыть robots.txt ↗</a></p>
-            <label>Свой текст<textarea name="robotsTxt" rows={14} defaultValue={s.robotsTxt} className="ad-mono" placeholder="Пусто — автоматически" /></label>
+            <label>Свой текст<textarea name="robotsTxt" rows={14} maxLength={LIM.robotsTxt} defaultValue={s.robotsTxt} className="ad-mono" placeholder="Пусто — автоматически" /></label>
             <details><summary>Автоматический вариант</summary><pre className="ad-pre">{defaultRobots(s)}</pre></details>
             {write && <p className="ad-tools-row">{Save}<label className="ad-check"><input type="checkbox" name="reset" /> Вернуть автоматический</label></p>}
           </section>
@@ -134,7 +135,7 @@ export default async function Seo({ searchParams }: { searchParams: Promise<{ e?
             <p><b>Языки</b></p>
             <div className="ad-tools-row">{LANGS.map((l) => <label key={l} className="ad-check"><input type="checkbox" name={`lang:${l}`} defaultChecked={s.sitemap.langs.includes(l)} disabled={l === "ru"} /> {LANG_NAMES[l]}</label>)}</div>
             <label className="ad-check"><input type="checkbox" name="images" defaultChecked={s.sitemap.images} /> Карта картинок (image_sitemap.xml)</label>
-            <label>Исключить адреса<textarea name="exclude" rows={4} defaultValue={s.sitemap.exclude.join("\n")} className="ad-mono" /><small>По одному в строке, можно маской: /novosti/*</small></label>
+            <label>Исключить адреса<textarea name="exclude" rows={4} maxLength={LIM.sitemapExclude} defaultValue={s.sitemap.exclude.join("\n")} className="ad-mono" /><small>По одному в строке, можно маской: /novosti/*</small></label>
             <table className="ad-table">
               <thead><tr><th>Тип страниц</th><th>Приоритет</th><th>Частота изменения</th></tr></thead>
               <tbody>

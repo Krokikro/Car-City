@@ -17,6 +17,7 @@ import "../styles/vykup.css";
 import "../styles/light.gen.css";
 import "../styles/light.css";
 import { siteTheme, themeForced } from "@/lib/theme";
+import { textsJson } from "@/lib/texts";
 import { gfxDetectScript } from "@/lib/gfx";
 import { company } from "@/lib/content";
 import { asset } from "@/lib/i18n";
@@ -74,6 +75,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       data-ym={seo.metrikaId || undefined} data-ga={seo.gaId || undefined} data-gtm={seo.gtmId || undefined} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: gfxDetectScript }} />
+        {/* правки текстов из админки — чтобы клиентские компоненты рисовали то же, что сервер */}
+        <script id="cc-texts" type="application/json" dangerouslySetInnerHTML={{ __html: textsJson() }} />
         {/* свой код в <head> из админки (SEO → Счётчики): задаёт только администратор */}
         {seo.headHtml && <HeadHtml html={seo.headHtml} />}
       </head>

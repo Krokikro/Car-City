@@ -8,6 +8,7 @@ import { listRoles } from "@/lib/admin/store";
 import { q } from "@/lib/db";
 import { fmt } from "@/lib/admin/format";
 import { createUserAction, reinviteAction, reset2faAction, resetPasswordAction, setRoleAction, toggleActiveAction, updateUserAction } from "../actions";
+import { LIM } from "@/lib/admin/limits";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Пользователи" };
@@ -46,9 +47,9 @@ export default async function Users({ searchParams }: { searchParams: Promise<{ 
         <section className="ad-card">
           <h2>Добавить сотрудника</h2>
           <form action={createUserAction} className="ad-form ad-user-form" autoComplete="off">
-            <label>Имя<input name="name" placeholder="Иван Петров" /></label>
-            <label>Логин<input name="login" required pattern="[A-Za-z0-9._@\-]{3,60}" placeholder="ivan.petrov" autoCapitalize="none" spellCheck={false} /><small>Латиница, цифры, точка, дефис</small></label>
-            <label>Почта <span className="ad-muted">(необязательно)</span><input name="email" type="email" placeholder="ivan@car-city.pro" /></label>
+            <label>Имя<input name="name" placeholder="Иван Петров" maxLength={LIM.personName} /></label>
+            <label>Логин<input name="login" required maxLength={LIM.login} pattern="[A-Za-z0-9._@\-]{3,60}" placeholder="ivan.petrov" autoCapitalize="none" spellCheck={false} /><small>Латиница, цифры, точка, дефис</small></label>
+            <label>Почта <span className="ad-muted">(необязательно)</span><input name="email" type="email" placeholder="ivan@car-city.pro" maxLength={LIM.email} /></label>
             <label>Роль<select name="role" defaultValue="manager">{assignable.map((r) => <option key={r.id} value={r.id}>{r.name}</option>)}</select></label>
             <label>Пароль<input name="password" type="text" minLength={10} placeholder="пусто — придумаем сами" autoComplete="new-password" /><small>От 10 символов, буквы и цифры</small></label>
             <label className="ad-check"><input type="checkbox" name="must_change" defaultChecked /> Попросить сменить пароль при первом входе</label>
@@ -71,9 +72,9 @@ export default async function Users({ searchParams }: { searchParams: Promise<{ 
                     {editing && write && !locked ? (
                       <form action={updateUserAction} className="ad-form ad-user-edit">
                         <input type="hidden" name="id" value={u.id} />
-                        <input name="name" defaultValue={u.name} aria-label="Имя" placeholder="Имя" />
-                        <input name="login" defaultValue={login} aria-label="Логин" required />
-                        <input name="email" type="email" defaultValue={u.email ?? ""} aria-label="Почта" placeholder="почта (необязательно)" />
+                        <input name="name" defaultValue={u.name} aria-label="Имя" placeholder="Имя" maxLength={LIM.personName} />
+                        <input name="login" defaultValue={login} aria-label="Логин" required maxLength={LIM.login} />
+                        <input name="email" type="email" defaultValue={u.email ?? ""} aria-label="Почта" placeholder="почта (необязательно)" maxLength={LIM.email} />
                         <span className="ad-tools-row"><button className="ad-btn ad-btn-sm ad-btn-main" type="submit">Сохранить</button><Link className="ad-btn ad-btn-sm" href="/admin/users">Отмена</Link></span>
                       </form>
                     ) : (

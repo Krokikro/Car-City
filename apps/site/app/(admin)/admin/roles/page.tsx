@@ -4,6 +4,7 @@ import { requireUser } from "@/lib/admin/auth";
 import { can, LEVEL_NAMES, SCOPE_NAMES, SECTION_HINTS, SECTION_NAMES, SECTIONS, type Level, type LeadScope } from "@/lib/admin/roles";
 import { listRoles } from "@/lib/admin/store";
 import { createRoleAction, deleteRoleAction, saveRolesAction } from "../actions-site";
+import { LIM } from "@/lib/admin/limits";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Роли и права" };
@@ -29,7 +30,7 @@ export default async function Roles({ searchParams }: { searchParams: Promise<{ 
                   <th>Раздел</th>
                   {roles.map((r) => (
                     <th key={r.id} id={`role-${r.id}`}>
-                      {r.id === "admin" ? <b>{r.name}</b> : <input name={`${r.id}:name`} defaultValue={r.name} aria-label="Название роли" className="ad-role-name" />}
+                      {r.id === "admin" ? <b>{r.name}</b> : <input name={`${r.id}:name`} maxLength={LIM.roleName} defaultValue={r.name} aria-label="Название роли" className="ad-role-name" />}
                       <small className="ad-muted">{r.id} · {r.users} чел.</small>
                     </th>
                   ))}
@@ -74,8 +75,8 @@ export default async function Roles({ searchParams }: { searchParams: Promise<{ 
           <section className="ad-card">
             <h2>Новая роль</h2>
             <form action={createRoleAction} className="ad-form ad-narrow">
-              <label>Название<input name="name" required placeholder="Например, Редактор" /></label>
-              <label>Код<input name="id" required pattern="[a-z][a-z0-9_\-]{1,30}" placeholder="editor" /><small>Латиница, для системы</small></label>
+              <label>Название<input name="name" required maxLength={LIM.roleName} placeholder="Например, Редактор" /></label>
+              <label>Код<input name="id" required maxLength={LIM.roleId} pattern="[a-z][a-z0-9_\-]{1,30}" placeholder="editor" /><small>Латиница, для системы</small></label>
               <label>Взять права у роли<select name="copy" defaultValue=""><option value="">— с нуля —</option>{editable.map((r) => <option key={r.id} value={r.id}>{r.name}</option>)}</select></label>
               <button className="ad-btn ad-btn-main" type="submit">Создать роль</button>
             </form>

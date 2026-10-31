@@ -1,5 +1,6 @@
 // Подписи интерфейса на всех языках сайта. Тексты страниц переводятся отдельно (content/i18n).
 import type { Lang } from "./i18n";
+import { patched } from "./texts";
 
 const ru = {
   skip: "К содержанию",
@@ -249,4 +250,5 @@ const uz: Ui = {
 };
 
 export const UI: Record<Lang, Ui> = { ru, en, ky, kk, uz };
-export const ui = (lang: Lang) => UI[lang] ?? ru;
+/** Подписи с правками из админки (Тексты → Интерфейс) */
+export const ui = (lang: Lang): Ui => patched("ui", lang, UI[lang] ?? ru);

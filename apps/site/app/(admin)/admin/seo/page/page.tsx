@@ -12,6 +12,7 @@ import { FREQS, pageType, PAGE_TYPE_NAMES } from "@/lib/site-settings";
 import { homeMeta } from "@/lib/meta";
 import { baseline } from "@/lib/admin/migration";
 import { savePageSeoAction } from "../../actions-site";
+import { LIM } from "@/lib/admin/limits";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "SEO страницы" };
@@ -44,9 +45,9 @@ export default async function PageSeoEdit({ searchParams }: { searchParams: Prom
             <h2>В выдаче</h2>
             <div className="ad-serp"><span className="ad-serp-url">car-city.pro{self === "/" ? "" : self}</span><b>{finalTitle}</b><p>{String(m.description ?? "")}</p></div>
             <p className="ad-muted">Пустые поля — значение из текста страницы: title «{base.title}», description «{base.description || "—"}».</p>
-            <label>Title<input name="title" defaultValue={ps.title ?? ""} placeholder={base.title} maxLength={300} /><small>До ~60–70 символов видно в выдаче</small></label>
-            <label>Description<textarea name="description" rows={3} defaultValue={ps.description ?? ""} placeholder={base.description} maxLength={600} /><small>До ~160 символов</small></label>
-            <label>Keywords<input name="keywords" defaultValue={ps.keywords ?? ""} /><small>Яндекс и Google почти не учитывают; можно оставить пустым</small></label>
+            <label>Title<input name="title" defaultValue={ps.title ?? ""} placeholder={base.title} maxLength={LIM.title} data-warn={LIM.titleWarn} /><small>До ~60–70 символов видно в выдаче</small></label>
+            <label>Description<textarea name="description" rows={3} defaultValue={ps.description ?? ""} placeholder={base.description} maxLength={LIM.description} data-warn={LIM.descriptionWarn} /><small>До ~160 символов</small></label>
+            <label>Keywords<input name="keywords" maxLength={LIM.keywords} defaultValue={ps.keywords ?? ""} /><small>Яндекс и Google почти не учитывают; можно оставить пустым</small></label>
             {old && (
               <div className="ad-old">
                 <b>На старом car-city.pro:</b>
@@ -58,7 +59,7 @@ export default async function PageSeoEdit({ searchParams }: { searchParams: Prom
           </section>
           <section className="ad-card">
             <h2>Индексация</h2>
-            <label>Canonical<input name="canonical" defaultValue={ps.canonical ?? ""} placeholder={self} /><small>Пусто — адрес самой страницы. Заполняйте, только если эта страница — дубль другой.</small></label>
+            <label>Canonical<input name="canonical" maxLength={LIM.canonical} defaultValue={ps.canonical ?? ""} placeholder={self} /><small>Пусто — адрес самой страницы. Заполняйте, только если эта страница — дубль другой.</small></label>
             <label className="ad-check"><input type="checkbox" name="noindex" defaultChecked={ps.noindex} /> noindex — не показывать в поиске</label>
             <label className="ad-check"><input type="checkbox" name="nofollow" defaultChecked={ps.nofollow} /> nofollow — не переходить по ссылкам</label>
             <label className="ad-check"><input type="checkbox" name="noHreflang" defaultChecked={ps.noHreflang} /> Без hreflang-ссылок на переводы</label>
@@ -73,14 +74,14 @@ export default async function PageSeoEdit({ searchParams }: { searchParams: Prom
           </section>
           <section className="ad-card">
             <h2>Соцсети (Open Graph)</h2>
-            <label>Заголовок<input name="ogTitle" defaultValue={ps.ogTitle ?? ""} placeholder={finalTitle} /></label>
-            <label>Описание<textarea name="ogDescription" rows={2} defaultValue={ps.ogDescription ?? ""} /></label>
-            <label>Картинка<input name="ogImage" defaultValue={ps.ogImage ?? ""} placeholder={ov.seo.ogImage} /><small>Путь на сайте или адрес картинки из медиатеки (/media/…)</small></label>
+            <label>Заголовок<input name="ogTitle" maxLength={LIM.ogTitle} defaultValue={ps.ogTitle ?? ""} placeholder={finalTitle} /></label>
+            <label>Описание<textarea name="ogDescription" rows={2} maxLength={LIM.ogDescription} defaultValue={ps.ogDescription ?? ""} /></label>
+            <label>Картинка<input name="ogImage" maxLength={LIM.ogImage} defaultValue={ps.ogImage ?? ""} placeholder={ov.seo.ogImage} /><small>Путь на сайте или адрес картинки из медиатеки (/media/…)</small></label>
           </section>
           <section className="ad-card">
             <h2>Микроразметка</h2>
             <p className="ad-muted">Своя разметка schema.org (JSON-LD) в дополнение к автоматической: например, FAQPage, Product, Offer, Event.</p>
-            <label>JSON-LD<textarea name="jsonLd" rows={8} defaultValue={ps.jsonLd ?? ""} className="ad-mono" placeholder={'{\n  "@context": "https://schema.org",\n  "@type": "FAQPage",\n  "mainEntity": []\n}'} /></label>
+            <label>JSON-LD<textarea name="jsonLd" rows={8} maxLength={LIM.jsonLd} defaultValue={ps.jsonLd ?? ""} className="ad-mono" placeholder={'{\n  "@context": "https://schema.org",\n  "@type": "FAQPage",\n  "mainEntity": []\n}'} /></label>
             {write && <button className="ad-btn ad-btn-main" type="submit">Сохранить</button>}
           </section>
         </fieldset>

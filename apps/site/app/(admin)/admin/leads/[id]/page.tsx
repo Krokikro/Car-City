@@ -8,6 +8,7 @@ import { fmt } from "@/lib/admin/format";
 import { updateLeadAction } from "../../actions";
 import { leadScope } from "@/lib/admin/scope";
 import { EXTRA_LABELS, MODE_LABELS, MESSENGER_LABELS, type Lead } from "@/lib/lead/types";
+import { LIM } from "@/lib/admin/limits";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Заявка" };
@@ -64,7 +65,7 @@ export default async function LeadPage({ params, searchParams }: { params: Promi
                   </select>
                 )}
               </label>
-              <label>Комментарий<textarea name="comment" rows={5} defaultValue={l.comment} maxLength={4000} /></label>
+              <label>Комментарий<textarea name="comment" rows={5} defaultValue={l.comment} maxLength={LIM.leadComment} /></label>
               {write && <button className="ad-btn ad-btn-main" type="submit">Сохранить</button>}
             </fieldset>
           </form>

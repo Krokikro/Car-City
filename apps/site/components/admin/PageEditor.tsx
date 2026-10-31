@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { savePageAction } from "@/app/(admin)/admin/actions";
+import { LIM } from "@/lib/admin/limits";
 
 const T_MAX = 60;
 const D_MAX = 160;
@@ -74,11 +75,11 @@ export function PageEditor({ lang, path, kind, readOnly, seoReadOnly = false, in
             <h2>Для поисковиков</h2>
             {seoReadOnly && <p className="ad-muted">Title и description меняет SEO-специалист (раздел SEO). Здесь — только просмотр.</p>}
             <label>Title (заголовок в выдаче)
-              <input name="title" value={v.title} onChange={set("title")} required maxLength={300} readOnly={seoReadOnly} />
+              <input name="title" value={v.title} onChange={set("title")} required maxLength={LIM.title} data-warn={LIM.titleWarn} readOnly={seoReadOnly} />
               <small className={tl > T_MAX ? "warn" : ""}>{tl} из ~{T_MAX} символов. Длинный заголовок в выдаче обрежется.</small>
             </label>
             <label>Description (описание в выдаче)
-              <textarea name="description" rows={3} value={v.description} onChange={set("description")} maxLength={600} readOnly={seoReadOnly} />
+              <textarea name="description" rows={3} value={v.description} onChange={set("description")} maxLength={LIM.description} data-warn={LIM.descriptionWarn} readOnly={seoReadOnly} />
               <small className={dl > D_MAX ? "warn" : ""}>{dl} из ~{D_MAX} символов.</small>
             </label>
             <div className="ad-serp" aria-label="Так страница выглядит в поиске">
@@ -90,7 +91,7 @@ export function PageEditor({ lang, path, kind, readOnly, seoReadOnly = false, in
 
           <section className="ad-card">
             <h2>Текст страницы</h2>
-            <label>Заголовок H1<input name="h1" value={v.h1} onChange={set("h1")} required maxLength={300} /></label>
+            <label>Заголовок H1<input name="h1" value={v.h1} onChange={set("h1")} required maxLength={LIM.h1} /></label>
             <div className="ad-toolbar" role="toolbar" aria-label="Оформление текста">
               <button type="button" onClick={() => line("## ")} title="Заголовок раздела">H2</button>
               <button type="button" onClick={() => line("### ")} title="Подзаголовок">H3</button>
@@ -100,7 +101,7 @@ export function PageEditor({ lang, path, kind, readOnly, seoReadOnly = false, in
               <button type="button" onClick={link} title="Ссылка">Ссылка</button>
               <button type="button" onClick={() => setPick(true)} title="Картинка из медиатеки">Картинка</button>
             </div>
-            <textarea ref={ta} name="body" className="ad-body" rows={26} value={v.body} onChange={set("body")} spellCheck lang="ru" aria-label="Текст страницы в формате Markdown" />
+            <textarea ref={ta} name="body" maxLength={LIM.body} className="ad-body" rows={26} value={v.body} onChange={set("body")} spellCheck lang="ru" aria-label="Текст страницы в формате Markdown" />
             <small>Markdown: ## заголовок раздела, ### подзаголовок, **жирный**, [текст](адрес), ![описание](адрес картинки). Блоки вроде карточек, вопросов-ответов и кнопок собираются из этого текста автоматически, поэтому правьте слова, а структуру (порядок заголовков) меняйте осторожно. Ctrl/⌘+S — сохранить черновик.</small>
           </section>
 

@@ -7,6 +7,7 @@ import { getDoc } from "@/lib/docs";
 import { parseReviews } from "@/lib/blocks";
 import { reviewKey, SOURCES, SOURCE_URL } from "@/lib/reviews";
 import { addReviewAction, reviewAction } from "../actions";
+import { LIM } from "@/lib/admin/limits";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Отзывы" };
@@ -110,10 +111,10 @@ export default async function Reviews({ searchParams }: { searchParams: Promise<
             <label>Источник
               <select name="source" required>{SOURCES.map((s) => <option key={s}>{s}</option>)}</select>
             </label>
-            <label>Имя автора<input name="name" required maxLength={120} /></label>
-            <label>Дата, как в источнике<input name="date" placeholder="например, 5 октября 2026" maxLength={60} /></label>
-            <label>Текст отзыва<textarea name="text" rows={5} required maxLength={5000} /></label>
-            <label>Ссылка на этот отзыв в источнике<input name="url" type="url" placeholder="https://… (если пусто, откроется страница отзывов источника)" /></label>
+            <label>Имя автора<input name="name" required maxLength={LIM.reviewName} /></label>
+            <label>Дата, как в источнике<input name="date" placeholder="например, 5 октября 2026" maxLength={LIM.reviewDate} /></label>
+            <label>Текст отзыва<textarea name="text" rows={5} required maxLength={LIM.reviewText} /></label>
+            <label>Ссылка на этот отзыв в источнике<input name="url" type="url" maxLength={LIM.url} placeholder="https://… (если пусто, откроется страница отзывов источника)" /></label>
             <label className="ad-check"><input type="checkbox" name="publish" value="1" defaultChecked /> Сразу показать на сайте</label>
             <div><button className="ad-btn ad-btn-main" type="submit">Добавить</button></div>
           </fieldset>
