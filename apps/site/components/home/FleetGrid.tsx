@@ -7,12 +7,12 @@ import { saleChips, hasRent, hasBuy } from "@/lib/prices";
 import { SaleChips } from "../SaleChips";
 import type { CarClass } from "@/lib/content";
 import { CarArt } from "../CarArt";
-import { href, type Lang } from "@/lib/i18n";
+import { asset, href, type Lang } from "@/lib/i18n";
 import type { HomeText } from "@/lib/home-text";
 
-const MORE: Record<string, { all: string; less: string; popular: string; allCls: string; models: string }> = {
-  ru: { all: "Смотреть весь автопарк", less: "Свернуть", popular: "Популярные модели из каждого класса", allCls: "Все", models: "моделей" },
-  en: { all: "See the whole fleet", less: "Show less", popular: "Popular models from every class", allCls: "All", models: "models" },
+const MORE: Record<string, { all: string; less: string; popular: string; popularShort: string; allCls: string; models: string }> = {
+  ru: { all: "Смотреть весь автопарк", less: "Свернуть", popular: "Популярные модели из каждого класса", popularShort: "Популярные", allCls: "Все", models: "моделей" },
+  en: { all: "See the whole fleet", less: "Show less", popular: "Popular models from every class", popularShort: "Popular", allCls: "All", models: "models" },
 };
 
 function Price({ label, price, old, t }: { label?: string; price: number; old?: number; t: HomeText["fleet"] }) {
@@ -35,7 +35,7 @@ export function FleetTile({ m, t, lang, i = 0, priority = false }: { m: FleetCar
   const rent = hasRent(m), buy = hasBuy(m);
   const link = href(rent ? m.rent : m.buy, lang);
   const chips = saleChips(m, lang);
-  const sale = chips.length > 0;
+  const sale = false && chips.length > 0;
   // доступна только аренда или только выкуп: цена одна и без подписи, кнопка тоже одна
   const single = !(rent && buy);
   return (
@@ -73,20 +73,74 @@ export function FleetTile({ m, t, lang, i = 0, priority = false }: { m: FleetCar
         </div>
         {sale && <SaleChips chips={chips} mobile />}
         <div className="ft-actions">
-          {rent && <a className="btn btn-primary btn-sm" href={href(m.rent, lang)}>{t.rent}</a>}
-          {buy && <a className={`btn ${rent ? "btn-ghost" : "btn-primary"} btn-sm`} href={href(m.buy, lang)}>{t.buy}</a>}
+          {/* акцент — на выкупе: жёлтая «Выкупить», «Арендовать» второстепенная */}
+          {rent && <a className={`btn ${buy ? "btn-ghost" : "btn-primary"} btn-sm`} href={href(m.rent, lang)}>{t.rent}</a>}
+          {buy && <a className="btn btn-primary btn-sm" href={href(m.buy, lang)}>{t.buy}</a>}
         </div>
       </div>
     </article>
   );
 }
 
-// Автопарк на главной: сначала по две популярные модели из каждого класса, по кнопке — весь парк с фильтром классов.
+type PromoText = { orderTitle: string; orderText: string; orderBtn: string; friendTitle: [string, string, string]; friendText: string; friendNote: string; friendBtn: string; copied: string; shareText: string };
+const PROMO: Record<string, PromoText> = {
+  ru: {
+    orderTitle: "Не устраивает авто из наличия?", orderText: "Приобретём автомобиль на заказ под ваши пожелания", orderBtn: "Выкупить",
+    friendTitle: ["Получай ", "бонус", " за каждого друга"], friendText: "Количество выплат на одного человека не ограничено", friendNote: "*действует на аренду и выкуп",
+    friendBtn: "Поделиться ссылкой", copied: "Ссылка скопирована", shareText: "Car City — аренда и выкуп авто для такси в Москве",
+  },
+  en: {
+    orderTitle: "Nothing suitable in stock?", orderText: "We will buy a car to order for your needs", orderBtn: "Buy out",
+    friendTitle: ["Get a ", "bonus", " for every friend"], friendText: "No limit on the number of payouts per person", friendNote: "*valid for rental and rent-to-own",
+    friendBtn: "Share the link", copied: "Link copied", shareText: "Car City — taxi car rental and rent-to-own in Moscow",
+  },
+};
+
+/** Промо-карточки внутри каталога: «авто под заказ» и «бонус за друга» (реальные программы Car City) */
+function PromoTile({ kind, lang, i }: { kind: "order" | "friend"; lang: Lang; i: number }) {
+  const p = PROMO[lang] ?? PROMO.ru;
+  const [copied, setCopied] = useState(false);
+  if (kind === "order")
+    return (
+      <article className="ft ft-promo ft-promo-order" style={{ ["--i" as string]: i }}>
+        <div className="ft-promo-media" aria-hidden="true"><img src={asset("/promo/order-car.webp")} alt="" loading="lazy" /></div>
+        <div className="ft-promo-body">
+          <h3>{p.orderTitle}</h3>
+          <p>{p.orderText}</p>
+          <a className="btn btn-primary btn-sm" href="#zayavka" data-lead="buyout">{p.orderBtn}</a>
+        </div>
+      </article>
+    );
+  async function share() {
+    const url = window.location.origin + href("/", lang);
+    try {
+      if (navigator.share) { await navigator.share({ title: "Car City", text: p.shareText, url }); return; }
+      await navigator.clipboard.writeText(url);
+      setCopied(true); setTimeout(() => setCopied(false), 2400);
+    } catch { /* пользователь закрыл окно «Поделиться» */ }
+  }
+  return (
+    <article className="ft ft-promo ft-promo-friend" style={{ ["--i" as string]: i }}>
+      <div className="ft-promo-bg" aria-hidden="true"><img src={asset("/promo/friend-bonus.webp")} alt="" loading="lazy" /></div>
+      <div className="ft-promo-body">
+        <h3>{p.friendTitle[0]}<em>{p.friendTitle[1]}</em>{p.friendTitle[2]}<sup>*</sup></h3>
+        <p>{p.friendText}</p>
+        <p className="ft-promo-sum">15&nbsp;000&nbsp;₽</p>
+        <p className="ft-promo-note">{p.friendNote}</p>
+        <button type="button" className="btn btn-primary btn-sm" onClick={share}>{copied ? p.copied : p.friendBtn}</button>
+      </div>
+    </article>
+  );
+}
+
+type View = "popular" | "all" | CarClass;
+
+// Автопарк на главной: фильтр классов виден сразу. «Популярные» — по две модели из каждого класса,
+// класс — только его машины, «Все» — весь парк по порядку классов. Между машинами — две промо-карточки.
 export function FleetGrid({ t, lang, cars }: { t: HomeText["fleet"]; lang: Lang; cars?: FleetCar[] }) {
   const fleet = cars ?? baseFleet;
   const m = MORE[lang] ?? MORE.ru;
-  const [open, setOpen] = useState(false);
-  const [cls, setCls] = useState<CarClass | "all">("all");
+  const [view, setView] = useState<View>("popular");
   const sec = useRef<HTMLElement>(null);
   // Когда автопарк раскрывается или сворачивается, высота страницы меняется: блоки ниже, которые прикрепляются
   // к экрану при прокрутке («3 шага»), должны пересчитать своё место, иначе они наезжают на машины.
@@ -99,43 +153,52 @@ export function FleetGrid({ t, lang, cars }: { t: HomeText["fleet"]; lang: Lang;
     return () => { clearTimeout(t); ro.disconnect(); };
   }, []);
   const popular = popularOf(fleet);
-  // раскрытый парк идёт по порядку классов: эконом, комфорт, комфорт+, бизнес, грузовой, доставка
   const order = (a: FleetCar, b: FleetCar) => fleetClasses.findIndex((c) => c.id === a.cls) - fleetClasses.findIndex((c) => c.id === b.cls);
-  const shown = open ? (cls === "all" ? [...fleet].sort(order) : fleet.filter((f) => f.cls === cls)) : popular;
+  const shown = view === "popular" ? popular : view === "all" ? [...fleet].sort(order) : fleet.filter((f) => f.cls === view);
+  const classes = fleetClasses.filter((c) => fleet.some((f) => f.cls === c.id));
+  const pills: { id: View; name: string; n?: number }[] = [
+    { id: "popular", name: m.popularShort },
+    ...classes.map((c) => ({ id: c.id as View, name: t.classes[c.id] ?? c.name, n: fleet.filter((f) => f.cls === c.id).length })),
+    { id: "all", name: m.allCls, n: fleet.length },
+  ];
+  // промо-карточки: после 4-й машины и ближе к концу; в отдельном классе — одна, «под заказ», в конце
+  const items: ({ car: FleetCar } | { promo: "order" | "friend" })[] = shown.map((car) => ({ car }));
+  if (view === "popular" || view === "all") {
+    items.splice(Math.min(4, items.length), 0, { promo: "order" });
+    items.splice(Math.min(9, items.length), 0, { promo: "friend" });
+  } else items.push({ promo: "order" });
 
   return (
     <section ref={sec} className="section fg" id="avtopark" aria-labelledby="fleet-title">
       <div className="wrap">
         <div className="fg-head">
           <div>
-            <p className="mono eyebrow">{t.eyebrow} · {fleet.length} {m.models}</p>
             <h2 id="fleet-title" className="display" data-split>{t.title}</h2>
           </div>
-          
         </div>
-        {open && (
-          <div className="fg-filter" role="group" aria-label={t.classLabel}>
-            {[{ id: "all" as const, name: m.allCls }, ...fleetClasses.map((c) => ({ id: c.id, name: t.classes[c.id] ?? c.name }))].map((c) => (
-              <button key={c.id} type="button" className="pill" aria-pressed={cls === c.id} onClick={() => setCls(c.id)}>
-                {c.name}
-                <span className="pill-count">{c.id === "all" ? fleet.length : fleet.filter((f) => f.cls === c.id).length}</span>
-              </button>
-            ))}
-          </div>
-        )}
-        <div className="ft-grid" key={`${open}-${cls}`}>
-          {shown.map((car, i) => <FleetTile key={car.slug} m={car} t={t} lang={lang} i={i} priority={i < 4} />)}
-          {!open && (
-            <button type="button" className="ft ft-more" onClick={() => setOpen(true)} style={{ ["--i" as string]: shown.length }}>
+        <div className="fg-filter" role="group" aria-label={t.classLabel}>
+          {pills.map((c) => (
+            <button key={c.id} type="button" className="pill" aria-pressed={view === c.id} onClick={() => setView(c.id)}>
+              {c.name}
+              {c.n !== undefined && <span className="pill-count">{c.n}</span>}
+            </button>
+          ))}
+        </div>
+        <div className="ft-grid" key={view}>
+          {items.map((it, i) => "car" in it
+            ? <FleetTile key={it.car.slug} m={it.car} t={t} lang={lang} i={i} priority={i < 4} />
+            : <PromoTile key={it.promo} kind={it.promo} lang={lang} i={i} />)}
+          {view === "popular" && (
+            <button type="button" className="ft ft-more" onClick={() => setView("all")} style={{ ["--i" as string]: items.length }}>
               <span className="ft-more-n">{fleet.length}</span>
               <span className="ft-more-t">{m.all}</span>
               <span className="ft-more-arrow" aria-hidden="true">→</span>
             </button>
           )}
         </div>
-        {open && (
+        {view === "all" && (
           <div className="fg-foot">
-            <button type="button" className="btn btn-ghost" onClick={() => { setOpen(false); setCls("all"); document.getElementById("avtopark")?.scrollIntoView({ behavior: "smooth" }); }}>{m.less}</button>
+            <button type="button" className="btn btn-ghost" onClick={() => { setView("popular"); document.getElementById("avtopark")?.scrollIntoView({ behavior: "smooth" }); }}>{m.less}</button>
           </div>
         )}
       </div>

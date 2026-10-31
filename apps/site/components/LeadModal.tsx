@@ -108,7 +108,6 @@ export function LeadModal() {
         <button type="button" className="lead-modal-x" aria-label={t.close} onClick={close}>
           <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
         </button>
-        <p className="mono eyebrow">{open.kind === "buyout" ? "Car City · выкуп" : "Car City · аренда"}</p>
         <h2 id="lead-modal-title" className="h2">{c.title}</h2>
         <p className="muted lead-modal-text">{c.text}</p>
         <LeadForm source={`popup-${open.kind}`} lang={lang} button={t.button} extra={{ type: open.kind, button: open.from }} />

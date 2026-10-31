@@ -2126,6 +2126,161 @@
 [data-theme="light"] .kl-ev-txt p {
   color: var(--text-muted);
 }
+[data-theme="light"] .promo-short .promo-gift {
+  background: rgba(255,183,0,0.14);
+  color: var(--cc-signal-text);
+}
+[data-theme="light"] .ft-promo {
+  border-color: rgba(255,183,0,0.5);
+}
+[data-theme="light"] .ft-promo h3 {
+  color: var(--text);
+}
+[data-theme="light"] .ft-promo-order .ft-promo-media {
+  background: #ffffff;
+}
+[data-theme="light"] .ft-promo-order .ft-promo-body {
+  background: linear-gradient(180deg, rgba(255,183,0,0.16), rgba(255,183,0,0.04));
+}
+[data-theme="light"] .ft-promo-order .ft-promo-body p {
+  color: var(--text-muted);
+}
+[data-theme="light"] .ft-promo-friend {
+  color: #1a1a1a;
+}
+[data-theme="light"] .ft-promo-friend .ft-promo-bg::after {
+  background: linear-gradient(180deg, rgba(245,245,242,0.82) 0%, rgba(245,245,242,0.55) 48%, rgba(245,245,242,0.88) 100%);
+}
+[data-theme="light"] .ft-promo-friend h3 {
+  color: #1a1a1a;
+}
+[data-theme="light"] .ft-promo-friend h3 em {
+  color: var(--cc-signal-text);
+}
+[data-theme="light"] .ft-promo-friend p {
+  color: rgba(26,26,26,0.82);
+}
+[data-theme="light"] .ft-promo-friend .ft-promo-sum {
+  color: var(--cc-signal-text);
+}
+[data-theme="light"] .ft-promo-friend .ft-promo-note {
+  color: rgba(26,26,26,0.6);
+}
+@media (max-width: 640px) {
+[data-theme="light"] .ft-prices:has(.ft-pr:nth-child(2)) .ft-pr + .ft-pr {
+  border-left: 1px solid var(--line);
+}
+}
+[data-theme="light"] .ico-badge {
+  background: rgba(255,183,0,0.14);
+  border: 1px solid rgba(255,183,0,0.28);
+  color: var(--cc-signal-text);
+}
+[data-theme="light"] .stack-card:nth-child(3n + 1) .ico-badge {
+  background: rgba(245,245,242,0.1);
+  border-color: rgba(216,216,212,0.14);
+  color: #0b0b0c;
+}
+[data-theme="light"] .rating-mark {
+  color: #1a1a1a;
+  box-shadow: 0 6px 16px -6px rgba(24,28,36,0.128);
+}
+[data-theme="light"] .rating-name {
+  color: var(--text);
+}
+[data-theme="light"] .ratings .stars {
+  color: #b07a00;
+}
+[data-theme="light"] .rating-go {
+  color: var(--text-faint);
+}
+[data-theme="light"] .ratings a:hover .rating-go {
+  color: var(--cc-signal-text);
+}
+[data-theme="light"] .pg-chips-wrap .pill[aria-current="true"] {
+  background: var(--cc-signal);
+  color: var(--cc-on-signal, #0b0b0c);
+  border-color: var(--cc-signal);
+}
+[data-theme="light"] .art-byline {
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+[data-theme="light"] .art-avatar {
+  background: #ffffff;
+  box-shadow: 0 0 0 2px rgba(255,183,0,0.35);
+}
+[data-theme="light"] .art-byline dt {
+  color: var(--text-faint);
+}
+[data-theme="light"] .art-byline dd {
+  color: var(--text);
+}
+[data-theme="light"] .art-note {
+  color: var(--text-muted);
+  background: rgba(255,183,0,0.07);
+  border: 1px solid rgba(255,183,0,0.22);
+}
+[data-theme="light"] .art-note span {
+  color: #0b0b0c;
+  background: var(--cc-signal);
+}
+[data-theme="light"] .art-author {
+  background: linear-gradient(180deg, var(--surface-2), var(--surface));
+  border: 1px solid var(--glass-line);
+}
+[data-theme="light"] .art-author-k {
+  color: var(--text-faint);
+}
+[data-theme="light"] .art-author-n {
+  color: var(--text);
+}
+[data-theme="light"] .art-author-r {
+  color: var(--text-muted);
+}
+[data-theme="light"] .art-author > p {
+  color: var(--text-muted);
+}
+[data-theme="light"] .art-author-facts li {
+  background: rgba(15,17,20,0.036);
+  border: 1px solid var(--line);
+}
+[data-theme="light"] .art-author-facts b {
+  color: var(--cc-signal-text);
+}
+[data-theme="light"] .art-author-facts span {
+  color: var(--text-muted);
+}
+[data-theme="light"] .art-author-links a {
+  color: var(--text);
+  border-bottom: 1px solid rgba(255,183,0,0.5);
+}
+[data-theme="light"] .art-cta {
+  background: var(--cc-signal);
+  color: #0b0b0c;
+}
+[data-theme="light"] .art-cta p {
+  color: rgba(11,11,12,0.78);
+}
+[data-theme="light"] .art-cta .art-cta-t {
+  color: #0b0b0c;
+}
+[data-theme="light"] .art-cta .btn {
+  background: #f5f5f2;
+  color: #1a1a1a;
+  border-color: #d8d8d4;
+}
+[data-theme="light"] .art-more-card {
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+[data-theme="light"] .art-more-card:hover {
+  border-color: rgba(255,183,0,0.45);
+}
+[data-theme="light"] .art-more-card time {
+  color: var(--text-faint);
+}
 
 /* ── vykup.css ── */
 [data-theme="light"] .vk-sec::before {

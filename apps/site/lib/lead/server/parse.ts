@@ -72,7 +72,8 @@ export async function parseLead(req: Request): Promise<Parsed> {
 
   const name = str(b.name, 60).replace(/\s+/g, " ");
   // Буквы любых алфавитов, пробел, дефис, апостроф, точка
-  if (name.length < 2 || !/^[\p{L}][\p{L}\p{M} .'’-]*$/u.test(name)) return { ok: false, code: "name" };
+  // Имя необязательное: пустое пропускаем, заполненное проверяем
+  if (name && (name.length < 2 || !/^[\p{L}][\p{L}\p{M} .'’-]*$/u.test(name))) return { ok: false, code: "name" };
   const phone = normalizePhone(str(b.phone, 40));
   if (!phone) return { ok: false, code: "phone" };
   if (!truthy(b.consent)) return { ok: false, code: "consent" };

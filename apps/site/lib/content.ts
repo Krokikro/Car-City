@@ -8,7 +8,7 @@ export const company = {
   legalName: "ООО «ЭЛИТ-КАР»",
   domain: "https://car-city.pro",
   city: "Москва",
-  phones: ["+7 (499) 302-31-59", "+7 (499) 474-76-47"],
+  phones: ["+7 (499) 302-31-59"],
   email: "support@car-city.pro",
   fleet: "1000+",
   renters: "4000+",

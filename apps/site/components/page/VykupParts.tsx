@@ -39,7 +39,6 @@ const Ico = ({ d, size = 28 }: { d: string; size?: number }) => (
 function Head({ n, title }: { n: number; title: string }) {
   return (
     <header className="vk-head">
-      <p className="mono eyebrow">{String(n + 1).padStart(2, "0")}</p>
       <h2 className="display" data-split>{title}</h2>
     </header>
   );
@@ -86,10 +85,11 @@ export function VykupConditions({ b, n }: { b: Sec; n: number }) {
     else note.push(t);
   }
   const terms = items(b.html);
+  // требования: руль (стаж), водитель (возраст), документы с галочкой
   const reqIcons = [
-    "M12 3v3M12 18v3M4.2 7.5l2.6 1.5M17.2 15l2.6 1.5M4.2 16.5L6.8 15M17.2 9l2.6-1.5M12 8a4 4 0 100 8 4 4 0 000-8z", // стаж
-    "M12 12a4 4 0 100-8 4 4 0 000 8zM4 21c0-4.4 3.6-7 8-7s8 2.6 8 7", // возраст
-    "M4 5h16v14H4zM8 10a2 2 0 100-4 2 2 0 000 4zM5.5 16c.5-1.7 1.5-2.5 2.5-2.5s2 .8 2.5 2.5M13 9h5M13 13h5", // документы
+    "M12 3a9 9 0 100 18 9 9 0 000-18zM12 9.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM12 14.5V21M9.6 11.3L3.3 9.6M14.4 11.3l6.3-1.7", // стаж — руль
+    "M12 11a3.5 3.5 0 100-7 3.5 3.5 0 000 7zM5 20.5c.6-3.9 3.4-6.2 7-6.2s6.4 2.3 7 6.2M15.5 4.5l1.5-1.5M8.5 4.5L7 3", // возраст
+    "M6 3h8.5L19 7.5V21H6zM14 3v5h5M9 12.5h7M9 16h4M13.5 17.5l1.8 1.8 3.2-3.6", // документы
   ];
   return (
     <section className="section vk-sec vk-cond">

@@ -16,7 +16,6 @@ export function SeoText({ t: seo }: { t: HomeText["seo"] }) {
     <section className="section seo" data-surface="light" aria-labelledby="seo-title">
       <div className="wrap seo-grid">
         <div className="seo-lead">
-          <p className="mono eyebrow">{seo.eyebrow}</p>
           <h2 id="seo-title" className="display" data-split>{seo.title}</h2>
           {seo.intro.map((p) => <p key={p.slice(0, 20)} className="lead">{p}</p>)}
         </div>

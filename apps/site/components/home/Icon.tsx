@@ -1,19 +1,58 @@
-// Линейные иконки преимуществ: рисуются штрихом при появлении (класс .draw).
-const P: Record<string, string> = {
-  wash: "M8 30h32M12 30l3-9h18l3 9M14 36a2 2 0 1 0 4 0 2 2 0 1 0-4 0M30 36a2 2 0 1 0 4 0 2 2 0 1 0-4 0M18 12c0 3-3 3-3 6M24 8c0 3-3 3-3 6M30 12c0 3-3 3-3 6",
-  book: "M8 12c6-3 11-3 16 1v26c-5-4-10-4-16-1zM40 12c-6-3-11-3-16 1v26c5-4 10-4 16-1z",
-  gift: "M8 20h32v8H8zM11 28h26v12H11zM24 20v20M24 20c-4-8-12-8-10-2 1 2 6 2 10 2zM24 20c4-8 12-8 10-2-1 2-6 2-10 2z",
-  wallet: "M8 16h30a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2zM8 16l22-7 3 7M32 25h8v6h-8a3 3 0 0 1 0-6z",
-  support: "M10 26v-2a14 14 0 0 1 28 0v2M10 26h5v10h-5zM33 26h5v10h-5zM38 36c0 4-6 5-10 5",
-  taxi: "M8 32v-6l4-9h24l4 9v6zM18 17l2-5h8l2 5M8 32v4h6v-4M34 32v4h6v-4M13 26h4M31 26h4",
-  sleep: "M30 10a14 14 0 1 0 8 22 12 12 0 0 1-8-22zM30 12h6l-6 6h6",
-  priority: "M8 36l10-10 7 7 15-15M30 18h10v10",
+// Иконки преимуществ: двухслойные — мягкая заливка + штрих, в круглой подложке (правка маркетолога 31.10:
+// «более презентабельные»). Штрих по-прежнему рисуется при появлении (класс .draw), заливка проявляется.
+type Glyph = { fill: string; stroke: string };
+const G: Record<string, Glyph> = {
+  // чистка и ТО: машина и искры чистоты
+  wash: {
+    fill: "M9 31l3.5-9.5A3 3 0 0 1 15.3 19.5h17.4a3 3 0 0 1 2.8 2l3.5 9.5v6H9z",
+    stroke: "M9 31l3.5-9.5A3 3 0 0 1 15.3 19.5h17.4a3 3 0 0 1 2.8 2L39 31M9 31h30v6H9zM14 34h3M31 34h3M11 37v3M37 37v3M33 8v6M30 11h6M14 7v4M12 9h4",
+  },
+  // экзамен Яндекс: раскрытая книга с галочкой
+  book: {
+    fill: "M7 12c6-3 11.5-2.5 17 1.5V38c-5.5-4-11-4.5-17-1.5zM41 12c-6-3-11.5-2.5-17 1.5V38c5.5-4 11-4.5 17-1.5z",
+    stroke: "M7 12c6-3 11.5-2.5 17 1.5V38c-5.5-4-11-4.5-17-1.5zM41 12c-6-3-11.5-2.5-17 1.5V38c5.5-4 11-4.5 17-1.5zM29 22l3 3 5-6",
+  },
+  // бесплатные первые сутки: подарок
+  gift: {
+    fill: "M8 18h32v8H8zM11 26h26v14H11z",
+    stroke: "M8 18h32v8H8zM11 26h26v14H11zM24 18v22M24 18c-3.5-7-11-8.5-11.5-3.5C12 18 20 18 24 18zM24 18c3.5-7 11-8.5 11.5-3.5C36 18 28 18 24 18z",
+  },
+  // без залогов: кошелёк и монета
+  wallet: {
+    fill: "M8 16h29a3 3 0 0 1 3 3v17a3 3 0 0 1-3 3H11a3 3 0 0 1-3-3z",
+    stroke: "M8 16h29a3 3 0 0 1 3 3v17a3 3 0 0 1-3 3H11a3 3 0 0 1-3-3zM8 16l21-7 3.5 7M31 24h9v8h-9a4 4 0 0 1 0-8zM33.5 28h.5",
+  },
+  // поддержка 24/7: гарнитура
+  support: {
+    fill: "M9 25h6v11H9zM33 25h6v11h-6z",
+    stroke: "M9 27v-3a15 15 0 0 1 30 0v3M9 25h6v11H9zM33 25h6v11h-6zM39 36c0 4-5 6-11 6h-3",
+  },
+  // выдача в день заявки: такси с шашечкой на крыше
+  taxi: {
+    fill: "M8 33v-6l4.5-9.5A3 3 0 0 1 15.2 16h17.6a3 3 0 0 1 2.7 1.5L40 27v6z",
+    stroke: "M8 33v-6l4.5-9.5A3 3 0 0 1 15.2 16h17.6a3 3 0 0 1 2.7 1.5L40 27v6zM8 27h32M18 16v-4h12v4M21 12v4M24 12v4M27 12v4M12 30h4M32 30h4M10 33v4h6v-4M32 33v4h6v-4",
+  },
+  // два выходных через месяц: календарь с отмеченными днями
+  sleep: {
+    fill: "M8 13h32v27H8z",
+    stroke: "M8 13h32v27H8zM8 21h32M16 9v7M32 9v7M14 27h4M22 27h4M30 27h4M14 34h4M22 33l2 2 4-4M30 33l2 2 4-4",
+  },
+  // приоритет на заказы: стрелка вверх и звезда
+  priority: {
+    fill: "M33 7l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.6-4.8 2.6.9-5.4-3.9-3.8 5.4-.8z",
+    stroke: "M7 38l10-10 7 7 12-12M28 23h8v8M33 7l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.6-4.8 2.6.9-5.4-3.9-3.8 5.4-.8z",
+  },
 };
 
 export function Icon({ name }: { name: string }) {
+  const g = G[name];
+  if (!g) return null;
   return (
-    <svg className="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d={P[name]} pathLength={1} />
-    </svg>
+    <span className="ico-badge" aria-hidden="true">
+      <svg className="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path className="ico-fill" d={g.fill} fill="currentColor" stroke="none" />
+        <path d={g.stroke} pathLength={1} />
+      </svg>
+    </span>
   );
 }

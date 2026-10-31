@@ -12,7 +12,6 @@ export function Media({ t }: { t: HomeText["media"] }) {
     <section className="section media" aria-labelledby="media-title">
       <div className="wrap media-grid">
         <div className="media-copy">
-          <p className="mono eyebrow">{t.eyebrow}</p>
           <h2 id="media-title" className="display" data-split>{t.title}</h2>
           <p className="media-note">{t.youtube}</p>
           <SocialRow size={64} className="media-soc" />

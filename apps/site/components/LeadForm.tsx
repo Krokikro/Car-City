@@ -39,7 +39,7 @@ export const leadFormRu: LeadFormText = {
   messengers: { call: "Звонок", telegram: "Telegram", whatsapp: "WhatsApp", max: "MAX" },
   consentPrefix: "Даю согласие на",
   consentLink: "обработку персональных данных",
-  marketing: "Согласен получать предложения и на передачу телефона в рекламные сервисы",
+  marketing: "Согласен получать рекламные предложения и на передачу номера телефона рекламным сервисам",
   submit: "Перезвоните мне",
   sending: "Отправляем…",
   doneTitle: "Заявка принята",
@@ -48,7 +48,7 @@ export const leadFormRu: LeadFormText = {
   demoNote: "Демо-версия сайта: заявка никуда не отправлена.",
   errors: {
     format: "Не получилось отправить, обновите страницу",
-    name: "Укажите имя",
+    name: "Проверьте имя: только буквы",
     phone: "Проверьте номер телефона",
     consent: "Нужно согласие на обработку персональных данных",
     too_fast: "Форма отправлена слишком быстро, попробуйте ещё раз",
@@ -209,7 +209,7 @@ export function LeadForm({ button, source = "site", compact = false, extra, t: t
     <form className={`lead-form${compact ? " compact" : ""}`} action="/api/lead" method="post" onSubmit={onSubmit} onFocus={onFocus}>
       <div className="lead-fields">
         <label className="field">
-          <input id={`${id}-n`} name="name" autoComplete="given-name" required minLength={2} maxLength={60} placeholder=" " />
+          <input id={`${id}-n`} name="name" autoComplete="given-name" minLength={2} maxLength={60} placeholder=" " />
           <span>{t.name}</span>
         </label>
         <label className="field">

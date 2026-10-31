@@ -8,7 +8,7 @@ export function Trust({ lang = "ru", t: trust = ruHome.trust, buy = false }: { l
   return (
     <section className="section trust" aria-labelledby="trust-title">
       <div className="wrap">
-        <h2 id="trust-title" className="mono eyebrow">{trust.title}</h2>
+        <h2 id="trust-title" className="display trust-title">{trust.title.replace(/:\s*$/, "")}</h2>
         <div className={`trust-stats${buy ? " one" : ""}`}>
           {stats.map((s) => (
             <div key={s.label} className="trust-stat" data-reveal>

@@ -2,6 +2,14 @@ import { href, type Lang } from "@/lib/i18n";
 import { ratings, reviews } from "@/lib/home";
 import type { HomeText } from "@/lib/home-text";
 
+// Значки площадок отзывов: цветная плашка с буквой в цвете площадки (не копия логотипа)
+const MARK: Record<string, { t: string; bg: string; k: string }> = {
+  "Яндекс Карты": { t: "Я", bg: "#FC3F1D", k: "ya" },
+  "2GIS": { t: "2", bg: "#19AA1E", k: "2gis" },
+  Flamp: { t: "F", bg: "#F2711C", k: "flamp" },
+  Yell: { t: "Y", bg: "#E8202A", k: "yell" },
+};
+
 export function Reviews({ lang = "ru", t }: { lang?: Lang; t: HomeText["reviews"] }) {
   return (
     <section className="section reviews" aria-labelledby="reviews-title">
@@ -11,10 +19,14 @@ export function Reviews({ lang = "ru", t }: { lang?: Lang; t: HomeText["reviews"
           <ul className="ratings" data-reveal-stagger>
             {ratings.map((r) => (
               <li key={r.name}>
-                <a href={r.url} target="_blank" rel="noopener">
+                <a href={r.url} target="_blank" rel="noopener" className={`rating-${MARK[r.name]?.k ?? "x"}`}>
+                  <span className="rating-top">
+                    <span className="rating-mark" aria-hidden="true" style={{ background: MARK[r.name]?.bg }}>{MARK[r.name]?.t ?? r.name[0]}</span>
+                    <span className="rating-name">{r.name}</span>
+                  </span>
                   <span className="rating-score">{r.score}</span>
                   <span className="stars" aria-label={t.stars}>★★★★★</span>
-                  <span className="mono">{r.name}</span>
+                  <span className="rating-go mono" aria-hidden="true">→</span>
                 </a>
               </li>
             ))}

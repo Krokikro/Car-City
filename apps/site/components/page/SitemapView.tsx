@@ -15,7 +15,7 @@ export function SitemapView({ lang = "ru", ov }: { lang?: Lang; ov?: Overlay }) 
     <main id="main" className="pg">
       <section className="art-hero">
         <div className="art-hero-bg" aria-hidden="true" />
-        <div className="wrap"><p className="mono eyebrow">Car City</p><h1 className="display-xl" data-split>{t.sitemap}</h1></div>
+        <div className="wrap"><h1 className="display-xl" data-split>{t.sitemap}</h1></div>
       </section>
       <section className="section pg-sec">
         <div className="wrap smap">

@@ -110,7 +110,7 @@ export const en: HomeText = {
     title: "Why us?",
     items: [
       { title: "Car on the day you come", text: "We give you the 1st day of rent for free and hand over the car within 30 minutes", num: "30", unit: "minutes" },
-      { title: "7 years on the market", text: "For more than 7 years we have been helping drivers, growing the taxi fleet and holding big events", num: "7", unit: "years" },
+      { title: "Experience on the market", text: "For more than 7 years we have been helping drivers, growing the taxi fleet and holding big events", num: "7", unit: "years" },
       { title: "Choose your schedule", text: "Flexible schedule: 5/2, 6/1, 7/0 (you keep the car at home)", num: "7/0", unit: "schedule" },
       { title: "Instant payouts", text: "Instant payouts with a fee of only 50 rubles for any amount up to 15 000₽", num: "50", unit: "₽ fee" },
     ],

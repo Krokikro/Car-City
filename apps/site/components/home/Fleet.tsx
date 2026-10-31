@@ -58,7 +58,6 @@ export function Fleet({ lang = "ru" }: { lang?: Lang }) {
       <div className="wrap">
         <div className="fleet-head">
           <div className="section-head">
-            <p className="mono eyebrow">Автопарк · {fleet.length} моделей</p>
             <h2 id="fleet-title" className="display" data-split>Подобрать автомобиль</h2>
           </div>
           <div className="tabs-wrap">

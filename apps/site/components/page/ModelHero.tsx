@@ -43,7 +43,6 @@ export function ModelHero(p: {
               return to ? <a key={m} href={to} role="tab" aria-selected="false">{label}</a> : <span key={m} role="tab" aria-selected={on} aria-disabled={!on}>{label}</span>;
             })}
           </div>
-          <p className="mono eyebrow">{p.cls ? t.cls[p.cls] ?? p.cls : "Car City"}</p>
           <h1 id="pg-h1" className={`display mdl-h1${p.h1.length > 30 ? " h1-long" : ""}`} data-split>{p.h1}</h1>
           {p.specs.length > 0 && !p.panels?.details.length && (
             <ul className="mdl-specs" data-reveal-stagger>

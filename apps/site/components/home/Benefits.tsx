@@ -7,7 +7,6 @@ export function Benefits({ t }: { t: HomeText["benefits"] }) {
     <section className="section stack-sec" aria-labelledby="benefits-title">
       <div className="wrap stack-grid">
         <div className="stack-head">
-          <p className="mono eyebrow">{t.eyebrow}</p>
           <h2 id="benefits-title" className="display" data-split>{t.title}</h2>
         </div>
         <ol className="stack">

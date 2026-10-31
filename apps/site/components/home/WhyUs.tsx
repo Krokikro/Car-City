@@ -6,7 +6,6 @@ export function WhyUs({ t: whyUs }: { t: HomeText["whyUs"] }) {
       <div className="why-veil" aria-hidden="true" />
       <div className="wrap">
         <div className="section-head">
-          <p className="mono eyebrow">Car City</p>
           <h2 id="why-title" className="display-xl" data-split>{whyUs.title}</h2>
         </div>
         <div className="why-grid" data-tilt-in>

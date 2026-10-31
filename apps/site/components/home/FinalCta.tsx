@@ -9,7 +9,6 @@ export function FinalCta({ lang = "ru" }: { lang?: Lang }) {
       <div className="final-checker" aria-hidden="true" />
       <div className="wrap final-grid">
         <div>
-          <p className="mono eyebrow">{t.finalEyebrow}</p>
           <h2 id="final-title" className="display-xl" data-split>{t.finalTitle}</h2>
           <p className="lead">{t.finalText}</p>
         </div>

@@ -948,3 +948,211 @@ button.owner:hover, button.owner:focus-visible { border-color: rgba(255,183,0,.5
 .kl-ev-txt .mono { color: var(--text-faint, var(--text-muted)); font-size: 12px; }
 .kl-ev-txt h3 { margin: 0; font: 600 22px/1.15 var(--font-display); letter-spacing: -.01em; color: var(--text); }
 .kl-ev-txt p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--text-muted); }
+
+/* ── Правки маркетолога 31.10 ── */
+/* короткая форма «Дарим первый день»: иконка подарка, имя и телефон в строку, без мессенджеров */
+.promo-short .promo-gift { display: inline-grid; place-items: center; width: 64px; height: 64px; border-radius: 18px; background: rgba(255, 183, 0, .14); color: var(--cc-signal); }
+.promo-short .promo-copy { gap: 14px; }
+.promo-short .promo-card { padding-block: clamp(24px, 3.4vw, 44px); }
+@media (min-width: 560px) { .promo-short .lead-form.compact .lead-fields { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 719px) {
+  .promo-short .promo-copy .display { font-size: 28px; }
+  .promo-short .lead { font-size: 15px; }
+}
+/* заголовок «Нам доверяют» — обычный заголовок секции, а не мелкий надзаголовок */
+.trust-title { margin: 0 0 clamp(18px, 2.4vw, 32px); font-size: clamp(30px, 4vw, 56px); }
+/* лента условий на телефоне не наезжает на цифры первого экрана */
+@media (max-width: 719px) { .ticker { margin-top: 12px; padding-block: 28px; } }
+
+/* каталог: фильтр классов виден сразу, промо-карточки между машинами */
+.fg-filter { margin-top: 4px; }
+@media (max-width: 719px) {
+  .fg-filter { flex-wrap: nowrap; overflow-x: auto; margin-inline: calc(var(--gutter, 16px) * -1); padding-inline: var(--gutter, 16px); scrollbar-width: none; }
+  .fg-filter::-webkit-scrollbar { display: none; }
+  .fg-filter .pill { flex: none; }
+}
+.ft-promo { display: grid; grid-template-rows: auto 1fr; border-color: rgba(255, 183, 0, .5); }
+.ft-promo h3 { margin: 0; font: 500 clamp(20px, 1.6vw, 24px)/1.18 var(--font-display); letter-spacing: -.02em; color: var(--text); }
+.ft-promo p { margin: 0; }
+.ft-promo-body { display: grid; gap: 10px; align-content: start; padding: 18px; }
+.ft-promo-body .btn { margin-top: auto; width: 100%; }
+.ft-promo-order .ft-promo-media { aspect-ratio: 4 / 3; overflow: hidden; background: #1a1b1e; }
+.ft-promo-order .ft-promo-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ft-promo-order .ft-promo-body { grid-template-rows: auto auto 1fr; background: linear-gradient(180deg, rgba(255, 183, 0, .16), rgba(255, 183, 0, .04)); }
+.ft-promo-order .ft-promo-body p { color: var(--text-muted); font-size: 14px; }
+.ft-promo-friend { position: relative; grid-template-rows: 1fr; min-height: 420px; isolation: isolate; color: #fff; }
+.ft-promo-friend .ft-promo-bg { position: absolute; inset: 0; z-index: -1; }
+.ft-promo-friend .ft-promo-bg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ft-promo-friend .ft-promo-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 11, 14, .82) 0%, rgba(10, 11, 14, .55) 48%, rgba(10, 11, 14, .88) 100%); }
+.ft-promo-friend .ft-promo-body { grid-template-rows: auto auto auto auto 1fr; height: 100%; padding: 22px 20px 20px; }
+.ft-promo-friend h3 { color: #fff; font-size: clamp(22px, 1.9vw, 27px); }
+.ft-promo-friend h3 em { font-style: normal; color: var(--cc-signal); }
+.ft-promo-friend h3 sup { font-size: .5em; }
+.ft-promo-friend p { color: rgba(255, 255, 255, .82); font-size: 14px; }
+.ft-promo-friend .ft-promo-sum { margin-top: 6px; color: var(--cc-signal); font: 700 clamp(38px, 3.4vw, 50px)/1 var(--font-display); letter-spacing: -.02em; }
+.ft-promo-friend .ft-promo-note { color: rgba(255, 255, 255, .6); font-size: 12px; }
+.ft-promo:hover { transform: translateY(-6px); }
+
+/* телефон: каталог по одной машине в ряд — крупное фото и читаемые цены */
+@media (max-width: 640px) {
+  .ft-grid { grid-template-columns: 1fr; gap: 14px; }
+  .ft { border-radius: 22px; }
+  .ft-info { gap: 12px; padding: 16px 18px 18px; }
+  .ft-info h3 { font-size: 21px; }
+  .ft-specs li { padding: 6px 10px 6px 8px; font-size: 13px; gap: 6px; }
+  .ft-specs svg { width: 15px; height: 15px; }
+  .ft-prices { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .ft-prices:has(.ft-pr:nth-child(2)) .ft-pr + .ft-pr { padding: 0 0 0 12px; border-top: 0; border-left: 1px solid var(--line); }
+  .ft-pv b { font-size: 22px; }
+  .ft-pl { font-size: 11px; }
+  .ft-from, .ft-per { font-size: 13px; }
+  .ft-actions { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .ft-actions .btn { min-height: 46px; font-size: 14px; }
+  .ft-cls, .ft-badge { top: 12px; padding: 5px 9px; font-size: 10px; }
+  .ft-more { min-height: 160px; }
+  .ft-promo-friend { min-height: 400px; }
+}
+
+/* иконки преимуществ: круглая подложка, заливка + штрих */
+.ico-badge { justify-self: end; display: inline-grid; place-items: center; width: 64px; height: 64px; border-radius: 20px; background: rgba(255, 183, 0, .14); border: 1px solid rgba(255, 183, 0, .28); color: var(--cc-signal); }
+.ico-badge .ico { width: 38px; height: 38px; color: inherit; }
+.ico-badge .ico-fill { opacity: .22; }
+.stack-card .ico-badge svg { width: 38px; height: 38px; justify-self: auto; color: inherit; }
+.stack-card:nth-child(3n + 1) .ico-badge { background: rgba(11, 11, 12, .1); border-color: rgba(11, 11, 12, .14); color: #0B0B0C; }
+.stack-card:nth-child(3n + 1) .ico-badge .ico-fill { opacity: .16; }
+@media (max-width: 719px) { .ico-badge { width: 54px; height: 54px; border-radius: 16px; } .ico-badge .ico, .stack-card .ico-badge svg { width: 32px; height: 32px; } }
+
+/* калькулятор на телефоне — компактнее (был на два экрана): классы читаются целиком, без шкал и расшифровки */
+@media (max-width: 719px) {
+  .calc { gap: 20px; padding: 18px 16px; }
+  .calc legend { font-size: 15px; margin-bottom: 10px; }
+  .calc-cls { gap: 6px; }
+  .calc-cls-btn { padding: 6px 6px 10px; gap: 2px; border-radius: 14px; }
+  .calc-cls-img { margin-bottom: 2px; }
+  .calc-cls-btn b { font-size: 13.5px; letter-spacing: -.01em; overflow-wrap: anywhere; }
+  .calc-cls-btn small { font-size: 11px; line-height: 1.3; }
+  .calc-sliders { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .calc-sliders legend { font-size: 13px; line-height: 1.3; min-height: 2.6em; }
+  .calc-val { margin-bottom: 4px; gap: 6px; }
+  .calc-val b { font-size: 34px; }
+  .calc-val span { font-size: 12px; }
+  .calc-ticks { display: none; }
+  .calc-split { padding: 14px; gap: 10px; }
+  .calc-legend { display: none; }
+  .calc-result { padding: 20px 18px; }
+  .calc-form { padding: 20px 16px; }
+}
+
+/* значки соцсетей: одна форма и один размер (YouTube и Telegram тоже на плитке) */
+.soc-telegram, .soc-telegram svg, .soc-youtube, .soc-youtube svg, .soc-whatsapp, .soc-whatsapp svg, .soc-max, .soc-max svg { border-radius: 26%; }
+.soc-link:has(.soc-youtube) { border-radius: 26%; align-items: stretch; }
+.soc-row { align-items: center; }
+
+/* рейтинги площадок: значок площадки, название, оценка, жёлтые звёзды */
+.ratings a { position: relative; gap: 8px; padding: 18px 20px 20px; }
+.rating-top { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.rating-mark { flex: none; display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; color: #fff; font: 700 17px/1 var(--font-display); box-shadow: 0 6px 16px -6px rgba(0,0,0,.4); }
+.rating-name { font-size: 14px; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ratings .rating-score { font-size: clamp(36px, 3vw, 44px); margin-top: 4px; }
+.ratings .stars { color: #FFB700; font-size: 15px; }
+.rating-go { position: absolute; right: 16px; bottom: 16px; color: var(--text-faint); transition: transform .3s var(--ease-out), color .3s; }
+.ratings a:hover .rating-go { transform: translateX(4px); color: var(--cc-signal); }
+@media (max-width: 719px) { .ratings a { padding: 14px 14px 16px; } .rating-mark { width: 28px; height: 28px; font-size: 14px; border-radius: 8px; } .rating-name { font-size: 12.5px; } }
+
+/* шапка страниц: плитки «Моделей / Цена / Выдача / Отпуск» одинаковой высоты и с ровной подачей */
+.pg-stats-big > div { display: grid; grid-template-rows: auto 1fr; align-content: start; min-height: 112px; }
+.pg-stats-big dt { padding-right: 44px; min-height: 1.2em; }
+.pg-stats-big dd { display: block; align-self: end; }
+.pg-stats-big dd small:first-child { margin-right: 6px; }
+.pg-stats-big dd b { white-space: nowrap; }
+.pg-stats-big dd b + small { display: block; margin-top: 6px; }
+@media (max-width: 719px) {
+  .pg-stats-big > div { min-height: 100px; padding: 14px 14px 12px; }
+  .pg-stats-big dt { font-size: 11px; padding-right: 34px; }
+  .pg-stats-big dd b { font-size: 26px; }
+  .pg-stats-big dd b + small { margin-top: 4px; }
+}
+
+/* быстрые ссылки на классы: все видны сразу, текущий класс подсвечен */
+.pg-chips-wrap .pill[aria-current="true"] { background: var(--cc-signal); color: var(--cc-on-signal, #0B0B0C); border-color: var(--cc-signal); }
+.pg-chips-wrap .pill[aria-current="true"] .pill-count { color: inherit; opacity: .7; }
+@media (max-width: 899px) {
+  .pg-chips.pg-chips-wrap { flex-wrap: wrap; overflow: visible; justify-content: flex-start; gap: 6px; padding: 6px; border-radius: 20px; }
+  .pg-chips.pg-chips-wrap .pill { flex: 0 1 auto; padding: 7px 12px; font-size: 13px; min-height: 0; }
+}
+
+/* карточки машин на телефоне (выкуп, классы): без подписей «Объем двигателя:», цена в строку, кнопка во всю ширину */
+@media (max-width: 640px) {
+  .car-card.static .car-specs dt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .car-card.static .car-specs { gap: 4px; }
+  .car-card.static .car-specs div { padding: 3px 8px; font-size: 12px; }
+  .car-card.static .car-price { font-size: 18px; line-height: 1.2; }
+  .car-card.static .car-price small { display: block; margin-left: 0; font-size: 12px; }
+  .car-card.static .car-info .btn { justify-self: stretch; justify-content: center; }
+}
+
+/* «Ваша выгода при выкупе»: на телефоне — компактная сетка 2×N, крупные значки, первый пункт во всю ширину */
+@media (max-width: 560px) {
+  .vk-ben-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .vk-bcard { grid-column: span 1; min-height: 150px; padding: 16px 14px; border-radius: 22px; align-content: space-between; gap: 14px; }
+  .vk-bcard.is-accent { grid-column: span 2; min-height: 0; }
+  .vk-bico { width: 48px; height: 48px; border-radius: 15px; }
+  .vk-btext { font-size: 15.5px; line-height: 1.25; }
+  .vk-bcard.is-accent .vk-btext { font-size: 22px; }
+  .vk-bnum { font-size: 46px; right: 12px; top: 10px; }
+}
+.vk-bico svg { width: 30px; height: 30px; }
+
+/* лента статей: без номеров у карточек, стрелка — в правом нижнем углу (и у карточек с обложкой) */
+.news-n { display: none; }
+.news-card > .news-go, .news-card:has(.news-img) > .news-go { position: absolute; left: auto; right: 22px; bottom: 20px; z-index: 1; }
+.news-card { padding-bottom: 72px; }
+@media (max-width: 719px) { .news-card { padding: 20px 20px 68px; min-height: 0; } .news-card h2 { font-size: 22px; } }
+
+/* статья: автор, проверка, дата (E-E-A-T), блок «Об авторе», оговорка об актуальности, CTA, «Читайте также» */
+.art-byline { display: flex; align-items: center; gap: 14px; margin-top: clamp(18px, 2vw, 26px); padding: 14px 18px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); }
+.art-avatar { flex: none; display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; overflow: hidden; background: #fff; box-shadow: 0 0 0 2px rgba(255, 183, 0, .5); }
+.art-avatar.big { width: 56px; height: 56px; }
+.art-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.art-byline dl { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 0; }
+.art-byline dt { font: 500 10.5px/1.2 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--text-faint); }
+.art-byline dd { margin: 2px 0 0; font-size: 14px; color: var(--text); }
+.art-main { min-width: 0; display: grid; gap: clamp(22px, 2.4vw, 32px); align-content: start; }
+.art-note { display: flex; gap: 12px; margin: 0; padding: 14px 16px; border-radius: 14px; font-size: 14px; line-height: 1.5; color: var(--text-muted); background: rgba(255, 183, 0, .07); border: 1px solid rgba(255, 183, 0, .22); }
+.art-note span { flex: none; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; font: 700 13px/1 var(--font-display); color: #0B0B0C; background: var(--cc-signal); }
+.art-author { display: grid; gap: 16px; padding: clamp(20px, 2.4vw, 30px); border-radius: var(--radius-card-lg); background: linear-gradient(180deg, var(--surface-2), var(--surface)); border: 1px solid var(--glass-line); }
+.art-author-head { display: flex; align-items: center; gap: 14px; }
+.art-author-head p { margin: 0; }
+.art-author-k { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-faint); }
+.art-author-n { font: 500 20px/1.2 var(--font-display); color: var(--text); }
+.art-author-r { font-size: 13px; color: var(--text-muted); }
+.art-author > p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--text-muted); }
+.art-author-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
+.art-author-facts li { display: grid; gap: 2px; padding: 12px 14px; border-radius: 14px; background: rgba(255, 255, 255, .04); border: 1px solid var(--line); }
+.art-author-facts b { font: 500 24px/1 var(--font-display); color: var(--cc-signal); }
+.art-author-facts span { font-size: 12.5px; color: var(--text-muted); }
+.art-author-links { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.art-author-links a { color: var(--text); font-weight: 500; text-decoration: none; border-bottom: 1px solid rgba(255, 183, 0, .5); }
+.art-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: clamp(20px, 2.4vw, 28px); border-radius: var(--radius-card-lg); background: var(--cc-signal); color: #0B0B0C; }
+.art-cta p { margin: 0; color: rgba(11, 11, 12, .78); }
+.art-cta .art-cta-t { font: 500 22px/1.2 var(--font-display); color: #0B0B0C; margin-bottom: 4px; }
+.art-cta .btn { background: #0B0B0C; color: #fff; border-color: #0B0B0C; }
+.art-more { padding-block: clamp(40px, 5vw, 80px); }
+.art-more .display { font-size: clamp(28px, 3vw, 44px); margin: 0 0 20px; }
+.art-more-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); }
+.art-more-card { display: grid; gap: 10px; align-content: start; padding: 0 0 18px; border-radius: var(--radius-card); overflow: hidden; text-decoration: none; color: var(--text); background: var(--surface); border: 1px solid var(--line); transition: transform .4s var(--ease-out), border-color .3s; }
+.art-more-card:hover { transform: translateY(-4px); border-color: rgba(255, 183, 0, .45); }
+.art-more-card > :not(.art-more-img) { margin-inline: 18px; }
+.art-more-img { display: block; aspect-ratio: 16 / 9; overflow: hidden; }
+.art-more-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.art-more-card time { font-size: 11.5px; color: var(--text-faint); }
+.art-more-h { font: 400 18px/1.25 var(--font-display); letter-spacing: -.01em; }
+@media (max-width: 719px) {
+  .art-byline { align-items: flex-start; padding: 12px 14px; }
+  .art-byline dl { gap: 8px 16px; }
+  .art-author-facts { grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+  .art-author-facts li { padding: 10px; }
+  .art-author-facts b { font-size: 19px; }
+  .art-author-facts span { font-size: 11px; }
+  .art-cta .btn { width: 100%; justify-content: center; }
+}

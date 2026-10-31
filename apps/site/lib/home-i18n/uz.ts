@@ -110,7 +110,7 @@ export const uz: HomeText = {
     title: "Nega biz?",
     items: [
       { title: "Murojaat kuniyoq berish", text: "Ijaraning 1-kunini sovgʻa qilamiz va avtoni 30 daqiqa ichida beramiz", num: "30", unit: "daqiqa" },
-      { title: "Bozorda 7 yil", text: "7 yildan ortiq haydovchilarga yordam berib, taksoparkni kengaytirib, katta tadbirlar oʻtkazib kelyapmiz", num: "7", unit: "yil" },
+      { title: "Bozordagi tajriba", text: "7 yildan ortiq haydovchilarga yordam berib, taksoparkni kengaytirib, katta tadbirlar oʻtkazib kelyapmiz", num: "7", unit: "yil" },
       { title: "Grafikni oʻzingiz tanlaysiz", text: "Moslashuvchan grafik: 5/2, 6/1, 7/0 (barcha avtolar uyda saqlanadi)", num: "7/0", unit: "grafik" },
       { title: "Pulni darhol yechib olish", text: "15 000₽ gacha boʻlgan har qanday summaga atigi 50 rubl komissiya bilan pulni darhol yechib olish", num: "50", unit: "₽ komissiya" },
     ],

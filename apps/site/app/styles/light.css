@@ -266,3 +266,24 @@
 [data-theme="light"] .kl-tile figcaption span { color: rgba(255,255,255,.85); }
 [data-theme="light"] .kl-note .btn { border-color: #141518; }
 [data-theme="light"] .seo-outro { background: #FFB700; color: #141518; }
+
+/* ── Правки 31.10 ── */
+/* промо «бонус за друга» — карточка на фото: и в светлой версии тёмная подложка и белый текст */
+[data-theme="light"] .ft-promo-friend { color: #fff; }
+[data-theme="light"] .ft-promo-friend .ft-promo-bg::after { background: linear-gradient(180deg, rgba(10,11,14,.82) 0%, rgba(10,11,14,.5) 48%, rgba(10,11,14,.88) 100%); }
+[data-theme="light"] .ft-promo-friend h3 { color: #fff; }
+[data-theme="light"] .ft-promo-friend h3 em,
+[data-theme="light"] .ft-promo-friend .ft-promo-sum { color: #FFC21A; }
+[data-theme="light"] .ft-promo-friend p { color: rgba(255,255,255,.84); }
+[data-theme="light"] .ft-promo-friend .ft-promo-note { color: rgba(255,255,255,.62); }
+[data-theme="light"] .ft-promo { box-shadow: var(--shadow-card); }
+[data-theme="light"] .ft-promo-order .ft-promo-body { background: linear-gradient(180deg, #FFF4D1, #FFFBEF); }
+/* значки площадок и звёзды */
+[data-theme="light"] .rating-mark { color: #fff; box-shadow: 0 6px 14px -6px rgba(24,28,36,.35); }
+[data-theme="light"] .ratings .stars { color: #F5B000; }
+/* подложка иконки на жёлтой карточке преимуществ */
+[data-theme="light"] .stack-card:nth-child(3n + 1) .ico-badge { background: rgba(11,11,12,.08); border-color: rgba(11,11,12,.12); color: #0B0B0C; }
+/* «26 статей» — один факт: не жёлтая плитка, а аккуратная строка-счётчик */
+[data-theme="light"] .pg-hero-facts li:only-child { display: inline-flex; align-items: baseline; gap: 8px; min-width: 0; padding: 8px 16px; border-radius: 999px; background: #fff; box-shadow: 0 1px 0 rgba(20,21,24,.06), 0 8px 18px -12px rgba(20,21,24,.25); }
+[data-theme="light"] .pg-hero-facts li:only-child b { font-size: 20px; }
+[data-theme="light"] .pg-hero-facts li:only-child span { font-size: 14px; color: #545862; }

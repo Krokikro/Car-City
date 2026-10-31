@@ -32,7 +32,7 @@ export function leadText(lead: Lead, html = false): string {
   const b = (s: string) => (html ? `<b>${esc(s)}</b>` : s);
   const lines = [
     b(`Заявка с сайта${lead.flags.length ? " (" + lead.flags.join(", ") + ")" : ""}`),
-    `Имя: ${e(lead.name)}`,
+    `Имя: ${e(lead.name || "не указано")}`,
     `Телефон: ${e(lead.phone)}`,
     lead.messenger && `Связь: ${MESSENGER_LABELS[lead.messenger]}`,
     ...Object.entries(lead.extra).map(([k, v]) => e(extraLine(k, v))),
@@ -104,7 +104,7 @@ function bitrix24(): Channel | null {
       const what = [lead.extra.mode && (MODE_LABELS[lead.extra.mode] ?? lead.extra.mode), lead.extra.model].filter(Boolean).join(", ");
       const fields = {
         TITLE: `Заявка с сайта${what ? ": " + what : ""} (${lead.source})`,
-        NAME: lead.name,
+        NAME: lead.name || "Без имени",
         PHONE: [{ VALUE: lead.phone, VALUE_TYPE: "MOBILE" }],
         SOURCE_ID: process.env.BITRIX24_SOURCE_ID || "WEB",
         SOURCE_DESCRIPTION: lead.page || lead.first.landing || "",

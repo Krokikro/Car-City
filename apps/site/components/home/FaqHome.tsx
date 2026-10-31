@@ -12,7 +12,6 @@ export function FaqHome({ t }: { t: HomeText["faq"] }) {
     <section className="section faq-sec" id="faq" aria-labelledby="faq-title">
       <div className="wrap split">
         <div className="sticky">
-          <p className="mono eyebrow">FAQ</p>
           <h2 id="faq-title" className="display" data-split>{t.title}</h2>
         </div>
         <div className="faq">

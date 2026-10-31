@@ -13,7 +13,6 @@ const strip = (h: string) => h.replace(/<[^>]+>/g, "").replace(/&nbsp;/g, " ").r
 function Head({ n, title }: { n: number; title: string }) {
   return (
     <header className="vk-head">
-      <p className="mono eyebrow">{String(n + 1).padStart(2, "0")}</p>
       <h2 className="display" data-split>{title}</h2>
     </header>
   );

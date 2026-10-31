@@ -185,7 +185,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
       <main id="main" className={`pg pg-${doc.kind}${doc.path.startsWith("/vykup") ? " pg-vykup" : ""}`}>
         {lang !== "ru" && doc.lang === "ru" && <p className="wrap pg-untranslated mono">{ui(lang).notTranslated}</p>}
         {doc.kind === "article" ? (
-          <ArticleView doc={doc} p={p} lang={lang} />
+          <ArticleView doc={doc} p={p} lang={lang} related={articles(lang, ov).filter((a) => a.path !== doc.path).sort((a, b) => (b.date ?? "").split(".").reverse().join("").localeCompare((a.date ?? "").split(".").reverse().join(""))).slice(0, 3).map((a) => ({ path: a.path, h1: a.h1, date: a.date }))} />
         ) : isModel ? (
           <ModelHero h1={doc.h1} name={name} slug={car?.slug ?? ""} cls={doc.cls} mode={doc.mode} twin={twin} path={doc.path} crumbs={p.crumbs} specs={p.intro.specs} price={modelPrice(car, doc.mode, lang) ?? p.intro.price} oldPrice={car ? (doc.mode === "vykup" ? car.buyOld : car.old) : undefined} chips={car ? saleChips(car, lang, doc.mode === "vykup" ? "buy" : "rent") : []} btns={p.intro.btns.length ? p.intro.btns : [{ label: ui(lang).modelStart, href: "#zayavka" }]} gallery={doc.gallery} lang={lang} panels={modelPanels(p, car, doc.cls ? ui(lang).cls[doc.cls] ?? undefined : undefined, doc.mode, lang)} />
         ) : (

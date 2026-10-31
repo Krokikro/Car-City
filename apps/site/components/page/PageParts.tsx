@@ -1,6 +1,7 @@
 import { fleet } from "@/lib/fleet";
 import { saleChips, hasRent, hasBuy } from "@/lib/prices";
 import { SaleChips } from "../SaleChips";
+import { ClassChips } from "./ClassChips";
 import type { ReactNode } from "react";
 import { marked } from "marked";
 import type { Block, Btn, Card, Fig } from "@/lib/blocks";
@@ -118,7 +119,6 @@ export function PageHero({ eyebrow, h1, crumbs, path, paras, btns, introHtml, ca
         <div className="pg-hero-checker" aria-hidden="true" />
         <div className="wrap pg-hero-in">
           <Crumbs items={crumbs} path={path} lang={lang} />
-          <p className="mono eyebrow">{eyebrow}</p>
           <h1 id="pg-h1" className={`display-xl pg-h1${h1.length > 34 ? " h1-long" : ""}${h1.length > 56 ? " h1-xlong" : ""}`} data-split>{h1}</h1>
           {!video && !cars.length && !paras.length && <HeroExtra k={pageKey(path)} lang={lang} count={count} />}
           {!rich && paras.slice(0, 2).map((p, i) => <p key={i} className="lead" data-reveal dangerouslySetInnerHTML={{ __html: marked.parseInline(p, { async: false }) as string }} />)}
@@ -141,9 +141,7 @@ export function CarCards({ groups, lang = "ru" }: { groups: Extract<Block, { t: 
     <section className="section pg-cards" aria-label={t.cars}>
       <div className="wrap">
         {groups.length > 1 && (
-          <nav className="pg-chips" aria-label={t.classes}>
-            {groups.map((g, i) => g.label && <a key={i} className="pill" href={`#cls-${i}`}>{g.label}<span className="pill-count">{g.cards.length}</span></a>)}
-          </nav>
+          <ClassChips label={t.classes} items={groups.flatMap((g, i) => (g.label ? [{ id: `cls-${i}`, name: g.label, n: g.cards.length }] : []))} />
         )}
         {groups.map((g, gi) => (
           <div key={gi} className="pg-group" id={`cls-${gi}`}>
@@ -230,7 +228,6 @@ export function Section({ b, n, center = false, extra = "" }: { b: Extract<Block
     <section className={`section pg-sec ${n % 2 ? "alt" : ""} ${extra}`}>
       <div className={`wrap ${wide ? "pg-wide" : "split"}${center ? " pg-center" : ""}`}>
         <div className={wide ? "section-head" : "sticky"}>
-          <p className="mono eyebrow">{String(n + 1).padStart(2, "0")}</p>
           {b.title && <h2 className="display" data-split>{b.title}</h2>}
         </div>
         <div>
@@ -252,7 +249,6 @@ export function Faq({ b, lang = "ru" }: { b: Extract<Block, { t: "faq" }>; lang?
     <section className="section faq-sec">
       <div className="wrap split">
         <div className="sticky">
-          <p className="mono eyebrow">FAQ</p>
           <h2 className="display" data-split>{b.title || ui(lang).faq}</h2>
         </div>
         <div className="faq">

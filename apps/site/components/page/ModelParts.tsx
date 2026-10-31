@@ -49,7 +49,6 @@ export function ModelText({ b, n, twinOk = true }: { b: Sec; n: number; twinOk?:
     <section className="section mt-sec">
       <div className="wrap mt-grid">
         <div className="mt-head">
-          <p className="mono eyebrow">{String(n + 1).padStart(2, "0")}</p>
           <h2 className="display" data-split>{b.title}</h2>
           {leadIdx === 0 && <p className="mt-lead" dangerouslySetInnerHTML={{ __html: nb((body[0] as { html: string }).html) }} />}
         </div>

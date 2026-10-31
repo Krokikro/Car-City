@@ -42,7 +42,6 @@ export function Calculator({ t = ruHome.calculator, classes = ruHome.fleet.class
     <section className="section calc-sec" id="kalkulyator" aria-labelledby="calc-title">
       <div className="wrap">
         <div className="section-head">
-          <p className="mono eyebrow">{t.eyebrow}</p>
           <h2 id="calc-title" className="display" data-split>{t.title}</h2>
           <p className="lead">{t.text}</p>
         </div>
@@ -100,7 +99,7 @@ export function Calculator({ t = ruHome.calculator, classes = ruHome.fleet.class
             <div className="calc-form">
               <p className="h3">{t.formTitle}</p>
               <p className="muted small">{t.formText}</p>
-              <LeadForm button={t.formButton} source="calculator" compact />
+              <LeadForm button={t.formButton} source="calculator" compact askMessenger={false} />
             </div>
           </div>
         </div>
