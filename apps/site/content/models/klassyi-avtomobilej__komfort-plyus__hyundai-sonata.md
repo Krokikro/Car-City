@@ -4,6 +4,7 @@ title: "Аренда Hyundai Sonata для работы в такси в Мос�
 h1: "Аренда Hyundai Sonata под такси"
 class: komfort-plyus
 mode: arenda
+description: "Hyundai Sonata в аренду без депозита для работы в такси в Москве с удобным и гибким графиком. Car City: новые автомобили в аренду для такси в идеальном состоянии, возможен выкуп, прозрачный договор аренды низкая комиссия парка"
 ---
 
 BREADCRUMBS: Главная > Комфорт плюс > Hyundai Sonata

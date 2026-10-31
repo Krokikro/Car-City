@@ -14,7 +14,7 @@ const OK = new Set(["image/jpeg", "image/png", "image/webp", "image/gif", "image
 // Загрузка в медиатеку. Картинки сжимаются в WebP не шире 2400 px; GIF и SVG не принимаем.
 export async function POST(req: Request) {
   const s = await getSession();
-  if (!s || s.stage !== "full" || (!s.user.totpOn && twoFaRequired()) || !can(s.user.role, "media", "write")) return NextResponse.json({ error: "Нет доступа" }, { status: 403 });
+  if (!s || s.stage !== "full" || (!s.user.totpOn && twoFaRequired()) || !can(s.user, "media", "write")) return NextResponse.json({ error: "Нет доступа" }, { status: 403 });
   // защита от подделки запроса с чужого сайта
   const origin = req.headers.get("origin");
   const host = req.headers.get("x-forwarded-host") || req.headers.get("host");

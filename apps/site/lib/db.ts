@@ -1,7 +1,7 @@
 // Postgres админки (PRD 14.1). Подключение лениво: без DATABASE_URL сайт работает как раньше, из файлов в content/.
 // Схема создаётся при первом обращении (CREATE TABLE IF NOT EXISTS), отдельных миграций на демо не нужно.
 import { Pool, type QueryResultRow } from "pg";
-import { SCHEMA } from "./admin/schema";
+import { SCHEMA, SEED, SEED_REDIRECTS } from "./admin/schema";
 
 declare global {
   // eslint-disable-next-line no-var
@@ -26,7 +26,7 @@ function pool() {
 async function ensure() {
   if (!globalThis.__ccSchema) {
     globalThis.__ccSchema = pool()
-      .query(SCHEMA)
+      .query(SCHEMA + "\n" + SEED + "\n" + SEED_REDIRECTS)
       .then(() => undefined)
       .catch((e) => {
         globalThis.__ccSchema = undefined;

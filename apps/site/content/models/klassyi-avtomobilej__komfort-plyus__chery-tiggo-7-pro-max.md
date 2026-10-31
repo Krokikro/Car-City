@@ -4,6 +4,7 @@ title: "Аренда Chery Tiggo 7 Pro Max для работы в такси в 
 h1: "Аренда Chery Tiggo 7 Pro Max под такси"
 class: komfort-plyus
 mode: arenda
+description: "Chery Tiggo 7 Pro Max в аренду без депозита для работы в такси в Москве с удобным и гибким графиком. Car City: новые автомобили в аренду для такси в идеальном состоянии, возможен выкуп, прозрачный договор аренды низкая комиссия парка"
 ---
 
 BREADCRUMBS: Главная > Комфорт плюс > Chery Tiggo 7 Pro Max

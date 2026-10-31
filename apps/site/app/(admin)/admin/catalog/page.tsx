@@ -13,7 +13,7 @@ export const metadata = { title: "Автопарк" };
 export default async function Catalog({ searchParams }: { searchParams: Promise<{ e?: string; ok?: string }> }) {
   const sp = await searchParams;
   const user = await requireUser({ section: "catalog" });
-  const write = can(user.role, "catalog", "write");
+  const write = can(user, "catalog", "write");
   const p = await patches();
   return (
     <Shell user={user} active="catalog" title="Автопарк" sub={`${BASE_FLEET.length} моделей. Цена, класс, подпись и показ на сайте. Изменения сразу попадают на главную, в калькулятор и в тарифы.`} flash={sp}>

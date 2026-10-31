@@ -23,9 +23,13 @@ export const asset = (p: string) => {
 };
 
 /** Ссылка на страницу сайта на нужном языке. Внешние ссылки, якоря и tel: не трогает. */
-export function href(p: string | undefined, lang: Lang = "ru") {
-  if (!p) return "";
-  if (!p.startsWith("/") || p.startsWith("//")) return p;
+export function href(p0: string | undefined, lang: Lang = "ru") {
+  if (!p0) return "";
+  if (!p0.startsWith("/") || p0.startsWith("//")) return p0;
+  // адреса страниц — строчными (заглавные отдают 301, как на старом сайте); файлы и якоря не трогаем
+  const cut = p0.search(/[?#]/);
+  const head = cut < 0 ? p0 : p0.slice(0, cut);
+  const p = /\.[a-z0-9]{2,5}$/i.test(head) ? p0 : head.toLowerCase() + (cut < 0 ? "" : p0.slice(cut));
   const pre = lang === "ru" ? "" : `/${lang}`;
   if (p === "/") return BASE + (pre || "/");
   if (p.startsWith("/#")) return BASE + (pre || "") + "/" + p.slice(1);

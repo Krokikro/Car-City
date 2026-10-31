@@ -17,7 +17,7 @@ export default async function Login({ searchParams }: { searchParams: Promise<{ 
   return (
     <AuthCard title="Вход" sub="Рабочее место Car City" flash={sp}>
       <form action={loginAction} className="ad-form">
-        <label>Почта<input name="email" type="email" autoComplete="username" required autoFocus /></label>
+        <label>Логин или почта<input name="login" autoComplete="username" autoCapitalize="none" spellCheck={false} required autoFocus /></label>
         <label>Пароль<input name="password" type="password" autoComplete="current-password" required /></label>
         <button className="ad-btn ad-btn-main" type="submit">Войти</button>
       </form>

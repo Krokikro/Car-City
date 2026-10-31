@@ -250,3 +250,85 @@ textarea { resize: vertical; }
 .ad-rev header { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
 .ad-rev p { margin: 0; line-height: 1.5; }
 .ad-h2 { font-size: 17px; margin: 22px 0 10px; }
+
+/* ── разделы меню, переключатель темы ── */
+.ad-nav-group { display: flex; flex-direction: column; gap: 2px; }
+.ad-nav-group + .ad-nav-group { margin-top: 10px; }
+.ad-nav-h { margin: 0 0 2px; padding: 0 10px; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #8a8a8f; }
+.ad-theme { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 6px 10px; padding: 12px; border-radius: 12px; background: #1b1b1e; border: 1px solid #2a2a2e; }
+.ad-theme-l { grid-column: 1 / -1; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: #8a8a8f; }
+.ad-theme b { color: #fff; font-size: 14px; }
+.ad-theme .ad-btn { grid-column: 1 / -1; width: 100%; justify-content: center; }
+.ad-theme-sw { position: relative; width: 36px; height: 20px; border-radius: 99px; background: #333; border: 1px solid #444; }
+.ad-theme-sw i { position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: var(--y); transition: transform .2s; }
+.ad-theme-sw.light { background: #f1f2f4; }
+.ad-theme-sw.light i { transform: translateX(16px); background: #17171a; }
+.ad-theme-pick { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 6px 0 12px; }
+.ad-theme-card { display: grid; gap: 6px; text-align: left; padding: 14px; border-radius: 14px; border: 2px solid var(--line); background: #fff; font: inherit; cursor: pointer; color: var(--ink); }
+.ad-theme-card:hover:not(:disabled) { border-color: var(--y); }
+.ad-theme-card.on { border-color: var(--y); box-shadow: 0 0 0 3px rgba(255, 183, 0, .25); }
+.ad-theme-card:disabled { cursor: default; }
+.ad-theme-card b { font-size: 17px; }
+.ad-theme-card > span:not(.ad-theme-prev) { color: var(--mute); font-size: 13.5px; }
+.ad-theme-prev { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 6px; height: 86px; padding: 10px; border-radius: 10px; margin-bottom: 6px; }
+.ad-theme-card.dark .ad-theme-prev { background: #0b0b0c; }
+.ad-theme-card.light .ad-theme-prev { background: #f1f2f4; }
+.ad-theme-prev i { border-radius: 6px; }
+.ad-theme-card.dark .ad-theme-prev i { background: #1c1d20; } .ad-theme-card.dark .ad-theme-prev i:first-child { background: var(--y); }
+.ad-theme-card.light .ad-theme-prev i { background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,.08); } .ad-theme-card.light .ad-theme-prev i:first-child { background: var(--y); }
+
+/* ── пользователи и права ── */
+.ad-user-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; align-items: end; }
+.ad-user-form .ad-check, .ad-user-form button { grid-column: 1 / -1; justify-self: start; }
+.ad-user-edit { gap: 6px; min-width: 220px; }
+.ad-user-edit input { padding: 6px 8px; }
+.ad-plain { border: 0; padding: 0; margin: 0; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+.ad-perm th { vertical-align: bottom; min-width: 130px; }
+.ad-perm th small { display: block; font-weight: 400; }
+.ad-perm td:first-child { min-width: 220px; }
+.ad-role-name { width: 100%; font-weight: 600; padding: 5px 7px; border: 1px solid var(--line); border-radius: 8px; font: inherit; }
+.ad-lv { padding: 5px 6px; border-radius: 8px; border: 1px solid var(--line); font: inherit; font-size: 13px; }
+.ad-lv.lv-write { background: #e8f5ec; } .ad-lv.lv-read { background: #e9f0fb; } .ad-lv.lv-none { background: #f6f6f4; color: #888; }
+.ad-warn-card { border-color: var(--y) !important; background: var(--warn-bg) !important; }
+
+/* ── SEO ── */
+.ad-mono { font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace !important; }
+.ad-pre { white-space: pre-wrap; background: #f6f6f3; border-radius: 10px; padding: 12px; font: 12.5px/1.5 ui-monospace, monospace; }
+.ad-num { width: 90px; }
+.ad-tpl { border-top: 1px solid var(--line); padding-top: 4px; display: grid; gap: 8px; }
+.ad-danger { color: var(--red); }
+.ad-old { padding: 12px 14px; border-radius: 10px; background: #f6f6f3; border: 1px dashed var(--line); font-size: 13.5px; }
+.ad-old p { margin: 4px 0 0; }
+.ad-seo-table td:nth-child(2) { min-width: 360px; }
+.ad-seo-table .st { margin: 0 4px 4px 0; }
+.ad-ellipsis { max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ad-redirect-form { display: grid; grid-template-columns: 1.2fr 1.2fr .8fr .9fr 1fr auto auto; gap: 10px; align-items: end; }
+@media (max-width: 1100px) { .ad-redirect-form { grid-template-columns: 1fr 1fr; } }
+
+/* ── переезд ── */
+.ad-checklist { list-style: none; margin: 0 0 14px; padding: 0; display: grid; gap: 6px; }
+.ad-checklist li { display: grid; grid-template-columns: 22px minmax(0, 1fr) minmax(0, 1.2fr); gap: 10px; align-items: baseline; padding: 8px 10px; border-radius: 10px; background: #f8f8f5; }
+.ad-checklist li::before { content: "✓"; font-weight: 700; color: var(--green); }
+.ad-checklist li.bad::before { content: "!"; color: var(--red); }
+.ad-checklist li.info::before { content: "i"; color: var(--blue); }
+.ad-checklist li span { color: var(--mute); font-size: 13.5px; }
+.ad-steps { margin: 8px 0 0; padding-left: 22px; display: grid; gap: 8px; }
+.ad-mig td { vertical-align: top; }
+.ad-meta-cmp { font-size: 13px; display: grid; gap: 4px; min-width: 340px; }
+.ad-meta-cmp span { display: block; }
+.ad-meta-cmp .same { color: var(--mute); }
+.ad-meta-cmp .diff { color: var(--ink); background: var(--warn-bg); border-radius: 6px; padding: 2px 6px; }
+.ad-meta-cmp i { color: var(--red); font-style: normal; font-weight: 700; }
+.ad-inline-l { width: 170px; }
+@media (max-width: 960px) {
+  .ad-nav-group { flex-direction: row; flex-wrap: wrap; }
+  .ad-nav-h { display: none; }
+  .ad-nav-group + .ad-nav-group { margin-top: 0; }
+  .ad-theme { order: 4; flex: 1 1 100%; grid-template-columns: auto auto 1fr; }
+  .ad-theme .ad-btn { grid-column: auto; width: auto; }
+  .ad-checklist li { grid-template-columns: 22px 1fr; }
+  .ad-checklist li span { grid-column: 2; }
+}
+.ad-form label.ad-radio { flex-direction: row; align-items: baseline; gap: 10px; font-weight: 400; }
+.ad-radio input { flex: none; }
+.ad-plain > .ad-btn { align-self: flex-start; }

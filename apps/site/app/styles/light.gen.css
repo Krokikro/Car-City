@@ -2281,6 +2281,9 @@
 [data-theme="light"] .art-more-card time {
   color: var(--text-faint);
 }
+[data-theme="light"] .nf-code {
+  color: var(--cc-signal-text);
+}
 
 /* ── vykup.css ── */
 [data-theme="light"] .vk-sec::before {

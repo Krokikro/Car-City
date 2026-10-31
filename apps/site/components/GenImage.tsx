@@ -2,7 +2,7 @@ import { asset } from "@/lib/i18n";
 import { pageImages } from "@/lib/page-images";
 import { newsImages } from "@/lib/news-images";
 import { newsLightImages } from "@/lib/news-light-images";
-import { LIGHT } from "@/lib/theme";
+import { isLight } from "@/lib/theme";
 
 const SETS = {
   pages: { meta: pageImages, sizes: [960, 1920] },
@@ -13,7 +13,7 @@ const SETS = {
 /** Картинка из assets-src/gen (Higgsfield), сжатая scripts/optimize-gen.mjs. Нет файла — ничего не рисуем. */
 export function GenImage({ kind: k0, id, className, sizes = "100vw", priority = false, alt = "" }: { kind: keyof typeof SETS; id: string; className?: string; sizes?: string; priority?: boolean; alt?: string }) {
   // в светлой версии у статей свои обложки — дневные фото и фото с инфографикой
-  const kind: keyof typeof SETS = k0 === "news" && LIGHT && newsLightImages[id] ? "news-light" : k0;
+  const kind: keyof typeof SETS = k0 === "news" && isLight() && newsLightImages[id] ? "news-light" : k0;
   const set = SETS[kind];
   const m = set.meta[id];
   if (!m) return null;

@@ -21,8 +21,8 @@ export default async function LeadPage({ params, searchParams }: { params: Promi
     `SELECT id, at, data, status, reason, assignee::text, comment, updated_at FROM leads WHERE id=$${sc.params.length + 1} AND ${sc.sql}`, [...sc.params, id],
   );
   if (!l) notFound();
-  const write = can(user.role, "leads", "write");
-  const staff = can(user.role, "leads", "write") && (user.role === "admin" || user.role === "commercial");
+  const write = can(user, "leads", "write");
+  const staff = can(user, "leads", "write") && (user.role === "admin" || user.role === "commercial");
   const team = staff ? await q<{ id: string; name: string; role: string }>("SELECT id::text, name, role FROM users WHERE active AND role IN ('admin','commercial','manager','callcenter') ORDER BY name") : [];
   const d = l.data;
   const touch = (t?: Lead["first"]) => t ? [t.utm_source, t.utm_medium, t.utm_campaign, t.utm_term && `«${t.utm_term}»`, t.referrer && `с ${t.referrer}`].filter(Boolean).join(" / ") : "";

@@ -1,7 +1,7 @@
 "use server";
 // Все действия админки. В каждом — проверка входа и права на сервере; кнопки в интерфейсе ничего не решают.
-import { timingSafeEqual } from "node:crypto";
-import { headers } from "next/headers";
+import { randomInt, timingSafeEqual } from "node:crypto";
+import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { q, q1 } from "@/lib/db";
 import { dbEnabled } from "@/lib/db";
@@ -10,7 +10,7 @@ import {
   type AdminUser,
 } from "@/lib/admin/auth";
 import { hashPassword, newTotpSecret, passwordProblem, seal, sha256, token, unseal, verifyPassword, verifyTotp } from "@/lib/admin/crypto";
-import { isRole, LEAD_STATUSES, LOST_REASONS, ROLES, can, type Role } from "@/lib/admin/roles";
+import { LEAD_STATUSES, LOST_REASONS, can, sectionOfKind } from "@/lib/admin/roles";
 import { bust, cleanData, cleanPath, discardDraft, fileData, isLangId, publishData, resetToFile, rowOf, saveDraft, version } from "@/lib/admin/pages";
 import { savePatch } from "@/lib/admin/fleet";
 import { leadScope } from "@/lib/admin/scope";
@@ -31,43 +31,43 @@ const emailOk = (s: string) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(s) && s.leng
 
 export async function loginAction(fd: FormData) {
   if (!dbEnabled()) go("/admin/login", "e", "База данных не подключена");
-  const email = f(fd, "email").toLowerCase();
+  const email = (f(fd, "login") || f(fd, "email")).toLowerCase();
   const password = String(fd.get("password") ?? "");
   if (await loginBlocked(email)) go("/admin/login", "e", "Слишком много попыток. Подождите 15 минут.");
   const id = await checkPassword(email, password);
   if (!id) {
     await loginFailed(email);
     await audit(null, "Неудачный вход", "user", email);
-    go("/admin/login", "e", "Неверная почта или пароль");
+    go("/admin/login", "e", "Неверный логин или пароль");
   }
-  const u = (await q1<{ totp_on: boolean }>("SELECT totp_on FROM users WHERE id=$1", [id]))!;
+  const u = (await q1<{ totp_on: boolean; must_change: boolean; role: string }>("SELECT totp_on, must_change, role FROM users WHERE id=$1", [id]))!;
   if (u.totp_on) {
     await startSession(id, "pw");
     go("/admin/login/code");
   }
   await startSession(id, "full");
   await loginOk(email, id);
-  await audit({ id, email, role: "admin" }, "Вход (без 2FA)", "user", email);
-  go(twoFaRequired() ? "/admin/security?enroll=1" : "/admin");
+  await audit({ id, login: email, role: u.role }, "Вход (без 2FA)", "user", email);
+  go(u.must_change ? "/admin/security?change=1" : twoFaRequired() ? "/admin/security?enroll=1" : "/admin");
 }
 
 export async function codeAction(fd: FormData) {
   const s = await getSession();
   if (!s || s.stage !== "pw" || !s.user.totpSecret) go("/admin/login");
   const u = s!.user;
-  if (await loginBlocked(u.email)) go("/admin/login/code", "e", "Слишком много попыток. Подождите 15 минут.");
+  if (await loginBlocked(u.login)) go("/admin/login/code", "e", "Слишком много попыток. Подождите 15 минут.");
   let ok = false;
   try { ok = verifyTotp(unseal(u.totpSecret!), f(fd, "code")); } catch { ok = false; }
   if (!ok) {
-    await loginFailed(u.email);
-    await audit(u, "Неверный код 2FA", "user", u.email);
+    await loginFailed(u.login);
+    await audit(u, "Неверный код 2FA", "user", u.login);
     go("/admin/login/code", "e", "Код не подошёл. Проверьте время на телефоне и попробуйте ещё раз.");
   }
   await q("DELETE FROM sessions WHERE token_hash=$1", [s!.hash]);
   await startSession(u.id, "full");
-  await loginOk(u.email, u.id);
-  await audit(u, "Вход", "user", u.email);
-  go("/admin");
+  await loginOk(u.login, u.id);
+  await audit(u, "Вход", "user", u.login);
+  go(u.mustChange ? "/admin/security?change=1" : "/admin");
 }
 
 export async function logoutAction() {
@@ -81,7 +81,7 @@ export async function logoutAction() {
 export async function signOutAllAction() {
   const u = await requireCan("dashboard", "read");
   await q("DELETE FROM sessions WHERE user_id=$1", [u.id]);
-  await audit(u, "Выход на всех устройствах", "user", u.email);
+  await audit(u, "Выход на всех устройствах", "user", u.login);
   go("/admin/login");
 }
 
@@ -102,7 +102,7 @@ export async function setupAction(fd: FormData) {
   if (pw !== String(fd.get("password2") ?? "")) go("/admin/setup", "e", "Пароли не совпадают");
   const bad = passwordProblem(pw);
   if (bad) go("/admin/setup", "e", bad);
-  const row = await q1<{ id: string }>("INSERT INTO users (email, name, role, pass_hash) VALUES ($1,$2,'admin',$3) ON CONFLICT DO NOTHING RETURNING id", [email, f(fd, "name") || "Администратор", hashPassword(pw)]);
+  const row = await q1<{ id: string }>("INSERT INTO users (email, login, name, role, pass_hash) VALUES ($1,$1,$2,'admin',$3) ON CONFLICT DO NOTHING RETURNING id", [email, f(fd, "name") || "Администратор", hashPassword(pw)]);
   if (!row) go("/admin/login", "e", "Администратор уже создан");
   await audit({ id: row!.id, email, role: "admin" }, "Создан первый администратор", "user", email);
   go("/admin/login", "ok", "Администратор создан. Войдите.");
@@ -118,7 +118,7 @@ export async function inviteAcceptAction(fd: FormData) {
   const bad = passwordProblem(pw);
   if (bad) go(back, "e", bad);
   await q("UPDATE users SET pass_hash=$2, invite_hash=NULL, invite_until=NULL, totp_on=false, totp_secret=NULL WHERE id=$1", [u!.id, hashPassword(pw)]);
-  await audit({ id: u!.id, email: u!.email, role: isRole(u!.role) ? u!.role : "manager" }, "Принято приглашение, задан пароль", "user", u!.email);
+  await audit({ id: u!.id, email: u!.email, role: u!.role }, "Принято приглашение, задан пароль", "user", u!.email);
   go("/admin/login", "ok", "Пароль задан. Войдите, затем подключите 2FA.");
 }
 
@@ -140,7 +140,7 @@ export async function enrollConfirmAction(fd: FormData) {
   try { ok = verifyTotp(unseal(u.totpSecret!), f(fd, "code")); } catch { ok = false; }
   if (!ok) go("/admin/security?enroll=1", "e", "Код не подошёл. Попробуйте ещё раз.");
   await q("UPDATE users SET totp_on=true WHERE id=$1", [u.id]);
-  await audit(u, "Включена 2FA", "user", u.email);
+  await audit(u, "Включена 2FA", "user", u.login);
   go("/admin", "ok", "Двухфакторная защита включена");
 }
 
@@ -154,10 +154,11 @@ export async function changePasswordAction(fd: FormData) {
   if (pw !== String(fd.get("password2") ?? "")) go("/admin/security", "e", "Новые пароли не совпадают");
   const bad = passwordProblem(pw);
   if (bad) go("/admin/security", "e", bad);
-  await q("UPDATE users SET pass_hash=$2 WHERE id=$1", [u.id, hashPassword(pw)]);
+  if (verifyPassword(pw, row?.pass_hash)) go("/admin/security", "e", "Новый пароль должен отличаться от текущего");
+  await q("UPDATE users SET pass_hash=$2, must_change=false WHERE id=$1", [u.id, hashPassword(pw)]);
   await q("DELETE FROM sessions WHERE user_id=$1 AND token_hash<>$2", [u.id, s!.hash]);
-  await audit(u, "Пароль изменён", "user", u.email);
-  go("/admin/security", "ok", "Пароль изменён, на других устройствах вы вышли");
+  await audit(u, "Пароль изменён", "user", u.login);
+  go(u.mustChange && twoFaRequired() && !u.totpOn ? "/admin/security?enroll=1" : u.mustChange ? "/admin" : "/admin/security", "ok", "Пароль изменён, на других устройствах вы вышли");
 }
 
 // ───────────── страницы и SEO ─────────────
@@ -169,38 +170,47 @@ const when = (v: string) => {
 };
 
 export async function savePageAction(fd: FormData) {
-  const u = await requireCan("content", "write");
+  const kind = f(fd, "kind");
+  const u = await requireCan(sectionOfKind(kind), "write");
   const lang = f(fd, "lang");
   const path = f(fd, "path");
   if (!isLangId(lang) || !cleanPath(path)) go("/admin/content", "e", "Неверный адрес страницы");
   const here = `/admin/content/edit?lang=${lang}&path=${encodeURIComponent(path)}`;
   const intent = f(fd, "intent");
-  const kind = f(fd, "kind");
-  const data = cleanData({ title: f(fd, "title"), h1: f(fd, "h1"), description: f(fd, "description"), body: String(fd.get("body") ?? ""), kind: kind === "article" ? "article" : kind === "model" ? "model" : kind === "page" ? "page" : undefined });
-  if (!data.title || !data.h1) go(here, "e", "Заполните заголовок страницы (title) и H1");
   const row = await rowOf(lang, path);
   const before = row?.published ?? fileData(lang, path) ?? null;
+  // title и description — поля SEO: менять их может SEO-специалист; автор статьи — у своей статьи
+  const seoOk = can(u, "seo", "write") || kind === "article";
+  const prev = row?.draft ?? row?.published ?? fileData(lang, path) ?? (lang !== "ru" ? fileData("ru", path) : null);
+  const data = cleanData({
+    title: seoOk ? f(fd, "title") : prev?.title ?? f(fd, "title"),
+    h1: f(fd, "h1"),
+    description: seoOk ? f(fd, "description") : prev?.description ?? "",
+    body: String(fd.get("body") ?? ""),
+    kind: kind === "article" ? "article" : kind === "model" ? "model" : kind === "page" ? "page" : undefined,
+  });
+  if (!data.title || !data.h1) go(here, "e", "Заполните заголовок страницы (title) и H1");
 
   if (intent === "draft") {
-    await saveDraft(lang, path, data, u.email, null);
+    await saveDraft(lang, path, data, u.login, null);
     await audit(u, "Черновик сохранён", "page", `${lang}${path}`);
     go(here, "ok", "Черновик сохранён. На сайте пока без изменений.");
   }
   if (intent === "schedule") {
     const at = when(f(fd, "publish_at"));
     if (!at || at.getTime() < Date.now() + 60_000) go(here, "e", "Укажите время публикации в будущем (московское)");
-    await saveDraft(lang, path, data, u.email, at);
+    await saveDraft(lang, path, data, u.login, at);
     await audit(u, "Публикация запланирована", "page", `${lang}${path}`, undefined, { at: at!.toISOString() });
     go(here, "ok", "Запланировано. Страница выйдет сама в указанное время.");
   }
   if (intent === "publish") {
-    await publishData(lang, path, data, u.email, "Публикация");
+    await publishData(lang, path, data, u.login, "Публикация");
     await bust();
     await audit(u, "Страница опубликована", "page", `${lang}${path}`, before, data);
     go(here, "ok", "Опубликовано, на сайте уже новая версия");
   }
   if (intent === "hide") {
-    await publishData(lang, path, { ...data, hidden: true }, u.email, "Снята с публикации");
+    await publishData(lang, path, { ...data, hidden: true }, u.login, "Снята с публикации");
     await bust();
     await audit(u, "Страница снята с публикации", "page", `${lang}${path}`, before, undefined);
     go(here, "ok", "Страница снята с публикации, адрес отдаёт 404");
@@ -209,7 +219,7 @@ export async function savePageAction(fd: FormData) {
 }
 
 export async function pageToolAction(fd: FormData) {
-  const u = await requireCan("content", "write");
+  const u = await requireCan(sectionOfKind(f(fd, "kind")), "write");
   const lang = f(fd, "lang");
   const path = f(fd, "path");
   if (!isLangId(lang) || !cleanPath(path)) go("/admin/content", "e", "Неверный адрес страницы");
@@ -229,7 +239,7 @@ export async function pageToolAction(fd: FormData) {
   if (act === "rollback") {
     const v = await version(f(fd, "version"));
     if (!v || v.lang !== lang || v.path !== path) go(here, "e", "Версия не найдена");
-    await saveDraft(lang, path, v!.data, u.email, null);
+    await saveDraft(lang, path, v!.data, u.login, null);
     await audit(u, "Версия загружена в черновик", "page", `${lang}${path}`, undefined, { version: v!.id });
     go(here, "ok", "Старая версия загружена в черновик. Проверьте и опубликуйте.");
   }
@@ -237,14 +247,14 @@ export async function pageToolAction(fd: FormData) {
 }
 
 export async function createPageAction(fd: FormData) {
-  const u = await requireCan("content", "write");
+  const kind = f(fd, "kind") === "article" ? "article" : "page";
+  const u = await requireCan(sectionOfKind(kind), "write");
   const lang = f(fd, "lang");
   const path = cleanPath(f(fd, "path"));
-  const kind = f(fd, "kind") === "article" ? "article" : "page";
   if (!isLangId(lang) || !path) go("/admin/content/new", "e", "Адрес: латиница, цифры и дефис, например /akcii/osen");
   if ((await rowOf(lang, path!)) || fileData(lang, path!)) go("/admin/content/new", "e", "Такая страница уже есть");
   const h1 = f(fd, "h1") || "Новая страница";
-  await saveDraft(lang, path!, cleanData({ title: f(fd, "title") || h1, h1, body: `# ${h1}\n\n`, kind }), u.email, null);
+  await saveDraft(lang, path!, cleanData({ title: f(fd, "title") || h1, h1, body: `# ${h1}\n\n`, kind }), u.login, null);
   await audit(u, "Создана страница", "page", `${lang}${path}`);
   go(`/admin/content/edit?lang=${lang}&path=${encodeURIComponent(path!)}`, "ok", "Страница создана как черновик");
 }
@@ -275,7 +285,7 @@ export async function saveCarAction(fd: FormData) {
   const before = await q1<{ data: unknown }>("SELECT data FROM fleet_overrides WHERE slug=$1", [slug]);
   const diff = await savePatch(slug, {
     name: f(fd, "name") || car!.name, price, cls: cls as never, engine: f(fd, "engine"), gearbox: f(fd, "gearbox"), badge: f(fd, "badge"), old, off, buyPrice, buyOld, featured, hidden: fd.get("hidden") === "on",
-  }, u.email);
+  }, u.login);
   await bust();
   await audit(u, "Автомобиль изменён", "car", slug, before?.data ?? null, diff);
   go(`/admin/catalog#${slug}`, "ok", `${car!.name}: сохранено`);
@@ -310,7 +320,8 @@ export async function updateLeadAction(fd: FormData) {
   let assignee = cur!.assignee;
   const want = f(fd, "assignee");
   if (want !== "" && want !== (cur!.assignee ?? "none")) {
-    if (can(u.role, "users", "write") || u.role === "commercial" || u.role === "admin") {
+    // назначать на других могут те, кто видит все заявки и может их менять
+    if (u.leadScope === "all" && can(u, "leads", "write")) {
       if (want === "none") assignee = null;
       else {
         const t = await q1<{ id: string }>("SELECT id::text FROM users WHERE id::text=$1 AND active", [want]);
@@ -319,7 +330,7 @@ export async function updateLeadAction(fd: FormData) {
       }
     } else if (want === u.id && !cur!.assignee) assignee = u.id;
     else if (want === "none" && cur!.assignee === u.id) assignee = null;
-    else go(here, "e", "Назначать заявки может коммерческий директор или администратор");
+    else go(here, "e", "Назначать заявки на других может роль, которой видны все заявки");
   }
   const comment = String(fd.get("comment") ?? "").slice(0, 4000);
   await q("UPDATE leads SET status=$2, reason=$3, assignee=$4, comment=$5, updated_at=now() WHERE id=$1", [id, status, reason || null, assignee, comment]);
@@ -336,57 +347,100 @@ async function origin() {
   return `${proto}://${host}`;
 }
 
+const loginValid = (s: string) => /^[a-z0-9._@-]{3,60}$/i.test(s);
+
+async function roleExists(id: string) {
+  return Boolean(await q1("SELECT 1 FROM roles WHERE id=$1", [id]));
+}
+
 async function target(actor: AdminUser, id: string) {
-  const t = await q1<{ id: string; email: string; role: string; active: boolean }>("SELECT id::text, email, role, active FROM users WHERE id::text=$1", [id]);
+  const t = await q1<{ id: string; login: string; email: string | null; role: string; active: boolean }>("SELECT id::text, coalesce(login, email) AS login, email, role, active FROM users WHERE id::text=$1", [id]);
   if (!t) go("/admin/users", "e", "Пользователь не найден");
-  // Чужого администратора может менять только администратор
+  // администратора может менять только администратор
   if (t!.role === "admin" && actor.role !== "admin") go("/admin/users", "e", "Менять администраторов может только администратор");
   return t!;
 }
 
-export async function createUserAction(fd: FormData) {
-  const u = await requireCan("users", "write");
-  const email = f(fd, "email").toLowerCase();
-  const role = f(fd, "role");
-  if (!emailOk(email)) go("/admin/users", "e", "Проверьте адрес почты");
-  if (!isRole(role)) go("/admin/users", "e", "Выберите роль");
-  if (role === "admin" && u.role !== "admin") go("/admin/users", "e", "Администратора создаёт только администратор");
-  const t = token(24);
-  const row = await q1<{ id: string }>(
-    "INSERT INTO users (email, name, role, invite_hash, invite_until) VALUES ($1,$2,$3,$4, now() + interval '72 hours') ON CONFLICT (email) DO NOTHING RETURNING id",
-    [email, f(fd, "name") || email.split("@")[0], role, sha256(t)],
-  );
-  if (!row) go("/admin/users", "e", "Пользователь с такой почтой уже есть");
-  await audit(u, "Создан пользователь", "user", email, undefined, { role });
-  go(`/admin/users?link=${encodeURIComponent(`${await origin()}/admin/invite/${t}`)}&for=${encodeURIComponent(email)}`);
+
+/** Выданный пароль показываем один раз: через короткоживущую cookie, а не в адресе (не останется в истории и логах) */
+async function showPassword(login: string, pw: string): Promise<never> {
+  (await cookies()).set("cc_newpw", JSON.stringify({ login, pw }), { httpOnly: true, sameSite: "strict", secure: process.env.NODE_ENV === "production", path: "/admin/users", maxAge: 120 });
+  go("/admin/users?pw=1");
 }
 
-export async function reinviteAction(fd: FormData) {
+/** Новый сотрудник: логин и пароль задаёт администратор. Пароль показывается один раз — его передают сотруднику. */
+export async function createUserAction(fd: FormData) {
   const u = await requireCan("users", "write");
-  const t0 = await target(u, f(fd, "id"));
-  const t = token(24);
-  await q("UPDATE users SET invite_hash=$2, invite_until=now() + interval '72 hours' WHERE id::text=$1", [t0.id, sha256(t)]);
-  await audit(u, "Выдана новая ссылка-приглашение", "user", t0.email);
-  go(`/admin/users?link=${encodeURIComponent(`${await origin()}/admin/invite/${t}`)}&for=${encodeURIComponent(t0.email)}`);
+  const login = f(fd, "login").toLowerCase();
+  const email = f(fd, "email").toLowerCase();
+  const role = f(fd, "role");
+  if (!loginValid(login)) go("/admin/users", "e", "Логин: 3–60 символов, латиница, цифры, точка, дефис, подчёркивание");
+  if (email && !emailOk(email)) go("/admin/users", "e", "Проверьте адрес почты или оставьте поле пустым");
+  if (!(await roleExists(role))) go("/admin/users", "e", "Выберите роль");
+  if (role === "admin" && u.role !== "admin") go("/admin/users", "e", "Администратора создаёт только администратор");
+  let pw = String(fd.get("password") ?? "");
+  const generated = !pw;
+  if (generated) pw = genPassword();
+  const bad = passwordProblem(pw);
+  if (bad) go("/admin/users", "e", bad);
+  const must = fd.get("must_change") === "on" || generated;
+  const exists = await q1("SELECT 1 FROM users WHERE lower(login)=lower($1) OR (lower(email)=lower($2) AND $2<>'')", [login, email]);
+  if (exists) go("/admin/users", "e", "Такой логин или почта уже заняты");
+  await q("INSERT INTO users (login, email, name, role, pass_hash, must_change) VALUES ($1,$2,$3,$4,$5,$6)", [login, email || null, f(fd, "name") || login, role, hashPassword(pw), must]);
+  await audit(u, "Создан пользователь", "user", login, undefined, { role, must_change: must });
+  await showPassword(login, pw);
+}
+
+/** Новый пароль сотруднику (забыл пароль или увольнение-восстановление). Все его сессии закрываются. */
+export async function resetPasswordAction(fd: FormData) {
+  const u = await requireCan("users", "write");
+  const t = await target(u, f(fd, "id"));
+  let pw = String(fd.get("password") ?? "");
+  if (!pw) pw = genPassword();
+  const bad = passwordProblem(pw);
+  if (bad) go("/admin/users", "e", bad);
+  await q("UPDATE users SET pass_hash=$2, must_change=true, invite_hash=NULL, invite_until=NULL WHERE id::text=$1", [t.id, hashPassword(pw)]);
+  await q("DELETE FROM sessions WHERE user_id::text=$1", [t.id]);
+  await audit(u, "Выдан новый пароль", "user", t.login);
+  await showPassword(t.login, pw);
+}
+
+/** Изменить имя, логин, почту сотрудника */
+export async function updateUserAction(fd: FormData) {
+  const u = await requireCan("users", "write");
+  const t = await target(u, f(fd, "id"));
+  const login = f(fd, "login").toLowerCase();
+  const email = f(fd, "email").toLowerCase();
+  if (!loginValid(login)) go("/admin/users", "e", "Логин: 3–60 символов, латиница, цифры, точка, дефис, подчёркивание");
+  if (email && !emailOk(email)) go("/admin/users", "e", "Проверьте адрес почты");
+  const busy = await q1("SELECT 1 FROM users WHERE id::text<>$1 AND (lower(login)=lower($2) OR (lower(email)=lower($3) AND $3<>''))", [t.id, login, email]);
+  if (busy) go("/admin/users", "e", "Такой логин или почта уже заняты");
+  await q("UPDATE users SET login=$2, email=$3, name=$4 WHERE id::text=$1", [t.id, login, email || null, f(fd, "name") || login]);
+  await audit(u, "Изменены данные пользователя", "user", login, { login: t.login, email: t.email }, { login, email });
+  go("/admin/users", "ok", "Сохранено");
 }
 
 export async function setRoleAction(fd: FormData) {
   const u = await requireCan("users", "write");
   const t = await target(u, f(fd, "id"));
-  const role = f(fd, "role") as Role;
-  if (!ROLES.includes(role)) go("/admin/users", "e", "Выберите роль");
+  const role = f(fd, "role");
+  if (!(await roleExists(role))) go("/admin/users", "e", "Выберите роль");
   if (t.id === u.id) go("/admin/users", "e", "Свою роль менять нельзя");
   if (role === "admin" && u.role !== "admin") go("/admin/users", "e", "Администратора назначает только администратор");
+  if (t.role === "admin" && role !== "admin") {
+    const n = Number((await q1<{ n: string }>("SELECT count(*) n FROM users WHERE role='admin' AND active"))!.n);
+    if (n <= 1) go("/admin/users", "e", "Это последний активный администратор");
+  }
   await q("UPDATE users SET role=$2 WHERE id::text=$1", [t.id, role]);
   await q("DELETE FROM sessions WHERE user_id::text=$1", [t.id]);
-  await audit(u, "Изменена роль", "user", t.email, { role: t.role }, { role });
-  go("/admin/users", "ok", `${t.email}: новая роль`);
+  await audit(u, "Изменена роль", "user", t.login, { role: t.role }, { role });
+  go("/admin/users", "ok", `${t.login}: новая роль`);
 }
 
 export async function toggleActiveAction(fd: FormData) {
   const u = await requireCan("users", "write");
   const t = await target(u, f(fd, "id"));
-  if (t.id === u.id) go("/admin/users", "e", "Себя заблокировать нельзя");
+  if (t.id === u.id) go("/admin/users", "e", "Себя отключить нельзя");
   const on = !t.active;
   if (!on && t.role === "admin") {
     const n = Number((await q1<{ n: string }>("SELECT count(*) n FROM users WHERE role='admin' AND active"))!.n);
@@ -394,8 +448,8 @@ export async function toggleActiveAction(fd: FormData) {
   }
   await q("UPDATE users SET active=$2 WHERE id::text=$1", [t.id, on]);
   if (!on) await q("DELETE FROM sessions WHERE user_id::text=$1", [t.id]);
-  await audit(u, on ? "Пользователь разблокирован" : "Пользователь заблокирован", "user", t.email);
-  go("/admin/users", "ok", on ? "Доступ возвращён" : "Доступ закрыт. Записи и история сохранены.");
+  await audit(u, on ? "Пользователь включён" : "Пользователь отключён", "user", t.login);
+  go("/admin/users", "ok", on ? "Доступ включён" : "Доступ отключён, сотрудник вышел со всех устройств. История действий сохранена.");
 }
 
 export async function reset2faAction(fd: FormData) {
@@ -403,8 +457,27 @@ export async function reset2faAction(fd: FormData) {
   const t = await target(u, f(fd, "id"));
   await q("UPDATE users SET totp_on=false, totp_secret=NULL WHERE id::text=$1", [t.id]);
   await q("DELETE FROM sessions WHERE user_id::text=$1", [t.id]);
-  await audit(u, "Сброшена 2FA", "user", t.email);
+  await audit(u, "Сброшена 2FA", "user", t.login);
   go("/admin/users", "ok", "2FA сброшена, при следующем входе её нужно подключить заново");
+}
+
+/** Ссылка-приглашение (по желанию): сотрудник сам задаёт пароль */
+export async function reinviteAction(fd: FormData) {
+  const u = await requireCan("users", "write");
+  const t0 = await target(u, f(fd, "id"));
+  const t = token(24);
+  await q("UPDATE users SET invite_hash=$2, invite_until=now() + interval '72 hours' WHERE id::text=$1", [t0.id, sha256(t)]);
+  await audit(u, "Выдана ссылка для смены пароля", "user", t0.login);
+  go(`/admin/users?link=${encodeURIComponent(`${await origin()}/admin/invite/${t}`)}&for=${encodeURIComponent(t0.login)}`);
+}
+
+/** Пароль, который легко продиктовать: 3 группы букв и цифр */
+function genPassword() {
+  const abc = "abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  const pick = (n: number) => Array.from({ length: n }, () => abc[randomInt(abc.length)]).join("");
+  let pw = "";
+  do pw = `${pick(4)}-${pick(4)}-${pick(4)}`; while (!/\d/.test(pw) || !/[a-z]/i.test(pw));
+  return pw;
 }
 
 /** Главная: какие машины показываются первыми и в каком порядке. Приходит список slug по порядку. */
@@ -418,7 +491,7 @@ export async function saveHomeFleetAction(fd: FormData) {
   for (const c of BASE_FLEET) {
     const pos = slugs.indexOf(c.slug) + 1; // 0 — не на главной
     const o = (cur.get(c.slug) ?? {}) as Parameters<typeof savePatch>[1];
-    await savePatch(c.slug, { ...c, ...o, featured: pos }, u.email);
+    await savePatch(c.slug, { ...c, ...o, featured: pos }, u.login);
   }
   await bust();
   await audit(u, "Порядок машин на главной изменён", "fleet", "home", null, { order: slugs });
@@ -444,7 +517,7 @@ export async function reviewAction(fd: FormData) {
   if (op === "hide") {
     const name = f(fd, "name").slice(0, 200), text = f(fd, "text").slice(0, 5000), source = f(fd, "source").slice(0, 60);
     if (!key || !text) go("/admin/reviews", "e", "Не хватает данных отзыва");
-    await q("INSERT INTO reviews (key, source, name, date_text, text, url, status, origin, updated_by) VALUES ($1,$2,$3,$4,$5,$6,'hidden','file',$7) ON CONFLICT (key) DO UPDATE SET status='hidden', updated_by=$7", [key, source, name, f(fd, "date").slice(0, 60), text, cleanUrl(f(fd, "url")), u.email]);
+    await q("INSERT INTO reviews (key, source, name, date_text, text, url, status, origin, updated_by) VALUES ($1,$2,$3,$4,$5,$6,'hidden','file',$7) ON CONFLICT (key) DO UPDATE SET status='hidden', updated_by=$7", [key, source, name, f(fd, "date").slice(0, 60), text, cleanUrl(f(fd, "url")), u.login]);
     await audit(u, "Отзыв скрыт с сайта", "review", key);
   } else if (op === "show") {
     await q("DELETE FROM reviews WHERE key=$1 AND origin='file'", [key]);
@@ -452,7 +525,7 @@ export async function reviewAction(fd: FormData) {
   } else if (id && /^\d+$/.test(id)) {
     const st = op === "publish" ? "published" : op === "ignore" ? "ignored" : op === "unpublish" ? "ignored" : op === "restore" ? "new" : "";
     if (!st) go("/admin/reviews", "e", "Неизвестное действие");
-    await q("UPDATE reviews SET status=$2, published_at=CASE WHEN $2='published' THEN now() ELSE published_at END, updated_by=$3 WHERE id=$1", [id, st, u.email]);
+    await q("UPDATE reviews SET status=$2, published_at=CASE WHEN $2='published' THEN now() ELSE published_at END, updated_by=$3 WHERE id=$1", [id, st, u.login]);
     await audit(u, `Отзыв: ${op}`, "review", id);
   } else if (op === "delete" && id) {
     go("/admin/reviews", "e", "Удаление не поддерживается: используйте «Игнорировать»");
@@ -471,7 +544,7 @@ export async function addReviewAction(fd: FormData) {
   const date = f(fd, "date").slice(0, 60);
   const key = reviewKey({ source, name, date, text });
   const publish = f(fd, "publish") === "1";
-  await q("INSERT INTO reviews (key, source, name, date_text, text, url, status, origin, published_at, updated_by) VALUES ($1,$2,$3,$4,$5,$6,$7,'manual',$8,$9) ON CONFLICT (key) DO NOTHING", [key, source, name, date, text, cleanUrl(f(fd, "url")), publish ? "published" : "new", publish ? new Date() : null, u.email]);
+  await q("INSERT INTO reviews (key, source, name, date_text, text, url, status, origin, published_at, updated_by) VALUES ($1,$2,$3,$4,$5,$6,$7,'manual',$8,$9) ON CONFLICT (key) DO NOTHING", [key, source, name, date, text, cleanUrl(f(fd, "url")), publish ? "published" : "new", publish ? new Date() : null, u.login]);
   await audit(u, publish ? "Отзыв добавлен и опубликован" : "Отзыв добавлен в очередь", "review", key);
   await reviewsBust();
   go("/admin/reviews", "ok", publish ? "Отзыв добавлен и показан на сайте" : "Отзыв добавлен в «Новые»");

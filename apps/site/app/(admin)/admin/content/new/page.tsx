@@ -1,21 +1,26 @@
+import { redirect } from "next/navigation";
 import { Shell } from "@/components/admin/Shell";
 import { requireUser } from "@/lib/admin/auth";
+import { can } from "@/lib/admin/roles";
 import { LANGS } from "@/lib/i18n";
 import { createPageAction } from "../../actions";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Новая страница" };
 
-export default async function NewPage({ searchParams }: { searchParams: Promise<{ e?: string }> }) {
+export default async function NewPage({ searchParams }: { searchParams: Promise<{ e?: string; kind?: string }> }) {
   const sp = await searchParams;
-  const user = await requireUser({ section: "content", need: "write" });
+  const user = await requireUser();
+  const pages = can(user, "pages", "write"), articles = can(user, "articles", "write");
+  if (!pages && !articles) redirect("/admin?denied=1");
+  const article = sp.kind === "article" || !pages;
   return (
-    <Shell user={user} active="content" title="Новая страница" sub="Создаётся как черновик, на сайте появится после публикации" flash={sp}>
+    <Shell user={user} active={article ? "articles" : "pages"} title={article ? "Новая статья" : "Новая страница"} sub="Создаётся как черновик, на сайте появится после публикации" flash={sp}>
       <section className="ad-card">
         <form action={createPageAction} className="ad-form ad-narrow">
-          <label>Адрес страницы<input name="path" placeholder="/akcii/osen" required pattern="[A-Za-z0-9_\-./]+" /><small>Латиница, цифры, дефис и слеш. Без домена.</small></label>
           <label>Заголовок H1<input name="h1" required /></label>
-          <label>Тип<select name="kind"><option value="page">Страница</option><option value="article">Статья в «Новостях»</option></select></label>
+          <label>Адрес страницы<input name="path" placeholder={article ? "/novosti/kak-vybrat-avto" : "/akcii/osen"} required pattern="[A-Za-z0-9_\-./]+" defaultValue={article ? "/novosti/" : ""} /><small>Латиница в нижнем регистре, цифры, дефис и слеш. Без домена. Статьи — в /novosti/.</small></label>
+          <label>Тип<select name="kind" defaultValue={article ? "article" : "page"}>{pages && <option value="page">Страница</option>}{articles && <option value="article">Статья в «Новостях»</option>}</select></label>
           <label>Язык<select name="lang">{LANGS.map((l) => <option key={l} value={l}>{l}</option>)}</select></label>
           <button className="ad-btn ad-btn-main" type="submit">Создать черновик</button>
         </form>

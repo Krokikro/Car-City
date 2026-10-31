@@ -4,6 +4,7 @@ title: "Аренда Sollers Atlant 1.9 TD для работы в такси в 
 h1: "Sollers Atlant 1.9 TD"
 class: gruzovoy
 mode: arenda
+description: "Sollers Atlant 1.9 TD в аренду без депозита для работы в такси в Москве с удобным и гибким графиком. Car City: новые автомобили в аренду для такси в идеальном состоянии, возможен выкуп, прозрачный договор аренды низкая комиссия парка"
 ---
 
 BREADCRUMBS: Главная > Sollers Atlant 1.9 TD

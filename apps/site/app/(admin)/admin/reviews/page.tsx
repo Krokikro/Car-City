@@ -40,7 +40,7 @@ const Btn = ({ op, id, k, main, warn, children, extra }: { op: string; id?: stri
 export default async function Reviews({ searchParams }: { searchParams: Promise<{ e?: string; ok?: string; tab?: string }> }) {
   const sp = await searchParams;
   const user = await requireUser({ section: "reviews" });
-  const write = can(user.role, "reviews", "write");
+  const write = can(user, "reviews", "write");
   const rows = await q<Row>("SELECT id::text, key, source, name, date_text, text, url, status, origin, created_at FROM reviews ORDER BY COALESCE(published_at, created_at) DESC, id DESC");
   const file = parseReviews(getDoc("/reviews", "ru")?.body ?? "");
   const hiddenKeys = new Set(rows.filter((r) => r.status === "hidden").map((r) => r.key));

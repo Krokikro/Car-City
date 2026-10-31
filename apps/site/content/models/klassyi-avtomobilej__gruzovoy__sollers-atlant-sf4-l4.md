@@ -4,6 +4,7 @@ title: "Аренда Sollers SF4 L4 для работы в доставке в �
 h1: "Sollers Atlant SF4 L4"
 class: gruzovoy
 mode: arenda
+description: "Аренда Sollers SF4 L4 в Москве для грузового тарифа. Новые авто, гибкий график, низкая комиссия, прозрачный договор и выкуп."
 ---
 
 BREADCRUMBS: Главная > Sollers Atlant SF4 L4

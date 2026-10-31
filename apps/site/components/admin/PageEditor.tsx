@@ -7,8 +7,8 @@ const T_MAX = 60;
 const D_MAX = 160;
 interface Media { id: string; name: string; w: number | null; h: number | null }
 
-export function PageEditor({ lang, path, kind, readOnly, initial, hasDraft, publishAt, hidden, previewTo }: {
-  lang: string; path: string; kind: string; readOnly: boolean;
+export function PageEditor({ lang, path, kind, readOnly, seoReadOnly = false, initial, hasDraft, publishAt, hidden, previewTo }: {
+  lang: string; path: string; kind: string; readOnly: boolean; seoReadOnly?: boolean;
   initial: { title: string; h1: string; description: string; body: string };
   hasDraft: boolean; publishAt: string; hidden: boolean; previewTo: string;
 }) {
@@ -72,12 +72,13 @@ export function PageEditor({ lang, path, kind, readOnly, initial, hasDraft, publ
         <fieldset disabled={readOnly}>
           <section className="ad-card">
             <h2>Для поисковиков</h2>
+            {seoReadOnly && <p className="ad-muted">Title и description меняет SEO-специалист (раздел SEO). Здесь — только просмотр.</p>}
             <label>Title (заголовок в выдаче)
-              <input name="title" value={v.title} onChange={set("title")} required maxLength={300} />
+              <input name="title" value={v.title} onChange={set("title")} required maxLength={300} readOnly={seoReadOnly} />
               <small className={tl > T_MAX ? "warn" : ""}>{tl} из ~{T_MAX} символов. Длинный заголовок в выдаче обрежется.</small>
             </label>
             <label>Description (описание в выдаче)
-              <textarea name="description" rows={3} value={v.description} onChange={set("description")} maxLength={600} />
+              <textarea name="description" rows={3} value={v.description} onChange={set("description")} maxLength={600} readOnly={seoReadOnly} />
               <small className={dl > D_MAX ? "warn" : ""}>{dl} из ~{D_MAX} символов.</small>
             </label>
             <div className="ad-serp" aria-label="Так страница выглядит в поиске">

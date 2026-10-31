@@ -8,17 +8,23 @@ import { changePasswordAction, enrollConfirmAction, enrollStartAction, signOutAl
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Безопасность" };
 
-export default async function Security({ searchParams }: { searchParams: Promise<{ e?: string; ok?: string; enroll?: string }> }) {
+export default async function Security({ searchParams }: { searchParams: Promise<{ e?: string; ok?: string; enroll?: string; change?: string }> }) {
   const sp = await searchParams;
   const user = await requireUser({ allowNoTotp: true });
   let qr = "";
   let secret = "";
   if (user.totpSecret && !user.totpOn) {
     secret = unseal(user.totpSecret);
-    qr = await QRCode.toDataURL(totpUri(secret, user.email), { margin: 1, width: 220 });
+    qr = await QRCode.toDataURL(totpUri(secret, user.login), { margin: 1, width: 220 });
   }
   return (
-    <Shell user={user} active="security" title="Безопасность" sub={user.email} flash={sp}>
+    <Shell user={user} active="security" title="Безопасность" sub={`${user.login} · ${user.roleName}`} flash={sp}>
+      {user.mustChange && (
+        <section className="ad-card ad-warn-card">
+          <h2>Смените пароль</h2>
+          <p>Пароль выдал администратор. Придумайте свой — после этого откроются разделы админки. В поле «Текущий пароль» введите выданный.</p>
+        </section>
+      )}
       <section className="ad-card">
         <h2>Двухфакторная защита</h2>
         {user.totpOn ? (

@@ -1,6 +1,6 @@
 import { asset } from "@/lib/i18n";
 import { carImages } from "@/lib/car-images";
-import { CARS_DIR } from "@/lib/theme";
+import { carsDir } from "@/lib/theme";
 
 type Body = "sedan" | "crossover" | "van" | "minivan";
 
@@ -40,7 +40,7 @@ const PATHS: Record<Body, { body: string; glass: string; wheels: [number, number
 export function CarArt({ slug, name, priority = false, lit = false, sizes = "(max-width: 720px) 86vw, 560px" }: { slug: string; name: string; priority?: boolean; lit?: boolean; sizes?: string }) {
   const meta = carImages[slug];
   if (meta) {
-    const f = (n: number, ext: string) => asset(`/${CARS_DIR}/${slug}-${n}.${ext}`);
+    const f = (n: number, ext: string) => asset(`/${carsDir()}/${slug}-${n}.${ext}`);
     return (
       <span className="car-photo">
         <picture>

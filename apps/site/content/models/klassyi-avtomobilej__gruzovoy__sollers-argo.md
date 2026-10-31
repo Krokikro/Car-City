@@ -4,6 +4,7 @@ title: "Аренда Sollers Argo для грузоперевозок в Мос�
 h1: "Sollers Argo"
 class: gruzovoy
 mode: arenda
+description: "Аренда Sollers Argo в Москве для грузового тарифа. Новые авто, гибкий график, низкая комиссия, прозрачный договор и выкуп."
 ---
 
 BREADCRUMBS: Главная > Sollers Argo

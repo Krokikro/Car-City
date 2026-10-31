@@ -4,6 +4,7 @@ title: "Аренда Sollers Atlant L3H2 2.7D    для работы в такс
 h1: "Sollers Atlant L3H2 2.7D"
 class: gruzovoy
 mode: arenda
+description: "Sollers Atlant L3H2 2.7D в аренду без депозита для работы в такси в Москве с удобным и гибким графиком. Car City: новые автомобили в аренду для такси в идеальном состоянии, возможен выкуп, прозрачный договор аренды низкая комиссия парка"
 ---
 
 BREADCRUMBS: Главная > Sollers Atlant L3H2 2.7D

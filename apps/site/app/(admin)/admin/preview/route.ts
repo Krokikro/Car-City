@@ -6,7 +6,7 @@ import { can } from "@/lib/admin/roles";
 // Предпросмотр: включает режим черновиков в браузере сотрудника и открывает страницу сайта.
 export async function GET(req: Request) {
   const s = await getSession();
-  if (!s || s.stage !== "full" || !can(s.user.role, "content", "read")) return NextResponse.redirect(new URL("/admin/login", req.url));
+  if (!s || s.stage !== "full" || !(can(s.user, "pages", "read") || can(s.user, "articles", "read"))) return NextResponse.redirect(new URL("/admin/login", req.url));
   const to = new URL(req.url).searchParams.get("to") || "/";
   // только внутренние адреса сайта
   const path = to.startsWith("/") && !to.startsWith("//") && !to.startsWith("/\\") ? to : "/";

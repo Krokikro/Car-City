@@ -1157,3 +1157,9 @@ button.owner:hover, button.owner:focus-visible { border-color: rgba(255,183,0,.5
   .art-author-facts span { font-size: 11px; }
   .art-cta .btn { width: 100%; justify-content: center; }
 }
+
+/* страница 404 */
+.nf { min-height: 70svh; display: grid; align-items: center; padding-top: calc(var(--header-h) + 40px); }
+.nf-in { display: grid; gap: 18px; justify-items: start; }
+.nf-code { margin: 0; font: 200 clamp(90px, 16vw, 200px)/.9 var(--font-display); color: var(--cc-signal); letter-spacing: -.05em; }
+.nf-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }

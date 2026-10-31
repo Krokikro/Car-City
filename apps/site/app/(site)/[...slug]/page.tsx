@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fragment } from "react";
 import { notFound } from "next/navigation";
 import { draftMode } from "next/headers";
+import { log404 } from "@/lib/notfound-log";
 import { refreshOverlay, draftOverlay } from "@/lib/admin/overlay";
 import { allDocs, getDoc, twinOf, articles, type Doc } from "@/lib/docs";
 import { parseDoc, parseReviews } from "@/lib/blocks";
@@ -39,7 +40,9 @@ import { KlubView } from "@/components/page/KlubView";
 import { TermsView } from "@/components/page/TermsView";
 import { termsOf } from "@/lib/terms";
 import { LANGS, isLang, type Lang } from "@/lib/i18n";
-import { alternates, homeMeta } from "@/lib/meta";
+import { homeMeta } from "@/lib/meta";
+import { buildMeta, extraLd } from "@/lib/seo";
+import { hasGen } from "@/components/GenImage";
 import { ui } from "@/lib/ui";
 
 // Содержимое можно менять из админки: новые адреса собираются по первому заходу, готовые страницы обновляются после публикации
@@ -56,7 +59,7 @@ export function generateStaticParams() {
   for (const lang of LANGS) {
     const pre = lang === "ru" ? [] : [lang];
     if (lang !== "ru") out.push({ slug: [lang] }, { slug: [lang, "sitemap"] });
-    for (const p of allDocs(lang).keys()) if (p !== "/") out.push({ slug: [...pre, ...p.split("/").filter(Boolean)] });
+    for (const p of allDocs(lang).keys()) if (p !== "/") out.push({ slug: [...pre, ...p.toLowerCase().split("/").filter(Boolean)] });
   }
   return out;
 }
@@ -69,17 +72,13 @@ function resolve(slug: string[]): { lang: Lang; path: string } {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }): Promise<Metadata> {
   const { lang, path } = resolve((await params).slug);
-  if (path === "/") return homeMeta(lang);
-  if (path === "/sitemap") return { title: ui(lang).sitemap, alternates: alternates(path, lang) };
-  const doc = getDoc(path, lang, await overlayNow());
+  const ov = await overlayNow();
+  if (path === "/") { const h = homeMeta(lang); return buildMeta({ ov, lang, path: "/", title: String((h.title as { absolute: string }).absolute), description: String(h.description) }); }
+  if (path === "/sitemap") return buildMeta({ ov, lang, path, title: ui(lang).sitemap });
+  const doc = getDoc(path, lang, ov);
   if (!doc) return {};
-  const alt = alternates(doc.path, lang);
-  return {
-    title: { absolute: doc.title },
-    description: doc.description,
-    alternates: alt,
-    openGraph: { title: doc.title, description: doc.description, url: alt.canonical, type: doc.kind === "article" ? "article" : "website" },
-  };
+  const slug = doc.path.split("/").pop() ?? "";
+  return buildMeta({ ov, lang, path: doc.path, title: doc.title, description: doc.description, h1: doc.h1, kind: doc.kind, image: doc.kind === "article" && hasGen("news", slug) ? `/news/${slug}-1200.webp` : undefined });
 }
 
 // Какие машины показать в шапке раздела: по классу из адреса или по марке из заголовка
@@ -147,7 +146,12 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
       </>
     );
   const doc = getDoc(path, lang, ov);
-  if (!doc) notFound();
+  if (!doc) {
+    // headers() здесь нельзя: страница статическая (ISR), иначе Next отдаст 500 вместо 404
+    await log404(lang === "ru" ? path : `/${lang}${path}`, "");
+    notFound();
+  }
+  const ld = extraLd(ov, lang, doc.path);
   let twin = twinOf(doc, lang, ov)?.path;
   const isModel = doc.kind === "model";
   const p = parseDoc(doc.body, { twin, model: isModel, lang });
@@ -274,6 +278,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
         {((classVideo && !buyPage) || bizPage) && !reqDone && <Requirements req={homeText(lang).requirements} />}
         {(p.final || isModel) && <FinalCta lang={lang} />}
       </main>
+      {ld && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ld }} />}
       <Footer lang={lang} />
       <StickyCta lang={lang} />
     </>

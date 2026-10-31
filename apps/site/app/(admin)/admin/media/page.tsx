@@ -12,7 +12,7 @@ export const metadata = { title: "Медиатека" };
 export default async function MediaPage({ searchParams }: { searchParams: Promise<{ e?: string; ok?: string }> }) {
   const sp = await searchParams;
   const user = await requireUser({ section: "media" });
-  const write = can(user.role, "media", "write");
+  const write = can(user, "media", "write");
   const items = await q<{ id: string; name: string; w: number | null; h: number | null; size: number; at: string; by: string | null }>("SELECT id, name, w, h, size, at, by FROM media ORDER BY at DESC LIMIT 300");
   return (
     <Shell user={user} active="media" title="Медиатека" sub="Картинки для страниц. Вставляются в текст кнопкой «Картинка» в редакторе." flash={sp}>

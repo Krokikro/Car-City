@@ -3,6 +3,8 @@
 // Черновики в общую память не попадают: предпросмотр берёт их отдельным вызовом draftOverlay().
 import { dbEnabled, q } from "../db";
 import { fleet, type FleetCar } from "../fleet";
+import { DEFAULT_SEO, DEFAULT_SITE, mergeSeo, mergeSite, type PageSeo, type SeoSettings, type SiteSettings } from "../site-settings";
+import { setSiteTheme } from "../theme";
 
 export interface PageData {
   title: string;
@@ -21,9 +23,16 @@ export interface Overlay {
   version: number;
   cacheable: boolean;
   pages: Map<string, PageData>;
+  /** настройки сайта (тема) и SEO из админки */
+  site: SiteSettings;
+  seo: SeoSettings;
+  /** SEO отдельных страниц: ключ lang|path (path в нижнем регистре) */
+  seoPages: Map<string, PageSeo>;
+  /** когда страницу меняли в админке — для lastmod в sitemap */
+  updated: Map<string, string>;
 }
 
-const EMPTY: Overlay = { version: 0, cacheable: true, pages: new Map() };
+const EMPTY: Overlay = { version: 0, cacheable: true, pages: new Map(), site: DEFAULT_SITE, seo: DEFAULT_SEO, seoPages: new Map(), updated: new Map() };
 let cur: Overlay = EMPTY;
 let loadedAt = 0;
 let inflight: Promise<Overlay> | null = null;
@@ -76,9 +85,24 @@ async function promoteScheduled() {
 async function load(): Promise<Overlay> {
   await promoteScheduled();
   const pages = new Map<string, PageData>();
-  for (const r of await q<{ lang: string; path: string; published: PageData }>("SELECT lang, path, published FROM pages WHERE published IS NOT NULL")) pages.set(pageKey(r.lang, r.path), r.published);
+  const updated = new Map<string, string>();
+  for (const r of await q<{ lang: string; path: string; published: PageData; updated_at: string }>("SELECT lang, path, published, updated_at FROM pages WHERE published IS NOT NULL")) {
+    pages.set(pageKey(r.lang, r.path), r.published);
+    updated.set(pageKey(r.lang, r.path.toLowerCase()), new Date(r.updated_at).toISOString());
+  }
   applyFleet(await q<{ slug: string; data: FleetPatch }>("SELECT slug, data FROM fleet_overrides"));
-  return { version: cur.version + 1, cacheable: true, pages };
+  const set = new Map((await q<{ key: string; value: unknown }>("SELECT key, value FROM settings WHERE key IN ('site','seo')")).map((r) => [r.key, r.value]));
+  const site = mergeSite(set.get("site"));
+  const seo = mergeSeo(set.get("seo"));
+  setSiteTheme(site.theme, site.variant);
+  const seoPages = new Map<string, PageSeo>();
+  for (const r of await q<{ lang: string; path: string; data: PageSeo; updated_at: string }>("SELECT lang, path, data, updated_at FROM seo_pages")) {
+    const k = pageKey(r.lang, r.path.toLowerCase());
+    seoPages.set(k, r.data);
+    const t = new Date(r.updated_at).toISOString();
+    if (!updated.has(k) || updated.get(k)! < t) updated.set(k, t);
+  }
+  return { version: cur.version + 1, cacheable: true, pages, site, seo, seoPages, updated };
 }
 
 export function published(): Overlay {
@@ -107,5 +131,8 @@ export async function draftOverlay(): Promise<Overlay> {
   } catch (e) {
     console.error("draftOverlay:", e instanceof Error ? e.message : e);
   }
-  return { version: base.version, cacheable: false, pages };
+  return { ...base, cacheable: false, pages };
 }
+
+/** SEO отдельной страницы из админки */
+export const pageSeo = (ov: Overlay, lang: string, path: string): PageSeo => ov.seoPages.get(pageKey(lang, path.toLowerCase())) ?? {};

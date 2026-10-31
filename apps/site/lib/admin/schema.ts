@@ -1,3 +1,5 @@
+import { DEFAULT_ROLES } from "./roles";
+
 // Таблицы админки. Содержимое сайта лежит в файлах репозитория; всё, что правят в админке, — поверх них, в этих таблицах.
 export const SCHEMA = `
 CREATE TABLE IF NOT EXISTS users (
@@ -106,4 +108,92 @@ CREATE TABLE IF NOT EXISTS audit (
   ip text
 );
 CREATE INDEX IF NOT EXISTS audit_at ON audit(at DESC);
+
+-- ── роли с настраиваемыми правами, вход по логину ──
+CREATE TABLE IF NOT EXISTS roles (
+  id text PRIMARY KEY,
+  name text NOT NULL,
+  perms jsonb NOT NULL DEFAULT '{}',
+  lead_scope text NOT NULL DEFAULT 'all',
+  system boolean NOT NULL DEFAULT false,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  updated_at timestamptz NOT NULL DEFAULT now()
+);
+ALTER TABLE users ADD COLUMN IF NOT EXISTS login text;
+ALTER TABLE users ADD COLUMN IF NOT EXISTS must_change boolean NOT NULL DEFAULT false;
+ALTER TABLE users ALTER COLUMN email DROP NOT NULL;
+UPDATE users SET login = email WHERE login IS NULL;
+CREATE UNIQUE INDEX IF NOT EXISTS users_login ON users (lower(login));
+-- ── настройки сайта и SEO ──
+CREATE TABLE IF NOT EXISTS settings (
+  key text PRIMARY KEY,
+  value jsonb NOT NULL,
+  updated_at timestamptz NOT NULL DEFAULT now(),
+  updated_by text
+);
+CREATE TABLE IF NOT EXISTS seo_pages (
+  lang text NOT NULL,
+  path text NOT NULL,
+  data jsonb NOT NULL,
+  updated_at timestamptz NOT NULL DEFAULT now(),
+  updated_by text,
+  PRIMARY KEY (lang, path)
+);
+CREATE TABLE IF NOT EXISTS redirects (
+  id bigserial PRIMARY KEY,
+  from_path text NOT NULL,
+  to_path text NOT NULL DEFAULT '',
+  code int NOT NULL DEFAULT 301,
+  match text NOT NULL DEFAULT 'exact',
+  active boolean NOT NULL DEFAULT true,
+  note text NOT NULL DEFAULT '',
+  hits int NOT NULL DEFAULT 0,
+  last_hit timestamptz,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  created_by text
+);
+CREATE UNIQUE INDEX IF NOT EXISTS redirects_exact ON redirects (lower(from_path)) WHERE match = 'exact';
+CREATE TABLE IF NOT EXISTS not_found (
+  path text PRIMARY KEY,
+  hits int NOT NULL DEFAULT 1,
+  first_at timestamptz NOT NULL DEFAULT now(),
+  last_at timestamptz NOT NULL DEFAULT now(),
+  referer text,
+  ignored boolean NOT NULL DEFAULT false
+);
+CREATE TABLE IF NOT EXISTS migration_checks (
+  path text PRIMARY KEY,
+  result jsonb NOT NULL,
+  checked_at timestamptz NOT NULL DEFAULT now()
+);
 `;
+
+// Роли по умолчанию: добавляются, если их ещё нет (права уже настроенных ролей не трогаем)
+export const SEED = DEFAULT_ROLES.map(
+  (r) => `INSERT INTO roles (id, name, perms, lead_scope, system) VALUES ('${r.id}', '${r.name.replace(/'/g, "''")}', '${JSON.stringify(r.perms)}', '${r.leadScope}', ${r.system}) ON CONFLICT (id) DO NOTHING;`,
+).join("\n");
+
+
+// Редиректы переезда со старого car-city.pro (адреса, которых на новом сайте нет или которые старый сайт уже
+// перенаправлял). Добавляются один раз — потом ими управляют в админке (Редиректы), удалённые не вернутся.
+const MOVE: [string, string, string][] = [
+  ["/index.php", "/", "Дубль главной на старом MODX"],
+  ["/klassyi-avtomobilej/ekonom", "/ekonom", "Как на старом сайте"],
+  ["/klassyi-avtomobilej/komfort", "/komfort", "Как на старом сайте"],
+  ["/klassyi-avtomobilej/komfort-plyus", "/komfortplus", "Как на старом сайте"],
+  ["/klassyi-avtomobilej/biznes", "/biznes", "Раздел «Бизнес» — отдельная страница"],
+  ["/klassyi-avtomobilej/biznes/gac-m8", "/vykup/biznes/gac-m8", "Бизнес-класс — только выкуп"],
+  ["/klassyi-avtomobilej/biznes/hongqi-h5", "/vykup/biznes/hongqi-h5", "Бизнес-класс — только выкуп"],
+  ["/klassyi-avtomobilej/biznes/voyah-dream", "/vykup/biznes/voyah-dream", "Бизнес-класс — только выкуп"],
+  ["/klassyi-avtomobilej/gruzovoy/lada-largus", "/vykup/gruzovoy/lada-largus", "Lada Largus — только выкуп"],
+  ["/klassyi-avtomobilej/komfort-plyus/kia-k5", "/klassyi-avtomobilej/komfort/kia-k5", "Kia K5 перешла в «Комфорт»"],
+  ["/vykup/komfort-plyus/kia-k5", "/vykup/komfort/kia-k5", "Kia K5 перешла в «Комфорт»"],
+  ["/vykup/komfort-plyus/jetour-dashing", "/vykup/komfort-plyus", "Jetour Dashing больше нет в парке — на класс"],
+];
+const sq = (s: string) => `'${s.replace(/'/g, "''")}'`;
+export const SEED_REDIRECTS = `DO $$ BEGIN
+IF NOT EXISTS (SELECT 1 FROM settings WHERE key='seed_redirects_v1') THEN
+${MOVE.map(([a, b, n]) => `  INSERT INTO redirects (from_path, to_path, code, match, note, created_by) VALUES (${sq(a)}, ${sq(b)}, 301, 'exact', ${sq(n)}, 'переезд') ON CONFLICT DO NOTHING;`).join("\n")}
+  INSERT INTO settings (key, value) VALUES ('seed_redirects_v1', 'true');
+END IF;
+END $$;`;

@@ -4,6 +4,7 @@ title: "Аренда Sollers Atlant 1.9 TD с выкупом в Москве н�
 h1: "Выкуп Sollers Atlant 1.9 TD"
 class: gruzovoy
 mode: vykup
+description: "Sollers Atlant 1.9 TD с выкупом для грузового тарифа. Гибкий график платежей, 14 дней в год без оплат, чистая репутация прозрачный договор на аренду с правом выкупа."
 ---
 
 BREADCRUMBS: Главная > Аренда авто с правом выкупа > Sollers Atlant 1.9 TD

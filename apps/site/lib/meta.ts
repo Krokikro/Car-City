@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { LANGS, type Lang } from "./i18n";
 
 const HOME: Record<Lang, { title: string; description: string }> = {
-  ru: { title: "Аренда авто для работы в такси в Москве без залога", description: "Дарим первый день аренды бесплатно, новые автомобили без залога, гибкий формат аренды, возможность выкупа." },
+  ru: { title: "Аренда авто для работы в такси в Москве без залога", description: "Дарим первый день аренды бесплатно, новые автомобили без залога, гибкий формат аренды, возможность выкупа. Эконом, Комфорт, Комфорт Плюс, Бизнес." },
   en: { title: "Taxi car rental in Moscow with no deposit", description: "Your first rental day is free: new cars, no deposit, flexible rental and an option to own the car." },
   ky: { title: "Москвада таксиде иштөө үчүн күрөөсүз унаа ижарасы", description: "Ижаранын биринчи күнү бекер, жаңы унаалар күрөөсүз, ыңгайлуу ижара жана сатып алуу мүмкүнчүлүгү." },
   kk: { title: "Мәскеуде таксиде жұмыс істеуге кепілсіз көлік жалға алу", description: "Жалға алудың бірінші күні тегін, жаңа көліктер кепілсіз, икемді жалға алу және сатып алу мүмкіндігі." },

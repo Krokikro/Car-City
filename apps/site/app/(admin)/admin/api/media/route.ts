@@ -8,7 +8,7 @@ export const dynamic = "force-dynamic";
 // Список картинок для окна выбора в редакторе
 export async function GET() {
   const s = await getSession();
-  if (!s || s.stage !== "full" || !can(s.user.role, "content", "read")) return NextResponse.json({ items: [] }, { status: 401 });
+  if (!s || s.stage !== "full" || !(can(s.user, "pages", "read") || can(s.user, "articles", "read") || can(s.user, "media", "read"))) return NextResponse.json({ items: [] }, { status: 401 });
   const items = await q("SELECT id, name, w, h FROM media ORDER BY at DESC LIMIT 200");
   return NextResponse.json({ items }, { headers: { "cache-control": "no-store" } });
 }

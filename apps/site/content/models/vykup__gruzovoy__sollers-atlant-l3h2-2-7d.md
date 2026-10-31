@@ -4,6 +4,7 @@ title: "Аренда Sollers Atlant L3H2 2.7D с выкупом в Москве 
 h1: "Выкуп Sollers Atlant L3H2 2.7D"
 class: gruzovoy
 mode: vykup
+description: "Sollers Atlant L3H2 2.7D с выкупом для грузового тарифа. Гибкий график платежей, 14 дней в год без оплат, чистая репутация прозрачный договор на аренду с правом выкупа."
 ---
 
 BREADCRUMBS: Главная > Аренда авто с правом выкупа > Sollers Atlant L3H2 2.7D

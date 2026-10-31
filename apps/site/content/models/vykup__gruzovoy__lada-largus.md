@@ -4,6 +4,7 @@ title: "Аренда Lada Largus с выкупом в Москве на лучш
 h1: "Выкуп Lada Largus"
 class: gruzovoy
 mode: vykup
+description: "Lada Largus с выкупом для грузового тарифа. Гибкий график платежей, 14 дней в год без оплат, чистая репутация, прозрачный договор на аренду с правом выкупа."
 ---
 
 <!-- модель есть только в выкупе: страницы аренды /klassyi-avtomobilej/gruzovoy/lada-largus в списке нет -->

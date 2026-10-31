@@ -4,6 +4,7 @@ title: "Аренда Sollers SF4 L4 Рефрижератор с выкупом �
 h1: "Выкуп Sollers SF4 L4"
 class: gruzovoy
 mode: vykup
+description: "Sollers SF4 L4 с выкупом для грузового тарифа. Гибкий график платежей, 14 дней в год без оплат, чистая репутация прозрачный договор на аренду Sollers SF4 с правом выкупа"
 ---
 
 BREADCRUMBS: Главная > Аренда авто с правом выкупа > Sollers Atlant SF4 L4

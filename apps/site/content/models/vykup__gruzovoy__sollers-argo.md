@@ -4,6 +4,7 @@ title: "Аренда Sollers Sollers Argo с выкупом в Москве на
 h1: "Выкуп Sollers Argo"
 class: gruzovoy
 mode: vykup
+description: "Sollers Argo с выкупом для грузового тарифа. Гибкий график платежей, 14 дней в год без оплат, чистая репутация прозрачный договор на аренду с правом выкупа."
 ---
 
 <!-- «Sollers Sollers Argo» в title — так на сайте -->

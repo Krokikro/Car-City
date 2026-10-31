@@ -3,15 +3,22 @@ import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { dbEnabled, q, q1 } from "../db";
 import { sha256, token, verifyPassword } from "./crypto";
-import { can, isRole, type Role, type Section } from "./roles";
+import { can, isScope, normPerms, type LeadScope, type Perms, type Section } from "./roles";
 
 export interface AdminUser {
   id: string;
+  /** логин для входа; у старых пользователей совпадает с почтой */
+  login: string;
   email: string;
   name: string;
-  role: Role;
+  role: string;
+  roleName: string;
+  perms: Perms;
+  leadScope: LeadScope;
   totpOn: boolean;
   totpSecret: string | null;
+  /** пароль выдал администратор — при первом входе нужно сменить */
+  mustChange: boolean;
 }
 export interface Session { user: AdminUser; stage: "pw" | "full"; hash: string }
 
@@ -52,14 +59,21 @@ export async function getSession(): Promise<Session | null> {
   const t = (await cookies()).get(COOKIE)?.value;
   if (!t) return null;
   const hash = sha256(t);
-  const r = await q1<{ stage: string; id: string; email: string; name: string; role: string; totp_on: boolean; totp_secret: string | null }>(
-    `SELECT s.stage, u.id, u.email, u.name, u.role, u.totp_on, u.totp_secret
-       FROM sessions s JOIN users u ON u.id = s.user_id
+  const r = await q1<{ stage: string; id: string; login: string | null; email: string | null; name: string; role: string; totp_on: boolean; totp_secret: string | null; must_change: boolean; role_name: string | null; perms: unknown; lead_scope: string | null }>(
+    `SELECT s.stage, u.id, u.login, u.email, u.name, u.role, u.totp_on, u.totp_secret, u.must_change, r.name AS role_name, r.perms, r.lead_scope
+       FROM sessions s JOIN users u ON u.id = s.user_id LEFT JOIN roles r ON r.id = u.role
       WHERE s.token_hash=$1 AND s.expires_at > now() AND u.active`,
     [hash],
   );
-  if (!r || !isRole(r.role)) return null;
-  return { hash, stage: r.stage === "full" ? "full" : "pw", user: { id: r.id, email: r.email, name: r.name, role: r.role, totpOn: r.totp_on, totpSecret: r.totp_secret } };
+  if (!r) return null;
+  // роль удалили или её нет в базе — доступа нет (кроме администратора)
+  if (!r.role_name && r.role !== "admin") return null;
+  const user: AdminUser = {
+    id: r.id, login: r.login || r.email || "", email: r.email || "", name: r.name, role: r.role, roleName: r.role_name || "Администратор",
+    perms: normPerms(r.role, r.perms), leadScope: r.lead_scope && isScope(r.lead_scope) ? r.lead_scope : "all",
+    totpOn: r.totp_on, totpSecret: r.totp_secret, mustChange: r.must_change,
+  };
+  return { hash, stage: r.stage === "full" ? "full" : "pw", user };
 }
 
 /**
@@ -69,8 +83,9 @@ export async function getSession(): Promise<Session | null> {
 export async function requireUser(opts: { section?: Section; need?: "read" | "write"; allowNoTotp?: boolean } = {}) {
   const s = await getSession();
   if (!s || s.stage !== "full") redirect("/admin/login");
+  if (s.user.mustChange && !opts.allowNoTotp) redirect("/admin/security?change=1");
   if (!s.user.totpOn && twoFaRequired() && !opts.allowNoTotp) redirect("/admin/security?enroll=1");
-  if (opts.section && !can(s.user.role, opts.section, opts.need ?? "read")) redirect("/admin?denied=1");
+  if (opts.section && !can(s.user, opts.section, opts.need ?? "read")) redirect("/admin?denied=1");
   return s.user;
 }
 
@@ -78,8 +93,9 @@ export async function requireUser(opts: { section?: Section; need?: "read" | "wr
 export async function requireCan(section: Section, need: "read" | "write" = "write") {
   const s = await getSession();
   if (!s || s.stage !== "full") throw new Error("Нужно войти");
+  if (s.user.mustChange) throw new Error("Сначала смените выданный пароль");
   if (!s.user.totpOn && twoFaRequired()) throw new Error("Сначала включите 2FA");
-  if (!can(s.user.role, section, need)) throw new Error("Недостаточно прав");
+  if (!can(s.user, section, need)) throw new Error("Недостаточно прав");
   return s.user;
 }
 
@@ -99,15 +115,16 @@ export async function loginOk(email: string, userId: string) {
   await q("DELETE FROM sessions WHERE expires_at < now()").catch(() => {});
 }
 
-export async function checkPassword(email: string, password: string) {
-  const u = await q1<{ id: string; pass_hash: string | null; active: boolean }>("SELECT id, pass_hash, active FROM users WHERE lower(email)=lower($1)", [email.trim()]);
+/** Вход по логину или по почте */
+export async function checkPassword(login: string, password: string) {
+  const u = await q1<{ id: string; pass_hash: string | null; active: boolean }>("SELECT id, pass_hash, active FROM users WHERE lower(login)=lower($1) OR lower(email)=lower($1) ORDER BY (lower(login)=lower($1)) DESC LIMIT 1", [login.trim()]);
   const ok = verifyPassword(password, u?.pass_hash);
   return ok && u?.active ? u.id : null;
 }
 
-export async function audit(user: Pick<AdminUser, "id" | "email" | "role"> | null, action: string, entity?: string, entityId?: string, before?: unknown, after?: unknown) {
+export async function audit(user: { id: string; email?: string; login?: string; role: string } | null, action: string, entity?: string, entityId?: string, before?: unknown, after?: unknown) {
   await q("INSERT INTO audit (user_id, user_email, role, action, entity, entity_id, before, after, ip) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)", [
-    user?.id ?? null, user?.email ?? null, user?.role ?? null, action, entity ?? null, entityId ?? null,
+    user?.id ?? null, user ? user.login || user.email || null : null, user?.role ?? null, action, entity ?? null, entityId ?? null,
     before === undefined ? null : JSON.stringify(before), after === undefined ? null : JSON.stringify(after), await ipOf(),
   ]).catch((e) => console.error("audit:", e.message));
 }
