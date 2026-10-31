@@ -43,6 +43,7 @@ export function PageEditor({ lang, path, kind, readOnly, seoReadOnly = false, in
     el.setRangeText(r.text, a, b, "end");
     if (r.select) el.setSelectionRange(a + r.select[0], a + r.select[1]);
     setV((o) => ({ ...o, body: el.value }));
+    el.dispatchEvent(new Event("input", { bubbles: true }));
     setDirty(true);
     el.focus();
   };
@@ -66,21 +67,23 @@ export function PageEditor({ lang, path, kind, readOnly, seoReadOnly = false, in
 
   return (
     <div className={`pnl-editor${view ? " with-view" : ""}`}>
-      <form ref={form} action={savePageAction} onKeyDown={onKey} className="pnl-form pnl-ed-form">
+      <form ref={form} id="ed-form" action={savePageAction} onKeyDown={onKey} className="pnl-form pnl-ed-form">
         <input type="hidden" name="lang" value={lang} />
         <input type="hidden" name="path" value={path} />
         <input type="hidden" name="kind" value={kind} />
         <fieldset disabled={readOnly}>
+          {hasDraft && <p className="pnl-msg pnl-warn">Есть неопубликованный черновик: он открыт ниже. На сайте пока предыдущая версия.</p>}
+          {hidden && <p className="pnl-msg pnl-warn">Страница снята с публикации. Нажмите «Опубликовать», чтобы вернуть её.</p>}
           <section className="pnl-card">
             <h2>Для поисковиков</h2>
             {seoReadOnly && <p className="pnl-muted">Title и description меняет SEO-специалист (раздел SEO). Здесь — только просмотр.</p>}
-            <label>Title (заголовок в выдаче)
+            <label><span className="pnl-lrow">Title (заголовок в выдаче)<span data-cc-for="title" /></span>
               <input name="title" value={v.title} onChange={set("title")} required maxLength={LIM.title} data-warn={LIM.titleWarn} readOnly={seoReadOnly} />
-              <small className={tl > T_MAX ? "warn" : ""}>{tl} из ~{T_MAX} символов. Длинный заголовок в выдаче обрежется.</small>
+              <small>В выдаче видно примерно {LIM.titleWarn} символов, дальше заголовок обрежется.</small>
             </label>
-            <label>Description (описание в выдаче)
+            <label><span className="pnl-lrow">Description (описание в выдаче)<span data-cc-for="description" /></span>
               <textarea name="description" rows={3} value={v.description} onChange={set("description")} maxLength={LIM.description} data-warn={LIM.descriptionWarn} readOnly={seoReadOnly} />
-              <small className={dl > D_MAX ? "warn" : ""}>{dl} из ~{D_MAX} символов.</small>
+              <small>В выдаче видно примерно {LIM.descriptionWarn} символов.</small>
             </label>
             <div className="pnl-serp" aria-label="Так страница выглядит в поиске">
               <span className="pnl-serp-url">{url}</span>
@@ -91,7 +94,7 @@ export function PageEditor({ lang, path, kind, readOnly, seoReadOnly = false, in
 
           <section className="pnl-card">
             <h2>Текст страницы</h2>
-            <label>Заголовок H1<input name="h1" value={v.h1} onChange={set("h1")} required maxLength={LIM.h1} /></label>
+            <label><span className="pnl-lrow">Заголовок H1<span data-cc-for="h1" /></span><input name="h1" value={v.h1} onChange={set("h1")} required maxLength={LIM.h1} /></label>
             <div className="pnl-toolbar" role="toolbar" aria-label="Оформление текста">
               <button type="button" onClick={() => line("## ")} title="Заголовок раздела">H2</button>
               <button type="button" onClick={() => line("### ")} title="Подзаголовок">H3</button>
@@ -107,13 +110,8 @@ export function PageEditor({ lang, path, kind, readOnly, seoReadOnly = false, in
 
           {!readOnly && (
             <section className="pnl-card pnl-publish">
-              <h2>Публикация</h2>
-              {hasDraft && <p className="pnl-msg pnl-warn">Есть неопубликованный черновик: он открыт выше. На сайте пока предыдущая версия.</p>}
-              {hidden && <p className="pnl-msg pnl-warn">Страница снята с публикации. Нажмите «Опубликовать», чтобы вернуть её.</p>}
-              <div className="pnl-pub-row">
-                <button className="pnl-btn" type="submit" name="intent" value="draft">Сохранить черновик</button>
-                <button className="pnl-btn pnl-btn-main" type="submit" name="intent" value="publish">Опубликовать сейчас</button>
-              </div>
+              <h2>Публикация по расписанию</h2>
+              <p className="pnl-muted">«Сохранить черновик» и «Опубликовать» — вверху страницы. Здесь можно отложить публикацию или снять страницу с сайта.</p>
               <div className="pnl-pub-row">
                 <label className="pnl-inline-l">Или опубликовать в
                   <input type="datetime-local" name="publish_at" defaultValue={publishAt} />

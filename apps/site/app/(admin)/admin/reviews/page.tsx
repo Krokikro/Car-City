@@ -53,7 +53,8 @@ export default async function Reviews({ searchParams }: { searchParams: Promise<
   const tabs: [string, string][] = [["new", `Новые (${fresh.length})`], ["site", `На сайте (${pub.length + file.length - hiddenKeys.size})`], ["off", `Скрытые и игнор (${ign.length + hid.length})`], ["add", "Добавить отзыв"]];
 
   return (
-    <Shell user={user} active="reviews" title="Отзывы" sub="Новые отзывы из Яндекс.Карт, 2ГИС, Flamp и Yell приходят сюда. Нажмите «Опубликовать» — отзыв появится на сайте первым в своём источнике. «Игнорировать» — на сайте его не будет." flash={sp}>
+    <Shell user={user} active="reviews" title="Отзывы" sub="Новые отзывы из Яндекс.Карт, 2ГИС, Flamp и Yell приходят сюда. Нажмите «Опубликовать» — отзыв появится на сайте первым в своём источнике. «Игнорировать» — на сайте его не будет." flash={sp}
+      actions={<a className="pnl-btn" href="/reviews" target="_blank" rel="noreferrer">Посмотреть на сайте ↗</a>}>
       <div className="pnl-tools"><div className="pnl-tabs">{tabs.map(([id, name]) => <Link key={id} href={`/admin/reviews?tab=${id}`} className={tab === id ? "on" : ""}>{name}</Link>)}</div></div>
 
       {tab === "new" && (

@@ -59,7 +59,7 @@ export default async function Redirects({ searchParams }: { searchParams: Promis
           )}
           <form className="pnl-filter" action="/admin/redirects"><input name="q" placeholder="Поиск по адресу или заметке" defaultValue={sp.q} /><button className="pnl-btn" type="submit">Найти</button></form>
           <div className="pnl-table-wrap">
-            <table className="pnl-table">
+            <table className="pnl-table pnl-redir">
               <thead><tr><th>Откуда</th><th>Куда</th><th>Код</th><th>Срабатываний</th><th>Заметка</th><th></th></tr></thead>
               <tbody>
                 {list.map((r) => {
@@ -73,11 +73,11 @@ export default async function Redirects({ searchParams }: { searchParams: Promis
                       <td className="pnl-muted">{r.note}{r.created_by ? ` · ${r.created_by}` : ""}</td>
                       <td className="pnl-actions-cell">
                         {write && (
-                          <>
+                          <div className="pnl-acts">
                             <Link className="pnl-btn pnl-btn-sm" href={`/admin/redirects?edit=${r.id}`}>Изменить</Link>
                             <form action={redirectToolAction}><input type="hidden" name="id" value={r.id} /><input type="hidden" name="op" value="toggle" /><button className="pnl-btn pnl-btn-sm" type="submit">{r.active ? "Выключить" : "Включить"}</button></form>
                             <form action={redirectToolAction}><input type="hidden" name="id" value={r.id} /><input type="hidden" name="op" value="delete" /><button className="pnl-btn pnl-btn-sm pnl-btn-warn" type="submit">Удалить</button></form>
-                          </>
+                          </div>
                         )}
                       </td>
                     </tr>
@@ -94,7 +94,7 @@ export default async function Redirects({ searchParams }: { searchParams: Promis
           <p className="pnl-muted">Адреса, которые открывали, а страницы нет. После переезда сюда попадут старые адреса, которые мы не учли, — для каждого можно сразу сделать редирект. Сканеры уязвимостей (.php, .env и т. п.) не записываются.</p>
           {sp.from && write && <section className="pnl-card"><h2>Редирект для {sp.from}</h2><Form from={sp.from} /></section>}
           <div className="pnl-table-wrap">
-            <table className="pnl-table">
+            <table className="pnl-table pnl-redir">
               <thead><tr><th>Адрес</th><th>Раз</th><th>Последний раз</th><th>Откуда пришли</th><th></th></tr></thead>
               <tbody>
                 {nf.map((r) => (
@@ -105,10 +105,10 @@ export default async function Redirects({ searchParams }: { searchParams: Promis
                     <td className="pnl-muted pnl-ellipsis">{r.referer || "—"}</td>
                     <td className="pnl-actions-cell">
                       {write && (
-                        <>
+                        <div className="pnl-acts">
                           <Link className="pnl-btn pnl-btn-sm pnl-btn-main" href={`/admin/redirects?tab=404&from=${encodeURIComponent(r.path)}`}>Сделать редирект</Link>
                           <form action={notFoundToolAction}><input type="hidden" name="op" value="ignore" /><input type="hidden" name="path" value={r.path} /><button className="pnl-btn pnl-btn-sm" type="submit">Скрыть</button></form>
-                        </>
+                        </div>
                       )}
                     </td>
                   </tr>

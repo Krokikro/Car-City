@@ -17,7 +17,8 @@ export default async function Catalog({ searchParams }: { searchParams: Promise<
   const write = can(user, "catalog", "write");
   const p = await patches();
   return (
-    <Shell user={user} active="catalog" title="Автопарк" sub={`${BASE_FLEET.length} моделей. Цена, класс, подпись и показ на сайте. Изменения сразу попадают на главную, в калькулятор и в тарифы.`} flash={sp}>
+    <Shell user={user} active="catalog" title="Автопарк" sub={`${BASE_FLEET.length} моделей. Цена, класс, подпись и показ на сайте. Изменения сразу попадают на главную, в калькулятор и в тарифы.`} flash={sp}
+      actions={<a className="pnl-btn" href="/#avtopark" target="_blank" rel="noreferrer">Посмотреть на сайте ↗</a>}>
       <HomeFleetOrder
         all={BASE_FLEET.filter((c) => !p.get(c.slug)?.hidden).map((c) => ({ slug: c.slug, name: { ...c, ...(p.get(c.slug) ?? {}) }.name, cls: { ...c, ...(p.get(c.slug) ?? {}) }.cls }))}
         initial={[...BASE_FLEET].filter((c) => !p.get(c.slug)?.hidden).map((c) => ({ slug: c.slug, pos: p.get(c.slug)?.featured ?? c.featured ?? 0 })).filter((x) => x.pos > 0).sort((a, b) => a.pos - b.pos).map((x) => x.slug)}

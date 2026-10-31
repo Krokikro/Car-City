@@ -28,7 +28,7 @@ const NAV: { group: string; items: Nav[] }[] = [
     { s: "migration", href: "/admin/migration", icon: "M4 12h10M10 6l6 6-6 6M18 4v16" },
   ] },
   { group: "Управление", items: [
-    { s: "settings", href: "/admin/settings", icon: "M12 9a3 3 0 100 6 3 3 0 000-6zM19 12l2-1-1-3-2 .3-1.3-1.3L17 5l-3-1-1 2h-2L10 4 7 5l.3 2L6 8.3 4 8l-1 3 2 1v2l-2 1 1 3 2-.3L7.3 17 7 19l3 1 1-2h2l1 2 3-1-.3-2 1.3-1.3 2 .3 1-3-2-1z" },
+    { s: "settings", label: "Настройки сайта", href: "/admin/settings", icon: "M12 9a3 3 0 100 6 3 3 0 000-6zM19 12l2-1-1-3-2 .3-1.3-1.3L17 5l-3-1-1 2h-2L10 4 7 5l.3 2L6 8.3 4 8l-1 3 2 1v2l-2 1 1 3 2-.3L7.3 17 7 19l3 1 1-2h2l1 2 3-1-.3-2 1.3-1.3 2 .3 1-3-2-1z" },
     { s: "settings", id: "texts", href: "/admin/texts?s=ui", label: "Тексты сайта", icon: "M5 5h14M12 5v14M8 19h8" },
     { s: "users", href: "/admin/users", icon: "M9 11a4 4 0 100-8 4 4 0 000 8zM2 21c0-4 3-6 7-6s7 2 7 6M17 11a3 3 0 100-6M18 15c3 .5 4 2.5 4 6" },
     { s: "roles", href: "/admin/roles", icon: "M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6zM9 12l2 2 4-4" },
@@ -36,11 +36,13 @@ const NAV: { group: string; items: Nav[] }[] = [
   ] },
 ];
 
-export async function Shell({ user, active, title, sub, actions, children, flash }: {
+export async function Shell({ user, active, title, sub, back, actions, children, flash }: {
   user: AdminUser;
   active: Section | "security" | "content" | "texts-home" | "texts";
   title: string;
   sub?: string;
+  /** ссылка «назад» над заголовком: [адрес, текст] */
+  back?: [string, string];
   actions?: React.ReactNode;
   children: React.ReactNode;
   flash?: { e?: string; ok?: string };
@@ -52,6 +54,8 @@ export async function Shell({ user, active, title, sub, actions, children, flash
     <div className="pnl">
       <aside className="pnl-side">
         <Link href="/admin" className="pnl-logo"><b>Car City</b><span>админка</span></Link>
+        <input type="checkbox" id="pnl-mnav" className="pnl-mnav-t" hidden />
+        <label htmlFor="pnl-mnav" className="pnl-mnav-b">Меню</label>
         <nav>
           {NAV.map((g) => {
             const items = g.items.filter((n) => can(user, n.s, "read"));
@@ -72,16 +76,17 @@ export async function Shell({ user, active, title, sub, actions, children, flash
         {can(user, "settings", "read") && (
           <form action={setThemeAction} className="pnl-theme" title="Какая версия сайта видна посетителям">
             <input type="hidden" name="back" value="/admin" />
-            <span className="pnl-theme-l">Сайт сейчас</span>
             <span className={`pnl-theme-sw ${site.theme}`} aria-hidden="true"><i /></span>
-            <b>{site.theme === "light" ? "Светлый" : "Тёмный"}</b>
-            {canTheme && <button className="pnl-btn pnl-btn-sm" type="submit" name="theme" value={site.theme === "light" ? "dark" : "light"}>Переключить на {site.theme === "light" ? "тёмный" : "светлый"}</button>}
+            <span className="pnl-theme-t"><small>Сайт</small><b>{site.theme === "light" ? "Светлый" : "Тёмный"}</b></span>
+            {canTheme && <button className="pnl-btn pnl-btn-sm" type="submit" name="theme" value={site.theme === "light" ? "dark" : "light"} title={`Переключить сайт на ${site.theme === "light" ? "тёмную" : "светлую"} версию`}>Сменить</button>}
           </form>
         )}
         <div className="pnl-me">
-          <Link href="/admin/security" className={active === "security" ? "on" : ""}><b>{user.name || user.login}</b><span>{user.roleName}</span></Link>
-          <form action={logoutAction}><button className="pnl-link" type="submit">Выйти</button></form>
-          <a className="pnl-link" href="/" target="_blank" rel="noreferrer">Открыть сайт ↗</a>
+          <Link href="/admin/security" className={`pnl-me-who${active === "security" ? " on" : ""}`} title="Безопасность: пароль и 2FA"><b>{user.name || user.login}</b><span>{user.roleName}</span></Link>
+          <div className="pnl-me-row">
+            <a className="pnl-link" href="/" target="_blank" rel="noreferrer">Сайт ↗</a>
+            <form action={logoutAction}><button className="pnl-link" type="submit">Выйти</button></form>
+          </div>
         </div>
       </aside>
       <main className="pnl-main">
@@ -93,6 +98,7 @@ export async function Shell({ user, active, title, sub, actions, children, flash
         )}
         <header className="pnl-head">
           <div>
+            {back && <Link className="pnl-back" href={back[0]}>← {back[1]}</Link>}
             <h1>{title}</h1>
             {sub && <p>{sub}</p>}
           </div>

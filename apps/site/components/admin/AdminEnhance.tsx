@@ -1,5 +1,5 @@
 "use client";
-// Для всех полей админки с ограничением длины (maxlength) показывает счётчик «N / max»,
+// Для всех полей админки с ограничением длины (maxlength) показывает счётчик «N / max» (сколько введено / сколько можно),
 // чтобы было видно, сколько символов ещё можно ввести. Кнопки [data-reset] возвращают исходный текст поля.
 import { useEffect } from "react";
 
@@ -10,16 +10,20 @@ function attach(el: HTMLInputElement | HTMLTextAreaElement) {
   el.dataset.cc = "1";
   const max = el.maxLength;
   const warn = Number(el.dataset.warn) || 0;
-  const out = document.createElement("small");
-  out.className = "pnl-cc";
+  // место под счётчик рядом с названием поля (data-cc-for), иначе — строка под полем
+  const slot = el.name ? document.querySelector<HTMLElement>(`[data-cc-for="${CSS.escape(el.name)}"]`) : null;
+  const out = slot ?? document.createElement("small");
+  out.classList.add("pnl-cc");
   out.setAttribute("aria-live", "polite");
+  if (warn) out.title = `Рекомендуется до ${warn} символов — столько видно в поисковой выдаче`;
   const upd = () => {
     const n = len(el.value);
-    out.textContent = `${n} из ${max} символов${warn && n > warn ? ` · лучше до ${warn}` : ""}`;
-    out.classList.toggle("pnl-cc-warn", n >= max * 0.9 || (warn > 0 && n > warn));
+    out.textContent = `${n} / ${max}`;
+    out.classList.toggle("pnl-cc-warn", (warn > 0 && n > warn) || n >= max * 0.9);
+    out.classList.toggle("pnl-cc-max", n >= max);
   };
   el.addEventListener("input", upd);
-  el.insertAdjacentElement("afterend", out);
+  if (!slot) el.insertAdjacentElement("afterend", out);
   upd();
 }
 

@@ -49,11 +49,11 @@ export default async function Users({ searchParams }: { searchParams: Promise<{ 
           <form action={createUserAction} className="pnl-form pnl-user-form" autoComplete="off">
             <label>Имя<input name="name" placeholder="Иван Петров" maxLength={LIM.personName} /></label>
             <label>Логин<input name="login" required maxLength={LIM.login} pattern="[A-Za-z0-9._@\-]{3,60}" placeholder="ivan.petrov" autoCapitalize="none" spellCheck={false} /><small>Латиница, цифры, точка, дефис</small></label>
-            <label>Почта <span className="pnl-muted">(необязательно)</span><input name="email" type="email" placeholder="ivan@car-city.pro" maxLength={LIM.email} /></label>
+            <label>Почта<input name="email" type="email" placeholder="необязательно" maxLength={LIM.email} /></label>
             <label>Роль<select name="role" defaultValue="manager">{assignable.map((r) => <option key={r.id} value={r.id}>{r.name}</option>)}</select></label>
             <label>Пароль<input name="password" type="text" minLength={10} placeholder="пусто — придумаем сами" autoComplete="new-password" /><small>От 10 символов, буквы и цифры</small></label>
             <label className="pnl-check"><input type="checkbox" name="must_change" defaultChecked /> Попросить сменить пароль при первом входе</label>
-            <button className="pnl-btn pnl-btn-main" type="submit">Создать</button>
+            <div><button className="pnl-btn pnl-btn-main" type="submit">Создать сотрудника</button></div>
           </form>
         </section>
       )}
@@ -101,13 +101,13 @@ export default async function Users({ searchParams }: { searchParams: Promise<{ 
                   <td className="pnl-muted">{u.last_login ? fmt(u.last_login) : "не входил"}</td>
                   <td className="pnl-actions-cell">
                     {!mine && !locked && write && (
-                      <>
+                      <div className="pnl-acts">
                         {!editing && <Link className="pnl-btn pnl-btn-sm" href={`/admin/users?edit=${u.id}#u-${u.id}`}>Изменить</Link>}
                         <form action={resetPasswordAction}><input type="hidden" name="id" value={u.id} /><button className="pnl-btn pnl-btn-sm" type="submit" title="Сгенерировать новый пароль и закрыть все сеансы">Новый пароль</button></form>
                         <form action={reinviteAction}><input type="hidden" name="id" value={u.id} /><button className="pnl-btn pnl-btn-sm" type="submit" title="Ссылка, по которой сотрудник сам задаст пароль">Ссылка</button></form>
                         {u.totp_on && <form action={reset2faAction}><input type="hidden" name="id" value={u.id} /><button className="pnl-btn pnl-btn-sm" type="submit">Сбросить 2FA</button></form>}
                         <form action={toggleActiveAction}><input type="hidden" name="id" value={u.id} /><button className={`pnl-btn pnl-btn-sm${u.active ? " pnl-btn-warn" : " pnl-btn-main"}`} type="submit">{u.active ? "Отключить" : "Включить"}</button></form>
-                      </>
+                      </div>
                     )}
                     {mine && <span className="pnl-muted">это вы</span>}
                   </td>

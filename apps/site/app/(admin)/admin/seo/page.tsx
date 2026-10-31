@@ -35,7 +35,7 @@ export default async function Seo({ searchParams }: { searchParams: Promise<{ e?
   let body: React.ReactNode = null;
   if (tab === "general") {
     body = (
-      <form action={saveSeoAction} className="pnl-form">
+      <form id="seo-form" action={saveSeoAction} className="pnl-form">
         <input type="hidden" name="tab" value="general" />
         <fieldset disabled={!write} className="pnl-plain">
           <section className="pnl-card">
@@ -62,7 +62,7 @@ export default async function Seo({ searchParams }: { searchParams: Promise<{ e?
     );
   } else if (tab === "templates") {
     body = (
-      <form action={saveSeoAction} className="pnl-form">
+      <form id="seo-form" action={saveSeoAction} className="pnl-form">
         <input type="hidden" name="tab" value="templates" />
         <fieldset disabled={!write} className="pnl-plain">
           <section className="pnl-card">
@@ -82,7 +82,7 @@ export default async function Seo({ searchParams }: { searchParams: Promise<{ e?
     );
   } else if (tab === "counters") {
     body = (
-      <form action={saveSeoAction} className="pnl-form">
+      <form id="seo-form" action={saveSeoAction} className="pnl-form">
         <input type="hidden" name="tab" value="counters" />
         <fieldset disabled={!write} className="pnl-plain">
           <section className="pnl-card">
@@ -111,7 +111,7 @@ export default async function Seo({ searchParams }: { searchParams: Promise<{ e?
     );
   } else if (tab === "robots") {
     body = (
-      <form action={saveSeoAction} className="pnl-form">
+      <form id="seo-form" action={saveSeoAction} className="pnl-form">
         <input type="hidden" name="tab" value="robots" />
         <fieldset disabled={!write} className="pnl-plain">
           <section className="pnl-card">
@@ -126,7 +126,7 @@ export default async function Seo({ searchParams }: { searchParams: Promise<{ e?
     );
   } else if (tab === "sitemap") {
     body = (
-      <form action={saveSeoAction} className="pnl-form">
+      <form id="seo-form" action={saveSeoAction} className="pnl-form">
         <input type="hidden" name="tab" value="sitemap" />
         <fieldset disabled={!write} className="pnl-plain">
           <section className="pnl-card">
@@ -214,7 +214,11 @@ export default async function Seo({ searchParams }: { searchParams: Promise<{ e?
   }
 
   return (
-    <Shell user={user} active="seo" title="SEO" sub="Всё для поисковиков: мета-теги, индексация, robots.txt, sitemap, счётчики. Изменения действуют сразу." flash={sp}>
+    <Shell user={user} active="seo" title="SEO" sub="Мета-теги, индексация, robots.txt, sitemap, счётчики. Изменения действуют сразу." flash={sp}
+      actions={<>
+        {tab === "robots" ? <a className="pnl-btn" href="/robots.txt" target="_blank" rel="noreferrer">Посмотреть robots.txt ↗</a> : tab === "sitemap" ? <a className="pnl-btn" href="/sitemap.xml" target="_blank" rel="noreferrer">Посмотреть sitemap.xml ↗</a> : <a className="pnl-btn" href="/" target="_blank" rel="noreferrer">Посмотреть сайт ↗</a>}
+        {write && tab !== "pages" && <><span className="pnl-sep" aria-hidden="true" /><button className="pnl-btn pnl-btn-main" type="submit" form="seo-form">Сохранить</button></>}
+      </>}>
       {Tabs}
       {body}
     </Shell>

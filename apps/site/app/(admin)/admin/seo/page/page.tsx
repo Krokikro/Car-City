@@ -36,8 +36,13 @@ export default async function PageSeoEdit({ searchParams }: { searchParams: Prom
   const type = pageType(self, base.kind);
   return (
     <Shell user={user} active="seo" title={`SEO: ${base.h1 || "Главная"}`} sub={`${self} · ${PAGE_TYPE_NAMES[type]}`} flash={sp}
-      actions={<><Link className="pnl-btn" href={`/admin/seo?tab=pages&lang=${lang}`}>← Все страницы</Link>{doc && (can(user, "pages", "read") || can(user, "articles", "read")) && <Link className="pnl-btn" href={`/admin/content/edit?lang=${lang}&path=${encodeURIComponent(doc.path)}`}>Текст страницы</Link>}<a className="pnl-btn" href={self} target="_blank" rel="noreferrer">Открыть ↗</a></>}>
-      <form action={savePageSeoAction} className="pnl-form">
+      back={[`/admin/seo?tab=pages&lang=${lang}`, "SEO: все страницы"]}
+      actions={<>
+        {doc && (can(user, "pages", "read") || can(user, "articles", "read")) && <Link className="pnl-btn" href={`/admin/content/edit?lang=${lang}&path=${encodeURIComponent(doc.path)}`}>Текст страницы</Link>}
+        <a className="pnl-btn" href={self} target="_blank" rel="noreferrer">Посмотреть на сайте ↗</a>
+        {write && <><span className="pnl-sep" aria-hidden="true" /><button className="pnl-btn pnl-btn-main" type="submit" form="seo-page-form">Сохранить и опубликовать</button></>}
+      </>}>
+      <form id="seo-page-form" action={savePageSeoAction} className="pnl-form">
         <input type="hidden" name="lang" value={lang} />
         <input type="hidden" name="path" value={doc?.path ?? "/"} />
         <fieldset disabled={!write} className="pnl-plain">
@@ -45,8 +50,8 @@ export default async function PageSeoEdit({ searchParams }: { searchParams: Prom
             <h2>В выдаче</h2>
             <div className="pnl-serp"><span className="pnl-serp-url">car-city.pro{self === "/" ? "" : self}</span><b>{finalTitle}</b><p>{String(m.description ?? "")}</p></div>
             <p className="pnl-muted">Пустые поля — значение из текста страницы: title «{base.title}», description «{base.description || "—"}».</p>
-            <label>Title<input name="title" defaultValue={ps.title ?? ""} placeholder={base.title} maxLength={LIM.title} data-warn={LIM.titleWarn} /><small>До ~60–70 символов видно в выдаче</small></label>
-            <label>Description<textarea name="description" rows={3} defaultValue={ps.description ?? ""} placeholder={base.description} maxLength={LIM.description} data-warn={LIM.descriptionWarn} /><small>До ~160 символов</small></label>
+            <label><span className="pnl-lrow">Title<span data-cc-for="title" /></span><input name="title" defaultValue={ps.title ?? ""} placeholder={base.title} maxLength={LIM.title} data-warn={LIM.titleWarn} /><small>В выдаче видно примерно {LIM.titleWarn} символов</small></label>
+            <label><span className="pnl-lrow">Description<span data-cc-for="description" /></span><textarea name="description" rows={3} defaultValue={ps.description ?? ""} placeholder={base.description} maxLength={LIM.description} data-warn={LIM.descriptionWarn} /><small>В выдаче видно примерно {LIM.descriptionWarn} символов</small></label>
             <label>Keywords<input name="keywords" maxLength={LIM.keywords} defaultValue={ps.keywords ?? ""} /><small>Яндекс и Google почти не учитывают; можно оставить пустым</small></label>
             {old && (
               <div className="pnl-old">
@@ -82,7 +87,7 @@ export default async function PageSeoEdit({ searchParams }: { searchParams: Prom
             <h2>Микроразметка</h2>
             <p className="pnl-muted">Своя разметка schema.org (JSON-LD) в дополнение к автоматической: например, FAQPage, Product, Offer, Event.</p>
             <label>JSON-LD<textarea name="jsonLd" rows={8} maxLength={LIM.jsonLd} defaultValue={ps.jsonLd ?? ""} className="pnl-mono" placeholder={'{\n  "@context": "https://schema.org",\n  "@type": "FAQPage",\n  "mainEntity": []\n}'} /></label>
-            {write && <button className="pnl-btn pnl-btn-main" type="submit">Сохранить</button>}
+            {write && <div><button className="pnl-btn pnl-btn-main" type="submit">Сохранить и опубликовать</button></div>}
           </section>
         </fieldset>
       </form>

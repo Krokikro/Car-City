@@ -35,7 +35,16 @@ export default async function Edit({ searchParams }: { searchParams: Promise<{ e
 
   return (
     <Shell user={user} active={sec} title={cur.h1 || path} sub={`${path} · ${state}`} flash={sp}
-      actions={<><Link className="pnl-btn" href={`/admin/content?lang=${lang}&kind=${kind}`}>← К списку</Link>{can(user, "seo", "read") && <Link className="pnl-btn" href={`/admin/seo/page?lang=${lang}&path=${encodeURIComponent(path)}`}>SEO страницы</Link>}<a className="pnl-btn" href={siteHref} target="_blank" rel="noreferrer">Открыть на сайте ↗</a></>}>
+      back={[`/admin/content?lang=${lang}&kind=${kind}`, kind === "article" ? "Статьи и блог" : "Страницы"]}
+      actions={<>
+        {can(user, "seo", "read") && <Link className="pnl-btn" href={`/admin/seo/page?lang=${lang}&path=${encodeURIComponent(path)}`}>SEO</Link>}
+        <a className="pnl-btn" href={siteHref} target="_blank" rel="noreferrer">Посмотреть на сайте ↗</a>
+        {write && <>
+          <span className="pnl-sep" aria-hidden="true" />
+          <button className="pnl-btn" type="submit" form="ed-form" name="intent" value="draft" title="Ctrl/⌘+S">Сохранить черновик</button>
+          <button className="pnl-btn pnl-btn-main" type="submit" form="ed-form" name="intent" value="publish">Опубликовать</button>
+        </>}
+      </>}>
       <PageEditor
         lang={lang} path={path} kind={kind} readOnly={!write} seoReadOnly={!seoWrite}
         initial={{ title: cur.title, h1: cur.h1, description: cur.description ?? "", body: cur.body }}

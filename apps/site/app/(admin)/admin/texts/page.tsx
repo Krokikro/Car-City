@@ -31,6 +31,7 @@ export default async function Texts({ searchParams }: { searchParams: Promise<{ 
   const vers = await q<{ id: string; bundle: string; at: string; by: string | null; n: number }>(
     "SELECT id::text, bundle, at, by, (SELECT count(*) FROM jsonb_object_keys(data))::int AS n FROM text_versions WHERE lang=$1 AND bundle = ANY($2) ORDER BY id DESC LIMIT 15", [lang, ids],
   );
+  const siteHref = sc.id === "contacts" ? "/contact" : sc.id === "form" ? (lang === "ru" ? "/#zayavka" : `/${lang}#zayavka`) : lang === "ru" ? "/" : `/${lang}`;
   const last = rows.map((r) => r.updated_at).sort().pop();
 
   // поля по группам
@@ -51,7 +52,15 @@ export default async function Texts({ searchParams }: { searchParams: Promise<{ 
   }
 
   return (
-    <Shell user={user} active={sc.section === "pages" ? "texts-home" : "texts"} title={`Тексты: ${sc.title}`} sub={sc.sub} flash={sp}>
+    <Shell user={user} active={sc.section === "pages" ? "texts-home" : "texts"} title={`Тексты: ${sc.title}`} sub={sc.sub} flash={sp}
+      actions={<>
+        <a className="pnl-btn" href={siteHref} target="_blank" rel="noreferrer">Посмотреть на сайте ↗</a>
+        {write && <>
+          <span className="pnl-sep" aria-hidden="true" />
+          <button className="pnl-btn" type="submit" form="texts-form" name="intent" value="draft">Сохранить черновик</button>
+          <button className="pnl-btn pnl-btn-main" type="submit" form="texts-form" name="intent" value="publish">Опубликовать</button>
+        </>}
+      </>}>
       <div className="pnl-tools">
         <div className="pnl-tabs">{visible.map((s) => <Link key={s.id} href={`/admin/texts?s=${s.id}`} className={s.id === sc.id ? "on" : ""}>{s.title}</Link>)}</div>
         {sc.langs.length > 1 && <div className="pnl-tabs">{sc.langs.map((l) => <Link key={l} href={`/admin/texts?s=${sc.id}&lang=${l}`} className={l === lang ? "on" : ""}>{LANG_NAMES[l]}</Link>)}</div>}
@@ -62,7 +71,7 @@ export default async function Texts({ searchParams }: { searchParams: Promise<{ 
         {lang !== "ru" && " Переводы публикуйте после вычитки носителем языка."}
       </p>
       {hasDraft && <p className="pnl-msg pnl-warn">Есть неопубликованный черновик: в полях показан он. На сайте пока опубликованная версия.</p>}
-      <form action={saveTextsAction} className="pnl-form pnl-texts">
+      <form id="texts-form" action={saveTextsAction} className="pnl-form pnl-texts">
         <input type="hidden" name="screen" value={sc.id} />
         <input type="hidden" name="lang" value={lang} />
         <fieldset disabled={!write} className="pnl-plain">
@@ -74,7 +83,7 @@ export default async function Texts({ searchParams }: { searchParams: Promise<{ 
                   const name = `f:${x.bundle}:${x.path}`;
                   return (
                     <label key={name} className={`pnl-tfield${x.changed ? " is-changed" : ""}${x.multiline ? " wide" : ""}`}>
-                      <span className="pnl-tlabel">{x.label}{x.changed && <em className="st st-qual">изменено</em>}{x.draft && <em className="st st-call">черновик</em>}</span>
+                      <span className="pnl-tlabel"><span className="pnl-tname">{x.label}{x.changed && <em className="st st-qual">изменено</em>}{x.draft && <em className="st st-call">черновик</em>}</span><span data-cc-for={name} /></span>
                       {x.multiline
                         ? <textarea name={name} defaultValue={x.value} maxLength={x.max} rows={Math.min(8, Math.max(2, Math.ceil(x.max / 110)))} placeholder={x.def} data-default={x.def} />
                         : <input name={name} defaultValue={x.value} maxLength={x.max} placeholder={x.def} data-default={x.def} />}
@@ -90,7 +99,6 @@ export default async function Texts({ searchParams }: { searchParams: Promise<{ 
               <button className="pnl-btn" type="submit" name="intent" value="draft">Сохранить черновик</button>
               <button className="pnl-btn pnl-btn-main" type="submit" name="intent" value="publish">Опубликовать</button>
               {hasDraft && <button className="pnl-btn pnl-btn-warn" type="submit" name="intent" value="discard" formNoValidate>Отбросить черновик</button>}
-              <a className="pnl-btn" href={lang === "ru" ? "/" : `/${lang}`} target="_blank" rel="noreferrer">Открыть сайт ↗</a>
             </div>
           )}
         </fieldset>

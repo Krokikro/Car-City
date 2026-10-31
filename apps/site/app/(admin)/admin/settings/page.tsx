@@ -24,7 +24,8 @@ export default async function Settings({ searchParams }: { searchParams: Promise
   const forced = themeForced();
   const meta = await q1<{ updated_at: string; updated_by: string | null }>("SELECT updated_at, updated_by FROM settings WHERE key='site'");
   return (
-    <Shell user={user} active="settings" title="Настройки сайта" sub="Какую версию сайта видят посетители" flash={sp}>
+    <Shell user={user} active="settings" title="Настройки сайта" sub="Какую версию сайта видят посетители" flash={sp}
+      actions={<a className="pnl-btn" href="/" target="_blank" rel="noreferrer">Посмотреть сайт ↗</a>}>
       {forced && <p className="pnl-msg pnl-err">На этой копии тема закреплена при сборке (переменная NEXT_PUBLIC_THEME) — это копия для опроса. Переключайте тему на основном сайте.</p>}
       <section className="pnl-card">
         <h2>Тема сайта</h2>
