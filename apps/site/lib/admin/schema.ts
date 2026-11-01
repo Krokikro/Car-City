@@ -94,6 +94,46 @@ CREATE TABLE IF NOT EXISTS leads (
   updated_at timestamptz NOT NULL DEFAULT now()
 );
 CREATE INDEX IF NOT EXISTS leads_at ON leads(at DESC);
+-- поля для фильтров и отчётов (заполняются при приёме заявки; старые дозаполняются из data)
+ALTER TABLE leads ADD COLUMN IF NOT EXISTS channel text;
+ALTER TABLE leads ADD COLUMN IF NOT EXISTS src_group text;
+ALTER TABLE leads ADD COLUMN IF NOT EXISTS city text;
+ALTER TABLE leads ADD COLUMN IF NOT EXISTS country text;
+ALTER TABLE leads ADD COLUMN IF NOT EXISTS lang text;
+ALTER TABLE leads ADD COLUMN IF NOT EXISTS origin text NOT NULL DEFAULT 'form';
+CREATE INDEX IF NOT EXISTS leads_channel ON leads(channel);
+-- чаты: сайт, Telegram, MAX, WhatsApp (Wazzup). Каждый диалог связан с заявкой.
+CREATE TABLE IF NOT EXISTS chats (
+  id text PRIMARY KEY,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  updated_at timestamptz NOT NULL DEFAULT now(),
+  channel text NOT NULL,
+  ext_id text,
+  token text,
+  name text NOT NULL DEFAULT '',
+  phone text NOT NULL DEFAULT '',
+  lang text,
+  lead_id text,
+  status text NOT NULL DEFAULT 'open',
+  unread int NOT NULL DEFAULT 0,
+  assignee uuid REFERENCES users(id) ON DELETE SET NULL,
+  last_text text NOT NULL DEFAULT '',
+  last_dir text,
+  meta jsonb NOT NULL DEFAULT '{}'
+);
+CREATE UNIQUE INDEX IF NOT EXISTS chats_ext ON chats(channel, ext_id) WHERE ext_id IS NOT NULL;
+CREATE INDEX IF NOT EXISTS chats_updated ON chats(updated_at DESC);
+CREATE TABLE IF NOT EXISTS chat_messages (
+  id bigserial PRIMARY KEY,
+  chat_id text NOT NULL REFERENCES chats(id) ON DELETE CASCADE,
+  at timestamptz NOT NULL DEFAULT now(),
+  dir text NOT NULL,
+  text text NOT NULL,
+  author text,
+  ext_id text,
+  error text
+);
+CREATE INDEX IF NOT EXISTS chat_messages_chat ON chat_messages(chat_id, id);
 CREATE TABLE IF NOT EXISTS audit (
   id bigserial PRIMARY KEY,
   at timestamptz NOT NULL DEFAULT now(),

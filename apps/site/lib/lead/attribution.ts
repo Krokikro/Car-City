@@ -1,5 +1,6 @@
 // Источник визита (PRD 8.1): UTM, yclid, реферер, страница входа, реферальный код.
-// Первая точка входа за сессию — в sessionStorage, последняя — по текущему адресу.
+// Первая точка входа хранится 90 дней (localStorage), последняя значимая — тоже: человек часто приходит из рекламы,
+// а заявку оставляет через несколько дней, зайдя напрямую. Без хранилища — работаем в пределах вкладки.
 // Только для браузера.
 
 import type { Touch } from "./types";
@@ -10,10 +11,15 @@ const PARAMS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_
 
 const cut = (s: string, n = 300) => s.slice(0, n);
 
+const TTL = 90 * 86_400_000;
+
 function read(key: string): Touch | null {
   try {
-    const v = sessionStorage.getItem(key);
-    return v ? (JSON.parse(v) as Touch) : null;
+    const v = localStorage.getItem(key) ?? sessionStorage.getItem(key);
+    if (!v) return null;
+    const t = JSON.parse(v) as Touch;
+    if (t.at && Date.now() - Date.parse(t.at) > TTL) { localStorage.removeItem(key); return null; }
+    return t;
   } catch {
     return null;
   }
@@ -21,9 +27,9 @@ function read(key: string): Touch | null {
 
 function write(key: string, t: Touch) {
   try {
-    sessionStorage.setItem(key, JSON.stringify(t));
+    localStorage.setItem(key, JSON.stringify(t));
   } catch {
-    // приватный режим — живём без хранилища
+    try { sessionStorage.setItem(key, JSON.stringify(t)); } catch { /* приватный режим — живём без хранилища */ }
   }
 }
 

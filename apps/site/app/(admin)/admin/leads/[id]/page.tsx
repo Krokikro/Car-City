@@ -9,6 +9,8 @@ import { updateLeadAction } from "../../actions";
 import { leadScope } from "@/lib/admin/scope";
 import { EXTRA_LABELS, MODE_LABELS, MESSENGER_LABELS, type Lead } from "@/lib/lead/types";
 import { LIM } from "@/lib/admin/limits";
+import { LANG_NAMES, ORIGIN_NAMES, geoLine } from "@/lib/admin/leads";
+import { attribute, sourceLine } from "@/lib/lead/source";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Заявка" };
@@ -26,26 +28,46 @@ export default async function LeadPage({ params, searchParams }: { params: Promi
   const staff = can(user, "leads", "write") && (user.role === "admin" || user.role === "commercial");
   const team = staff ? await q<{ id: string; name: string; role: string }>("SELECT id::text, name, role FROM users WHERE active AND role IN ('admin','commercial','manager','callcenter') ORDER BY name") : [];
   const d = l.data;
-  const touch = (t?: Lead["first"]) => t ? [t.utm_source, t.utm_medium, t.utm_campaign, t.utm_term && `«${t.utm_term}»`, t.referrer && `с ${t.referrer}`].filter(Boolean).join(" / ") : "";
+  const attr = d.attr ?? attribute(d.first, d.last);
   const hist = await q<{ at: string; user_email: string | null; action: string }>("SELECT at, user_email, action FROM audit WHERE entity='lead' AND entity_id=$1 ORDER BY at DESC LIMIT 15", [id]);
-  const tel = d.phone.replace(/[^\d+]/g, "");
+  const tel = (d.phone ?? "").replace(/[^\d+]/g, "");
 
   return (
-    <Shell user={user} active="leads" title={d.name} sub={`Заявка № ${l.id} · ${fmt(l.at, true)}`} flash={sp} actions={<Link className="pnl-btn" href="/admin/leads">← К заявкам</Link>}>
+    <Shell user={user} active="leads" title={d.name || "Без имени"} sub={`Заявка № ${l.id} · ${fmt(l.at, true)}`} flash={sp} back={["/admin/leads", "Заявки"]}>
       <div className="pnl-cols">
         <section className="pnl-card">
           <h2>Клиент</h2>
           <dl className="pnl-dl">
-            <dt>Телефон</dt><dd><a href={`tel:${tel}`}>{d.phone}</a></dd>
+            {d.phone ? <><dt>Телефон</dt><dd><a href={`tel:${tel}`}>{d.phone}</a></dd></> : null}
             {d.messenger && <><dt>Как связаться</dt><dd>{MESSENGER_LABELS[d.messenger]}</dd></>}
             {Object.entries(d.extra ?? {}).map(([k, v]) => <><dt key={`k${k}`}>{EXTRA_LABELS[k] ?? k}</dt><dd key={`v${k}`}>{k === "mode" ? (MODE_LABELS[v] ?? v) : v}</dd></>)}
-            <dt>Форма</dt><dd>{d.source}{d.lang ? ` · ${d.lang}` : ""} · {d.device}</dd>
-            {d.page && <><dt>Страница</dt><dd>{d.page}</dd></>}
-            {touch(d.first) && <><dt>Первый вход</dt><dd>{touch(d.first)}</dd></>}
-            {touch(d.last) && touch(d.last) !== touch(d.first) && <><dt>Последний вход</dt><dd>{touch(d.last)}</dd></>}
+            <dt>Откуда заявка</dt><dd>{ORIGIN_NAMES[d.origin ?? "form"]}{d.chatId && <> · <Link href={`/admin/chats/${d.chatId}`}>открыть чат →</Link></>}</dd>
+            <dt>Версия сайта</dt><dd>{LANG_NAMES[d.lang ?? "ru"] ?? d.lang}</dd>
+            <dt>Город</dt><dd>{geoLine(d.geo) || <span className="pnl-muted">не определён</span>}</dd>
+            <dt>Устройство</dt><dd>{{ mobile: "телефон", tablet: "планшет", desktop: "компьютер" }[d.device] ?? d.device}{d.screen ? ` · ${d.screen}` : ""}</dd>
+            <dt>Форма</dt><dd>{d.source}</dd>
+            {d.page && <><dt>Страница заявки</dt><dd className="pnl-break">{d.page}</dd></>}
+            {(d as Lead & { bitrixId?: number }).bitrixId ? <><dt>Битрикс24</dt><dd>лид № {(d as Lead & { bitrixId?: number }).bitrixId}</dd></> : null}
             {d.flags?.length ? <><dt>Пометки</dt><dd>{d.flags.join(", ")}</dd></> : null}
             <dt>Согласие ПДн</dt><dd>да, ред. {d.consent?.version}{d.consent?.marketing ? ", реклама: да" : ""}</dd>
           </dl>
+        </section>
+        <section className="pnl-card">
+          <h2>Источник</h2>
+          <dl className="pnl-dl">
+            <dt>Канал</dt><dd><b>{attr.channel}</b> <span className="pnl-muted">· {attr.group}</span></dd>
+            {attr.campaign && <><dt>Кампания</dt><dd>{attr.campaign}</dd></>}
+            {attr.term && <><dt>Ключевая фраза</dt><dd>«{attr.term}»</dd></>}
+            {attr.content && <><dt>Объявление</dt><dd>{attr.content}</dd></>}
+            {attr.medium && <><dt>Тип трафика</dt><dd>{attr.medium}</dd></>}
+            <dt>Первый вход</dt><dd>{sourceLine(attr.first)}{d.first?.at ? <span className="pnl-muted"> · {fmt(d.first.at, true)}</span> : null}</dd>
+            <dt>Последний вход</dt><dd>{sourceLine(attr.last)}{d.last?.at ? <span className="pnl-muted"> · {fmt(d.last.at, true)}</span> : null}</dd>
+            {d.first?.landing && <><dt>Страница входа</dt><dd className="pnl-break">{d.first.landing}</dd></>}
+            {(d.first?.referrer || d.last?.referrer) && <><dt>Пришёл с</dt><dd className="pnl-break">{d.last?.referrer || d.first?.referrer}</dd></>}
+            {(d.first?.yclid || d.last?.yclid) && <><dt>yclid</dt><dd className="pnl-break">{d.last?.yclid || d.first?.yclid}</dd></>}
+            {d.ymClientId && <><dt>ClientID Метрики</dt><dd>{d.ymClientId}</dd></>}
+          </dl>
+          <p className="pnl-muted">Канал для отчётов — по последнему значимому переходу: прямой заход не перебивает рекламу или поиск, с которых человек пришёл раньше (до 90 дней).</p>
         </section>
         <section className="pnl-card">
           <h2>Работа с заявкой</h2>

@@ -5,15 +5,19 @@
 import { createHmac } from "node:crypto";
 import { dbEnabled, q } from "../../db";
 import { EXTRA_LABELS, MESSENGER_LABELS, MODE_LABELS, type Lead, type Touch } from "../types";
+import { getIntegrations, type Integrations } from "../../admin/integrations";
+import { sourceLine } from "../source";
+import { geoLine } from "./geo";
 
 const TIMEOUT = 5000;
+export const LANG_NAMES: Record<string, string> = { ru: "русская", en: "английская", ky: "кыргызская", kk: "казахская", uz: "узбекская" };
 
 export interface Channel {
   name: string;
   send: (lead: Lead) => Promise<void>;
 }
 
-const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+export const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 function extraLine(k: string, v: string) {
   return `${EXTRA_LABELS[k] ?? k}: ${k === "mode" ? (MODE_LABELS[v] ?? v) : v}`;
@@ -33,10 +37,12 @@ export function leadText(lead: Lead, html = false): string {
   const lines = [
     b(`Заявка с сайта${lead.flags.length ? " (" + lead.flags.join(", ") + ")" : ""}`),
     `Имя: ${e(lead.name || "не указано")}`,
-    `Телефон: ${e(lead.phone)}`,
+    lead.phone && `Телефон: ${e(lead.phone)}`,
     lead.messenger && `Связь: ${MESSENGER_LABELS[lead.messenger]}`,
     ...Object.entries(lead.extra).map(([k, v]) => e(extraLine(k, v))),
-    `Форма: ${e(lead.source)}${lead.lang ? ` · язык ${e(lead.lang)}` : ""} · ${lead.device}`,
+    lead.attr && `Источник: ${e(sourceLine(lead.attr))}`,
+    lead.geo && geoLine(lead.geo) && `Город: ${e(geoLine(lead.geo))}`,
+    `Форма: ${e(lead.source)}${lead.lang ? ` · версия сайта ${e(LANG_NAMES[lead.lang] ?? lead.lang)}` : ""} · ${lead.device}`,
     lead.page && `Страница: ${e(lead.page)}`,
     touchLine(lead.first) && `Первый вход: ${e(touchLine(lead.first))}`,
     lead.first.landing && `Страница входа: ${e(lead.first.landing)}`,
@@ -48,17 +54,19 @@ export function leadText(lead: Lead, html = false): string {
   return lines.filter(Boolean).join("\n");
 }
 
-async function post(url: string, body: string, headers: Record<string, string>) {
+export async function post(url: string, body: string, headers: Record<string, string>) {
   const res = await fetch(url, { method: "POST", headers, body, signal: AbortSignal.timeout(TIMEOUT) });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return res;
 }
 
-function telegram(): Channel | null {
-  const token = process.env.TELEGRAM_BOT_TOKEN;
-  const chats = (process.env.TELEGRAM_CHAT_ID || "").split(",").map((s) => s.trim()).filter(Boolean);
-  if (!token || !chats.length) return null;
-  const thread = Number(process.env.TELEGRAM_THREAD_ID) || undefined;
+// MAX: адрес API можно поменять в настройках интеграции (по умолчанию platform-api.max.ru)
+export const MAX_API = "https://platform-api.max.ru";
+
+function telegram(c: Integrations["telegram"]): Channel | null {
+  const chats = c.notify.split(/[\s,]+/).map((s) => s.trim()).filter(Boolean);
+  if (!c.on || !c.token || !chats.length) return null;
+  const thread = Number(c.thread) || undefined;
   return {
     name: "telegram",
     async send(lead) {
@@ -66,7 +74,7 @@ function telegram(): Channel | null {
       // Хватает доставки хотя бы в один чат
       const results = await Promise.allSettled(
         chats.map((chat_id) =>
-          post(`https://api.telegram.org/bot${token}/sendMessage`, JSON.stringify({ chat_id, text, parse_mode: "HTML", message_thread_id: thread, link_preview_options: { is_disabled: true } }), {
+          post(`https://api.telegram.org/bot${c.token}/sendMessage`, JSON.stringify({ chat_id, text, parse_mode: "HTML", message_thread_id: thread, link_preview_options: { is_disabled: true } }), {
             "content-type": "application/json",
           }),
         ),
@@ -76,26 +84,46 @@ function telegram(): Channel | null {
   };
 }
 
-function webhook(): Channel | null {
-  const url = process.env.LEAD_WEBHOOK_URL;
-  if (!url) return null;
-  const secret = process.env.LEAD_WEBHOOK_SECRET;
+function max(c: Integrations["max"]): Channel | null {
+  const chats = c.notify.split(/[\s,]+/).map((s) => s.trim()).filter(Boolean);
+  if (!c.on || !c.token || !chats.length) return null;
+  return {
+    name: "max",
+    async send(lead) {
+      const text = leadText(lead);
+      const results = await Promise.allSettled(
+        chats.map((id) => post(`${MAX_API}/messages?chat_id=${encodeURIComponent(id)}`, JSON.stringify({ text }), { "content-type": "application/json", authorization: c.token })),
+      );
+      if (!results.some((r) => r.status === "fulfilled")) throw new Error("max: ни один чат не принял");
+    },
+  };
+}
+
+function webhook(c: Integrations["webhook"]): Channel | null {
+  if (!c.on || !c.url) return null;
   return {
     name: "webhook",
     async send(lead) {
       const body = JSON.stringify({ type: "lead", lead });
       const headers: Record<string, string> = { "content-type": "application/json", "x-lead-id": lead.id };
       // Подпись тела, чтобы CRM проверила, что заявка от сайта (PRD 14.3)
-      if (secret) headers["x-signature"] = "sha256=" + createHmac("sha256", secret).update(body).digest("hex");
-      await post(url, body, headers);
+      if (c.secret) headers["x-signature"] = "sha256=" + createHmac("sha256", c.secret).update(body).digest("hex");
+      await post(c.url, body, headers);
     },
   };
 }
 
-function bitrix24(): Channel | null {
-  const base = process.env.BITRIX24_WEBHOOK_URL;
-  if (!base) return null;
-  const url = base.replace(/\/?$/, "/") + "crm.lead.add.json";
+/** Вызов REST-метода Битрикс24 по входящему вебхуку */
+export async function bitrixCall<T = unknown>(base: string, method: string, params: unknown): Promise<T> {
+  const url = base.replace(/\/?$/, "/") + method + ".json";
+  const res = await post(url, JSON.stringify(params), { "content-type": "application/json" });
+  const json = (await res.json().catch(() => ({}))) as { result?: T; error?: string; error_description?: string };
+  if (json.result === undefined) throw new Error(`bitrix24: ${json.error_description || json.error || "нет result"}`);
+  return json.result;
+}
+
+function bitrix24(c: Integrations["bitrix"]): Channel | null {
+  if (!c.on || !c.webhook || !c.leads) return null;
   return {
     name: "bitrix24",
     async send(lead) {
@@ -103,11 +131,13 @@ function bitrix24(): Channel | null {
       const t = lead.last.utm_source ? lead.last : lead.first;
       const what = [lead.extra.mode && (MODE_LABELS[lead.extra.mode] ?? lead.extra.mode), lead.extra.model].filter(Boolean).join(", ");
       const fields = {
-        TITLE: `Заявка с сайта${what ? ": " + what : ""} (${lead.source})`,
+        TITLE: `${lead.origin === "chat" ? "Чат с сайта" : "Заявка с сайта"}${what ? ": " + what : ""} (${lead.attr?.channel ?? lead.source})`,
         NAME: lead.name || "Без имени",
-        PHONE: [{ VALUE: lead.phone, VALUE_TYPE: "MOBILE" }],
-        SOURCE_ID: process.env.BITRIX24_SOURCE_ID || "WEB",
-        SOURCE_DESCRIPTION: lead.page || lead.first.landing || "",
+        PHONE: lead.phone ? [{ VALUE: lead.phone, VALUE_TYPE: "MOBILE" }] : undefined,
+        SOURCE_ID: c.sourceId || "WEB",
+        SOURCE_DESCRIPTION: [lead.attr?.channel, lead.page || lead.first.landing].filter(Boolean).join(" · "),
+        ADDRESS_CITY: lead.geo?.city,
+        ADDRESS_COUNTRY: lead.geo?.country,
         UTM_SOURCE: t.utm_source,
         UTM_MEDIUM: t.utm_medium,
         UTM_CAMPAIGN: t.utm_campaign,
@@ -115,9 +145,8 @@ function bitrix24(): Channel | null {
         UTM_TERM: t.utm_term,
         COMMENTS: leadText(lead).replace(/\n/g, "<br>"),
       };
-      const res = await post(url, JSON.stringify({ fields, params: { REGISTER_SONET_EVENT: "Y" } }), { "content-type": "application/json" });
-      const json = (await res.json().catch(() => ({}))) as { result?: unknown; error?: string };
-      if (!json.result) throw new Error(`bitrix24: ${json.error || "нет result"}`);
+      const id = await bitrixCall<number>(c.webhook, "crm.lead.add", { fields, params: { REGISTER_SONET_EVENT: "Y" } });
+      if (dbEnabled() && id) await q("UPDATE leads SET data = jsonb_set(data, '{bitrixId}', to_jsonb($2::int)) WHERE id=$1", [lead.id, Number(id)]).catch(() => {});
     },
   };
 }
@@ -128,18 +157,29 @@ function database(): Channel | null {
   return {
     name: "database",
     async send(lead) {
-      await q("INSERT INTO leads (id, at, data) VALUES ($1,$2,$3) ON CONFLICT (id) DO NOTHING", [lead.id, lead.at, JSON.stringify(lead)]);
+      await q(
+        "INSERT INTO leads (id, at, data, channel, src_group, city, country, lang, origin) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9) ON CONFLICT (id) DO NOTHING",
+        [lead.id, lead.at, JSON.stringify(lead), lead.attr?.channel ?? null, lead.attr?.group ?? null, lead.geo?.city ?? null, lead.geo?.country ?? null, lead.lang ?? null, lead.origin ?? "form"],
+      );
     },
   };
 }
 
-export function channels(): Channel[] {
-  return [database(), telegram(), bitrix24(), webhook()].filter((c): c is Channel => c !== null);
+export async function channels(): Promise<Channel[]> {
+  const c = await getIntegrations().catch(() => null);
+  if (!c) return [database()].filter((x): x is Channel => x !== null);
+  // база первой: заявка должна сохраниться до того, как Битрикс24 вернёт номер лида
+  return [database(), telegram(c.telegram), max(c.max), bitrix24(c.bitrix), webhook(c.webhook)].filter((x): x is Channel => x !== null);
 }
 
 /** Отправляет во все каналы. Возвращает имена каналов, которые приняли и не приняли заявку. */
-export async function deliver(lead: Lead, list = channels()) {
-  const res = await Promise.allSettled(list.map((c) => c.send(lead)));
+export async function deliver(lead: Lead, list?: Channel[]) {
+  list ??= await channels();
+  // база — первой и отдельно (Битрикс24 дописывает в неё номер лида)
+  const db = list.filter((c) => c.name === "database");
+  const rest = list.filter((c) => c.name !== "database");
+  const res = [...(await Promise.allSettled(db.map((c) => c.send(lead)))), ...(await Promise.allSettled(rest.map((c) => c.send(lead))))];
+  list = [...db, ...rest];
   const ok: string[] = [];
   const failed: { name: string; error: string }[] = [];
   res.forEach((r, i) => {

@@ -4,60 +4,76 @@ import { requireUser } from "@/lib/admin/auth";
 import { LEAD_STATUSES, LEAD_STATUS_NAME } from "@/lib/admin/roles";
 import { q } from "@/lib/db";
 import { fmt } from "@/lib/admin/format";
-import { leadScope } from "@/lib/admin/scope";
+import { LANG_NAMES, ORIGIN_NAMES, PERIODS, backfillLeads, listLeads, type LeadFilter } from "@/lib/admin/leads";
+import { MODE_LABELS } from "@/lib/lead/types";
+import { SOURCE_GROUPS } from "@/lib/lead/source";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Заявки" };
 
-interface Row { id: string; at: string; data: { name: string; phone: string; source: string; flags?: string[]; extra?: Record<string, string>; first?: { utm_source?: string; utm_campaign?: string } }; status: string; assignee: string | null; assignee_name: string | null }
+type SP = LeadFilter & { e?: string; ok?: string; page?: string };
 
-export default async function Leads({ searchParams }: { searchParams: Promise<{ e?: string; ok?: string; status?: string; q?: string; mine?: string; page?: string }> }) {
+export default async function Leads({ searchParams }: { searchParams: Promise<SP> }) {
   const sp = await searchParams;
   const user = await requireUser({ section: "leads" });
-  const sc = leadScope(user);
-  const params: unknown[] = [...sc.params];
-  const where = [sc.sql];
-  if (sp.status && LEAD_STATUSES.some((s) => s.id === sp.status)) { params.push(sp.status); where.push(`l.status = $${params.length}`); }
-  if (sp.mine) { params.push(user.id); where.push(`l.assignee::text = $${params.length}`); }
-  if (sp.q) { params.push(`%${sp.q.trim()}%`); where.push(`(l.data->>'name' ILIKE $${params.length} OR l.data->>'phone' ILIKE $${params.length} OR l.id ILIKE $${params.length})`); }
+  await backfillLeads(200).catch(() => 0);
   const page = Math.max(1, Number(sp.page) || 1);
   const SIZE = 50;
-  const w = where.join(" AND ").replace(/\bassignee\b/g, "l.assignee").replace(/l\.l\./g, "l.");
-  const total = Number((await q<{ n: string }>(`SELECT count(*) n FROM leads l WHERE ${w}`, params))[0].n);
-  const rows = await q<Row>(
-    `SELECT l.id, l.at, l.data, l.status, l.assignee::text, u.name assignee_name FROM leads l LEFT JOIN users u ON u.id = l.assignee WHERE ${w} ORDER BY l.at DESC LIMIT ${SIZE} OFFSET ${(page - 1) * SIZE}`, params,
-  );
-  const qs = (o: Record<string, string | undefined>) => "?" + new URLSearchParams(Object.entries({ ...sp, e: undefined, ok: undefined, ...o }).filter(([, v]) => v) as [string, string][]).toString();
+  const f: LeadFilter = { ...sp, period: sp.period ?? (sp.from || sp.to ? "custom" : "all") };
+  if (f.period === "all") { f.period = undefined; }
+  const { total, rows } = await listLeads(user, f, SIZE, (page - 1) * SIZE);
+  const channels = (await q<{ channel: string }>("SELECT DISTINCT channel FROM leads WHERE channel IS NOT NULL ORDER BY 1")).map((r) => r.channel);
+  const cities = (await q<{ city: string }>("SELECT city FROM leads WHERE city IS NOT NULL GROUP BY 1 ORDER BY count(*) DESC LIMIT 40")).map((r) => r.city);
+  const keep = Object.fromEntries(Object.entries(sp).filter(([k, v]) => v && !["e", "ok", "page"].includes(k))) as Record<string, string>;
+  const qs = (o: Record<string, string | undefined>) => "?" + new URLSearchParams(Object.entries({ ...keep, ...o }).filter(([, v]) => v) as [string, string][]).toString();
+  const exp = (format: string, kind = "list") => `/admin/api/leads/export${qs({ format, kind })}`;
+  const per = sp.period ?? (sp.from || sp.to ? "custom" : "all");
 
   return (
-    <Shell user={user} active="leads" title="Заявки" sub={user.role === "manager" ? "Заявки, назначенные на вас" : user.role === "callcenter" ? "Ваши и нераспределённые заявки" : `Всего по фильтру: ${total}`} flash={sp}>
-      <div className="pnl-tools">
-        <div className="pnl-tabs">
-          <Link href={qs({ status: undefined })} className={!sp.status ? "on" : ""}>Все</Link>
-          {LEAD_STATUSES.map((s) => <Link key={s.id} href={qs({ status: s.id, page: undefined })} className={sp.status === s.id ? "on" : ""}>{s.name}</Link>)}
-        </div>
-        <form className="pnl-filter" action="/admin/leads">
-          {sp.status && <input type="hidden" name="status" value={sp.status} />}
-          <input name="q" placeholder="Имя, телефон или номер" defaultValue={sp.q} />
-          <label className="pnl-check"><input type="checkbox" name="mine" value="1" defaultChecked={Boolean(sp.mine)} /> Только мои</label>
-          <button className="pnl-btn" type="submit">Найти</button>
-        </form>
+    <Shell user={user} active="leads" title="Заявки" sub={`По фильтру: ${total}`} flash={sp}
+      actions={<>
+        <Link className="pnl-btn" href={`/admin/leads/report${qs({ page: undefined })}`}>Отчёт</Link>
+        <details className="pnl-menu"><summary className="pnl-btn">Скачать ▾</summary>
+          <div><a href={exp("xlsx")}>Excel (.xlsx)</a><a href={exp("csv")}>CSV для Excel</a><a href={exp("json")}>JSON</a></div>
+        </details>
+      </>}>
+      <div className="pnl-tabs pnl-tabs-line">
+        <Link href={qs({ status: undefined, page: undefined })} className={!sp.status ? "on" : ""}>Все</Link>
+        {LEAD_STATUSES.map((s) => <Link key={s.id} href={qs({ status: s.id, page: undefined })} className={sp.status === s.id ? "on" : ""}>{s.name}</Link>)}
       </div>
+      <form className="pnl-card pnl-filters" action="/admin/leads">
+        {sp.status && <input type="hidden" name="status" value={sp.status} />}
+        <label>Период<select name="period" defaultValue={per}>{PERIODS.map(([k, n]) => <option key={k} value={k}>{n}</option>)}<option value="custom">Свои даты</option></select></label>
+        <label>С<input type="date" name="from" defaultValue={sp.from} /></label>
+        <label>По<input type="date" name="to" defaultValue={sp.to} /></label>
+        <label>Группа источников<select name="group" defaultValue={sp.group ?? ""}><option value="">Все</option>{SOURCE_GROUPS.map((g) => <option key={g}>{g}</option>)}</select></label>
+        <label>Источник<select name="channel" defaultValue={sp.channel ?? ""}><option value="">Все</option>{channels.map((c) => <option key={c}>{c}</option>)}</select></label>
+        <label>Откуда<select name="origin" defaultValue={sp.origin ?? ""}><option value="">Все</option>{Object.entries(ORIGIN_NAMES).map(([k, n]) => <option key={k} value={k}>{n}</option>)}</select></label>
+        <label>Версия сайта<select name="lang" defaultValue={sp.lang ?? ""}><option value="">Все</option>{Object.entries(LANG_NAMES).map(([k, n]) => <option key={k} value={k}>{n}</option>)}</select></label>
+        <label>Город<select name="city" defaultValue={sp.city ?? ""}><option value="">Все</option>{cities.map((c) => <option key={c}>{c}</option>)}</select></label>
+        <label className="pnl-grow">Поиск<input name="q" placeholder="Имя, телефон, номер, комментарий" defaultValue={sp.q} maxLength={100} /></label>
+        <label className="pnl-check"><input type="checkbox" name="mine" value="1" defaultChecked={Boolean(sp.mine)} /> Только мои</label>
+        <div className="pnl-filter-btns"><button className="pnl-btn pnl-btn-main" type="submit">Показать</button><Link className="pnl-btn" href="/admin/leads">Сбросить</Link></div>
+      </form>
       <div className="pnl-table-wrap">
         <table className="pnl-table">
-          <thead><tr><th>Когда</th><th>Клиент</th><th>Что хотел</th><th>Откуда</th><th>Статус</th><th>Ответственный</th></tr></thead>
+          <thead><tr><th>Когда</th><th>Клиент</th><th>Что хотел</th><th>Источник</th><th>Город · версия</th><th>Статус</th><th>Ответственный</th></tr></thead>
           <tbody>
-            {rows.map((l) => (
-              <tr key={l.id}>
-                <td>{fmt(l.at)}</td>
-                <td><Link href={`/admin/leads/${l.id}`}><b>{l.data.name}</b></Link><br /><span className="pnl-muted">{l.data.phone}</span></td>
-                <td>{[l.data.extra?.model, l.data.extra?.mode === "buyout" ? "выкуп" : l.data.extra?.mode === "rent" ? "аренда" : "", l.data.extra?.cls].filter(Boolean).join(", ") || "—"}</td>
-                <td>{l.data.first?.utm_source || l.data.source}</td>
-                <td><em className={`st st-${l.status}`}>{LEAD_STATUS_NAME[l.status]}</em></td>
-                <td>{l.assignee_name ?? <span className="pnl-muted">не назначен</span>}</td>
-              </tr>
-            ))}
-            {rows.length === 0 && <tr><td colSpan={6} className="pnl-muted">Заявок нет. Здесь появятся обращения из форм на сайте.</td></tr>}
+            {rows.map((l) => {
+              const a = l.data.attr;
+              return (
+                <tr key={l.id}>
+                  <td className="pnl-nowrap">{fmt(l.at)}<br /><span className="pnl-muted">№ {l.id}</span></td>
+                  <td><Link href={`/admin/leads/${l.id}`}><b>{l.data.name || "Без имени"}</b></Link><br /><span className="pnl-muted">{l.data.phone || ORIGIN_NAMES[l.origin]}</span></td>
+                  <td>{[l.data.extra?.model, l.data.extra?.mode ? MODE_LABELS[l.data.extra.mode] ?? l.data.extra.mode : "", l.data.extra?.cls].filter(Boolean).join(", ") || (l.data.extra?.message ? <span className="pnl-muted">«{l.data.extra.message.slice(0, 60)}»</span> : "—")}<br /><span className="pnl-muted">{ORIGIN_NAMES[l.origin] ?? l.origin}</span></td>
+                  <td><b>{l.channel ?? "—"}</b>{a?.campaign && <><br /><span className="pnl-muted">{a.campaign}</span></>}{a?.term && <><br /><span className="pnl-muted">«{a.term}»</span></>}</td>
+                  <td>{l.city ?? <span className="pnl-muted">—</span>}<br /><span className="pnl-muted">{LANG_NAMES[l.lang ?? "ru"] ?? l.lang}</span></td>
+                  <td><em className={`st st-${l.status}`}>{LEAD_STATUS_NAME[l.status]}</em></td>
+                  <td>{l.assignee_name ?? <span className="pnl-muted">не назначен</span>}</td>
+                </tr>
+              );
+            })}
+            {rows.length === 0 && <tr><td colSpan={7} className="pnl-muted">Заявок по фильтру нет. Здесь появляются обращения из форм и чата на сайте и из мессенджеров.</td></tr>}
           </tbody>
         </table>
       </div>

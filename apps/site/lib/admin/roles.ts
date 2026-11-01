@@ -3,7 +3,7 @@
 // Права проверяются на сервере в каждом действии, а не скрытием кнопок.
 
 export const SECTIONS = [
-  "dashboard", "leads", "catalog", "reviews", "pages", "articles", "seo", "redirects", "migration", "media", "settings", "users", "roles", "audit",
+  "dashboard", "leads", "chats", "catalog", "reviews", "pages", "articles", "seo", "redirects", "migration", "media", "settings", "integrations", "users", "roles", "audit",
 ] as const;
 export type Section = (typeof SECTIONS)[number];
 export type Level = "none" | "read" | "write";
@@ -14,6 +14,7 @@ export type LeadScope = "all" | "own" | "own_free";
 export const SECTION_NAMES: Record<Section, string> = {
   dashboard: "Дашборд",
   leads: "Заявки",
+  chats: "Чаты",
   catalog: "Автопарк и цены",
   reviews: "Отзывы",
   pages: "Страницы",
@@ -23,6 +24,7 @@ export const SECTION_NAMES: Record<Section, string> = {
   migration: "Переезд сайта",
   media: "Медиатека",
   settings: "Настройки сайта и тема",
+  integrations: "Интеграции",
   users: "Пользователи",
   roles: "Роли и права",
   audit: "Журнал действий",
@@ -34,6 +36,8 @@ export const SECTION_HINTS: Partial<Record<Section, string>> = {
   redirects: "301/302/410, журнал 404",
   migration: "Сравнение со старым car-city.pro, проверка адресов",
   settings: "Тёмная или светлая версия сайта",
+  chats: "Переписка с клиентами: чат на сайте, Telegram, MAX, WhatsApp",
+  integrations: "Битрикс24, Telegram, MAX, WhatsApp: ключи и подключение",
 };
 
 export const LEVEL_NAMES: Record<Level, string> = { none: "Нет доступа", read: "Просмотр", write: "Полный" };
@@ -49,7 +53,7 @@ export const DEFAULT_ROLES: RoleDef[] = [
   { id: "admin", name: "Администратор", perms: all("write"), leadScope: "all", system: true },
   {
     id: "manager", name: "Менеджер", leadScope: "own", system: true,
-    perms: perms({ dashboard: "read", leads: "write", catalog: "read", reviews: "read" }),
+    perms: perms({ dashboard: "read", leads: "write", chats: "write", catalog: "read", reviews: "read" }),
   },
   {
     id: "seo", name: "SEO-специалист", leadScope: "all", system: true,
@@ -57,7 +61,7 @@ export const DEFAULT_ROLES: RoleDef[] = [
   },
   {
     id: "marketer", name: "Маркетолог", leadScope: "all", system: true,
-    perms: perms({ dashboard: "read", leads: "read", catalog: "write", reviews: "write", pages: "write", articles: "write", seo: "read", redirects: "read", media: "write", settings: "write" }),
+    perms: perms({ dashboard: "read", leads: "read", chats: "read", catalog: "write", reviews: "write", pages: "write", articles: "write", seo: "read", redirects: "read", media: "write", settings: "write" }),
   },
   {
     id: "copywriter", name: "Копирайтер", leadScope: "all", system: true,
@@ -66,15 +70,15 @@ export const DEFAULT_ROLES: RoleDef[] = [
   // роли прошлой версии админки — остаются, чтобы у заведённых сотрудников не пропал доступ
   {
     id: "owner", name: "Собственник", leadScope: "all", system: false,
-    perms: perms({ dashboard: "read", leads: "read", catalog: "read", reviews: "read", pages: "read", articles: "read", seo: "read", migration: "read", settings: "read", users: "read", roles: "read", audit: "read" }),
+    perms: perms({ dashboard: "read", leads: "read", chats: "read", catalog: "read", reviews: "read", pages: "read", articles: "read", seo: "read", migration: "read", settings: "read", users: "read", roles: "read", audit: "read" }),
   },
   {
     id: "commercial", name: "Коммерческий директор", leadScope: "all", system: false,
-    perms: perms({ dashboard: "read", leads: "write", catalog: "write", reviews: "write", pages: "read", media: "read", audit: "read" }),
+    perms: perms({ dashboard: "read", leads: "write", chats: "write", catalog: "write", reviews: "write", pages: "read", media: "read", audit: "read" }),
   },
   {
     id: "callcenter", name: "Колл-центр", leadScope: "own_free", system: false,
-    perms: perms({ dashboard: "read", leads: "write", catalog: "read" }),
+    perms: perms({ dashboard: "read", leads: "write", chats: "write", catalog: "read" }),
   },
 ];
 
@@ -87,6 +91,8 @@ export function normPerms(roleId: string, raw: unknown): Perms {
   return Object.fromEntries(SECTIONS.map((s) => {
     let v = src[s];
     if (v === undefined && legacy !== undefined && (s === "pages" || s === "articles" || s === "seo")) v = legacy;
+    // чаты появились позже: у ролей без настройки — тот же доступ, что к заявкам
+    if (v === undefined && s === "chats") v = src.leads;
     return [s, v === "read" || v === "write" ? v : "none"];
   })) as Perms;
 }

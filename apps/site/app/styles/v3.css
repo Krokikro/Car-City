@@ -664,6 +664,12 @@ button.owner:hover, button.owner:focus-visible { border-color: rgba(255,183,0,.5
 .chat-form input:focus { outline: 0; border-color: var(--cc-signal); }
 .chat-agree { display: flex; gap: 8px; align-items: flex-start; font-size: 12px; line-height: 1.35; color: var(--text-muted); }
 .chat-agree input { margin-top: 2px; accent-color: var(--cc-signal); }
+.chat-msg.is-pending { opacity: .6; }
+.chat-msg.is-failed { outline: 1px solid #e5484d; }
+.chat-msg small { opacity: .8; }
+.chat-link { align-self: flex-start; background: none; border: 0; padding: 2px 0; color: var(--cc-signal); font: inherit; font-size: 13px; text-decoration: underline; cursor: pointer; }
+.chat-form-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+.chat-dot.chat-count { width: 20px; height: 20px; top: 0; right: 0; display: grid; place-items: center; font: 700 11px/1 var(--font-mono, monospace); color: #0b0b0c; }
 .chat-err { margin: 0; font-size: 12.5px; color: #ff8a80; }
 .chat-form .btn { justify-content: center; }
 .chat-typing { opacity: .7; }

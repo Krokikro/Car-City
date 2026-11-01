@@ -37,7 +37,7 @@ export async function proxy(req: NextRequest) {
   }
 
   // 3) заглавные буквы в адресе → строчные, как делал старый сайт (только путь, параметры не трогаем)
-  if (s.seo.lowercaseRedirect && /[A-ZА-ЯЁ]/.test(decodeURIComponent(path)) && !/\.[a-z0-9]{2,5}$/i.test(path)) {
+  if (s.seo.lowercaseRedirect && !/^\/(api|admin|media)\//.test(path) && /[A-ZА-ЯЁ]/.test(decodeURIComponent(path)) && !/\.[a-z0-9]{2,5}$/i.test(path)) {
     const u = url.clone();
     u.pathname = path.toLowerCase();
     return NextResponse.redirect(u, 301);

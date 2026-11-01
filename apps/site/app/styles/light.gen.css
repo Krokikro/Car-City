@@ -1823,6 +1823,15 @@
 [data-theme="light"] .chat-agree input {
   accent-color: var(--cc-signal-text);
 }
+[data-theme="light"] .chat-msg.is-failed {
+  outline: 1px solid #b3191e;
+}
+[data-theme="light"] .chat-link {
+  color: var(--cc-signal-text);
+}
+[data-theme="light"] .chat-dot.chat-count {
+  color: #0b0b0c;
+}
 [data-theme="light"] .chat-err {
   color: #cc1000;
 }

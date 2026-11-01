@@ -6,6 +6,7 @@ import { clientIp, forgetPhone, minFillMs, originAllowed, rateLimit, repeatOf } 
 import { captchaEnabled, verifyCaptcha } from "@/lib/lead/server/captcha";
 import { deviceOf, parseLead } from "@/lib/lead/server/parse";
 import { channels, deliver } from "@/lib/lead/server/deliver";
+import { enrichLead } from "@/lib/lead/server/enrich";
 
 // Приём заявки (PRD 8.1, 10, 14.3). Порядок: свой Origin → лимит с IP → ловушка → проверка полей →
 // время заполнения и капча при подозрении → отсев двойной отправки → доставка во все каналы.
@@ -117,7 +118,9 @@ export async function POST(req: Request) {
     flags,
   };
 
-  const list = channels();
+  await enrichLead(lead);
+
+  const list = await channels();
   const log = { id: lead.id, source: lead.source, phone: maskPhone(lead.phone), flags };
   if (!list.length) {
     // В разработке каналов может не быть; в продакшене заявка без канала потеряется — говорим об этом

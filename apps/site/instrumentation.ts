@@ -16,4 +16,6 @@ export async function register() {
     if (tries < 6) setTimeout(knock, 3000 * tries).unref();
   };
   setTimeout(knock, 2500).unref();
+  // база городов по IP — заранее, чтобы первая заявка уже получила город
+  if (process.env.GEO_DISABLE !== "1") setTimeout(() => import("./lib/lead/server/geo").then((m) => m.warmGeo()).catch(() => {}), 15_000).unref();
 }

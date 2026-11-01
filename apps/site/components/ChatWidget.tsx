@@ -8,7 +8,6 @@ import { SocialIcon } from "./SocialIcons";
 import { formatPhone, normalizePhone } from "@/lib/lead/phone";
 import { getTouches } from "@/lib/lead/attribution";
 import { GOALS, getYmClientId, reachGoal } from "@/lib/lead/metrika";
-import type { LeadRequest } from "@/lib/lead/types";
 
 // Онлайн-чат. Когда в настройках задан загрузчик виджета Битрикс24 (NEXT_PUBLIC_B24_WIDGET_URL — ссылка вида
 // https://cdn-ru.bitrix24.ru/bXXXX/crm/site_button/loader_N_xxxx.js из «Открытые линии → Виджет на сайт»),
@@ -17,9 +16,11 @@ import type { LeadRequest } from "@/lib/lead/types";
 const B24 = process.env.NEXT_PUBLIC_B24_WIDGET_URL;
 
 const T = {
-  ru: { open: "Онлайн-чат", title: "Car City на связи", status: "Менеджеры отвечают с 9:00 до 21:00", hi: "Здравствуйте! Подскажем по аренде, выкупу и условиям. Где удобнее продолжить?", quick: ["Хочу арендовать авто", "Интересует выкуп", "Какие документы нужны?"], write: "Написать в мессенджер", call: "Позвонить", lead: "Оставить заявку", close: "Закрыть чат", ph: "Напишите сообщение…", send: "Отправить", ask: "Спасибо! Чтобы менеджер ответил вам, оставьте имя и телефон.", name: "Имя", phone: "Телефон", consent: "Согласен на обработку персональных данных", go: "Отправить менеджеру", sending: "Отправляем…", done: "Приняли! Менеджер свяжется с вами по этому номеру. Можно написать ещё, мы всё увидим.", err: "Не получилось отправить. Позвоните нам или напишите в мессенджер.", phoneErr: "Проверьте номер телефона", back: "Сообщение отправлено менеджеру. Что-то добавите?" },
-  en: { open: "Live chat", title: "Car City is online", status: "Managers reply 9:00–21:00", hi: "Hi! We’ll help with rent, rent-to-own and terms. Where would you like to continue?", quick: ["I want to rent a car", "Rent-to-own", "What documents do I need?"], write: "Message us", call: "Call", lead: "Leave a request", close: "Close chat", ph: "Write a message…", send: "Send", ask: "Thanks! Leave your name and phone so a manager can reply.", name: "Name", phone: "Phone", consent: "I agree to personal data processing", go: "Send to manager", sending: "Sending…", done: "Received! A manager will contact you on this number. Feel free to write more.", err: "Could not send. Please call us or use a messenger.", phoneErr: "Check the phone number", back: "Your message was sent to a manager. Anything to add?" },
+  ru: { open: "Онлайн-чат", title: "Car City на связи", status: "Менеджеры отвечают с 9:00 до 21:00", hi: "Здравствуйте! Подскажем по аренде, выкупу и условиям. Где удобнее продолжить?", quick: ["Хочу арендовать авто", "Интересует выкуп", "Какие документы нужны?"], write: "Написать в мессенджер", call: "Позвонить", lead: "Оставить заявку", close: "Закрыть чат", ph: "Напишите сообщение…", send: "Отправить", ask: "Менеджер ответит здесь. Оставьте телефон, если удобнее, чтобы перезвонили.", leave: "Оставить телефон для звонка", later: "Не сейчас", name: "Имя", phone: "Телефон", consent: "Согласен на обработку персональных данных", go: "Отправить менеджеру", sending: "Отправляем…", done: "Спасибо! Менеджер свяжется с вами. Можно писать сюда — ответим в этом чате.", err: "Не получилось отправить. Позвоните нам или напишите в мессенджер.", phoneErr: "Проверьте номер телефона", back: "Сообщение отправлено менеджеру. Что-то добавите?" },
+  en: { open: "Live chat", title: "Car City is online", status: "Managers reply 9:00–21:00", hi: "Hi! We’ll help with rent, rent-to-own and terms. Where would you like to continue?", quick: ["I want to rent a car", "Rent-to-own", "What documents do I need?"], write: "Message us", call: "Call", lead: "Leave a request", close: "Close chat", ph: "Write a message…", send: "Send", ask: "A manager will reply here. Leave your phone if you prefer a call back.", leave: "Leave a phone for a call back", later: "Not now", name: "Name", phone: "Phone", consent: "I agree to personal data processing", go: "Send to manager", sending: "Sending…", done: "Thanks! A manager will contact you. You can keep writing here.", err: "Could not send. Please call us or use a messenger.", phoneErr: "Check the phone number", back: "Your message was sent to a manager. Anything to add?" },
 };
+
+type Msg = { id?: number; me: boolean; text: string; pending?: boolean; failed?: boolean };
 
 export function ChatWidget() {
   const { lang } = splitLang(usePathname() || "/");
@@ -27,54 +28,95 @@ export function ChatWidget() {
   const [open, setOpen] = useState(false);
   const [pick, setPick] = useState<string | null>(null);
   const [ready, setReady] = useState(false);
-  // свои сообщения: пока интеграция с Битрикс и ИИ-агентом не запущена, текст уходит менеджеру как заявка
-  const [msgs, setMsgs] = useState<{ me: boolean; text: string }[]>([]);
+  // переписка с менеджером: сообщения уходят сразу в раздел «Чаты» админки, ответы приходят сюда
+  const [msgs, setMsgs] = useState<Msg[]>([]);
   const [draft, setDraft] = useState("");
-  const [phase, setPhase] = useState<"chat" | "ask" | "sending" | "sent">("chat");
+  const [hasChat, setHasChat] = useState(false);
+  const [contact, setContact] = useState(false);
+  const [askOpen, setAskOpen] = useState(false);
+  const [unread, setUnread] = useState(0);
+  const [phase, setPhase] = useState<"idle" | "sending">("idle");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [agree, setAgree] = useState(false);
   const [err, setErr] = useState("");
-  const startedAt = useRef(0);
+  const lastId = useRef(0);
   const bodyRef = useRef<HTMLDivElement>(null);
+  const openRef = useRef(open);
+  openRef.current = open;
 
-  useEffect(() => { if (open && !startedAt.current) startedAt.current = Date.now(); }, [open]);
-  useEffect(() => { bodyRef.current?.scrollTo({ top: 1e5, behavior: "smooth" }); }, [msgs, phase]);
+  useEffect(() => { bodyRef.current?.scrollTo({ top: 1e5, behavior: "smooth" }); }, [msgs, askOpen]);
 
-  function say(text: string) {
-    const v = text.trim();
-    if (!v) return;
-    const reply = phase === "chat" ? [{ me: false, text: t.ask }] : phase === "sent" ? [{ me: false, text: t.back }] : [];
-    setMsgs((m) => [...m, { me: true, text: v.slice(0, 600) }, ...reply]);
+  // новые сообщения с сервера (ответы менеджера и свои — с другой страницы)
+  async function pull() {
+    try {
+      const r = await fetch(`/api/chat?after=${lastId.current}`, { cache: "no-store" });
+      const j = (await r.json()) as { messages?: { id: number; me: boolean; text: string }[]; contact?: boolean };
+      if (j.contact) setContact(true);
+      const fresh = (j.messages ?? []).filter((m) => m.id > lastId.current);
+      if (!fresh.length) return;
+      setHasChat(true);
+      lastId.current = fresh[fresh.length - 1].id;
+      setMsgs((cur) => {
+        const known = new Set(cur.map((m) => m.id).filter(Boolean));
+        const add = fresh.filter((m) => !known.has(m.id));
+        // свои отправленные (без id) заменяем серверными
+        const pendingMine = cur.filter((m) => !m.id && m.me);
+        const kept = cur.filter((m) => m.id || !m.me || !add.some((a) => a.me && a.text === m.text));
+        return pendingMine.length ? [...kept, ...add] : [...cur, ...add];
+      });
+      if (!openRef.current) setUnread((u) => u + fresh.filter((m) => !m.me).length);
+    } catch { /* сеть — попробуем позже */ }
+  }
+  // история при загрузке страницы и опрос: пока чат открыт — каждые 4 с, закрыт — раз в 30 с
+  useEffect(() => { void pull(); }, []);
+  useEffect(() => {
+    if (!hasChat && !open) return;
+    const id = window.setInterval(() => { if (!document.hidden) void pull(); }, open ? 4000 : 30000);
+    return () => window.clearInterval(id);
+  }, [open, hasChat]);
+  useEffect(() => { if (open) setUnread(0); }, [open]);
+
+  async function say(text: string) {
+    const v = text.trim().slice(0, 2000);
+    if (!v || phase === "sending") return;
     setDraft("");
-    if (phase === "chat") setPhase("ask");
-    if (phase === "sent") void deliver(v, true);
+    setMsgs((m) => [...m, { me: true, text: v, pending: true }]);
+    setPhase("sending");
+    try {
+      const body = { text: v, page: location.href.slice(0, 300), lang: lang || "ru", ...getTouches(), ym_client_id: await getYmClientId() };
+      const r = await fetch("/api/chat", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
+      const j = (await r.json().catch(() => ({}))) as { ok?: boolean; id?: number; contact?: boolean };
+      if (!r.ok || !j.ok) throw new Error("send");
+      if (!hasChat) reachGoal(GOALS.lead, { form: "chat" });
+      setHasChat(true);
+      if (j.contact) setContact(true);
+      setMsgs((m) => m.map((x) => (x.pending && x.text === v ? { me: true, text: v, id: j.id } : x)));
+      if (j.id && j.id > lastId.current) lastId.current = j.id;
+      if (!j.contact && !contact) setAskOpen(true);
+    } catch {
+      setMsgs((m) => m.map((x) => (x.pending && x.text === v ? { ...x, pending: false, failed: true } : x)));
+    } finally {
+      setPhase("idle");
+    }
   }
 
-  async function deliver(text: string, again = false) {
+  async function sendContact() {
     const normalized = normalizePhone(phone);
     if (!normalized) { setErr(t.phoneErr); return; }
     setErr("");
-    if (!again) setPhase("sending");
-    const all = again ? text : msgs.filter((m) => m.me).map((m) => m.text).join("\n");
-    const body: LeadRequest = {
-      name, phone: normalized, consent: agree, source: "chat",
-      fill_ms: Math.max(3100, Date.now() - startedAt.current),
-      page: location.href.slice(0, 300), lang: lang || "ru",
-      extra: { message: all.slice(0, 600) },
-      ...getTouches(),
-      ym_client_id: await getYmClientId(),
-      screen: `${screen.width}x${screen.height}`,
-    };
+    setPhase("sending");
     try {
-      const res = await fetch("/api/lead", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
-      const json = (await res.json().catch(() => ({}))) as { ok?: boolean };
-      if (!res.ok || !json.ok) throw new Error("send");
-      reachGoal(GOALS.lead, { form: "chat" });
-      if (!again) { setMsgs((m) => [...m, { me: false, text: t.done }]); setPhase("sent"); }
+      const r = await fetch("/api/chat", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ name, phone: normalized, consent: agree }) });
+      const j = (await r.json().catch(() => ({}))) as { ok?: boolean };
+      if (!r.ok || !j.ok) throw new Error("send");
+      setContact(true);
+      setAskOpen(false);
+      setMsgs((m) => [...m, { me: false, text: t.done }]);
     } catch {
-      setMsgs((m) => [...m, { me: false, text: t.err }]);
-      setPhase(again ? "sent" : "ask");
+      setErr(t.err);
+    } finally {
+      setPhase("idle");
     }
   }
 
@@ -113,24 +155,25 @@ export function ChatWidget() {
             <p className="chat-msg">{t.hi}</p>
             <div className="chat-quick">
               {t.quick.map((q) => (
-                <button key={q} type="button" aria-pressed={pick === q} onClick={() => { setPick(q); say(q); }}>{q}</button>
+                <button key={q} type="button" aria-pressed={pick === q} onClick={() => { setPick(q); void say(q); }}>{q}</button>
               ))}
             </div>
-            {msgs.map((m, i) => <p key={i} className={`chat-msg${m.me ? " chat-me" : ""}`}>{m.text}</p>)}
-            {phase === "ask" && (
-              <form className="chat-form" onSubmit={(e) => { e.preventDefault(); void deliver(""); }}>
-                <input name="name" value={name} onChange={(e) => setName(e.target.value)} placeholder={t.name} autoComplete="given-name" required minLength={2} maxLength={60} />
+            {msgs.map((m, i) => <p key={m.id ?? `p${i}`} className={`chat-msg${m.me ? " chat-me" : ""}${m.pending ? " is-pending" : ""}${m.failed ? " is-failed" : ""}`}>{m.text}{m.failed && <small> — {t.err}</small>}</p>)}
+            {hasChat && !contact && !askOpen && <button type="button" className="chat-link" onClick={() => setAskOpen(true)}>{t.leave}</button>}
+            {askOpen && !contact && (
+              <form className="chat-form" onSubmit={(e) => { e.preventDefault(); void sendContact(); }}>
+                <p className="chat-msg">{t.ask}</p>
+                <input name="name" value={name} onChange={(e) => setName(e.target.value)} placeholder={t.name} autoComplete="given-name" maxLength={60} />
                 <input name="phone" type="tel" inputMode="tel" autoComplete="tel" value={phone} onChange={(e) => setPhone(formatPhone(e.target.value))} placeholder={t.phone} required maxLength={20} />
                 <label className="chat-agree"><input type="checkbox" checked={agree} onChange={(e) => setAgree(e.target.checked)} required /><span>{t.consent}</span></label>
                 {err && <p className="chat-err" role="alert">{err}</p>}
-                <button type="submit" className="btn btn-primary btn-sm">{t.go}</button>
+                <div className="chat-form-btns"><button type="submit" className="btn btn-primary btn-sm" disabled={phase === "sending"}>{t.go}</button><button type="button" className="btn btn-ghost btn-sm" onClick={() => setAskOpen(false)}>{t.later}</button></div>
               </form>
             )}
-            {phase === "sending" && <p className="chat-msg chat-typing">{t.sending}</p>}
           </div>
           <div className="chat-foot">
-            <form className="chat-input" onSubmit={(e) => { e.preventDefault(); say(draft); }}>
-              <input value={draft} onChange={(e) => setDraft(e.target.value)} placeholder={t.ph} maxLength={600} aria-label={t.ph} disabled={phase === "sending"} />
+            <form className="chat-input" onSubmit={(e) => { e.preventDefault(); void say(draft); }}>
+              <input value={draft} onChange={(e) => setDraft(e.target.value)} placeholder={t.ph} maxLength={2000} aria-label={t.ph} />
               <button type="submit" aria-label={t.send} disabled={!draft.trim() || phase === "sending"}>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 20 4l-5 16-3-6.5z" fill="currentColor" /></svg>
               </button>
@@ -154,7 +197,7 @@ export function ChatWidget() {
         ) : (
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z" fill="currentColor" /><circle cx="9" cy="9.5" r="1.2" fill="#111" /><circle cx="12" cy="9.5" r="1.2" fill="#111" /><circle cx="15" cy="9.5" r="1.2" fill="#111" /></svg>
         )}
-        {!open && <span className="chat-dot" aria-hidden="true" />}
+        {!open && (unread > 0 ? <span className="chat-dot chat-count" aria-label={`${unread}`}>{unread}</span> : <span className="chat-dot" aria-hidden="true" />)}
       </button>
     </div>
   );

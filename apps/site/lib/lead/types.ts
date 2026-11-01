@@ -1,4 +1,5 @@
 // Общие типы заявки: форма → /api/lead → каналы доставки.
+import type { Attribution } from "./source";
 
 /** Версия текста согласия на обработку ПДн. Меняем вместе с текстом (PRD 8.2: версия хранится с согласием). */
 export const CONSENT_VERSION = "2026-10-05";
@@ -68,6 +69,14 @@ export interface Lead {
   consent: { pd: true; marketing: boolean; version: string; at: string; ip: string };
   /** Пометки для менеджера: без JS, капча, повтор */
   flags: string[];
+  /** Источник: канал для аналитики, первый и последний вход (lib/lead/source.ts) */
+  attr?: Attribution;
+  /** Город и страна по IP */
+  geo?: { country?: string; region?: string; city?: string; code?: string } | null;
+  /** Откуда пришла заявка: форма на сайте, чат на сайте, мессенджер */
+  origin?: "form" | "chat" | "telegram" | "max" | "whatsapp";
+  /** Диалог в разделе «Чаты», если заявка из чата */
+  chatId?: string;
 }
 
 /** Подписи известных полей контекста (PRD 8.1: модель, тип, офис, калькулятор) */
