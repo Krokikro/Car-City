@@ -9,6 +9,6 @@ export const dynamic = "force-dynamic";
 export async function GET() {
   const s = await getSession();
   if (!s || s.stage !== "full" || !(can(s.user, "pages", "read") || can(s.user, "articles", "read") || can(s.user, "media", "read"))) return NextResponse.json({ items: [] }, { status: 401 });
-  const items = await q("SELECT id, name, w, h FROM media ORDER BY at DESC LIMIT 200");
+  const items = await q("SELECT id, name, w, h FROM media WHERE kind = 'library' ORDER BY at DESC LIMIT 200");
   return NextResponse.json({ items }, { headers: { "cache-control": "no-store" } });
 }

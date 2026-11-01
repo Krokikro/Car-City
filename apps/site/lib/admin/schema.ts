@@ -102,6 +102,11 @@ ALTER TABLE leads ADD COLUMN IF NOT EXISTS country text;
 ALTER TABLE leads ADD COLUMN IF NOT EXISTS lang text;
 ALTER TABLE leads ADD COLUMN IF NOT EXISTS origin text NOT NULL DEFAULT 'form';
 CREATE INDEX IF NOT EXISTS leads_channel ON leads(channel);
+-- файлы: в бакете Railway (storage = 's3') или в базе (storage = 'db')
+ALTER TABLE media ALTER COLUMN bytes DROP NOT NULL;
+ALTER TABLE media ADD COLUMN IF NOT EXISTS storage text NOT NULL DEFAULT 'db';
+ALTER TABLE media ADD COLUMN IF NOT EXISTS s3_key text;
+ALTER TABLE media ADD COLUMN IF NOT EXISTS kind text NOT NULL DEFAULT 'library';
 -- чаты: сайт, Telegram, MAX, WhatsApp (Wazzup). Каждый диалог связан с заявкой.
 CREATE TABLE IF NOT EXISTS chats (
   id text PRIMARY KEY,

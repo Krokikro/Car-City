@@ -3,6 +3,8 @@
 // Черновики в общую память не попадают: предпросмотр берёт их отдельным вызовом draftOverlay().
 import { dbEnabled, q } from "../db";
 import { fleet, type FleetCar } from "../fleet";
+import { setMediaLive, type MediaLive } from "../media/live";
+import { deriveFromTable, setPriceTables, type PriceTables } from "../prices";
 import { DEFAULT_SEO, DEFAULT_SITE, mergeSeo, mergeSite, type PageSeo, type SeoSettings, type SiteSettings } from "../site-settings";
 import { setSiteTheme } from "../theme";
 import { setTexts, type TextsData } from "../texts";
@@ -66,6 +68,7 @@ function applyFleet(rows: { slug: string; data: FleetPatch }[]) {
       if (p.buyOld !== undefined) car.buyOld = p.buyOld > 0 ? p.buyOld : undefined;
       if (p.featured !== undefined) car.featured = p.featured > 0 ? p.featured : undefined;
     }
+    deriveFromTable(car); // цены и скидки из таблиц «Автопарк и цены», если их уже заводили в админке
     next.push(car);
   }
   // fleet — общий массив, его импортируют многие модули; меняем на месте
@@ -90,6 +93,11 @@ async function load(): Promise<Overlay> {
   for (const r of await q<{ lang: string; path: string; published: PageData; updated_at: string }>("SELECT lang, path, published, updated_at FROM pages WHERE published IS NOT NULL")) {
     pages.set(pageKey(r.lang, r.path), r.published);
     updated.set(pageKey(r.lang, r.path.toLowerCase()), new Date(r.updated_at).toISOString());
+  }
+  setPriceTables(((await q<{ value: PriceTables }>("SELECT value FROM settings WHERE key='prices'"))[0]?.value) ?? {});
+  {
+    const m = new Map((await q<{ key: string; value: unknown }>("SELECT key, value FROM settings WHERE key IN ('assets','carGallery')")).map((r) => [r.key, r.value]));
+    setMediaLive({ a: (m.get("assets") as MediaLive["a"]) ?? {}, g: (m.get("carGallery") as MediaLive["g"]) ?? {} });
   }
   applyFleet(await q<{ slug: string; data: FleetPatch }>("SELECT slug, data FROM fleet_overrides"));
   const set = new Map((await q<{ key: string; value: unknown }>("SELECT key, value FROM settings WHERE key IN ('site','seo')")).map((r) => [r.key, r.value]));

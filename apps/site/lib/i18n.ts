@@ -12,12 +12,17 @@ export const isLang = (s: string | undefined): s is Lang => !!s && (LANGS as str
 
 /** Номер сборки: у картинок и видео одинаковые имена, а браузер держит их в кэше неделю.
  *  ?v=сборка в адресе — новая выкладка сразу показывает новые файлы, а не старые из кэша. */
+import { replaced } from "./media/live";
+
 export const BUILD = process.env.NEXT_PUBLIC_BUILD_ID ?? "";
 const MEDIA = /\.(webp|avif|png|jpe?g|svg|mp4|webm|gif)$/i;
 
 /** Файлы из public/: картинки, видео, иконки */
 export const asset = (p: string) => {
   if (!p.startsWith("/") || p.startsWith("//")) return p;
+  // замена из админки («Графика сайта», фото машин) — свой адрес /media/{id}, кэш по id
+  const r = replaced(p.split("?")[0]);
+  if (r) return BASE + r;
   const url = BASE && p.startsWith(BASE + "/") ? p : BASE + p;
   return BUILD && MEDIA.test(p) ? `${url}?v=${BUILD}` : url;
 };

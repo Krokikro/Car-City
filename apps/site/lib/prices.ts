@@ -7,6 +7,30 @@ import type { FleetCar } from "./fleet";
 export interface PriceRow { /** график «7/0», срок «от 30 дней» или «1 год» */ k: string; /** цена в сутки */ p: number; /** старая цена (зачёркнутая) */ o?: number; /** первоначальный взнос / депозит */ dep?: number }
 interface CarPrices { rent?: PriceRow[]; buy?: PriceRow[] }
 
+/** Как показывать скидку: старая цена зачёркнута + плашка, только старая цена, только плашка «−N%», плашка «до −N%», не показывать */
+export type Disp = "auto" | "old" | "badge" | "upto" | "none";
+export const DISP_NAMES: Record<Disp, string> = { auto: "Старая цена + плашка", old: "Только зачёркнутая цена", badge: "Только плашка «−N%»", upto: "Плашка «до −N%»", none: "Не показывать скидку" };
+/** Таблица цен машины из админки (раздел «Автопарк и цены»). Пустой массив — этого вида у машины нет. */
+export interface PriceTable { rent?: PriceRow[]; buy?: PriceRow[]; rentDisp?: Disp; buyDisp?: Disp }
+export type PriceTables = Record<string, PriceTable>;
+
+// Таблицы из админки: на сервере — из базы (overlay → setPriceTables), в браузере — из <script id="cc-prices">.
+const gp = globalThis as typeof globalThis & { __ccPrices?: PriceTables };
+let clientPrices: PriceTables | null = null;
+export function priceTables(): PriceTables {
+  if (typeof document !== "undefined") {
+    if (!clientPrices) { try { clientPrices = JSON.parse(document.getElementById("cc-prices")?.textContent || "{}"); } catch { clientPrices = {}; } }
+    return clientPrices!;
+  }
+  return gp.__ccPrices ?? {};
+}
+export function setPriceTables(t: PriceTables) { gp.__ccPrices = t; }
+export const pricesJson = () => JSON.stringify(priceTables()).replace(/</g, "\\u003c");
+/** исходные строки из файла — для админки (кнопка «вернуть как было») */
+export const filePrices = (slug: string): CarPrices => DATA[slug] ?? {};
+const showsOld = (d?: Disp) => !d || d === "auto" || d === "old";
+const stripOld = (rows: PriceRow[], d?: Disp) => (showsOld(d) ? rows : rows.map((r) => ({ ...r, o: undefined })));
+
 // prettier-ignore
 const DATA: Record<string, CarPrices> = {
   "moskvich-3": {"rent": [{"k": "7/0", "p": 2000}, {"k": "6/1", "p": 2340}, {"k": "5/2", "p": 2800}], "buy": [{"dep": 0, "k": "1 год", "p": 2800}, {"dep": 0, "k": "1,5 года", "p": 2200}, {"dep": 0, "k": "2 года", "p": 2000}]},
@@ -53,9 +77,43 @@ function scale(rows: PriceRow[] | undefined, target?: number, baseOld?: number):
 }
 
 /** строки аренды машины (по графикам или по сроку) с учётом цены и скидки из автопарка */
-export const rentRows = (c: FleetCar): PriceRow[] => (hasRent(c) ? scale(DATA[c.slug]?.rent, c.price, c.old) : []);
+export const rentRows = (c: FleetCar): PriceRow[] => {
+  if (!hasRent(c)) return [];
+  const t = priceTables()[c.slug];
+  if (t?.rent) return stripOld(t.rent, t.rentDisp);
+  return scale(DATA[c.slug]?.rent, c.price, c.old);
+};
 /** строки выкупа: взнос, срок, платёж в сутки (без выкупного платежа) */
-export const buyRows = (c: FleetCar): PriceRow[] => (hasBuy(c) ? scale(DATA[c.slug]?.buy, c.buyPrice, c.buyOld) : []);
+export const buyRows = (c: FleetCar): PriceRow[] => {
+  if (!hasBuy(c)) return [];
+  const t = priceTables()[c.slug];
+  if (t?.buy) return stripOld(t.buy, t.buyDisp);
+  return scale(DATA[c.slug]?.buy, c.buyPrice, c.buyOld);
+};
+
+/** Цены «от» и скидки машины из таблицы админки — для автопарка (overlay вызывает при загрузке) */
+export function deriveFromTable(c: FleetCar) {
+  const t = priceTables()[c.slug];
+  if (!t) return;
+  const pick = (rows: PriceRow[]) => rows.reduce((a, b) => (b.p < a.p ? b : a));
+  const best = (rows: PriceRow[]) => Math.max(0, ...rows.map((r) => (r.o && r.o > r.p ? Math.round((1 - r.p / r.o) * 100) : 0)));
+  if (t.rent) {
+    const rows = t.rent.filter((r) => r.p > 0);
+    const m = rows.length ? pick(rows) : null;
+    c.price = m?.p ?? 0;
+    c.old = m && showsOld(t.rentDisp) && m.o && m.o > m.p ? m.o : undefined;
+    c.off = rows.length && t.rentDisp !== "none" && t.rentDisp !== "old" ? best(rows) || undefined : undefined;
+    c.rentDisp = t.rentDisp;
+  }
+  if (t.buy) {
+    const rows = t.buy.filter((r) => r.p > 0);
+    const m = rows.length ? pick(rows) : null;
+    c.buyPrice = m?.p ?? undefined;
+    c.buyOld = m && showsOld(t.buyDisp) && m.o && m.o > m.p ? m.o : undefined;
+    c.buyOff = rows.length && t.buyDisp !== "none" && t.buyDisp !== "old" ? best(rows) || undefined : undefined;
+    c.buyDisp = t.buyDisp;
+  }
+}
 
 /** аренда доступна: есть адрес страницы аренды (не совпадающий с выкупом) и цена */
 export const hasRent = (c: FleetCar) => !!c.rent && c.rent !== c.buy && c.price > 0;
@@ -69,7 +127,12 @@ export function saleChips(c: FleetCar, lang: string = "ru", only?: "rent" | "buy
   const L = lang === "ru" ? { rent: "аренда", buy: "выкуп", upTo: "до " } : { rent: "rent", buy: "buy", upTo: "up to " };
   const out: SaleChip[] = [];
   if (c.badge) out.push({ kind: "badge", text: c.badge });
-  if (only !== "buy" && hasRent(c)) {
+  if (only !== "buy" && hasRent(c) && c.rentDisp !== "none" && c.rentDisp !== "old") {
+    if (c.rentDisp === "upto" || c.rentDisp === "badge") {
+      const best = c.off ?? 0;
+      if (best) out.push({ kind: "rent", text: `${c.rentDisp === "upto" ? L.upTo : ""}−${best}% ${L.rent}` });
+      return finishBuy(c, out, L, only);
+    }
     const p = pct(c.price, c.old);
     if (p) out.push({ kind: "rent", text: `−${p}% ${L.rent}` });
     else {
@@ -78,9 +141,22 @@ export function saleChips(c: FleetCar, lang: string = "ru", only?: "rent" | "buy
       if (best) out.push({ kind: "rent", text: `${L.upTo}−${best}% ${L.rent}` });
     }
   }
-  if (only !== "rent" && hasBuy(c)) {
+  return finishBuy(c, out, L, only);
+}
+
+function finishBuy(c: FleetCar, out: SaleChip[], L: { buy: string; upTo: string }, only?: "rent" | "buy") {
+  if (only !== "rent" && hasBuy(c) && c.buyDisp !== "none" && c.buyDisp !== "old") {
+    if (c.buyDisp === "upto" || c.buyDisp === "badge") {
+      if (c.buyOff) out.push({ kind: "buy", text: `${c.buyDisp === "upto" ? L.upTo : ""}−${c.buyOff}% ${L.buy}` });
+      return out;
+    }
     const p = pct(c.buyPrice!, c.buyOld);
     if (p) out.push({ kind: "buy", text: `−${p}% ${L.buy}` });
   }
   return out;
+}
+
+/** Строки, которые сейчас на сайте без таблиц админки: из файла с учётом цены «от» из карточки (для начального заполнения таблиц) */
+export function fileRowsFor(c: FleetCar, kind: "rent" | "buy"): PriceRow[] {
+  return kind === "rent" ? scale(DATA[c.slug]?.rent, c.price, c.old) : scale(DATA[c.slug]?.buy, c.buyPrice, c.buyOld);
 }

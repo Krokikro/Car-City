@@ -24,6 +24,11 @@ export interface FleetCar {
   off?: number;
   /** место на главной среди «популярных» (1, 2, 3…). Нет — на главной не показывается, только в полном списке. */
   featured?: number;
+  /** скидка на выкуп, % (для плашки «до −N%») — из таблицы цен */
+  buyOff?: number;
+  /** формат показа скидки на аренду и выкуп — из таблицы цен в админке */
+  rentDisp?: import("./prices").Disp;
+  buyDisp?: import("./prices").Disp;
 }
 
 // prettier-ignore

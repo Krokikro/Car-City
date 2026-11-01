@@ -10,28 +10,33 @@ import { AdminEnhance } from "./AdminEnhance";
 import { unreadCount } from "@/lib/chat/admin";
 
 type Nav = { s: Section; href: string; icon: string; label?: string; id?: string };
-const NAV: { group: string; items: Nav[] }[] = [
-  { group: "", items: [
+type Group = { group: string; key: string; icon?: string; items: Nav[] };
+// Разделы с несколькими пунктами свёрнуты в раскрывающиеся списки; группа с открытой страницей раскрыта сама.
+const NAV: Group[] = [
+  { group: "", key: "main", items: [
     { s: "dashboard", href: "/admin", icon: "M3 11l9-8 9 8v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z" },
     { s: "leads", href: "/admin/leads", icon: "M4 5h16v11H8l-4 4zM8 9h8M8 12h5" },
     { s: "chats", href: "/admin/chats", icon: "M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12zM8.5 12h.01M12 12h.01M15.5 12h.01" },
+    { s: "catalog", href: "/admin/catalog", icon: "M3 14l2-5a2 2 0 012-1h10a2 2 0 012 1l2 5v4h-3v-2H6v2H3zM7 14h.01M17 14h.01" },
   ] },
-  { group: "Контент", items: [
+  { group: "Страницы и тексты", key: "content", icon: "M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7", items: [
     { s: "pages", href: "/admin/content?kind=page", icon: "M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7" },
     { s: "pages", id: "texts-home", href: "/admin/texts?s=home", label: "Главная (тексты)", icon: "M4 4h16v6H4zM4 14h7v6H4zM15 14h5M15 17h5M15 20h3" },
+    { s: "settings", id: "texts", href: "/admin/texts?s=ui", label: "Тексты сайта", icon: "M5 5h14M12 5v14M8 19h8" },
     { s: "articles", href: "/admin/content?kind=article", icon: "M4 5h11v14H4zM15 8h5v9a2 2 0 01-2 2h-3M7 9h5M7 12h5M7 15h3" },
-    { s: "catalog", href: "/admin/catalog", icon: "M3 14l2-5a2 2 0 012-1h10a2 2 0 012 1l2 5v4h-3v-2H6v2H3zM7 14h.01M17 14h.01" },
     { s: "reviews", href: "/admin/reviews", icon: "M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z" },
+  ] },
+  { group: "Графика и файлы", key: "media", icon: "M3 5h18v14H3zM3 15l5-5 4 4 3-3 6 6M15.5 8.5h.01", items: [
+    { s: "media", id: "graphics", href: "/admin/graphics", label: "Графика сайта", icon: "M3 5h18v14H3zM3 15l5-5 4 4 3-3 6 6M15.5 8.5h.01" },
     { s: "media", href: "/admin/media", icon: "M4 5h16v14H4zM4 15l5-5 4 4 3-3 4 4M9 9h.01" },
   ] },
-  { group: "SEO", items: [
+  { group: "SEO и переезд", key: "seo", icon: "M10 4a6 6 0 104.5 10L20 19.5M10 7v6M7 10h6", items: [
     { s: "seo", href: "/admin/seo", icon: "M10 4a6 6 0 104.5 10L20 19.5M10 7v6M7 10h6" },
     { s: "redirects", href: "/admin/redirects", icon: "M4 7h11l-3-3M20 17H9l3 3M15 7l5 0M4 17h5" },
     { s: "migration", href: "/admin/migration", icon: "M4 12h10M10 6l6 6-6 6M18 4v16" },
   ] },
-  { group: "Управление", items: [
+  { group: "Управление", key: "admin", icon: "M12 9a3 3 0 100 6 3 3 0 000-6zM19 12l2-1-1-3-2 .3-1.3-1.3L17 5l-3-1-1 2h-2L10 4 7 5l.3 2L6 8.3 4 8l-1 3 2 1v2l-2 1 1 3 2-.3L7.3 17 7 19l3 1 1-2h2l1 2 3-1-.3-2 1.3-1.3 2 .3 1-3-2-1z", items: [
     { s: "settings", label: "Настройки сайта", href: "/admin/settings", icon: "M12 9a3 3 0 100 6 3 3 0 000-6zM19 12l2-1-1-3-2 .3-1.3-1.3L17 5l-3-1-1 2h-2L10 4 7 5l.3 2L6 8.3 4 8l-1 3 2 1v2l-2 1 1 3 2-.3L7.3 17 7 19l3 1 1-2h2l1 2 3-1-.3-2 1.3-1.3 2 .3 1-3-2-1z" },
-    { s: "settings", id: "texts", href: "/admin/texts?s=ui", label: "Тексты сайта", icon: "M5 5h14M12 5v14M8 19h8" },
     { s: "integrations", href: "/admin/integrations", icon: "M9 7V3M15 7V3M7 7h10v4a5 5 0 01-10 0zM12 16v5" },
     { s: "users", href: "/admin/users", icon: "M9 11a4 4 0 100-8 4 4 0 000 8zM2 21c0-4 3-6 7-6s7 2 7 6M17 11a3 3 0 100-6M18 15c3 .5 4 2.5 4 6" },
     { s: "roles", href: "/admin/roles", icon: "M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6zM9 12l2 2 4-4" },
@@ -41,7 +46,7 @@ const NAV: { group: string; items: Nav[] }[] = [
 
 export async function Shell({ user, active, title, sub, back, actions, children, flash }: {
   user: AdminUser;
-  active: Section | "security" | "content" | "texts-home" | "texts";
+  active: Section | "security" | "content" | "texts-home" | "texts" | "graphics";
   title: string;
   sub?: string;
   /** ссылка «назад» над заголовком: [адрес, текст] */
@@ -64,17 +69,24 @@ export async function Shell({ user, active, title, sub, back, actions, children,
           {NAV.map((g) => {
             const items = g.items.filter((n) => can(user, n.s, "read"));
             if (!items.length) return null;
+            const links = items.map((n) => (
+              <Link key={n.href} href={n.href} className={active === (n.id ?? n.s) ? "on" : ""}>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d={n.icon} /></svg>
+                <span>{n.label ?? SECTION_NAMES[n.s]}</span>
+                {n.s === "chats" && unread > 0 && <i className="pnl-badge">{unread}</i>}
+              </Link>
+            ));
+            if (!g.group || items.length === 1) return <div key={g.key} className="pnl-nav-group">{links}</div>;
+            const here = items.some((n) => active === (n.id ?? n.s));
             return (
-              <div key={g.group} className="pnl-nav-group">
-                {g.group && <p className="pnl-nav-h">{g.group}</p>}
-                {items.map((n) => (
-                  <Link key={n.href} href={n.href} className={active === (n.id ?? n.s) ? "on" : ""}>
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d={n.icon} /></svg>
-                    {n.label ?? SECTION_NAMES[n.s]}
-                    {n.s === "chats" && unread > 0 && <i className="pnl-badge">{unread}</i>}
-                  </Link>
-                ))}
-              </div>
+              <details key={g.key} className={`pnl-nav-fold${here ? " has-on" : ""}`} data-fold={g.key} open={here}>
+                <summary>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d={g.icon} /></svg>
+                  <span>{g.group}</span>
+                  <svg className="pnl-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
+                </summary>
+                <div className="pnl-nav-sub">{links}</div>
+              </details>
             );
           })}
         </nav>

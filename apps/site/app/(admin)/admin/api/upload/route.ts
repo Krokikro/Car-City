@@ -1,9 +1,8 @@
-import { randomUUID } from "node:crypto";
 import { NextResponse } from "next/server";
 import sharp from "sharp";
 import { audit, getSession, twoFaRequired } from "@/lib/admin/auth";
 import { can } from "@/lib/admin/roles";
-import { q } from "@/lib/db";
+import { saveFile } from "@/lib/media/store";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
@@ -30,10 +29,9 @@ export async function POST(req: Request) {
       const src = Buffer.from(await file.arrayBuffer());
       const img = sharp(src, { failOn: "error" }).rotate().resize({ width: 2400, height: 2400, fit: "inside", withoutEnlargement: true });
       const { data, info } = await img.webp({ quality: 82 }).toBuffer({ resolveWithObject: true });
-      const id = randomUUID().replace(/-/g, "").slice(0, 16);
       const name = file.name.replace(/\.[a-z0-9]+$/i, "").slice(0, 80) + ".webp";
-      await q("INSERT INTO media (id, name, mime, w, h, bytes, size, by) VALUES ($1,$2,'image/webp',$3,$4,$5,$6,$7)", [id, name, info.width, info.height, data, data.length, s.user.email]);
-      done.push({ id, name });
+      const saved = await saveFile(data, { name, mime: "image/webp", w: info.width, h: info.height, by: s.user.email, kind: "library" });
+      done.push({ id: saved.id, name });
     } catch {
       failed.push(file.name);
     }

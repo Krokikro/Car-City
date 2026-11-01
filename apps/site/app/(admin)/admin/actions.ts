@@ -1,4 +1,5 @@
 "use server";
+import { deleteFile } from "@/lib/media/store";
 // Все действия админки. В каждом — проверка входа и права на сервере; кнопки в интерфейсе ничего не решают.
 import { randomInt, timingSafeEqual } from "node:crypto";
 import { cookies, headers } from "next/headers";
@@ -270,21 +271,11 @@ export async function saveCarAction(fd: FormData) {
   const car = BASE_FLEET.find((c) => c.slug === slug);
   if (!car) go("/admin/catalog", "e", "Нет такой машины");
   { const le = lenError(fd, { name: ["Название", LIM.carName], engine: ["Двигатель", LIM.engine], gearbox: ["Коробка", LIM.gearbox], badge: ["Плашка", LIM.badge] }); if (le) go("/admin/catalog", "e", le); }
-  // пустая цена аренды — машины нет в аренде: на сайте пропадают цена и кнопка «Арендовать»
-  const price = Math.round(Number(f(fd, "price") || 0));
-  if (!Number.isFinite(price) || (price !== 0 && (price < 500 || price > 50000))) go(`/admin/catalog#${slug}`, "e", "Цена в сутки — от 500 до 50 000 ₽ (или пусто, если аренды нет)");
   const cls = f(fd, "cls");
   if (!fleetClasses.some((c) => c.id === cls)) go(`/admin/catalog#${slug}`, "e", "Неизвестный класс");
-  const old = Math.round(Number(f(fd, "old") || 0));
-  if (old && (!price || !Number.isFinite(old) || old <= price || old > 100000)) go(`/admin/catalog#${slug}`, "e", "Старая цена должна быть больше текущей");
-  // скидка в процентах: либо введена вручную, либо считается по старой цене
-  let off = Math.round(Number(f(fd, "off") || 0));
-  if (old) off = Math.round((1 - price / old) * 100);
-  if (!Number.isFinite(off) || off < 0 || off > 90) go(`/admin/catalog#${slug}`, "e", "Скидка — от 0 до 90%");
-  const buyPrice = Math.round(Number(f(fd, "buyPrice") || 0));
-  if (buyPrice && (!Number.isFinite(buyPrice) || buyPrice < 500 || buyPrice > 50000)) go(`/admin/catalog#${slug}`, "e", "Цена выкупа в сутки — от 500 до 50 000 ₽");
-  const buyOld = Math.round(Number(f(fd, "buyOld") || 0));
-  if (buyOld && (!Number.isFinite(buyOld) || buyOld <= buyPrice || buyOld > 100000)) go(`/admin/catalog#${slug}`, "e", "Старая цена выкупа должна быть больше текущей");
+  // цены правятся в таблицах «Цены: аренда / выкуп»; здесь сохраняем прежние значения карточки как есть
+  const cur = { ...car!, ...(((await q1<{ data: Record<string, number> }>("SELECT data FROM fleet_overrides WHERE slug=$1", [slug]))?.data) ?? {}) } as typeof car & Record<string, number>;
+  const price = cur!.price ?? 0, old = cur!.old ?? 0, off = cur!.off ?? 0, buyPrice = cur!.buyPrice ?? 0, buyOld = cur!.buyOld ?? 0;
   const featured = Math.max(0, Math.round(Number(f(fd, "featured") || 0)));
   const before = await q1<{ data: unknown }>("SELECT data FROM fleet_overrides WHERE slug=$1", [slug]);
   const diff = await savePatch(slug, {
@@ -300,7 +291,8 @@ export async function saveCarAction(fd: FormData) {
 export async function deleteMediaAction(fd: FormData) {
   const u = await requireCan("media", "write");
   const id = f(fd, "id");
-  const m = await q1<{ name: string }>("DELETE FROM media WHERE id=$1 RETURNING name", [id]);
+  const m = await q1<{ name: string }>("SELECT name FROM media WHERE id=$1 AND kind = 'library'", [id]);
+  if (m) await deleteFile(id);
   if (m) await audit(u, "Файл удалён из медиатеки", "media", id, { name: m.name });
   go("/admin/media", "ok", "Файл удалён");
 }

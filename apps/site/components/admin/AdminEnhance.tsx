@@ -6,7 +6,7 @@ import { useEffect } from "react";
 const len = (s: string) => [...s].length;
 
 function attach(el: HTMLInputElement | HTMLTextAreaElement) {
-  if (el.dataset.cc || el.type === "hidden" || el.type === "password" || el.maxLength <= 0) return;
+  if (el.dataset.cc || el.dataset.nocc !== undefined || el.type === "hidden" || el.type === "password" || el.maxLength <= 0) return;
   el.dataset.cc = "1";
   const max = el.maxLength;
   const warn = Number(el.dataset.warn) || 0;
@@ -43,6 +43,16 @@ export function AdminEnhance() {
       f.focus();
     };
     document.addEventListener("click", onClick);
+    // раскрытые группы меню запоминаются в этом браузере
+    let folds: string[] = [];
+    try { folds = JSON.parse(localStorage.getItem("pnl-folds") || "[]"); } catch {}
+    document.querySelectorAll<HTMLDetailsElement>("details[data-fold]").forEach((d) => {
+      if (folds.includes(d.dataset.fold!)) d.open = true;
+      d.addEventListener("toggle", () => {
+        const open = [...document.querySelectorAll<HTMLDetailsElement>("details[data-fold]")].filter((x) => x.open && !x.classList.contains("has-on")).map((x) => x.dataset.fold!);
+        try { localStorage.setItem("pnl-folds", JSON.stringify(open)); } catch {}
+      });
+    });
     return () => { mo.disconnect(); document.removeEventListener("click", onClick); };
   }, []);
   return null;
