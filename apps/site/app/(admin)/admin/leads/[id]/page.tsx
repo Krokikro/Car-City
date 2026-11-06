@@ -7,7 +7,7 @@ import { q, q1 } from "@/lib/db";
 import { fmt } from "@/lib/admin/format";
 import { updateLeadAction } from "../../actions";
 import { leadScope } from "@/lib/admin/scope";
-import { EXTRA_LABELS, MODE_LABELS, MESSENGER_LABELS, type Lead } from "@/lib/lead/types";
+import { EXTRA_LABELS, MODE_LABELS, messengerLine, type Lead } from "@/lib/lead/types";
 import { LIM } from "@/lib/admin/limits";
 import { LANG_NAMES, ORIGIN_NAMES, geoLine } from "@/lib/admin/leads";
 import { attribute, sourceLine } from "@/lib/lead/source";
@@ -39,7 +39,7 @@ export default async function LeadPage({ params, searchParams }: { params: Promi
           <h2>Клиент</h2>
           <dl className="pnl-dl">
             {d.phone ? <><dt>Телефон</dt><dd><a href={`tel:${tel}`}>{d.phone}</a></dd></> : null}
-            {d.messenger && <><dt>Как связаться</dt><dd>{MESSENGER_LABELS[d.messenger]}</dd></>}
+            {messengerLine(d) && <><dt>Как связаться</dt><dd>{messengerLine(d)}</dd></>}
             {Object.entries(d.extra ?? {}).map(([k, v]) => <><dt key={`k${k}`}>{EXTRA_LABELS[k] ?? k}</dt><dd key={`v${k}`}>{k === "mode" ? (MODE_LABELS[v] ?? v) : v}</dd></>)}
             <dt>Откуда заявка</dt><dd>{ORIGIN_NAMES[d.origin ?? "form"]}{d.chatId && <> · <Link href={`/admin/chats/${d.chatId}`}>открыть чат →</Link></>}</dd>
             <dt>Версия сайта</dt><dd>{LANG_NAMES[d.lang ?? "ru"] ?? d.lang}</dd>
