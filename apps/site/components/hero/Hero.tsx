@@ -75,8 +75,8 @@ export function Hero() {
           <span className="dot" /> Таксопарк в Москве · {company.fleet} авто
         </p>
         <h1 id="hero-title" className="hero3d-title">
-          <span className="line"><span data-hero-line>Аренда авто</span></span>
-          <span className="line"><span data-hero-line>для работы в&nbsp;такси</span></span>
+          <span className="line"><span data-hero-line>Аренда авто</span>{" "}</span>
+          <span className="line"><span data-hero-line>для работы в&nbsp;такси</span>{" "}</span>
           <span className="line"><span data-hero-line className="accent">с&nbsp;выкупом в&nbsp;Москве</span></span>
         </h1>
         <p className="hero3d-sub" data-hero-fade>
