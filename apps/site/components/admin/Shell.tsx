@@ -24,6 +24,7 @@ const NAV: Group[] = [
     { s: "pages", id: "texts-home", href: "/admin/texts?s=home", label: "Главная (тексты)", icon: "M4 4h16v6H4zM4 14h7v6H4zM15 14h5M15 17h5M15 20h3" },
     { s: "settings", id: "texts", href: "/admin/texts?s=ui", label: "Тексты сайта", icon: "M5 5h14M12 5v14M8 19h8" },
     { s: "articles", href: "/admin/content?kind=article", icon: "M4 5h11v14H4zM15 8h5v9a2 2 0 01-2 2h-3M7 9h5M7 12h5M7 15h3" },
+    { s: "articles", id: "comments", href: "/admin/comments", label: "Комментарии", icon: "M21 12a8 8 0 01-11.6 7.1L4 20l1-4.6A8 8 0 1121 12zM8 10h8M8 13h5" },
     { s: "reviews", href: "/admin/reviews", icon: "M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z" },
   ] },
   { group: "Графика и файлы", key: "media", icon: "M3 5h18v14H3zM3 15l5-5 4 4 3-3 6 6M15.5 8.5h.01", items: [
@@ -46,7 +47,7 @@ const NAV: Group[] = [
 
 export async function Shell({ user, active, title, sub, back, actions, children, flash }: {
   user: AdminUser;
-  active: Section | "security" | "content" | "texts-home" | "texts" | "graphics";
+  active: Section | "security" | "content" | "texts-home" | "texts" | "graphics" | "comments";
   title: string;
   sub?: string;
   /** ссылка «назад» над заголовком: [адрес, текст] */
