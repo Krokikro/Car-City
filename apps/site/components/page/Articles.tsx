@@ -5,6 +5,7 @@ import { asset, href, type Lang } from "@/lib/i18n";
 import { company } from "@/lib/content";
 import { ui } from "@/lib/ui";
 import { GenImage, hasGen } from "../GenImage";
+import { ArticleComments, ArticleShare, ArticleViews, type CommentItem } from "./ArticleSocial";
 
 const words = (s: string) => s.replace(/[#*\[\]()!|>-]/g, " ").split(/\s+/).filter(Boolean).length;
 
@@ -14,7 +15,7 @@ const EXPERT: { name: string; role: string } | null = null;
 const E = {
   ru: {
     by: "Автор", team: "Редакция Car City", checked: "Проверено", checkedBy: "специалистами по аренде и выкупу Car City",
-    published: "Опубликовано", read: "Время чтения",
+    published: "Опубликовано", updated: "Обновлено", read: "Время чтения",
     aboutT: "Об авторе", about: (y: number) => `Car City — таксопарк в Москве, ${y} лет работаем с водителями такси: сдаём машины в аренду и продаём в выкуп, подключаем к агрегаторам. Статьи пишем по собственному опыту работы парка: реальные условия, цены и требования, с которыми водители сталкиваются каждый день.`,
     facts: [["авто в парке", "fleet"], ["водителей арендовали", "renters"], ["выкупили авто", "boughtOut"]] as const,
     rating: "5,0 на Яндекс Картах, 2GIS, Flamp и Yell", aboutLink: "О компании", reviewsLink: "Отзывы водителей",
@@ -24,7 +25,7 @@ const E = {
   },
   en: {
     by: "Author", team: "Car City editorial team", checked: "Reviewed", checkedBy: "by Car City rental and rent-to-own specialists",
-    published: "Published", read: "Reading time",
+    published: "Published", updated: "Updated", read: "Reading time",
     aboutT: "About the author", about: (y: number) => `Car City is a taxi fleet in Moscow. For ${y} years we have worked with taxi drivers: we rent out cars, sell them on a rent-to-own basis and connect drivers to ride-hailing apps. Our articles are based on the fleet's own experience: real terms, prices and requirements drivers face every day.`,
     facts: [["cars in the fleet", "fleet"], ["drivers have rented", "renters"], ["cars bought out", "boughtOut"]] as const,
     rating: "5.0 on Yandex Maps, 2GIS, Flamp and Yell", aboutLink: "About us", reviewsLink: "Driver reviews",
@@ -35,7 +36,10 @@ const E = {
 };
 type ArticleCard = { path: string; h1: string; date?: string };
 
-export function ArticleView({ doc, p, lang = "ru", related = [] }: { doc: Doc; p: Parsed; lang?: Lang; related?: ArticleCard[] }) {
+/** ДД.ММ.ГГГГ по Москве */
+const ruDate = (iso: string) => new Date(iso).toLocaleDateString("ru-RU", { timeZone: "Europe/Moscow", day: "2-digit", month: "2-digit", year: "numeric" });
+
+export function ArticleView({ doc, p, lang = "ru", related = [], updatedAt, comments = [] }: { doc: Doc; p: Parsed; lang?: Lang; related?: ArticleCard[]; /** когда статью последний раз правили в админке (ISO) */ updatedAt?: string; comments?: CommentItem[] }) {
   const t = ui(lang);
   const e = lang === "en" ? E.en : E.ru;
   const slug = doc.path.split("/").pop() ?? "";
@@ -46,6 +50,9 @@ export function ArticleView({ doc, p, lang = "ru", related = [] }: { doc: Doc; p
   const toc = p.blocks.filter((b) => b.t === "section" && b.title).map((b) => (b as { title: string }).title);
   const min = Math.max(1, Math.round(words(doc.body) / 180));
   const iso = doc.date?.split(".").reverse().join("-");
+  // дата редактирования: правка в админке позже даты публикации (или поле updated в файле статьи)
+  const updIso = updatedAt && (!iso || updatedAt.slice(0, 10) > iso) ? updatedAt.slice(0, 10) : doc.updated?.split(".").reverse().join("-");
+  const updText = updatedAt && updIso === updatedAt.slice(0, 10) ? ruDate(updatedAt) : doc.updated;
   const url = `${company.domain}${href(doc.path, lang)}`;
   const org = { "@type": "Organization", "@id": `${company.domain}/#org`, name: company.name, legalName: company.legalName, url: company.domain, logo: { "@type": "ImageObject", url: `${company.domain}/brand/emblem-192.png` } };
   const faqs = p.blocks.flatMap((b) => (b.t === "faq" ? b.items : []));
@@ -58,10 +65,11 @@ export function ArticleView({ doc, p, lang = "ru", related = [] }: { doc: Doc; p
       description: doc.description,
       inLanguage: doc.lang,
       datePublished: iso,
-      dateModified: iso,
+      dateModified: updIso ?? iso,
       author: EXPERT ? { "@type": "Person", name: EXPERT.name, jobTitle: EXPERT.role, worksFor: org } : org,
       publisher: org,
       ...(cover ? { image: `${company.domain}/news/${slug}-1200.webp` } : {}),
+      ...(comments.length ? { commentCount: comments.length, comment: comments.slice(0, 20).map((c) => ({ "@type": "Comment", text: c.text, dateCreated: c.at, author: { "@type": "Person", name: c.name } })) } : {}),
       mainEntityOfPage: url,
       wordCount: words(doc.body),
     },
@@ -85,7 +93,9 @@ export function ArticleView({ doc, p, lang = "ru", related = [] }: { doc: Doc; p
         <div><dt>{e.by}</dt><dd>{EXPERT ? `${EXPERT.name}, ${EXPERT.role}` : e.team}</dd></div>
         <div><dt>{e.checked}</dt><dd>{e.checkedBy}</dd></div>
         {doc.date && <div><dt>{e.published}</dt><dd><time dateTime={iso}>{doc.date}</time></dd></div>}
+        {updIso && updText && updIso !== iso && <div><dt>{e.updated}</dt><dd><time dateTime={updIso}>{updText}</time></dd></div>}
         <div><dt>{e.read}</dt><dd>{min} {t.readMin}</dd></div>
+        <ArticleViews path={doc.path} lang={lang} />
       </dl>
     </div>
   );
@@ -102,7 +112,7 @@ export function ArticleView({ doc, p, lang = "ru", related = [] }: { doc: Doc; p
         <div className="art-progress" aria-hidden="true"><i /></div>
       </header>
       <div className="wrap art-grid">
-        {toc.length > 2 && (
+        {toc.length > 1 && (
           <nav className="art-toc mono" aria-label={t.toc}>
             <p>{t.toc}</p>
             <ol>{toc.map((t) => <li key={t}><a href={`#${slugify(t)}`}>{t}</a></li>)}</ol>
@@ -110,6 +120,7 @@ export function ArticleView({ doc, p, lang = "ru", related = [] }: { doc: Doc; p
         )}
         <div className="art-main">
           <div className="prose art-body" dangerouslySetInnerHTML={{ __html: html }} />
+          <ArticleShare url={url} title={doc.h1} lang={lang} />
           <p className="art-note"><span aria-hidden="true">i</span>{e.note}</p>
           <aside className="art-author" aria-label={e.aboutT}>
             <div className="art-author-head">
@@ -136,6 +147,7 @@ export function ArticleView({ doc, p, lang = "ru", related = [] }: { doc: Doc; p
             </div>
             <a href="#zayavka" className="btn btn-primary" data-lead="rent">{e.cta}</a>
           </div>
+          <ArticleComments path={doc.path} lang={lang} items={comments} />
         </div>
       </div>
       {related.length > 0 && (
