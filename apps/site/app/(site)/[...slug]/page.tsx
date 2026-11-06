@@ -3,7 +3,8 @@ import { Fragment } from "react";
 import { notFound } from "next/navigation";
 import { draftMode } from "next/headers";
 import { log404 } from "@/lib/notfound-log";
-import { refreshOverlay, draftOverlay } from "@/lib/admin/overlay";
+import { refreshOverlay, draftOverlay, pageKey } from "@/lib/admin/overlay";
+import { commentsOf } from "@/lib/articles/social";
 import { allDocs, getDoc, twinOf, articles, type Doc } from "@/lib/docs";
 import { parseDoc, parseReviews } from "@/lib/blocks";
 import { siteReviews } from "@/lib/reviews";
@@ -44,6 +45,7 @@ import { homeMeta } from "@/lib/meta";
 import { buildMeta, extraLd } from "@/lib/seo";
 import { hasGen } from "@/components/GenImage";
 import { ui } from "@/lib/ui";
+import { BIZ_PATH } from "@/lib/content";
 
 // Содержимое можно менять из админки: новые адреса собираются по первому заходу, готовые страницы обновляются после публикации
 export const dynamicParams = true;
@@ -108,7 +110,7 @@ const STAT_T: Record<string, { models: string; from: string; pre: string; day: s
 function heroStats(doc: Doc, cars: { slug: string }[], lang: Lang): HeroStat[] {
   if (!cars.length) return [];
   const t = STAT_T[lang] ?? STAT_T.ru;
-  const buy = doc.path.startsWith("/vykup") || doc.path.startsWith("/biznes");
+  const buy = doc.path.startsWith("/vykup");
   const prices = cars.map((c) => { const f = fleet.find((x) => x.slug === c.slug); return (buy ? f?.buyPrice : f?.price) ?? 0; }).filter(Boolean);
   const min = prices.length ? Math.min(...prices) : 0;
   return [
@@ -174,11 +176,12 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
   // страница выкупа: выгоды, условия и тарифы — крупными карточками (тексты те же)
   const vykup = doc.path === "/vykup";
   let si = 0;
-  const bizPage = doc.path === "/biznes";
-  const buyPage = doc.path.startsWith("/vykup") || bizPage;
+  // Бизнес-класс: с 06.11.2026 есть и аренда, страница — по адресу старого сайта /klassyi-avtomobilej/biznes
+  const bizPage = doc.path === BIZ_PATH;
+  const buyPage = doc.path.startsWith("/vykup");
   const ipPage = doc.path === "/arenda-taksi-ip";
   const truckPage = /^\/gruzov/.test(doc.path);
-  const classPage = (!!classVideo || doc.path === "/biznes") && !isModel && !vykup;
+  const classPage = (!!classVideo || bizPage) && !isModel && !vykup;
   let reqDone = false;
   let stepsDone = false;
   const steps = <Steps steps={homeText(lang).steps} variant={buyPage ? "buy" : "rent"} vehicle={/^\/gruzov/.test(doc.path) || doc.cls === "gruzovoy" ? "truck" : "taxi"} />;
@@ -189,7 +192,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
       <main id="main" className={`pg pg-${doc.kind}${doc.path.startsWith("/vykup") ? " pg-vykup" : ""}`}>
         {lang !== "ru" && doc.lang === "ru" && <p className="wrap pg-untranslated mono">{ui(lang).notTranslated}</p>}
         {doc.kind === "article" ? (
-          <ArticleView doc={doc} p={p} lang={lang} related={articles(lang, ov).filter((a) => a.path !== doc.path).sort((a, b) => (b.date ?? "").split(".").reverse().join("").localeCompare((a.date ?? "").split(".").reverse().join(""))).slice(0, 3).map((a) => ({ path: a.path, h1: a.h1, date: a.date }))} />
+          <ArticleView doc={doc} p={p} lang={lang} updatedAt={ov.updated.get(pageKey(lang, doc.path.toLowerCase()))} comments={await commentsOf(doc.path)} related={articles(lang, ov).filter((a) => a.path !== doc.path).sort((a, b) => (b.date ?? "").split(".").reverse().join("").localeCompare((a.date ?? "").split(".").reverse().join(""))).slice(0, 3).map((a) => ({ path: a.path, h1: a.h1, date: a.date }))} />
         ) : isModel ? (
           <ModelHero h1={doc.h1} name={name} slug={car?.slug ?? ""} cls={doc.cls} mode={doc.mode} twin={twin} path={doc.path} crumbs={p.crumbs} specs={p.intro.specs} price={modelPrice(car, doc.mode, lang) ?? p.intro.price} oldPrice={car ? (doc.mode === "vykup" ? car.buyOld : car.old) : undefined} chips={car ? saleChips(car, lang, doc.mode === "vykup" ? "buy" : "rent") : []} btns={p.intro.btns.length ? p.intro.btns : [{ label: ui(lang).modelStart, href: "#zayavka" }]} gallery={doc.gallery} lang={lang} panels={modelPanels(p, car, doc.cls ? ui(lang).cls[doc.cls] ?? undefined : undefined, doc.mode, lang)} />
         ) : (
