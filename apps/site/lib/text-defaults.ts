@@ -24,7 +24,7 @@ export interface LeadFormText {
 export const leadFormRu: LeadFormText = {
   name: "Имя",
   phone: "Телефон",
-  messenger: "Как удобнее связаться",
+  messenger: "Как удобнее связаться (можно несколько)",
   messengers: { call: "Звонок", telegram: "Telegram", whatsapp: "WhatsApp", max: "MAX" },
   consentPrefix: "Даю согласие на",
   consentLink: "обработку персональных данных",

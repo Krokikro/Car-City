@@ -19,7 +19,7 @@ const ALL: { cls: string; rent: string; buy: string; key: string }[] = [
   { cls: "ekonom", rent: "/ekonom", buy: "/vykup/ekonom", key: "ekonom" },
   { cls: "komfort", rent: "/komfort", buy: "/vykup/komfort", key: "komfort" },
   { cls: "komfort-plus", rent: "/komfortplus", buy: "/vykup/komfort-plyus", key: "komfortplus" },
-  { cls: "biznes", rent: "/biznes", buy: "/biznes", key: "biznes" },
+  { cls: "biznes", rent: "/klassyi-avtomobilej/biznes", buy: "/vykup/biznes/hongqi-h5", key: "biznes" },
   { cls: "gruzovoy", rent: "/gruzovoy", buy: "/gruzovoy", key: "gruzovoy" },
   { cls: "dostavka", rent: "/vykup/dostavka/lada-granta", buy: "/vykup/dostavka/lada-granta", key: "dostavka" },
 ];
@@ -31,7 +31,7 @@ export function tariffsOf(html: string, lang = "ru", own?: string): Tariff[] {
   // недостающие тарифы — в общем порядке парка
   const list = ALL.filter((a) => a.cls !== own).map((a) => pills.find((x) => x.cls === a.cls) ?? { href: buyCtx ? a.buy : a.rent, label: (ui(lang as never).cls as Record<string, string>)[a.key] ?? a.cls, cls: a.cls });
   return list.map(({ href: to, label, cls }) => {
-    const buy = /vykup/.test(to) || cls === "biznes" || cls === "dostavka";
+    const buy = /vykup/.test(to) || cls === "dostavka";
     const cars = fleet.filter((f) => f.cls === cls && (buy ? hasBuy(f) : hasRent(f)));
     const face = cars.find((f) => f.slug === FACE[cls]) ?? cars.find((f) => carImages[f.slug]);
     return {
