@@ -163,8 +163,8 @@ export const en: HomeText = {
       {
         q: "Where can I rent a car for taxi work?",
         a: [
-          "You can rent a taxi car in Moscow with no middlemen and no hidden fees at the Car City taxi fleet. Our offices and parking lots are at three addresses:",
-          "- Mitino metro (1st Mitinsky lane, 15 bldg. 3);\n- Kuntsevskaya metro (Vitebskaya st., 11);\n- Michurinsky Prospekt metro (Udaltsova st., 36).",
+          "You can rent a taxi car in Moscow with no middlemen and no hidden fees at the Car City taxi fleet. Our offices and parking lots are at four addresses:",
+          "- Mitino metro (1st Mitinsky lane, 15 bldg. 3);\n- Kuntsevskaya metro (Vitebskaya st., 11);\n- Michurinsky Prospekt metro (Udaltsova st., 36);\n- Khovrino metro, MCD-D3 Grachyovskaya (Zelenogradskaya st., 15).",
           "If you are looking for a licensed taxi rental with no deposit, you don't have to drive all over Moscow. Come to the nearest Car City office with your documents to rent a taxi car.",
         ],
       },
