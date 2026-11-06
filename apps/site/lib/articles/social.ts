@@ -27,7 +27,8 @@ export async function viewsOf(path: string): Promise<number | null> {
 /** Опубликованные комментарии статьи (для страницы; при ошибке базы — пустой список) */
 export async function commentsOf(path: string): Promise<ArticleComment[]> {
   const p = cleanPath(path);
-  if (!p || !dbEnabled()) return [];
+  // при сборке базы нет — страница соберётся без комментариев и обновится после публикации
+  if (!p || !dbEnabled() || process.env.NEXT_PHASE === "phase-production-build") return [];
   try {
     const rows = await q<{ id: string; name: string; text: string; created_at: Date }>(
       "SELECT id::text, name, text, created_at FROM article_comments WHERE path=$1 AND status='published' ORDER BY created_at ASC LIMIT 200",
