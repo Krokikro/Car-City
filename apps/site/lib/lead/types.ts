@@ -31,6 +31,8 @@ export interface LeadRequest {
   consent: boolean;
   marketing?: boolean;
   messenger?: Messenger;
+  /** Все выбранные способы связи (можно несколько). messenger — первый из них, для совместимости */
+  messengers?: Messenger[];
   company_site?: string;
   /** Сколько мс прошло от показа формы до отправки */
   fill_ms?: number;
@@ -55,6 +57,7 @@ export interface Lead {
   name: string;
   phone: string;
   messenger?: Messenger;
+  messengers?: Messenger[];
   source: string;
   page?: string;
   lang?: string;
@@ -93,3 +96,9 @@ export const EXTRA_LABELS: Record<string, string> = {
 export const MODE_LABELS: Record<string, string> = { rent: "Аренда", buyout: "Выкуп" };
 
 export const MESSENGER_LABELS: Record<Messenger, string> = { call: "Звонок", telegram: "Telegram", whatsapp: "WhatsApp", max: "MAX" };
+
+/** Все выбранные способы связи одной строкой: «Telegram, WhatsApp». Старые заявки — по полю messenger */
+export function messengerLine(l: { messenger?: Messenger; messengers?: Messenger[] }): string {
+  const list = l.messengers?.length ? l.messengers : l.messenger ? [l.messenger] : [];
+  return list.map((m) => MESSENGER_LABELS[m] ?? m).join(", ");
+}
