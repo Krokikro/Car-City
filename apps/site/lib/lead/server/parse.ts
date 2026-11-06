@@ -50,6 +50,7 @@ async function readBody(req: Request): Promise<{ body: Record<string, unknown>; 
     const extra: Record<string, string> = {};
     for (const [k, v] of p) {
       if (k.startsWith("x_")) extra[k.slice(2)] = v;
+      else if (k === "messenger") (body.messengers as string[] | undefined)?.push(v) ?? (body.messengers = [v]);
       else body[k] = v;
     }
     body.extra = extra;
@@ -78,7 +79,10 @@ export async function parseLead(req: Request): Promise<Parsed> {
   if (!phone) return { ok: false, code: "phone" };
   if (!truthy(b.consent)) return { ok: false, code: "consent" };
 
-  const messenger = MESSENGERS.includes(b.messenger as Messenger) ? (b.messenger as Messenger) : undefined;
+  // Способов связи можно выбрать несколько (правка 06.11): массив messengers, старое одиночное поле messenger тоже принимаем
+  const picked = [...(Array.isArray(b.messengers) ? b.messengers : []), b.messenger];
+  const messengers = MESSENGERS.filter((m) => picked.includes(m));
+  const messenger: Messenger | undefined = messengers[0];
   const fill = Number(b.fill_ms);
 
   return {
@@ -90,6 +94,7 @@ export async function parseLead(req: Request): Promise<Parsed> {
       consent: true,
       marketing: truthy(b.marketing),
       messenger,
+      messengers: messengers.length ? messengers : undefined,
       fill_ms: Number.isFinite(fill) ? fill : undefined,
       source: str(b.source, 40) || "site",
       page: str(b.page, 300),
