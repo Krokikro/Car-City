@@ -64,9 +64,10 @@ export function HeroVideo({ t }: { t: HomeText["hero"] }) {
         </div>
         <p className="hv-giant" aria-hidden="true">CAR CITY</p>
         <div className="hv-copy wrap">
+          {/* Один H1: строки — только визуальные переносы, между ними пробелы, поэтому поисковик читает фразу целиком (правка 06.11) */}
           <h1 id="hero-title" className="hv-title" style={{ ["--ch" as string]: Math.min(20, Math.max(12, ...t.lines.map((l) => l.length))) }}>
             {t.lines.map((l, i) => (
-              <span key={i} className="line"><span data-hv-line style={{ ["--i" as string]: i }} className={i === t.lines.length - 1 ? "accent" : undefined}>{i === t.lines.length - 1 ? <span className="mk">{l}</span> : l}</span></span>
+              <span key={i} className="line"><span data-hv-line style={{ ["--i" as string]: i }} className={i === t.lines.length - 1 ? "accent" : undefined}>{i === t.lines.length - 1 ? <span className="mk">{l}</span> : l}</span>{i < t.lines.length - 1 ? " " : null}</span>
             ))}
           </h1>
           <p className="hv-sub" data-hv-fade>{t.sub}</p>

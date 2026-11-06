@@ -19,6 +19,8 @@ export const BASE_COMPANY = {
   telegram: "https://t.me/+79013479868",
   whatsapp: "https://wa.me/+79013479868",
   max: "https://max.ru/u/f9LHodD0cOJMl118MYnSxw-XC6C3ws3b8QXkTUY9wMS03jvBbptkzzwVG2Y",
+  /** Новый Telegram-бот (правка 06.11.2026). Пока пусто — окно с ботом не показывается. Ссылка задаётся в админке: Тексты сайта → Контакты */
+  telegramBot: "",
   youtube: "https://www.youtube.com/@CarCityTaxi",
   group: "Входит в группу Элит Кар",
   privacyUrl: "https://car-city.pro/themes/document/politika-konfedenczialnosti-kar-siti.pdf",
@@ -28,12 +30,16 @@ export const BASE_OFFICES = [
   { name: "Проспект Вернадского", address: "ул. Удальцова, д. 36", metro: "Проспект Вернадского", hours: "с 9:00 до 21:00" },
   { name: "Митино", address: "1-й Митинский пер., д. 15, стр. 3", metro: "Митино", hours: "с 10:00 до 19:00" },
   { name: "Кунцевская", address: "ул. Витебская, д. 11", metro: "Кунцевская", hours: "с 10:00 до 19:00" },
+  { name: "Ховрино", address: "ул. Зеленоградская, д. 15", metro: "Ховрино, МЦД-D3 Грачёвская", hours: "режим работы уточняйте по телефону" },
 ];
 
 // Контакты и офисы правятся в админке (Тексты → Контакты); здесь — значения по умолчанию.
 // company и offices всегда отдают текущие данные с правками (и на сервере, и в браузере).
 export const company = live(() => patched("company", "ru", BASE_COMPANY));
 export const offices = live(() => patched("offices", "ru", BASE_OFFICES));
+
+/** Страница класса «Бизнес» — адрес как на старом car-city.pro */
+export const BIZ_PATH = "/klassyi-avtomobilej/biznes";
 
 export type CarClass = "ekonom" | "komfort" | "komfort-plus" | "biznes" | "gruzovoy" | "dostavka";
 
@@ -79,9 +85,9 @@ export const models: Model[] = [
   { slug: "chery-tiggo-7-pro-max", name: "Chery Tiggo 7 Pro Max", cls: "komfort-plus", engine: "1.5 АКПП", rentFrom: 2600, buyoutFrom: 3315, src: "7-pro-max.d8b2e6a8fec082c2f3f75da8a3eeb859.webP" },
   { slug: "hyundai-sonata", name: "Hyundai Sonata", cls: "komfort-plus", engine: "АКПП", rentFrom: 2800, buyoutFrom: 3200, src: "sonata.d8b2e6a8fec082c2f3f75da8a3eeb859.webP" },
   { slug: "kia-k5", name: "Kia K5", cls: "komfort", engine: "2.0 АКПП", rentFrom: 2800, buyoutFrom: 3420, src: "kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP" },
-  { slug: "hongqi-h5", name: "Hongqi H5", cls: "biznes", engine: "АКПП", rentFrom: 5260, buyoutFrom: 5260, src: "ChatGPT-Image-20-avg.-2026-g.-12-20-40.98aa3db669bf25f45cb463d62fb8c53c.webP" },
-  { slug: "gac-m8", name: "GAC M8", cls: "biznes", engine: "АКПП", rentFrom: 7635, buyoutFrom: 7635, src: "ChatGPT-Image-19-avg.-2026-g.-16-43-56.98aa3db669bf25f45cb463d62fb8c53c.webP" },
-  { slug: "voyah-dream", name: "Voyah Dream", cls: "biznes", engine: "АКПП", rentFrom: 9041, buyoutFrom: 9041, src: "ChatGPT-Image-19-avg.-2026-g.-16-41-33.98aa3db669bf25f45cb463d62fb8c53c.webP" },
+  { slug: "hongqi-h5", name: "Hongqi H5", cls: "biznes", engine: "АКПП", rentFrom: 4500, buyoutFrom: 5260, src: "ChatGPT-Image-20-avg.-2026-g.-12-20-40.98aa3db669bf25f45cb463d62fb8c53c.webP" },
+  { slug: "gac-m8", name: "GAC M8", cls: "biznes", engine: "АКПП", rentFrom: 5000, buyoutFrom: 7635, src: "ChatGPT-Image-19-avg.-2026-g.-16-43-56.98aa3db669bf25f45cb463d62fb8c53c.webP" },
+  { slug: "voyah-dream", name: "Voyah Dream", cls: "biznes", engine: "АКПП", rentFrom: 10000, buyoutFrom: 9041, src: "ChatGPT-Image-19-avg.-2026-g.-16-41-33.98aa3db669bf25f45cb463d62fb8c53c.webP" },
   { slug: "lada-largus", name: "Lada Largus", cls: "gruzovoy", engine: "Фургон", rentFrom: 2000, buyoutFrom: 2000, src: "Lad5a-Largus1.2011a68be1cf41027f5dfe4808290820.webP" },
   { slug: "sollers-atlant-19", name: "Sollers Atlant 1.9 TD", cls: "gruzovoy", engine: "Фургон", rentFrom: 2813, buyoutFrom: 2813, src: "sollersatlant19td.2011a68be1cf41027f5dfe4808290820.webP" },
   { slug: "sollers-argo", name: "Sollers Argo", cls: "gruzovoy", engine: "Фургон", rentFrom: 4000, buyoutFrom: 4000, src: "sollersargo1.2011a68be1cf41027f5dfe4808290820.webP" },

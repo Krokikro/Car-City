@@ -4,7 +4,7 @@
 
 import { createHmac } from "node:crypto";
 import { dbEnabled, q } from "../../db";
-import { EXTRA_LABELS, MESSENGER_LABELS, MODE_LABELS, type Lead, type Touch } from "../types";
+import { EXTRA_LABELS, MODE_LABELS, messengerLine, type Lead, type Touch } from "../types";
 import { getIntegrations, type Integrations } from "../../admin/integrations";
 import { sourceLine } from "../source";
 import { geoLine } from "./geo";
@@ -38,7 +38,7 @@ export function leadText(lead: Lead, html = false): string {
     b(`Заявка с сайта${lead.flags.length ? " (" + lead.flags.join(", ") + ")" : ""}`),
     `Имя: ${e(lead.name || "не указано")}`,
     lead.phone && `Телефон: ${e(lead.phone)}`,
-    lead.messenger && `Связь: ${MESSENGER_LABELS[lead.messenger]}`,
+    messengerLine(lead) && `Связь: ${messengerLine(lead)}`,
     ...Object.entries(lead.extra).map(([k, v]) => e(extraLine(k, v))),
     lead.attr && `Источник: ${e(sourceLine(lead.attr))}`,
     lead.geo && geoLine(lead.geo) && `Город: ${e(geoLine(lead.geo))}`,

@@ -1,5 +1,6 @@
 ---
-url: https://car-city.pro/biznes
+url: ""
+stale: "06.11.2026: русская страница переписана под аренду бизнес-класса (см. content/pages/biznes.md). Перевод устарел и выключен (пустой url) — сайт показывает русский текст с пометкой. Перевести заново и вернуть url: https://car-city.pro/klassyi-avtomobilej/biznes"
 title: "Business class cars for taxi work in Moscow | Hongqi, Voyah, GAC — Car City"
 h1: "Business class cars for taxi work"
 description: "Hongqi H5, Voyah Dream and GAC M8 for business class taxi work in Moscow: rent-to-own, car on the day you apply, 24/7 support."

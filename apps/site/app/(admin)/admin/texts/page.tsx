@@ -71,7 +71,8 @@ export default async function Texts({ searchParams }: { searchParams: Promise<{ 
         {lang !== "ru" && " Переводы публикуйте после вычитки носителем языка."}
       </p>
       {hasDraft && <p className="pnl-msg pnl-warn">Есть неопубликованный черновик: в полях показан он. На сайте пока опубликованная версия.</p>}
-      <form id="texts-form" action={saveTextsAction} className="pnl-form pnl-texts">
+      {/* key: при переключении языка форма пересоздаётся, иначе поля с defaultValue оставались со значениями прошлого языка (правка 06.11) */}
+      <form key={`${sc.id}:${lang}:${sp.only ?? ""}`} id="texts-form" action={saveTextsAction} className="pnl-form pnl-texts">
         <input type="hidden" name="screen" value={sc.id} />
         <input type="hidden" name="lang" value={lang} />
         <fieldset disabled={!write} className="pnl-plain">
@@ -82,7 +83,7 @@ export default async function Texts({ searchParams }: { searchParams: Promise<{ 
                 {fields.map((x) => {
                   const name = `f:${x.bundle}:${x.path}`;
                   return (
-                    <label key={name} className={`pnl-tfield${x.changed ? " is-changed" : ""}${x.multiline ? " wide" : ""}`}>
+                    <label key={`${lang}:${name}`} className={`pnl-tfield${x.changed ? " is-changed" : ""}${x.multiline ? " wide" : ""}`}>
                       <span className="pnl-tlabel"><span className="pnl-tname">{x.label}{x.changed && <em className="st st-qual">изменено</em>}{x.draft && <em className="st st-call">черновик</em>}</span><span data-cc-for={name} /></span>
                       {x.multiline
                         ? <textarea name={name} defaultValue={x.value} maxLength={x.max} rows={Math.min(8, Math.max(2, Math.ceil(x.max / 110)))} placeholder={x.def} data-default={x.def} />

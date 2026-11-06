@@ -23,7 +23,7 @@ const HOME_GROUPS: [RegExp, string][] = [
   [/^seo\./, "Текст «О таксопарке»"], [/^reviews\./, "Отзывы"], [/^faq\./, "Частые вопросы"],
 ];
 const HOME_RULES: [RegExp, (p: string) => string, number][] = [
-  [/^hero\.lines\.(\d)$/, (p) => `Заголовок H1, строка ${n(p, 2)}`, 24],
+  [/^hero\.lines\.(\d)$/, (p) => `Заголовок H1, строка ${n(p, 2)} (на сайте один H1, строки — переносы)`, 24],
   [/^hero\.sub$/, () => "Подзаголовок", 70],
   [/^hero\.bullets\.\d$/, (p) => `Пункт ${n(p, 2)}`, 32],
   [/^hero\.book$/, () => "Кнопка «Забронировать»", 24],
@@ -148,9 +148,9 @@ const uiB: Bundle = {
 const COMPANY_LABELS: Record<string, [string, number]> = {
   name: ["Название", 30], legalName: ["Юрлицо", 60], domain: ["Сайт", 60], city: ["Город", 30], "phones.0": ["Телефон", 20], email: ["Почта", 60],
   fleet: ["Авто в парке", 8], renters: ["Водителей арендовали", 8], boughtOut: ["Выкупили авто", 8], messengerPhone: ["Телефон для мессенджеров", 20],
-  telegram: ["Ссылка Telegram", 200], whatsapp: ["Ссылка WhatsApp", 200], max: ["Ссылка MAX", 200], youtube: ["Ссылка YouTube", 200], group: ["«Входит в группу…»", 60], privacyUrl: ["Политика конфиденциальности (ссылка)", 300],
+  telegram: ["Ссылка Telegram", 200], telegramBot: ["Ссылка на Telegram-бота (окно на сайте; пусто — окно скрыто)", 200], whatsapp: ["Ссылка WhatsApp", 200], max: ["Ссылка MAX", 200], youtube: ["Ссылка YouTube", 200], group: ["«Входит в группу…»", 60], privacyUrl: ["Политика конфиденциальности (ссылка)", 300],
 };
-const companyB: Bundle = { id: "company", langs: ["ru"], base: () => BASE_COMPANY, group: (p) => (/^(telegram|whatsapp|max|youtube|messengerPhone)$/.test(p) ? "Мессенджеры и соцсети" : /^(fleet|renters|boughtOut)$/.test(p) ? "Цифры" : "Компания"), label: (p) => COMPANY_LABELS[p]?.[0] ?? human(p), max: (p, l) => COMPANY_LABELS[p]?.[1] ?? fallbackMax(l) };
+const companyB: Bundle = { id: "company", langs: ["ru"], base: () => BASE_COMPANY, group: (p) => (/^(telegram|telegramBot|whatsapp|max|youtube|messengerPhone)$/.test(p) ? "Мессенджеры и соцсети" : /^(fleet|renters|boughtOut)$/.test(p) ? "Цифры" : "Компания"), label: (p) => COMPANY_LABELS[p]?.[0] ?? human(p), max: (p, l) => COMPANY_LABELS[p]?.[1] ?? fallbackMax(l) };
 const officesB: Bundle = {
   id: "offices", langs: ["ru"], base: () => BASE_OFFICES, group: (p) => `Офис ${n(p, 0)}`,
   label: (p) => ({ name: "Название", address: "Адрес", metro: "Метро", hours: "Часы работы" } as Record<string, string>)[p.split(".")[1]] ?? human(p),

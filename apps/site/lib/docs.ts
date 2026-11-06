@@ -15,6 +15,8 @@ export interface Doc {
   h1: string;
   description?: string;
   date?: string;
+  /** дата редактирования статьи ДД.ММ.ГГГГ (поле updated в файле) */
+  updated?: string;
   cls?: string;
   mode?: "arenda" | "vykup";
   body: string;
@@ -73,6 +75,7 @@ function readDir(dir: string, kind: DocKind, lang: Lang, into: Map<string, Doc>)
       h1: meta.h1 || meta.title || "",
       description: meta.description,
       date: meta.date,
+      updated: meta.updated,
       cls: meta.class,
       mode: meta.mode === "vykup" ? "vykup" : meta.mode === "arenda" ? "arenda" : undefined,
       body,
@@ -102,7 +105,7 @@ function layer(lang: Lang, ov: Overlay): Map<string, Doc> {
     if (l !== lang) continue;
     if (p.hidden) { out.delete(path); continue; }
     const was = base.get(path);
-    out.set(path, { kind: was?.kind ?? p.kind ?? "page", path, title: p.title, h1: p.h1, description: p.description, date: was?.date, cls: was?.cls, mode: was?.mode, body: p.body, gallery: was?.gallery ?? [], lang });
+    out.set(path, { kind: was?.kind ?? p.kind ?? "page", path, title: p.title, h1: p.h1, description: p.description, date: was?.date, updated: was?.updated, cls: was?.cls, mode: was?.mode, body: p.body, gallery: was?.gallery ?? [], lang });
   }
   return out;
 }

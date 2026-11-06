@@ -226,6 +226,25 @@ CREATE TABLE IF NOT EXISTS text_versions (
   by text
 );
 CREATE INDEX IF NOT EXISTS text_versions_key ON text_versions(bundle, lang, id DESC);
+-- ── статьи: просмотры и комментарии читателей (E-E-A-T, правка 06.11.2026) ──
+CREATE TABLE IF NOT EXISTS article_views (
+  path text PRIMARY KEY,
+  views bigint NOT NULL DEFAULT 0,
+  updated_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE TABLE IF NOT EXISTS article_comments (
+  id bigserial PRIMARY KEY,
+  path text NOT NULL,
+  lang text NOT NULL DEFAULT 'ru',
+  name text NOT NULL,
+  text text NOT NULL,
+  status text NOT NULL DEFAULT 'new',
+  ip text,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  moderated_at timestamptz,
+  moderated_by text
+);
+CREATE INDEX IF NOT EXISTS article_comments_path ON article_comments(path, status, created_at);
 CREATE TABLE IF NOT EXISTS migration_checks (
   path text PRIMARY KEY,
   result jsonb NOT NULL,
@@ -246,10 +265,7 @@ const MOVE: [string, string, string][] = [
   ["/klassyi-avtomobilej/ekonom", "/ekonom", "Как на старом сайте"],
   ["/klassyi-avtomobilej/komfort", "/komfort", "Как на старом сайте"],
   ["/klassyi-avtomobilej/komfort-plyus", "/komfortplus", "Как на старом сайте"],
-  ["/klassyi-avtomobilej/biznes", "/biznes", "Раздел «Бизнес» — отдельная страница"],
-  ["/klassyi-avtomobilej/biznes/gac-m8", "/vykup/biznes/gac-m8", "Бизнес-класс — только выкуп"],
-  ["/klassyi-avtomobilej/biznes/hongqi-h5", "/vykup/biznes/hongqi-h5", "Бизнес-класс — только выкуп"],
-  ["/klassyi-avtomobilej/biznes/voyah-dream", "/vykup/biznes/voyah-dream", "Бизнес-класс — только выкуп"],
+  ["/biznes", "/klassyi-avtomobilej/biznes", "Бизнес-класс — по адресу старого сайта"],
   ["/klassyi-avtomobilej/gruzovoy/lada-largus", "/vykup/gruzovoy/lada-largus", "Lada Largus — только выкуп"],
   ["/klassyi-avtomobilej/komfort-plyus/kia-k5", "/klassyi-avtomobilej/komfort/kia-k5", "Kia K5 перешла в «Комфорт»"],
   ["/vykup/komfort-plyus/kia-k5", "/vykup/komfort/kia-k5", "Kia K5 перешла в «Комфорт»"],
@@ -260,5 +276,11 @@ export const SEED_REDIRECTS = `DO $$ BEGIN
 IF NOT EXISTS (SELECT 1 FROM settings WHERE key='seed_redirects_v1') THEN
 ${MOVE.map(([a, b, n]) => `  INSERT INTO redirects (from_path, to_path, code, match, note, created_by) VALUES (${sq(a)}, ${sq(b)}, 301, 'exact', ${sq(n)}, 'переезд') ON CONFLICT DO NOTHING;`).join("\n")}
   INSERT INTO settings (key, value) VALUES ('seed_redirects_v1', 'true');
+END IF;
+-- 06.11.2026: у бизнес-класса появилась аренда — старые адреса /klassyi-avtomobilej/biznes/* снова страницы, а /biznes ведёт на раздел
+IF NOT EXISTS (SELECT 1 FROM settings WHERE key='seed_redirects_v2') THEN
+  DELETE FROM redirects WHERE match = 'exact' AND lower(from_path) IN ('/klassyi-avtomobilej/biznes', '/klassyi-avtomobilej/biznes/gac-m8', '/klassyi-avtomobilej/biznes/hongqi-h5', '/klassyi-avtomobilej/biznes/voyah-dream');
+  INSERT INTO redirects (from_path, to_path, code, match, note, created_by) VALUES ('/biznes', '/klassyi-avtomobilej/biznes', 301, 'exact', 'Бизнес-класс — по адресу старого сайта', 'переезд') ON CONFLICT DO NOTHING;
+  INSERT INTO settings (key, value) VALUES ('seed_redirects_v2', 'true');
 END IF;
 END $$;`;

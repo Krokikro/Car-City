@@ -20,6 +20,10 @@ export function PageEditor({ lang, path, kind, readOnly, seoReadOnly = false, in
   const [tick, setTick] = useState(0);
   const [pick, setPick] = useState(false);
   const [media, setMedia] = useState<Media[] | null>(null);
+  // выбранная картинка ждёт alt-текст (правка 06.11): без описания вставить нельзя
+  const [chosen, setChosen] = useState<Media | null>(null);
+  const [alt, setAlt] = useState("");
+  const sel = useRef<[number, number]>([0, 0]);
   const ta = useRef<HTMLTextAreaElement>(null);
   const form = useRef<HTMLFormElement>(null);
   const set = (k: keyof typeof v) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => { setV((o) => ({ ...o, [k]: e.target.value })); setDirty(true); };
@@ -50,7 +54,14 @@ export function PageEditor({ lang, path, kind, readOnly, seoReadOnly = false, in
   const wrap = (l: string, r: string, ph: string) => edit((s) => ({ text: `${l}${s || ph}${r}`, select: [l.length, l.length + (s || ph).length] }));
   const line = (p: string) => edit((s) => ({ text: (s || "Текст").split("\n").map((x) => p + x).join("\n") }));
   const link = () => edit((s) => ({ text: `[${s || "текст ссылки"}](https://)`, select: [s ? s.length + 3 : 13, s ? s.length + 11 : 21] }));
-  const image = (m: Media) => { edit(() => ({ text: `![${m.name.replace(/\.[a-z0-9]+$/i, "")}](/media/${m.id})` })); setPick(false); };
+  const openPick = () => { const el = ta.current; if (el) sel.current = [el.selectionStart, el.selectionEnd]; setChosen(null); setAlt(""); setPick(true); };
+  const image = (m: Media, text: string) => {
+    const el = ta.current;
+    if (el) el.setSelectionRange(sel.current[0], sel.current[1]);
+    const clean = text.replace(/[\[\]\n]/g, " ").replace(/\s+/g, " ").trim().slice(0, 150);
+    edit(() => ({ text: `![${clean}](/media/${m.id})` }));
+    setPick(false); setChosen(null); setAlt("");
+  };
 
   const onKey = (e: React.KeyboardEvent) => {
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "s") {
@@ -102,7 +113,7 @@ export function PageEditor({ lang, path, kind, readOnly, seoReadOnly = false, in
               <button type="button" onClick={() => wrap("*", "*", "курсив")} title="Курсив"><i>К</i></button>
               <button type="button" onClick={() => line("- ")} title="Список">• Список</button>
               <button type="button" onClick={link} title="Ссылка">Ссылка</button>
-              <button type="button" onClick={() => setPick(true)} title="Картинка из медиатеки">Картинка</button>
+              <button type="button" onClick={openPick} title="Картинка из медиатеки (с описанием alt)">Картинка</button>
             </div>
             <textarea ref={ta} name="body" maxLength={LIM.body} className="pnl-body" rows={26} value={v.body} onChange={set("body")} spellCheck lang="ru" aria-label="Текст страницы в формате Markdown" />
             <small>Markdown: ## заголовок раздела, ### подзаголовок, **жирный**, [текст](адрес), ![описание](адрес картинки). Блоки вроде карточек, вопросов-ответов и кнопок собираются из этого текста автоматически, поэтому правьте слова, а структуру (порядок заголовков) меняйте осторожно. Ctrl/⌘+S — сохранить черновик.</small>
@@ -148,11 +159,24 @@ export function PageEditor({ lang, path, kind, readOnly, seoReadOnly = false, in
       {pick && (
         <div className="pnl-modal" role="dialog" aria-modal="true" aria-label="Медиатека" onClick={(e) => { if (e.target === e.currentTarget) setPick(false); }}>
           <div className="pnl-modal-box">
-            <div className="pnl-modal-head"><b>Выберите картинку</b><button type="button" className="pnl-btn" onClick={() => setPick(false)}>Закрыть</button></div>
-            {!media ? <p className="pnl-muted">Загрузка…</p> : media.length === 0 ? <p className="pnl-muted">В медиатеке пусто. Загрузите файлы в разделе «Медиатека».</p> : (
+            <div className="pnl-modal-head"><b>{chosen ? "Описание картинки (alt)" : "Выберите картинку"}</b><button type="button" className="pnl-btn" onClick={() => setPick(false)}>Закрыть</button></div>
+            {chosen ? (
+              <form className="pnl-alt" onSubmit={(e) => { e.preventDefault(); if (alt.trim().length >= 3) image(chosen, alt); }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={`/media/${chosen.id}`} alt="" style={{ maxWidth: "100%", maxHeight: 220, borderRadius: 12, objectFit: "contain" }} />
+                <label>Alt — что изображено на картинке (для поисковиков и экранных дикторов)
+                  <input autoFocus required minLength={3} maxLength={150} value={alt} onChange={(e) => setAlt(e.target.value)} placeholder="Например: Hongqi H5 в оклейке Car City у офиса на Удальцова" />
+                </label>
+                <small className="pnl-muted">{alt.trim().length} / 150 · опишите картинку словами, без «картинка», «фото» и ключевых слов через запятую</small>
+                <div className="pnl-row">
+                  <button type="submit" className="pnl-btn pnl-btn-main" disabled={alt.trim().length < 3}>Вставить картинку</button>
+                  <button type="button" className="pnl-btn" onClick={() => setChosen(null)}>← Другая картинка</button>
+                </div>
+              </form>
+            ) : !media ? <p className="pnl-muted">Загрузка…</p> : media.length === 0 ? <p className="pnl-muted">В медиатеке пусто. Загрузите файлы в разделе «Медиатека».</p> : (
               <ul className="pnl-grid">
                 {media.map((m) => (
-                  <li key={m.id}><button type="button" onClick={() => image(m)}>
+                  <li key={m.id}><button type="button" onClick={() => { setChosen(m); setAlt(m.name.replace(/\.[a-z0-9]+$/i, "").replace(/[-_]+/g, " ")); }}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={`/media/${m.id}`} alt="" loading="lazy" /><span>{m.name}</span>
                   </button></li>

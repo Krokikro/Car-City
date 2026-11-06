@@ -12,7 +12,7 @@ export const leadFormI18n: Record<Lang, LeadFormText | null> = {
   en: {
     name: "Name",
     phone: "Phone",
-    messenger: "How should we contact you",
+    messenger: "How should we contact you (choose any)",
     messengers: { call: "Call", telegram: "Telegram", whatsapp: "WhatsApp", max: "MAX" },
     consentPrefix: "I consent to the",
     consentLink: "processing of my personal data",

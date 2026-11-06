@@ -163,8 +163,8 @@ export const uz: HomeText = {
       {
         q: "Taksi uchun mashinani qayerda ijaraga olish mumkin?",
         a: [
-          "Moskvada taksi uchun mashinani vositachilarsiz va yashirin toʻlovlarsiz Car City taksoparkida olishingiz mumkin. Ofislarimiz va avto turargohlarimiz uchta manzilda joylashgan:",
-          "- Mitino metrosi (1-y Mitinskiy pereulok, 15-uy 3-bino);\n- Kuntsevskaya metrosi (Vitebskaya koʻchasi, 11-uy);\n- Michurinskiy prospekt metrosi (Udaltsova koʻchasi, 36-uy).",
+          "Moskvada taksi uchun mashinani vositachilarsiz va yashirin toʻlovlarsiz Car City taksoparkida olishingiz mumkin. Ofislarimiz va avto turargohlarimiz toʻrtta manzilda joylashgan:",
+          "- Mitino metrosi (1-y Mitinskiy pereulok, 15-uy 3-bino);\n- Kuntsevskaya metrosi (Vitebskaya koʻchasi, 11-uy);\n- Michurinskiy prospekt metrosi (Udaltsova koʻchasi, 36-uy);\n- Xovrino metrosi, MSD-D3 Grachyovskaya (Zelenogradskaya koʻchasi, 15-uy).",
           "Agar litsenziyali va garovsiz taksi ijarasini qidirayotgan boʻlsangiz, butun Moskvani aylanib chiqishingiz shart emas. Taksi uchun avto ijaraga olish uchun hujjatlaringiz bilan eng yaqin Car City ofisiga keling.",
         ],
       },

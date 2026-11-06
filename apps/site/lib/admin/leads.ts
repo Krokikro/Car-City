@@ -6,7 +6,7 @@ import { attribute, sourceLine } from "../lead/source";
 import { geoLookup, geoLine } from "../lead/server/geo";
 import { langOfPage } from "../lead/server/enrich";
 import { LANG_NAMES } from "../lead/server/deliver";
-import { EXTRA_LABELS, MESSENGER_LABELS, MODE_LABELS, type Lead } from "../lead/types";
+import { EXTRA_LABELS, MODE_LABELS, messengerLine, type Lead } from "../lead/types";
 import { LEAD_STATUS_NAME } from "./roles";
 import { leadScope } from "./scope";
 import type { AdminUser } from "./auth";
@@ -116,7 +116,7 @@ export function exportRow(r: LeadRow): (string | number)[] {
   const d = r.data;
   const a = d.attr ?? attribute(d.first, d.last);
   return [
-    r.id, MSK.format(new Date(r.at)), d.name || "", d.phone || "", d.messenger ? MESSENGER_LABELS[d.messenger] : "", want(d), d.extra?.message ?? "",
+    r.id, MSK.format(new Date(r.at)), d.name || "", d.phone || "", messengerLine(d), want(d), d.extra?.message ?? "",
     ORIGIN_NAMES[r.origin] ?? r.origin, a.channel, a.group, a.campaign ?? "", a.term ?? "", a.content ?? "", sourceLine(a.first), sourceLine(a.last),
     d.first?.landing ?? "", d.page ?? "", d.source, LANG_NAMES[r.lang ?? d.lang ?? "ru"] ?? r.lang ?? "", d.geo?.city ?? "", d.geo?.region ?? "", d.geo?.country ?? "",
     { mobile: "телефон", tablet: "планшет", desktop: "компьютер" }[d.device] ?? d.device, LEAD_STATUS_NAME[r.status] ?? r.status, r.reason ?? "", r.assignee_name ?? "", r.comment ?? "",

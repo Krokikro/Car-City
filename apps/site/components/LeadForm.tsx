@@ -130,7 +130,9 @@ export function LeadForm({ button, source = "site", compact = false, extra, t: t
       phone: normalized,
       consent: fd.get("consent") === "on",
       marketing: fd.get("marketing") === "on",
-      messenger: (fd.get("messenger") as Messenger | null) ?? undefined,
+      // Можно отметить несколько способов связи
+      messengers: (fd.getAll("messenger") as Messenger[]).filter(Boolean),
+      messenger: (fd.getAll("messenger")[0] as Messenger | undefined) ?? undefined,
       company_site: String(fd.get("company_site") ?? ""),
       fill_ms: Date.now() - startedAt.current,
       source,
@@ -197,7 +199,7 @@ export function LeadForm({ button, source = "site", compact = false, extra, t: t
           <legend className="small muted">{t.messenger}</legend>
           {MESSENGERS.map((m) => (
             <label key={m} className="lead-chip">
-              <input type="radio" name="messenger" value={m} />
+              <input type="checkbox" name="messenger" value={m} />
               <span className="pill">{m === "call" ? <span className="soc-ico soc-call" aria-hidden="true"><svg viewBox="0 0 24 24" width="12" height="12"><path d="M6.6 3.5h2.6l1.3 3.6-1.8 1.4a10 10 0 0 0 6.8 6.8l1.4-1.8 3.6 1.3v2.6c0 1-.8 1.8-1.8 1.8A15.6 15.6 0 0 1 4.8 5.3c0-1 .8-1.8 1.8-1.8z" fill="#111"/></svg></span> : <SocialIcon kind={m} size={20} />}{t.messengers[m]}</span>
             </label>
           ))}

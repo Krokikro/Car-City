@@ -102,6 +102,7 @@ export async function POST(req: Request) {
     name: data.name,
     phone: data.phone,
     messenger: data.messenger,
+    messengers: data.messengers,
     source: data.source || "site",
     page: data.page || req.headers.get("referer") || undefined,
     lang: data.lang || undefined,

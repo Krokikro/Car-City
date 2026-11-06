@@ -8,6 +8,9 @@ import { redirect } from "next/navigation";
 import { cleanPath, fileData, isLangId, rowOf, versions } from "@/lib/admin/pages";
 import { fmt, localInput } from "@/lib/admin/format";
 import { pageToolAction } from "../../actions";
+import { GraphicSlot } from "@/components/admin/GraphicSlot";
+import { getSetting } from "@/lib/admin/store";
+import { families, recommend } from "@/lib/media/families";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Редактор страницы" };
@@ -32,6 +35,11 @@ export default async function Edit({ searchParams }: { searchParams: Promise<{ e
   const vers = await versions(lang, path);
   const state = row?.publish_at ? `Запланировано на ${fmt(row.publish_at, true)} (МСК)` : row?.draft ? "Есть неопубликованный черновик" : row?.published?.hidden ? "Снята с публикации" : row?.published ? "Опубликована с правками" : file ? "Как в исходном тексте сайта" : "Перевода нет, показан русский текст";
   const siteHref = lang === "ru" ? path : `/${lang}${path}`;
+  // Обложка статьи — прямо в редакторе (правка 06.11): те же места, что в «Графика сайта → Обложки статей»
+  const slug = path.split("/").pop() ?? "";
+  const covers = kind === "article" ? families().filter((f) => f.kind === "image" && (f.key === `/news/${slug}` || f.key === `/news-light/${slug}`)) : [];
+  const coverWrite = can(user, "media", "write");
+  const assets = covers.length ? (((await getSetting<Record<string, string>>("assets")) ?? {}) as Record<string, string>) : {};
 
   return (
     <Shell user={user} active={sec} title={cur.h1 || path} sub={`${path} · ${state}`} flash={sp}
@@ -51,6 +59,25 @@ export default async function Edit({ searchParams }: { searchParams: Promise<{ e
         hasDraft={Boolean(row?.draft)} publishAt={localInput(row?.publish_at)} hidden={Boolean(row?.published?.hidden && !row?.draft)}
         previewTo={siteHref}
       />
+      {kind === "article" && (
+        <section className="pnl-card">
+          <h2>Обложка статьи</h2>
+          {covers.length === 0 ? (
+            <p className="pnl-muted">У этой статьи пока нет своей обложки — на сайте показывается первая картинка из текста. Обложку можно добавить в разделе «Графика сайта».</p>
+          ) : (
+            <div className="pnl-slots">
+              {covers.map((f) => {
+                const prevVar = f.variants.find((v) => v.fmt === "webp" && (v.w ?? 0) <= 700) ?? f.variants.find((v) => v.fmt !== "avif") ?? f.variants[0];
+                return (
+                  <GraphicSlot key={f.key} k={f.key} kind={f.kind} label={f.key.startsWith("/news-light/") ? "Светлая версия сайта" : "Тёмная версия сайта"} rec={recommend(f)}
+                    preview={assets[prevVar.path] ?? prevVar.path} replaced={f.variants.some((v) => assets[v.path])} canWrite={coverWrite}
+                    accept={f.svg ? "image/svg+xml,.svg" : "image/jpeg,image/png,image/webp,image/avif"} compact />
+                );
+              })}
+            </div>
+          )}
+        </section>
+      )}
       {write && (
         <details className="pnl-card">
           <summary>Версии и сброс</summary>
