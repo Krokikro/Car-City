@@ -1,0 +1,72 @@
+/* Страница выкупа: выгоды, условия, тарифы, экономия, шаги */
+
+/* — общее: секции с собственным фоном и шашечной лентой на стыке — */
+.vk-sec { position: relative; padding-block: clamp(80px, 9vw, 148px); overflow-x: clip; overflow-y: visible; isolation: isolate; }
+.vk-sec::before { content: ""; position: absolute; z-index: 3; left: -3%; right: -3%; top: -13px; height: 26px; transform: rotate(-.9deg); pointer-events: none;
+  background: repeating-conic-gradient(#0b0b0c 0 25%, var(--cc-signal) 0 50%) 0 0 / 26px 26px; box-shadow: 0 0 40px rgba(255, 183, 0, .22); }
+.vk-sec::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.vk-head { display: grid; gap: 14px; margin-bottom: clamp(36px, 4.5vw, 64px); }
+.vk-head .display { max-width: 18ch; }
+.vk-hot { font-weight: 600; color: var(--cc-signal); white-space: nowrap; }
+.is-accent .vk-hot { color: #111; }
+
+/* — 01 Выгоды: мозаика — */
+.vk-ben::after { background: radial-gradient(60% 55% at 88% 6%, rgba(255, 183, 0, .16), transparent 70%), radial-gradient(40% 40% at 0% 100%, rgba(255, 183, 0, .06), transparent 70%); }
+.vk-ben-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(12px, 1.4vw, 20px); }
+.vk-bcard { position: relative; grid-column: span var(--span, 1); min-height: clamp(190px, 17vw, 250px); padding: clamp(22px, 2vw, 32px); border-radius: 28px; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: space-between; gap: 22px; color: var(--text);
+  border: 1px solid rgba(255, 255, 255, .09); background: linear-gradient(160deg, #1a1c20 0%, #101113 70%);
+  transition: transform .4s var(--ease-out), border-color .3s, box-shadow .4s; }
+.vk-bcard:hover { transform: translateY(-6px); border-color: rgba(255, 183, 0, .55); box-shadow: 0 24px 50px -24px rgba(255, 183, 0, .35); }
+.vk-bico { display: grid; place-items: center; width: 58px; height: 58px; border-radius: 18px; color: var(--cc-signal); background: rgba(255, 183, 0, .12); border: 1px solid rgba(255, 183, 0, .28); }
+.vk-btext { position: relative; z-index: 1; font: 500 clamp(18px, 1.7vw, 25px)/1.22 var(--font-display); letter-spacing: -.012em; text-wrap: balance; }
+.vk-bnum { position: absolute; right: 20px; top: 14px; font: 600 clamp(54px, 6vw, 92px)/1 var(--font-display); color: rgba(255, 255, 255, .045); letter-spacing: -.04em; pointer-events: none; }
+.vk-bcard.is-accent { color: #141000; border-color: transparent; background: linear-gradient(150deg, #ffcb3d 0%, var(--cc-signal) 55%, #f09a00 100%); box-shadow: 0 30px 60px -30px rgba(255, 183, 0, .55); }
+.vk-bcard.is-accent .vk-bico { color: #141000; background: rgba(20, 16, 0, .12); border-color: rgba(20, 16, 0, .22); }
+.vk-bcard.is-accent .vk-bnum { color: rgba(20, 16, 0, .1); }
+.vk-bcard.is-accent .vk-btext { font-size: clamp(22px, 2.3vw, 34px); }
+@media (max-width: 1000px) { .vk-ben-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .vk-bcard { grid-column: span 1; } .vk-bcard.is-accent { grid-column: span 2; } }
+@media (max-width: 560px) { .vk-ben-grid { grid-template-columns: 1fr; } .vk-bcard, .vk-bcard.is-accent { grid-column: span 1; min-height: 0; } }
+
+/* — 02 Условия — */
+.vk-cond { background: linear-gradient(180deg, #0f1012 0%, #0b0b0c 100%); }
+.vk-cond::after { background: radial-gradient(55% 50% at 6% 0%, rgba(255, 183, 0, .12), transparent 70%); }
+.vk-req { margin-bottom: clamp(36px, 4vw, 60px); }
+.vk-req-title { margin: 0 0 20px; font: 400 clamp(20px, 1.8vw, 26px)/1.2 var(--font-display); letter-spacing: -.01em; color: var(--text-muted); }
+.vk-req-grid { display: grid; grid-template-columns: 1fr 1fr 2.1fr; gap: clamp(12px, 1.4vw, 20px); }
+.vk-rcard { position: relative; padding: clamp(22px, 2vw, 32px); border-radius: 26px; border: 1px solid rgba(255, 255, 255, .1); background: linear-gradient(160deg, #1b1d21, #111214); display: grid; align-content: start; gap: 8px; overflow: hidden; }
+.vk-rcard::after { content: ""; position: absolute; right: -40px; top: -40px; width: 140px; height: 140px; border-radius: 50%; background: radial-gradient(closest-side, rgba(255, 183, 0, .18), transparent); }
+.vk-rico { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 16px; color: #141000; background: var(--cc-signal); margin-bottom: 8px; }
+.vk-rk { margin: 0; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); }
+.vk-rv { margin: 0; font: 500 clamp(24px, 2.6vw, 40px)/1.1 var(--font-display); letter-spacing: -.02em; color: var(--text); }
+.vk-rcard.is-wide .vk-rv { font-size: clamp(18px, 1.7vw, 26px); line-height: 1.3; letter-spacing: -.01em; }
+.vk-note { display: flex; gap: 12px; align-items: flex-start; margin: 16px 0 0; color: var(--text-muted); font-size: 15px; max-width: 70ch; }
+.vk-note span { flex: none; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--cc-signal); color: var(--cc-signal); font: italic 600 13px/1 var(--font-display); margin-top: 1px; }
+.vk-terms { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: clamp(24px, 4vw, 72px); counter-reset: none; }
+.vk-terms li { display: grid; grid-template-columns: auto 1fr; align-items: baseline; gap: 20px; padding: 24px 0; border-top: 1px solid rgba(255, 255, 255, .1); transition: border-color .3s; }
+.vk-terms li:hover { border-color: var(--cc-signal); }
+.vk-tn { font: 600 clamp(26px, 2.6vw, 40px)/1 var(--font-display); letter-spacing: -.03em; color: var(--cc-signal); min-width: 2ch; }
+.vk-tt { font: 400 clamp(17px, 1.5vw, 22px)/1.35 var(--font-text); color: var(--text); text-wrap: pretty; }
+@media (max-width: 1000px) { .vk-req-grid { grid-template-columns: 1fr 1fr; } .vk-rcard.is-wide { grid-column: 1 / -1; } }
+@media (max-width: 760px) { .vk-terms { grid-template-columns: 1fr; } .vk-req-grid { grid-template-columns: 1fr; } }
+
+/* — 03 Тарифы — */
+
+/* — Экономия («Почему с нами выгодно») — крупные карточки с суммой — */
+.pg-vykup .tiles-save { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; list-style: none; padding: 0; margin: 28px 0 0; }
+.pg-vykup .prose ul.tiles-save li { display: flex; flex-direction: column; justify-content: space-between; gap: 18px; min-height: 170px; padding: 24px; border-radius: 24px; background: linear-gradient(160deg, #1c1e22, #111214); border: 1px solid rgba(255, 183, 0, .22); }
+.pg-vykup .prose ul.tiles-save li::before { display: none; }
+.pg-vykup .prose ul.tiles-save li:hover { border-color: var(--cc-signal); transform: translateY(-4px); }
+.vs-l { font-size: 16px; line-height: 1.35; color: var(--text-muted); }
+.vs-v { font: 600 clamp(22px, 2.1vw, 32px)/1.1 var(--font-display); letter-spacing: -.02em; color: var(--cc-signal); text-wrap: balance; }
+@media (max-width: 1100px) { .pg-vykup .tiles-save { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .pg-vykup .tiles-save { grid-template-columns: 1fr; } .pg-vykup .prose ul.tiles-save li { min-height: 0; } }
+
+/* — Заголовок и текст рядом: по центру друг относительно друга — */
+@media (min-width: 1024px) {
+  .pg-center.split { align-items: center; }
+  .pg-center.split > .sticky { position: static; align-self: center; }
+}
+
+/* — Дорога выкупа: пять шагов + финиш, таблички уже — */
+@media (min-width: 900px) { .stp-buy .stp { width: 20%; } .stp-buy .stp-t { font-size: clamp(13px, 1vw, 16px); } }

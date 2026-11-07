@@ -1,0 +1,18 @@
+<svg width="800" height="100" viewBox="0 0 800 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="50" height="50" fill="black"/>
+<rect x="200" width="50" height="50" fill="black"/>
+<rect x="400" width="50" height="50" fill="black"/>
+<rect x="600" width="50" height="50" fill="black"/>
+<rect x="50" y="50" width="50" height="50" fill="black"/>
+<rect x="250" y="50" width="50" height="50" fill="black"/>
+<rect x="450" y="50" width="50" height="50" fill="black"/>
+<rect x="650" y="50" width="50" height="50" fill="black"/>
+<rect x="100" width="50" height="50" fill="black"/>
+<rect x="300" width="50" height="50" fill="black"/>
+<rect x="500" width="50" height="50" fill="black"/>
+<rect x="700" width="50" height="50" fill="black"/>
+<rect x="150" y="50" width="50" height="50" fill="black"/>
+<rect x="350" y="50" width="50" height="50" fill="black"/>
+<rect x="550" y="50" width="50" height="50" fill="black"/>
+<rect x="750" y="50" width="50" height="50" fill="black"/>
+</svg>
