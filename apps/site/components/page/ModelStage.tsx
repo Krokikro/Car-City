@@ -6,6 +6,7 @@ import { carImages } from "@/lib/car-images";
 import { asset } from "@/lib/i18n";
 import { carInteriors } from "@/lib/car-interiors";
 import { mediaLive } from "@/lib/media/live";
+import { photoOpts } from "@/lib/car-photo-opts";
 
 // Сцена модели: подиум со световым кольцом. Главный кадр — фото парка из каталога,
 // следом уличные фото той же машины: спереди, сзади, сбоку и салон через открытую водительскую дверь.
@@ -22,7 +23,7 @@ export function ModelStage({ name, slug }: { name: string; slug: string }) {
   // кадры из файлов (кроме скрытых в админке) и фото, добавленные в админке
   const gal = mediaLive().g[slug] ?? {};
   const pics: { key: string; label: string; big: string; thumb: string }[] = [
-    ...(own ? SHOTS.filter((s) => (s.key !== "interior" || carInteriors.has(slug)) && !gal.hide?.includes(s.key)).map((s) => ({ key: s.key as string, label: s.label as string, big: asset(`/cars/${slug}-${s.key}-1000.webp`), thumb: asset(`/cars/${slug}-${s.key}-480.webp`) })) : []),
+    ...(own ? SHOTS.filter((s) => (photoOpts(slug).shots ? photoOpts(slug).shots!.includes(s.key) : s.key !== "interior" || carInteriors.has(slug)) && !gal.hide?.includes(s.key)).map((s) => ({ key: s.key as string, label: s.label as string, big: asset(`/cars/${slug}-${s.key}-1000.webp`), thumb: asset(`/cars/${slug}-${s.key}-480.webp`) })) : []),
     ...(gal.extra ?? []).map((x, i) => ({ key: `x${x.id}`, label: x.alt || `Фото ${i + 1}`, big: asset(x.big), thumb: asset(x.thumb) })),
   ];
   return (

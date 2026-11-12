@@ -1,5 +1,6 @@
 "use client";
 
+import { loc } from "@/lib/ui-terms";
 import { useMemo, useState } from "react";
 
 import type { Review } from "@/lib/blocks";
@@ -36,7 +37,7 @@ export function ReviewsWall({ items, lang = "ru" }: { items: Review[]; lang?: La
           <button type="button" role="tab" className="pill" aria-selected={!src} onClick={() => pick(null)}>{t.reviewsAll}<span className="pill-count">{items.length}</span></button>
           {sources.map((s) => (
             <button key={s} type="button" role="tab" className="pill" aria-selected={src === s} onClick={() => pick(s)}>
-              {SRC[s] ?? s}<span className="pill-count">{items.filter((r) => r.source === s).length}</span>
+              {loc(lang, SRC[s] ?? s)}<span className="pill-count">{items.filter((r) => r.source === s).length}</span>
             </button>
           ))}
         </div>
@@ -51,7 +52,7 @@ export function ReviewsWall({ items, lang = "ru" }: { items: Review[]; lang?: La
                     <figcaption>{r.name}</figcaption>
                     <p className="mono">{r.date}</p>
                   </div>
-                  <span className="rwall-src mono">{SRC[r.source] ?? r.source}</span>
+                  <span className="rwall-src mono">{loc(lang, SRC[r.source] ?? r.source)}</span>
                 </div>
                 <p className="rwall-stars" aria-label={t.stars}>★★★★★</p>
                 <blockquote>{r.text}</blockquote>
@@ -65,7 +66,7 @@ export function ReviewsWall({ items, lang = "ru" }: { items: Review[]; lang?: La
             <button type="button" className="btn btn-glass btn-lg" onClick={() => setOpen(!open)} aria-expanded={open}>{open ? x.less : x.more(list.length)}</button>
           )}
           {src && SOURCE_URL[src] && (
-            <a className="btn btn-primary btn-lg" href={SOURCE_URL[src]} target="_blank" rel="noopener noreferrer">{x.all(SRC[src] ?? src)} <span className="arrow">→</span></a>
+            <a className="btn btn-primary btn-lg" href={SOURCE_URL[src]} target="_blank" rel="noopener noreferrer">{x.all(loc(lang, SRC[src] ?? src))} <span className="arrow">→</span></a>
           )}
         </div>
         {!src && (

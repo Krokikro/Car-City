@@ -1,5 +1,6 @@
 import type { Btn } from "@/lib/blocks";
 import { Crumbs, Buttons } from "./PageParts";
+import { loc } from "@/lib/ui-terms";
 import { ModelStage } from "./ModelStage";
 import { href, type Lang } from "@/lib/i18n";
 import { ui } from "@/lib/ui";
@@ -67,8 +68,8 @@ export function ModelHero(p: {
       {p.panels && (p.panels.price || p.panels.details.length > 0) && (
         <div className="wrap mdl-panels" data-reveal-stagger>
           {p.panels.price && (
-            <section className="mp mp-price" aria-label="Цена">
-              <p className="mp-title mono">{p.mode === "vykup" ? "Условия выкупа" : "Цена аренды"}</p>
+            <section className="mp mp-price" aria-label={loc(lang, "Цена")}>
+              <p className="mp-title mono">{loc(lang, p.mode === "vykup" ? "Условия выкупа" : "Цена аренды")}</p>
               <table>
                 <thead><tr>{p.panels.price.head.map((h) => <th key={h}>{h}</th>)}</tr></thead>
                 <tbody>
@@ -80,8 +81,8 @@ export function ModelHero(p: {
             </section>
           )}
           {p.panels.details.length > 0 && (
-            <section className="mp mp-details" aria-label="Детали">
-              <p className="mp-title mono">Детали</p>
+            <section className="mp mp-details" aria-label={loc(lang, "Детали")}>
+              <p className="mp-title mono">{loc(lang, "Детали")}</p>
               <dl>
                 {p.panels.details.map(([k, v]) => <div key={k}><dt><DetailIco k={k} />{k}</dt><dd>{v}</dd></div>)}
               </dl>

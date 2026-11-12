@@ -146,7 +146,10 @@ export function FleetNotes({ b, n, lang = "ru" }: { b: Sec; n: number; lang?: La
 export function PriceTable({ b, n, lang = "ru" }: { b: Sec; n: number; lang?: Lang }) {
   const intro = [...b.html.matchAll(/<p(?: [^>]*)?>([\s\S]*?)<\/p>/g)].map((m) => m[1]);
   const head = [...(b.html.match(/<thead>([\s\S]*?)<\/thead>/)?.[1] ?? "").matchAll(/<th>([\s\S]*?)<\/th>/g)].map((m) => strip(m[1]));
-  const rows = [...(b.html.match(/<tbody>([\s\S]*?)<\/tbody>/)?.[1] ?? "").matchAll(/<tr>([\s\S]*?)<\/tr>/g)].map((m) => [...m[1].matchAll(/<td>([\s\S]*?)<\/td>/g)].map((c) => strip(c[1])));
+  // ячейка со скидкой приходит как <td class="td-price"><span class="pr-now">…</span><s class="pr-old">…</s></td> (lib/price-sync)
+  const raw = [...(b.html.match(/<tbody>([\s\S]*?)<\/tbody>/)?.[1] ?? "").matchAll(/<tr>([\s\S]*?)<\/tr>/g)].map((m) => [...m[1].matchAll(/<td[^>]*>([\s\S]*?)<\/td>/g)].map((c) => c[1]));
+  const rows = raw.map((r) => r.map((c) => strip(c.replace(/<s\b[^>]*>[\s\S]*?<\/s>/g, ""))));
+  const olds = raw.map((r) => r.map((c) => strip(c.match(/<s\b[^>]*>([\s\S]*?)<\/s>/)?.[1] ?? "")));
   if (!head.length || !rows.length) return null;
   const val = (s: string) => Number(s.replace(/[^\d]/g, "")) || 0;
   const min = head.map((_, c) => (c === 0 ? 0 : Math.min(...rows.map((r) => val(r[c] ?? "")).filter(Boolean))));
@@ -162,7 +165,7 @@ export function PriceTable({ b, n, lang = "ru" }: { b: Sec; n: number; lang?: La
               {rows.map((r, i) => (
                 <tr key={i}>
                   {r.map((c, j) => (
-                    j === 0 ? <th key={j} scope="row">{c}</th> : <td key={j} className={val(c) === min[j] ? "is-min" : ""}><b>{nb(c.replace(/\s*₽/, "").trim())}</b><span> ₽</span></td>
+                    j === 0 ? <th key={j} scope="row">{c}</th> : <td key={j} className={val(c) === min[j] ? "is-min" : ""}><b>{nb(c.replace(/\s*₽/, "").trim())}</b><span> ₽</span>{olds[i][j] && <s className="pt-old">{nb(olds[i][j].replace(/\s*₽/, "").trim())} ₽</s>}</td>
                   ))}
                 </tr>
               ))}

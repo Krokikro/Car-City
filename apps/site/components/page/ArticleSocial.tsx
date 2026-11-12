@@ -118,7 +118,7 @@ export function ArticleComments({ path, lang, items }: { path: string; lang: str
         <form className="art-comments-form" onSubmit={onSubmit} noValidate>
           <label className="art-f"><span className="small muted">{t.name}</span><input name="name" maxLength={60} autoComplete="name" required /></label>
           <label className="art-f"><span className="small muted">{t.text}</span><textarea name="text" maxLength={2000} rows={4} required /></label>
-          <label className="hp" aria-hidden="true">Сайт компании<input name="company_site" tabIndex={-1} autoComplete="off" /></label>
+          <label className="hp" aria-hidden="true">Website<input name="company_site" tabIndex={-1} autoComplete="off" /></label>
           <p className="small muted">{t.rule}</p>
           {state === "error" && err && <p className="art-comments-err small" role="alert">{err}</p>}
           <button className="btn btn-primary" type="submit" disabled={state === "sending"}>{state === "sending" ? t.sending : t.send}</button>
