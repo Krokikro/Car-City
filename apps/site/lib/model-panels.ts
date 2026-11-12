@@ -1,5 +1,6 @@
 // Две таблички под фото на странице модели: «Цена» (главное) и «Детали» (характеристики).
 // Берём таблицы из текста страницы старого сайта и убираем их из разделов ниже, чтобы не повторять.
+import { loc } from "./ui-terms";
 import type { Parsed } from "./blocks";
 import type { FleetCar } from "./fleet";
 import { rentRows, buyRows, type PriceRow } from "./prices";
@@ -40,6 +41,9 @@ const cell = (r: PriceRow) => (r.o && r.o > r.p ? `<span class="pr-now">${fmt(r.
 const H: Record<string, { sched: string; term: string; dep: string; pay: string; perDay: string }> = {
   ru: { sched: "График", term: "Срок", dep: "Взнос", pay: "Платёж в сутки", perDay: "Цена в сутки" },
   en: { sched: "Schedule", term: "Term", dep: "Down payment", pay: "Daily payment", perDay: "Price per day" },
+  ky: { sched: "График", term: "Мөөнөт", dep: "Алгачкы төлөм", pay: "Суткалык төлөм", perDay: "Суткасына баасы" },
+  kk: { sched: "Кесте", term: "Мерзім", dep: "Бастапқы жарна", pay: "Тәуліктік төлем", perDay: "Тәулігіне бағасы" },
+  uz: { sched: "Jadval", term: "Muddat", dep: "Boshlang‘ich to‘lov", pay: "Kunlik to‘lov", perDay: "Bir kunlik narx" },
 };
 
 /** Таблица цен машины из единого источника (lib/prices.ts): аренда по графикам/срокам или выкуп без выкупного платежа */
@@ -49,12 +53,12 @@ export function priceTable(car: FleetCar, mode: "arenda" | "vykup" | undefined, 
     const rows = buyRows(car);
     if (!rows.length) return undefined;
     const dep = rows.some((r) => r.dep);
-    return { head: dep ? [h.dep, h.term, h.pay] : [h.term, h.pay], rows: rows.map((r) => (dep ? [r.dep ? `${fmt(r.dep)}&nbsp;₽` : "—", r.k, cell(r)] : [r.k, cell(r)])) };
+    return { head: dep ? [h.dep, h.term, h.pay] : [h.term, h.pay], rows: rows.map((r) => (dep ? [r.dep ? `${fmt(r.dep)}&nbsp;₽` : "—", loc(lang, r.k), cell(r)] : [loc(lang, r.k), cell(r)])) };
   }
   const rows = rentRows(car);
   if (!rows.length) return undefined;
   const truck = rows.some((r) => r.dep);
-  return { head: [truck ? h.term : h.sched, h.perDay], rows: rows.map((r) => [r.k, cell(r)]) };
+  return { head: [truck ? h.term : h.sched, h.perDay], rows: rows.map((r) => [loc(lang, r.k), cell(r)]) };
 }
 
 export function modelPanels(p: Parsed, car?: FleetCar, clsName?: string, mode?: "arenda" | "vykup", lang = "ru"): Panels {
@@ -92,5 +96,7 @@ export function modelPanels(p: Parsed, car?: FleetCar, clsName?: string, mode?: 
   add("Объем двигателя", car?.engine);
   add("Коробка", car?.gearbox);
   if (clsName) add("Класс", clsName);
+  // подписи и значения из данных — на язык страницы
+  if (lang !== "ru") details = details.map(([k, v]) => [loc(lang, k), loc(lang, v)]);
   return { price, details };
 }

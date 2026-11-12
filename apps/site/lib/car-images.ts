@@ -104,6 +104,10 @@ export const carImages: Record<string, { w: number; h: number }> = {
     "w": 1200,
     "h": 896
   },
+  "jetour-dashing": {
+    "w": 1200,
+    "h": 896
+  },
   "tenet-t7": {
     "w": 1200,
     "h": 896

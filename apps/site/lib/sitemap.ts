@@ -14,7 +14,7 @@ const BUILD_TIME = new Date().toISOString();
 export function sitemapUrls(ov: Overlay): SmUrl[] {
   const s = ov.seo;
   const o = originOf(s);
-  const langs = LANGS.filter((l) => s.sitemap.langs.includes(l));
+  const langs = LANGS.filter((l) => s.sitemap.langs.includes(l) && (l === "ru" || s.indexLangs.includes(l)));
   const ruDocs = allDocs("ru", ov);
   // какие страницы реально есть на каждом языке (непереведённые не дублируем)
   const has = new Map<Lang, Set<string>>();

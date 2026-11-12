@@ -59,6 +59,9 @@ export interface SeoSettings {
     changefreq: Record<PageType, Freq>;
     images: boolean;
   };
+  /** языки, открытые для индексации. Остальные отдают noindex, не попадают в sitemap и hreflang
+   *  (рекомендация SEO-подрядчика 12.11.2026: переводы открываем только когда они готовы на 100%) */
+  indexLangs: Lang[];
   /** hreflang-ссылки на переводы */
   hreflang: boolean;
   /** микроразметка организации (AutoRental) на главной */
@@ -93,6 +96,7 @@ export const DEFAULT_SEO: SeoSettings = {
     changefreq: { home: "daily", class: "weekly", model: "weekly", article: "monthly", page: "monthly" },
     images: true,
   },
+  indexLangs: ["ru"],
   hreflang: true,
   orgLd: true,
 };
@@ -136,6 +140,7 @@ export function mergeSeo(raw: unknown): SeoSettings {
     },
     templates: { ...(r.templates ?? {}) },
     indexHosts: Array.isArray(r.indexHosts) ? r.indexHosts : DEFAULT_SEO.indexHosts,
+    indexLangs: Array.isArray(r.indexLangs) ? Array.from(new Set(["ru", ...r.indexLangs])) as Lang[] : DEFAULT_SEO.indexLangs,
   };
 }
 export function mergeSite(raw: unknown): SiteSettings {

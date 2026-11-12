@@ -10,12 +10,44 @@ export interface Card { name: string; slug?: string; specs: [string, string][]; 
 export interface Fig { src: string; caption: string }
 export interface Qa { q: string; a: string }
 
-export type Block =
+/** Оформление блока из конструктора в админке (правки 12.11.2026) */
+export type BlockStyle = "accent" | "card" | "center" | "narrow" | "dark";
+export const BLOCK_STYLES: Record<BlockStyle, string> = { accent: "Акцентный фон", card: "Карточка с рамкой", center: "Текст по центру", narrow: "Узкая колонка", dark: "Тёмная плашка" };
+
+export type Block = (
   | { t: "section"; title: string; html: string; figs: Fig[]; btns: Btn[] }
   | { t: "faq"; title: string; items: Qa[] }
   | { t: "cards"; groups: { label?: string; cards: Card[] }[] }
   | { t: "calculator" }
-  | { t: "trust" };
+  | { t: "trust" }
+  // готовые блоки из конструктора: вставляются в текст страницы строкой-маркером
+  | { t: "form" }
+  | { t: "steps" }
+  | { t: "reqs" }
+  | { t: "reviews" }
+  | { t: "video"; title: string; src: string }
+) & { style?: BlockStyle };
+
+/** Строка-настройка блока сразу под его заголовком: <!-- block hidden style=accent --> */
+export const BLOCK_META = /^[ \t]*<!--\s*block\b([^>]*?)-->[ \t]*\n?/;
+export function blockMeta(md: string): { hidden: boolean; style?: BlockStyle; rest: string } {
+  const m = md.match(BLOCK_META);
+  if (!m) return { hidden: false, rest: md };
+  const st = m[1].match(/style=([a-z]+)/)?.[1] as BlockStyle | undefined;
+  return { hidden: /\bhidden\b/.test(m[1]), style: st && st in BLOCK_STYLES ? st : undefined, rest: md.slice(m[0].length) };
+}
+
+/** Ссылка на YouTube/Rutube/VK Видео → адрес для встраивания */
+export function embedSrc(url: string): string | null {
+  const u = url.trim();
+  const yt = u.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([\w-]{6,})/);
+  if (yt) return `https://www.youtube-nocookie.com/embed/${yt[1]}`;
+  const rt = u.match(/rutube\.ru\/(?:video|play\/embed)\/([\w]+)/);
+  if (rt) return `https://rutube.ru/play/embed/${rt[1]}`;
+  const vk = u.match(/vk(?:video)?\.(?:com|ru)\/video(-?\d+)_(\d+)/);
+  if (vk) return `https://vk.com/video_ext.php?oid=${vk[1]}&id=${vk[2]}`;
+  return null;
+}
 
 export interface Parsed {
   crumbs: string[];
@@ -182,6 +214,15 @@ export function parseDoc(src: string, opts: { twin?: string; model?: boolean; la
 
   const pushSection = (title: string, md: string) => {
     if (/\[\[calc\]\]/.test(md)) { blocks.push({ t: "calculator" }); return; }
+    // готовые блоки из конструктора
+    const mk = md.trim();
+    if (/^\[\[form\]\]$/.test(mk)) { blocks.push({ t: "form" }); return; }
+    if (/^\[\[steps\]\]$/.test(mk)) { blocks.push({ t: "steps" }); return; }
+    if (/^\[\[reqs\]\]$/.test(mk)) { blocks.push({ t: "reqs" }); return; }
+    if (/^\[\[reviews\]\]$/.test(mk)) { blocks.push({ t: "reviews" }); return; }
+    if (/^\[\[trust\]\]$/.test(mk)) { blocks.push({ t: "trust" }); return; }
+    const vid = mk.match(/^\[\[video:([^\]]+)\]\]$/);
+    if (vid) { const src = embedSrc(vid[1]); if (src) blocks.push({ t: "video", title, src }); return; }
     if (/^(Нам доверяют|They trust us|Бизге ишен|Бізге сен|Bizga ishon)/i.test(title)) { blocks.push({ t: "trust" }); return; }
     const qs = md.split(/^### /m);
     if (/вопрос|question|суроо|сұрақ|savol/i.test(title) && qs.length > 2) {
@@ -198,7 +239,12 @@ export function parseDoc(src: string, opts: { twin?: string; model?: boolean; la
   for (const ch of chunks) {
     const nl = ch.indexOf("\n");
     const title = (nl < 0 ? ch : ch.slice(0, nl)).trim();
-    let body = nl < 0 ? "" : ch.slice(nl + 1);
+    // настройки блока из конструктора: скрыт / оформление
+    const meta = blockMeta(nl < 0 ? "" : ch.slice(nl + 1));
+    if (meta.hidden) continue;
+    const from = blocks.length;
+    const styleNew = () => { if (meta.style) for (let k = from; k < blocks.length; k++) blocks[k].style = meta.style; };
+    let body = meta.rest;
     // карточка каталога заканчивается на «---» или на следующем подзаголовке
     const end = body.search(/^(---|### )/m);
     const head = end >= 0 ? body.slice(0, end) : body;
@@ -213,7 +259,7 @@ export function parseDoc(src: string, opts: { twin?: string; model?: boolean; la
       body = end >= 0 ? body.slice(end) : "";
       // хвост после карточек: «### Комфорт+» перед следующей карточкой — ярлык группы, остальное — обычные разделы
       const m = body.replace(/^---\s*$/m, "").trim();
-      if (!m) continue;
+      if (!m) { styleNew(); continue; }
       const subs = m.split(/^### /m).filter((x) => x.trim());
       const lastSub = subs[subs.length - 1];
       if (lastSub && !lastSub.trim().includes("\n")) { label = lastSub.trim(); subs.pop(); }
@@ -221,9 +267,11 @@ export function parseDoc(src: string, opts: { twin?: string; model?: boolean; la
         const i = sub.indexOf("\n");
         pushSection(sub.slice(0, i < 0 ? undefined : i).trim(), i < 0 ? "" : sub.slice(i + 1));
       }
+      styleNew();
       continue;
     }
     pushSection(title, body);
+    styleNew();
   }
   return localize({ crumbs, intro, blocks, final }, opts.lang ?? "ru");
 }
