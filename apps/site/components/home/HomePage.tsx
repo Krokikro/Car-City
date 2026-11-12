@@ -16,24 +16,13 @@ import { FaqHome } from "@/components/home/FaqHome";
 import { FinalCta } from "@/components/home/FinalCta";
 import { Footer } from "@/components/Footer";
 import { StickyCta } from "@/components/StickyCta";
-import { company, offices } from "@/lib/content";
 import type { Lang } from "@/lib/i18n";
 import { ui } from "@/lib/ui";
 import { homeText } from "@/lib/home-text";
 import { fleet } from "@/lib/fleet";
+import { businessLd } from "@/lib/schema-org";
 
 
-const orgLd = {
-  "@context": "https://schema.org",
-  "@type": "AutoRental",
-  name: company.name,
-  legalName: company.legalName,
-  url: company.domain,
-  email: company.email,
-  telephone: company.phones,
-  aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", bestRating: "5", ratingCount: "4" },
-  address: offices.map((o) => ({ "@type": "PostalAddress", addressLocality: "Москва", streetAddress: o.address, addressCountry: "RU" })),
-};
 
 export function HomePage({ lang = "ru" }: { lang?: Lang }) {
   const h = homeText(lang);
@@ -61,7 +50,7 @@ export function HomePage({ lang = "ru" }: { lang?: Lang }) {
       </main>
       <Footer lang={lang} />
       <StickyCta lang={lang} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: businessLd(lang) }} />
     </>
   );
 }

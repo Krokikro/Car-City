@@ -1,5 +1,6 @@
 "use client";
 
+import { loc } from "@/lib/ui-terms";
 import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { fleet as baseFleet, fleetClasses, popularOf, type FleetCar } from "@/lib/fleet";
@@ -39,25 +40,25 @@ export function FleetTile({ m, t, lang, i = 0, priority = false }: { m: FleetCar
   const single = !(rent && buy);
   return (
     <article className={`ft${sale ? " has-sale" : ""}`} style={{ ["--i" as string]: i }}>
-      <a className="ft-media" href={link} aria-label={m.name}>
-        <CarArt slug={m.slug} name={m.name} priority={priority} lit sizes="(max-width: 640px) 92vw, (max-width: 1100px) 46vw, 340px" />
+      <a className="ft-media" href={link} aria-label={loc(lang, m.name)}>
+        <CarArt slug={m.slug} name={loc(lang, m.name)} priority={priority} lit sizes="(max-width: 640px) 92vw, (max-width: 1100px) 46vw, 340px" />
         <span className={`ft-cls ft-cls-${m.cls}`}>{t.classes[m.cls] ?? m.cls}</span>
         <SaleChips chips={chips} />
       </a>
       <div className="ft-info">
-        <h3><a href={link}>{m.name}</a></h3>
+        <h3><a href={link}>{loc(lang, m.name)}</a></h3>
         {(m.engine || m.gearbox) && (
           <ul className="ft-specs" aria-label="Характеристики">
             {m.engine && (
               <li title={t.engine}>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h2V8h3V6h6v2h2l2 3h1v6h-1l-2 2H9l-2-2H6v-3H4z" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" /></svg>
-                {m.engine}
+                {loc(lang, m.engine)}
               </li>
             )}
             {m.gearbox && (
               <li title={t.gearbox}>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14M12 5v14M18 5v7H6" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /><circle cx="6" cy="5" r="1.6" fill="currentColor" /><circle cx="12" cy="5" r="1.6" fill="currentColor" /><circle cx="18" cy="5" r="1.6" fill="currentColor" /></svg>
-                {m.gearbox === "Автомат" ? t.auto : m.gearbox}
+                {m.gearbox === "Автомат" ? t.auto : loc(lang, m.gearbox)}
               </li>
             )}
           </ul>
