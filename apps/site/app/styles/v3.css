@@ -803,6 +803,7 @@ button.owner:hover, button.owner:focus-visible { border-color: rgba(255,183,0,.5
 .pt tbody tr + tr > * { border-top: 1px solid rgba(255,255,255,.08); }
 .pt tbody tr:hover { background: rgba(255,183,0,.06); }
 .pt td.is-min b { color: #111; background: var(--cc-signal); padding: 3px 10px; border-radius: 10px; }
+.pt td .pt-old { display: block; margin-top: 4px; color: var(--text-muted); font-size: 14px; }
 @media (max-width: 640px) { .pt thead th, .pt tbody th, .pt td { padding: 14px 14px; } }
 .fn-name { color: var(--text); }
 .bn-short .bn-card::before { display: none; }
@@ -1233,3 +1234,18 @@ button.owner:hover, button.owner:focus-visible { border-color: rgba(255,183,0,.5
 .soc-ico svg { display: block; }
 .header-soc { align-items: center; height: 40px; }
 .header-actions > .lang, .header-actions > .header-tel { align-self: center; }
+
+/* ── Конструктор блоков (админка, 12.11.2026): оформление блока и видео ── */
+.blk-st > section { position: relative; }
+.blk-accent > section { background: color-mix(in srgb, var(--cc-signal) 10%, transparent); }
+.blk-accent > section::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--cc-signal); }
+.blk-card > section > .wrap { border: 1px solid color-mix(in srgb, var(--text-muted) 35%, transparent); border-radius: 28px; padding-block: clamp(24px, 4vw, 48px); background: color-mix(in srgb, var(--text-muted) 6%, transparent); }
+.blk-center > section .wrap { text-align: center; }
+.blk-center > section .wrap.split { display: block; }
+.blk-center > section .prose ul, .blk-center > section .prose ol { display: inline-block; text-align: left; }
+.blk-narrow > section .wrap { max-width: 820px; }
+.blk-narrow > section .wrap.split { display: block; }
+.blk-dark > section { background: #0b0b0c; color: #f4f4f5; }
+.blk-dark > section .prose, .blk-dark > section h2 { color: inherit; }
+.blk-video-frame { position: relative; aspect-ratio: 16 / 9; border-radius: 24px; overflow: hidden; background: #000; margin-top: 24px; }
+.blk-video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
