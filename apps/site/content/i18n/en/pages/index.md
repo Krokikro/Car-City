@@ -31,7 +31,7 @@ economy · comfort · comfort+ · business · cargo · delivery
 
 Super discount
 
-## Москвич 3
+## Moskvich 3
 
 Engine size: 1,5 l
 

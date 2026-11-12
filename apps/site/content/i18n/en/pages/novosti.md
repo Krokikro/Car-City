@@ -52,7 +52,7 @@ We explain the new requirements of the taxi localization law from 1 March 2026. 
 
 22.06.2026
 
-Find out which cars are best for rent-to-own in taxi. A comparison of the Kia Rio, Skoda Rapid, Москвич 3, Kia K5 and Exeed LX, tips on choosing and the benefits of rent-to-own.
+Find out which cars are best for rent-to-own in taxi. A comparison of the Kia Rio, Skoda Rapid, Moskvich 3, Kia K5 and Exeed LX, tips on choosing and the benefits of rent-to-own.
 
 ### [OSGOP for taxi: what it is, how much it costs and how to get it](https://car-city.pro/novosti/osgop-dlya-taksi-chto-eto-takoe-skolko-stoit-i-kak-oformit)
 
@@ -106,7 +106,7 @@ Tips on renting a taxi car: how to choose the right car and not overpay. We cove
 
 19.11.2024
 
-Comfort taxi cars for rent in Moscow with rent-to-own: Chery Tiggo, Geely, Москвич at CarCity.
+Comfort taxi cars for rent in Moscow with rent-to-own: Chery Tiggo, Geely, Moskvich at CarCity.
 
 ### [The best cars for Economy class taxi work](https://car-city.pro/novosti/luchshie-avtomobili-dlya-rabotyi-v-taksi-ekonom-klassa)
 

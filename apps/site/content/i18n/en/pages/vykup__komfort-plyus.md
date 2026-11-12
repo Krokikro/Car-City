@@ -58,6 +58,14 @@ from 3315₽/day
 
 [Buy out](https://car-city.pro/vykup/komfort-plyus/chery-tiggo-7-pro-max)
 
+![car Image](https://car-city.pro/zhyoltyij-yandeks-Go-SUV-taksi-na-prozrachnom-fone.png)
+
+## Jetour Dashing
+
+from 3878₽/day
+
+[Buy out](https://car-city.pro/vykup/komfort-plyus/Jetour-Dashing)
+
 
 ![car Image](https://car-city.pro/assets/components/phpthumbof/cache/sonata.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 

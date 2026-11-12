@@ -75,7 +75,7 @@ from 1848 ₽/day
 
 ![car Image](https://car-city.pro/assets/components/phpthumbof/cache/galery_1.1f10554a7a159c40bc2095e910274595.webP)
 
-## Москвич 3
+## Moskvich 3
 
 Engine size: 1,5 l
 
@@ -172,6 +172,18 @@ from 3315 ₽/day
 [Buy out](https://car-city.pro/vykup/komfort-plyus/chery-tiggo-7-pro-max)
 
 ![car Image](https://car-city.pro/assets/components/phpthumbof/cache/7-pro-max.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
+
+## Jetour Dashing
+
+Engine size: 1,5 l Turbo
+
+Gearbox: Robotized
+
+from 3878 ₽/day
+
+[Buy out](https://car-city.pro/vykup/komfort-plyus/Jetour-Dashing)
+
+![car Image](https://car-city.pro/zhyoltyij-yandeks-Go-SUV-taksi-na-prozrachnom-fone.png)
 
 ## Hyundai Sonata
 
