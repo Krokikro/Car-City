@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort-plyus/chery-tiggo-7-pro
 title: "Moskvada Chery Tiggo 7 PROʼni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
 h1: "Taksi uchun Chery Tiggo 7 PROʼni sotib olish"
+description: "Chery Tiggo 7 PRO ni sotib olish sharti bilan ijaraga olish: Komfort+ taksi uchun, kuniga 2511 ₽ dan, boshlangʻich toʻlovni boʻlib toʻlash mumkin, OSAGO sovgʻa."
 class: komfort-plyus
 mode: vykup
 ---

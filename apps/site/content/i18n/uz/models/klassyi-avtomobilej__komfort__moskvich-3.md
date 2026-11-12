@@ -1,14 +1,15 @@
 ---
 url: https://car-city.pro/klassyi-avtomobilej/komfort/moskvich-3
-title: "Moskvada taksida ishlash uchun Москвич 3 ijarasi | Car City"
-h1: "Taksi uchun Москвич 3 ijarasi"
+title: "Moskvada taksida ishlash uchun Moskvich 3 ijarasi | Car City"
+h1: "Taksi uchun Moskvich 3 ijarasi"
+description: "Yangi Moskvich 3 ni Moskvada taksi uchun ijaraga oling: Komfort klass, kuniga 2000 ₽ dan, moslashuvchan grafik, shaffof shartnoma, past park komissiyasi, sotib olish mumkin."
 class: komfort
 mode: arenda
 ---
 
-BREADCRUMBS: Bosh sahifa > Komfort > Москвич 3
+BREADCRUMBS: Bosh sahifa > Komfort > Moskvich 3
 
-# Taksi uchun Москвич 3 ijarasi
+# Taksi uchun Moskvich 3 ijarasi
 
 Old gʻildirak yuritmasi
 
@@ -22,19 +23,19 @@ kuniga 2000₽ dan
 
 [Кнопка: Hamkorlikni boshlash]
 
-## Komfort klassidagi Москвич 3-ni taksi uchun ijaraga olish
+## Komfort klassidagi Moskvich 3-ni taksi uchun ijaraga olish
 
 Car Cityʼda taksida ishlash uchun qulay Komfort klassidagi avtomobillarni taklif qilamiz.
 
 Avtomobilning aʼlo texnik holatini, ijaraning moslashuvchan formatini, shuningdek Car City jamoamizdan doimiy texnik yordamni kafolatlaymiz!
 
-### Komfort klassidagi Москвич 3 avtomobili narxlari
+### Komfort klassidagi Moskvich 3 avtomobili narxlari
 
 Avtomobil ijarasi narxi siz tanlagan toʻlov formatiga bogʻliq:
 
 | Model | Grafik 7/0 | Grafik 6/1 | Grafik 5/2 |
 |--------|------------|------------|------------|
-| Москвич 3 | 2000 | 2340 | 2800 |
+| Moskvich 3 | 2000 | 2340 | 2800 |
 
 Sotib olish ham mavjud
 
@@ -59,17 +60,17 @@ Taksida qulay shartlarda ishlashda davom etib, avtomobilni oʻz mulkingizga rasm
 
 [Кнопка: Avtomobilni band qilish]
 
-## Москвич 3 avtomobili haqida
+## Moskvich 3 avtomobili haqida
 
-Yangi Москвич 3 modeli – dizayndagi uslub va yengillik, sport siluet va ravon geometrik chiziqlar uygʻunligining namunasi.
+Yangi Moskvich 3 modeli – dizayndagi uslub va yengillik, sport siluet va ravon geometrik chiziqlar uygʻunligining namunasi.
 
 Avtomobil zamonaviy svetodiodli faralar, elektr yuritmali va pardali lyuk, puxta oʻylangan xavfsizlik tizimi bilan jihozlangan. Avtomobilning keng va qulay saloni (balandligi 1,66 m, eni – 1,8 m) taksida ishlash va turli safarlar uchun ideal. Hajmi 520 l boʻlgan keng yukxonaga sayohat yoki koʻchish uchun kerakli hamma narsani joylash mumkin.
 
-### Москвич 3-ni qulay sharoitda ijaraga olish
+### Moskvich 3-ni qulay sharoitda ijaraga olish
 
 Avtomobil taksida ishlash, shahar ichidagi safarlar va uzoq masofali sayohatlar uchun ideal.
 
-Kalitsiz kirishning aqlli tizimi va dvigatelni ishga tushirish tugmasi tufayli Москвич 3 ijarasi haydovchi uchun yanada qulay boʻladi. Yon koʻzgularni elektr sozlash va isitish hamda oʻrindiqlarni isitish sovuq kunlarda qulaylik uchun ajralmas.
+Kalitsiz kirishning aqlli tizimi va dvigatelni ishga tushirish tugmasi tufayli Moskvich 3 ijarasi haydovchi uchun yanada qulay boʻladi. Yon koʻzgularni elektr sozlash va isitish hamda oʻrindiqlarni isitish sovuq kunlarda qulaylik uchun ajralmas.
 
 Klimat-nazorat moduli optimal haroratni saqlaydi, salondagi ventilyatsiya va namlik darajasini tartibga soladi. Oʻrnatilgan kruiz-nazorat haydovchining charchashini kamaytirish, tezlik rejimiga rioya qilish va yoqilgʻi sarfini kamaytirish imkonini beradi. Resurslarni tejash – taksida ishlash uchun muhim afzallik.
 
@@ -121,7 +122,7 @@ Sugʻurta, taʼmir yoki avtomobilga xizmat koʻrsatish haqida qaygʻurishingiz s
 ## IMAGES
 
 Галерея модели:
-- https://car-city.pro/assets/gallery/komfort/moskvich-3/1.webp (alt: Москвич 3)
+- https://car-city.pro/assets/gallery/komfort/moskvich-3/1.webp (alt: Moskvich 3)
 - https://car-city.pro/assets/gallery/komfort/moskvich-3/galery_1.webp
 - https://car-city.pro/assets/gallery/komfort/moskvich-3/galery_2.webp
 - https://car-city.pro/assets/gallery/komfort/moskvich-3/galery_3.webp

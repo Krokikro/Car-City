@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort/geely-emgrand
 title: "Moskvada Geely Emgrandʼni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
 h1: "Taksi uchun Geely Emgrandʼni sotib olish"
+description: "Geely Emgrand ni taksi uchun sotib olish huquqi bilan ijaraga oling: Komfort sedan, kuniga 2290 ₽ dan, istalgan taksoparkda ishlash, 3% komissiya, yiliga 14 dam olish kuni."
 class: komfort
 mode: vykup
 ---

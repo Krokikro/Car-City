@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/geely-atlas-pro
 title: "Moskvada taksida ishlash uchun Geely Atlas Pro ijarasi | Car City"
 h1: "Taksi uchun Geely Atlas PRO ijarasi"
+description: "Geely Atlas PRO ni Moskvada Komfort+ taksi uchun ijaraga olish: kuniga 2800 ₽ dan, kuchli dvigatel va keng salon, garovsiz, 24/7 texnik yordam, sotib olish ham bor."
 class: komfort-plyus
 mode: arenda
 ---
@@ -22,7 +23,7 @@ kuniga 2800₽ dan
 
 [Кнопка: Hamkorlikni boshlash]
 
-Taksida Geely Atlas PRO (Джили Атлас ПРО) — kuchli dvigatel va keng salonli «Komfort+» tarifi uchun krossover. Moskvada Atlas PRO (Джили Атлас ПРО) ijarasi yuqori tarif buyurtmalarini qabul qilish va barqaror daromad topish imkonini beradi. Avtomobil ishga toʻliq tayyorlangan: texnik xizmat, sugʻurta, Yandex va boshqa agregatorlarga tez ulanish.
+Taksida Geely Atlas PRO (Jili Atlas PRO) — kuchli dvigatel va keng salonli «Komfort+» tarifi uchun krossover. Moskvada Atlas PRO (Jili Atlas PRO) ijarasi yuqori tarif buyurtmalarini qabul qilish va barqaror daromad topish imkonini beradi. Avtomobil ishga toʻliq tayyorlangan: texnik xizmat, sugʻurta, Yandex va boshqa agregatorlarga tez ulanish.
 
 ## Taksi uchun Geely Atlas Pro ijarasi narxlari
 

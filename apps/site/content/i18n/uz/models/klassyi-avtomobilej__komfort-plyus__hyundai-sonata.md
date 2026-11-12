@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/hyundai-sonata
 title: "Moskvada taksida ishlash uchun Hyundai Sonata ijarasi | Car City"
 h1: "Taksi uchun Hyundai Sonata ijarasi"
+description: "Hyundai Sonata ni Komfort+ taksida ishlash uchun ijaraga oling: kuniga 2800 ₽ dan, premium sedan, shaffof ijara shartnomasi, moslashuvchan grafik va 24/7 yordam."
 class: komfort-plyus
 mode: arenda
 ---

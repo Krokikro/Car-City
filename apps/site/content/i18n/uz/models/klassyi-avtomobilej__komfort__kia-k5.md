@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5
 title: "Moskvada taksida ishlash uchun Kia K5 ijarasi | Car City"
 h1: "Taksi uchun Kia K5 ijarasi"
+description: "Kia K5 ni taksida ishlash uchun ijaraga oling: Komfort klass sedani, kuniga 2800 ₽ dan, shaffof ijara shartnomasi, garovsiz, 24/7 texnik yordam va qulay grafik."
 class: komfort
 mode: arenda
 ---

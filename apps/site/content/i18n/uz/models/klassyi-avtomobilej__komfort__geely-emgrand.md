@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort/geely-emgrand
 title: "Moskvada taksida ishlash uchun Geely Emgrand ijarasi | Car City"
 h1: "Taksi uchun Geely Emgrand ijarasi"
+description: "Geely Emgrand ijarasi Komfort taksi uchun: kuniga 2000 ₽ dan, keng yukxonali ishonchli sedan, sugʻurta va texnik xizmat narxda, moslashuvchan grafik, Moskva."
 class: komfort
 mode: arenda
 ---
@@ -22,11 +23,11 @@ kuniga 2000₽ dan
 
 [Кнопка: Hamkorlikni boshlash]
 
-Taksida Geely Emgrand (Джили Эмгранд) — puxta oʻylangan ergonomika va keng yukxonaga ega ishonchli komfort-klass sedani. Car Cityʼda taksi uchun Geely Emgrand ijarasi toʻliq texnik tayyorgarlik, sugʻurta va agregatorlarga ulanishda yordam bilan ochiq. Garovlar va yashirin komissiyalarsiz ishlang — faqat qatʼiy ijara stavkasi va liniyada 24/7 yordam.
+Taksida Geely Emgrand (Jili Emgrand) — puxta oʻylangan ergonomika va keng yukxonaga ega ishonchli komfort-klass sedani. Car Cityʼda taksi uchun Geely Emgrand ijarasi toʻliq texnik tayyorgarlik, sugʻurta va agregatorlarga ulanishda yordam bilan ochiq. Garovlar va yashirin komissiyalarsiz ishlang — faqat qatʼiy ijara stavkasi va liniyada 24/7 yordam.
 
 ## Komfort klassidagi Geely Emgrandʼni taksi uchun ijaraga olish
 
-Car Cityʼda taksida ishlash uchun Geely Emgrand (Джили Эмгранд) ijarasi ochiq.
+Car Cityʼda taksida ishlash uchun Geely Emgrand (Jili Emgrand) ijarasi ochiq.
 
 Avtomobilning aʼlo texnik holatini, ijaraning moslashuvchan formatini, shuningdek Car City jamoamizdan doimiy texnik yordamni kafolatlaymiz!
 

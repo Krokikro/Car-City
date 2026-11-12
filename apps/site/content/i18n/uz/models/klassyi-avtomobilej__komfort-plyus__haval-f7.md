@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/haval-f7
 title: "Moskvada taksida ishlash uchun Haval F7 ijarasi | Car City"
 h1: "Taksi uchun Haval F7 ijarasi"
+description: "Taksi uchun Haval F7 ijarasi: Komfort+ tarifi uchun krossover, kuniga 2800 ₽ dan, qulay toʻlov grafigi, yashirin toʻlovlarsiz, avtomobil murojaat kuniyoq beriladi."
 class: komfort-plyus
 mode: arenda
 ---

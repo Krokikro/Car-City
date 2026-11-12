@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/chery-tiggo-7-pro
 title: "Moskvada taksida ishlash uchun Chery Tiggo 7 Pro ijarasi | Car City"
 h1: "Taksi uchun Chery Tiggo 7 Pro ijarasi"
+description: "Chery Tiggo 7 Pro ni Komfort+ taksida ishlash uchun ijaraga oling: kuniga 2800 ₽ dan, 5/2 dan 7/0 gacha grafik, jamgʻariladigan garovsiz, sotib olish mumkin."
 class: komfort-plyus
 mode: arenda
 ---
@@ -22,11 +23,11 @@ kuniga 2800₽ dan
 
 [Кнопка: Hamkorlikni boshlash]
 
-Car Cityʼda taksi uchun Chery Tiggo 7 Pro (Чери Тигго 7 Про) — «Komfort+» tarifi uchun tejamkor sarfli va keng salonli qulay avtomobil. Avtomobilni har kungi safarlarga toʻliq tayyor holda ijaraga beramiz: texnik xizmat, sugʻurta, agregatorlarga tez ulanish.
+Car Cityʼda taksi uchun Chery Tiggo 7 Pro (Cheri Tiggo 7 Pro) — «Komfort+» tarifi uchun tejamkor sarfli va keng salonli qulay avtomobil. Avtomobilni har kungi safarlarga toʻliq tayyor holda ijaraga beramiz: texnik xizmat, sugʻurta, agregatorlarga tez ulanish.
 
 ## Chery Tiggo 7 Pro ijarasi shartlari
 
-Oʻzingizga mos ish rejimini tanlashingiz uchun Chery Tiggo 7 Pro (Чери Тигго 7 Про) ijarasining moslashuvchan grafiklarini taklif qilamiz — 5/2 dan 7/0 gacha. Avtomobil shartnomaning butun muddatiga sizga biriktiriladi, stavka esa buyurtmalar sonidan qatʼi nazar qatʼiy boʻlib qoladi. Murojaat qilgan kuningizdayoq liniyaga chiqing.
+Oʻzingizga mos ish rejimini tanlashingiz uchun Chery Tiggo 7 Pro (Cheri Tiggo 7 Pro) ijarasining moslashuvchan grafiklarini taklif qilamiz — 5/2 dan 7/0 gacha. Avtomobil shartnomaning butun muddatiga sizga biriktiriladi, stavka esa buyurtmalar sonidan qatʼi nazar qatʼiy boʻlib qoladi. Murojaat qilgan kuningizdayoq liniyaga chiqing.
 
 | Model | Grafik 7/0 | Grafik 6/1 | Grafik 5/2 |
 |--------|------------|------------|------------|

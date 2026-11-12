@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/biznes/Hongqi-H5
 title: "Moskvada taksida ishlash uchun Hongqi H5-ni sotib olish | Car City"
 h1: "Hongqi H5-ni sotib olish"
+description: "Hongqi H5 ni boshlangʻich toʻlovsiz sotib olish huquqi bilan ijaraga olish: biznes-klass sedan taksi uchun, kuniga 5260 ₽ dan, 1–3 yil muddat, 3% komissiya."
 class: biznes
 mode: vykup
 ---

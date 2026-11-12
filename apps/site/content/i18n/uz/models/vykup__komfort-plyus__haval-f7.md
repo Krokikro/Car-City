@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort-plyus/haval-f7
 title: "Moskvada Haval F7-ni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
 h1: "Taksi uchun Haval F7-ni sotib olish"
+description: "Haval F7 ni taksi uchun sotib olish huquqi bilan ijaraga oling: kuniga 2836 ₽ dan, Komfort+ tarifi, park komissiyasi 3%, OSAGO sovgʻa, shaffof sotib olish shartnomasi."
 class: komfort-plyus
 mode: vykup
 ---

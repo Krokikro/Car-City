@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/dostavka/lada-granta
 title: "Moskvada Lada Grantaʼni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
 h1: "Lada Grantaʼni sotib olish"
+description: "Lada Granta ni yetkazib berish uchun sotib olish huquqi bilan ijaraga oling: kuniga 1808 ₽ dan, 2025-yilgi avtomobil, park komissiyasi 3%, shaffof shartnoma."
 class: dostavka
 mode: vykup
 ---

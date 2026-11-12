@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort/chery-tiggo-4-pro
 title: "Moskvada taksida ishlash uchun Chery Tiggo 4 Pro ijarasi | Car City"
 h1: "Taksi uchun Chery Tiggo 4 Pro ijarasi"
+description: "Taksi uchun Chery Tiggo 4 Pro ijarasi: Komfort tarifi, kuniga 2000 ₽ dan, 7/0, 6/1 va 5/2 grafiklari, shaffof shartnoma, texnik xizmat va 24/7 yordam bizdan."
 class: komfort
 mode: arenda
 ---

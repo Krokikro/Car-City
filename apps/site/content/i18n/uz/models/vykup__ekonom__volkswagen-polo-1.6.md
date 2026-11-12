@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/ekonom/volkswagen-polo-1.6
 title: "Moskvada taksida ishlash uchun Volkswagen Poloʼni sotib olish | Car City"
 h1: "Taksi uchun Volkswagen Poloʼni sotib olish"
+description: "Volkswagen Polo ni sotib olish huquqi bilan ijaraga olish: taksi uchun Ekonom sedan, kuniga 2150 ₽ dan, 1–2 yil muddat, taʼmir yoki YTHda toʻlovlarni toʻxtatish mumkin."
 class: ekonom
 mode: vykup
 ---

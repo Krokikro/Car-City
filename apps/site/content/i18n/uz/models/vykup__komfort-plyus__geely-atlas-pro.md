@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort-plyus/geely-atlas-pro
 title: "Moskvada Geely Atlas PROʼni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
 h1: "Taksi uchun Geely Atlas PROʼni sotib olish"
+description: "Geely Atlas PRO ni sotib olish huquqi bilan ijaraga olish: Komfort+ taksi uchun krossover, kuniga 2900 ₽ dan, 1–3 yil muddat, taʼmirda toʻlovlarni toʻxtatish mumkin."
 class: komfort-plyus
 mode: vykup
 ---

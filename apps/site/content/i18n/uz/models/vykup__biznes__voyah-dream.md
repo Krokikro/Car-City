@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/biznes/Voyah-Dream
 title: "Moskvada taksida ishlash uchun Voyah Dreamʼni sotib olish | Car City"
 h1: "Voyah Dreamʼni sotib olish"
+description: "Voyah Dream ni taksi uchun sotib olish huquqi bilan ijaraga oling: premium gibrid miniven, kuniga 9041 ₽ dan, 1–3 yil muddat, park komissiyasi 3%, 24/7 yordam."
 class: biznes
 mode: vykup
 ---

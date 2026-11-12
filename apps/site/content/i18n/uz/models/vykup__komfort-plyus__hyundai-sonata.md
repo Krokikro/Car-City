@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort-plyus/hyundai-sonata
 title: "Moskvada Hyundai Sonataʼni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
 h1: "Taksi uchun Hyundai Sonataʼni sotib olish"
+description: "Hyundai Sonata ni sotib olish huquqi bilan ijaraga olish: Komfort+ taksi uchun premium sedan, kuniga 3200 ₽ dan, 1–3 yil muddat, 3% komissiya va 24/7 yordam."
 class: komfort-plyus
 mode: vykup
 ---
