@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/ekonom/kia-rio-1.6
 title: "Moskvada taksi uchun Kia Rio 1.6 ijarasi 1900 rubldan, garovsiz, sotib olish imkoniyati bilan"
 h1: "Taksi uchun Kia Rio 1.6 ijarasi"
+description: "Kia Rio 1.6 ni taksida ishlash uchun ijaraga oling: Ekonom tarifi, kuniga 1900 ₽ dan, 7/0, 6/1 yoki 5/2 grafigi, jamgʻariladigan garovsiz va 24/7 texnik yordam bilan."
 class: ekonom
 mode: arenda
 ---

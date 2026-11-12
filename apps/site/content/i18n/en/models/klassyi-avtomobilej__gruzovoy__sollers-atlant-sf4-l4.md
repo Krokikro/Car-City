@@ -1,14 +1,15 @@
 ---
 url: https://car-city.pro/klassyi-avtomobilej/gruzovoy/Sollers-Atlant-SF4-L4
 title: "Rent a Sollers SF4 L4 for delivery work in Moscow | Car City"
-h1: "Sollers Atlant SF4 L4"
+h1: "Rent a Sollers Atlant SF4 L4 for delivery work"
+description: "Rent a refrigerated Sollers SF4 L4 for delivery work in Moscow from 5500 ₽/day: a new 2026 truck for the Cargo tariff, serviced by us, with a rent-to-own option."
 class: gruzovoy
 mode: arenda
 ---
 
 BREADCRUMBS: Home > Sollers Atlant SF4 L4
 
-# Sollers Atlant SF4 L4
+# Rent a Sollers Atlant SF4 L4 for delivery work
 
 Loading length 4120 mm
 

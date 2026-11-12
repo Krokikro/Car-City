@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/gruzovoy/sollers-atlant-l3h2-2-7d
 title: "Moskvada Sollers Atlant L3H2 2.7Dʼni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
 h1: "Sollers Atlant L3H2 2.7Dʼni sotib olish"
+description: "Sollers Atlant L3H2 2.7D ni sotib olish sharti bilan ijaraga olish: katta furgon yuk tashish uchun, kuniga 4420 ₽ dan, moslashuvchan muddat va shaffof shartnoma."
 class: gruzovoy
 mode: vykup
 ---

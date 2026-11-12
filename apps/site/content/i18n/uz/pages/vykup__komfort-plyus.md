@@ -58,6 +58,14 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 [Sotib olish](https://car-city.pro/vykup/komfort-plyus/chery-tiggo-7-pro-max)
 
+![avtomobil rasmi](https://car-city.pro/zhyoltyij-yandeks-Go-SUV-taksi-na-prozrachnom-fone.png)
+
+## Jetour Dashing
+
+3878₽/kundan
+
+[Sotib olish](https://car-city.pro/vykup/komfort-plyus/Jetour-Dashing)
+
 
 ![avtomobil rasmi](https://car-city.pro/assets/components/phpthumbof/cache/sonata.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 

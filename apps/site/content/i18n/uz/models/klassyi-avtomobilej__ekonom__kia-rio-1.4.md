@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/ekonom/kia-rio-1.4
 title: "Moskvada taksi uchun Kia Rio X-Line ijarasi 1900 rubldan, garovsiz, sotib olish imkoniyati bilan"
 h1: "Taksi uchun Kia Rio X-Line ijarasi"
+description: "Moskvada taksi uchun Kia Rio X-Line ijarasi: kuniga 1900 ₽ dan, Ekonom klass, garovsiz, moslashuvchan grafik va murojaat kuniyoq avtomobil. Car City, 2017-yildan beri."
 class: ekonom
 mode: arenda
 ---

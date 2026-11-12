@@ -226,6 +226,18 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 ![көлік суреті](https://car-city.pro/assets/components/phpthumbof/cache/7-pro-max.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 
+## Jetour Dashing
+
+Қозғалтқыш көлемі: 1,5 л Turbo
+
+Беріліс қорабы: Робот
+
+3878 ₽/тәулік бастап
+
+[Сатып алу](https://car-city.pro/vykup/komfort-plyus/Jetour-Dashing)
+
+![көлік суреті](https://car-city.pro/zhyoltyij-yandeks-Go-SUV-taksi-na-prozrachnom-fone.png)
+
 ## Hyundai Sonata
 
 Қозғалтқыш көлемі: 2 л

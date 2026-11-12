@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort-plyus/Tenet-T7
 title: "Tenet T7 rent-to-own in Moscow on the best terms"
 h1: "Tenet T7 rent-to-own for taxi"
+description: "Tenet T7 rent-to-own for Comfort+ taxi in Moscow from 3777 ₽/day: a new 2026 crossover, a 3% fleet commission, OSAGO as a gift and an individual buyout contract."
 class: komfort-plyus
 mode: vykup
 ---

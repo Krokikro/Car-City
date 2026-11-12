@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/gruzovoy/lada-largus
 title: "Moskvada Lada Largusʼni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
 h1: "Lada Largusʼni sotib olish"
+description: "Lada Largus ni yuk tashish uchun sotib olish huquqi bilan ijaraga oling: kuniga 2491 ₽ dan, 2025-yilgi avtomobil, moslashuvchan muddat, park komissiyasi 3%."
 class: gruzovoy
 mode: vykup
 ---

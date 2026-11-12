@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/gruzovoy/sollers-atlant-l3h2-2-7d
 title: "Мәскеуде Sollers Atlant L3H2 2.7D-ні сатып алу шартымен ең тиімді шарттармен жалға алу"
 h1: "Sollers Atlant L3H2 2.7D сатып алу"
+description: "Sollers Atlant L3H2 2.7D-ні Мәскеуде жүк тасымалына сатып алу шартымен тәулігіне 4420 ₽-ден бастап алыңыз: ашық шарт, жылына 14 күн төлемсіз, 24/7 қолдау."
 class: gruzovoy
 mode: vykup
 ---

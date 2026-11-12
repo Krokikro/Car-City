@@ -1,14 +1,15 @@
 ---
 url: https://car-city.pro/klassyi-avtomobilej/gruzovoy/Sollers-Atlant-SF4-L4
 title: "Москвада жеткирүүдө иштөө үчүн Sollers SF4 L4 ижарасы | Car City"
-h1: "Sollers Atlant SF4 L4"
+h1: "Жеткирүүдө иштөө үчүн Sollers Atlant SF4 L4 ижарасы"
+description: "Sollers Atlant SF4 L4 унаасын Москвада жеткирүүдө жана жүк ташууда иштөө үчүн 5500 ₽/суткадан ижарага алыңыз: кайтарылуучу күрөө, даяр унаа, 24/7 техколдоо."
 class: gruzovoy
 mode: arenda
 ---
 
 BREADCRUMBS: Башкы бет > Sollers Atlant SF4 L4
 
-# Sollers Atlant SF4 L4
+# Жеткирүүдө иштөө үчүн Sollers Atlant SF4 L4 ижарасы
 
 Жүктөө узундугу 4120 мм
 

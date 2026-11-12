@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/geely-atlas-pro
 title: "Rent a Geely Atlas Pro for taxi work in Moscow | Car City"
 h1: "Rent a Geely Atlas PRO for taxi"
+description: "Rent a Geely Atlas Pro for Comfort+ taxi work in Moscow from 2800 ₽/day: a roomy 2023 crossover, flexible schedule, no hidden fees and an option to buy it out."
 class: komfort-plyus
 mode: arenda
 ---

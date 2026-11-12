@@ -1,6 +1,7 @@
 import { asset } from "@/lib/i18n";
 import { carImages } from "@/lib/car-images";
 import { carsDir } from "@/lib/theme";
+import { photoOpts } from "@/lib/car-photo-opts";
 
 type Body = "sedan" | "crossover" | "van" | "minivan";
 
@@ -41,14 +42,15 @@ export function CarArt({ slug, name, priority = false, lit = false, sizes = "(ma
   const meta = carImages[slug];
   if (meta) {
     const f = (n: number, ext: string) => asset(`/${carsDir()}/${slug}-${n}.${ext}`);
+    const opt = photoOpts(slug);
     return (
       <span className="car-photo">
         <picture>
-          <source type="image/avif" srcSet={`${f(640, "avif")} 640w, ${f(1200, "avif")} ${meta.w}w`} sizes={sizes} />
+          {opt.avif && <source type="image/avif" srcSet={`${f(640, "avif")} 640w, ${f(1200, "avif")} ${meta.w}w`} sizes={sizes} />}
           <source type="image/webp" srcSet={`${f(640, "webp")} 640w, ${f(1200, "webp")} ${meta.w}w`} sizes={sizes} />
           <img src={f(1200, "webp")} alt={name} width={meta.w} height={meta.h} loading={priority ? "eager" : "lazy"} decoding="async" fetchPriority={priority ? "high" : undefined} />
         </picture>
-        {lit && (
+        {lit && opt.lit && (
           // eslint-disable-next-line @next/next/no-img-element
           <img className="car-lit" src={asset(`/cars/${slug}-lit.webp`)} alt="" aria-hidden="true" width={800} height={597} loading="lazy" decoding="async" />
         )}

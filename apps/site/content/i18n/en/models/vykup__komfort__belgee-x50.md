@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort/Belgee-X50
 title: "Belgee X50 rent-to-own in Moscow on the best terms"
 h1: "Belgee X50 rent-to-own for taxi"
+description: "Belgee X50 rent-to-own for Comfort-class taxi in Moscow from 2813 ₽/day: a new 2025 crossover, OSAGO as a gift, a 3% fleet commission and 14 days off a year."
 class: komfort
 mode: vykup
 ---

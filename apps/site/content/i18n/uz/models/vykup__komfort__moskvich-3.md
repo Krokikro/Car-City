@@ -1,14 +1,15 @@
 ---
 url: https://car-city.pro/vykup/komfort/moskvich-3
-title: "Moskvada Москвич 3 taksisini eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
-h1: "Taksi uchun Москвич 3-ni sotib olish"
+title: "Moskvada Moskvich 3 taksisini eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
+h1: "Taksi uchun Moskvich 3-ni sotib olish"
+description: "Moskvich 3 ni boshlangʻich toʻlovsiz sotib olish huquqi bilan ijaraga oling: Komfort taksi uchun, kuniga 2000 ₽ dan, park komissiyasi 3%, shaffof shartnoma, Moskva."
 class: komfort
 mode: vykup
 ---
 
-BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Sotib olish uchun Komfort avtomobillar > Москвич 3
+BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Sotib olish uchun Komfort avtomobillar > Moskvich 3
 
-# Taksi uchun Москвич 3-ni sotib olish
+# Taksi uchun Moskvich 3-ni sotib olish
 
 Old gʻildirak yuritmasi
 
@@ -22,13 +23,13 @@ kuniga 2000₽ dan
 
 [Кнопка: Hamkorlikni boshlash]
 
-## Taksi uchun Москвич 3-ni sotib olish huquqi bilan ijaraga olish
+## Taksi uchun Moskvich 3-ni sotib olish huquqi bilan ijaraga olish
 
 Car Cityʼda taksida ishlash uchun qulay Komfort klassidagi avtomobillarni taklif qilamiz.
 
 Avtomobilning aʼlo texnik holatini, sotib olishning moslashuvchan formatini, shuningdek Car City jamoasidan doimiy texnik yordamni kafolatlaymiz!
 
-### Komfort klassidagi Москвич 3 avtomobili narxlari
+### Komfort klassidagi Moskvich 3 avtomobili narxlari
 
 Avtomobilni sotib olish narxi siz tanlagan toʻlov formatiga bogʻliq:
 
@@ -56,9 +57,9 @@ Taksi, yetkazib berish yoki shaxsiy maqsadlar uchun
 
 [Кнопка: Hisob-kitobni olish]
 
-## Москвич 3 avtomobili haqida
+## Moskvich 3 avtomobili haqida
 
-Kenglik, tejamkorlik va zamonaviy dizaynni uygʻunlashtirgan avtomobil izlayapsizmi? Москвич 3 — Moskvada taksi uchun ijaraga olishning ajoyib yechimi. Bu shunchaki mashina emas, balki barqaror daromad uchun toʻlaqonli vosita.
+Kenglik, tejamkorlik va zamonaviy dizaynni uygʻunlashtirgan avtomobil izlayapsizmi? Moskvich 3 — Moskvada taksi uchun ijaraga olishning ajoyib yechimi. Bu shunchaki mashina emas, balki barqaror daromad uchun toʻlaqonli vosita.
 
 Zamonaviy va amaliy bu avtomobilda shaharda qulay foydalanish uchun hamma narsa bor: dinamika, xavfsizlik va tashqi jozibadorlik. Bu nafaqat oqimda ajralib turadigan, balki haydovchi va yoʻlovchilarga munosib qulaylikni taʼminlaydigan krossover.
 

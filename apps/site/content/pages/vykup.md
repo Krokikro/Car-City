@@ -173,6 +173,18 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 ![car Image](https://car-city.pro/assets/components/phpthumbof/cache/7-pro-max.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 
+## Jetour Dashing
+
+Объем двигателя: 1,5 л Turbo
+
+Коробка: Робот
+
+от 3878 ₽/сутки
+
+[Выкупить](https://car-city.pro/vykup/komfort-plyus/Jetour-Dashing)
+
+![car Image](https://car-city.pro/zhyoltyij-yandeks-Go-SUV-taksi-na-prozrachnom-fone.png)
+
 ## Hyundai Sonata
 
 Объем двигателя: 1,6-3,3 л

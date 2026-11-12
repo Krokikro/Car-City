@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort-plyus/haval-f7
 title: "Haval F7 rent-to-own in Moscow on the best terms"
 h1: "Haval F7 rent-to-own for taxi"
+description: "Haval F7 rent-to-own for Comfort+ taxi work in Moscow from 2836 ₽/day: flexible payment plans, OSAGO as a gift, a 3% fleet commission and 24/7 support."
 class: komfort-plyus
 mode: vykup
 ---

@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/jac-j7
 title: "Мәскеуде таксиде жұмыс істеу үшін JAC J7 жалға алу | Car City"
 h1: "Таксиге Jac J7 жалға алу"
+description: "Jac J7 лифтбегін Мәскеуде таксиге тәулігіне 2600 ₽-ден бастап жалға алыңыз: комфорт плюс тарифі, икемді кесте, жинақталатын депозитсіз, өтінім берген күні көлік."
 class: komfort-plyus
 mode: arenda
 ---

@@ -29,6 +29,8 @@ export interface MetaInput {
   image?: string;
   /** только эти языки есть у страницы (для hreflang); по умолчанию все */
   langs?: Lang[];
+  /** страница на этом языке ещё не переведена (показан русский текст) — не индексируем */
+  untranslated?: boolean;
 }
 
 export function seoOf(ov: Overlay, lang: Lang, path: string): PageSeo {
@@ -49,9 +51,11 @@ export function buildMeta(m: MetaInput): Metadata {
   const description = ps.description || (tpl?.description ? fill(tpl.description, vars) : "") || m.description || s.defaultDescription;
   const self = langPath(path, lang);
   const canonical = ps.canonical ? (ps.canonical.startsWith("http") ? ps.canonical : lc(ps.canonical)) : self;
-  const noindex = s.noindexAll || ps.noindex;
-  const langs = m.langs ?? LANGS;
-  const languages = s.hreflang && !ps.noHreflang
+  // язык закрыт от индексации в админке (SEO → Sitemap и языки) или страница ещё не переведена — noindex, без hreflang
+  const langClosed = lang !== "ru" && (!s.indexLangs.includes(lang) || !!m.untranslated);
+  const noindex = s.noindexAll || ps.noindex || langClosed;
+  const langs = (m.langs ?? LANGS).filter((l) => l === "ru" || s.indexLangs.includes(l));
+  const languages = s.hreflang && !ps.noHreflang && !langClosed && langs.length > 1
     ? Object.fromEntries([...langs.filter((l) => s.sitemap.langs.includes(l)).map((l) => [l, langPath(path, l)]), ["x-default", lc(path)]])
     : undefined;
   const image = ps.ogImage || m.image || s.ogImage;

@@ -24,8 +24,8 @@ Hozirgi vaqtda Minpromtorg reyestriga Rossiya zavodlarida toʻliq yoki chuqur si
 
 1. «AvtoVAZ» AJ (Tolyatti, Ijevsk):
    Lada Vesta, Lada Largus, Lada Aura.
-2. «Москвич» zavodi (Moskva):
-   Москвич 3, Москвич 3e, Москвич 6.
+2. «Moskvich» zavodi (Moskva):
+   Moskvich 3, Moskvich 3e, Moskvich 6.
 3. Haval (Tula viloyatidagi zavod):
    Haval Jolion, Haval M6, Haval F7.
 4. «Avtotor» MChJ (Kaliningrad):

@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort/kia-k5
 title: "Kia K5 rent-to-own for taxi work in Moscow | Car City"
 h1: "Kia K5 rent-to-own for taxi"
+description: "Kia K5 rent-to-own for Comfort-class taxi work in Moscow from 3420 ₽/day: a stylish sedan, OSAGO as a gift, a 3% fleet fee and payments paused during repairs."
 class: komfort
 mode: vykup
 ---

@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort/geely-emgrand
 title: "Geely Emgrand rent-to-own in Moscow on the best terms"
 h1: "Geely Emgrand rent-to-own for taxi"
+description: "Geely Emgrand rent-to-own for Comfort-class taxi in Moscow from 2290 ₽/day: a modern sedan that becomes yours, 3% fleet commission and a transparent contract."
 class: komfort
 mode: vykup
 ---

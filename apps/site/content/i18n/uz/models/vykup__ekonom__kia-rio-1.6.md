@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/ekonom/kia-rio-1.6
 title: "Moskvada Kia Rio 1.6 taksisini eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
 h1: "Taksi uchun Kia Rio 1.6-ni sotib olish"
+description: "Kia Rio 1.6 ni sotib olish sharti bilan taksida ishlash: kuniga 2089 ₽ dan, boshlangʻich toʻlovni boʻlib toʻlash mumkin, 3% komissiya, OSAGO sovgʻa sifatida."
 class: ekonom
 mode: vykup
 ---

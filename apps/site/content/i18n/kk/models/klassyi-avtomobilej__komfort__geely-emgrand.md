@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort/geely-emgrand
 title: "Мәскеуде таксиде жұмыс істеу үшін Geely Emgrand жалға алу | Car City"
 h1: "Таксиге Geely Emgrand жалға алу"
+description: "Geely Emgrand седанын Мәскеуде таксиге тәулігіне 2000 ₽-ден бастап жалға алыңыз: комфорт класы, 7/0, 6/1, 5/2 кестелері, ашық шарт, сатып алу мүмкіндігі."
 class: komfort
 mode: arenda
 ---

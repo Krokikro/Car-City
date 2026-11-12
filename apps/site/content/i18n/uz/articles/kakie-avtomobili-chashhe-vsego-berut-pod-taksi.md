@@ -73,15 +73,15 @@ Nega taksi uchun Exeed LX tanlanadi:
 4. Jadal ishlashda yoqilgʻi sarfi meʼyorida.
 5. Servisda ortiqcha savollar tugʻilmaydi.
 
-### Москвич 3
+### Moskvich 3
 
-![Москвич 3](https://car-city.pro/assets/components/phpthumbof/cache/galery_1.4ed97933a441f71d34ec658ae61c46d2.webP)
+![Moskvich 3](https://car-city.pro/assets/components/phpthumbof/cache/galery_1.4ed97933a441f71d34ec658ae61c46d2.webP)
 
-Москвич 3 mahalliy ishlab chiqarish qaytishining ramzlaridan biriga aylandi. Mashina konstruksiyasi oddiy, shuning uchun servislar va mexaniklarga tushunarli. Taksoparklar uchun bu ham afzallik – murakkab yechimlar qancha kam boʻlsa, bir nechta mashinadan iborat parkka xizmat koʻrsatish shuncha oson. Salonda uchta yoʻlovchi uchun yetarli joy bor, orqa oʻrindiqlar esa tez-tez qatnovlarni hisobga olib yasalgan.
+Moskvich 3 mahalliy ishlab chiqarish qaytishining ramzlaridan biriga aylandi. Mashina konstruksiyasi oddiy, shuning uchun servislar va mexaniklarga tushunarli. Taksoparklar uchun bu ham afzallik – murakkab yechimlar qancha kam boʻlsa, bir nechta mashinadan iborat parkka xizmat koʻrsatish shuncha oson. Salonda uchta yoʻlovchi uchun yetarli joy bor, orqa oʻrindiqlar esa tez-tez qatnovlarni hisobga olib yasalgan.
 
-Mashina Moskvada yigʻiladi, ehtiyot qismlarni tez topish mumkin. Bundan tashqari, modelning elektr versiyasi bor – Москвич 3е. U shahar sharoitlari uchun yaratilgan: parklarda yoki toʻxtash joylarida zaryadlash yoqilgʻida tejash imkonini beradi, foydalanish esa arzonroqqa tushadi.
+Mashina Moskvada yigʻiladi, ehtiyot qismlarni tez topish mumkin. Bundan tashqari, modelning elektr versiyasi bor – Moskvich 3e. U shahar sharoitlari uchun yaratilgan: parklarda yoki toʻxtash joylarida zaryadlash yoqilgʻida tejash imkonini beradi, foydalanish esa arzonroqqa tushadi.
 
-Nega taksida ishlash uchun Москвич 3 tanlanadi:
+Nega taksida ishlash uchun Moskvich 3 tanlanadi:
 
 1. Mashinaga xizmat koʻrsatish oson — har qanday servis taʼmirni uddalaydi.
 2. Ehtiyot qismlar doim sotuvda bor, haftalab bekor turishga toʻgʻri kelmaydi.

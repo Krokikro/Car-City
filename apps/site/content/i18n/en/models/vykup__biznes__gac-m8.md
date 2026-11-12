@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/biznes/Gac-M8
 title: "GAC M8 rent-to-own for taxi work in Moscow | Car City"
 h1: "GAC M8 rent-to-own"
+description: "GAC M8 rent-to-own for business-class taxi in Moscow from 7635 ₽/day: a premium seven-seat minivan, terms of 1–3 years, a 3% fleet fee and a transparent contract."
 class: biznes
 mode: vykup
 ---

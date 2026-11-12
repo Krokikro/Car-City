@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort/chery-tiggo-4-pro
 title: "Moskvada Chery Tiggo 4 PROʼni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
 h1: "Taksi uchun Chery Tiggo 4 PROʼni sotib olish"
+description: "Chery Tiggo 4 PRO ni taksi uchun sotib olish huquqi bilan ijaraga olish: kuniga 1848 ₽ dan, Komfort tarifi, 1–3 yil muddat, park komissiyasi 3%, OSAGO sovgʻa."
 class: komfort
 mode: vykup
 ---

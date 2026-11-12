@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/gruzovoy/Sollers-Atlant-SF4-L4
 title: "Moskvada Sollers SF4 L4 Refrijeratorni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
 h1: "Sollers SF4 L4-ni sotib olish"
+description: "Sollers SF4 L4 ni sotib olish huquqi bilan ijaraga oling: 2026-yilgi yangi yuk furgoni, kuniga 6329 ₽ dan, 1–3 yil muddat, park komissiyasi 3%, 24/7 yordam."
 class: gruzovoy
 mode: vykup
 ---

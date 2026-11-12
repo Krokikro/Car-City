@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort/kia-k5
 title: "Moskvada taksida ishlash uchun Kia K5-ni sotib olish | Car City"
 h1: "Taksi uchun Kia K5-ni sotib olish"
+description: "Kia K5 ni sotib olish huquqi bilan ijaraga olish: Komfort taksi uchun salobatli sedan, kuniga 3420 ₽ dan, 1–3 yil muddat, taʼmir yoki YTHda toʻlovlarni toʻxtatish."
 class: komfort
 mode: vykup
 ---

@@ -10,7 +10,7 @@ source: "WebFetch, extracted 2026-10-05; text is verbatim, stitched together fro
 
 ![car Image](https://car-city.pro/assets/components/phpthumbof/cache/galery_1.4ed97933a441f71d34ec658ae61c46d2.webP)
 
-## Москвич 3
+## Moskvich 3
 
 from 2000 ₽/day
 
@@ -72,7 +72,7 @@ Comfort class rental prices depend on the payment format you choose:
 
 | Model             | Schedule 7/0 | Schedule 6/1 | Schedule 5/2 |
 | ----------------- | ------------ | ------------ | ------------ |
-| Москвич 3         | 2 000 ₽      | 2 340 ₽      | 2 800 ₽      |
+| Moskvich 3        | 2 000 ₽      | 2 340 ₽      | 2 800 ₽      |
 | Chery Tiggo 4     | 2 000 ₽      | 2 340 ₽      | 2 800 ₽      |
 | Chery Tiggo 4 PRO | 2 000 ₽      | 2 340 ₽      | 2 800 ₽      |
 | Geely Emgrand     | 2 000 ₽      | 2 340 ₽      | 2 800 ₽      |
@@ -171,7 +171,7 @@ Our Comfort class fleet has the following car models, which are easy to rent for
 - [Chery Tiggo 4](https://car-city.pro/klassyi-avtomobilej/komfort/chery-tiggo-4) – a popular Chinese crossover with an economical engine and an elegant, comfortable interior
 - [Chery Tiggo 4 PRO](https://car-city.pro/klassyi-avtomobilej/komfort/chery-tiggo-4-pro) – an upgraded, restyled version of the Tiggo 4 with better dynamics and more smart systems
 - [OMODA S 5](https://car-city.pro/klassyi-avtomobilej/komfort/omoda-s-5) – a sedan with sporty design inside and out, innovative comfortable seats and a solid set of smart electronics.
-- [Москвич 3](https://car-city.pro/klassyi-avtomobilej/komfort/moskvich-3) – a modern city crossover with striking design, a roomy interior and well-thought-out ergonomics. It has a reliable engine, a multimedia system with a large screen and a set of safety systems for confident and comfortable driving in any conditions.
+- [Moskvich 3](https://car-city.pro/klassyi-avtomobilej/komfort/moskvich-3) – a modern city crossover with striking design, a roomy interior and well-thought-out ergonomics. It has a reliable engine, a multimedia system with a large screen and a set of safety systems for confident and comfortable driving in any conditions.
 - [Geely Emgrand](https://car-city.pro/klassyi-avtomobilej/komfort/geely-emgrand) – an elegant sedan with smooth body lines and a premium interior. It stands out with an economical engine, great sound insulation and an extended set of comfort and safety features, giving a feeling of confidence and style on every trip.
 
 ## Why it pays to work with us

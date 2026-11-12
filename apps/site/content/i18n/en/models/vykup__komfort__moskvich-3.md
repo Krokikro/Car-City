@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort/moskvich-3
 title: "Moskvich 3 taxi rent-to-own in Moscow on the best terms"
 h1: "Moskvich 3 rent-to-own for taxi"
+description: "Moskvich 3 rent-to-own for Comfort taxi in Moscow from 2000 ₽/day: own a 2023 crossover while you work, 3% fleet commission, OSAGO as a gift, 14 days off a year."
 class: komfort
 mode: vykup
 ---

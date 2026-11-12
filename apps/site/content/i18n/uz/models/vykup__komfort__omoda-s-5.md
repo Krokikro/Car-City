@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort/omoda-s-5
 title: "Moskvada Omoda S5-ni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
 h1: "Taksi uchun Omoda S5-ni sotib olish"
+description: "Omoda S5 ni taksi uchun sotib olish huquqi bilan ijaraga olish: zamonaviy Komfort sedani, kuniga 2342 ₽ dan, 1–2 yil muddat, park komissiyasi 3%, OSAGO sovgʻa."
 class: komfort
 mode: vykup
 ---

@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/chery-tiggo-7-pro-max
 title: "Rent a Chery Tiggo 7 Pro Max for taxi work in Moscow | Car City"
 h1: "Rent a Chery Tiggo 7 Pro Max for taxi"
+description: "Rent a Chery Tiggo 7 Pro Max for Comfort+ taxi in Moscow from 2600 ₽/day: a spacious crossover, flexible schedule, no accumulating deposit, buyout available."
 class: komfort-plyus
 mode: arenda
 ---

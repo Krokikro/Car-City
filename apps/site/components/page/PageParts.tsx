@@ -1,4 +1,5 @@
 import { fleet } from "@/lib/fleet";
+import { loc } from "@/lib/ui-terms";
 import { saleChips, hasRent, hasBuy } from "@/lib/prices";
 import { SaleChips } from "../SaleChips";
 import { ClassChips } from "./ClassChips";
@@ -38,7 +39,7 @@ export function Crumbs({ items, path, lang = "ru" }: { items: string[]; path: st
   const ld = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: items.map((name, i) => ({ "@type": "ListItem", position: i + 1, name, item: `https://car-city.pro${crumbHref(i, items.length, path)}` })),
+    itemListElement: items.map((name, i) => ({ "@type": "ListItem", position: i + 1, name, item: `https://car-city.pro${href(crumbHref(i, items.length, path), lang)}` })),
   };
   return (
     <nav className="crumbs mono" aria-label={ui(lang).crumbs}>
@@ -170,14 +171,14 @@ function CarTile({ c, lang = "ru" }: { c: Card; lang?: Lang }) {
       <a className="car-card-in" href={c.btn?.href}>
         <div className="car-visual">
           <span className="car-floor" aria-hidden="true" />
-          <CarArt slug={c.slug ?? ""} name={c.name} lit />
+          <CarArt slug={c.slug ?? ""} name={loc(lang, c.name)} lit />
           <SaleChips chips={chips} />
         </div>
         <div className="car-info">
-          <h3>{c.name}</h3>
+          <h3>{loc(lang, c.name)}</h3>
           {c.specs.length > 0 && (
             <dl className="car-specs">
-              {c.specs.map(([k, v]) => <div key={k}><dt>{k}:</dt><dd>{v}</dd></div>)}
+              {c.specs.map(([k, v]) => <div key={k}><dt>{loc(lang, k)}:</dt><dd>{loc(lang, v)}</dd></div>)}
             </dl>
           )}
           {now ? (
@@ -233,6 +234,8 @@ export function Section({ b, n, center = false, extra = "" }: { b: Extract<Block
         <div>
           <div className="prose" dangerouslySetInnerHTML={{ __html: b.html }} />
           <Figs figs={b.figs} />
+          {/* кнопки показываем у блоков из конструктора (у них задано оформление) */}
+          {b.style && <Buttons btns={b.btns} />}
         </div>
       </div>
     </section>

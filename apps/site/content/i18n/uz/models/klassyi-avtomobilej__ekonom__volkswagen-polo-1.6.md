@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/ekonom/volkswagen-polo-1.6
 title: "Moskvada taksida ishlash uchun Volkswagen Polo 1.6 ijarasi | Car City"
 h1: "Taksi uchun Volkswagen Polo 1.6 ijarasi"
+description: "Volkswagen Polo 1.6 ni Moskvada taksi uchun ijaraga olish: kuniga 1900 ₽ dan, Ekonom klass, garovsiz, oʻzingizga qulay grafik va texnik xizmat bizning zimmamizda."
 class: ekonom
 mode: arenda
 ---

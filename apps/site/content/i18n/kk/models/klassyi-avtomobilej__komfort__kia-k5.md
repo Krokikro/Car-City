@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5
 title: "Мәскеуде таксиде жұмыс істеу үшін Kia K5 жалға алу | Car City"
 h1: "Таксиге Kia K5 жалға алу"
+description: "Kia K5 седанын Мәскеуде комфорт таксиіне тәулігіне 2800 ₽-ден бастап жалға алу: мінсіз техникалық жағдай, икемді кесте, кепілсіз, өтінім берген күні көлік."
 class: komfort
 mode: arenda
 ---

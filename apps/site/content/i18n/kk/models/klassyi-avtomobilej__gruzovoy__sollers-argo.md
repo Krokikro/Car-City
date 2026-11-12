@@ -1,14 +1,15 @@
 ---
 url: https://car-city.pro/klassyi-avtomobilej/gruzovoy/sollers-argo
 title: "Мәскеуде жүк тасымалына Sollers Argo жалға алу | Car City"
-h1: "Sollers Argo"
+h1: "Жүк тасымалына Sollers Argo жалға алу"
+description: "Sollers Argo жүк көлігін Мәскеуде жүк тасымалына тәулігіне 3150 ₽-ден бастап жалға алыңыз: 1 күннен бастап мерзім, ашық шарт, 24/7 қолдау, сатып алу мүмкіндігі."
 class: gruzovoy
 mode: arenda
 ---
 
 BREADCRUMBS: Басты бет > Sollers Argo
 
-# Sollers Argo
+# Жүк тасымалына Sollers Argo жалға алу
 
 Жалпы ұзындығы 5 990 мм
 

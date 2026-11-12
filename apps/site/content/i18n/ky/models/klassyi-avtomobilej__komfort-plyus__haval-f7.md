@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/haval-f7
 title: "Москвада таксиде иштөө үчүн Haval F7 ижарасы | Car City"
 h1: "Haval F7 такси үчүн ижарага"
+description: "Москвада такси үчүн Haval F7 ижарасы 2800 ₽/суткадан: комфорт+ классындагы кенен кроссовер, ийкемдүү график, ачык ижара келишими, 24/7 колдоо жана сатып алуу."
 class: komfort-plyus
 mode: arenda
 ---

@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort-plyus/belgee-x70
 title: "Moskvada taksida ishlash uchun Belgee X70-ni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish | Car City"
 h1: "Taksi uchun Belgee X70-ni sotib olish"
+description: "Belgee X70 ni taksi uchun sotib olish huquqi bilan ijaraga olish: Komfort+ krossover, kuniga 4279 ₽ dan, 1–3 yil muddat, 3% komissiya, yiliga 14 dam olish kuni."
 class: komfort-plyus
 mode: vykup
 ---

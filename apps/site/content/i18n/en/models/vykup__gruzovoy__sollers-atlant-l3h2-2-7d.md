@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/gruzovoy/sollers-atlant-l3h2-2-7d
 title: "Sollers Atlant L3H2 2.7D rent-to-own in Moscow on the best terms"
 h1: "Sollers Atlant L3H2 2.7D rent-to-own"
+description: "Sollers Atlant L3H2 2.7D rent-to-own in Moscow from 4420 ₽/day: a high-roof cargo van for delivery work with any service, OSAGO included, a clear buyout contract."
 class: gruzovoy
 mode: vykup
 ---

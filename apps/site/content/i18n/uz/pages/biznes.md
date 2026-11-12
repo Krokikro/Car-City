@@ -1,56 +1,60 @@
 ---
-url: ""
-stale: "06.11.2026: русская страница переписана под аренду бизнес-класса (см. content/pages/biznes.md). Перевод устарел и выключен (пустой url) — сайт показывает русский текст с пометкой. Перевести заново и вернуть url: https://car-city.pro/klassyi-avtomobilej/biznes"
-title: "Moskvada taksida ishlash uchun biznes-klass avtomobillar | Hongqi, Voyah, GAC — Car City"
-h1: "Taksida ishlash uchun biznes-klass avtomobillar"
-description: "Moskvada biznes-klass taksida ishlash uchun Hongqi H5, Voyah Dream va GAC M8: sotib olish huquqi bilan ijara, murojaat kuni avtomobil, 24/7 yordam."
-source: "Yangi sahifa, 2026-10-25"
+url: https://car-city.pro/klassyi-avtomobilej/biznes
+title: "Moskvada taksida ishlash uchun Biznes klass avtomobil ijarasi | Car City"
+h1: "Taksi uchun Biznes klassdagi avtomobillar ijarasi"
+description: "Moskvada taksida ishlash uchun biznes-klass avtomobil ijarasi: Voyah Dream, GAC M8, Hongqi H5. Qulay ijara shartlari, shaffof ijara shartnomasi, sotib olish ham mumkin | Car City"
+source: "car-city.pro/klassyi-avtomobilej/biznes, снято 2026-11-06 (на старом сайте появилась аренда бизнес-класса); текст дословный. Блок «Парк авто» и FAQ про выкуп — с прежней версии новой страницы /biznes (2026-10-25)."
 ---
 
-# Taksida ishlash uchun biznes-klass avtomobillar
-
-## Hongqi H5
-
-5260 ₽/kundan
-
-[Sotib olish](https://car-city.pro/vykup/biznes/Hongqi-H5)
+# Taksi uchun Biznes klassdagi avtomobillar ijarasi
 
 ## Voyah Dream
 
-9041 ₽/kundan
+10000 ₽/kundan
 
-[Sotib olish](https://car-city.pro/vykup/biznes/Voyah-Dream)
+[Ijaraga olish](https://car-city.pro/klassyi-avtomobilej/biznes/voyah-dream)
 
 ## GAC M8
 
-7635 ₽/kundan
+5000 ₽/kundan
 
-[Sotib olish](https://car-city.pro/vykup/biznes/Gac-M8)
+[Ijaraga olish](https://car-city.pro/klassyi-avtomobilej/biznes/gac-m8)
 
-Biznes-klass — agregatorlardagi eng qimmat buyurtmalar va eng talabchan yo‘lovchilar. Car Cityʼda bu klassdagi avtomobillar sotib olish huquqi bilan ijaraga beriladi: siz vakillik avtomobilida ishlaysiz, 1–3 yildan keyin esa u sizniki bo‘ladi.
+## Hongqi H5
 
-## Biznes-klassni sotib olish sharti bilan ijaraga olish nega foydali
+4500 ₽/kundan
 
-- O‘rtacha chek yuqori. Biznes-tarifdagi safarlar komfortdan 2–3 baravar qimmat, shuning uchun avtomobil uchun to‘lov tezroq qoplanadi.
-- Avtomobil sizniki bo‘ladi. Har bir to‘lov shunchaki ijaraga emas, sotib olish hisobiga o‘tadi.
-- Tayyor avtomobil. Texnik xizmat va kimyoviy tozalashdan so‘ng, OSAGO polisi va agregator talablariga mos brending bilan beramiz.
-- Moslashuvchan muddat. 1, 1,5, 2 yoki 3 yilga sotib olish — muddat qancha uzoq bo‘lsa, kunlik to‘lov shuncha past.
-- 24/7 yordam. YTH va nosozlikda yordam beramiz, ta’mirlash vaqtida sotib olishni to‘xtatib turish mumkin.
+[Ijaraga olish](https://car-city.pro/klassyi-avtomobilej/biznes/hongqi-h5)
 
-## Biznes-klass avtoparki
+Taksida ishlash uchun CarCity parkidan biznes-klass avtomobilni ijaraga oling va yuqori darajadagi qulaylikni kutadigan yoʻlovchilarni jalb qiling. Avtomobillarni aʼlo holatda va yaxshi komplektatsiyada beramiz, shuningdek eng yuqori reytingga erishish uchun zarur koʻnikmalarni rivojlantirishga yordam beramiz. Ariza qoldiring, tanlagan avtomobilingizni oling va shaharning eng yaxshi taksoparklari bilan hamkorlik qiling!
 
-Hozir Car City biznes-klass parkida uchta model bor:
+## Biznes klassdagi avtomobillar ijarasi narxlari
 
-- [Hongqi H5](https://car-city.pro/vykup/biznes/Hongqi-H5) – orqa qatori keng, saloni sokin va korporativ mijozlar qadrlaydigan qat’iy dizayndagi vakillik sedani
-- [Voyah Dream](https://car-city.pro/vykup/biznes/Voyah-Dream) – ikkinchi qatorida alohida o‘rindiqlari bo‘lgan katta premium miniven, aeroportga safarlar va yuk bilan transferlar uchun
-- [GAC M8](https://car-city.pro/vykup/biznes/Gac-M8) – biznes-tarif va guruh safarlari uchun boy jihozlangan yetti o‘rinli miniven
+Biznes klassdagi avtomobillar ijarasi narxi toʻlovlar davriyligiga bogʻliq:
 
-## Nega biz bilan ishlash foydali
+| Model      | Grafik 7/0 | Grafik 6/1 | Grafik 5/2 |
+| ----------- | ---------- | ---------- | ---------- |
+| Voyah Dream | 10 000 ₽   | 12 250 ₽   | 14 700 ₽   |
+| GAC M8      | 5 000 ₽    | 8 170 ₽    | 9 800 ₽    |
+| Hongqi H5   | 4 500 ₽    | 5 250 ₽    | 6 300 ₽    |
 
-- Amaldagi OSAGO polisi sovg‘a sifatida
-- Istalgan parkda ishlash imkoniyati. Parkimiz komissiyasi — 3%
-- Yarim yildan keyin 7 dam olish kuni, bir yildan keyin — 14 kun
-- Ta’mirlash, YTH yoki kasallik vaqtida sotib olishni vaqtincha to‘xtatish
+## Taksoparkimizdagi daromadingizni hisoblang
+
+[КАЛЬКУЛЯТОР — общий блок]
+
+## Biznes klassdagi avtopark
+
+Hozir Car City biznes-klass parkida uchta model bor. Har birini ijaraga olish yoki sotib olish sharti bilan rasmiylashtirish mumkin:
+
+- [Hongqi H5](https://car-city.pro/klassyi-avtomobilej/biznes/hongqi-h5) – orqa qatori keng, saloni sokin va korporativ mijozlar qadrlaydigan qatʼiy dizayndagi vakillik sedani
+- [Voyah Dream](https://car-city.pro/klassyi-avtomobilej/biznes/voyah-dream) – ikkinchi qatorida alohida oʻrindiqlari boʻlgan katta premium miniven, aeroportga safarlar va yuk bilan transferlar uchun
+- [GAC M8](https://car-city.pro/klassyi-avtomobilej/biznes/gac-m8) – biznes-tarif va guruh safarlari uchun boy jihozlangan yetti oʻrinli miniven
+
+## Nega biz bilan hamkorlik qilish foydali
+
+Car City – taksida ishlash uchun ishonchli hamkoringiz. Sizga texnik va tashqi koʻrinishi mukammal holatdagi avtomobil beramiz, toʻlov grafigini esa oʻzingiz tanlashingiz mumkin. Ijara siz uchun qulay boʻlishi uchun faqat ishlagan kunlaringiz toʻlang!
+
+Avtomobildan tashqari, butun ijara davri uchun oʻqitish va texnik yordamni kafolatlaymiz. Sizdan – faqat halollik va oʻz vaqtida toʻlovlar, biz esa koʻproq pul ishlash uchun nima kerakligini aytib beramiz.
 
 ## Bizda turli tariflar mavjud
 
@@ -58,14 +62,28 @@ Hozir Car City biznes-klass parkida uchta model bor:
 
 ## Savollar va javoblar
 
-### Biznes-klassni sotib olmasdan, shunchaki ijaraga olsa bo‘ladimi?
+### «Biznes» klassiga qanday mashinalar kiradi?
 
-Hozir biznes-klass avtomobillari faqat sotib olish huquqi bilan ijaraga beriladi. Oddiy ijara kerak bo‘lsa, Komfort va Komfort+ tariflarini ko‘ring.
+Premium darajadagi keng va qulay avtomobillar: qulay oʻtirish, puxta oʻylangan salon va shahar ichida hamda tashqarisida safarlar uchun ravon yurish.
 
-### Biznes-klass haydovchisiga qanday talablar qo‘yiladi?
+### «Biznes» taksisi uchun mashinani ijaraga olish uchun nima kerak?
 
-Pasport, haydovchilik guvohnomasi, KIS «ART» va sudlanmaganlik haqida ma’lumotnoma. Biznes-tarifda ishlash uchun agregator qo‘shimcha tekshiruvdan o‘tishni so‘rashi mumkin — tayyorlanishga yordam beramiz.
+Yoshingiz kamida 21 da, haydovchilik stajingiz esa 3 yildan ortiq boʻlishi kerak. Shuningdek pasport, haydovchilik guvohnomasi va SNILS kerak boʻladi. Biz byurokratiyani yoqtirmaymiz, shuning uchun rasmiylashtirishni tez qilishga harakat qildik.
 
-### Boshida qancha to‘lash kerak?
+### Moskvada avtomobil ijarasi narxiga nimalar kiradi?
 
-Modelga bog‘liq: Hongqi H5 boshlang‘ich to‘lovsiz sotib olinadi, Voyah Dream va GAC M8 uchun to‘lov 300 000 ₽. Aniq hisob-kitobni jadvalingizga qarab menejer qiladi.
+Asosiy narxga ishonchli haydash uchun kerak boʻlgan hamma narsa kiradi: sugʻurta, texnik xizmat, kecha-kunduz yordam. Siz shunchaki kalitni olib yoʻlga chiqasiz. Avtomobillar toza, yoqilgʻi quyilgan va toʻliq tartibda boʻlishini kuzatib boramiz.
+
+### Toʻlov shartlari qanday?
+
+Toʻlov oldindan amalga oshiriladi – tarifga qarab birdaniga butun muddat uchun yoki kunbay toʻlash mumkin. Agar jarima olsangiz – sizni xabardor qilamiz, keyin uni belgilangan muddatda toʻlashingiz kerak boʻladi.
+
+### Qanday toʻlov usullari mavjud?
+
+Hammasini qabul qilamiz: bank kartalari, oʻtkazmalar, naqd pul. Agar avtomobilni biznes uchun olsangiz, yuridik shaxsga naqd pulsiz hisob-kitobni ham rasmiylashtirish mumkin. Hisob-fakturalar va shartnomalarni oʻzimiz tayyorlaymiz. Ijara toʻlovlari har kuni soat 12:00 da «Element dlya voditelya» ilovasida yechib olinadi
+
+### Biznes-klassni sotib olish sharti bilan rasmiylashtirsa boʻladimi?
+
+Ha. Uchala model ham ijaraga, ham 1–3 yilga sotib olish huquqi bilan ijaraga beriladi. Hongqi H5 boshlangʻich toʻlovsiz sotib olinadi, Voyah Dream va GAC M8 uchun boshlangʻich toʻlov 300 000 ₽. Aniq hisob-kitobni grafigingizga qarab menejer qiladi.
+
+## Fikrlar

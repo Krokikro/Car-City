@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/gruzovoy/Sollers-Atlant-SF4-L4
 title: "Sollers SF4 L4 Refrigerated rent-to-own in Moscow on the best terms"
 h1: "Sollers SF4 L4 rent-to-own"
+description: "Sollers SF4 L4 refrigerated truck rent-to-own in Moscow from 6329 ₽/day: a new 2026 truck for delivery work, OSAGO as a gift, payments paused during repairs."
 class: gruzovoy
 mode: vykup
 ---

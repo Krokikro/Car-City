@@ -1,14 +1,15 @@
 ---
 url: https://car-city.pro/klassyi-avtomobilej/gruzovoy/Sollers-Atlant-SF4-L4
 title: "Мәскеуде жеткізу жұмысына Sollers SF4 L4 жалға алу | Car City"
-h1: "Sollers Atlant SF4 L4"
+h1: "Жеткізу жұмысына Sollers Atlant SF4 L4 жалға алу"
+description: "Sollers Atlant SF4 L4 рефрижераторын Мәскеуде жеткізу жұмысына тәулігіне 5500 ₽-ден бастап жалға алу: икемді мерзім, ашық шарт, 24/7 қолдау, сатып алу мүмкіндігі."
 class: gruzovoy
 mode: arenda
 ---
 
 BREADCRUMBS: Басты бет > Sollers Atlant SF4 L4
 
-# Sollers Atlant SF4 L4
+# Жеткізу жұмысына Sollers Atlant SF4 L4 жалға алу
 
 Тиеу ұзындығы 4120 мм
 

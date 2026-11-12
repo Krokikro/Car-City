@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/ekonom/kia-rio-1.4
 title: "Kia Rio X-Line такси үчүн ижарага 1900 рублдан, күрөөсүз, Москвада, сатып алуу"
 h1: "Kia Rio X-Line такси үчүн ижарага"
+description: "Kia Rio X-Line эконом классындагы унааны Москвада такси үчүн 1900 ₽/суткадан ижарага алыңыз: 5/2, 6/1 же 7/0 графиги, ачык келишим, 24/7 колдоо, сатып алса да болот."
 class: ekonom
 mode: arenda
 ---

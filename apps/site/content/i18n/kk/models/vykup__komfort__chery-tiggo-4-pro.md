@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort/chery-tiggo-4-pro
 title: "Мәскеуде Чери Тигго 4 ПРО-ны сатып алу шартымен ең тиімді шарттармен жалға алу"
 h1: "Таксиге Chery Tiggo 4 PRO сатып алу"
+description: "Chery Tiggo 4 PRO-ны сатып алу құқығымен жалға алу: Мәскеуде таксиге тәулігіне 1848 ₽-ден бастап, икемді төлем кестесі, ашық шарт, кез келген паркте 3% комиссия."
 class: komfort
 mode: vykup
 ---

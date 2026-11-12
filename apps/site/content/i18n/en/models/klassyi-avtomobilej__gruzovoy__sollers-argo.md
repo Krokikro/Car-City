@@ -1,14 +1,15 @@
 ---
 url: https://car-city.pro/klassyi-avtomobilej/gruzovoy/sollers-argo
 title: "Rent a Sollers Argo for cargo transport in Moscow | Car City"
-h1: "Sollers Argo"
+h1: "Rent a Sollers Argo for cargo transport"
+description: "Rent a Sollers Argo for cargo transport in Moscow from 3150 ₽/day: a 2023 truck for the Cargo tariff, serviced by us, with 24/7 support and an option to buy it out."
 class: gruzovoy
 mode: arenda
 ---
 
 BREADCRUMBS: Home > Sollers Argo
 
-# Sollers Argo
+# Rent a Sollers Argo for cargo transport
 
 Overall length 5 990 mm
 

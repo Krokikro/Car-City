@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort/omoda-s-5
 title: "Omoda S5 rent-to-own in Moscow on the best terms"
 h1: "Omoda S5 rent-to-own for taxi"
+description: "Omoda S5 rent-to-own for Comfort-class taxi in Moscow from 2342 ₽/day: a sporty sedan, work with any fleet at 3%, OSAGO as a gift and an individual contract."
 class: komfort
 mode: vykup
 ---

@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort-plyus/Tenet-T7
 title: "Moskvada Tenet T7-ni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
 h1: "Taksi uchun Tenet T7-ni sotib olish"
+description: "Tenet T7 2026 ni taksi uchun sotib olish huquqi bilan ijaraga olish: yangi krossover, kuniga 3777 ₽ dan, 1–3 yil muddat, park komissiyasi 3%, OSAGO sovgʻa."
 class: komfort-plyus
 mode: vykup
 ---

@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/gruzovoy/Sollers-Atlant-SF4-L4
 title: "Москвада Sollers SF4 L4 Рефрижераторду сатып алуу менен ижарага алуу — эң жакшы шарттарда"
 h1: "Sollers SF4 L4 сатып алуу"
+description: "Sollers SF4 L4 жүк унаасын Москвада сатып алуу менен ижарага алыңыз: 6329 ₽/суткадан, жеткирүү жана жүк ташуу үчүн, ийкемдүү график, жылына 14 күн төлөмсүз."
 class: gruzovoy
 mode: vykup
 ---

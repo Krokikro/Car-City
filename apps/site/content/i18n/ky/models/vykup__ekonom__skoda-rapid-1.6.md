@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/ekonom/skoda-rapid-1.6
 title: "Москвада таксиде иштөө үчүн Skoda Rapid сатып алуу | Car City"
 h1: "Skoda Rapid такси үчүн сатып алуу"
+description: "Skoda Rapid унаасын Москвада таксиде иштөө үчүн сатып алуу менен ижарага алыңыз: 2089 ₽/суткадан, ийкемдүү график, жеке келишим, кайрылган күнү унаа."
 class: ekonom
 mode: vykup
 ---

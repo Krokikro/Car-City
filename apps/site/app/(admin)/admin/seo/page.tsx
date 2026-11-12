@@ -134,6 +134,9 @@ export default async function Seo({ searchParams }: { searchParams: Promise<{ e?
             <p className="pnl-muted">Адреса те же, что на старом сайте: <a href="/sitemap.xml" target="_blank" rel="noreferrer">/sitemap.xml ↗</a> и <a href="/image_sitemap.xml" target="_blank" rel="noreferrer">/image_sitemap.xml ↗</a>. Страницы с noindex, своим canonical на другой адрес или исключённые вручную в карту не попадают.</p>
             <p><b>Языки</b></p>
             <div className="pnl-tools-row">{LANGS.map((l) => <label key={l} className="pnl-check"><input type="checkbox" name={`lang:${l}`} defaultChecked={s.sitemap.langs.includes(l)} disabled={l === "ru"} /> {LANG_NAMES[l]}</label>)}</div>
+            <p><b>Открыть для индексации</b></p>
+            <p className="pnl-muted">Языковые версии, которые поисковики могут индексировать. Закрытые отдают noindex, не попадают в sitemap и hreflang. Открывайте язык, только когда тексты на нём переведены полностью — так советует SEO-подрядчик. Страницы без перевода закрыты всегда.</p>
+            <div className="pnl-tools-row">{LANGS.map((l) => <label key={l} className="pnl-check"><input type="checkbox" name={`index:${l}`} defaultChecked={l === "ru" || s.indexLangs.includes(l)} disabled={l === "ru"} /> {LANG_NAMES[l]}</label>)}</div>
             <label className="pnl-check"><input type="checkbox" name="images" defaultChecked={s.sitemap.images} /> Карта картинок (image_sitemap.xml)</label>
             <label>Исключить адреса<textarea name="exclude" rows={4} maxLength={LIM.sitemapExclude} defaultValue={s.sitemap.exclude.join("\n")} className="pnl-mono" /><small>По одному в строке, можно маской: /novosti/*</small></label>
             <table className="pnl-table">

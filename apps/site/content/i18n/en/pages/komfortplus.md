@@ -208,7 +208,7 @@ Payment is made in advance — for the whole period at once or day by day, depen
 
 ### What payment methods are available?
 
-We accept everything: bank cards, transfers, cash. You can also pay by bank transfer as a legal entity if you are taking the car for business. We'll prepare invoices and contracts ourselves. Rent payments are charged every day at 12:00 in the "Элемент для водителя" (Element for drivers) app
+We accept everything: bank cards, transfers, cash. You can also pay by bank transfer as a legal entity if you are taking the car for business. We'll prepare invoices and contracts ourselves. Rent payments are charged every day at 12:00 in the "Element for drivers" app
 
 ## Reviews
 

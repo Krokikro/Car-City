@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/ekonom/kia-rio-1.6
 title: "Kia Rio 1.6 taxi rent-to-own in Moscow on the best terms"
 h1: "Kia Rio 1.6 rent-to-own for taxi"
+description: "Kia Rio 1.6 rent-to-own for taxi work in Moscow from 2089 ₽/day: Economy class, flexible payment plans, a 3% fleet fee and payments paused during repairs."
 class: ekonom
 mode: vykup
 ---

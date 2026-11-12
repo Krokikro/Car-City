@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/dostavka/lada-granta
 title: "Мәскеуде Lada Granta-ны сатып алу шартымен ең тиімді шарттармен жалға алу"
 h1: "Lada Granta сатып алу"
+description: "Lada Granta-ны Мәскеуде жеткізу жұмысына сатып алу шартымен тәулігіне 1808 ₽-ден бастап жалға алыңыз: икемді төлем кестесі, ашық шарт, жылына 14 күн төлемсіз."
 class: dostavka
 mode: vykup
 ---

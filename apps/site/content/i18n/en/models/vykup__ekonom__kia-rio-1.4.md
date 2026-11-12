@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/ekonom/kia-rio-1.4
 title: "Kia Rio X-Line taxi rent-to-own in Moscow on the best terms"
 h1: "Kia Rio X-Line rent-to-own for taxi"
+description: "Kia Rio X-Line rent-to-own for taxi in Moscow from 2089 ₽/day: own an Economy-class car while you work, 3% fleet commission, OSAGO as a gift, 14 days off a year."
 class: ekonom
 mode: vykup
 ---

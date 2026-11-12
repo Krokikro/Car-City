@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/ekonom/kia-rio-1.4
 title: "Moskvada Kia Rio X-Line taksisini eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
 h1: "Taksi uchun Kia Rio X-Lineʼni sotib olish"
+description: "Kia Rio X-Line ni taksi uchun sotib olish huquqi bilan ijaraga olish: kuniga 2089 ₽ dan, 1–3 yil muddat, park komissiyasi 3%, yiliga 14 dam olish kuni, Moskva."
 class: ekonom
 mode: vykup
 ---

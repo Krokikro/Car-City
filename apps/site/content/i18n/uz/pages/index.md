@@ -31,7 +31,7 @@ ekonom · komfort · komfort+ · biznes · yuk · yetkazib berish
 
 Super-chegirma
 
-## Москвич 3
+## Moskvich 3
 
 Dvigatel hajmi: 1,5 l
 

@@ -2,11 +2,12 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort/omoda-s-5
 title: "Мәскеуде таксиде жұмыс істеу үшін Omoda S5 жалға алу | Car City"
 h1: "Таксиге Omoda S5 жалға алу"
+description: "Omoda S5-ті Мәскеуде комфорт таксиіне 2000 ₽/тәуліктен бастап жалға алу: жасырын төлемдерсіз ашық шарт, икемді кесте, 24/7 техникалық қолдау. Car City."
 class: komfort
 mode: arenda
 ---
 
-BREADCRUMBS: Басты бет > Комфорт > Omodа S5
+BREADCRUMBS: Басты бет > Комфорт > Omoda S5
 
 # Таксиге Omoda S5 жалға алу
 

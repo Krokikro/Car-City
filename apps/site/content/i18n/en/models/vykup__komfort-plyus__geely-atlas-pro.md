@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort-plyus/geely-atlas-pro
 title: "Geely Atlas PRO rent-to-own in Moscow on the best terms"
 h1: "Geely Atlas PRO rent-to-own for taxi"
+description: "Geely Atlas PRO rent-to-own for Comfort+ taxi in Moscow from 2900 ₽/day: a roomy crossover that becomes yours, a 3% fleet fee and 14 payment-free days a year."
 class: komfort-plyus
 mode: vykup
 ---

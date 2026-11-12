@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort-plyus/exeed-lx-2023
 title: "Мәскеуде таксиде жұмыс істеу үшін Exeed LX 2023 сатып алу | Car City"
 h1: "Таксиге Exeed LX 2023 сатып алу"
+description: "Exeed LX 2023-ті Мәскеуде таксиде жұмыс істеу үшін сатып алу шартымен тәулігіне 2836 ₽-ден бастап алыңыз: икемді төлем кестесі, ОСАГО сыйлыққа, ашық шарт."
 class: komfort-plyus
 mode: vykup
 ---

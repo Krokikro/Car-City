@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/ekonom/kia-rio-1.4
 title: "Москвада Kia Rio X-Line таксисин сатып алуу менен ижарага алуу — эң жакшы шарттарда"
 h1: "Kia Rio X-Line такси үчүн сатып алуу"
+description: "Kia Rio X-Line унаасын Москвада такси үчүн сатып алуу менен ижарага алыңыз: 2089 ₽/суткадан, ийкемдүү төлөм графиги, жылына 14 күн төлөмсүз, комиссия 3%."
 class: ekonom
 mode: vykup
 ---

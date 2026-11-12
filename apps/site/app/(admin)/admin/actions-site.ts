@@ -150,6 +150,7 @@ export async function saveSeoAction(fd: FormData) {
   } else if (tab === "sitemap") {
     next.sitemap.langs = LANGS.filter((l) => on(fd, `lang:${l}`)) as Lang[];
     if (!next.sitemap.langs.includes("ru")) next.sitemap.langs.unshift("ru");
+    next.indexLangs = ["ru", ...LANGS.filter((l) => l !== "ru" && on(fd, `index:${l}`))] as Lang[];
     next.sitemap.exclude = lines(f(fd, "exclude")).map((x) => (x.startsWith("/") ? x : "/" + x)).slice(0, 300);
     next.sitemap.images = on(fd, "images");
     for (const k of Object.keys(PAGE_TYPE_NAMES) as PageType[]) {

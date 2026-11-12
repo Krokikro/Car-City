@@ -42,7 +42,7 @@ Ekonom zich shahar tumanlarida tigʻiz soatlarda (ertalab, kechqurun, dam olish 
 
 Komfort – yoʻlovchilar orasida mashhurligi boʻyicha ikkinchi tarif. Komfortdagi avtomobillarga Yandex Taxi talablari Ekonomdagidan yuqori: salon toza va ozoda, yaxshi holatdagi oʻrta klass mashinalari kerak. Klass Yandex klassifikatori tomonidan marka, model va ishlab chiqarilgan yili boʻyicha avtomatik beriladi. Tarifga kirish uchun xizmat koʻrsatish standartlarini bilish boʻyicha onlayn-testdan oʻtish kerak.
 
-Car City parkida Komfort klassidagi avtomobillarga Москвич 3, Geely Emgrand, Chery Tiggo 4, Chery Tiggo 4 Pro va Omoda S5 kiradi, ularning ijara narxi sutkasiga 2 000 rubldan. Bu modellar ishonchlilik, hamyonbop narx va salondagi yuqori qulaylik uygʻunligi tufayli Komfort tarifi uchun maqbul hisoblanadi. Yandex Taxi avtomobilning Komfort tarifi talablariga mosligini marka, model va ishlab chiqarilgan yilini hisobga olib avtomatik aniqlaydi, haydovchi alohida ariza topshirishi shart emas.
+Car City parkida Komfort klassidagi avtomobillarga Moskvich 3, Geely Emgrand, Chery Tiggo 4, Chery Tiggo 4 Pro va Omoda S5 kiradi, ularning ijara narxi sutkasiga 2 000 rubldan. Bu modellar ishonchlilik, hamyonbop narx va salondagi yuqori qulaylik uygʻunligi tufayli Komfort tarifi uchun maqbul hisoblanadi. Yandex Taxi avtomobilning Komfort tarifi talablariga mosligini marka, model va ishlab chiqarilgan yilini hisobga olib avtomatik aniqlaydi, haydovchi alohida ariza topshirishi shart emas.
 
 Moskvada Komfort tarifi boʻyicha Yandex Taxi komissiyasi – buyurtma narxining 25,42% (QQS bilan). Ekonomdagidan yuqori, lekin safarning oʻrtacha cheki farqni qoplaydi.
 

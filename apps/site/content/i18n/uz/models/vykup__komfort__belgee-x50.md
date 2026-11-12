@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort/Belgee-X50
 title: "Moskvada Belgee X50-ni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
 h1: "Taksi uchun Belgee X50-ni sotib olish"
+description: "Belgee X50 ni sotib olish huquqi bilan ijaraga oling: Komfort taksi uchun 2025-yilgi krossover, kuniga 2813 ₽ dan, 3% komissiya, shaffof shartnoma, Moskva."
 class: komfort
 mode: vykup
 ---
@@ -96,7 +97,7 @@ Avtomobilning ixcham oʻlchamlari zich shahar oqimida parkovka va manyovr qilish
 ## Oʻxshash avtomobillar
 
 - Geely Emgrand — 2200 ₽/kundan [Кнопка: Ijaraga olish]
-- Москвич 3 — 2200 ₽/kundan [Кнопка: Ijaraga olish] (Aksiya)
+- Moskvich 3 — 2200 ₽/kundan [Кнопка: Ijaraga olish] (Aksiya)
 - Chery Tiggo 4 Pro — 2200 ₽/kundan [Кнопка: Ijaraga olish]
 
 <!-- на странице выкупа «Похожие авто» ведут на аренду (кнопка «Арендовать») -->

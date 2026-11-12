@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/ekonom/skoda-rapid-1.6
 title: "Москвада таксиде иштөө үчүн Skoda Rapid 1.6 ижарасы | Car City"
 h1: "Skoda Rapid 1.6 такси үчүн ижарага"
+description: "Skoda Rapid 1.6 унаасын Москвада таксиде иштөө үчүн 1500 ₽/суткадан ижарага алыңыз. Эконом классы, ыңгайлуу график, ачык ижара келишими, кааласаңыз сатып аласыз."
 class: ekonom
 mode: arenda
 ---

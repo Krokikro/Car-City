@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort/chery-tiggo-4
 title: "Moskvada taksida ishlash uchun Chery Tiggo 4 ijarasi | Car City"
 h1: "Taksi uchun Chery Tiggo 4 ijarasi"
+description: "Chery Tiggo 4 ni Komfort taksida ishlash uchun ijaraga olish: kuniga 2000 ₽ dan, tejamkor krossover, jamgʻariladigan garovsiz, qulay grafik, sotib olish ham mumkin."
 class: komfort
 mode: arenda
 ---

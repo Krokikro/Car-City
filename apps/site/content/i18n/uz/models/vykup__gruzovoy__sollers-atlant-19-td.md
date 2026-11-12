@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/gruzovoy/sollers-atlant-19-td
 title: "Moskvada Sollers Atlant 1.9 TDʼni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
 h1: "Sollers Atlant 1.9 TDʼni sotib olish"
+description: "Sollers Atlant 1.9 TD furgonini sotib olish huquqi bilan ijaraga oling: kuniga 2813 ₽ dan, yuk tashish va yetkazib berish uchun, 3% komissiya, OSAGO sovgʻa."
 class: gruzovoy
 mode: vykup
 ---

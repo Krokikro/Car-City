@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/ekonom/volkswagen-polo-1.6
 title: "Москвада таксиде иштөө үчүн Volkswagen Polo 1.6 ижарасы | Car City"
 h1: "Volkswagen Polo 1.6 такси үчүн ижарага"
+description: "Volkswagen Polo 1.6 эконом классындагы седанды Москвада такси үчүн 1900 ₽/суткадан ижарага алыңыз: ийкемдүү график, ачык келишим, 24/7 колдоо, сатып алуу мүмкүн."
 class: ekonom
 mode: arenda
 ---

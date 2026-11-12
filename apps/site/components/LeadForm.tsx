@@ -206,7 +206,7 @@ export function LeadForm({ button, source = "site", compact = false, extra, t: t
         </fieldset>
       )}
       <label className="hp" aria-hidden="true">
-        Сайт компании
+        Website
         <input name="company_site" tabIndex={-1} autoComplete="off" />
       </label>
       <input type="hidden" name="ts" ref={tsRef} />

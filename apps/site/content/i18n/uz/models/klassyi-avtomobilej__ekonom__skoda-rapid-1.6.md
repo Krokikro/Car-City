@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/ekonom/skoda-rapid-1.6
 title: "Moskvada taksida ishlash uchun Skoda Rapid 1.6 ijarasi | Car City"
 h1: "Taksi uchun Skoda Rapid 1.6 ijarasi"
+description: "Taksi uchun Skoda Rapid 1.6 ijarasi kuniga 1500 ₽ dan: keng yukxonali tejamkor Ekonom sedan, shaffof ijara shartnomasi, moslashuvchan grafik, sotib olish ham mumkin."
 class: ekonom
 mode: arenda
 ---

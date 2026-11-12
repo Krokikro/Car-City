@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/dostavka/lada-granta
 title: "Москвада Lada Granta'ны сатып алуу менен ижарага алуу — эң жакшы шарттарда"
 h1: "Lada Granta сатып алуу"
+description: "Lada Granta унаасын Москвада жеткирүүдө иштөө үчүн сатып алуу менен ижарага алыңыз: 1808 ₽/суткадан, төлөмдөр унаанын эсебине кетет, ачык келишим, комиссия 3%."
 class: dostavka
 mode: vykup
 ---

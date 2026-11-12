@@ -1,14 +1,15 @@
 ---
 url: https://car-city.pro/klassyi-avtomobilej/gruzovoy/sollers-atlant-19-td
 title: "Moskvada taksida ishlash uchun Sollers Atlant 1.9 TD ijarasi | Car City"
-h1: "Sollers Atlant 1.9 TD"
+h1: "Yuk tashish uchun Sollers Atlant 1.9 TD ijarasi"
+description: "Yuk tashish uchun Sollers Atlant 1.9 TD furgonini ijaraga oling: kuniga 3375 ₽ dan, sigʻimli kuzov, tushunarli shartlar, murojaat kuni avtomobil va 24/7 texnik yordam."
 class: gruzovoy
 mode: arenda
 ---
 
 BREADCRUMBS: Bosh sahifa > Sollers Atlant 1.9 TD
 
-# Sollers Atlant 1.9 TD
+# Yuk tashish uchun Sollers Atlant 1.9 TD ijarasi
 
 Umumiy uzunligi 4 900 mm
 

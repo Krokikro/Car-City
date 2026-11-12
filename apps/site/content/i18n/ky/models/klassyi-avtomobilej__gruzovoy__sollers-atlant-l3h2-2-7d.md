@@ -1,14 +1,15 @@
 ---
 url: https://car-city.pro/klassyi-avtomobilej/gruzovoy/sollers-atlant-l3h2-2-7d
 title: "Москвада таксиде иштөө үчүн Sollers Atlant L3H2 2.7D ижарасы | Car City"
-h1: "Sollers Atlant L3H2 2.7D"
+h1: "Таксиде иштөө үчүн Sollers Atlant L3H2 2.7D ижарасы"
+description: "Москвада Sollers Atlant L3H2 2.7D бийик фургонунун ижарасы 3600 ₽/суткадан: жүк тарифинде иштөө, кайтарылуучу күрөө, ТОдон кийин берилген унаа, 24/7 колдоо."
 class: gruzovoy
 mode: arenda
 ---
 
 BREADCRUMBS: Башкы бет > Sollers Atlant L3H2 2.7D
 
-# Sollers Atlant L3H2 2.7D
+# Таксиде иштөө үчүн Sollers Atlant L3H2 2.7D ижарасы
 
 Жалпы узундугу 5 990 мм
 

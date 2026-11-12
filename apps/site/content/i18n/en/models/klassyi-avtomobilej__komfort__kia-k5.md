@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5
 title: "Rent a Kia K5 for taxi work in Moscow | Car City"
 h1: "Rent a Kia K5 for taxi"
+description: "Rent a Kia K5 for Comfort-class taxi work in Moscow from 2800 ₽/day: a stylish, spacious sedan, flexible schedule, no hidden fees and 24/7 technical support."
 class: komfort
 mode: arenda
 ---

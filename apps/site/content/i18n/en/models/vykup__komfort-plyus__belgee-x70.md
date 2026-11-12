@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort-plyus/belgee-x70
 title: "Belgee X70 rent-to-own on the best terms for taxi work in Moscow | Car City"
 h1: "Belgee X70 rent-to-own for taxi"
+description: "Belgee X70 rent-to-own for Comfort+ taxi in Moscow from 4279 ₽/day: a new 2025 crossover, a 3% fleet commission, OSAGO as a gift and 14 days off a year."
 class: komfort-plyus
 mode: vykup
 ---

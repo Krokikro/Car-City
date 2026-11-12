@@ -29,7 +29,7 @@ Bundan tashqari, avtomobilingizning soddaligi va ishonchliligi ishning umumiy sa
 
 ## Moskva va Piterda nima qilish kerak?
 
-Moskva va Sankt-Peterburg – oʻziga xos sharoitlarga ega megapolislar. Taksi uchun avtomobil ijarasi hududlardagiga qaraganda kuchliroq tartibga solinadi. Mashinaning eng past klassi – Солярис yoki Рио, bu siz uchun ham, yoʻlovchilar uchun ham qulayroq sharoitni kafolatlaydi. Esda tutish muhim: xizmat sifati va qulaylik – taksidagi muvaffaqiyatning ajralmas qismlari.
+Moskva va Sankt-Peterburg – oʻziga xos sharoitlarga ega megapolislar. Taksi uchun avtomobil ijarasi hududlardagiga qaraganda kuchliroq tartibga solinadi. Mashinaning eng past klassi – Solaris yoki Rio, bu siz uchun ham, yoʻlovchilar uchun ham qulayroq sharoitni kafolatlaydi. Esda tutish muhim: xizmat sifati va qulaylik – taksidagi muvaffaqiyatning ajralmas qismlari.
 
 ## Konditsioner: zaruratmi yoki hashamat?
 

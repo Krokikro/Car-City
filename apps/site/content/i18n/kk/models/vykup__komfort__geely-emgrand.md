@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort/geely-emgrand
 title: "Мәскеуде Джили Эмгранд-ты сатып алу шартымен ең тиімді шарттармен жалға алу"
 h1: "Таксиге Geely Emgrand сатып алу"
+description: "Geely Emgrand-ты Мәскеуде таксиге сатып алу шартымен тәулігіне 2 290 ₽-ден бастап жалға алыңыз: комфорт класы, ОСАГО сыйлыққа, ашық шарт, 3% комиссия."
 class: komfort
 mode: vykup
 ---

@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort/chery-tiggo-4
 title: "Мәскеуде таксиде жұмыс істеу үшін Chery Tiggo 4 жалға алу | Car City"
 h1: "Таксиге Chery Tiggo 4 жалға алу"
+description: "Chery Tiggo 4 кроссоверін Мәскеуде комфорт таксиіне 2000 ₽/тәуліктен бастап жалға алу: жинақталатын депозитсіз, бір айдан соң 2 тегін демалыс, 24/7 қолдау."
 class: komfort
 mode: arenda
 ---

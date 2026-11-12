@@ -1,4 +1,5 @@
 import { company } from "@/lib/content";
+import { place } from "@/lib/ui-terms";
 import type { Lang } from "@/lib/i18n";
 import { SocialRow } from "../SocialIcons";
 
@@ -23,7 +24,11 @@ const STATION: Record<string, string[]> = {
 const T = {
   ru: { offices: "Адреса офисов:", hours: "Режим работы:", route: "Маршрут", call: "Позвонить", write: "Написать", mail: "Почта", phone: "Телефон", open: "Открыто каждый день" },
   en: { offices: "Office addresses:", hours: "Opening hours:", route: "Directions", call: "Call", write: "Message us", mail: "Email", phone: "Phone", open: "Open every day" },
+  ky: { offices: "Кеңселердин даректери:", hours: "Иш убактысы:", route: "Маршрут", call: "Чалуу", write: "Жазуу", mail: "Почта", phone: "Телефон", open: "Күн сайын иштейт" },
+  kk: { offices: "Кеңселердің мекенжайлары:", hours: "Жұмыс уақыты:", route: "Бағыт", call: "Қоңырау шалу", write: "Жазу", mail: "Пошта", phone: "Телефон", open: "Күн сайын ашық" },
+  uz: { offices: "Ofislar manzillari:", hours: "Ish vaqti:", route: "Yo‘nalish", call: "Qo‘ng‘iroq qilish", write: "Yozish", mail: "Pochta", phone: "Telefon", open: "Har kuni ochiq" },
 };
+const METRO: Record<string, string> = { ru: "м.", en: "metro", ky: "метро", kk: "метро", uz: "metro" };
 
 export function ContactView({ lang = "ru" }: { lang?: Lang }) {
   const t = T[lang as keyof typeof T] ?? T.ru;
@@ -50,20 +55,20 @@ export function ContactView({ lang = "ru" }: { lang?: Lang }) {
           {OFFICES.map((o, i) => (
             <article key={o.addr} className="ct-card">
               <span className="ct-n mono">0{i + 1}</span>
-              <h3>{o.addr}</h3>
+              <h3>{place(lang, o.addr)}</h3>
               <ul className="ct-metro">
                 {o.metro.map((m) => (
                   <li key={m}>
                     <span className="ct-lines" aria-hidden="true">
                       {(STATION[m] ?? []).map((l) => <i key={l} style={{ background: LINES[l][0], color: LINES[l][1] }}>{l}</i>)}
                     </span>
-                    {m === "Грачёвская" ? "МЦД-D3" : "м."} {m}
+                    {m === "Грачёвская" ? (lang === "en" || lang === "uz" ? "MCD-D3" : "МЦД-D3") : METRO[lang] ?? "м."} {place(lang, m)}
                   </li>
                 ))}
               </ul>
               <div className="ct-hours">
                 <span className="mono">{t.hours}</span>
-                <p><b>{o.hours}</b> <span>{o.days}</span></p>
+                <p><b>{place(lang, o.hours)}</b> <span>{place(lang, o.days)}</span></p>
                 {o.days === "пн-вс" && <em>{t.open}</em>}
               </div>
               <div className="ct-actions">

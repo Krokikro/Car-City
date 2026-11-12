@@ -1,14 +1,15 @@
 ---
 url: https://car-city.pro/klassyi-avtomobilej/gruzovoy/sollers-argo
 title: "Moskvada yuk tashish uchun Sollers Argo ijarasi | Car City"
-h1: "Sollers Argo"
+h1: "Yuk tashish uchun Sollers Argo ijarasi"
+description: "Sollers Argo ijarasi yuk tashish va yetkazib berish uchun: kuniga 3150 ₽ dan, 2023-yilgi ishonchli yuk mashinasi, shaffof shartnoma, moslashuvchan grafik, Moskva."
 class: gruzovoy
 mode: arenda
 ---
 
 BREADCRUMBS: Bosh sahifa > Sollers Argo
 
-# Sollers Argo
+# Yuk tashish uchun Sollers Argo ijarasi
 
 Umumiy uzunligi 5 990 mm
 

@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/ekonom/skoda-rapid-1.6
 title: "Rent a Skoda Rapid 1.6 for taxi work in Moscow | Car City"
 h1: "Rent a Skoda Rapid 1.6 for taxi"
+description: "Rent a Skoda Rapid 1.6 for taxi work in Moscow from 1500 ₽/day: Economy class, clear terms with no hidden fees, our own car service and support 7 days a week."
 class: ekonom
 mode: arenda
 ---

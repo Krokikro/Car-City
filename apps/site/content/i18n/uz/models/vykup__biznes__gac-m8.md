@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/biznes/Gac-M8
 title: "Moskvada taksida ishlash uchun GAC M8-ni sotib olish | Car City"
 h1: "GAC M8-ni sotib olish"
+description: "GAC M8 minivenini taksi uchun sotib olish huquqi bilan ijaraga oling: kuniga 7635 ₽ dan, 1–3 yil muddat, park komissiyasi 3%, OSAGO sovgʻa, shaffof shartnoma."
 class: biznes
 mode: vykup
 ---

@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort-plyus/belgee-x70
 title: "Москвада таксиде иштөө үчүн Belgee X70'ти эң жакшы шарттарда сатып алуу менен ижарага алуу | Car City"
 h1: "Belgee X70 такси үчүн сатып алуу"
+description: "Belgee X70 кроссоверин Москвада такси үчүн сатып алуу менен ижарага алыңыз: 4279 ₽/суткадан, комфорт+ классы, ийкемдүү график, жылына 14 күн төлөмсүз."
 class: komfort-plyus
 mode: vykup
 ---

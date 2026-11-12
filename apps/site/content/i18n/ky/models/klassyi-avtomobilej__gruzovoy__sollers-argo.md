@@ -1,14 +1,15 @@
 ---
 url: https://car-city.pro/klassyi-avtomobilej/gruzovoy/sollers-argo
 title: "Москвада жүк ташуу үчүн Sollers Argo ижарасы | Car City"
-h1: "Sollers Argo"
+h1: "Жүк ташуу үчүн Sollers Argo ижарасы"
+description: "Москвада жүк ташуу үчүн Sollers Argo ижарасы 3150 ₽/суткадан: 4 палетага чейин, кайтарылуучу күрөө, ТОдон өткөн унаа, 24/7 колдоо. Car City'де унааны тез алыңыз."
 class: gruzovoy
 mode: arenda
 ---
 
 BREADCRUMBS: Башкы бет > Sollers Argo
 
-# Sollers Argo
+# Жүк ташуу үчүн Sollers Argo ижарасы
 
 Жалпы узундугу 5 990 мм
 

@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort/omoda-s-5
 title: "Moskvada taksida ishlash uchun Omoda S5 ijarasi | Car City"
 h1: "Taksi uchun Omoda S5 ijarasi"
+description: "Taksi uchun Omoda S5 ijarasi: zamonaviy Komfort sedani kuniga 2000 ₽ dan, 5/2 dan 7/0 gacha grafik, yashirin toʻlovlarsiz, avtomobil murojaat kuniyoq beriladi."
 class: komfort
 mode: arenda
 ---

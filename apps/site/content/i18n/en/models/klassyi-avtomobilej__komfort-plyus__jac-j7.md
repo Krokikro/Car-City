@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/jac-j7
 title: "Rent a JAC J7 for taxi work in Moscow | Car City"
 h1: "Rent a Jac J7 for taxi"
+description: "Rent a JAC J7 liftback for Comfort+ taxi in Moscow from 2600 ₽/day: a 2023 car ready for work, no accumulating deposit, a schedule that suits you, 24/7 support."
 class: komfort-plyus
 mode: arenda
 ---

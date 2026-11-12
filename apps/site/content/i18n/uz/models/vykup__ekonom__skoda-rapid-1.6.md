@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/ekonom/skoda-rapid-1.6
 title: "Moskvada taksida ishlash uchun Skoda Rapidʼni sotib olish | Car City"
 h1: "Taksi uchun Skoda Rapidʼni sotib olish"
+description: "Skoda Rapid ni taksi uchun sotib olish huquqi bilan ijaraga oling: Ekonom klass, kuniga 2089 ₽ dan, istalgan taksoparkda ishlash, 3% komissiya, shaffof shartnoma."
 class: ekonom
 mode: vykup
 ---

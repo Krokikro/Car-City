@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort-plyus/jac-j7
 title: "Moskvada Jac J7-ni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
 h1: "Taksi uchun Jac J7-ni sotib olish"
+description: "Jac J7 ni taksi uchun sotib olish huquqi bilan ijaraga oling: Komfort+ liftbek, kuniga 2022 ₽ dan, moslashuvchan muddat, park komissiyasi 3%, yiliga 14 dam olish kuni."
 class: komfort-plyus
 mode: vykup
 ---

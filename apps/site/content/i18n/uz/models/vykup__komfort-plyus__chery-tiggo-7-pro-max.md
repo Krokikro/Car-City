@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort-plyus/chery-tiggo-7-pro-max
 title: "Moskvada Chery Tiggo 7 PRO MAXʼni eng yaxshi shartlarda sotib olish huquqi bilan ijaraga olish"
 h1: "Taksi uchun Chery Tiggo 7 PRO MAXʼni sotib olish"
+description: "Chery Tiggo 7 PRO MAX ni sotib olish huquqi bilan taksi uchun ijaraga oling: kuniga 3315 ₽ dan, Komfort+ tarifi, park komissiyasi 3%, shaffof shartnoma, Moskva."
 class: komfort-plyus
 mode: vykup
 ---

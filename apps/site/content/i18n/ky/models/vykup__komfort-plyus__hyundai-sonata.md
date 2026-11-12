@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort-plyus/hyundai-sonata
 title: "Москвада Хендай Сонатаны сатып алуу менен ижарага алуу — эң жакшы шарттарда"
 h1: "Hyundai Sonata такси үчүн сатып алуу"
+description: "Москвада такси үчүн Hyundai Sonata сатып алуу менен ижарасы 3200 ₽/суткадан: комфорт+ седан, 1–3 жылга мөөнөт, ОСАГО белекке, ачык келишим, комиссия 3%."
 class: komfort-plyus
 mode: vykup
 ---

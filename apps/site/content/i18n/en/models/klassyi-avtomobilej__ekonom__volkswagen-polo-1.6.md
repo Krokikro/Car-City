@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/ekonom/volkswagen-polo-1.6
 title: "Rent a Volkswagen Polo 1.6 for taxi work in Moscow | Car City"
 h1: "Rent a Volkswagen Polo 1.6 for taxi"
+description: "Rent a Volkswagen Polo 1.6 for taxi in Moscow from 1900 ₽/day: a reliable Economy-class sedan, flexible schedule, transparent rental contract, buyout available."
 class: ekonom
 mode: arenda
 ---

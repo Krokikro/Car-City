@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/exeed-lx-2023
 title: "Rent an Exeed LX 2023 for taxi work in Moscow | Car City"
 h1: "Rent an Exeed LX 2023 for taxi"
+description: "Rent an Exeed LX 2023 for Comfort+ taxi in Moscow from 2800 ₽/day: a premium-look crossover, a schedule that suits you, a transparent contract and 24/7 support."
 class: komfort-plyus
 mode: arenda
 ---

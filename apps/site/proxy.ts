@@ -48,6 +48,11 @@ export async function proxy(req: NextRequest) {
   reqHeaders.set("x-pathname", path + url.search);
   const res = NextResponse.next({ request: { headers: reqHeaders } });
   if (FORCED || !indexable(s.seo, host)) res.headers.set("X-Robots-Tag", "noindex, nofollow");
+  // языковые версии, закрытые от индексации до готовности переводов (SEO → Sitemap и языки)
+  else {
+    const lp = path.match(/^\/(en|ky|kk|uz)(?:\/|$)/)?.[1];
+    if (lp && !(s.seo.indexLangs ?? ["ru"]).includes(lp as never)) res.headers.set("X-Robots-Tag", "noindex, follow");
+  }
   return res;
 }
 

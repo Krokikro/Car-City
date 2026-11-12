@@ -6,7 +6,7 @@ import { log404 } from "@/lib/notfound-log";
 import { refreshOverlay, draftOverlay, pageKey } from "@/lib/admin/overlay";
 import { commentsOf } from "@/lib/articles/social";
 import { allDocs, getDoc, twinOf, articles, type Doc } from "@/lib/docs";
-import { parseDoc, parseReviews } from "@/lib/blocks";
+import { parseDoc, parseReviews, type Block } from "@/lib/blocks";
 import { siteReviews } from "@/lib/reviews";
 import { ReviewsWall } from "@/components/page/ReviewsWall";
 import { fleet, type FleetCar } from "@/lib/fleet";
@@ -46,6 +46,7 @@ import { buildMeta, extraLd } from "@/lib/seo";
 import { hasGen } from "@/components/GenImage";
 import { ui } from "@/lib/ui";
 import { BIZ_PATH } from "@/lib/content";
+import { carLd, carListLd, businessLd } from "@/lib/schema-org";
 
 // Содержимое можно менять из админки: новые адреса собираются по первому заходу, готовые страницы обновляются после публикации
 export const dynamicParams = true;
@@ -80,7 +81,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const doc = getDoc(path, lang, ov);
   if (!doc) return {};
   const slug = doc.path.split("/").pop() ?? "";
-  return buildMeta({ ov, lang, path: doc.path, title: doc.title, description: doc.description, h1: doc.h1, kind: doc.kind, image: doc.kind === "article" && hasGen("news", slug) ? `/news/${slug}-1200.webp` : undefined });
+  return buildMeta({ ov, lang, path: doc.path, title: doc.title, description: doc.description, h1: doc.h1, kind: doc.kind, untranslated: lang !== "ru" && doc.lang !== lang, image: doc.kind === "article" && hasGen("news", slug) ? `/news/${slug}-1200.webp` : undefined });
 }
 
 // Какие машины показать в шапке раздела: по классу из адреса или по марке из заголовка
@@ -205,7 +206,13 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
         {doc.path === "/klub" && <KlubView lang={lang} />}
         {terms && <TermsView terms={terms} lang={lang} />}
         {doc.kind !== "article" && !own &&
-          p.blocks.map((b, i) => {
+          p.blocks.map((b, i) => styled(b, i, (() => {
+            // готовые блоки из конструктора в админке
+            if (b.t === "form") return <FinalCta key={i} lang={lang} />;
+            if (b.t === "video") return <VideoBlock key={i} title={b.title} src={b.src} n={n++} />;
+            if (b.t === "steps") { stepsDone = true; return <Fragment key={i}>{steps}</Fragment>; }
+            if (b.t === "reqs") { reqDone = true; return <Requirements key={i} req={homeText(lang).requirements} />; }
+            if (b.t === "reviews") return <Reviews key={i} lang={lang} t={homeText(lang).reviews} />;
             if (b.t === "cards")
               return (
                 <Fragment key={i}>
@@ -214,11 +221,11 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
                   {ipPage && !reqDone && (reqDone = true) && <Requirements req={homeText(lang).requirements} />}
                 </Fragment>
               );
-            if (b.t === "calculator") return <Calculator key={i} />;
+            if (b.t === "calculator") return <Calculator key={i} t={homeText(lang).calculator} classes={homeText(lang).fleet.classes} cars={fleet.map((c) => ({ ...c }))} />;
             if (b.t === "trust")
               return (
                 <Fragment key={i}>
-                  <Trust lang={lang} buy={buyPage} />
+                  <Trust lang={lang} t={homeText(lang).trust} buy={buyPage} />
                   {vykup && steps}
                 </Fragment>
               );
@@ -273,7 +280,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
                 return <BenefitsView key={i} b={b} n={n++} lang={lang} cta={!/Почему с нами выгодно\?/.test(t)} />;
             }
             return <Section key={i} b={b} n={n++} />;
-          })}
+          })()))}
         {(classVideo || bizPage) && !vykup && steps}
         {/* в карточке каждой машины — дорога из 3 шагов (аренда) или 5 шагов (выкуп) и требования */}
         {isModel && !stepsDone && steps}
@@ -282,8 +289,35 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
         {(p.final || isModel) && <FinalCta lang={lang} />}
       </main>
       {ld && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ld }} />}
+      {/* Schema.org: карточка машины (Car + цены), список машин класса, прокат с офисами в контактах */}
+      {isModel && car && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: carLd(car, { name: doc.h1 || name, description: doc.description, path: doc.path, lang, mode: doc.mode }) }} />}
+      {!isModel && (() => {
+        const list = heroCars(doc).map((c) => fleet.find((f) => f.slug === c.slug)!).filter((f) => f && (buyPage ? f.buy : f.rent ?? f.buy)).map((f) => ({ car: f, name: f.name, href: (buyPage ? f.buy : f.rent ?? f.buy)! }));
+        return list.length ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: carListLd(list, lang, doc.h1) }} /> : null;
+      })()}
+      {contact && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: businessLd(lang) }} />}
       <Footer lang={lang} />
       <StickyCta lang={lang} />
     </>
+  );
+}
+
+/** Оформление блока из конструктора: обёртка с классом стиля */
+function styled(b: Block, i: number, el: React.ReactNode) {
+  if (!b.style || el === null || el === undefined || el === false) return el;
+  return <div key={`st-${i}`} className={`blk-st blk-${b.style}`}>{el}</div>;
+}
+
+/** Видео из конструктора (YouTube / Rutube / VK Видео) */
+function VideoBlock({ title, src, n }: { title: string; src: string; n: number }) {
+  return (
+    <section className={`section pg-sec blk-video ${n % 2 ? "alt" : ""}`} aria-label={title || undefined}>
+      <div className="wrap">
+        {title && <header className="section-head"><h2 className="display" data-split>{title}</h2></header>}
+        <div className="blk-video-frame">
+          <iframe src={src} title={title || "Видео"} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowFullScreen />
+        </div>
+      </div>
+    </section>
   );
 }
