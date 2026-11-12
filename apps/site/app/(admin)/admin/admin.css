@@ -606,3 +606,29 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: #8a8aff
 .pnl-theme .pnl-btn-sm { padding: 0 9px; font-size: 12.5px; }
 @media (min-width: 961px) { .pnl { grid-template-columns: 248px minmax(0, 1fr); } }
 .pnl-alt { display: grid; gap: 12px; } .pnl-alt label { display: grid; gap: 6px; } .pnl-alt input { width: 100%; }
+
+/* Конструктор блоков (12.11.2026) */
+.pnl-bb-switch { margin: 6px 0 12px; }
+.pnl-tabs button { padding: 7px 13px; border-radius: 99px; color: var(--ink); background: #fff; border: 1px solid var(--line); font-size: 14px; cursor: pointer; }
+.pnl-tabs button.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+.pnl-bb { display: grid; gap: 6px; }
+.pnl-bb-intro { padding: 10px 14px; border: 1px dashed var(--line); border-radius: 12px; font-size: 14px; }
+.pnl-bb-item { border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+.pnl-bb-item.is-hidden { opacity: .55; background: repeating-linear-gradient(-45deg, #fff, #fff 8px, #f6f6f7 8px, #f6f6f7 16px); }
+.pnl-bb-item.is-open { box-shadow: 0 6px 24px rgba(0,0,0,.07); }
+.pnl-bb-item header { display: flex; align-items: center; gap: 8px; padding: 8px 10px; flex-wrap: wrap; }
+.pnl-bb-n { color: var(--mute); font-size: 12px; }
+.pnl-bb-title { flex: 1 1 220px; min-width: 160px; font-weight: 600; border: 1px solid transparent; border-radius: 8px; padding: 6px 8px; background: transparent; }
+.pnl-bb-title:focus { border-color: var(--line); background: #fff; }
+.pnl-bb-kind { font-size: 12px; padding: 3px 8px; border-radius: 99px; background: #f1f2f4; white-space: nowrap; }
+.pnl-bb-tools { display: flex; gap: 4px; flex-wrap: wrap; }
+.pnl-bb-tools button { min-width: 32px; height: 30px; padding: 0 8px; border: 1px solid var(--line); border-radius: 8px; background: #fff; cursor: pointer; font-size: 13px; }
+.pnl-bb-tools button:disabled { opacity: .4; cursor: default; }
+.pnl-bb-tools .pnl-bb-del { color: #c0392b; }
+.pnl-bb-body { display: grid; gap: 10px; padding: 4px 12px 14px; }
+.pnl-bb-body select, .pnl-bb-body input, .pnl-bb-body textarea { width: 100%; }
+.pnl-bb-add { justify-self: start; border: 1px dashed var(--line); background: transparent; border-radius: 99px; padding: 5px 12px; font-size: 13px; cursor: pointer; color: var(--ink); }
+.pnl-bb-add:hover { background: #fff; }
+.pnl-bb-lib { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 6px; padding: 10px; border: 1px solid var(--line); border-radius: 12px; background: #fafafa; }
+.pnl-bb-lib button[role="menuitem"] { display: grid; gap: 2px; text-align: left; padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: #fff; cursor: pointer; }
+.pnl-bb-lib small { color: var(--mute); font-size: 12px; }
