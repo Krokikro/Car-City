@@ -3,8 +3,8 @@
 export interface CarPhotoOpts { avif: boolean; lit: boolean; shots?: ("front" | "rear" | "side" | "interior")[] }
 
 const OPTS: Record<string, CarPhotoOpts> = {
-  // Jetour Dashing — возвращён 12.11.2026, фото со старого car-city.pro
-  "jetour-dashing": { avif: false, lit: false, shots: ["front", "side", "interior"] },
+  // Jetour Dashing — возвращён 12.11.2026: фото в фирменной ливрее сделаны в Higgsfield, салон — со старого car-city.pro; слоя с фарами нет
+  "jetour-dashing": { avif: true, lit: false, shots: ["front", "side", "interior"] },
 };
 
 export const photoOpts = (slug: string): CarPhotoOpts => OPTS[slug] ?? { avif: true, lit: true };
