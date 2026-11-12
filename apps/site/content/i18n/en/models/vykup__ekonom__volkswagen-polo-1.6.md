@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/ekonom/volkswagen-polo-1.6
 title: "Volkswagen Polo rent-to-own for taxi work in Moscow | Car City"
 h1: "Volkswagen Polo rent-to-own for taxi"
+description: "Volkswagen Polo rent-to-own for taxi work in Moscow from 2150 ₽/day: a reliable Economy sedan, OSAGO as a gift, a 3% fleet fee and an individual buyout contract."
 class: ekonom
 mode: vykup
 ---

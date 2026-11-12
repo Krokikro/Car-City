@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort-plyus/chery-tiggo-7-pro-max
 title: "Chery Tiggo 7 PRO MAX rent-to-own in Moscow on the best terms"
 h1: "Chery Tiggo 7 PRO MAX rent-to-own for taxi"
+description: "Chery Tiggo 7 PRO MAX rent-to-own for Comfort+ taxi in Moscow from 3315 ₽/day: own a spacious crossover, work with any fleet at 3% and get a transparent contract."
 class: komfort-plyus
 mode: vykup
 ---

@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/biznes/Voyah-Dream
 title: "Voyah Dream rent-to-own for taxi work in Moscow | Car City"
 h1: "Voyah Dream rent-to-own"
+description: "Voyah Dream rent-to-own in Moscow from 9041 ₽/day: a hybrid premium minivan for business-class taxi, a 3% fleet fee and payments paused during repairs or illness."
 class: biznes
 mode: vykup
 ---

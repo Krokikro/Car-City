@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/ekonom/skoda-rapid-1.6
 title: "Skoda Rapid rent-to-own for taxi work in Moscow | Car City"
 h1: "Skoda Rapid rent-to-own for taxi"
+description: "Skoda Rapid rent-to-own for taxi in Moscow from 2089 ₽/day: make an Economy-class car yours, work with any fleet at a 3% commission, transparent contract."
 class: ekonom
 mode: vykup
 ---

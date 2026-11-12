@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/hyundai-sonata
 title: "Rent a Hyundai Sonata for taxi work in Moscow | Car City"
 h1: "Rent a Hyundai Sonata for taxi"
+description: "Rent a Hyundai Sonata for Comfort+ taxi work in Moscow from 2800 ₽/day: a spacious business-style sedan, flexible schedule, transparent contract, buyout available."
 class: komfort-plyus
 mode: arenda
 ---

@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/gruzovoy/lada-largus
 title: "Lada Largus rent-to-own in Moscow on the best terms"
 h1: "Lada Largus rent-to-own"
+description: "Lada Largus rent-to-own in Moscow from 2491 ₽/day for cargo and delivery work: work with any delivery service, OSAGO as a gift, payments paused during repairs."
 class: gruzovoy
 mode: vykup
 ---

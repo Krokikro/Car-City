@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort/omoda-s-5
 title: "Rent an Omoda S5 for taxi work in Moscow | Car City"
 h1: "Rent an Omoda S5 for taxi"
+description: "Rent an Omoda S5 for Comfort-class taxi work in Moscow from 2000 ₽/day: a sporty 2023 sedan, a schedule that suits you, a transparent contract and 24/7 support."
 class: komfort
 mode: arenda
 ---

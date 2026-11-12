@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/ekonom/kia-rio-1.6
 title: "Rent a Kia Rio 1.6 for taxi from 1900 RUB with no deposit in Moscow, rent-to-own"
 h1: "Rent a Kia Rio 1.6 for taxi"
+description: "Rent a Kia Rio 1.6 for taxi in Moscow from 1900 ₽/day with no deposit: an economical Economy-class sedan, a schedule that suits you and the option of rent-to-own."
 class: ekonom
 mode: arenda
 ---

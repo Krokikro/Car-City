@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort/moskvich-3
 title: "Rent a Moskvich 3 for taxi work in Moscow | Car City"
 h1: "Rent a Moskvich 3 for taxi"
+description: "Rent a Moskvich 3 for Comfort-class taxi in Moscow from 2000 ₽/day: a 2023 crossover in perfect condition, flexible schedule, no deposit, rent-to-own available."
 class: komfort
 mode: arenda
 ---

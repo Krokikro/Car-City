@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/haval-f7
 title: "Rent a Haval F7 for taxi work in Moscow | Car City"
 h1: "Rent a Haval F7 for taxi"
+description: "Rent a Haval F7 for Comfort+ taxi in Moscow from 2800 ₽/day: a comfortable 2023 crossover, no accumulating deposit, flexible schedule and 24/7 technical support."
 class: komfort-plyus
 mode: arenda
 ---

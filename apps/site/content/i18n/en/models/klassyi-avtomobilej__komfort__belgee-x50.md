@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort/Belgee-X50
 title: "Rent a Belgee X50 for taxi work in Moscow | Car City"
 h1: "Rent a Belgee X50 for taxi"
+description: "Rent a Belgee X50 for Comfort-class taxi in Moscow from 2400 ₽/day: a new 2025 crossover, flexible schedule, no hidden fees and the option of rent-to-own."
 class: komfort
 mode: arenda
 ---

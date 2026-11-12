@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/chery-tiggo-7-pro
 title: "Rent a Chery Tiggo 7 Pro for taxi work in Moscow | Car City"
 h1: "Rent a Chery Tiggo 7 Pro for taxi"
+description: "Rent a Chery Tiggo 7 Pro for Comfort+ taxi work in Moscow from 2800 ₽/day: no deposit, servicing and insurance included, 2 free days off after a month of work."
 class: komfort-plyus
 mode: arenda
 ---

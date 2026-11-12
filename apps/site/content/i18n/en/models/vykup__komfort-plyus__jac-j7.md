@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort-plyus/jac-j7
 title: "Jac J7 rent-to-own in Moscow on the best terms"
 h1: "Jac J7 rent-to-own for taxi"
+description: "JAC J7 rent-to-own for Comfort+ taxi work in Moscow from 2022 ₽/day: an affordable liftback, OSAGO as a gift, a 3% fleet fee and payments paused during repairs."
 class: komfort-plyus
 mode: vykup
 ---

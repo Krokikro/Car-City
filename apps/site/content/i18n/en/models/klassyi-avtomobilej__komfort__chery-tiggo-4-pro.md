@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort/chery-tiggo-4-pro
 title: "Rent a Chery Tiggo 4 Pro for taxi work in Moscow | Car City"
 h1: "Rent a Chery Tiggo 4 Pro for taxi"
+description: "Rent a Chery Tiggo 4 Pro for Comfort-class taxi work in Moscow from 2000 ₽/day: a compact crossover, no accumulating deposit, 2 free days off after a month."
 class: komfort
 mode: arenda
 ---

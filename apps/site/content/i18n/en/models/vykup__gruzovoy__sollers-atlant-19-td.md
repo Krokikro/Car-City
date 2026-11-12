@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/gruzovoy/sollers-atlant-19-td
 title: "Sollers Atlant 1.9 TD rent-to-own in Moscow on the best terms"
 h1: "Sollers Atlant 1.9 TD rent-to-own"
+description: "Sollers Atlant 1.9 TD rent-to-own in Moscow from 2813 ₽/day: a cargo van for delivery work, OSAGO as a gift, flexible terms and payments paused during repairs."
 class: gruzovoy
 mode: vykup
 ---

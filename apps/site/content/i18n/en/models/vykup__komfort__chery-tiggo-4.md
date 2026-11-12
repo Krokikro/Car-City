@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort/chery-tiggo-4
 title: "Chery Tiggo 4 rent-to-own in Moscow on the best terms"
 h1: "Chery Tiggo 4 rent-to-own for taxi"
+description: "Chery Tiggo 4 rent-to-own for Comfort-class taxi work in Moscow from 2022 ₽/day: flexible payment plans, OSAGO as a gift, a 3% fleet fee and 24/7 support."
 class: komfort
 mode: vykup
 ---

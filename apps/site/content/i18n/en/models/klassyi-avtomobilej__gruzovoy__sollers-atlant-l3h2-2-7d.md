@@ -1,14 +1,15 @@
 ---
 url: https://car-city.pro/klassyi-avtomobilej/gruzovoy/sollers-atlant-l3h2-2-7d
-title: "Rent a Sollers Atlant L3H2 2.7D    for taxi work in Moscow | Car City"
-h1: "Sollers Atlant L3H2 2.7D"
+title: "Rent a Sollers Atlant L3H2 2.7D for taxi work in Moscow | Car City"
+h1: "Rent a Sollers Atlant L3H2 2.7D for taxi work"
+description: "Rent a Sollers Atlant L3H2 2.7D high-roof van in Moscow from 3600 ₽/day for cargo taxi work: a 2024 model, maintained by the fleet, with 24/7 driver support."
 class: gruzovoy
 mode: arenda
 ---
 
 BREADCRUMBS: Home > Sollers Atlant L3H2 2.7D
 
-# Sollers Atlant L3H2 2.7D
+# Rent a Sollers Atlant L3H2 2.7D for taxi work
 
 Overall length 5 990 mm
 

@@ -1,14 +1,15 @@
 ---
 url: https://car-city.pro/klassyi-avtomobilej/gruzovoy/sollers-atlant-19-td
 title: "Rent a Sollers Atlant 1.9 TD for taxi work in Moscow | Car City"
-h1: "Sollers Atlant 1.9 TD"
+h1: "Rent a Sollers Atlant 1.9 TD for taxi work"
+description: "Rent a Sollers Atlant 1.9 TD van for cargo taxi work in Moscow from 3375 ₽/day: a 2023 van for the Cargo tariff, flexible schedule and 24/7 technical support."
 class: gruzovoy
 mode: arenda
 ---
 
 BREADCRUMBS: Home > Sollers Atlant 1.9 TD
 
-# Sollers Atlant 1.9 TD
+# Rent a Sollers Atlant 1.9 TD for taxi work
 
 Overall length 4 900 mm
 

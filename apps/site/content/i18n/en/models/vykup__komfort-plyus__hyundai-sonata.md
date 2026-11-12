@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort-plyus/hyundai-sonata
 title: "Hyundai Sonata rent-to-own in Moscow on the best terms"
 h1: "Hyundai Sonata rent-to-own for taxi"
+description: "Hyundai Sonata rent-to-own for Comfort+ taxi in Moscow from 3200 ₽/day: a spacious sedan that becomes yours, work with any fleet at 3%, transparent contract."
 class: komfort-plyus
 mode: vykup
 ---

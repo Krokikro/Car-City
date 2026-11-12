@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort/geely-emgrand
 title: "Rent a Geely Emgrand for taxi work in Moscow | Car City"
 h1: "Rent a Geely Emgrand for taxi"
+description: "Rent a Geely Emgrand for Comfort-class taxi in Moscow from 2000 ₽/day: a modern 2023 sedan, no deposit, a schedule that suits you and an option to buy it out."
 class: komfort
 mode: arenda
 ---

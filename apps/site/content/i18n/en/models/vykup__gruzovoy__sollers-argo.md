@@ -1,12 +1,11 @@
 ---
 url: https://car-city.pro/vykup/gruzovoy/sollers-argo
-title: "Sollers Sollers Argo rent-to-own in Moscow on the best terms"
+title: "Sollers Argo rent-to-own in Moscow on the best terms"
 h1: "Sollers Argo rent-to-own"
+description: "Sollers Argo rent-to-own in Moscow from 4274 ₽/day: a cargo truck for delivery work with any service, OSAGO as a gift, 14 days off a year and a transparent contract."
 class: gruzovoy
 mode: vykup
 ---
-
-<!-- «Sollers Sollers Argo» в title — так на сайте -->
 
 BREADCRUMBS: Home > Rent-to-own cars > Sollers Argo
 

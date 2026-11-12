@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/dostavka/lada-granta
 title: "Lada Granta rent-to-own in Moscow on the best terms"
 h1: "Lada Granta rent-to-own"
+description: "Lada Granta rent-to-own for delivery work in Moscow from 1808 ₽/day: work with any delivery service, OSAGO as a gift, a transparent contract and 14 days off a year."
 class: dostavka
 mode: vykup
 ---

@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort-plyus/exeed-lx-2023
 title: "Exeed LX 2023 rent-to-own for taxi work in Moscow | Car City"
 h1: "Exeed LX 2023 rent-to-own for taxi"
+description: "Exeed LX 2023 rent-to-own for Comfort+ taxi work in Moscow from 2836 ₽/day: a premium crossover, OSAGO as a gift, 3% fleet commission and an individual contract."
 class: komfort-plyus
 mode: vykup
 ---

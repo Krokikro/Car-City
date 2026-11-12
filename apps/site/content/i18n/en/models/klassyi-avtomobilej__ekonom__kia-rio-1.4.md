@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/ekonom/kia-rio-1.4
 title: "Rent a Kia Rio X-Line for taxi from 1900 RUB with no deposit in Moscow, rent-to-own"
 h1: "Rent a Kia Rio X-Line for taxi"
+description: "Rent a Kia Rio X-Line for taxi work in Moscow from 1900 ₽/day with no deposit. Economy class, flexible schedule, a car ready for the line and an option to buy it out."
 class: ekonom
 mode: arenda
 ---
