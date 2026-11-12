@@ -103,4 +103,4 @@ Ish vaqti: dush-jum 10:00 dan 19:00 gacha
 - [Maxfiylik siyosati](https://car-city.pro/themes/document/politika-konfedenczialnosti-kar-siti.pdf)
 - [Sayt xaritasi](https://car-city.pro/sitemap)
 
-2017 - 2026 ООО «ЭЛИТ-КАР» © Barcha huquqlar himoyalangan
+2017 - 2026 «ELIT-KAR» MChJ © Barcha huquqlar himoyalangan

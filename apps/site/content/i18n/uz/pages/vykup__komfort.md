@@ -52,7 +52,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 ![avtomobil rasmi](https://car-city.pro/assets/components/phpthumbof/cache/galery_1.4ed97933a441f71d34ec658ae61c46d2.webP)
 
-## Москвич 3
+## Moskvich 3
 
 2000₽/kundan
 

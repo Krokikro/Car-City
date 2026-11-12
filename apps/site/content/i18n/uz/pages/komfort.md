@@ -10,7 +10,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 ![avtomobil rasmi](https://car-city.pro/assets/components/phpthumbof/cache/galery_1.4ed97933a441f71d34ec658ae61c46d2.webP)
 
-## Москвич 3
+## Moskvich 3
 
 2000 ₽/kundan
 
@@ -72,7 +72,7 @@ Komfort sinfidagi avtomobil ijarasi narxlari siz tanlagan toʻlov formatiga bog�
 
 | Model             | 7/0 grafigi | 6/1 grafigi | 5/2 grafigi |
 | ----------------- | ----------- | ----------- | ----------- |
-| Москвич 3         | 2 000 ₽     | 2 340 ₽     | 2 800 ₽     |
+| Moskvich 3         | 2 000 ₽     | 2 340 ₽     | 2 800 ₽     |
 | Chery Tiggo 4     | 2 000 ₽     | 2 340 ₽     | 2 800 ₽     |
 | Chery Tiggo 4 PRO | 2 000 ₽     | 2 340 ₽     | 2 800 ₽     |
 | Geely Emgrand     | 2 000 ₽     | 2 340 ₽     | 2 800 ₽     |
@@ -171,7 +171,7 @@ Komfort sinfidagi parkimizda Moskvada taksida ishlash uchun osongina ijaraga oli
 - [Chery Tiggo 4](https://car-city.pro/klassyi-avtomobilej/komfort/chery-tiggo-4) – tejamkor dvigatel bilan jihozlangan, nafis va qulay salonli mashhur Xitoy krossoveri
 - [Chery Tiggo 4 PRO](https://car-city.pro/klassyi-avtomobilej/komfort/chery-tiggo-4-pro) – Tiggo 4 ning restayling qilingan, yaxshiroq dinamika va koʻproq aqlli tizimlarga ega boʻlgan takomillashgan versiyasi
 - [OMODA S 5](https://car-city.pro/klassyi-avtomobilej/komfort/omoda-s-5) – tashqi va ichki tomondan sport dizaynli, innovatsion qulay oʻrindiqlar hamda aqlli elektronikaning salmoqli toʻplamiga ega sedan.
-- [Москвич 3](https://car-city.pro/klassyi-avtomobilej/komfort/moskvich-3) – ifodali dizayn, keng salon va puxta oʻylangan ergonomikaga ega zamonaviy shahar krossoveri. Ishonchli dvigatel, katta ekranli multimedia tizimi va har qanday sharoitda ishonchli va qulay haydashni taʼminlovchi xavfsizlik tizimlari majmuasi bilan jihozlangan.
+- [Moskvich 3](https://car-city.pro/klassyi-avtomobilej/komfort/moskvich-3) – ifodali dizayn, keng salon va puxta oʻylangan ergonomikaga ega zamonaviy shahar krossoveri. Ishonchli dvigatel, katta ekranli multimedia tizimi va har qanday sharoitda ishonchli va qulay haydashni taʼminlovchi xavfsizlik tizimlari majmuasi bilan jihozlangan.
 - [Geely Emgrand](https://car-city.pro/klassyi-avtomobilej/komfort/geely-emgrand) – kuzovi silliq chiziqli va interyeri premium darajadagi nafis sedan. Tejamkor dvigateli, yuqori shovqin izolyatsiyasi va qulaylik hamda xavfsizlik uchun kengaytirilgan opsiyalar toʻplami bilan ajralib turadi, har bir safarda ishonch va uslub hissini beradi.
 
 ## Nega biz bilan hamkorlik qilish foydali

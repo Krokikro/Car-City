@@ -208,7 +208,7 @@ Toʻlov oldindan amalga oshiriladi – tarifga qarab birdaniga butun muddat uchu
 
 ### Qanday toʻlov usullari mavjud?
 
-Hammasini qabul qilamiz: bank kartalari, oʻtkazmalar, naqd pul. Agar avtomobilni biznes uchun olsangiz, yuridik shaxsga naqd pulsiz hisob-kitobni ham rasmiylashtirish mumkin. Hisob-fakturalar va shartnomalarni oʻzimiz tayyorlaymiz. Ijara toʻlovlari har kuni soat 12:00 da «Элемент для водителя» ilovasida yechib olinadi
+Hammasini qabul qilamiz: bank kartalari, oʻtkazmalar, naqd pul. Agar avtomobilni biznes uchun olsangiz, yuridik shaxsga naqd pulsiz hisob-kitobni ham rasmiylashtirish mumkin. Hisob-fakturalar va shartnomalarni oʻzimiz tayyorlaymiz. Ijara toʻlovlari har kuni soat 12:00 da «Element dlya voditelya» ilovasida yechib olinadi
 
 ## Fikrlar
 

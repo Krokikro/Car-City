@@ -52,7 +52,7 @@ Taksida ishlash uchun avtomobil ijaraga olishdagi eng keng tarqalgan 10 ta xaton
 
 22.06.2026
 
-Taksida sotib olish huquqi bilan ijara uchun qaysi avtomobillar eng mos kelishini bilib oling. Kia Rio, Skoda Rapid, Москвич 3, Kia K5 va Exeed LX ni solishtirish, tanlash boʻyicha maslahatlar va sotib olish sharti bilan ijaraning afzalliklari.
+Taksida sotib olish huquqi bilan ijara uchun qaysi avtomobillar eng mos kelishini bilib oling. Kia Rio, Skoda Rapid, Moskvich 3, Kia K5 va Exeed LX ni solishtirish, tanlash boʻyicha maslahatlar va sotib olish sharti bilan ijaraning afzalliklari.
 
 ### [Taksi uchun OSGOP: bu nima, qancha turadi va qanday rasmiylashtiriladi](https://car-city.pro/novosti/osgop-dlya-taksi-chto-eto-takoe-skolko-stoit-i-kak-oformit)
 
@@ -106,7 +106,7 @@ Taksi uchun avtomobil ijarasi boʻyicha maslahatlar: mos avtomobilni qanday tanl
 
 19.11.2024
 
-Moskvada sotib olish huquqi bilan ijaraga Komfort taksi: CarCityʼda Chery Tiggo, Geely, Москвич.
+Moskvada sotib olish huquqi bilan ijaraga Komfort taksi: CarCityʼda Chery Tiggo, Geely, Moskvich.
 
 ### [Ekonom sinfidagi taksida ishlash uchun eng yaxshi avtomobillar](https://car-city.pro/novosti/luchshie-avtomobili-dlya-rabotyi-v-taksi-ekonom-klassa)
 

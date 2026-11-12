@@ -8,7 +8,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный.
 
 # Kontaktlar
 
-**Сar-city**
+**Car-city**
 
 +7 (499) 302-31-59
 
