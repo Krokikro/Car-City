@@ -1,0 +1,12 @@
+node_modules
+.next
+.turbo
+out
+*.log
+.env*
+!.env.example
+*.tsbuildinfo
+
+# копии файлов от iCloud/Finder («file 2.ts»)
+* [0-9].*
+* [0-9]

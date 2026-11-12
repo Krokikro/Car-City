@@ -1,0 +1,108 @@
+/* Car City — дизайн-токены, черновик v0.2 (2026-10-05, жёлтый из логотипа)
+   Основа: PRD раздел 3 + референсы DESIGN 5 (AWE, тёмный) и DESIGN 6/7 (Apple, светлый).
+   По умолчанию тёмный холст; светлые справочные секции включаются атрибутом data-surface="light". */
+
+:root {
+  /* — Бренд — */
+  --cc-signal: #FFB700;        /* жёлтый из логотипа; только действие: главная кнопка, активный таб, цена */
+  --cc-signal-soft: #FFD066;   /* наведение, свет фар в 3D */
+  --cc-signal-ink: #8A5F00;    /* жёлтый ТЕКСТ на светлом фоне (AA 5.2:1). В PRD было #C79F00 = 2.3:1 */
+  --cc-on-signal: #0B0B0C;     /* текст на жёлтой кнопке (11.3:1) */
+
+  --cc-sky: #449ACF;          /* небо из логотипа: только иллюстрации и 3D */
+  --cc-teal: #439A9A;         /* город из логотипа: только иллюстрации */
+
+  /* — Тёмная палитра (из AWE, чуть светлее void #010101) — */
+  --cc-asphalt: #0B0B0C;       /* холст */
+  --cc-well: #16181B;          /* карточки, медиа-окна */
+  --cc-control: #1F1F23;       /* пиллы навигации, поля */
+  --cc-hairline: #26272B;      /* разделители */
+  --cc-porcelain: #ECECEA;     /* заголовки на тёмном (16.6:1) */
+  --cc-steel: #8A9094;         /* основной текст на тёмном (6.1:1) */
+  --cc-faint: #7C8488;         /* моно-счётчики; было #646E71 = 3.8:1, не проходило для 13px */
+  --cc-dormant: #444444;       /* неактивные номера шагов, только декоративно */
+
+  /* — Светлая палитра (из Apple, тёплее под бренд) — */
+  --cc-fog: #F5F5F2;           /* светлые секции */
+  --cc-paper: #FFFFFF;         /* карточки на светлом */
+  --cc-wash: #E8E8E4;          /* призрачные кнопки, чипы */
+  --cc-ink: #1A1919;           /* текст на светлом (16:1) */
+  --cc-ink-muted: #666C70;     /* вторичный текст на светлом (4.9:1) */
+  --cc-line-light: #D8D8D4;
+
+  /* — Статусы: только формы и админка — */
+  --cc-error: #FF6B5E;  --cc-error-light: #B3261E;
+  --cc-success: #4CC27A; --cc-success-light: #1E7A3E;
+
+  /* — Семантика (переключается секцией) — */
+  --bg: var(--cc-asphalt);
+  --surface: var(--cc-well);
+  --surface-2: var(--cc-control);
+  --line: var(--cc-hairline);
+  --text: var(--cc-porcelain);
+  --text-muted: var(--cc-steel);
+  --text-faint: var(--cc-faint);
+  --accent-text: var(--cc-signal);
+
+  /* — Шрифты — */
+  --font-display: 'Unbounded', 'Manrope', system-ui, sans-serif;
+  --font-text: 'Onest', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* — Шкала. Дисплей резиновый: кыргызский и узбекский на 20–35% длиннее — */
+  --text-display-xl: clamp(48px, 9vw, 160px);  /* герой; Unbounded 200, lh .95, -0.03em */
+  --text-display:    clamp(40px, 6.5vw, 96px); /* маркеры секций; Unbounded 300, lh 1.0, -0.02em */
+  --text-h1:         clamp(32px, 4.5vw, 56px); /* Unbounded 300, lh 1.07 */
+  --text-h2:         clamp(26px, 3vw, 32px);   /* Onest 500, lh 1.2, -0.02em */
+  --text-h3:         24px;                     /* Onest 500, lh 1.25 */
+  --text-body-lg:    20px;                     /* Onest 400, lh 1.47 */
+  --text-body:       17px;                     /* Onest 400, lh 1.47 — как у Apple */
+  --text-small:      14px;
+  --text-mono:       13px;                     /* JetBrains Mono 300–400, UPPERCASE, 0.08em */
+  --text-micro:      11px;                     /* минимум; меньше не делаем */
+  --tracking-mono: 0.08em;
+  --leading-tight: 1.0; --leading-heading: 1.12; --leading-body: 1.47;
+
+  /* — Отступы, база 4 — */
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 20px; --space-6: 24px; --space-7: 28px; --space-8: 32px;
+  --space-10: 40px; --space-12: 48px; --space-16: 64px; --space-20: 80px;
+  --space-24: 96px; --space-30: 120px; --space-40: 160px;
+  --section-gap: clamp(64px, 10vw, 120px);
+  --gutter: clamp(16px, 4vw, 40px);
+
+  /* — Сетка — */
+  --page-max: 1280px;
+  --text-max: 720px;
+
+  /* — Скругления (PRD 3.3) — */
+  --radius-sm: 12px;      /* поля в формах */
+  --radius-card: 24px;
+  --radius-card-lg: 28px;
+  --radius-media: 40px;
+  --radius-pill: 999px;
+
+  /* — Движение — */
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --dur-fast: 160ms; --dur: 320ms; --dur-slow: 640ms;
+
+  /* — Шашка такси (фирменная деталь) — */
+  --cc-checker: repeating-conic-gradient(var(--cc-signal) 0 25%, var(--cc-asphalt) 0 50%) 0 0 / 12px 12px;
+}
+
+[data-surface="light"] {
+  --bg: var(--cc-fog);
+  --surface: var(--cc-paper);
+  --surface-2: var(--cc-wash);
+  --line: var(--cc-line-light);
+  --text: var(--cc-ink);
+  --text-muted: var(--cc-ink-muted);
+  --text-faint: var(--cc-ink-muted);
+  --accent-text: var(--cc-signal-ink);
+  --cc-error: var(--cc-error-light);
+  --cc-success: var(--cc-success-light);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-fast: 0ms; --dur: 0ms; --dur-slow: 0ms; }
+}

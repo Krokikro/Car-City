@@ -1,0 +1,13 @@
+{
+  "$schema": "https://railway.com/railway.schema.json",
+  "build": {
+    "builder": "RAILPACK",
+    "buildCommand": "pnpm install --frozen-lockfile && pnpm --filter @car-city/site build"
+  },
+  "deploy": {
+    "startCommand": "pnpm --filter @car-city/site exec next start -H 0.0.0.0 -p ${PORT:-3000}",
+    "healthcheckPath": "/",
+    "healthcheckTimeout": 300,
+    "restartPolicyType": "ON_FAILURE"
+  }
+}
