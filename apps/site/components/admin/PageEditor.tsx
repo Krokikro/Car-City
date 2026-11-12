@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { savePageAction } from "@/app/(admin)/admin/actions";
 import { LIM } from "@/lib/admin/limits";
+import { BlockBuilder } from "./BlockBuilder";
 
 const T_MAX = 60;
 const D_MAX = 160;
@@ -16,6 +17,8 @@ export function PageEditor({ lang, path, kind, readOnly, seoReadOnly = false, in
   const [v, setV] = useState(initial);
   const [dirty, setDirty] = useState(false);
   const [dev, setDev] = useState<"m" | "t" | "d">("d");
+  // «Блоки» — конструктор страницы, «Текст» — тот же текст в Markdown (правки 12.11.2026)
+  const [mode, setMode] = useState<"blocks" | "text">("blocks");
   const [view, setView] = useState(false);
   const [tick, setTick] = useState(0);
   const [pick, setPick] = useState(false);
@@ -106,6 +109,12 @@ export function PageEditor({ lang, path, kind, readOnly, seoReadOnly = false, in
           <section className="pnl-card">
             <h2>Текст страницы</h2>
             <label><span className="pnl-lrow">Заголовок H1<span data-cc-for="h1" /></span><input name="h1" value={v.h1} onChange={set("h1")} required maxLength={LIM.h1} /></label>
+            <div className="pnl-tabs pnl-bb-switch" role="tablist" aria-label="Режим редактора">
+              <button type="button" role="tab" aria-selected={mode === "blocks"} className={mode === "blocks" ? "on" : ""} onClick={() => setMode("blocks")}>Блоки</button>
+              <button type="button" role="tab" aria-selected={mode === "text"} className={mode === "text" ? "on" : ""} onClick={() => setMode("text")}>Текст (Markdown)</button>
+            </div>
+            {mode === "blocks" && <BlockBuilder body={v.body} readOnly={readOnly} onChange={(b) => { setV((o) => ({ ...o, body: b })); setDirty(true); }} />}
+            <div hidden={mode !== "text"}>
             <div className="pnl-toolbar" role="toolbar" aria-label="Оформление текста">
               <button type="button" onClick={() => line("## ")} title="Заголовок раздела">H2</button>
               <button type="button" onClick={() => line("### ")} title="Подзаголовок">H3</button>
@@ -117,6 +126,7 @@ export function PageEditor({ lang, path, kind, readOnly, seoReadOnly = false, in
             </div>
             <textarea ref={ta} name="body" maxLength={LIM.body} className="pnl-body" rows={26} value={v.body} onChange={set("body")} spellCheck lang="ru" aria-label="Текст страницы в формате Markdown" />
             <small>Markdown: ## заголовок раздела, ### подзаголовок, **жирный**, [текст](адрес), ![описание](адрес картинки). Блоки вроде карточек, вопросов-ответов и кнопок собираются из этого текста автоматически, поэтому правьте слова, а структуру (порядок заголовков) меняйте осторожно. Ctrl/⌘+S — сохранить черновик.</small>
+            </div>
           </section>
 
           {!readOnly && (
