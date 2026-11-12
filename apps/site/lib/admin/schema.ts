@@ -269,7 +269,6 @@ const MOVE: [string, string, string][] = [
   ["/klassyi-avtomobilej/gruzovoy/lada-largus", "/vykup/gruzovoy/lada-largus", "Lada Largus — только выкуп"],
   ["/klassyi-avtomobilej/komfort-plyus/kia-k5", "/klassyi-avtomobilej/komfort/kia-k5", "Kia K5 перешла в «Комфорт»"],
   ["/vykup/komfort-plyus/kia-k5", "/vykup/komfort/kia-k5", "Kia K5 перешла в «Комфорт»"],
-  ["/vykup/komfort-plyus/jetour-dashing", "/vykup/komfort-plyus", "Jetour Dashing больше нет в парке — на класс"],
 ];
 const sq = (s: string) => `'${s.replace(/'/g, "''")}'`;
 export const SEED_REDIRECTS = `DO $$ BEGIN
@@ -282,5 +281,10 @@ IF NOT EXISTS (SELECT 1 FROM settings WHERE key='seed_redirects_v2') THEN
   DELETE FROM redirects WHERE match = 'exact' AND lower(from_path) IN ('/klassyi-avtomobilej/biznes', '/klassyi-avtomobilej/biznes/gac-m8', '/klassyi-avtomobilej/biznes/hongqi-h5', '/klassyi-avtomobilej/biznes/voyah-dream');
   INSERT INTO redirects (from_path, to_path, code, match, note, created_by) VALUES ('/biznes', '/klassyi-avtomobilej/biznes', 301, 'exact', 'Бизнес-класс — по адресу старого сайта', 'переезд') ON CONFLICT DO NOTHING;
   INSERT INTO settings (key, value) VALUES ('seed_redirects_v2', 'true');
+END IF;
+IF NOT EXISTS (SELECT 1 FROM settings WHERE key='seed_redirects_v3') THEN
+  -- Jetour Dashing снова в парке: карточка по прежнему адресу, без редиректа на класс (правки 12.11.2026)
+  DELETE FROM redirects WHERE match = 'exact' AND lower(from_path) = '/vykup/komfort-plyus/jetour-dashing';
+  INSERT INTO settings (key, value) VALUES ('seed_redirects_v3', 'true');
 END IF;
 END $$;`;
