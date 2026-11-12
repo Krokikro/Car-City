@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/exeed-lx-2023
 title: "Москвада таксиде иштөө үчүн Exeed LX 2023 ижарасы | Car City"
 h1: "Exeed LX 2023 такси үчүн ижарага"
+description: "Exeed LX 2023 кроссоверин Москвада комфорт+ таксиде иштөө үчүн 2800 ₽/суткадан ижарага алыңыз. Ийкемдүү график, жашыруун төлөмдөр жок, кааласаңыз сатып аласыз."
 class: komfort-plyus
 mode: arenda
 ---

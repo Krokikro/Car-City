@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/gruzovoy/sollers-atlant-19-td
 title: "Москвада Sollers Atlant 1.9 TD'ни сатып алуу менен ижарага алуу — эң жакшы шарттарда"
 h1: "Sollers Atlant 1.9 TD сатып алуу"
+description: "Москвада Sollers Atlant 1.9 TD фургонун сатып алуу менен ижарасы 2813 ₽/суткадан: жүк ташуу жана жеткирүү үчүн, ийкемдүү төлөм графиги, ачык келишим, ОСАГО белекке."
 class: gruzovoy
 mode: vykup
 ---

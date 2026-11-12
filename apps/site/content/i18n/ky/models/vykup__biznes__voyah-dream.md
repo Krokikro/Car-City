@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/biznes/Voyah-Dream
 title: "Москвада таксиде иштөө үчүн Voyah Dream сатып алуу | Car City"
 h1: "Voyah Dream сатып алуу"
+description: "Voyah Dream премиум минивэнин Москвада такси үчүн сатып алуу менен ижарага алыңыз: 9041 ₽/суткадан, 1–3 жылга ийкемдүү график, ачык келишим, комиссия 3%."
 class: biznes
 mode: vykup
 ---

@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/geely-atlas-pro
 title: "Москвада таксиде иштөө үчүн Geely Atlas Pro ижарасы | Car City"
 h1: "Geely Atlas PRO такси үчүн ижарага"
+description: "Geely Atlas PRO унаасын Москвада комфорт+ такси үчүн 2800 ₽/суткадан ижарага алыңыз: ыңгайлуу төлөм графиги, ачык келишим, депозит жок, сатып алуу мүмкүнчүлүгү бар."
 class: komfort-plyus
 mode: arenda
 ---

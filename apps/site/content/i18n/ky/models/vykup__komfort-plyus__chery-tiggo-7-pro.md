@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort-plyus/chery-tiggo-7-pro
 title: "Москвада Чери Тигго 7 ПРО'ну сатып алуу менен ижарага алуу — эң жакшы шарттарда"
 h1: "Chery Tiggo 7 PRO такси үчүн сатып алуу"
+description: "Москвада такси үчүн Chery Tiggo 7 PRO сатып алуу менен ижарасы 2511 ₽/суткадан: комфорт+ классы, 1–3 жылга мөөнөт, ОСАГО белекке, ачык келишим, комиссия 3%."
 class: komfort-plyus
 mode: vykup
 ---

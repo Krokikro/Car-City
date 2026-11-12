@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/ekonom/volkswagen-polo-1.6
 title: "Москвада таксиде иштөө үчүн Volkswagen Polo сатып алуу | Car City"
 h1: "Volkswagen Polo такси үчүн сатып алуу"
+description: "Volkswagen Polo седанын Москвада такси үчүн сатып алуу менен ижарага алыңыз: 2150 ₽/суткадан, ыңгайлуу төлөм графиги, ачык келишим, парктын комиссиясы 3%."
 class: ekonom
 mode: vykup
 ---

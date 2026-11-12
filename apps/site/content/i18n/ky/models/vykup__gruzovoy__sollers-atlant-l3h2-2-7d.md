@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/gruzovoy/sollers-atlant-l3h2-2-7d
 title: "Москвада Sollers Atlant L3H2 2.7D'ни сатып алуу менен ижарага алуу — эң жакшы шарттарда"
 h1: "Sollers Atlant L3H2 2.7D сатып алуу"
+description: "Sollers Atlant L3H2 2.7D бийик фургонун Москвада сатып алуу менен ижарага алыңыз: 4420 ₽/суткадан, ыңгайлуу мөөнөт, ОСАГО белекке, ачык келишим, 24/7 колдоо."
 class: gruzovoy
 mode: vykup
 ---

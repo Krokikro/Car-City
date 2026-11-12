@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort/chery-tiggo-4-pro
 title: "Москвада Чери Тигго 4 ПРО'ну сатып алуу менен ижарага алуу — эң жакшы шарттарда"
 h1: "Chery Tiggo 4 PRO такси үчүн сатып алуу"
+description: "Москвада такси үчүн Chery Tiggo 4 PRO сатып алуу менен ижарасы 1848 ₽/суткадан: комфорт классы, 1–3 жылга мөөнөт, ОСАГО белекке, парктын комиссиясы 3%."
 class: komfort
 mode: vykup
 ---

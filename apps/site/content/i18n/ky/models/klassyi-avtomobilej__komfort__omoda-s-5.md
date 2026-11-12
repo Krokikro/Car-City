@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort/omoda-s-5
 title: "Москвада таксиде иштөө үчүн Omoda S5 ижарасы | Car City"
 h1: "Omoda S5 такси үчүн ижарага"
+description: "Omoda S5 седанын Москвада комфорт такси үчүн 2000 ₽/суткадан ижарага алыңыз. Ыңгайлуу төлөм графиги, ачык келишим, депозит жок, кааласаңыз сатып аласыз."
 class: komfort
 mode: arenda
 ---

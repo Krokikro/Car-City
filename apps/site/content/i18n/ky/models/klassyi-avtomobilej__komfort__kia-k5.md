@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5
 title: "Москвада таксиде иштөө үчүн Kia K5 ижарасы | Car City"
 h1: "Kia K5 такси үчүн ижарага"
+description: "Москвада комфорт тарифи үчүн Kia K5 ижарасы 2800 ₽/суткадан: салабаттуу седан, ийкемдүү график, ачык ижара келишими, 24/7 колдоо жана унааны сатып алуу мүмкүнчүлүгү."
 class: komfort
 mode: arenda
 ---

@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/jac-j7
 title: "Москвада таксиде иштөө үчүн JAC J7 ижарасы | Car City"
 h1: "Jac J7 такси үчүн ижарага"
+description: "Jac J7 лифтбэгин Москвада комфорт+ такси үчүн 2600 ₽/суткадан ижарага алыңыз. Ыңгайлуу график, ачык ижара келишими, жашыруун төлөмдөр жок, сатып алса да болот."
 class: komfort-plyus
 mode: arenda
 ---

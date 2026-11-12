@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/chery-tiggo-7-pro-max
 title: "Москвада таксиде иштөө үчүн Chery Tiggo 7 Pro Max ижарасы | Car City"
 h1: "Chery Tiggo 7 Pro Max такси үчүн ижарага"
+description: "Chery Tiggo 7 Pro Max кроссоверин Москвада комфорт+ такси үчүн 2600 ₽/суткадан ижарага алыңыз: ийкемдүү график, ачык келишим, депозит жок, сатып алса да болот."
 class: komfort-plyus
 mode: arenda
 ---

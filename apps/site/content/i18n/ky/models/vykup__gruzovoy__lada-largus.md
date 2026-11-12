@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/gruzovoy/lada-largus
 title: "Москвада Lada Largus'ту сатып алуу менен ижарага алуу — эң жакшы шарттарда"
 h1: "Lada Largus сатып алуу"
+description: "Lada Largus фургонун Москвада жүк ташуу жана жеткирүү үчүн сатып алуу менен ижарага алыңыз: 2491 ₽/суткадан, ийкемдүү мөөнөт, ачык келишим, ОСАГО белекке."
 class: gruzovoy
 mode: vykup
 ---
