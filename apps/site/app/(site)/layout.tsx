@@ -22,6 +22,7 @@ import { mediaJson } from "@/lib/media/live";
 import { textsJson } from "@/lib/texts";
 import { gfxDetectScript } from "@/lib/gfx";
 import { company } from "@/lib/content";
+import { siteLd } from "@/lib/schema-org";
 import { asset } from "@/lib/i18n";
 import { MotionRoot } from "@/components/motion/MotionRoot";
 import { ToTop } from "@/components/motion/ToTop";
@@ -86,6 +87,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         {seo.headHtml && <HeadHtml html={seo.headHtml} />}
       </head>
       <body>
+        {/* Schema.org: организация и сайт — на всех страницах */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: siteLd() }} />
         {children}
         <MotionRoot />
         <OffscreenPause />
