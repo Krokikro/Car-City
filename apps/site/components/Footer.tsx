@@ -3,6 +3,8 @@ import { href, type Lang } from "@/lib/i18n";
 import { ui } from "@/lib/ui";
 import { Logo } from "./Logo";
 import { SocialRow } from "./SocialIcons";
+import { footerLd } from "@/lib/schema-org";
+import { place, legal } from "@/lib/ui-terms";
 
 export function Footer({ lang = "ru" }: { lang?: Lang }) {
   const t = ui(lang);
@@ -14,10 +16,11 @@ export function Footer({ lang = "ru" }: { lang?: Lang }) {
   ];
   return (
     <footer className="site-footer">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: footerLd(cols.flatMap((c) => c.links as [string, string][]), lang) }} />
       <div className="wrap footer-top">
         <div className="footer-brand">
           <Logo size={56} />
-          <p className="muted">{f.group}.<br />{company.legalName}</p>
+          <p className="muted">{f.group}.<br />{legal(lang, company.legalName)}</p>
           <div className="footer-phones">
             <a href={`tel:${company.phones[0].replace(/[^\d+]/g, "")}`} className="mono-num">{company.phones[0]}</a>
             <a href={`mailto:${company.email}`}>{company.email}</a>
@@ -33,7 +36,7 @@ export function Footer({ lang = "ru" }: { lang?: Lang }) {
         <div className="footer-col footer-offices">
           <p className="mono">{f.offices}</p>
           {offices.map((o) => (
-            <p key={o.name}><span>{f.metro} {o.metro}</span><br /><span className="muted small">{o.address}, {o.hours}</span></p>
+            <p key={o.name}><span>{f.metro} {place(lang, o.metro)}</span><br /><span className="muted small">{place(lang, o.address)}, {place(lang, o.hours)}</span></p>
           ))}
         </div>
       </div>
@@ -41,7 +44,7 @@ export function Footer({ lang = "ru" }: { lang?: Lang }) {
         <span>CAR CITY</span>
       </div>
       <div className="wrap footer-bottom">
-        <span className="muted small">© {new Date().getFullYear()} {company.legalName}</span>
+        <span className="muted small">© {new Date().getFullYear()} {legal(lang, company.legalName)}</span>
         <a href={company.privacyUrl} className="muted small">{f.privacy}</a>
         <a href={href("/sitemap", lang)} className="muted small">{f.sitemap}</a>
       </div>

@@ -7,6 +7,7 @@ import { company } from "@/lib/content";
 import { LANGS, LANG_NAMES, LANG_SHORT, href, splitLang } from "@/lib/i18n";
 import { ui } from "@/lib/ui";
 import { SocialRow } from "./SocialIcons";
+import { headerLd } from "@/lib/schema-org";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -38,6 +39,7 @@ export function Header() {
       <a href={href("/", lang)} className="brand" aria-label={t.toHome}>
         <Logo size={40} emblem={1.4} />
       </a>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: headerLd(nav, lang) }} />
       <nav aria-label={t.mainMenu} className="nav">
         {nav.map((item) => (
           <a key={item.href} href={href(item.href, lang)} className="nav-link">
