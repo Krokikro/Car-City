@@ -50,7 +50,7 @@ Bu taksi xizmatlari va haydovchilarga roʻyxatdan oʻtkazishda rad javobi olish 
 
 Lada qatori anʼanaviy ravishda taksi uchun eng ommaviy tanlov boʻlib qolmoqda. Granta va Iskra ekonom tarifiga mos keladi, Vesta muvozanatli qulaylik darajasini taʼminlaydi. Largus yetkazib berish xizmatlari va yuk bilan tashishlarda talabgir. Niva Legend va Travel roʻyxatda lokalizatsiya tufayli bor, lekin xususiyatlariga koʻra koʻproq qishloq tumanlari va yoʻlsiz hududlarga mos keladi.
 
-**УАЗ**
+**UAZ**
 
 Bu modellar shahar taksisi uchun kamyob, lekin Rossiyada ishlab chiqarilgani tufayli qonun talablariga toʻliq javob beradi. Patriot borish qiyin boʻlgan hududlardagi tashish xizmatlarida qoʻllaniladi. Hunter texnik jihatdan ruxsat etilgan, biroq uning konstruksiyasi yoʻlovchilar uchun qulaylikni cheklaydi.
 
@@ -66,9 +66,9 @@ Evolute elektr qatori — mahalliy avtosanoat rivojlanish yoʻnalishlaridan biri
 
 «Komfort+» va «biznes» klassidagi premium elektromobillar. Free ni koʻpincha vakillik safarlari uchun tanlashadi, Dream keng saloni tufayli korporativ mijozlar uchun mos, Passion esa dinamika va yuqori jihozlanish darajasiga eʼtibor beradiganlarga moʻljallangan.
 
-**Москвич**
+**Moskvich**
 
-Rossiya sharoitlariga moslashtirilgan shahar krossoverlari va elektromobillari. Москвич 3 va 3e allaqachon taksoparklar tomonidan faol ishlatilmoqda. Hamyonbop narx va tejamkorlik uygʻunligi bu modellarni 2026–2027 yillarda potensial bestsellerlarga aylantiradi. Москвич 6 va 8 qulaylik darajasi yuqori tariflar uchun mos keladi.
+Rossiya sharoitlariga moslashtirilgan shahar krossoverlari va elektromobillari. Moskvich 3 va 3e allaqachon taksoparklar tomonidan faol ishlatilmoqda. Hamyonbop narx va tejamkorlik uygʻunligi bu modellarni 2026–2027 yillarda potensial bestsellerlarga aylantiradi. Moskvich 6 va 8 qulaylik darajasi yuqori tariflar uchun mos keladi.
 
 <!-- заголовок обещает «каталог», но на странице только описания марок (WebFetch таблиц не вернул); в статье «Актуализация закона о локализации» Haval F7/Jolion в списке есть, а здесь сказано, что Jolion отсутствует -->
 
