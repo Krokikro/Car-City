@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/gruzovoy/Sollers-Atlant-SF4-L4
 title: "Мәскеуде Sollers SF4 L4 Рефрижератор-ды сатып алу шартымен ең тиімді шарттармен жалға алу"
 h1: "Sollers SF4 L4 сатып алу"
+description: "Sollers SF4 L4 рефрижераторын Мәскеуде жеткізу жұмысына сатып алу шартымен тәулігіне 6329 ₽-ден бастап жалға алыңыз: икемді мерзім, ашық шарт, ОСАГО сыйлыққа."
 class: gruzovoy
 mode: vykup
 ---

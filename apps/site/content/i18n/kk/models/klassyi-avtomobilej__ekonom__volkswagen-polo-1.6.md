@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/ekonom/volkswagen-polo-1.6
 title: "Мәскеуде таксиде жұмыс істеу үшін Volkswagen Polo 1.6 жалға алу | Car City"
 h1: "Таксиге Volkswagen Polo 1.6 жалға алу"
+description: "Volkswagen Polo 1.6-ны Мәскеуде таксиге 1900 ₽/тәуліктен бастап жалға алу: үнемді қозғалтқыш, кепілсіз, икемді төлем кестесі, бір ай жұмыстан соң 2 тегін демалыс."
 class: ekonom
 mode: arenda
 ---

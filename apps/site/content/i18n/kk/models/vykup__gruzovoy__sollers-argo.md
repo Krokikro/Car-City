@@ -1,12 +1,13 @@
 ---
 url: https://car-city.pro/vykup/gruzovoy/sollers-argo
-title: "Мәскеуде Sollers Sollers Argo-ны сатып алу шартымен ең тиімді шарттармен жалға алу"
+title: "Мәскеуде Sollers Argo-ны сатып алу шартымен ең тиімді шарттармен жалға алу"
 h1: "Sollers Argo сатып алу"
+description: "Sollers Argo-ны Мәскеуде жүк тасымалына сатып алу шартымен тәулігіне 4274 ₽-ден бастап жалға алыңыз: 1–3 жылға икемді кесте, ашық шарт, 24/7 техникалық қолдау."
 class: gruzovoy
 mode: vykup
 ---
 
-<!-- «Sollers Sollers Argo» в title — так на сайте -->
+<!-- в title на сайте бренд задвоен; в переводе исправлено -->
 
 BREADCRUMBS: Басты бет > Сатып алу құқығымен көлік жалға алу > Sollers Argo
 

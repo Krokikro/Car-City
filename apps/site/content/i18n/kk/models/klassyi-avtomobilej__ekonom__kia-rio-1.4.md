@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/ekonom/kia-rio-1.4
 title: "Мәскеуде таксиге Киа Рио X-Line-ды кепілсіз 1900 р-ден бастап жалға алу, сатып алу"
 h1: "Таксиге Kia Rio X-Line жалға алу"
+description: "Kia Rio X-Line эконом көлігін Мәскеуде таксиге тәулігіне 1900 ₽-ден бастап кепілсіз жалға алыңыз: икемді кесте, ашық шарт, өтінім берген күні көлік, сатып алу мүмкіндігі."
 class: ekonom
 mode: arenda
 ---

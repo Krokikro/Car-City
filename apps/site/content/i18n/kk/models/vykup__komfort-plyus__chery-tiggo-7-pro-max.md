@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort-plyus/chery-tiggo-7-pro-max
 title: "Мәскеуде Чери Тигго 7 ПРО МАКС-ты сатып алу шартымен ең тиімді шарттармен жалға алу"
 h1: "Таксиге Chery Tiggo 7 PRO MAX сатып алу"
+description: "Chery Tiggo 7 PRO MAX-ты Мәскеуде таксиге сатып алу шартымен тәулігіне 3315 ₽-ден бастап жалға алыңыз: комфорт плюс, жылына 14 күн төлемсіз, ашық шарт."
 class: komfort-plyus
 mode: vykup
 ---

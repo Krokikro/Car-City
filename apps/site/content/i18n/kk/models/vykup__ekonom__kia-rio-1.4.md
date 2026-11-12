@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/ekonom/kia-rio-1.4
 title: "Мәскеуде Kia Rio X-Line таксиін сатып алу шартымен ең тиімді шарттармен жалға алу"
 h1: "Таксиге Kia Rio X-Line сатып алу"
+description: "Kia Rio X-Line-ды Мәскеуде таксиге сатып алу шартымен тәулігіне 2089 ₽-ден бастап алыңыз: эконом класы, ашық шарт, кез келген паркте 3% комиссиямен жұмыс."
 class: ekonom
 mode: vykup
 ---

@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/gruzovoy/lada-largus
 title: "Мәскеуде Lada Largus-ты сатып алу шартымен ең тиімді шарттармен жалға алу"
 h1: "Lada Largus сатып алу"
+description: "Lada Largus-ты Мәскеуде жүк тасымалына сатып алу шартымен тәулігіне 2491 ₽-ден бастап алыңыз: икемді төлем кестесі, ашық шарт, жөндеу кезінде сатып алуды тоқтату."
 class: gruzovoy
 mode: vykup
 ---

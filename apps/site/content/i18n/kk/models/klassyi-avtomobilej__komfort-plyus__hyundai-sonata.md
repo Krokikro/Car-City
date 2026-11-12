@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/hyundai-sonata
 title: "Мәскеуде таксиде жұмыс істеу үшін Hyundai Sonata жалға алу | Car City"
 h1: "Таксиге Hyundai Sonata жалға алу"
+description: "Hyundai Sonata седанын Мәскеуде комфорт плюс таксиіне тәулігіне 2800 ₽-ден бастап жалға алу: ашық шарт, жасырын төлемсіз, икемді кесте, сатып алу мүмкіндігі."
 class: komfort-plyus
 mode: arenda
 ---

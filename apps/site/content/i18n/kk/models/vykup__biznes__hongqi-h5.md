@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/biznes/Hongqi-H5
 title: "Мәскеуде таксиде жұмыс істеу үшін Hongqi H5 сатып алу | Car City"
 h1: "Hongqi H5 сатып алу"
+description: "Hongqi H5 өкілдік седанын Мәскеуде бастапқы жарнасыз сатып алу шартымен жалға алыңыз — тәулігіне 5260 ₽-ден бастап, ашық шарт, 3% комиссия, 24/7 қолдау."
 class: biznes
 mode: vykup
 ---

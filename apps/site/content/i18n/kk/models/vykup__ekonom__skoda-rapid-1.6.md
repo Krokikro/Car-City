@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/ekonom/skoda-rapid-1.6
 title: "Мәскеуде таксиде жұмыс істеу үшін Skoda Rapid сатып алу | Car City"
 h1: "Таксиге Skoda Rapid сатып алу"
+description: "Skoda Rapid-ті Мәскеуде таксиде жұмыс істеу үшін сатып алу шартымен тәулігіне 2089 ₽-ден бастап алыңыз: икемді төлемдер, жылына 14 күн төлемсіз, ашық шарт."
 class: ekonom
 mode: vykup
 ---

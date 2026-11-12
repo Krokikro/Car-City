@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/haval-f7
 title: "Мәскеуде таксиде жұмыс істеу үшін Haval F7 жалға алу | Car City"
 h1: "Таксиге Haval F7 жалға алу"
+description: "Haval F7-ні Мәскеуде таксиде жұмыс істеуге тәулігіне 2800 ₽-ден бастап жалға алыңыз: комфорт плюс класы, 7/0, 6/1, 5/2 кестелері, кепілсіз, 24/7 техникалық қолдау."
 class: komfort-plyus
 mode: arenda
 ---

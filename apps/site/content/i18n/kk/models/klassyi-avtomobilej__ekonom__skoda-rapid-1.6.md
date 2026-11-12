@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/ekonom/skoda-rapid-1.6
 title: "Мәскеуде таксиде жұмыс істеу үшін Skoda Rapid 1.6 жалға алу | Car City"
 h1: "Таксиге Skoda Rapid 1.6 жалға алу"
+description: "Skoda Rapid 1.6-ны Мәскеуде таксиге тәулігіне 1500 ₽-ден бастап жалға алыңыз: эконом класындағы тиімді баға, икемді кесте, жасырын төлемсіз ашық шарт. Car City."
 class: ekonom
 mode: arenda
 ---

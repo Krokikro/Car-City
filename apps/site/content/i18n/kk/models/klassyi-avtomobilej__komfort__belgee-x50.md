@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort/Belgee-X50
 title: "Мәскеуде таксиде жұмыс істеу үшін Belgee X50 жалға алу | Car City"
 h1: "Таксиге Belgee X50 жалға алу"
+description: "Belgee X50 кроссоверін Мәскеуде комфорт таксиіне тәулігіне 2400 ₽-ден бастап жалға алу: икемді кесте, ашық шарт, кепілсіз, 24/7 қолдау, сатып алу мүмкіндігі."
 class: komfort
 mode: arenda
 ---

@@ -2,6 +2,7 @@
 url: https://car-city.pro/vykup/komfort-plyus/hyundai-sonata
 title: "Мәскеуде Хендай Сонатаны сатып алу шартымен ең тиімді шарттармен жалға алу"
 h1: "Таксиге Hyundai Sonata сатып алу"
+description: "Hyundai Sonata-ны Мәскеуде таксиге сатып алу шартымен тәулігіне 3200 ₽-ден бастап алыңыз: комфорт плюс седаны, ОСАГО сыйлыққа, ашық шарт, 3% комиссия."
 class: komfort-plyus
 mode: vykup
 ---
