@@ -34,6 +34,9 @@ export function defaultRobots(seo: SeoSettings) {
     "Disallow: /api/",
     "Disallow: /lab",
     "Disallow: /spasibo",
+    // как на старом car-city.pro: адреса с параметрами не индексируются (кроме пагинации)
+    "Disallow: /*?",
+    "Allow: /*?page=",
     "Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&gclid&fbclid&from&openstat&gfx",
     "Allow: /",
     "",
