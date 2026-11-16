@@ -2,6 +2,7 @@
 url: https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5
 title: "Аренда Kia K5 для работы в такси в Москве | Car City"
 h1: "Аренда Kia K5 под такси"
+description: "Kia K5 в аренду без депозита для работы в такси в Москве с удобным и гибким графиком. Car City: новые автомобили в аренду для такси в идеальном состоянии, возможен выкуп, прозрачный договор аренды низкая комиссия парка"
 class: komfort
 mode: arenda
 ---
