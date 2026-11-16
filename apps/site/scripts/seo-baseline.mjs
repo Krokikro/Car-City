@@ -51,7 +51,7 @@ async function worker() {
     }
     if (r.status === 200 && /html/.test(r.type)) {
       const h = r.text;
-      p.title = dec(h.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]);
+      p.title = dec(h.match(/<title[^>]*>([\s\S]*?)<\/title\s*\/?>/i)?.[1]); // на старом сайте тег закрыт с ошибкой: </title/>
       p.description = meta(h, "name", "description");
       p.keywords = meta(h, "name", "keywords");
       p.robots = meta(h, "name", "robots");
