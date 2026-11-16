@@ -1,7 +1,7 @@
 ---
 url: https://car-city.pro/novosti/spisok-mashin-dlya-taksi-2026-polnyij-razbor-trebovaniya-spisok-modelej-sravnenie-i-prognoz-ryinka
 slug: spisok-mashin-dlya-taksi-2026-polnyij-razbor-trebovaniya-spisok-modelej-sravnenie-i-prognoz-ryinka
-title: "Список машин для такси 2026: полный разбор требований, список моделей"
+title: "Список машин для такси 2026: полный разбор требований, список моделей."
 h1: "Список машин для такси 2026: полный разбор, требования, список моделей, сравнение и прогноз рынка"
 date: 26.11.2025
 description: "Исследование новых требований к автомобилям для такси в 2026 году и перечень подходящих моделей."

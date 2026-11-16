@@ -1,7 +1,7 @@
 ---
 url: https://car-city.pro/novosti/arenda-avto-kitajskix-proizvoditelej-dlya-rabotyi-v-taksi
 slug: arenda-avto-kitajskix-proizvoditelej-dlya-rabotyi-v-taksi
-title: "Аренда авто китайских производителей для работы в такси"
+title: "Аренда авто от китайских производителей для работы в такси"
 h1: "Аренда авто китайских производителей для работы в такси"
 date: 09.07.2024
 description: "Машины из Китая в аренду. Недорогой прокат в Carcity. Выгодные условия, возможность выкупа, низкие цены."

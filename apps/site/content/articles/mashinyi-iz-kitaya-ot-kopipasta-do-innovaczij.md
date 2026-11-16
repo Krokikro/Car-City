@@ -1,7 +1,7 @@
 ---
 url: https://car-city.pro/novosti/mashinyi-iz-kitaya-ot-kopipasta-do-innovaczij
 slug: mashinyi-iz-kitaya-ot-kopipasta-do-innovaczij
-title: "Машины из Китая: от \"копипаста\" до инноваций"
+title: "Китайские автомобили: от подражания к мировым стандартам"
 h1: "Машины из Китая: от \"копипаста\" до инноваций"
 date: 09.09.2024
 description: "Рынок китайских автомобилей в России. Популярные китайские марки авто в аренду под такси в идеальном состоянии с правом выкупа."

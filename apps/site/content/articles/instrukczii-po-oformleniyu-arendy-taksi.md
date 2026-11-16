@@ -1,7 +1,8 @@
 ---
 url: https://car-city.pro/novosti/instrukczii-po-oformleniyu-arendy-taksi
 slug: instrukczii-po-oformleniyu-arendy-taksi
-title: "Инструкции по оформлению аренды такси"
+title: "Как заключить договор аренды автомобиля для такси"
+h1: "Инструкции по оформлению аренды такси"
 date: 14.07.2025
 description: "Узнайте, как правильно заключить договор аренды автомобиля для такси. Полезные советы, необходимые документы и важные нюансы."
 note: "Получено через WebFetch (пересказ моделью-посредником, не сырой HTML). Кавычки вокруг отдельных фраз могли быть добавлены инструментом — сверить с сайтом перед публикацией. WebFetch сообщил канонический URL https://car-city.pro/novosti/instrukcii-po-oformleniyu-arendy-taksi"
