@@ -7,6 +7,10 @@ import { live, patched } from "./texts";
 export const BASE_COMPANY = {
   name: "Car City",
   legalName: "ООО «ЭЛИТ-КАР»",
+  // реквизиты в подвале (правка 17.11.2026, нужны юридически); пустое поле в админке — строка не показывается
+  inn: "7727313320",
+  ogrn: "1177746250725",
+  legalAddress: "119454, Москва г, улица Удальцова, дом № 36, этаж 3, комната 13-18",
   domain: "https://car-city.pro",
   city: "Москва",
   phones: ["+7 (499) 302-31-59"],

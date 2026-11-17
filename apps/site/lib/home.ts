@@ -67,7 +67,8 @@ export const calculator = {
 
 export const youtube = {
   text: "Рассказываем про автомобили, новые акции и делимся новостями из таксопарка!",
-  shorts: ["3D99X2LcbMY", "kzAOotriDCU", "_chMV-ZjD2A"],
+  // 17.11.2026: второе видео удалено с канала — заменено на новое «Взял бизнес на выкуп. А что дальше?»
+  shorts: ["3D99X2LcbMY", "piyh2TR3wR0", "_chMV-ZjD2A"],
 };
 
 export const whyUs = {
