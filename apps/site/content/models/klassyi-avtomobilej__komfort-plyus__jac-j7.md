@@ -1,5 +1,6 @@
 ---
-url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/jac-j7
+removed: "17.11.2026 — Jac J7 выведен из парка, адрес ведёт 301 на Chery Arrizo 8 (редирект в админке)"
+old_url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/jac-j7
 title: "Аренда JAC J7 для работы в такси в Москве | Car City"
 h1: "Аренда Jac J7 под такси"
 class: komfort-plyus

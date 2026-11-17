@@ -1,5 +1,6 @@
 ---
-url: https://car-city.pro/vykup/komfort-plyus/jac-j7
+removed: "17.11.2026 — Jac J7 выведен из парка, адрес ведёт 301 на Chery Arrizo 8 (редирект в админке)"
+old_url: https://car-city.pro/vykup/komfort-plyus/jac-j7
 title: "Аренда Jac J7 с выкупом в Москве на лучших условиях"
 h1: "Выкуп Jac J7 под такси"
 class: komfort-plyus
