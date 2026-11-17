@@ -146,7 +146,7 @@ const uiB: Bundle = {
 
 // ── контакты (не переводятся) ──
 const COMPANY_LABELS: Record<string, [string, number]> = {
-  name: ["Название", 30], legalName: ["Юрлицо", 60], domain: ["Сайт", 60], city: ["Город", 30], "phones.0": ["Телефон", 20], email: ["Почта", 60],
+  name: ["Название", 30], legalName: ["Юрлицо", 60], inn: ["ИНН", 12], ogrn: ["ОГРН", 15], legalAddress: ["Юридический адрес", 120], domain: ["Сайт", 60], city: ["Город", 30], "phones.0": ["Телефон", 20], email: ["Почта", 60],
   fleet: ["Авто в парке", 8], renters: ["Водителей арендовали", 8], boughtOut: ["Выкупили авто", 8], messengerPhone: ["Телефон для мессенджеров", 20],
   telegram: ["Ссылка Telegram", 200], telegramBot: ["Ссылка на Telegram-бота (окно на сайте; пусто — окно скрыто)", 200], whatsapp: ["Ссылка WhatsApp", 200], max: ["Ссылка MAX", 200], youtube: ["Ссылка YouTube", 200], group: ["«Входит в группу…»", 60], privacyUrl: ["Политика конфиденциальности (ссылка)", 300],
 };
