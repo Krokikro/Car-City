@@ -287,4 +287,11 @@ IF NOT EXISTS (SELECT 1 FROM settings WHERE key='seed_redirects_v3') THEN
   DELETE FROM redirects WHERE match = 'exact' AND lower(from_path) = '/vykup/komfort-plyus/jetour-dashing';
   INSERT INTO settings (key, value) VALUES ('seed_redirects_v3', 'true');
 END IF;
+IF NOT EXISTS (SELECT 1 FROM settings WHERE key='seed_redirects_v4') THEN
+  -- Jac J7 выведен из парка (17.11.2026): старые страницы ведут на Chery Arrizo 8 того же класса, переводы — тоже
+  INSERT INTO redirects (from_path, to_path, code, match, note, created_by) VALUES ('/klassyi-avtomobilej/komfort-plyus/jac-j7', '/klassyi-avtomobilej/komfort-plyus/chery-arrizo-8', 301, 'exact', 'Jac J7 выведен из парка', 'переезд') ON CONFLICT DO NOTHING;
+  INSERT INTO redirects (from_path, to_path, code, match, note, created_by) VALUES ('/vykup/komfort-plyus/jac-j7', '/vykup/komfort-plyus/chery-arrizo-8', 301, 'exact', 'Jac J7 выведен из парка', 'переезд') ON CONFLICT DO NOTHING;
+  INSERT INTO redirects (from_path, to_path, code, match, note, created_by) VALUES ('^/(en|ky|kk|uz)/(klassyi-avtomobilej|vykup)/komfort-plyus/jac-j7/?$', '/$1/$2/komfort-plyus/chery-arrizo-8', 301, 'regex', 'Jac J7 выведен из парка (переводы)', 'переезд') ON CONFLICT DO NOTHING;
+  INSERT INTO settings (key, value) VALUES ('seed_redirects_v4', 'true');
+END IF;
 END $$;`;
