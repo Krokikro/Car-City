@@ -21,6 +21,14 @@ export function Footer({ lang = "ru" }: { lang?: Lang }) {
         <div className="footer-brand">
           <Logo size={56} />
           <p className="muted">{f.group}.<br />{legal(lang, company.legalName)}</p>
+          {/* реквизиты юрлица — каждое поле правится в админке (Тексты сайта → Контакты) */}
+          {(company.inn || company.ogrn || company.legalAddress) && (
+            <p className="muted footer-req">
+              {company.inn && <>{lang === "en" || lang === "uz" ? "INN" : "ИНН"}: {company.inn}<br /></>}
+              {company.ogrn && <>{lang === "en" || lang === "uz" ? "OGRN" : "ОГРН"}: {company.ogrn}<br /></>}
+              {company.legalAddress}
+            </p>
+          )}
           <div className="footer-phones">
             <a href={`tel:${company.phones[0].replace(/[^\d+]/g, "")}`} className="mono-num">{company.phones[0]}</a>
             <a href={`mailto:${company.email}`}>{company.email}</a>
