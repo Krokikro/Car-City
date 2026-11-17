@@ -131,17 +131,15 @@ from 2600 ₽/day
 
 ![car Image](https://car-city.pro/assets/components/phpthumbof/cache/exeed-lx1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 
-## Jac J7
+## Chery Arrizo 8
 
-Engine size: 1.5 l
+Engine size: 1,6 l Turbo
 
-Gearbox: Automatic
+Gearbox: Robotized
 
 from 2600 ₽/day
 
-[Rent](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/jac-j7) [Buy out](https://car-city.pro/vykup/komfort-plyus/jac-j7)
-
-![car Image](https://car-city.pro/assets/components/phpthumbof/cache/jac-j7-sajt.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
+[Rent](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/chery-arrizo-8) [Buy out](https://car-city.pro/vykup/komfort-plyus/chery-arrizo-8)
 
 ## Haval F7
 

@@ -16,13 +16,11 @@ from 2600 ₽/day
 
 [Rent](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/exeed-lx-2023)
 
-![car Image](https://car-city.pro/assets/components/phpthumbof/cache/jac-j7-sajt.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
-
-## Jac J7
+## Chery Arrizo 8
 
 from 2600 ₽/day
 
-[Rent](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/jac-j7)
+[Rent](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/chery-arrizo-8)
 
 ![car Image](https://car-city.pro/assets/components/phpthumbof/cache/havalf7.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 
@@ -74,7 +72,7 @@ Comfort+ class rental prices depend on how often you pay:
 | Model                 | Schedule 7/0 | Schedule 6/1 | Schedule 5/2 |
 | --------------------- | ------------ | ------------ | ------------ |
 | Hyundai Sonata        | 2 800 ₽      | 4 100 ₽      | 4 900 ₽      |
-| Jac J7                | 2 600 ₽      | 3 040 ₽      | 3 640 ₽      |
+| Chery Arrizo 8        | 2 600 ₽      | 3 040 ₽      | 3 640 ₽      |
 | HAVAL F7              | 2 600 ₽      | 3 040 ₽      | 3 640 ₽      |
 | Geely Atlas PRO       | 2 600 ₽      | 3 040 ₽      | 3 640 ₽      |
 | Chery Tiggo 7 PRO     | 2 600 ₽      | 3 040 ₽      | 3 640 ₽      |
@@ -171,7 +169,7 @@ Our fleet has the following models for rent in Moscow:
 
 - [Hyundai Sonata.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/hyundai-sonata) A premium sedan with an elegant, flowing body design, a powerful engine and modern electronics. Available in 2 generations, 2020 and 2021 model years
 - [Kia K5.](https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5) A South Korean business class sedan built on the same platform as the Hyundai Sonata, but with its own exclusive, sporty, futuristic design.
-- [Jac J7.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/jac-j7) A front-wheel-drive liftback with a well-designed, ergonomic interior that stays very comfortable even with a fifth passenger.
+- [Chery Arrizo 8.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/chery-arrizo-8) A new sedan with a 1.6-litre turbo engine, 7-speed DCT, a large touchscreen and a roomy rear seat — comfortable for both driver and passengers.
 - [HAVAL F7.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/haval-f7) A mid-size Chinese crossover that can even handle off-road trips.
 - [GEELY ATLAS PRO.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/geely-atlas-pro) A unique SUV with a hybrid engine, climate control, heating in all seats and a leather interior.
 - [Chery Tiggo 7 PRO.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/chery-tiggo-7-pro) An elegant yet impressive crossover with a versatile engine, leather interior, climate control and a cabin air purification system.

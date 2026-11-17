@@ -10,13 +10,11 @@ source: "WebFetch, extracted 2026-10-05; text is verbatim, stitched together fro
 
 <!-- Карточки: на этой странице у карточки только картинка, название, цена и кнопка «Выкупить». Картинки взяты с /vykup (те же модели), т.к. здесь они подгружаются лениво. -->
 
-![car Image](https://car-city.pro/assets/components/phpthumbof/cache/jac-j7-sajt.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
+## Chery Arrizo 8
 
-## Jac J7
+from 3878₽/day
 
-from 2022₽/day
-
-[Buy out](https://car-city.pro/vykup/komfort-plyus/jac-j7)
+[Buy out](https://car-city.pro/vykup/komfort-plyus/chery-arrizo-8)
 
 ![car Image](https://car-city.pro/assets/components/phpthumbof/cache/chery-tiggo-7-pro-sajt-%281%29.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 
@@ -65,6 +63,18 @@ from 3315₽/day
 from 3878₽/day
 
 [Buy out](https://car-city.pro/vykup/komfort-plyus/Jetour-Dashing)
+
+## Jetour X70 Plus
+
+from 3878₽/day
+
+[Buy out](https://car-city.pro/vykup/komfort-plyus/jetour-x70-plus)
+
+## Geely Preface
+
+from 3878₽/day
+
+[Buy out](https://car-city.pro/vykup/komfort-plyus/geely-preface)
 
 
 ![car Image](https://car-city.pro/assets/components/phpthumbof/cache/sonata.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)

@@ -154,17 +154,15 @@ from 3420 ₽/day
 
 ### Comfort+
 
-## Jac J7
+## Chery Arrizo 8
 
-Engine size: 1,5 l
+Engine size: 1,6 l Turbo
 
-Gearbox: CVT
+Gearbox: Robotized
 
-from 2022 ₽/day
+from 3878 ₽/day
 
-[Buy out](https://car-city.pro/vykup/komfort-plyus/jac-j7)
-
-![car Image](https://car-city.pro/assets/components/phpthumbof/cache/jac-j7-sajt.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
+[Buy out](https://car-city.pro/vykup/komfort-plyus/chery-arrizo-8)
 
 ## Chery Tiggo 7 PRO
 
@@ -237,6 +235,26 @@ from 3878 ₽/day
 [Buy out](https://car-city.pro/vykup/komfort-plyus/Jetour-Dashing)
 
 ![car Image](https://car-city.pro/zhyoltyij-yandeks-Go-SUV-taksi-na-prozrachnom-fone.png)
+
+## Jetour X70 Plus
+
+Engine size: 1,5 l Turbo
+
+Gearbox: Robotized
+
+from 3878 ₽/day
+
+[Buy out](https://car-city.pro/vykup/komfort-plyus/jetour-x70-plus)
+
+## Geely Preface
+
+Engine size: 2,0 l Turbo
+
+Gearbox: Automatic
+
+from 3878 ₽/day
+
+[Buy out](https://car-city.pro/vykup/komfort-plyus/geely-preface)
 
 ## Hyundai Sonata
 
