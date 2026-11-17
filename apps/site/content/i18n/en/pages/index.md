@@ -467,7 +467,7 @@ Message us
 
 We talk about cars and new promotions and share news from the taxi fleet!
 
-[![](https://car-city.pro/themes/imgs/youtubeBlock/image(1).webp)](https://www.youtube.com/shorts/3D99X2LcbMY) [![](https://car-city.pro/themes/imgs/youtubeBlock/image(2).webp)](https://www.youtube.com/shorts/kzAOotriDCU) [![](https://car-city.pro/themes/imgs/youtubeBlock/image(3).webp)](https://www.youtube.com/shorts/_chMV-ZjD2A)
+[![](https://car-city.pro/themes/imgs/youtubeBlock/image(1).webp)](https://www.youtube.com/shorts/3D99X2LcbMY) [![](https://car-city.pro/themes/imgs/youtubeBlock/image(2).webp)](https://www.youtube.com/shorts/piyh2TR3wR0) [![](https://car-city.pro/themes/imgs/youtubeBlock/image(3).webp)](https://www.youtube.com/shorts/_chMV-ZjD2A)
 
 ![cehckers](https://car-city.pro/themes/imgs/banners/checkers.svg)
 
