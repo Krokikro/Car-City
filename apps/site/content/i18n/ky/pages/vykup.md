@@ -101,17 +101,15 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 ### Комфорт+
 
-## Jac J7
+## Chery Arrizo 8
 
-Кыймылдаткычтын көлөмү: 1,5 л
+Кыймылдаткычтын көлөмү: 1,6 л Turbo
 
-Берүү кутусу: Вариатор
+Берүү кутусу: Робот
 
-2022  ₽/суткадан
+3878 ₽/суткадан
 
-[Сатып алуу](https://car-city.pro/vykup/komfort-plyus/jac-j7)
-
-![унаанын сүрөтү](https://car-city.pro/assets/components/phpthumbof/cache/jac-j7-sajt.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
+[Сатып алуу](https://car-city.pro/vykup/komfort-plyus/chery-arrizo-8)
 
 ## Chery Tiggo 7 PRO
 
@@ -184,6 +182,26 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 [Сатып алуу](https://car-city.pro/vykup/komfort-plyus/Jetour-Dashing)
 
 ![унаанын сүрөтү](https://car-city.pro/zhyoltyij-yandeks-Go-SUV-taksi-na-prozrachnom-fone.png)
+
+## Jetour X70 Plus
+
+Кыймылдаткычтын көлөмү: 1,5 л Turbo
+
+Берүү кутусу: Робот
+
+3878 ₽/суткадан
+
+[Сатып алуу](https://car-city.pro/vykup/komfort-plyus/jetour-x70-plus)
+
+## Geely Preface
+
+Кыймылдаткычтын көлөмү: 2,0 л Turbo
+
+Берүү кутусу: Автомат
+
+3878 ₽/суткадан
+
+[Сатып алуу](https://car-city.pro/vykup/komfort-plyus/geely-preface)
 
 ## Hyundai Sonata
 

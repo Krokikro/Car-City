@@ -16,13 +16,11 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный.
 
 [Ижарага алуу](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/exeed-lx-2023)
 
-![унаанын сүрөтү](https://car-city.pro/assets/components/phpthumbof/cache/jac-j7-sajt.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
-
-## Jac J7
+## Chery Arrizo 8
 
 2600 ₽/суткадан
 
-[Ижарага алуу](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/jac-j7)
+[Ижарага алуу](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/chery-arrizo-8)
 
 ![унаанын сүрөтү](https://car-city.pro/assets/components/phpthumbof/cache/havalf7.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 
@@ -74,7 +72,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный.
 | Модель                | 7/0 графиги | 6/1 графиги | 5/2 графиги |
 | --------------------- | ---------- | ---------- | ---------- |
 | Hyundai Sonata        | 2 800 ₽    | 4 100 ₽    | 4 900 ₽    |
-| Jac J7                | 2 600 ₽    | 3 040 ₽    | 3 640 ₽    |
+| Chery Arrizo 8        | 2 600 ₽    | 3 040 ₽    | 3 640 ₽    |
 | HAVAL F7              | 2 600 ₽    | 3 040 ₽    | 3 640 ₽    |
 | Geely Atlas PRO       | 2 600 ₽    | 3 040 ₽    | 3 640 ₽    |
 | Chery Tiggo 7 PRO     | 2 600 ₽    | 3 040 ₽    | 3 640 ₽    |
@@ -171,7 +169,7 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный.
 
 - [Hyundai Sonata.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/hyundai-sonata) Көркөм, агымдуу кузов дизайны, кубаттуу мотору жана заманбап электроникасы бар премиум-седан. 2 мууну бар, 2020 жана 2021-жылы чыгарылган
 - [Kia K5.](https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5) Hyundai Sonata менен бир платформада түзүлгөн, бирок спорттук, футуристтик көрүнүштөгү өзүнүн эксклюзивдүү дизайны бар түштүк кореялык бизнес-класстагы седан.
-- [Jac J7.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/jac-j7) Бешинчи жүргүнчүнү ташыганда да максималдуу ыңгайлуулукту камсыз кылган ойлонулган, эргономикалык салону бар алдыңкы дөңгөлөктөрү жетектөөчү лифтбек.
+- [Chery Arrizo 8.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/chery-arrizo-8) 1,6 л турбо кыймылдаткычы, 7DCT робот кутусу, чоң экраны жана кенен арткы катары бар жаңы седан — айдоочуга да, жүргүнчүлөргө да ыңгайлуу.
 - [HAVAL F7.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/haval-f7) Жолсуз жерлерде жүрүүгө да ылайыктуу орто өлчөмдөгү кытай кроссовери.
 - [GEELY ATLAS PRO.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/geely-atlas-pro) Гибриддик кыймылдаткычы, климат-контролу, бардык отургучтарын жылытуусу жана тери салону бар өзгөчө жол тандабас.
 - [Chery Tiggo 7 PRO.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/chery-tiggo-7-pro) Универсалдуу кыймылдаткыч, тери салон, климат-контроль жана салонду тазалоо системасы менен жабдылган көркөм, ошол эле учурда сымбаттуу кроссовер.
