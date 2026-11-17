@@ -1,5 +1,6 @@
 ---
-url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/jac-j7
+removed: "17.11.2026 — Jac J7 выведен из парка, адрес ведёт 301 на Chery Arrizo 8 (редирект в админке)"
+old_url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/jac-j7
 title: "Москвада таксиде иштөө үчүн JAC J7 ижарасы | Car City"
 h1: "Jac J7 такси үчүн ижарага"
 description: "Jac J7 лифтбэгин Москвада комфорт+ такси үчүн 2600 ₽/суткадан ижарага алыңыз. Ыңгайлуу график, ачык ижара келишими, жашыруун төлөмдөр жок, сатып алса да болот."
