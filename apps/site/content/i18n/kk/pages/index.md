@@ -131,17 +131,15 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный 
 
 ![көлік суреті](https://car-city.pro/assets/components/phpthumbof/cache/exeed-lx1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 
-## Jac J7
+## Chery Arrizo 8
 
-Қозғалтқыш көлемі: 1.5 л
+Қозғалтқыш көлемі: 1,6 л Turbo
 
-Беріліс қорабы: Автомат
+Беріліс қорабы: Робот
 
 2600 ₽/тәулік бастап
 
-[Жалға алу](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/jac-j7) [Сатып алу](https://car-city.pro/vykup/komfort-plyus/jac-j7)
-
-![көлік суреті](https://car-city.pro/assets/components/phpthumbof/cache/jac-j7-sajt.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
+[Жалға алу](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/chery-arrizo-8) [Сатып алу](https://car-city.pro/vykup/komfort-plyus/chery-arrizo-8)
 
 ## Haval F7
 
