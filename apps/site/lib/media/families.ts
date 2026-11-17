@@ -81,7 +81,9 @@ export const familyById = (key: string, kind: string) => families().find((f) => 
 export function recommend(f: Family): string {
   if (f.kind === "video") return `MP4 (H.264), ${f.w ?? "?"} × ${f.h ?? "?"} px (${ratio(f.w, f.h)}), без звука, до 40 МБ${f.variants[0].dur ? `, около ${f.variants[0].dur} с` : ""}`;
   if (f.svg) return "SVG (векторный файл), без скриптов";
-  return `${f.w ?? "?"} × ${f.h ?? "?"} px (${ratio(f.w, f.h)}), JPG, PNG, WebP или AVIF${f.transparent ? " с прозрачным фоном" : ""}, до 15 МБ`;
+  // размер не обязан быть точным: другой кадр подгоняется по центру (обрезка + масштаб), отказ — только если меньше 60% нужного
+  const fit = f.w && f.h ? `. Другой размер подойдёт — подгоним и обрежем по центру (от ${Math.round(f.w * 0.6)} × ${Math.round(f.h * 0.6)} px)` : "";
+  return `${f.w ?? "?"} × ${f.h ?? "?"} px (${ratio(f.w, f.h)}), JPG, PNG, WebP или AVIF${f.transparent ? " с прозрачным фоном" : ""}, до 15 МБ${fit}`;
 }
 export function ratio(w?: number, h?: number) {
   if (!w || !h) return "?";

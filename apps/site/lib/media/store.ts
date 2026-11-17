@@ -3,6 +3,8 @@
 // через Range-запросы самим хранилищем). Без бакета (локальная разработка) — файлы в Postgres, как раньше.
 
 import { randomUUID } from "node:crypto";
+import { request as httpRequest } from "node:http";
+import { request as httpsRequest } from "node:https";
 import { AwsClient } from "aws4fetch";
 import { q, q1 } from "../db";
 
@@ -29,9 +31,25 @@ function objectUrl(key: string) {
   return e.pathStyle ? `${u.origin}/${e.bucket}/${path}` : `${u.protocol}//${e.bucket}.${u.host}/${path}`;
 }
 
+// Загрузка в бакет идёт напрямую через node:http(s), а не через fetch: Next.js на сервере оборачивает fetch и
+// пересобирает подписанный запрос в поток без длины (Transfer-Encoding: chunked) — хранилище Railway на это
+// отвечает 411 Length Required, и замена фото в админке падала (17.11.2026). Здесь длина файла всегда явная.
 async function putObject(key: string, body: Uint8Array, type: string) {
-  const res = await aws().fetch(objectUrl(key), { method: "PUT", body: new Uint8Array(body), headers: { "content-type": type, "cache-control": "public, max-age=31536000, immutable" } });
-  if (!res.ok) throw new Error(`bucket: загрузка не удалась (${res.status})`);
+  const bytes = Buffer.from(body);
+  const signed = await aws().sign(objectUrl(key), { method: "PUT", body: bytes, headers: { "content-type": type, "cache-control": "public, max-age=31536000, immutable" } });
+  const headers: Record<string, string> = {};
+  signed.headers.forEach((v, k) => { headers[k] = v; });
+  delete headers["transfer-encoding"];
+  headers["content-length"] = String(bytes.length);
+  const url = new URL(signed.url);
+  const send = url.protocol === "http:" ? httpRequest : httpsRequest;
+  const status = await new Promise<number>((resolve, reject) => {
+    const r = send(url, { method: "PUT", headers }, (res) => { res.resume(); res.on("end", () => resolve(res.statusCode ?? 0)); });
+    r.on("error", reject);
+    r.setTimeout(120_000, () => r.destroy(new Error("bucket: нет ответа от хранилища")));
+    r.end(bytes);
+  });
+  if (status < 200 || status >= 300) throw new Error(`bucket: загрузка не удалась (${status})`);
 }
 async function deleteObject(key: string) {
   await aws().fetch(objectUrl(key), { method: "DELETE" }).catch(() => null);
