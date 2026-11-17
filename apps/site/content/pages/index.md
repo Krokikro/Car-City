@@ -131,17 +131,15 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный 
 
 ![car Image](https://car-city.pro/assets/components/phpthumbof/cache/exeed-lx1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 
-## Jac J7
+## Chery Arrizo 8
 
-Объем двигателя: 1.5 л
+Объем двигателя: 1,6 л Turbo
 
-Коробка: Автомат
+Коробка: Робот
 
 от 2600 ₽/сутки
 
-[Арендовать](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/jac-j7) [Выкупить](https://car-city.pro/vykup/komfort-plyus/jac-j7)
-
-![car Image](https://car-city.pro/assets/components/phpthumbof/cache/jac-j7-sajt.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
+[Арендовать](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/chery-arrizo-8) [Выкупить](https://car-city.pro/vykup/komfort-plyus/chery-arrizo-8)
 
 ## Haval F7
 

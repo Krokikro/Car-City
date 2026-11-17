@@ -154,17 +154,15 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 ### Комфорт+
 
-## Jac J7
+## Chery Arrizo 8
 
-Объем двигателя: 1,5 л
+Объем двигателя: 1,6 л Turbo
 
-Коробка: Вариатор
+Коробка: Робот
 
-от 2022 ₽/сутки
+от 3878 ₽/сутки
 
-[Выкупить](https://car-city.pro/vykup/komfort-plyus/jac-j7)
-
-![car Image](https://car-city.pro/assets/components/phpthumbof/cache/jac-j7-sajt.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
+[Выкупить](https://car-city.pro/vykup/komfort-plyus/chery-arrizo-8)
 
 ## Chery Tiggo 7 PRO
 
@@ -237,6 +235,26 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 [Выкупить](https://car-city.pro/vykup/komfort-plyus/Jetour-Dashing)
 
 ![car Image](https://car-city.pro/zhyoltyij-yandeks-Go-SUV-taksi-na-prozrachnom-fone.png)
+
+## Jetour X70 Plus
+
+Объем двигателя: 1,5 л Turbo
+
+Коробка: Робот
+
+от 3878 ₽/сутки
+
+[Выкупить](https://car-city.pro/vykup/komfort-plyus/jetour-x70-plus)
+
+## Geely Preface
+
+Объем двигателя: 2,0 л Turbo
+
+Коробка: Автомат
+
+от 3878 ₽/сутки
+
+[Выкупить](https://car-city.pro/vykup/komfort-plyus/geely-preface)
 
 ## Hyundai Sonata
 
