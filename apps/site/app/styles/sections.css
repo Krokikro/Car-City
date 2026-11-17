@@ -273,6 +273,7 @@
 .footer-top { display: grid; gap: 40px; padding-bottom: 40px; }
 .footer-brand { display: grid; gap: 16px; align-content: start; }
 .footer-phones { display: grid; gap: 4px; }
+.footer-req { margin-top: -8px; font-size: 12px; line-height: 1.5; max-width: 300px; }
 .footer-phones a { color: var(--text); text-decoration: none; font-size: 20px; }
 .footer-msg { display: flex; flex-wrap: wrap; gap: 8px; }
 .footer-msg a { padding: 8px 14px; border-radius: var(--radius-pill); border: 1px solid var(--line); text-decoration: none; font-size: 14px; color: var(--text); }
