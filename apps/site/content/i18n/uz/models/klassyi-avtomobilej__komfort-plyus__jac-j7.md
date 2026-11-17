@@ -1,5 +1,6 @@
 ---
-url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/jac-j7
+removed: "17.11.2026 — Jac J7 выведен из парка, адрес ведёт 301 на Chery Arrizo 8 (редирект в админке)"
+old_url: https://car-city.pro/klassyi-avtomobilej/komfort-plyus/jac-j7
 title: "Moskvada taksida ishlash uchun JAC J7 ijarasi | Car City"
 h1: "Taksi uchun Jac J7 ijarasi"
 description: "Jac J7 liftbegi ijarasi Komfort+ taksi uchun: kuniga 2600 ₽ dan, keng ergonomik salon, garovsiz, oʻzingizga mos grafik, sotib olish huquqi bilan ijara ham mavjud."
