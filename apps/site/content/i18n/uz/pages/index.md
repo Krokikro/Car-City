@@ -131,17 +131,15 @@ Uzatmalar qutisi: Avtomat
 
 ![avtomobil rasmi](https://car-city.pro/assets/components/phpthumbof/cache/exeed-lx1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 
-## Jac J7
+## Chery Arrizo 8
 
-Dvigatel hajmi: 1.5 l
+Dvigatel hajmi: 1,6 l Turbo
 
-Uzatmalar qutisi: Avtomat
+Uzatmalar qutisi: Robot
 
 2600 ₽/kundan
 
-[Ijaraga olish](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/jac-j7) [Sotib olish](https://car-city.pro/vykup/komfort-plyus/jac-j7)
-
-![avtomobil rasmi](https://car-city.pro/assets/components/phpthumbof/cache/jac-j7-sajt.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
+[Ijaraga olish](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/chery-arrizo-8) [Sotib olish](https://car-city.pro/vykup/komfort-plyus/chery-arrizo-8)
 
 ## Haval F7
 

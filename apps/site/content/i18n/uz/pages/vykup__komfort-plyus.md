@@ -10,13 +10,11 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 
 <!-- Карточки: на этой странице у карточки только картинка, название, цена и кнопка «Выкупить». Картинки взяты с /vykup (те же модели), т.к. здесь они подгружаются лениво. -->
 
-![avtomobil rasmi](https://car-city.pro/assets/components/phpthumbof/cache/jac-j7-sajt.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
+## Chery Arrizo 8
 
-## Jac J7
+3878₽/kundan
 
-2022₽/kundan
-
-[Sotib olish](https://car-city.pro/vykup/komfort-plyus/jac-j7)
+[Sotib olish](https://car-city.pro/vykup/komfort-plyus/chery-arrizo-8)
 
 ![avtomobil rasmi](https://car-city.pro/assets/components/phpthumbof/cache/chery-tiggo-7-pro-sajt-%281%29.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 
@@ -65,6 +63,18 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный,
 3878₽/kundan
 
 [Sotib olish](https://car-city.pro/vykup/komfort-plyus/Jetour-Dashing)
+
+## Jetour X70 Plus
+
+3878₽/kundan
+
+[Sotib olish](https://car-city.pro/vykup/komfort-plyus/jetour-x70-plus)
+
+## Geely Preface
+
+3878₽/kundan
+
+[Sotib olish](https://car-city.pro/vykup/komfort-plyus/geely-preface)
 
 
 ![avtomobil rasmi](https://car-city.pro/assets/components/phpthumbof/cache/sonata.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)

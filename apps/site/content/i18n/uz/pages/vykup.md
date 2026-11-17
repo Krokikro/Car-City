@@ -101,17 +101,15 @@ Uzatmalar qutisi: Avtomat
 
 ### Komfort+
 
-## Jac J7
+## Chery Arrizo 8
 
-Dvigatel hajmi: 1,5 l
+Dvigatel hajmi: 1,6 l Turbo
 
-Uzatmalar qutisi: Variator
+Uzatmalar qutisi: Robot
 
-2022 ₽/kundan
+3878 ₽/kundan
 
-[Sotib olish](https://car-city.pro/vykup/komfort-plyus/jac-j7)
-
-![avtomobil rasmi](https://car-city.pro/assets/components/phpthumbof/cache/jac-j7-sajt.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
+[Sotib olish](https://car-city.pro/vykup/komfort-plyus/chery-arrizo-8)
 
 ## Chery Tiggo 7 PRO
 
@@ -184,6 +182,26 @@ Uzatmalar qutisi: Robot
 [Sotib olish](https://car-city.pro/vykup/komfort-plyus/Jetour-Dashing)
 
 ![avtomobil rasmi](https://car-city.pro/zhyoltyij-yandeks-Go-SUV-taksi-na-prozrachnom-fone.png)
+
+## Jetour X70 Plus
+
+Dvigatel hajmi: 1,5 l Turbo
+
+Uzatmalar qutisi: Robot
+
+3878 ₽/kundan
+
+[Sotib olish](https://car-city.pro/vykup/komfort-plyus/jetour-x70-plus)
+
+## Geely Preface
+
+Dvigatel hajmi: 2,0 l Turbo
+
+Uzatmalar qutisi: Avtomat
+
+3878 ₽/kundan
+
+[Sotib olish](https://car-city.pro/vykup/komfort-plyus/geely-preface)
 
 ## Hyundai Sonata
 

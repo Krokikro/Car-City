@@ -16,13 +16,11 @@ source: "WebFetch, извлечено 2026-10-05; текст дословный.
 
 [Ijaraga olish](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/exeed-lx-2023)
 
-![avtomobil rasmi](https://car-city.pro/assets/components/phpthumbof/cache/jac-j7-sajt.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
-
-## Jac J7
+## Chery Arrizo 8
 
 2600 ₽/kundan
 
-[Ijaraga olish](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/jac-j7)
+[Ijaraga olish](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/chery-arrizo-8)
 
 ![avtomobil rasmi](https://car-city.pro/assets/components/phpthumbof/cache/havalf7.d8b2e6a8fec082c2f3f75da8a3eeb859.webP)
 
@@ -74,7 +72,7 @@ Komfort Plyus sinfidagi avtomobillar ijarasi narxlari toʻlovlar davriyligiga bo
 | Model                 | 7/0 grafigi | 6/1 grafigi | 5/2 grafigi |
 | --------------------- | ----------- | ----------- | ----------- |
 | Hyundai Sonata        | 2 800 ₽     | 4 100 ₽     | 4 900 ₽     |
-| Jac J7                | 2 600 ₽     | 3 040 ₽     | 3 640 ₽     |
+| Chery Arrizo 8        | 2 600 ₽     | 3 040 ₽     | 3 640 ₽     |
 | HAVAL F7              | 2 600 ₽     | 3 040 ₽     | 3 640 ₽     |
 | Geely Atlas PRO       | 2 600 ₽     | 3 040 ₽     | 3 640 ₽     |
 | Chery Tiggo 7 PRO     | 2 600 ₽     | 3 040 ₽     | 3 640 ₽     |
@@ -171,7 +169,7 @@ Avtoparkimizda Moskvada ijaraga olish uchun quyidagi modellar bor:
 
 - [Hyundai Sonata.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/hyundai-sonata) Nafis, oqimli kuzov dizayni, unumli motori va zamonaviy elektronikasi bor premium sedan. 2 avlodi bor: 2020 va 2021 yillarda ishlab chiqarilgan
 - [Kia K5.](https://car-city.pro/klassyi-avtomobilej/komfort/kia-k5) Hyundai Sonata bilan bir platformada yaratilgan, ammo sport uslubidagi futuristik, oʻziga xos eksklyuziv dizaynga ega Janubiy Koreya biznes-klass sedani.
-- [Jac J7.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/jac-j7) Beshinchi yoʻlovchini tashishda ham maksimal qulaylikni taʼminlaydigan, puxta oʻylangan ergonomik salonli old gʻildirak yuritmali liftbek.
+- [Chery Arrizo 8.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/chery-arrizo-8) 1,6 l turbo dvigatel, 7DCT robot uzatmalar qutisi, katta ekran va keng orqa o‘rindiqqa ega yangi sedan — haydovchiga ham, yo‘lovchilarga ham qulay.
 - [HAVAL F7.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/haval-f7) Hatto yoʻlsiz joylarda yurish uchun ham mos keladigan oʻrta oʻlchamli Xitoy krossoveri.
 - [GEELY ATLAS PRO.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/geely-atlas-pro) Gibrid dvigatelli, klimat-kontrolli, barcha oʻrindiqlari isitiladigan va charm salonli noyob yoʻltanlamas.
 - [Chery Tiggo 7 PRO.](https://car-city.pro/klassyi-avtomobilej/komfort-plyus/chery-tiggo-7-pro) Universal dvigatel, charm salon, klimat-kontrol va salonni tozalash tizimi bilan jihozlangan nafis, ammo salobatli krossover.
