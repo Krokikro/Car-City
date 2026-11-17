@@ -52,7 +52,7 @@ export const carImages: Record<string, { w: number; h: number }> = {
     "w": 1200,
     "h": 896
   },
-  "jac-j7": {
+  "chery-arrizo-8": {
     "w": 1200,
     "h": 896
   },
@@ -105,6 +105,14 @@ export const carImages: Record<string, { w: number; h: number }> = {
     "h": 896
   },
   "jetour-dashing": {
+    "w": 1200,
+    "h": 896
+  },
+  "jetour-x70-plus": {
+    "w": 1200,
+    "h": 896
+  },
+  "geely-preface": {
     "w": 1200,
     "h": 896
   },

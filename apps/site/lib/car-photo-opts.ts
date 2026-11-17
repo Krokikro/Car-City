@@ -7,6 +7,11 @@ const OPTS: Record<string, CarPhotoOpts> = {
   // по реальным фото модели (сбоку и сзади — «купейная» крыша, хромированная стойка, узкий фонарь во всю ширину), салон — со старого сайта.
   // Слой с фарами (-lit) собран по положению ходовых огней и фар этой машины.
   "jetour-dashing": { avif: true, lit: true, shots: ["front", "rear", "side", "interior"] },
+  // Добавлены 17.11.2026: главное фото и ракурсы в фирменной ливрее сделаны в Higgsfield по реальным фото моделей (Preface — по фото машины парка).
+  // Слоя с фарами нет. У X70 Plus нет салона, у Preface — вида сзади (не было надёжных фото модели).
+  "chery-arrizo-8": { avif: true, lit: false, shots: ["front", "rear", "side", "interior"] },
+  "jetour-x70-plus": { avif: true, lit: false, shots: ["front", "rear", "side"] },
+  "geely-preface": { avif: true, lit: false, shots: ["front", "side", "interior"] },
 };
 
 export const photoOpts = (slug: string): CarPhotoOpts => OPTS[slug] ?? { avif: true, lit: true };

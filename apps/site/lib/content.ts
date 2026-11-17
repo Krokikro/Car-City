@@ -81,7 +81,7 @@ export const models: Model[] = [
   { slug: "exeed-lx", name: "Exeed LX 2023", cls: "komfort-plus", engine: "1.5 АКПП", rentFrom: 2600, buyoutFrom: 2836, src: "exeed-lx1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP" },
   { slug: "haval-f7", name: "Haval F7", cls: "komfort-plus", engine: "1.6 АКПП", rentFrom: 2600, buyoutFrom: 2836, src: "havalf7.d8b2e6a8fec082c2f3f75da8a3eeb859.webP" },
   { slug: "geely-atlas-pro", name: "Geely Atlas Pro", cls: "komfort-plus", engine: "1.5 АКПП", rentFrom: 2600, buyoutFrom: 2900, src: "atlas-sajt.d8b2e6a8fec082c2f3f75da8a3eeb859.webP" },
-  { slug: "jac-j7", name: "JAC J7", cls: "komfort-plus", engine: "1.5 АКПП", rentFrom: 2600, buyoutFrom: 2022, src: "jac-j7-sajt.d8b2e6a8fec082c2f3f75da8a3eeb859.webP" },
+  { slug: "chery-arrizo-8", name: "Chery Arrizo 8", cls: "komfort-plus", engine: "1.6T робот", rentFrom: 2600, buyoutFrom: 3878, src: "chery-arrizo-8-640.webp" },
   { slug: "chery-tiggo-7-pro-max", name: "Chery Tiggo 7 Pro Max", cls: "komfort-plus", engine: "1.5 АКПП", rentFrom: 2600, buyoutFrom: 3315, src: "7-pro-max.d8b2e6a8fec082c2f3f75da8a3eeb859.webP" },
   { slug: "hyundai-sonata", name: "Hyundai Sonata", cls: "komfort-plus", engine: "АКПП", rentFrom: 2800, buyoutFrom: 3200, src: "sonata.d8b2e6a8fec082c2f3f75da8a3eeb859.webP" },
   { slug: "kia-k5", name: "Kia K5", cls: "komfort", engine: "2.0 АКПП", rentFrom: 2800, buyoutFrom: 3420, src: "kiak5-1.d8b2e6a8fec082c2f3f75da8a3eeb859.webP" },
