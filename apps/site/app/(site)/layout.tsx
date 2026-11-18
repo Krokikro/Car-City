@@ -18,7 +18,6 @@ import "../styles/light.gen.css";
 import "../styles/light.css";
 import { siteTheme, themeForced } from "@/lib/theme";
 import { pricesJson } from "@/lib/prices";
-import { company } from "@/lib/content";
 import { mediaJson } from "@/lib/media/live";
 import { textsJson } from "@/lib/texts";
 import { gfxDetectScript } from "@/lib/gfx";
