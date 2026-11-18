@@ -117,9 +117,10 @@
 [data-theme="light"] .trust-ya-l { display: block; }
 .trust-2gis { display: flex; flex-direction: column; justify-content: center; gap: 4px; width: 150px; height: 50px; padding: 0 10px; box-sizing: border-box; border-radius: 8px; background: #26272b; color: #fff; text-decoration: none; font-family: Arial, sans-serif; }
 .trust-2gis-top { display: flex; align-items: center; gap: 6px; }
-.trust-2gis-top i { display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: #19AA1E; color: #fff; font: 700 11px/1 Arial, sans-serif; font-style: normal; }
-.trust-2gis-top b { font-size: 20px; font-weight: 400; letter-spacing: -.01em; }
-.trust-2gis-stars { color: #FFC83D; font-size: 15px; letter-spacing: 1px; margin-left: auto; }
+.trust-2gis-top i { display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: #19AA1E; color: #fff; font: 700 11px/1 Arial, sans-serif; font-style: normal; flex: none; }
+.trust-2gis-top b { font-size: 17px; font-weight: 400; letter-spacing: -.01em; }
+.trust-2gis-stars { color: #FFC83D; font-size: 15px; letter-spacing: 1px; margin-left: auto; line-height: 1; }
+@media (min-width: 900px) { .trust-ya, .trust-2gis { zoom: 1.25; } }
 .trust-2gis-sub { font-size: 9.5px; color: #b8b9bd; white-space: nowrap; }
 [data-theme="light"] .trust-2gis { background: #f4f4f4; color: #000; }
 [data-theme="light"] .trust-2gis-sub { color: #6b6b6b; }
