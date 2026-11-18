@@ -9,9 +9,27 @@ import { ArticleComments, ArticleShare, ArticleViews, type CommentItem } from ".
 
 const words = (s: string) => s.replace(/[#*\[\]()!|>-]/g, " ").split(/\s+/).filter(Boolean).length;
 
-// E-E-A-T: кто пишет, кто проверяет и почему этому можно доверять. Только реальные данные компании (lib/content).
-// Автор-эксперт с именем появится, когда владелец даст имя и должность: тогда заполнить EXPERT.
-const EXPERT: { name: string; role: string } | null = null;
+// E-E-A-T: кто пишет, кто проверяет и почему этому можно доверять. Авторы — сотрудники Car City (список дал владелец 18.11.2026):
+// статьи про выкуп — руководитель выкупа, про подбор авто — специалист по подбору, остальные (аренда) — два руководителя
+// аренды, закреплены за статьёй по её адресу (у одной статьи автор всегда один и тот же).
+type Author = { name: string; role: string; roleEn: string };
+const AUTHORS = {
+  buy: [{ name: "Алексей Воронин", role: "Руководитель выкупа Car City", roleEn: "Head of rent-to-own, Car City" }],
+  pick: [{ name: "Никита Миронов", role: "Главный специалист по подбору авто Car City", roleEn: "Lead car selection specialist, Car City" }],
+  rent: [
+    { name: "Михаил Миронов", role: "Руководитель аренды, офис на Удальцова", roleEn: "Head of rentals, Udaltsova St. office" },
+    { name: "Руслан Бекишев", role: "Руководитель аренды, офис в Ховрино", roleEn: "Head of rentals, Khovrino office" },
+  ],
+} satisfies Record<string, Author[]>;
+const AUTHOR_EN: Record<string, string> = { "Алексей Воронин": "Aleksey Voronin", "Никита Миронов": "Nikita Mironov", "Михаил Миронов": "Mikhail Mironov", "Руслан Бекишев": "Ruslan Bekishev" };
+function authorOf(slug: string, title: string): Author {
+  const s = `${slug} ${title}`.toLowerCase();
+  const hash = [...slug].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7);
+  if (/vyk?i?up|выкуп/.test(s)) return AUTHORS.buy[0];
+  if (/arend|аренд|prokat|прокат/.test(s)) return AUTHORS.rent[hash % 2];
+  if (/vyibr|vybr|выбр|подбор|kakie-avtomobili|kakoj-klass|luchshie|spisok-mashin|kitajsk|kitaya|jac|osobennosti-avto|lokalizac|модел|класс/.test(s)) return AUTHORS.pick[0];
+  return AUTHORS.rent[hash % 2];
+}
 const E = {
   ru: {
     by: "Автор", team: "Редакция Car City", checked: "Проверено", checkedBy: "специалистами по аренде и выкупу Car City",
@@ -43,6 +61,8 @@ export function ArticleView({ doc, p, lang = "ru", related = [], updatedAt, comm
   const t = ui(lang);
   const e = lang === "en" ? E.en : E.ru;
   const slug = doc.path.split("/").pop() ?? "";
+  const au = authorOf(slug, doc.h1);
+  const EXPERT = { name: lang === "ru" ? au.name : AUTHOR_EN[au.name] ?? au.name, role: lang === "ru" ? au.role : au.roleEn };
   const cover = hasGen("news", slug);
   // своя обложка есть — убираем из текста старую картинку с car-city.pro (первую в статье)
   const intro = cover ? p.intro.html.replace(/<p>\s*<img[^>]*>\s*<\/p>|<img[^>]*>/, "") : p.intro.html;
@@ -66,7 +86,7 @@ export function ArticleView({ doc, p, lang = "ru", related = [], updatedAt, comm
       inLanguage: doc.lang,
       datePublished: iso,
       dateModified: updIso ?? iso,
-      author: EXPERT ? { "@type": "Person", name: EXPERT.name, jobTitle: EXPERT.role, worksFor: org } : org,
+      author: { "@type": "Person", name: EXPERT.name, jobTitle: EXPERT.role, worksFor: org },
       publisher: org,
       ...(cover ? { image: `${company.domain}/news/${slug}-1200.webp` } : {}),
       ...(comments.length ? { commentCount: comments.length, comment: comments.slice(0, 20).map((c) => ({ "@type": "Comment", text: c.text, dateCreated: c.at, author: { "@type": "Person", name: c.name } })) } : {}),
@@ -90,7 +110,7 @@ export function ArticleView({ doc, p, lang = "ru", related = [], updatedAt, comm
     <div className="art-byline">
       <span className="art-avatar" aria-hidden="true"><img src={asset("/brand/emblem-96.png")} alt="" width={44} height={44} /></span>
       <dl>
-        <div><dt>{e.by}</dt><dd>{EXPERT ? `${EXPERT.name}, ${EXPERT.role}` : e.team}</dd></div>
+        <div className="art-by"><dt>{e.by}</dt><dd>{EXPERT.name}<small>{EXPERT.role}</small></dd></div>
         <div><dt>{e.checked}</dt><dd>{e.checkedBy}</dd></div>
         {doc.date && <div><dt>{e.published}</dt><dd><time dateTime={iso}>{doc.date}</time></dd></div>}
         {updIso && updText && updIso !== iso && <div><dt>{e.updated}</dt><dd><time dateTime={updIso}>{updText}</time></dd></div>}
@@ -111,7 +131,7 @@ export function ArticleView({ doc, p, lang = "ru", related = [], updatedAt, comm
         {cover && <GenImage kind="news" id={slug} className="art-cover" sizes="(max-width: 900px) 100vw, 900px" priority alt={doc.h1} />}
         <div className="art-progress" aria-hidden="true"><i /></div>
       </header>
-      <div className="wrap art-grid">
+      <div className={`wrap art-grid${toc.length > 1 ? "" : " no-toc"}`}>
         {toc.length > 1 && (
           <nav className="art-toc mono" aria-label={t.toc}>
             <p>{t.toc}</p>
@@ -127,8 +147,8 @@ export function ArticleView({ doc, p, lang = "ru", related = [], updatedAt, comm
               <span className="art-avatar big" aria-hidden="true"><img src={asset("/brand/emblem-96.png")} alt="" width={56} height={56} /></span>
               <div>
                 <p className="art-author-k mono">{e.aboutT}</p>
-                <p className="art-author-n">{EXPERT ? EXPERT.name : e.team}</p>
-                <p className="art-author-r">{company.legalName} · {e.rating}</p>
+                <p className="art-author-n">{EXPERT.name}</p>
+                <p className="art-author-r">{EXPERT.role}</p>
               </div>
             </div>
             <p>{e.about(company.years)}</p>
