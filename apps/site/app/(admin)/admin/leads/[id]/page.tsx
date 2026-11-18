@@ -40,7 +40,7 @@ export default async function LeadPage({ params, searchParams }: { params: Promi
           <dl className="pnl-dl">
             {d.phone ? <><dt>Телефон</dt><dd><a href={`tel:${tel}`}>{d.phone}</a></dd></> : null}
             {messengerLine(d) && <><dt>Как связаться</dt><dd>{messengerLine(d)}</dd></>}
-            {Object.entries(d.extra ?? {}).map(([k, v]) => <><dt key={`k${k}`}>{EXTRA_LABELS[k] ?? k}</dt><dd key={`v${k}`}>{k === "mode" ? (MODE_LABELS[v] ?? v) : v}</dd></>)}
+            {Object.entries(d.extra ?? {}).map(([k, v]) => <><dt key={`k${k}`}>{EXTRA_LABELS[k] ?? k}</dt><dd key={`v${k}`}>{k === "mode" || k === "type" ? (MODE_LABELS[v] ?? v) : v}</dd></>)}
             <dt>Откуда заявка</dt><dd>{ORIGIN_NAMES[d.origin ?? "form"]}{d.chatId && <> · <Link href={`/admin/chats/${d.chatId}`}>открыть чат →</Link></>}</dd>
             <dt>Версия сайта</dt><dd>{LANG_NAMES[d.lang ?? "ru"] ?? d.lang}</dd>
             <dt>Город</dt><dd>{geoLine(d.geo) || <span className="pnl-muted">не определён</span>}</dd>
