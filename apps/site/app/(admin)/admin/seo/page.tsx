@@ -95,7 +95,7 @@ export default async function Seo({ searchParams }: { searchParams: Promise<{ e?
           </section>
           <section className="pnl-card">
             <h2>Счётчики</h2>
-            <p className="pnl-muted">Включаются только после согласия посетителя на аналитику (баннер cookie). Номер Метрики — тот же, что на старом сайте: история посещений и цели сохранятся.</p>
+            <p className="pnl-muted">Яндекс Метрика работает у всех посетителей с первой секунды (код в <p className="pnl-muted">Включаются только после согласия посетителя на аналитику (баннер cookie). Номер Метрики — тот же, что на старом сайте: история посещений и цели сохранятся.</p>lt;head<p className="pnl-muted">Включаются только после согласия посетителя на аналитику (баннер cookie). Номер Метрики — тот же, что на старом сайте: история посещений и цели сохранятся.</p>gt;, как на старом сайте). Google Analytics, Tag Manager и колтрекинг Mango включаются после согласия посетителя на аналитику (баннер cookie). Номер Метрики — тот же, что на старом сайте: история посещений и цели сохранятся.</p>
             <label>Яндекс Метрика, номер счётчика<input name="metrikaId" maxLength={LIM.counterId} defaultValue={s.metrikaId} inputMode="numeric" /></label>
             <label>Google Analytics 4<input name="gaId" maxLength={LIM.counterId} defaultValue={s.gaId} placeholder="G-XXXXXXX" /></label>
             <label>Google Tag Manager<input name="gtmId" maxLength={LIM.counterId} defaultValue={s.gtmId} placeholder="GTM-XXXXXX" /></label>
