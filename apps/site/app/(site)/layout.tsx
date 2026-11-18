@@ -83,10 +83,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <script id="cc-texts" type="application/json" dangerouslySetInnerHTML={{ __html: textsJson() }} />
         <script id="cc-prices" type="application/json" dangerouslySetInnerHTML={{ __html: pricesJson() }} />
         <script id="cc-media" type="application/json" dangerouslySetInnerHTML={{ __html: mediaJson() }} />
+        {/* Яндекс Метрика — официальный код в <head>, как на старом сайте: считает всех посетителей с первой секунды.
+            (18.11.2026: раньше грузилась только после согласия в баннере cookie — визиты почти перестали считаться) */}
+        {/^\d{5,12}$/.test(seo.metrikaId) && <script dangerouslySetInnerHTML={{ __html: metrikaSnippet(seo.metrikaId) }} />}
         {/* свой код в <head> из админки (SEO → Счётчики): задаёт только администратор */}
         {seo.headHtml && <HeadHtml html={seo.headHtml} />}
       </head>
       <body>
+        {/^\d{5,12}$/.test(seo.metrikaId) && <noscript><div><img src={`https://mc.yandex.ru/watch/${seo.metrikaId}`} style={{ position: "absolute", left: "-9999px" }} alt="" /></div></noscript>}
         {/* Schema.org: организация и сайт — на всех страницах */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: siteLd() }} />
         {children}
@@ -118,4 +122,10 @@ function HeadHtml({ html }: { html: string }) {
       })}
     </>
   );
+}
+
+// Официальный код счётчика Метрики (id — только цифры, проверено выше)
+function metrikaSnippet(id: string) {
+  const src = `https://mc.yandex.ru/metrika/tag.js?id=${id}`;
+  return `(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","${src}","ym");ym(${id},"init",{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",accurateTrackBounce:true,trackLinks:true});`;
 }
