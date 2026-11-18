@@ -99,6 +99,7 @@ export default async function Seo({ searchParams }: { searchParams: Promise<{ e?
             <label>Яндекс Метрика, номер счётчика<input name="metrikaId" maxLength={LIM.counterId} defaultValue={s.metrikaId} inputMode="numeric" /></label>
             <label>Google Analytics 4<input name="gaId" maxLength={LIM.counterId} defaultValue={s.gaId} placeholder="G-XXXXXXX" /></label>
             <label>Google Tag Manager<input name="gtmId" maxLength={LIM.counterId} defaultValue={s.gtmId} placeholder="GTM-XXXXXX" /></label>
+            <label>Mango Office — динамический колтрекинг, номер виджета<input name="mangoId" maxLength={LIM.counterId} defaultValue={s.mangoId} inputMode="numeric" placeholder="37509" /></label>
           </section>
           <section className="pnl-card">
             <h2>Свой код в &lt;head&gt;</h2>
