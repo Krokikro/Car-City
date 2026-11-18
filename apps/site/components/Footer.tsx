@@ -44,7 +44,7 @@ export function Footer({ lang = "ru" }: { lang?: Lang }) {
         <div className="footer-col footer-offices">
           <p className="mono">{f.offices}</p>
           {offices.map((o) => (
-            <p key={o.name}><span>{f.metro} {place(lang, o.metro)}</span><br /><span className="muted small">{place(lang, o.address)}, {place(lang, o.hours)}</span></p>
+            <p key={o.name}><span>{f.metro} {place(lang, o.metro)}</span><br /><span className="muted small">{place(lang, o.address)}, {place(lang, o.hours)}{o.days ? ` ${place(lang, o.days)}` : ""}</span></p>
           ))}
         </div>
       </div>
