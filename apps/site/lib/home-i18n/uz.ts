@@ -66,6 +66,7 @@ export const uz: HomeText = {
     ],
     ctaTitle: "Ular bizdan avtosini sotib olib boʻlishdi",
     ctaText: "Siz ham sotib oling",
+    ctaTg: "Ko‘proq suratlar — Telegram’da",
   },
   promo: {
     eyebrow: "Sovgʻa",

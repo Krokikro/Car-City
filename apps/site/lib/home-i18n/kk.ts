@@ -66,6 +66,7 @@ export const kk: HomeText = {
     ],
     ctaTitle: "Олар бізден көлігін сатып алып үлгерді",
     ctaText: "Сіз де сатып алыңыз",
+    ctaTg: "Көбірек фото — Telegram-да",
   },
   promo: {
     eyebrow: "Сыйлық",

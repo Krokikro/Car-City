@@ -66,6 +66,7 @@ export const en: HomeText = {
     ],
     ctaTitle: "They have already bought their car from us",
     ctaText: "You can too",
+    ctaTg: "More photos of our buyers on Telegram",
   },
   promo: {
     eyebrow: "Gift",
