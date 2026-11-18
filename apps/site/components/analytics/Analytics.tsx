@@ -26,33 +26,23 @@ export function Analytics() {
     if (!YM_ID && !gaId && !gtmId && !mangoId) return;
     const enable = () => {
       if (gaId || gtmId || mangoId) setGa({ ga: gaId || undefined, gtm: gtmId || undefined, mango: mangoId || undefined });
-      if (YM_ID && !window.ym) {
-        // Очередь вызовов до загрузки tag.js — стандартная заглушка Метрики
-        const ym = function (...args: unknown[]) {
-          (ym.a = ym.a || []).push(args);
-        } as NonNullable<Window["ym"]>;
-        ym.l = Date.now();
-        window.ym = ym;
-        ym(YM_ID, "init", { ssr: true, webvisor: true, clickmap: true, accurateTrackBounce: true, trackLinks: true });
-      }
+      // Метрика подключается кодом в <head> (app/(site)/layout.tsx) для всех посетителей, без ожидания согласия
       prevUrl.current = location.href;
       setOn(true);
     };
     if (getConsent()?.analytics) enable();
     return onConsent((c) => {
       if (c.analytics) enable();
-      // Отозвали согласие — перезагружаем страницу, чтобы счётчик выгрузился
-      else if (window.ym) location.reload();
     });
   }, []);
 
   // Переходы внутри сайта без перезагрузки — отдельный просмотр в Метрике
   useEffect(() => {
-    if (!on || !window.ym) return;
+    if (!window.ym) return;
     const url = location.href;
     if (prevUrl.current && prevUrl.current !== url) window.ym(ymId(), "hit", url, { referer: prevUrl.current, title: document.title });
     prevUrl.current = url;
-  }, [pathname, on]);
+  }, [pathname]);
 
   // Колтрекинг Mango подменяет номер только в тексте при загрузке. Здесь подмена доводится до всех ссылок tel:
   // (кнопки «Позвонить» без номера в тексте) и повторяется после переходов по сайту без перезагрузки.
@@ -83,7 +73,6 @@ export function Analytics() {
   if (!on) return null;
   return (
     <>
-      {ymId() > 0 && <Script id="ym-tag" src="https://mc.yandex.ru/metrika/tag.js" strategy="lazyOnload" />}
       {/* Google Analytics и Tag Manager — тоже только после согласия на аналитику (номера — в админке, SEO → Счётчики) */}
       {ga.ga && <Script id="ga-tag" src={`https://www.googletagmanager.com/gtag/js?id=${ga.ga}`} strategy="lazyOnload" />}
       {ga.ga && <Script id="ga-init" strategy="lazyOnload">{`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config',${JSON.stringify(ga.ga)});`}</Script>}
