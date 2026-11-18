@@ -85,7 +85,9 @@ export interface Lead {
 /** Подписи известных полей контекста (PRD 8.1: модель, тип, офис, калькулятор) */
 export const EXTRA_LABELS: Record<string, string> = {
   model: "Модель",
-  mode: "Тип",
+  mode: "Заявка",
+  type: "Заявка",
+  button: "Кнопка",
   cls: "Класс",
   office: "Офис",
   calc: "Калькулятор",
