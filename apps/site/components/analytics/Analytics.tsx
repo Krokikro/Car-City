@@ -14,6 +14,8 @@ export function Analytics() {
   const pathname = usePathname();
   const [on, setOn] = useState(false);
   const prevUrl = useRef<string | null>(null);
+  // номер сайта (только цифры) и номер, который выдал колтрекинг Mango
+  const mango = useRef<{ to?: string; text?: string }>({});
 
   const [ga, setGa] = useState<{ ga?: string; gtm?: string; mango?: string }>({});
   useEffect(() => {
@@ -51,6 +53,32 @@ export function Analytics() {
     if (prevUrl.current && prevUrl.current !== url) window.ym(ymId(), "hit", url, { referer: prevUrl.current, title: document.title });
     prevUrl.current = url;
   }, [pathname, on]);
+
+  // Колтрекинг Mango подменяет номер только в тексте при загрузке. Здесь подмена доводится до всех ссылок tel:
+  // (кнопки «Позвонить» без номера в тексте) и повторяется после переходов по сайту без перезагрузки.
+  useEffect(() => {
+    if (!on || !ga.mango) return;
+    const digits = (s: string | null | undefined) => (s ?? "").replace(/\D/g, "");
+    // номер сайта берём из разметки (data-tel), а подменный — из первой ссылки, где Mango уже поменял номер
+    const base = digits(document.documentElement.dataset.tel);
+    const sync = () => {
+      if (base.length < 10) return;
+      const links = [...document.querySelectorAll<HTMLAnchorElement>('a[href^="tel:"]')];
+      if (!mango.current.to) {
+        const sw = links.find((a) => { const h = digits(a.getAttribute("href")); return h.length >= 10 && h !== base && digits(a.textContent) === h; });
+        if (sw) mango.current = { to: sw.getAttribute("href") ?? undefined, text: sw.textContent?.trim() };
+      }
+      const { to, text } = mango.current;
+      if (!to) return;
+      for (const a of links) {
+        if (digits(a.getAttribute("href")) !== base) continue;
+        a.setAttribute("href", to);
+        if (text && digits(a.textContent) === base) a.textContent = text;
+      }
+    };
+    const timers = [300, 1000, 2000, 4000, 7000, 12000, 20000].map((ms) => window.setTimeout(sync, ms));
+    return () => timers.forEach(clearTimeout);
+  }, [on, ga.mango, pathname]);
 
   if (!on) return null;
   return (
