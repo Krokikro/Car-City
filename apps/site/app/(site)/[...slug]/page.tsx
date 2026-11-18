@@ -28,6 +28,7 @@ import { homeText } from "@/lib/home-text";
 import { Calculator } from "@/components/home/Calculator";
 import { Trust } from "@/components/home/Trust";
 import { HomePage } from "@/components/home/HomePage";
+import { FleetGrid } from "@/components/home/FleetGrid";
 import { GiftCta, isGift } from "@/components/page/GiftCta";
 import { PageHero, CarCards, Section, Faq, type HeroStat } from "@/components/page/PageParts";
 import { ModelHero } from "@/components/page/ModelHero";
@@ -216,7 +217,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
             if (b.t === "cards")
               return (
                 <Fragment key={i}>
-                  <CarCards groups={b.groups} lang={lang} />
+                  {/* «Авто под выкуп»: каталог как на главной — сначала популярные, остальные по фильтру классов */}
+                  {vykup ? <FleetGrid t={homeText(lang).fleet} lang={lang} cars={fleet.map((c) => ({ ...c }))} buyOnly title={ui(lang).vykupCatalog} /> : <CarCards groups={b.groups} lang={lang} />}
                   {/* «Аренда такси для ИП»: требования к водителям сразу под машинами */}
                   {ipPage && !reqDone && (reqDone = true) && <Requirements req={homeText(lang).requirements} />}
                 </Fragment>
