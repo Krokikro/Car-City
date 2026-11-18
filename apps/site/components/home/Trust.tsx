@@ -2,10 +2,17 @@ import { href, type Lang } from "@/lib/i18n";
 import { TrustOwners } from "./TrustOwners";
 import { ruHome, type HomeText } from "@/lib/home-text";
 import { company } from "@/lib/content";
+import { ratings } from "@/lib/home";
+
+// Рейтинг на картах сразу под цифрами: официальный бейдж Яндекс Бизнеса (живая оценка из Яндекс Карт)
+// и такая же плашка 2ГИС (оценка — из lib/home → ratings, у 2ГИС нет официального бейджа).
+const YA_BADGE = "https://yandex.ru/sprav/widget/rating-badge/23072345480?type=rating";
+const MAPS_T: Record<string, [string, string]> = { ru: ["Рейтинг на картах", "Рейтинг организации в 2ГИС"], en: ["Our rating on maps", "Company rating on 2GIS"] };
 
 export function Trust({ lang = "ru", t: trust = ruHome.trust, buy = false }: { lang?: Lang; t?: HomeText["trust"]; buy?: boolean }) {
   // На странице выкупа счётчик «арендовали авто» не нужен: остаётся только «выкупили»
   const stats = buy ? trust.stats.slice(1) : trust.stats;
+  const gis = ratings.find((r) => r.name === "2GIS");
   return (
     <section className="section trust" aria-labelledby="trust-title">
       <div className="wrap">
@@ -17,6 +24,17 @@ export function Trust({ lang = "ru", t: trust = ruHome.trust, buy = false }: { l
               <span className="trust-label">{s.label}</span>
             </div>
           ))}
+        </div>
+        <div className="trust-maps" data-reveal>
+          <span className="trust-maps-k mono">{(MAPS_T[lang] ?? MAPS_T.ru)[0]}</span>
+          <iframe className="trust-ya trust-ya-d" src={`${YA_BADGE}&theme=dark`} width={150} height={50} loading="lazy" title="Рейтинг Car City в Яндекс Картах" />
+          <iframe className="trust-ya trust-ya-l" src={YA_BADGE} width={150} height={50} loading="lazy" title="Рейтинг Car City в Яндекс Картах" />
+          {gis && (
+            <a className="trust-2gis" href={gis.url} target="_blank" rel="noopener">
+              <span className="trust-2gis-top"><i aria-hidden="true">2</i><b>{gis.score}</b><span className="trust-2gis-stars" aria-hidden="true">★★★★★</span></span>
+              <span className="trust-2gis-sub">{(MAPS_T[lang] ?? MAPS_T.ru)[1]}</span>
+            </a>
+          )}
         </div>
       </div>
       <TrustOwners owners={trust.owners as never} lang={lang} label={trust.ctaTitle} />
