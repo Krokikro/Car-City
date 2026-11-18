@@ -31,8 +31,9 @@ function Price({ label, price, old, t }: { label?: string; price: number; old?: 
 }
 
 /** Плитка машины — как на странице выкупа: фото целиком, класс, заметные характеристики, цена, две кнопки */
-export function FleetTile({ m, t, lang, i = 0, priority = false }: { m: FleetCar; t: HomeText["fleet"]; lang: Lang; i?: number; priority?: boolean }) {
-  const rent = hasRent(m), buy = hasBuy(m);
+export function FleetTile({ m, t, lang, i = 0, priority = false, buyOnly = false }: { m: FleetCar; t: HomeText["fleet"]; lang: Lang; i?: number; priority?: boolean; buyOnly?: boolean }) {
+  // на странице выкупа — только цена и кнопка выкупа
+  const rent = !buyOnly && hasRent(m), buy = hasBuy(m);
   const link = href(rent ? m.rent : m.buy, lang);
   const chips = saleChips(m, lang);
   const sale = false && chips.length > 0;
@@ -125,8 +126,9 @@ type View = "popular" | "all" | CarClass;
 
 // Автопарк на главной: фильтр классов виден сразу. «Популярные» — по две модели из каждого класса,
 // класс — только его машины, «Все» — весь парк по порядку классов. Между машинами — две промо-карточки.
-export function FleetGrid({ t, lang, cars }: { t: HomeText["fleet"]; lang: Lang; cars?: FleetCar[] }) {
-  const fleet = cars ?? baseFleet;
+// buyOnly — каталог на странице «Авто под выкуп»: только машины с выкупом, цены и кнопки выкупа, без промо «бонус за друга».
+export function FleetGrid({ t, lang, cars, buyOnly = false, title }: { t: HomeText["fleet"]; lang: Lang; cars?: FleetCar[]; buyOnly?: boolean; title?: string }) {
+  const fleet = (cars ?? baseFleet).filter((c) => !buyOnly || hasBuy(c));
   const m = patched("fleet-x", lang, MORE[lang] ?? MORE.ru);
   const [view, setView] = useState<View>("popular");
   const sec = useRef<HTMLElement>(null);
@@ -140,7 +142,7 @@ export function FleetGrid({ t, lang, cars }: { t: HomeText["fleet"]; lang: Lang;
     ro.observe(el);
     return () => { clearTimeout(t); ro.disconnect(); };
   }, []);
-  const popular = popularOf(fleet);
+  const popular = buyOnly ? popularOf(fleet).concat(fleet).filter((c, i, a) => a.indexOf(c) === i).slice(0, Math.max(8, popularOf(fleet).length)) : popularOf(fleet);
   const order = (a: FleetCar, b: FleetCar) => fleetClasses.findIndex((c) => c.id === a.cls) - fleetClasses.findIndex((c) => c.id === b.cls);
   const shown = view === "popular" ? popular : view === "all" ? [...fleet].sort(order) : fleet.filter((f) => f.cls === view);
   const classes = fleetClasses.filter((c) => fleet.some((f) => f.cls === c.id));
@@ -151,7 +153,8 @@ export function FleetGrid({ t, lang, cars }: { t: HomeText["fleet"]; lang: Lang;
   ];
   // промо-карточки: после 4-й машины и ближе к концу; в отдельном классе — одна, «под заказ», в конце
   const items: ({ car: FleetCar } | { promo: "order" | "friend" })[] = shown.map((car) => ({ car }));
-  if (view === "popular" || view === "all") {
+  if (buyOnly) items.splice(Math.min(4, items.length), 0, { promo: "order" });
+  else if (view === "popular" || view === "all") {
     items.splice(Math.min(4, items.length), 0, { promo: "order" });
     items.splice(Math.min(9, items.length), 0, { promo: "friend" });
   } else items.push({ promo: "order" });
@@ -161,7 +164,7 @@ export function FleetGrid({ t, lang, cars }: { t: HomeText["fleet"]; lang: Lang;
       <div className="wrap">
         <div className="fg-head">
           <div>
-            <h2 id="fleet-title" className="display" data-split>{t.title}</h2>
+            <h2 id="fleet-title" className="display" data-split>{title ?? t.title}</h2>
           </div>
         </div>
         <div className="fg-filter" role="group" aria-label={t.classLabel}>
@@ -174,7 +177,7 @@ export function FleetGrid({ t, lang, cars }: { t: HomeText["fleet"]; lang: Lang;
         </div>
         <div className="ft-grid" key={view}>
           {items.map((it, i) => "car" in it
-            ? <FleetTile key={it.car.slug} m={it.car} t={t} lang={lang} i={i} priority={i < 4} />
+            ? <FleetTile key={it.car.slug} m={it.car} t={t} lang={lang} i={i} priority={i < 4} buyOnly={buyOnly} />
             : <PromoTile key={it.promo} kind={it.promo} lang={lang} i={i} />)}
           {view === "popular" && (
             <button type="button" className="ft ft-more" onClick={() => setView("all")} style={{ ["--i" as string]: items.length }}>
