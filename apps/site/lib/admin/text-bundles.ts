@@ -153,8 +153,8 @@ const COMPANY_LABELS: Record<string, [string, number]> = {
 const companyB: Bundle = { id: "company", langs: ["ru"], base: () => BASE_COMPANY, group: (p) => (/^(telegram|telegramBot|whatsapp|max|youtube|messengerPhone)$/.test(p) ? "Мессенджеры и соцсети" : /^(fleet|renters|boughtOut)$/.test(p) ? "Цифры" : "Компания"), label: (p) => COMPANY_LABELS[p]?.[0] ?? human(p), max: (p, l) => COMPANY_LABELS[p]?.[1] ?? fallbackMax(l) };
 const officesB: Bundle = {
   id: "offices", langs: ["ru"], base: () => BASE_OFFICES, group: (p) => `Офис ${n(p, 0)}`,
-  label: (p) => ({ name: "Название", address: "Адрес", metro: "Метро", hours: "Часы работы" } as Record<string, string>)[p.split(".")[1]] ?? human(p),
-  max: (p) => ({ name: 40, address: 70, metro: 30, hours: 40 } as Record<string, number>)[p.split(".")[1]] ?? 60,
+  label: (p) => ({ name: "Название", address: "Адрес", metro: "Метро", hours: "Часы работы", days: "Дни работы (пн-вс — «Открыто каждый день»)" } as Record<string, string>)[p.split(".")[1]] ?? human(p),
+  max: (p) => ({ name: 40, address: 70, metro: 30, hours: 40, days: 20 } as Record<string, number>)[p.split(".")[1]] ?? 60,
 };
 
 // ── форма заявки и cookie ──
