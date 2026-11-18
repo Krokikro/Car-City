@@ -76,7 +76,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const light = theme === "light";
   return (
     <html lang="ru" data-theme={light ? "light" : undefined} data-variant={light ? variant : undefined}
-      data-ym={seo.metrikaId || undefined} data-ga={seo.gaId || undefined} data-gtm={seo.gtmId || undefined} suppressHydrationWarning>
+      data-ym={seo.metrikaId || undefined} data-ga={seo.gaId || undefined} data-gtm={seo.gtmId || undefined} data-mango={seo.mangoId || undefined} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: gfxDetectScript }} />
         {/* правки текстов из админки — чтобы клиентские компоненты рисовали то же, что сервер */}
