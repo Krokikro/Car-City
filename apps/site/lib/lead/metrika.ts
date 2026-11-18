@@ -1,5 +1,5 @@
-// Яндекс Метрика: цели и ClientID. Счётчик грузится только после согласия на аналитику
-// (components/analytics/Analytics.tsx); без него вызовы молча ничего не делают.
+// Яндекс Метрика: цели и ClientID. Сам счётчик подключается кодом в <head> (app/(site)/layout.tsx) для всех посетителей;
+// без него вызовы молча ничего не делают.
 
 type Ym = ((id: number, method: string, ...args: unknown[]) => void) & { a?: unknown[]; l?: number };
 
