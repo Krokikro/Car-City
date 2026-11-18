@@ -102,7 +102,7 @@ export async function saveSeoAction(fd: FormData) {
   const cur = await getSeo();
   const next: SeoSettings = structuredClone(cur);
   const back = `/admin/seo?tab=${tab}`;
-  { const le = lenError(fd, { canonicalOrigin: ["Основной адрес", LIM.origin], indexHosts: ["Домены", LIM.hosts], siteName: ["Название сайта", LIM.siteName], titleTemplate: ["Шаблон title", LIM.titleTemplate], defaultDescription: ["Description по умолчанию", LIM.description], ogImage: ["Картинка", LIM.ogImage], yandexVerification: ["Яндекс", LIM.verification], googleVerification: ["Google", LIM.verification], bingVerification: ["Bing", LIM.verification], mailruVerification: ["Mail.ru", LIM.verification], metrikaId: ["Метрика", LIM.counterId], gaId: ["GA4", LIM.counterId], gtmId: ["GTM", LIM.counterId], headHtml: ["Код в head", LIM.headHtml], robotsTxt: ["robots.txt", LIM.robotsTxt], exclude: ["Исключить адреса", LIM.sitemapExclude] }); if (le) go(back, "e", le); }
+  { const le = lenError(fd, { canonicalOrigin: ["Основной адрес", LIM.origin], indexHosts: ["Домены", LIM.hosts], siteName: ["Название сайта", LIM.siteName], titleTemplate: ["Шаблон title", LIM.titleTemplate], defaultDescription: ["Description по умолчанию", LIM.description], ogImage: ["Картинка", LIM.ogImage], yandexVerification: ["Яндекс", LIM.verification], googleVerification: ["Google", LIM.verification], bingVerification: ["Bing", LIM.verification], mailruVerification: ["Mail.ru", LIM.verification], metrikaId: ["Метрика", LIM.counterId], gaId: ["GA4", LIM.counterId], gtmId: ["GTM", LIM.counterId], mangoId: ["Mango Office", LIM.counterId], headHtml: ["Код в head", LIM.headHtml], robotsTxt: ["robots.txt", LIM.robotsTxt], exclude: ["Исключить адреса", LIM.sitemapExclude] }); if (le) go(back, "e", le); }
   for (const k of [...fd.keys()]) { const v = String(fd.get(k) ?? ""); if ((k.startsWith("t:") && [...v].length > LIM.tplTitle) || (k.startsWith("d:") && [...v].length > LIM.tplDescription)) go(back, "e", `Шаблон слишком длинный: title до ${LIM.tplTitle}, description до ${LIM.tplDescription} символов`); }
   if (tab === "general") {
     const origin = f(fd, "canonicalOrigin").replace(/\/+$/, "");
@@ -142,6 +142,9 @@ export async function saveSeoAction(fd: FormData) {
     const gtm = f(fd, "gtmId");
     if (gtm && !/^GTM-[A-Z0-9]+$/i.test(gtm)) go(back, "e", "Tag Manager: номер вида GTM-XXXXXX");
     next.gtmId = gtm.toUpperCase();
+    const mango = f(fd, "mangoId");
+    if (mango && !/^\d{3,10}$/.test(mango)) go(back, "e", "Mango Office: номер виджета — только цифры");
+    next.mangoId = mango;
     // свой код в <head> — только администратор: это исполняемый код на всех страницах
     if (u.role === "admin") next.headHtml = String(fd.get("headHtml") ?? "").slice(0, 8000);
   } else if (tab === "robots") {
