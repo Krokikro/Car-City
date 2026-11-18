@@ -15,15 +15,15 @@ export function Analytics() {
   const [on, setOn] = useState(false);
   const prevUrl = useRef<string | null>(null);
 
-  const [ga, setGa] = useState<{ ga?: string; gtm?: string }>({});
+  const [ga, setGa] = useState<{ ga?: string; gtm?: string; mango?: string }>({});
   useEffect(() => {
     captureTouch();
     const YM_ID = ymId();
     const d = document.documentElement.dataset;
-    const gaId = d.ga || "", gtmId = d.gtm || "";
-    if (!YM_ID && !gaId && !gtmId) return;
+    const gaId = d.ga || "", gtmId = d.gtm || "", mangoId = d.mango || "";
+    if (!YM_ID && !gaId && !gtmId && !mangoId) return;
     const enable = () => {
-      if (gaId || gtmId) setGa({ ga: gaId || undefined, gtm: gtmId || undefined });
+      if (gaId || gtmId || mangoId) setGa({ ga: gaId || undefined, gtm: gtmId || undefined, mango: mangoId || undefined });
       if (YM_ID && !window.ym) {
         // Очередь вызовов до загрузки tag.js — стандартная заглушка Метрики
         const ym = function (...args: unknown[]) {
@@ -59,6 +59,8 @@ export function Analytics() {
       {/* Google Analytics и Tag Manager — тоже только после согласия на аналитику (номера — в админке, SEO → Счётчики) */}
       {ga.ga && <Script id="ga-tag" src={`https://www.googletagmanager.com/gtag/js?id=${ga.ga}`} strategy="lazyOnload" />}
       {ga.ga && <Script id="ga-init" strategy="lazyOnload">{`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config',${JSON.stringify(ga.ga)});`}</Script>}
+      {/* Mango Office: динамический колтрекинг — подменяет телефон на сайте на номер из пула (виджет со старого сайта) */}
+      {ga.mango && <Script id="mango-ct" src={`https://widgets.mango-office.ru/site/${ga.mango}`} strategy="afterInteractive" />}
       {ga.gtm && <Script id="gtm-init" strategy="lazyOnload">{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',${JSON.stringify(ga.gtm)});`}</Script>}
     </>
   );
