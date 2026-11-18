@@ -19,9 +19,17 @@ export interface Channel {
 
 export const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
+// «Заявка: на аренду / на выкуп» — понятнее для колл-центра, чем «type: rent»
+const WANT: Record<string, string> = { rent: "на аренду", buyout: "на выкуп", vykup: "на выкуп" };
+
 function extraLine(k: string, v: string) {
-  return `${EXTRA_LABELS[k] ?? k}: ${k === "mode" ? (MODE_LABELS[v] ?? v) : v}`;
+  if (k === "mode" || k === "type") return `Заявка: ${WANT[v] ?? MODE_LABELS[v] ?? v}`;
+  return `${EXTRA_LABELS[k] ?? k}: ${v}`;
 }
+
+// В комментарий лида Битрикс24 не дублируем то, что уже есть в карточке или не нужно колл-центру (правка 18.11.2026):
+// телефон (поле лида), кнопку и техническое имя формы, последний вход с метками (UTM — в полях лида)
+const CRM_SKIP_EXTRA = new Set(["button"]);
 
 function touchLine(t: Touch) {
   const utm = [t.utm_source, t.utm_medium, t.utm_campaign].filter(Boolean).join(" / ");
@@ -31,22 +39,22 @@ function touchLine(t: Touch) {
 }
 
 /** Текст заявки для людей: Telegram и комментарий в Bitrix24 */
-export function leadText(lead: Lead, html = false): string {
+export function leadText(lead: Lead, html = false, crm = false): string {
   const e = html ? esc : (s: string) => s;
   const b = (s: string) => (html ? `<b>${esc(s)}</b>` : s);
   const lines = [
     b(`Заявка с сайта${lead.flags.length ? " (" + lead.flags.join(", ") + ")" : ""}`),
     `Имя: ${e(lead.name || "не указано")}`,
-    lead.phone && `Телефон: ${e(lead.phone)}`,
-    messengerLine(lead) && `Связь: ${messengerLine(lead)}`,
-    ...Object.entries(lead.extra).map(([k, v]) => e(extraLine(k, v))),
+    !crm && lead.phone && `Телефон: ${e(lead.phone)}`,
+    messengerLine(lead) && `Предпочтительный способ связи: ${messengerLine(lead)}`,
+    ...Object.entries(lead.extra).filter(([k]) => !(crm && CRM_SKIP_EXTRA.has(k))).map(([k, v]) => e(extraLine(k, v))),
     lead.attr && `Источник: ${e(sourceLine(lead.attr))}`,
     lead.geo && geoLine(lead.geo) && `Город: ${e(geoLine(lead.geo))}`,
-    `Форма: ${e(lead.source)}${lead.lang ? ` · версия сайта ${e(LANG_NAMES[lead.lang] ?? lead.lang)}` : ""} · ${lead.device}`,
+    crm ? lead.lang && lead.lang !== "ru" && `Версия сайта: ${e(LANG_NAMES[lead.lang] ?? lead.lang)}` : `Форма: ${e(lead.source)}${lead.lang ? ` · версия сайта ${e(LANG_NAMES[lead.lang] ?? lead.lang)}` : ""} · ${lead.device}`,
     lead.page && `Страница: ${e(lead.page)}`,
     touchLine(lead.first) && `Первый вход: ${e(touchLine(lead.first))}`,
     lead.first.landing && `Страница входа: ${e(lead.first.landing)}`,
-    touchLine(lead.last) && touchLine(lead.last) !== touchLine(lead.first) && `Последний вход: ${e(touchLine(lead.last))}`,
+    !crm && touchLine(lead.last) && touchLine(lead.last) !== touchLine(lead.first) && `Последний вход: ${e(touchLine(lead.last))}`,
     lead.ymClientId && `ClientID Метрики: ${lead.ymClientId}`,
     `Согласие ПДн: да, ред. ${lead.consent.version}; реклама: ${lead.consent.marketing ? "да" : "нет"}`,
     `${lead.at} · IP ${e(lead.ip)} · #${lead.id}`,
@@ -143,7 +151,7 @@ function bitrix24(c: Integrations["bitrix"]): Channel | null {
         UTM_CAMPAIGN: t.utm_campaign,
         UTM_CONTENT: t.utm_content,
         UTM_TERM: t.utm_term,
-        COMMENTS: leadText(lead).replace(/\n/g, "<br>"),
+        COMMENTS: leadText(lead, false, true).replace(/\n/g, "<br>"),
       };
       const id = await bitrixCall<number>(c.webhook, "crm.lead.add", { fields, params: { REGISTER_SONET_EVENT: "Y" } });
       if (dbEnabled() && id) await q("UPDATE leads SET data = jsonb_set(data, '{bitrixId}', to_jsonb($2::int)) WHERE id=$1", [lead.id, Number(id)]).catch(() => {});
