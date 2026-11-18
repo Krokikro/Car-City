@@ -46,6 +46,8 @@ export interface SeoSettings {
   metrikaId: string;
   gaId: string;
   gtmId: string;
+  /** Mango Office: номер виджета динамического колтрекинга (подменяет телефон на сайте на номер из пула) */
+  mangoId: string;
   /** свой код в <head> (meta/link/script) — только для администратора */
   headHtml: string;
 
@@ -87,6 +89,8 @@ export const DEFAULT_SEO: SeoSettings = {
   metrikaId: "96752669",
   gaId: "G-ECNBZN3PHM",
   gtmId: "",
+  // тот же виджет, что был на старом car-city.pro: подменяет 7 (499) 302-31-59 на номер из пула Mango
+  mangoId: "37509",
   headHtml: "",
   robotsTxt: "",
   sitemap: {
