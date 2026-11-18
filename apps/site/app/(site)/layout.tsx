@@ -18,6 +18,7 @@ import "../styles/light.gen.css";
 import "../styles/light.css";
 import { siteTheme, themeForced } from "@/lib/theme";
 import { pricesJson } from "@/lib/prices";
+import { company } from "@/lib/content";
 import { mediaJson } from "@/lib/media/live";
 import { textsJson } from "@/lib/texts";
 import { gfxDetectScript } from "@/lib/gfx";
@@ -76,7 +77,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const light = theme === "light";
   return (
     <html lang="ru" data-theme={light ? "light" : undefined} data-variant={light ? variant : undefined}
-      data-ym={seo.metrikaId || undefined} data-ga={seo.gaId || undefined} data-gtm={seo.gtmId || undefined} data-mango={seo.mangoId || undefined} suppressHydrationWarning>
+      data-ym={seo.metrikaId || undefined} data-ga={seo.gaId || undefined} data-gtm={seo.gtmId || undefined} data-mango={seo.mangoId || undefined} data-tel={company.phones[0]} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: gfxDetectScript }} />
         {/* правки текстов из админки — чтобы клиентские компоненты рисовали то же, что сервер */}
