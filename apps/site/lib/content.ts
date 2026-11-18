@@ -26,6 +26,8 @@ export const BASE_COMPANY = {
   /** Новый Telegram-бот (правка 06.11.2026). Пока пусто — окно с ботом не показывается. Ссылка задаётся в админке: Тексты сайта → Контакты */
   telegramBot: "",
   youtube: "https://www.youtube.com/@CarCityTaxi",
+  /** Telegram-канал таксопарка (фото выкупников и новости) — кнопка под блоком «Нам доверяют» */
+  telegramChannel: "https://t.me/taxicarcity",
   group: "Входит в группу Элит Кар",
   privacyUrl: "https://car-city.pro/themes/document/politika-konfedenczialnosti-kar-siti.pdf",
 };

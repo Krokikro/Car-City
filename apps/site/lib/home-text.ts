@@ -44,7 +44,7 @@ export const ruHome = {
     drag: "Листайте",
   },
   benefits: { eyebrow: "Преимущества", title: "Почему с нами выгодно?", items: h.benefits.map((b) => ({ icon: b.icon as string, text: b.text as string })) },
-  trust: { title: h.trust.title, stats: h.trust.stats.map((s) => ({ ...s })), owners: h.trust.owners.map((o) => ({ ...o })), ctaTitle: h.trust.cta.title, ctaText: h.trust.cta.text },
+  trust: { title: h.trust.title, stats: h.trust.stats.map((s) => ({ ...s })), owners: h.trust.owners.map((o) => ({ ...o })), ctaTitle: h.trust.cta.title, ctaText: h.trust.cta.text, ctaTg: "Больше фото выкупников — в Telegram" },
   promo: { eyebrow: "Подарок", title: h.promo.title, text: h.promo.text, button: h.promo.button },
   requirements: { title: h.requirementsBlock.title, items: h.requirementsBlock.items.map((r) => ({ ...r })) },
   steps: { title: h.steps.title, items: [...h.steps.items] as string[] },
