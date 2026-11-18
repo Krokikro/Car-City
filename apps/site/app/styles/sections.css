@@ -109,6 +109,10 @@
 .owner figcaption { display: grid; }
 .owner strong { color: var(--text); font-weight: 500; }
 .owner figcaption span { font-size: 14px; color: var(--text-muted); }
+.trust-btns { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn-tg { background: #2AABEE; color: #fff; gap: 10px; box-shadow: 0 10px 30px -10px rgba(42,171,238,.7); }
+.btn-tg:hover { background: #229ED9; color: #fff; }
+@media (max-width: 640px) { .trust-btns, .trust-btns .btn { width: 100%; } .trust-btns .btn { justify-content: center; } }
 .trust-cta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; margin-top: clamp(28px, 3.5vw, 48px); }
 
 /* — Промо с формой — */
