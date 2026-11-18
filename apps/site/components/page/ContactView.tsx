@@ -1,16 +1,15 @@
-import { company } from "@/lib/content";
+import { company, offices } from "@/lib/content";
 import { place } from "@/lib/ui-terms";
 import type { Lang } from "@/lib/i18n";
 import { SocialRow } from "../SocialIcons";
 
-// Контакты: три офиса карточками (адрес, метро, режим работы, маршрут), под ними телефон, почта и мессенджеры.
-// Тексты адресов и режима — как на car-city.pro.
-const OFFICES = [
-  { addr: "г. Москва, ул. Удальцова, д. 36", metro: ["Проспект Вернадского", "Мичуринский проспект"], hours: "с 9:00 до 21:00", days: "пн-вс", map: "Москва, ул. Удальцова, 36" },
-  { addr: "г. Москва, 1‑й Митинский переулок, 15с3", metro: ["Митино"], hours: "с 10:00 до 19:00", days: "пн-пт", map: "Москва, 1-й Митинский переулок, 15с3" },
-  { addr: "г. Москва, ул. Витебская, д.11", metro: ["Кунцевская"], hours: "с 10:00 до 19:00", days: "пн-вс", map: "Москва, ул. Витебская, 11" },
-  // Новый офис (06.11.2026). Режим работы владелец ещё не прислал — поменять здесь и в lib/content.ts.
-  { addr: "г. Москва, ул. Зеленоградская, д. 15", metro: ["Ховрино", "Грачёвская"], hours: "уточняйте по телефону", days: "", map: "Москва, Зеленоградская улица, 15" },
+// Контакты: офисы карточками (адрес, метро, режим работы, маршрут), под ними телефон, почта и мессенджеры.
+// Адрес, часы и дни работы берутся из админки (Тексты → Контакты → Офис N), здесь — только значки метро по порядку офисов.
+const METRO_LIST = [
+  ["Проспект Вернадского", "Мичуринский проспект"],
+  ["Митино"],
+  ["Кунцевская"],
+  ["Ховрино", "Грачёвская"],
 ];
 
 // Значки линий метро: номер линии в круге её цвета, как на схемах и указателях в метро
@@ -52,8 +51,10 @@ export function ContactView({ lang = "ru" }: { lang?: Lang }) {
         </div>
         <h2 className="h1 ct-title" data-split>{t.offices}</h2>
         <div className="ct-grid" data-tilt-in>
-          {OFFICES.map((o, i) => (
-            <article key={o.addr} className="ct-card">
+          {offices.map((of, i) => {
+            const o = { addr: `г. Москва, ${of.address}`, metro: METRO_LIST[i] ?? of.metro.split(/,\s*/), hours: of.hours, days: of.days ?? "", map: `Москва, ${of.address}` };
+            return (
+            <article key={of.address + i} className="ct-card">
               <span className="ct-n mono">0{i + 1}</span>
               <h3>{place(lang, o.addr)}</h3>
               <ul className="ct-metro">
@@ -76,7 +77,8 @@ export function ContactView({ lang = "ru" }: { lang?: Lang }) {
                 <a className="btn btn-ghost btn-sm" href={`tel:${tel.replace(/[^\d+]/g, "")}`}>{t.call}</a>
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
