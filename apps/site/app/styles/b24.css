@@ -1,0 +1,56 @@
+/* Виджет Битрикс24 (components/BitrixWidget.tsx) в стиле сайта.
+   Цвета в самом Битриксе заданы инлайном, поэтому здесь !important. Окно чата — тёмное, как сайт;
+   в светлой теме сайта остаётся светлым, как в Битриксе. */
+
+/* Кнопка: на месте прежнего чата, фирменный жёлтый, мягкая тень */
+.b24-widget-button-wrapper.b24-widget-button-position-bottom-right { right: max(18px, env(safe-area-inset-right)) !important; bottom: max(18px, env(safe-area-inset-bottom)) !important; }
+.b24-widget-button-inner-mask, .b24-widget-button-inner-block { background: var(--cc-signal) !important; }
+.b24-widget-button-inner-block { box-shadow: 0 16px 40px -12px rgba(255, 183, 0, .75), inset 0 0 0 1px rgba(255,255,255,.35); }
+.b24-widget-button-pulse { border-color: var(--cc-signal) !important; }
+.b24-widget-button-openline_livechat { background-color: var(--cc-signal) !important; }
+.b24-widget-button-inner-block, .b24-widget-button-inner-mask { background-image: linear-gradient(var(--cc-signal), var(--cc-signal)) !important; }
+.b24-widget-button-social-tooltip { font-family: var(--font-text) !important; border-radius: 10px !important; }
+
+/* Приветствие «Дарья: Здравствуйте!…» */
+.b24-widget-button-popup { font-family: var(--font-text) !important; border-radius: 18px !important; border: 1px solid rgba(255, 183, 0, .55) !important; background: rgba(16, 17, 19, .96) !important; backdrop-filter: blur(16px); box-shadow: 0 24px 60px -18px rgba(0,0,0,.75) !important; }
+.b24-widget-button-popup-name { color: #fff !important; font-weight: 600 !important; }
+.b24-widget-button-popup-description { color: rgba(255,255,255,.72) !important; }
+.b24-widget-button-popup-triangle { background: rgba(16, 17, 19, .96) !important; border-color: rgba(255, 183, 0, .55) !important; }
+.b24-widget-button-popup-btn-hide { filter: invert(1); opacity: .6; }
+[data-theme="light"] .b24-widget-button-popup, [data-theme="light"] .b24-widget-button-popup-triangle { background: #fff !important; }
+[data-theme="light"] .b24-widget-button-popup-name { color: #111 !important; }
+[data-theme="light"] .b24-widget-button-popup-description { color: #555 !important; }
+[data-theme="light"] .b24-widget-button-popup-btn-hide { filter: none; }
+
+/* Окно чата */
+.bx-livechat-wrapper { font-family: var(--font-text) !important; }
+.bx-livechat-wrapper .bx-livechat-box { border-radius: 22px !important; overflow: hidden; box-shadow: 0 30px 80px -20px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.08) !important; }
+.bx-livechat-wrapper .bx-livechat-head { background-image: linear-gradient(var(--cc-signal), var(--cc-signal)) !important; } /* цвет фона Битрикс ставит инлайном с !important — перекрываем картинкой-заливкой */
+.bx-livechat-wrapper .bx-livechat-title { color: #111 !important; font-weight: 600 !important; font-family: var(--font-text) !important; }
+
+html:not([data-theme="light"]) .bx-livechat-wrapper .bx-livechat-box { background: #101113 !important; }
+html:not([data-theme="light"]) .bx-livechat-wrapper .bx-livechat-body { background: #0d0e10 !important; background-image: radial-gradient(120% 70% at 50% 0%, rgba(255,183,0,.08), transparent 60%) !important; }
+html:not([data-theme="light"]) .bx-livechat-wrapper .bx-livechat-help-title,
+html:not([data-theme="light"]) .bx-livechat-wrapper .bx-livechat-help-title-lg,
+html:not([data-theme="light"]) .bx-livechat-wrapper .bx-livechat-user-name { color: #fff !important; }
+html:not([data-theme="light"]) .bx-livechat-wrapper .bx-livechat-help-subtitle { color: rgba(255,255,255,.6) !important; }
+html:not([data-theme="light"]) .bx-livechat-wrapper .bx-livechat-textarea,
+html:not([data-theme="light"]) .bx-livechat-wrapper .bx-im-textarea,
+html:not([data-theme="light"]) .bx-livechat-wrapper .bx-im-textarea-box { background: #16171a !important; border-color: rgba(255,255,255,.08) !important; }
+html:not([data-theme="light"]) .bx-livechat-wrapper .bx-im-textarea-input { background: transparent !important; color: #fff !important; font-family: var(--font-text) !important; }
+html:not([data-theme="light"]) .bx-livechat-wrapper .bx-im-textarea-input::placeholder { color: rgba(255,255,255,.45) !important; }
+html:not([data-theme="light"]) .bx-livechat-wrapper .bx-im-textarea-app-button { filter: invert(1) brightness(.8); }
+/* сообщения в переписке */
+html:not([data-theme="light"]) .bx-livechat-wrapper .bx-im-message-box { background: #1c1d21 !important; color: #fff !important; border-radius: 16px !important; }
+html:not([data-theme="light"]) .bx-livechat-wrapper .bx-im-message-content,
+html:not([data-theme="light"]) .bx-livechat-wrapper .bx-im-message-content-text { color: #fff !important; }
+html:not([data-theme="light"]) .bx-livechat-wrapper .bx-im-message-type-self .bx-im-message-box { background: var(--cc-signal) !important; color: #111 !important; }
+html:not([data-theme="light"]) .bx-livechat-wrapper .bx-im-message-type-self .bx-im-message-content,
+html:not([data-theme="light"]) .bx-livechat-wrapper .bx-im-message-type-self .bx-im-message-content-text { color: #111 !important; }
+html:not([data-theme="light"]) .bx-livechat-wrapper .bx-im-message-content-date,
+html:not([data-theme="light"]) .bx-livechat-wrapper .bx-im-dialog-group-date { color: rgba(255,255,255,.45) !important; }
+/* форма «имя и телефон» внутри чата */
+html:not([data-theme="light"]) .bx-livechat-wrapper .b24-form-wrapper { background: #16171a !important; color: #fff !important; border-radius: 16px !important; }
+html:not([data-theme="light"]) .bx-livechat-wrapper .b24-form-control { background: #0d0e10 !important; color: #fff !important; border-color: rgba(255,255,255,.14) !important; }
+html:not([data-theme="light"]) .bx-livechat-wrapper .b24-form-control-label { color: rgba(255,255,255,.55) !important; }
+.bx-livechat-wrapper .b24-form-btn { background: var(--cc-signal) !important; color: #111 !important; border-radius: 999px !important; }
