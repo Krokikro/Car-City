@@ -49,9 +49,11 @@ export function TelegramPopup() {
   useEffect(() => {
     if (!open) return;
     closeRef.current?.focus({ preventScroll: true });
+    // пока открыт поп-ап, виджет Битрикса (кнопка и приветствие) прячем — он поверх затемнения
+    document.documentElement.classList.add("tgp-open");
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") close(); };
     addEventListener("keydown", onKey);
-    return () => removeEventListener("keydown", onKey);
+    return () => { removeEventListener("keydown", onKey); document.documentElement.classList.remove("tgp-open"); };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
