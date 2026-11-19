@@ -30,6 +30,7 @@ import { OffscreenPause } from "@/components/motion/OffscreenPause";
 import { ScrollHints } from "@/components/motion/ScrollHints";
 import { LeadModal } from "@/components/LeadModal";
 import { ChatWidget } from "@/components/ChatWidget";
+import { TelegramPopup } from "@/components/TelegramPopup";
 import { TgBotPromo } from "@/components/TgBotPromo";
 import { Analytics } from "@/components/analytics/Analytics";
 import { CookieNotice } from "@/components/CookieNotice";
@@ -101,6 +102,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <LeadModal />
         <CookieNotice />
         <ChatWidget />
+        <TelegramPopup />
         <TgBotPromo />
         <Analytics />
       </body>
