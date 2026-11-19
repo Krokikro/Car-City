@@ -1071,6 +1071,13 @@ button.owner:hover, button.owner:focus-visible { border-color: rgba(255,183,0,.5
   .calc-result { padding: 20px 18px; }
   .calc-form { padding: 20px 16px; }
 }
+/* узкие телефоны (до 420px): название класса в одну строку, вопросы 2 и 3 — друг под другом, а не в две тесные колонки */
+@media (max-width: 420px) {
+  .calc-cls-btn b { font-size: clamp(11.5px, 3.5vw, 13.5px); white-space: nowrap; overflow-wrap: normal; }
+  .calc-cls-btn small { font-size: 10.5px; }
+  .calc-sliders { grid-template-columns: 1fr; gap: 18px; }
+  .calc-sliders legend { min-height: 0; margin-bottom: 6px; }
+}
 
 /* значки соцсетей: одна форма и один размер (YouTube и Telegram тоже на плитке) */
 .soc-telegram, .soc-telegram svg, .soc-youtube, .soc-youtube svg, .soc-whatsapp, .soc-whatsapp svg, .soc-max, .soc-max svg { border-radius: 26%; }
