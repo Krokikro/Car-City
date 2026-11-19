@@ -60,7 +60,7 @@ export function MotionRoot() {
       });
       // карточки в сетках встают из глубины с лёгким 3D-поворотом
       gsap.utils.toArray<HTMLElement>("[data-tilt-in]").forEach((el) => {
-        gsap.from(el.children, { y: 36, opacity: 0, duration: 0.6, ease: "power2.out", stagger: 0.05,
+        gsap.fromTo(el.children, { y: 36, opacity: 0 }, { y: 0, opacity: 1, clearProps: "transform,opacity", duration: 0.6, ease: "power2.out", stagger: 0.05,
           scrollTrigger: { trigger: el, start: "top 86%" } });
       });
       // полоса прогресса чтения вверху экрана
@@ -72,11 +72,13 @@ export function MotionRoot() {
         tl.fromTo(el, { clipPath: fromLeft ? "inset(0% 100% 0% 0% round 28px)" : "inset(0% 0% 0% 100% round 28px)" }, { clipPath: "inset(0% 0% 0% 0% round 28px)", duration: 0.8, ease: "power3.out" });
         if (img) tl.fromTo(img, { scale: 1.12, xPercent: fromLeft ? -3 : 3 }, { scale: 1, xPercent: 0, duration: 1, ease: "power3.out" }, 0.1);
       });
+      // fromTo с явной конечной точкой: если анимации запустятся повторно (переход по сайту, пересчёт),
+      // gsap.from запоминал «конец» посреди анимации и карточки застревали сдвинутыми вниз — наезжали на соседние блоки
       gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((el) => {
-        gsap.from(el, { y: 28, opacity: 0, duration: 0.65, ease: "power2.out", scrollTrigger: { trigger: el, start: "top 88%" } });
+        gsap.fromTo(el, { y: 28, opacity: 0 }, { y: 0, opacity: 1, clearProps: "transform,opacity", duration: 0.65, ease: "power2.out", scrollTrigger: { trigger: el, start: "top 88%" } });
       });
       gsap.utils.toArray<HTMLElement>("[data-reveal-stagger]").forEach((el) => {
-        gsap.from(el.children, { y: 24, opacity: 0, duration: 0.55, ease: "power2.out", stagger: 0.05, scrollTrigger: { trigger: el, start: "top 85%" } });
+        gsap.fromTo(el.children, { y: 24, opacity: 0 }, { y: 0, opacity: 1, clearProps: "transform,opacity", duration: 0.55, ease: "power2.out", stagger: 0.05, scrollTrigger: { trigger: el, start: "top 85%" } });
       });
       gsap.utils.toArray<HTMLElement>("[data-parallax]").forEach((el) => {
         const k = Number(el.dataset.parallax) || 0.2;
