@@ -16,6 +16,7 @@ import "../styles/v3.css";
 import "../styles/vykup.css";
 import "../styles/light.gen.css";
 import "../styles/light.css";
+import "../styles/b24.css";
 import { siteTheme, themeForced } from "@/lib/theme";
 import { pricesJson } from "@/lib/prices";
 import { mediaJson } from "@/lib/media/live";
@@ -29,7 +30,7 @@ import { ToTop } from "@/components/motion/ToTop";
 import { OffscreenPause } from "@/components/motion/OffscreenPause";
 import { ScrollHints } from "@/components/motion/ScrollHints";
 import { LeadModal } from "@/components/LeadModal";
-import { ChatWidget } from "@/components/ChatWidget";
+import { BitrixWidget } from "@/components/BitrixWidget";
 import { TelegramPopup } from "@/components/TelegramPopup";
 import { TgBotPromo } from "@/components/TgBotPromo";
 import { Analytics } from "@/components/analytics/Analytics";
@@ -101,7 +102,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <ToTop />
         <LeadModal />
         <CookieNotice />
-        <ChatWidget />
+        <BitrixWidget />
         <TelegramPopup />
         <TgBotPromo />
         <Analytics />
