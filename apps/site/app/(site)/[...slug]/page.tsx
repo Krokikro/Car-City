@@ -223,7 +223,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
                   {ipPage && !reqDone && (reqDone = true) && <Requirements req={homeText(lang).requirements} />}
                 </Fragment>
               );
-            if (b.t === "calculator") return <Calculator key={i} t={homeText(lang).calculator} classes={homeText(lang).fleet.classes} cars={fleet.map((c) => ({ ...c }))} />;
+            if (b.t === "calculator") return <Calculator key={i} t={homeText(lang).calculator} classes={homeText(lang).fleet.classes} cars={fleet.map((c) => ({ ...c }))} initial={isModel ? car?.cls : undefined} carSlug={isModel && doc.mode !== "vykup" ? car?.slug : undefined} />;
             if (b.t === "trust")
               return (
                 <Fragment key={i}>
@@ -238,7 +238,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
               const t = b.title;
               if (/^(Детали|Details|Мәліметтер|Маалымат|Tafsilotlar)$/i.test(t)) return null; // цена и кнопка уже в шапке модели
               if (/(Рассчитайте свой заработок|Calculate your earnings|табысыңызды есептеңіз|эсептеңиз|daromadingizni hisoblang)/i.test(t))
-                return <Calculator key={i} t={homeText(lang).calculator} classes={homeText(lang).fleet.classes} cars={fleet.map((c) => ({ ...c }))} initial={car?.cls} />;
+                return <Calculator key={i} t={homeText(lang).calculator} classes={homeText(lang).fleet.classes} cars={fleet.map((c) => ({ ...c }))} initial={car?.cls} carSlug={doc.mode === "vykup" ? undefined : car?.slug} />;
               if (/(за 3 шага|in 3 steps|3 қадамда|3 кадамда|3 qadamda)/i.test(t)) { stepsDone = true; return <Fragment key={i}>{steps}</Fragment>; }
               if (/^(Требования к водител|Driver requirements|Жүргізушіге қойылатын|Айдоочуга коюлган|Haydovchiga)/i.test(t)) { reqDone = true; return <Requirements key={i} req={homeText(lang).requirements} />; }
               if (/^(Не нашли то|Didn.t find|Іздегеніңізді|Издегениңизди|Izlaganingizni)/i.test(t)) return <ModelCta key={i} b={b} />;
