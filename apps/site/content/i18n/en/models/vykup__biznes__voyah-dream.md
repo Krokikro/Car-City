@@ -11,7 +11,7 @@ BREADCRUMBS: Home > Rent-to-own cars > Voyah Dream
 
 # Voyah Dream rent-to-own
 
-Front-wheel drive
+All-wheel drive
 
 Engine size 1,5 L
 
@@ -20,8 +20,6 @@ Engine size 1,5 L
 Average consumption 21 kWh / 100 km
 
 from 9041₽ per day
-
-<!-- в шапке «Передний привод», а в описании — «полный привод»; «Объем двигателя 1,5 л» при расходе в кВт•ч -->
 
 [Кнопка: Get a car in 30 minutes]
 

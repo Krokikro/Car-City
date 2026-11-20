@@ -39,7 +39,6 @@ Kia K5 rent-to-own prices depend on the payment format you choose:
 | 130 000₽ | 3 years | 3 420₽ | 60 000 ₽ |
 
 - The down payment can be split into parts by agreement with a manager at the office
-- The buyout payment is the amount paid at the end of the rent-to-own term and is part of the total price of the car. This payment is added to lower the daily payments
 
 ## Why is it worth working with us?
 

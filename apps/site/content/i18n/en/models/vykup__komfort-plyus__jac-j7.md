@@ -41,7 +41,6 @@ Rent-to-own prices depend on the payment format you choose:
 <!-- так на сайте: платежи совпадают с выкупом Chery Tiggo 4 (комфорт), при взносе 120 000₽ -->
 
 - The down payment can be split into parts by agreement with a manager at the office
-- The buyout payment is the amount paid at the end of the rent-to-own term and is part of the total price of the car. This payment is added to lower the daily payments
 
 ## Why is it worth working with us?
 

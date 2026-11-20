@@ -40,7 +40,6 @@ Rent-to-own prices depend on the payment format you choose:
 | 150 000₽ | 2 years | 4 274₽ | 60 000₽ |
 
 - The down payment can be split into parts by agreement with a manager at the office
-- The buyout payment is the amount paid at the end of the rent-to-own term and is part of the total price of the car. This payment is added to lower the daily payments
 
 ## Why is it worth working with us?
 
