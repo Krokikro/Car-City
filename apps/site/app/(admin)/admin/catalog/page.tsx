@@ -37,7 +37,7 @@ export default async function Catalog({ searchParams }: { searchParams: Promise<
       const file = fileRowsFor(c, kind).map((r) => ({ k: r.k, p: r.p, ...(r.o ? { o: r.o } : {}), ...(kind === "buy" ? { dep: r.dep ?? 0 } : {}) }));
       return { slug: c.slug, name: c.name, cls: c.cls, clsName: clsName[c.cls] ?? c.cls, rows: own ?? file, file, custom: Boolean(own), disp: (kind === "rent" ? t?.rentDisp : t?.buyDisp) ?? "auto" };
     });
-  const SCHED = { rent: ["7/0", "6/1", "5/2", "1–2 дней", "3–7 дней", "8–15 дней", "16–29 дней", "от 30 дней"], buy: ["1 год", "1,5 года", "2 года", "3 года"] };
+  const SCHED = { rent: ["7/0", "6/1", "5/2", "1–2 дня", "3–7 дней", "8–15 дней", "16–29 дней", "от 30 дней"], buy: ["1 год", "1,5 года", "2 года", "3 года"] };
   const assets = ((await getSetting<Record<string, string>>("assets")) ?? {}) as Record<string, string>;
   const gallery = ((await getSetting<Record<string, CarGallery>>("carGallery")) ?? {}) as Record<string, CarGallery>;
   const slot = (key: string, label?: string) => {
