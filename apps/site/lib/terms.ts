@@ -25,12 +25,14 @@ const ALL: { cls: string; rent: string; buy: string; key: string }[] = [
 ];
 
 /** Карточки тарифов из блока-«пилюль» («комфорт · комфорт+ · грузовой»): цена, число машин и лицо класса из автопарка */
-export function tariffsOf(html: string, lang = "ru", own?: string): Tariff[] {
-  const pills = [...html.matchAll(/<a class="pill" href="([^"]+)">([\s\S]*?)<\/a>/g)].map((m) => ({ href: m[1], label: strip(m[2]), cls: CLS.find(([re]) => re.test(m[1]))?.[1] ?? "" }));
-  const buyCtx = pills.length > 0 && pills.every((x) => /vykup/.test(x.href));
+export function tariffsOf(html: string, lang = "ru", own?: string, rentOnly = false): Tariff[] {
+  let pills = [...html.matchAll(/<a class="pill" href="([^"]+)">([\s\S]*?)<\/a>/g)].map((m) => ({ href: m[1], label: strip(m[2]), cls: CLS.find(([re]) => re.test(m[1]))?.[1] ?? "" }));
+  // «Условия аренды»: все тарифы ведут на аренду и показывают цену аренды (Доставка есть только в выкупе — её здесь нет)
+  if (rentOnly) pills = ALL.filter((a) => a.cls !== "dostavka").map((a) => ({ href: a.rent, label: (ui(lang as never).cls as Record<string, string>)[a.key] ?? a.cls, cls: a.cls }));
+  const buyCtx = !rentOnly && pills.length > 0 && pills.every((x) => /vykup/.test(x.href));
   // недостающие тарифы — в общем порядке парка
   const list = ALL.filter((a) => a.cls !== own).map((a) => pills.find((x) => x.cls === a.cls) ?? { href: buyCtx ? a.buy : a.rent, label: (ui(lang as never).cls as Record<string, string>)[a.key] ?? a.cls, cls: a.cls });
-  return list.map(({ href: to, label, cls }) => {
+  return list.filter((t) => !(rentOnly && t.cls === "dostavka")).map(({ href: to, label, cls }) => {
     const buy = /vykup/.test(to) || cls === "dostavka";
     const cars = fleet.filter((f) => f.cls === cls && (buy ? hasBuy(f) : hasRent(f)));
     const face = cars.find((f) => f.slug === FACE[cls]) ?? cars.find((f) => carImages[f.slug]);
@@ -48,6 +50,6 @@ export function tariffsOf(html: string, lang = "ru", own?: string): Tariff[] {
 export function termsOf(p: Parsed, lang = "ru"): Terms {
   const items = [...p.intro.html.matchAll(/<h3>([\s\S]*?)<\/h3>\s*<p>([\s\S]*?)<\/p>/g)].map((m) => ({ title: strip(m[1]), text: strip(m[2]) }));
   const sec = p.blocks.find((b) => b.t === "section" && /pill-row/.test(b.html));
-  const tariffs: Tariff[] = sec && sec.t === "section" ? tariffsOf(sec.html, lang) : [];
+  const tariffs: Tariff[] = sec && sec.t === "section" ? tariffsOf(sec.html, lang, undefined, true) : [];
   return { items, title: sec && sec.t === "section" ? sec.title : "", tariffs, btn: sec && sec.t === "section" ? sec.btns?.[0] : undefined };
 }
