@@ -17,6 +17,11 @@
 .pg-hero h1 { max-width: 15ch; }
 .pg-hero .lead { max-width: 60ch; }
 .pg-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+/* «Забронировать через бота» — синяя кнопка Telegram под главной кнопкой в карточках аренды */
+.btn-bot { margin-top: 12px; gap: 12px; color: #fff; background: linear-gradient(100deg, #1E8BFF 0%, #22B5F5 100%); box-shadow: 0 14px 34px -14px rgba(30, 150, 255, .75), inset 0 0 0 1px rgba(255,255,255,.18); font-weight: 500; }
+.btn-bot svg { width: 26px; height: 26px; flex: none; }
+.btn-bot:hover { color: #fff; filter: brightness(1.08); transform: translateY(-1px); }
+@media (max-width: 640px) { .btn-bot { display: flex; width: 100%; justify-content: center; } }
 [data-gfx="basic"] .pg-hero { background: radial-gradient(60% 50% at 80% 30%, rgba(255,183,0,.14), transparent 70%), radial-gradient(50% 40% at 20% 70%, rgba(68,154,207,.16), transparent 70%), #05070a; }
 
 /* ── текстовые разделы ── */
