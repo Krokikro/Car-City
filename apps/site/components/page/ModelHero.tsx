@@ -6,6 +6,10 @@ import { href, type Lang } from "@/lib/i18n";
 import { ui } from "@/lib/ui";
 import type { Panels } from "@/lib/model-panels";
 import type { SaleChip } from "@/lib/prices";
+import { company } from "@/lib/content";
+
+// Кнопка «Забронировать через бота» в карточках аренды (правка 20.11.2026). Ссылка — админка: Контакты → «Бот для бронирования».
+const BOT_T: Record<string, string> = { ru: "Забронировать через бота", en: "Book via Telegram bot", ky: "Бот аркылуу брондоо", kk: "Бот арқылы брондау", uz: "Bot orqali bron qilish" };
 
 // значки к строкам «Деталей»: по названию характеристики
 const DETAIL_ICONS: [RegExp, string][] = [
@@ -62,6 +66,12 @@ export function ModelHero(p: {
             <p className="mdl-sales">{p.chips.map((c) => <span key={c.text} className={`ft-sale mdl-sale sale-${c.kind}`}><i aria-hidden="true">%</i>{c.text}</span>)}</p>
           )}
           <Buttons btns={p.btns} />
+          {p.mode !== "vykup" && company.rentBot && (
+            <a className="btn btn-lg btn-bot" href={company.rentBot} target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a1.4 1.4 0 0 1 .7 2.6V7h4.3A3 3 0 0 1 20 10v1h.5a1.5 1.5 0 0 1 1.5 1.5v2a1.5 1.5 0 0 1-1.5 1.5H20v1a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-1h-.5A1.5 1.5 0 0 1 2 14.5v-2A1.5 1.5 0 0 1 3.5 11H4v-1a3 3 0 0 1 3-3h4.3V5.1A1.4 1.4 0 0 1 12 2.5zM9 11.2a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2zm6 0a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z" fill="currentColor" /></svg>
+              {BOT_T[lang] ?? BOT_T.ru}
+            </a>
+          )}
         </div>
         <ModelStage name={p.name} slug={p.slug} />
       </div>
