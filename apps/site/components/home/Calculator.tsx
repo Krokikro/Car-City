@@ -5,6 +5,7 @@ import { ruHome, type HomeText } from "@/lib/home-text";
 import { fleet as baseFleet, type FleetCar } from "@/lib/fleet";
 import { incomeAssumptions as a, type CarClass } from "@/lib/content";
 import { carImages } from "@/lib/car-images";
+import { hasRent } from "@/lib/prices";
 import { CarArt } from "../CarArt";
 import { Odometer } from "../Odometer";
 import { LeadForm } from "../LeadForm";
@@ -18,14 +19,16 @@ import { splitLang } from "@/lib/i18n";
 
 const CLASSES: CarClass[] = ["ekonom", "komfort", "komfort-plus"];
 const cheapest = (fleet: FleetCar[], c: CarClass) => {
-  const list = fleet.filter((m) => m.cls === c);
+  const list = fleet.filter((m) => m.cls === c && m.price > 0 && hasRent(m));
   return list.reduce((best, m) => (m.price < best.price ? m : best), list[0]);
 };
 const rub = (n: number) => Math.round(n).toLocaleString("ru-RU").replace(/ /g, " ");
 
-export function Calculator({ t = ruHome.calculator, classes = ruHome.fleet.classes, cars, initial }: { t?: HomeText["calculator"]; classes?: Record<string, string>; cars?: FleetCar[]; initial?: CarClass }) {
-  // на странице модели калькулятор сразу открыт на её классе (если класс есть в калькуляторе)
-  const [cls, setCls] = useState<CarClass>(initial && CLASSES.includes(initial) ? initial : "ekonom");
+export function Calculator({ t = ruHome.calculator, classes = ruHome.fleet.classes, cars, initial, carSlug }: { t?: HomeText["calculator"]; classes?: Record<string, string>; cars?: FleetCar[]; initial?: CarClass; carSlug?: string }) {
+  // на странице модели калькулятор сразу открыт на её классе; класса нет среди трёх основных (Бизнес, Грузовой…) —
+  // добавляем его четвёртой карточкой, а в классе этой машины считаем по её собственной цене (правка 20.11.2026)
+  const list: CarClass[] = initial && !CLASSES.includes(initial) ? [...CLASSES, initial] : CLASSES;
+  const [cls, setCls] = useState<CarClass>(initial ?? "ekonom");
   const [days, setDays] = useState(6);
   const [hours, setHours] = useState(10);
   const fleet = cars ?? baseFleet;
@@ -36,7 +39,9 @@ export function Calculator({ t = ruHome.calculator, classes = ruHome.fleet.class
   const gross = hours * a.revenuePerHour[cls] * workDays;
   const commission = gross * a.parkCommission;
   const fuel = hours * a.fuelPerHour * workDays;
-  const rent = cheapest(fleet, cls).price * 30;
+  const own = carSlug ? fleet.find((m) => m.slug === carSlug && m.price > 0 && hasRent(m)) : undefined;
+  const pick = (c: CarClass) => (own && own.cls === c ? own : cheapest(fleet, c));
+  const rent = pick(cls).price * 30;
   const month = gross - commission - fuel - rent;
   const name = classes[cls].toLowerCase();
   const parts = [
@@ -58,9 +63,10 @@ export function Calculator({ t = ruHome.calculator, classes = ruHome.fleet.class
           <form className="calc" onSubmit={(e) => e.preventDefault()}>
             <fieldset>
               <legend><span className="q-n">1.</span> {t.q1}</legend>
-              <div className="calc-cls" role="radiogroup" aria-label={t.q1}>
-                {CLASSES.map((c) => {
-                  const car = cheapest(fleet, c);
+              <div className="calc-cls" role="radiogroup" aria-label={t.q1} style={list.length > 3 ? { gridTemplateColumns: `repeat(${list.length}, minmax(0, 1fr))` } : undefined}>
+                {list.map((c) => {
+                  const car = pick(c);
+                  if (!car) return null;
                   return (
                     <button key={c} type="button" role="radio" aria-checked={c === cls} className="calc-cls-btn" onClick={() => setCls(c)}>
                       <span className="calc-cls-img" aria-hidden="true">

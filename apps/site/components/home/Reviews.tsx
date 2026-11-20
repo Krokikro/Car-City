@@ -17,21 +17,7 @@ export function Reviews({ lang = "ru", t }: { lang?: Lang; t: HomeText["reviews"
       <div className="wrap">
         <div className="reviews-head">
           <h2 id="reviews-title" className="display" data-split>{t.title}</h2>
-          <ul className="ratings" data-reveal-stagger>
-            {ratings.map((r) => (
-              <li key={r.name}>
-                <a href={r.url} target="_blank" rel="noopener" className={`rating-${MARK[r.name]?.k ?? "x"}`}>
-                  <span className="rating-top">
-                    <span className="rating-mark" aria-hidden="true" style={{ background: MARK[r.name]?.bg }}>{MARK[r.name]?.t ?? r.name[0]}</span>
-                    <span className="rating-name">{r.name}</span>
-                  </span>
-                  <span className="rating-score">{r.score}</span>
-                  <span className="stars" aria-label={t.stars}>★★★★★</span>
-                  <span className="rating-go mono" aria-hidden="true">→</span>
-                </a>
-              </li>
-            ))}
-          </ul>
+          <RatingTiles stars={t.stars} />
         </div>
       </div>
       <div className="review-track" data-tilt-in tabIndex={0} aria-label={t.label}>
@@ -50,5 +36,26 @@ export function Reviews({ lang = "ru", t }: { lang?: Lang; t: HomeText["reviews"
         </a>
       </div>
     </section>
+  );
+}
+
+/** Плитки рейтингов на площадках отзывов (Яндекс Карты, 2GIS, Flamp, Yell) — на главной и на странице «Отзывы» */
+export function RatingTiles({ stars, className = "" }: { stars: string; className?: string }) {
+  return (
+    <ul className={`ratings ${className}`} data-reveal-stagger>
+      {ratings.map((r) => (
+        <li key={r.name}>
+          <a href={r.url} target="_blank" rel="noopener" className={`rating-${MARK[r.name]?.k ?? "x"}`}>
+            <span className="rating-top">
+              <span className="rating-mark" aria-hidden="true" style={{ background: MARK[r.name]?.bg }}>{MARK[r.name]?.t ?? r.name[0]}</span>
+              <span className="rating-name">{r.name}</span>
+            </span>
+            <span className="rating-score">{r.score}</span>
+            <span className="stars" aria-label={stars}>★★★★★</span>
+            <span className="rating-go mono" aria-hidden="true">→</span>
+          </a>
+        </li>
+      ))}
+    </ul>
   );
 }
