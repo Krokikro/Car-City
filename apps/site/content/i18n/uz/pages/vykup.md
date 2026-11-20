@@ -449,7 +449,6 @@ Hujjatlar haydovchini xavfsizlik xizmati orqali tekshirish uchun kerak
 - Qarz uch kundan ortiq boʻlmasligi kerak
 - Butun sotib olish muddatiga litsenziya va yoʻl varaqalari
 - Sotib olish narxi muddatga bogʻliq
-- Sotib olish toʻlovi sotib olish oxirida kiritiladi
 
 ## Sotib olish masalalarida ishonchli yordamchilaringiz
 
@@ -464,7 +463,7 @@ Ariza qoldiring, biz siz uchun eng yaxshi yechimni tanlaymiz!
 
 ## Moskvada sotib olish sharti bilan taksi uchun mashina ijarasi
 
-Car Cityʼda taksi uchun avtomobilni sotib olish huquqi bilan ijaraga oling va narxini qismlarga boʻlib toʻlagan holda mashinani darhol ixtiyoringizga oling. Biz – avtomobil ijarasida yetti yillik tajribaga ega ishonchli hamkoringizmiz. 1500 dan ortiq mijozga taksida pul ishlash imkoniyatini ochib berdik, ulardan 300 nafari avtomobilni sotib olish sharti bilan olib, mashinaning toʻlaqonli egasiga aylandi.
+Car Cityʼda taksi uchun avtomobilni sotib olish huquqi bilan ijaraga oling va narxini qismlarga boʻlib toʻlagan holda mashinani darhol ixtiyoringizga oling. Biz – avtomobil ijarasida yetti yillik tajribaga ega ishonchli hamkoringizmiz. 4 000 dan ortiq haydovchiga taksida pul ishlash imkoniyatini ochib berdik, ulardan 1 400+ nafari avtomobilni sotib olish sharti bilan olib, mashinaning toʻlaqonli egasiga aylandi.
 
 Saytda ariza toʻldiring va Moskvada siz uchun mavjud boʻlgan katta taksoparkimizdan avtomobil tanlang. Avtomobilning mukammal texnik holati, mijozlarga minimal talablar va qulay hamkorlik shartlarini kafolatlaymiz.
 

@@ -452,7 +452,6 @@ Hujjatlar haydovchini xavfsizlik xizmati orqali tekshirish uchun kerak
 - Qarz uch kundan ortiq boʻlmasligi kerak
 - Butun sotib olish muddatiga litsenziya va yoʻl varaqalari
 - Sotib olish narxi muddatga bogʻliq
-- Sotib olish toʻlovi sotib olish oxirida kiritiladi
 
 ## Vazifalarga mos tariflar
 

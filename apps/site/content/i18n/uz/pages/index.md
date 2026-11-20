@@ -503,7 +503,7 @@ Har qanday summani 15 000₽ gacha atigi 50 rubl komissiya bilan bir zumda yechi
 
 Car City taksi uchun mashinani ijaraga olib, oʻzingizga qulay rejimda barqaror pul ishlashni boshlashni taklif qiladi. Taksi uchun mashina ijarasi avtoparkimizda tanlash uchun 1000+ avtomobil bor.
 
-Biz ijara bozorida 7 yildan ortiq ishlaymiz. Shu vaqt ichida 4000+ haydovchi ishni boshlash uchun bizni tanladi, ulardan 1500+ nafari esa sotib olish huquqidan foydalanib, transport vositasining toʻlaqonli egasiga aylandi.
+Biz ijara bozorida 7 yildan ortiq ishlaymiz. Shu vaqt ichida 4000+ haydovchi ishni boshlash uchun bizni tanladi, ulardan 1400+ nafari esa sotib olish huquqidan foydalanib, transport vositasining toʻlaqonli egasiga aylandi.
 
 Taksi uchun mashina ijarasi xizmati Moskvada mavjud. Saytimizda ariza toʻldiring va avtomobilni bugunoq oling!
 

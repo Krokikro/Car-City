@@ -106,7 +106,6 @@ Hujjatlar haydovchini xavfsizlik xizmati orqali tekshirish uchun kerak
 - Qarz uch kundan ortiq boʻlmasligi kerak
 - Butun sotib olish muddatiga litsenziya va yoʻl varaqalari
 - Sotib olish narxi muddatga bogʻliq
-- Sotib olish toʻlovi sotib olish oxirida kiritiladi
 
 Taksida oʻz avtomobilingizda ishlashni xohlaysiz, lekin butun summani birdaniga toʻlashga tayyor emasmisiz? Car City Moskvada Ekonom sinfidagi avtomobillarni sotib olish huquqi bilan ijaraga taklif qiladi — bu bugunoq barqaror daromadga chiqish va mashinani toʻliq ixtiyoringizga olishning ishonchli usuli.
 

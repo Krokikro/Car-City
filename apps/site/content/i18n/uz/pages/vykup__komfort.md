@@ -130,7 +130,6 @@ Hujjatlar haydovchini xavfsizlik xizmati orqali tekshirish uchun kerak
 - Qarz uch kundan ortiq boʻlmasligi kerak
 - Butun sotib olish muddatiga litsenziya va yoʻl varaqalari
 - Sotib olish narxi muddatga bogʻliq
-- Sotib olish toʻlovi sotib olish oxirida kiritiladi
 
 Taksida ishonchli mashinada ishlash va uning egasiga aylanish imkoniyatini qidiryapsizmi? Car City Moskvada «Komfort» sinfidagi avtomobillarni sotib olish huquqi bilan ijaraga taklif qiladi — ortiqcha toʻlovlar, lizing va yashirin shartlarsiz. Biz har qanday fuqarolikdagi haydovchilar bilan ishlaymiz va tushunarli, halol qoidalar yaratamiz. Yuzlab mijozlar bizdan oʻz avtomobillarini sotib olib, oʻzlari uchun ishlashyapti.
 

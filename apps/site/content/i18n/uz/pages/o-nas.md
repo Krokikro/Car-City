@@ -18,7 +18,7 @@ Bundan tashqari, ijarachilarga noyob imkoniyat taklif qilamiz – sotib olish op
 
 - Turli sinfdagi avtomobillarning katta tanlovi
 - Yangi va hozir ishlayotgan haydovchilar uchun muntazam chegirmalar
-- Yarim yil ishlagandan keyin 8 ta dam olish kuni
+- Yarim yil ishlagandan keyin 7 ta dam olish kuni
 - Buyurtmalar soni va ish soatlari boʻyicha hech qanday talab yoʻq
 - Jamgʻariladigan depozit yoʻq
 - Pul mukofotli tanlovlar va tadbirlar
@@ -39,7 +39,7 @@ Bundan tashqari, ijarachilarga noyob imkoniyat taklif qilamiz – sotib olish op
 
 ![](https://car-city.pro/themes/img/about/new/why-vigoda.webp)
 
-Car City bilan hamkorlik qilish nafaqat qulay, balki foydali hamdir. Hozir taksoparkimizda turli marka va sinfdagi 600 dan ortiq mashina bor.
+Car City bilan hamkorlik qilish nafaqat qulay, balki foydali hamdir. Hozir taksoparkimizda turli marka va sinfdagi 1 000 dan ortiq mashina bor.
 
 Ijaraga berishdan oldin barcha transport vositalari kompleks texnik xizmat va tozalashdan oʻtadi, shuning uchun taʼmirlash yoki boshqa muammolar haqida qaygʻurishingiz shart emas. Shunchaki mashinani oling, taksida ishlang va pul toping!
 

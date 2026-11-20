@@ -165,7 +165,6 @@ Hujjatlar haydovchini xavfsizlik xizmati orqali tekshirish uchun kerak
 - Qarz uch kundan ortiq boʻlmasligi kerak
 - Butun sotib olish muddatiga litsenziya va yoʻl varaqalari
 - Sotib olish narxi muddatga bogʻliq
-- Sotib olish toʻlovi sotib olish oxirida kiritiladi
 
 Agar taksida salobatli, zamonaviy va ishonchli mashinada ishlashni istasangiz — Car Cityʼda Komfort Plyus sinfidagi avtomobilni sotib olish huquqi bilan ijaraga olish sizga juda mos keladi. Bu qulaylikni qadrlaydigan, uzoq ishlashni rejalashtirgan va kelajakda avtomobilni shaxsiy mulkka olishni istaganlar uchun format.
 
