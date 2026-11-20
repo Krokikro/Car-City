@@ -33,7 +33,7 @@ function authorOf(slug: string, title: string): Author {
 const E = {
   ru: {
     by: "Автор", team: "Редакция Car City", checked: "Проверено", checkedBy: "специалистами по аренде и выкупу Car City",
-    published: "Опубликовано", updated: "Обновлено", read: "Время чтения",
+    published: "Опубликовано", updated: "Отредактировано", read: "Время чтения",
     aboutT: "Об авторе", about: (y: number) => `Car City — таксопарк в Москве, ${y} лет работаем с водителями такси: сдаём машины в аренду и продаём в выкуп, подключаем к агрегаторам. Статьи пишем по собственному опыту работы парка: реальные условия, цены и требования, с которыми водители сталкиваются каждый день.`,
     facts: [["авто в парке", "fleet"], ["водителей арендовали", "renters"], ["выкупили авто", "boughtOut"]] as const,
     rating: "5,0 на Яндекс Картах, 2GIS, Flamp и Yell", aboutLink: "О компании", reviewsLink: "Отзывы водителей",
@@ -43,7 +43,7 @@ const E = {
   },
   en: {
     by: "Author", team: "Car City editorial team", checked: "Reviewed", checkedBy: "by Car City rental and rent-to-own specialists",
-    published: "Published", updated: "Updated", read: "Reading time",
+    published: "Published", updated: "Edited", read: "Reading time",
     aboutT: "About the author", about: (y: number) => `Car City is a taxi fleet in Moscow. For ${y} years we have worked with taxi drivers: we rent out cars, sell them on a rent-to-own basis and connect drivers to ride-hailing apps. Our articles are based on the fleet's own experience: real terms, prices and requirements drivers face every day.`,
     facts: [["cars in the fleet", "fleet"], ["drivers have rented", "renters"], ["cars bought out", "boughtOut"]] as const,
     rating: "5.0 on Yandex Maps, 2GIS, Flamp and Yell", aboutLink: "About us", reviewsLink: "Driver reviews",

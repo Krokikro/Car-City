@@ -68,7 +68,7 @@ export function ModelHero(p: {
           <Buttons btns={p.btns} />
           {p.mode !== "vykup" && company.rentBot && (
             <a className="btn btn-lg btn-bot" href={company.rentBot} target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a1.4 1.4 0 0 1 .7 2.6V7h4.3A3 3 0 0 1 20 10v1h.5a1.5 1.5 0 0 1 1.5 1.5v2a1.5 1.5 0 0 1-1.5 1.5H20v1a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-1h-.5A1.5 1.5 0 0 1 2 14.5v-2A1.5 1.5 0 0 1 3.5 11H4v-1a3 3 0 0 1 3-3h4.3V5.1A1.4 1.4 0 0 1 12 2.5zM9 11.2a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2zm6 0a1.6 1.6 0 1 0 0 3.2 1.6 1.6 0 0 0 0-3.2z" fill="currentColor" /></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.94 4.3 18.7 19.56c-.24 1.08-.88 1.35-1.78.84l-4.93-3.63-2.38 2.29c-.26.26-.48.48-.99.48l.35-5.02 9.14-8.26c.4-.35-.09-.55-.62-.2L6.2 13.17l-4.86-1.52c-1.06-.33-1.08-1.06.22-1.57L20.55 2.8c.88-.33 1.65.2 1.39 1.5z" fill="currentColor" /></svg>
               {BOT_T[lang] ?? BOT_T.ru}
             </a>
           )}

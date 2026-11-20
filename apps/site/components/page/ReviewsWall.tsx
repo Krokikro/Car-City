@@ -6,6 +6,7 @@ import { useMemo, useState } from "react";
 import type { Review } from "@/lib/blocks";
 import type { Lang } from "@/lib/i18n";
 import { SOURCE_URL } from "@/lib/reviews-src";
+import { RatingTiles } from "../home/Reviews";
 import { ui } from "@/lib/ui";
 
 const SRC: Record<string, string> = { "Яндекс.Карты": "Яндекс Карты", "2GIS": "2GIS", Flamp: "Flamp", Yell: "Yell" };
@@ -69,12 +70,8 @@ export function ReviewsWall({ items, lang = "ru" }: { items: Review[]; lang?: La
             <a className="btn btn-primary btn-lg" href={SOURCE_URL[src]} target="_blank" rel="noopener noreferrer">{x.all(loc(lang, SRC[src] ?? src))} <span className="arrow">→</span></a>
           )}
         </div>
-        {!src && (
-          <p className="rwall-srcs mono">
-            {x.on}{" "}
-            {sources.filter((s) => SOURCE_URL[s]).map((s) => <a key={s} href={SOURCE_URL[s]} target="_blank" rel="noopener noreferrer">{SRC[s] ?? s} ↗</a>)}
-          </p>
-        )}
+        {/* рейтинг на площадках — плитками, как на главной (правка 20.11.2026: строка ссылок была малозаметной) */}
+        {!src && <RatingTiles stars={lang === "ru" ? "Оценка 5 из 5" : "Rating 5 of 5"} className="rwall-ratings" />}
       </div>
     </section>
   );
