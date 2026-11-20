@@ -80,6 +80,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="ru" data-theme={light ? "light" : undefined} data-variant={light ? variant : undefined}
       data-ym={seo.metrikaId || undefined} data-ga={seo.gaId || undefined} data-gtm={seo.gtmId || undefined} data-mango={seo.mangoId || undefined} data-tel={company.phones[0]} suppressHydrationWarning>
       <head>
+        {/* язык страницы для языковых версий (/en, /kk, /ky, /uz): страницы статические, поэтому lang ставим сразу при загрузке;
+            заголовок Content-Language отдаёт proxy.ts */}
+        <script dangerouslySetInnerHTML={{ __html: `(function(){var m=location.pathname.match(/^\\/(en|ky|kk|uz)(\\/|$)/);if(m)document.documentElement.lang=m[1]})()` }} />
         <script dangerouslySetInnerHTML={{ __html: gfxDetectScript }} />
         {/* правки текстов из админки — чтобы клиентские компоненты рисовали то же, что сервер */}
         <script id="cc-texts" type="application/json" dangerouslySetInnerHTML={{ __html: textsJson() }} />
