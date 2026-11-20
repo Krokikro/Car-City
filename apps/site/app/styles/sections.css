@@ -244,6 +244,7 @@
 @media (min-width: 1024px) { .reviews-head { grid-template-columns: auto 1fr; align-items: end; } }
 .ratings { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 @media (min-width: 720px) { .ratings { grid-template-columns: repeat(4, 1fr); } }
+.rwall-ratings { margin-top: clamp(28px, 3vw, 44px); }
 .ratings a { display: grid; gap: 4px; padding: 18px 20px; border-radius: var(--radius-card); background: var(--surface); border: 1px solid var(--line); text-decoration: none; transition: border-color .3s, transform .4s var(--ease-out); }
 .ratings a:hover { border-color: rgba(255,183,0,.4); transform: translateY(-4px); }
 .rating-score { font: 300 40px/1 var(--font-display); color: var(--text); }

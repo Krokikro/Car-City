@@ -569,7 +569,7 @@ a.ct-line:hover { border-color: rgba(255, 183, 0, .45); }
 .to-top { position: fixed; right: max(24px, env(safe-area-inset-right)); bottom: 92px; z-index: 94; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; cursor: pointer; color: var(--cc-signal); background: rgba(16, 17, 19, .82); border: 1px solid rgba(255, 255, 255, .18); backdrop-filter: blur(10px); box-shadow: 0 10px 30px -10px rgba(0, 0, 0, .7); opacity: 0; translate: 0 14px; pointer-events: none; transition: opacity .3s var(--ease-out), translate .3s var(--ease-out), background .2s, color .2s; }
 .to-top.is-on { opacity: 1; translate: 0 0; pointer-events: auto; }
 .to-top:hover { background: var(--cc-signal); color: #111; }
-@media (max-width: 719px) { .to-top { right: 14px; bottom: calc(max(12px, env(safe-area-inset-bottom)) + 140px); width: 42px; height: 42px; } }
+@media (max-width: 719px) { .to-top { right: 22px; bottom: calc(max(12px, env(safe-area-inset-bottom)) + 160px); width: 42px; height: 42px; } }
 
 /* подсказка «можно листать вбок» */
 .sh-arrow { position: absolute; z-index: 6; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; padding: 0; cursor: pointer; color: var(--cc-signal); background: rgba(11, 11, 12, .78); border: 1px solid rgba(255, 255, 255, .22); backdrop-filter: blur(8px); box-shadow: 0 8px 24px -8px rgba(0, 0, 0, .7); animation: shBlink 1.5s ease-in-out infinite; }
@@ -768,6 +768,12 @@ button.owner:hover, button.owner:focus-visible { border-color: rgba(255,183,0,.5
 .bn-grid.bn-short { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .bn-short .bn-card { min-height: 0; grid-template-columns: auto 1fr; align-items: center; gap: 16px; padding: 18px 22px; }
 .bn-short .bn-d { color: var(--text); font-size: clamp(16px, 1.3vw, 19px); }
+/* в ряд по 4 на компьютере: значок сверху, текст под ним — карточки одной высоты, текст начинается с одной линии (правка 20.11.2026) */
+@media (min-width: 1001px) {
+  .bn-grid.bn-short { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .bn-short .bn-card { grid-template-columns: 1fr; align-content: start; align-items: start; gap: 14px; padding: 22px 22px 24px; }
+  .bn-short .bn-d { font-size: 16px; line-height: 1.45; }
+}
 .bn-outro { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; margin-top: clamp(20px, 2.4vw, 36px); padding: clamp(22px, 2.6vw, 36px); border-radius: 26px; background: radial-gradient(80% 140% at 0% 0%, rgba(255,183,0,.16), transparent 60%), #121316; border: 1px solid rgba(255,183,0,.28); }
 .bn-outro p { margin: 0 0 8px; max-width: 62ch; font-size: clamp(16px, 1.3vw, 19px); line-height: 1.5; color: var(--text); }
 .bn-outro p:last-child { margin-bottom: 0; }

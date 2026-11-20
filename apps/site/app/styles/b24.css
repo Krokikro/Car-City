@@ -54,3 +54,10 @@ html:not([data-theme="light"]) .bx-livechat-wrapper .b24-form-wrapper { backgrou
 html:not([data-theme="light"]) .bx-livechat-wrapper .b24-form-control { background: #0d0e10 !important; color: #fff !important; border-color: rgba(255,255,255,.14) !important; }
 html:not([data-theme="light"]) .bx-livechat-wrapper .b24-form-control-label { color: rgba(255,255,255,.55) !important; }
 .bx-livechat-wrapper .b24-form-btn { background: var(--cc-signal) !important; color: #111 !important; border-radius: 999px !important; }
+
+/* Телефон: кнопка чата над нижней панелью «Позвонить / Заявка», а не поверх неё */
+@media (max-width: 719px) {
+  .b24-widget-button-wrapper.b24-widget-button-position-bottom-right { right: 14px !important; bottom: calc(max(12px, env(safe-area-inset-bottom)) + 76px) !important; }
+}
+/* пока открыта форма заявки — чат не мешает (не заходит на поле телефона) */
+html:has(.lead-modal) .b24-widget-button-wrapper { visibility: hidden !important; }
