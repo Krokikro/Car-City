@@ -43,7 +43,6 @@ Avtomobilni sotib olish narxi siz tanlagan toʻlov formatiga bogʻliq:
 <!-- «1,5 год», «2 год», «3 год» — так на сайте -->
 
 - Boshlangʻich toʻlovni ofisdagi menejer bilan kelishgan holda qismlarga boʻlish mumkin
-- Sotib olish toʻlovi – sotib olish muddati oxirida toʻlanadigan va avtomobilning umumiy narxiga kiradigan summa. Bu toʻlov kunlik toʻlovlarni kamaytirish uchun qoʻshilgan
 
 ## Nega biz bilan ishlash foydali?
 

@@ -11,7 +11,7 @@ BREADCRUMBS: Bosh sahifa > Sotib olish huquqi bilan avtomobil ijarasi > Voyah Dr
 
 # Voyah Dreamʼni sotib olish
 
-Old gʻildirak yuritmasi
+Toʻliq yuritma
 
 Dvigatel hajmi 1,5 l
 
@@ -20,8 +20,6 @@ Dvigatel hajmi 1,5 l
 Oʻrtacha sarf 21 kVt•soat / 100 km
 
 kuniga 9041₽ dan
-
-<!-- в шапке «Передний привод», а в описании — «полный привод»; «Объем двигателя 1,5 л» при расходе в кВт•ч -->
 
 [Кнопка: Avtomobilni 30 daqiqada olish]
 

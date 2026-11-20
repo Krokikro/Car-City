@@ -40,7 +40,6 @@ Avtomobilni sotib olish narxi siz tanlagan toʻlov formatiga bogʻliq:
 <!-- так на сайте: платежи совпадают с выкупом Haval F7, но взнос 150 000₽ вместо 140 000₽ -->
 
 - Boshlangʻich toʻlovni ofisdagi menejer bilan kelishgan holda qismlarga boʻlish mumkin
-- Sotib olish toʻlovi – sotib olish muddati oxirida toʻlanadigan va avtomobilning umumiy narxiga kiradigan summa. Bu toʻlov kunlik toʻlovlarni kamaytirish uchun qoʻshilgan
 
 ## Nega biz bilan ishlash foydali?
 
