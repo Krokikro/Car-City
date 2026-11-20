@@ -503,7 +503,7 @@ Instant payouts with a fee of only 50 rubles for any amount up to 15 000₽
 
 Car City offers you a taxi car for rent so you can start earning steadily on a schedule that suits you. Our taxi rental fleet has 1000+ cars to choose from.
 
-We have been in the car rental market for more than 7 years. In that time 4000+ drivers have chosen us to get started, and 1500+ of them used the rent-to-own option and became full owners of their vehicle.
+We have been in the car rental market for more than 7 years. In that time 4000+ drivers have chosen us to get started, and 1400+ of them used the rent-to-own option and became full owners of their vehicle.
 
 Taxi car rental is available in Moscow. Fill in a request on our website and get a car today!
 

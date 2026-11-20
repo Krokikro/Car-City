@@ -452,7 +452,6 @@ The documents are needed for the driver's security check
 - Debt allowed for no more than three days
 - Taxi licence and waybills for the whole rent-to-own period
 - The buyout price depends on the period
-- The final buyout payment is made at the end of the period
 
 ## Tariffs for every task
 

@@ -165,7 +165,6 @@ The documents are needed for the driver's security check
 - Debt allowed for no more than three days
 - Taxi licence and waybills for the whole rent-to-own period
 - The buyout price depends on the period
-- The final buyout payment is made at the end of the period
 
 If you want to drive a taxi in a solid, modern and reliable car, rent-to-own in the Comfort+ class at Car City is a perfect fit. This format is for those who value comfort, plan to work long-term and want to eventually own the car personally.
 

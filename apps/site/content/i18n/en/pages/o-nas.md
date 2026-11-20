@@ -18,7 +18,7 @@ On top of that, we offer our drivers a unique option: a rent-to-own contract, so
 
 - A large choice of cars in different classes
 - Regular discounts for new and current drivers
-- 8 days off after six months of work
+- 7 days off after six months of work
 - No requirements for the number of orders or working hours
 - No accumulating deposit
 - Contests and events with cash prizes
@@ -39,7 +39,7 @@ On top of that, we offer our drivers a unique option: a rent-to-own contract, so
 
 ![](https://car-city.pro/themes/img/about/new/why-vigoda.webp)
 
-Working with Car City is not only easy but also profitable. Right now our fleet has more than 600 cars of different makes and classes.
+Working with Car City is not only easy but also profitable. Right now our fleet has more than 1,000 cars of different makes and classes.
 
 Before being rented out, every car gets full maintenance and cleaning, so you don't have to worry about repairs or other hassles. Just take the car, drive and earn!
 

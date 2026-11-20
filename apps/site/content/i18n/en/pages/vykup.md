@@ -449,7 +449,6 @@ The documents are needed for the driver's security check
 - Debt allowed for no more than three days
 - Taxi licence and waybills for the whole rent-to-own period
 - The buyout price depends on the period
-- The final buyout payment is made at the end of the period
 
 ## Your reliable helpers with rent-to-own questions
 
@@ -464,7 +463,7 @@ Leave a request and we'll find the best solution for you!
 
 ## Rent-to-own taxi cars in Moscow
 
-Take a taxi car rent-to-own at Car City and get the car at your disposal right away while paying off its price in parts. We are your reliable partner with seven years of car rental experience. We've given more than 1500 customers the chance to earn in a taxi, and 300 of them took a car rent-to-own and became its full owners.
+Take a taxi car rent-to-own at Car City and get the car at your disposal right away while paying off its price in parts. We are your reliable partner with seven years of car rental experience. We've given more than 4 000 drivers the chance to earn in a taxi, and 1 400+ of them took a car rent-to-own and became its full owners.
 
 Fill in a request on the website and choose a car from our large taxi fleet available to you in Moscow. We guarantee perfect technical condition, minimal requirements for customers and comfortable terms.
 

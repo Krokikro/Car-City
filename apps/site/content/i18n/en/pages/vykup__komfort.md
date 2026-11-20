@@ -130,7 +130,6 @@ The documents are needed for the driver's security check
 - Debt allowed for no more than three days
 - Taxi licence and waybills for the whole rent-to-own period
 - The buyout price depends on the period
-- The final buyout payment is made at the end of the period
 
 Looking for a chance to drive a taxi in a reliable car and become its owner? Car City offers rent-to-own Comfort class cars in Moscow — no overpaying, no leasing and no hidden terms. We work with drivers of any citizenship and keep the rules clear and fair. Hundreds of customers have already bought their cars from us and work for themselves.
 
