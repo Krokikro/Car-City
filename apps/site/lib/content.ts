@@ -26,6 +26,8 @@ export const BASE_COMPANY = {
   /** Новый Telegram-бот (правка 06.11.2026). Пока пусто — окно с ботом не показывается. Ссылка задаётся в админке: Тексты сайта → Контакты */
   telegramBot: "",
   youtube: "https://www.youtube.com/@CarCityTaxi",
+  /** Telegram-бот для бронирования — кнопка «Забронировать через бота» в карточках аренды (пусто — кнопки нет) */
+  rentBot: "https://t.me/taxicarcitybot",
   /** Telegram-канал таксопарка (фото выкупников и новости) — кнопка под блоком «Нам доверяют» */
   telegramChannel: "https://t.me/taxicarcity",
   group: "Входит в группу Элит Кар",
