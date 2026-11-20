@@ -47,6 +47,7 @@ export async function proxy(req: NextRequest) {
   const reqHeaders = new Headers(req.headers);
   reqHeaders.set("x-pathname", path + url.search);
   const res = NextResponse.next({ request: { headers: reqHeaders } });
+  res.headers.set("Content-Language", path.match(/^\/(en|ky|kk|uz)(?:\/|$)/)?.[1] ?? "ru");
   if (FORCED || !indexable(s.seo, host)) res.headers.set("X-Robots-Tag", "noindex, nofollow");
   // языковые версии, закрытые от индексации до готовности переводов (SEO → Sitemap и языки)
   else {
