@@ -4,6 +4,7 @@ slug: lokalizaciya-taksi-2026-kakie-avtomobili-podhodyat
 title: "Taxi localisation law update: which new models now qualify"
 h1: "Taxi localisation law update: which new models now qualify"
 date: 22.06.2026
+updated: 20.11.2026
 description: "We explain the new requirements of the taxi localisation law from 1 March 2026. The list of cars allowed for taxi work and the key changes."
 note: "H1 взят из карточки на /novosti: WebFetch не отдал H1 и мог пропустить вводный абзац — сверить с сайтом."
 ---
@@ -18,12 +19,12 @@ Under the updated Federal Law FZ‑580 and the related Government decrees, from 
 
 The main goal of the changes is to ensure the industry's technological sovereignty and guarantee spare parts for fleet maintenance. For drivers it means one thing: when buying or renting a car, check not only its technical condition but also whether its VIN is in the register of localised products.
 
-## Full list of models that meet the requirements as of 1 March 2026
+## List of models that meet the requirements as of 1 March 2026
 
 At the moment the Ministry of Industry and Trade register includes the following brands and models, which are made at Russian plants with full or deep production cycles and are suitable for taxi work:
 
 1. JSC «АвтоВАЗ» (Togliatti, Izhevsk):
-   Lada Vesta, Lada Largus, Lada Aura.
+   Lada Granta, Lada Vesta, Lada Largus, Lada Aura.
 2. The «Москвич» plant (Moscow):
    Москвич 3, Москвич 3e, Москвич 6.
 3. Haval (plant in the Tula region):
@@ -34,8 +35,10 @@ At the moment the Ministry of Industry and Trade register includes the following
    Solaris HS (similar to Hyundai Solaris), Solaris HC (similar to Hyundai Creta), Solaris KRS / KRX (similar to Kia Rio / Rio X‑Line).
 6. Motorinvest LLC (Lipetsk region):
    Evolute i‑Pro, Evolute i‑Joy, i‑Sky.
+7. Voyah:
+   Voyah Dream.
 
-And others.
+The register is updated regularly. Before buying or renting, check the specific car by VIN in the Ministry of Industry and Trade register — Car City managers will help.
 
 <!-- заголовок обещает «Полный список», а список заканчивается «И другие.» -->
 
