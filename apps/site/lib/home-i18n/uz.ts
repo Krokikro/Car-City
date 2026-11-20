@@ -122,7 +122,7 @@ export const uz: HomeText = {
     title: "Moskvada taksi uchun avto ijarasi",
     intro: [
       "Car City taksi uchun mashinani ijaraga olib, oʻzingizga qulay rejimda barqaror pul ishlashni taklif qiladi. Taksi uchun ijara avtoparkimizda tanlash uchun 1000+ avto bor.",
-      "Biz ijara bozorida 7 yildan ortiq ishlaymiz. Shu vaqt ichida 4000+ haydovchi ishni boshlash uchun bizni tanladi, ulardan 1500+ nafari sotib olish huquqidan foydalanib, avtomobilning toʻliq egasiga aylandi.",
+      "Biz ijara bozorida 7 yildan ortiq ishlaymiz. Shu vaqt ichida 4000+ haydovchi ishni boshlash uchun bizni tanladi, ulardan 1400+ nafari sotib olish huquqidan foydalanib, avtomobilning toʻliq egasiga aylandi.",
       "Taksi uchun mashina ijarasi xizmati Moskvada mavjud. Saytimizda ariza toʻldiring va avtoni bugunoq oling!",
     ],
     whyTitle: "Nega biz bilan hamkorlik qilish foydali",

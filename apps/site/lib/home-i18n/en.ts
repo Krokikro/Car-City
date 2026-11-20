@@ -122,7 +122,7 @@ export const en: HomeText = {
     title: "Taxi car rental in Moscow",
     intro: [
       "Car City lets you rent a car for taxi work and start earning steadily on a schedule that suits you. Our taxi rental fleet has 1000+ cars to choose from.",
-      "We have been in the rental business for more than 7 years. In that time 4000+ drivers chose us to get started, and 1500+ of them used rent-to-own and became full owners of their car.",
+      "We have been in the rental business for more than 7 years. In that time 4000+ drivers chose us to get started, and 1400+ of them used rent-to-own and became full owners of their car.",
       "Taxi car rental is available in Moscow. Fill in a request on our website and get a car today!",
     ],
     whyTitle: "Why working with us is a good deal",
