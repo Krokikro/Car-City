@@ -90,8 +90,8 @@ export function Hero() {
           <a href="#avtopark" className="btn btn-glass btn-lg" data-magnetic>Подобрать автомобиль</a>
         </div>
         <div className="hero-badges" data-hero-fade aria-label="Условия">
-          <span className="hero-badge"><b>Без депозита</b></span>
-          <span className="hero-badge"><b>1-ый день</b> 0₽</span>
+          <span className="hero-badge"><span className="b">Без депозита</span></span>
+          <span className="hero-badge"><span className="b">1-ый день</span> 0₽</span>
         </div>
       </div>
       <div className="hero3d-bottom wrap" data-hero-fade>
