@@ -211,7 +211,7 @@ export function Figs({ figs, to }: { figs: Fig[]; to?: string }) {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={f.src.startsWith("/") ? asset(f.src) : f.src} alt={plain} loading="lazy" decoding="async" />
                 </div>
-                <figcaption>{m ? <><span className="b">{m[1]}</span>{m[2]}</> : plain}</figcaption>
+                <figcaption>{m ? <><span className="b s">{m[1]}</span>{m[2]}</> : plain}</figcaption>
               </>
             );
             return to ? <a className="pg-fig-link" href={to}>{inner}</a> : inner;
