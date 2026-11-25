@@ -36,7 +36,7 @@
 .prose > * { margin: 0; }
 .prose h2 { font: 300 clamp(28px, 3vw, 44px)/1.1 var(--font-display); color: var(--text); letter-spacing: -0.02em; margin-top: 28px; scroll-margin-top: calc(var(--header-h) + 24px); }
 .prose h3 { font: 400 clamp(20px, 1.7vw, 26px)/1.25 var(--font-display); color: var(--text); letter-spacing: -0.01em; margin-top: 18px; }
-.prose span:where(.b) { color: var(--text); font-weight: 500; }
+.prose span:where(.s) { color: var(--text); font-weight: 500; }
 .prose a:not(.btn) { color: var(--cc-signal); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .prose p:first-child { color: var(--text); font-size: 19px; }
 .btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px !important; }
@@ -203,7 +203,7 @@
 .rwall-card blockquote { margin: 0; color: var(--text-muted); font-size: 16px; line-height: 1.6; }
 /* пока картинка не загрузилась или недоступна, не показываем системную иконку и alt */
 .pg-fig-img img, .rimg img, .mdl-thumbs img { color: transparent; font-size: 0; }
-.lead span:where(.b) { color: var(--text); font-weight: 500; }
+.lead span:where(.s) { color: var(--text); font-weight: 500; }
 
 .pg-untranslated { position: relative; z-index: 3; margin-top: calc(var(--header-h) + 12px); margin-bottom: -40px; font-size: 12px; color: var(--text-muted); }
 

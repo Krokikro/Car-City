@@ -107,7 +107,7 @@
 .owner { margin: 0; display: flex; align-items: center; gap: 14px; padding: 12px 22px 12px 12px; border-radius: var(--radius-pill); background: var(--surface); border: 1px solid var(--line); }
 .owner-ph { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--cc-signal), #8A5F00); color: var(--cc-on-signal); font: 500 16px/1 var(--font-text); }
 .owner figcaption { display: grid; }
-.owner span:where(.b) { color: var(--text); font-weight: 500; }
+.owner span:where(.s) { color: var(--text); font-weight: 500; }
 .owner figcaption span:not(:where(.b)) { font-size: 14px; color: var(--text-muted); }
 .trust-maps { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 14px; margin: calc(-1 * clamp(20px, 3vw, 56px)) 0 clamp(40px, 5vw, 72px); }
 .trust-maps-k { width: 100%; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-faint); }
@@ -236,7 +236,7 @@
 .seo-body h3 { margin-top: 16px; }
 .seo-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
 .seo-list li { padding: 18px 20px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); }
-.seo-list span:where(.b) { color: var(--text); font-weight: 500; }
+.seo-list span:where(.s) { color: var(--text); font-weight: 500; }
 
 /* — Отзывы — */
 .reviews { overflow: clip; }
@@ -256,7 +256,7 @@
 .review blockquote::before { content: "“"; display: block; font: 200 72px/0.6 var(--font-display); color: var(--cc-signal); margin-bottom: 12px; }
 .review figcaption { display: flex; gap: 14px; align-items: center; }
 .review figcaption > span:not(:where(.b)):last-child { display: grid; }
-.review span:where(.b) { color: var(--text); font-weight: 500; }
+.review span:where(.s) { color: var(--text); font-weight: 500; }
 .review-av { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--surface-2); border: 1px solid var(--line); color: var(--text); }
 .review-more { text-decoration: none; align-content: end; background: linear-gradient(160deg, rgba(255,183,0,.12), var(--surface)); }
 .review-more .arrow { font-size: 40px; color: var(--cc-signal); }
@@ -274,7 +274,7 @@
 .faq details[open] summary i::before, .faq details[open] summary i::after { background: var(--cc-on-signal); }
 .faq-a { display: grid; gap: 12px; padding-bottom: 28px; max-width: 72ch; font-size: 17px; }
 .faq-a p, .faq-a ul { margin: 0; }
-.faq-a span:where(.b) { color: var(--text); font-weight: 500; }
+.faq-a span:where(.s) { color: var(--text); font-weight: 500; }
 .faq details::details-content { block-size: 0; overflow: hidden; transition: block-size .5s var(--ease-out), content-visibility .5s allow-discrete; }
 .faq details[open]::details-content { block-size: auto; }
 :root { interpolate-size: allow-keywords; }

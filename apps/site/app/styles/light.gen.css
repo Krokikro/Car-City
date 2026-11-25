@@ -322,7 +322,7 @@
   background: linear-gradient(135deg, var(--cc-signal), #8a5f00);
   color: var(--cc-on-signal);
 }
-[data-theme="light"] .owner span:where(.b) {
+[data-theme="light"] .owner span:where(.s) {
   color: var(--text);
 }
 [data-theme="light"] .owner figcaption span:not(:where(.b)) {
@@ -503,7 +503,7 @@
   background: var(--surface);
   border: 1px solid var(--line);
 }
-[data-theme="light"] .seo-list span:where(.b) {
+[data-theme="light"] .seo-list span:where(.s) {
   color: var(--text);
 }
 [data-theme="light"] .ratings a {
@@ -529,7 +529,7 @@
 [data-theme="light"] .review blockquote::before {
   color: var(--cc-signal-text);
 }
-[data-theme="light"] .review span:where(.b) {
+[data-theme="light"] .review span:where(.s) {
   color: var(--text);
 }
 [data-theme="light"] .review-av {
@@ -567,7 +567,7 @@
 [data-theme="light"] .faq details[open] summary i::after {
   background: var(--cc-on-signal);
 }
-[data-theme="light"] .faq-a span:where(.b) {
+[data-theme="light"] .faq-a span:where(.s) {
   color: var(--text);
 }
 [data-theme="light"] .final-checker {
@@ -747,7 +747,7 @@
 [data-theme="light"] .prose h3 {
   color: var(--text);
 }
-[data-theme="light"] .prose span:where(.b) {
+[data-theme="light"] .prose span:where(.s) {
   color: var(--text);
 }
 [data-theme="light"] .prose a:not(.btn) {
@@ -997,7 +997,7 @@
 [data-theme="light"] .rwall-card blockquote {
   color: var(--text-muted);
 }
-[data-theme="light"] .lead span:where(.b) {
+[data-theme="light"] .lead span:where(.s) {
   color: var(--text);
 }
 [data-theme="light"] .pg-untranslated {
@@ -1377,7 +1377,7 @@
 [data-theme="light"] .pg-team figcaption {
   color: var(--text-muted);
 }
-[data-theme="light"] .pg-team figcaption span:where(.b) {
+[data-theme="light"] .pg-team figcaption span:where(.s) {
   color: var(--text);
 }
 [data-theme="light"] .chat-btn {
@@ -1801,7 +1801,7 @@
   border-color: rgba(255,183,0,0.55);
   background: var(--surface-2, rgba(15,17,20,0.054));
 }
-[data-theme="light"] .owner-cap span:where(.b) {
+[data-theme="light"] .owner-cap span:where(.s) {
   color: var(--text);
 }
 [data-theme="light"] .owner-cap span:not(:where(.b)) {
@@ -2166,7 +2166,7 @@
   background: linear-gradient(180deg, var(--surface-2), var(--surface));
   border: 1px solid var(--glass-line);
 }
-[data-theme="light"] .seo-cards span:where(.b) {
+[data-theme="light"] .seo-cards span:where(.s) {
   color: var(--text);
 }
 [data-theme="light"] .seo-ico {

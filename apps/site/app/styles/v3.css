@@ -212,7 +212,7 @@ html[data-gfx="basic"] .stp { opacity: 1; }
 .pg-team .pg-fig-img img { object-position: 50% 20%; }
 .pg-team .pg-fig-img::after { display: none; }
 .pg-team figcaption { font-size: 15px; color: var(--text-muted); }
-.pg-team figcaption span:where(.b) { display: block; font: 400 20px/1.2 var(--font-display); color: var(--text); letter-spacing: -.01em; }
+.pg-team figcaption span:where(.s) { display: block; font: 400 20px/1.2 var(--font-display); color: var(--text); letter-spacing: -.01em; }
 
 /* — Онлайн-чат — */
 .chat { position: fixed; right: max(18px, env(safe-area-inset-right)); bottom: max(18px, env(safe-area-inset-bottom)); z-index: 95; display: grid; justify-items: end; gap: 12px; opacity: 0; translate: 0 20px; pointer-events: none; transition: opacity .5s var(--ease-out), translate .5s var(--ease-out); }
@@ -610,7 +610,7 @@ a.ct-line:hover { border-color: rgba(255, 183, 0, .45); }
 button.owner { font: inherit; color: inherit; text-align: left; cursor: pointer; appearance: none; transition: border-color .25s, background .25s, transform .25s var(--ease-out); }
 button.owner:hover, button.owner:focus-visible { border-color: rgba(255,183,0,.55); background: var(--surface-2, rgba(255,255,255,.06)); transform: translateY(-2px); outline: none; }
 .owner-cap { display: grid; }
-.owner-cap span:where(.b) { color: var(--text); font-weight: 500; }
+.owner-cap span:where(.s) { color: var(--text); font-weight: 500; }
 .owner-cap span:not(:where(.b)) { font-size: 14px; color: var(--text-muted); }
 .trust-stats.one { grid-template-columns: 1fr !important; }
 .owner-modal { width: min(460px, 100%); }
@@ -950,7 +950,7 @@ button.owner:hover, button.owner:focus-visible { border-color: rgba(255,183,0,.5
 .seo-why h3 { margin: 0 0 6px; }
 .seo-cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 .seo-cards li { position: relative; display: grid; gap: 8px; align-content: start; padding: 18px 18px 20px; border-radius: 20px; background: linear-gradient(180deg, var(--surface-2), var(--surface)); border: 1px solid var(--glass-line); font-size: 15px; line-height: 1.5; }
-.seo-cards span:where(.b) { color: var(--text); font: 400 18px/1.2 var(--font-display); letter-spacing: -.01em; }
+.seo-cards span:where(.s) { color: var(--text); font: 400 18px/1.2 var(--font-display); letter-spacing: -.01em; }
 .seo-ico { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--cc-signal); color: #111; box-shadow: 0 8px 24px -10px rgba(255,183,0,.7); margin-bottom: 4px; }
 /* итоговое предложение — плашкой на всю ширину блока */
 .seo-outro { margin: clamp(28px, 4vw, 48px) 0 0; padding: clamp(26px, 3.4vw, 44px) clamp(24px, 4vw, 56px); border-radius: 28px; background: var(--cc-signal); color: #141518; font: 400 clamp(22px, 2.6vw, 38px)/1.2 var(--font-display); letter-spacing: -.015em; text-wrap: balance; }
