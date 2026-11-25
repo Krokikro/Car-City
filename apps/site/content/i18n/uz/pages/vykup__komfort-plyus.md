@@ -186,7 +186,7 @@ Car Cityʼni tanlab, siz shunchaki sotib olish uchun avtomobil emas — ishonchl
 - Kecha-kunduz texnik yordam. YTH paytida yordam, hujjatlar va agregatorlar boʻyicha savollar, maslahatchilar doim aloqada.
 - Fors-major holatida shartnomani saqlab qolish. Hatto vaqtincha toʻlay olmasangiz ham, yechim topamiz va avtomobilni oʻylamasdan olib qoʻymaymiz.
 
-7 yildan ortiq vaqt davomida taksi uchun avtomobillar beramiz va haydovchilarga ularning egasi boʻlishga yordam beramiz. 1500 dan ortiq kishi bizni tanlagan, 300 nafar haydovchi esa oʻz mashinalarini muvaffaqiyatli sotib olgan. Biz shunchaki avtomobilni ijaraga bermaymiz — barqaror pul ishlashingiz, rivojlanishingiz va maqsadingiz sari harakat qilishingizga yordam beramiz.
+7 yildan ortiq vaqt davomida taksi uchun avtomobillar beramiz va haydovchilarga ularning egasi boʻlishga yordam beramiz. 4000 dan ortiq kishi bizni tanlagan, 1400 nafar haydovchi esa oʻz mashinalarini muvaffaqiyatli sotib olgan. Biz shunchaki avtomobilni ijaraga bermaymiz — barqaror pul ishlashingiz, rivojlanishingiz va maqsadingiz sari harakat qilishingizga yordam beramiz.
 
 ## Koʻp beriladigan savollar
 
