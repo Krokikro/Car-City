@@ -186,7 +186,7 @@ With Car City you get more than a rent-to-own car — you get a reliable partner
 - Round-the-clock tech support. Help after accidents, questions about documents and aggregators — consultants are always available.
 - Your contract is kept in an emergency. Even if you temporarily can't pay, we'll find a solution and won't just take the car away.
 
-For more than 7 years we have been providing taxi cars and helping drivers become owners. More than 1500 people have already chosen us, and 300 drivers have successfully bought their cars. We don't just rent out cars — we help you earn steadily, grow and move toward your goal.
+For more than 7 years we have been providing taxi cars and helping drivers become owners. More than 4000 people have already chosen us, and 1400 drivers have successfully bought their cars. We don't just rent out cars — we help you earn steadily, grow and move toward your goal.
 
 ## Frequently asked questions
 
