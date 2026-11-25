@@ -41,7 +41,7 @@ import { AboutView } from "@/components/page/AboutView";
 import { KlubView } from "@/components/page/KlubView";
 import { TermsView } from "@/components/page/TermsView";
 import { termsOf } from "@/lib/terms";
-import { LANGS, isLang, type Lang } from "@/lib/i18n";
+import { LANGS, isLang, href as langHref, type Lang } from "@/lib/i18n";
 import { homeMeta } from "@/lib/meta";
 import { buildMeta, extraLd } from "@/lib/seo";
 import { hasGen } from "@/components/GenImage";
@@ -131,6 +131,23 @@ function eyebrowOf(doc: Doc, lang: Lang) {
 }
 
 // Цена «от …» в шапке модели, когда её нет во вступлении страницы (у части арендных моделей она стояла в блоке «Детали»)
+const SIMILAR_RE = /^(Похожие авто|Similar cars|Ұқсас көліктер|Окшош унаалар|Oʻxshash avtomobillar)/i;
+const SIMILAR_T: Partial<Record<Lang, string>> = { ru: "Похожие авто", en: "Similar cars", kk: "Ұқсас көліктер", ky: "Окшош унаалар", uz: "Oʻxshash avtomobillar" };
+
+/** До 4 машин того же класса (не хватает — ближайшие по цене), в том же формате: аренда или выкуп */
+function similarHtml(car: FleetCar, buy: boolean, lang: Lang) {
+  const ok = (c: FleetCar) => c.slug !== car.slug && (buy ? hasBuy(c) && !!c.buy : hasRent(c));
+  const price = (c: FleetCar) => (buy ? c.buyPrice ?? 0 : c.price);
+  const base = price(car) || car.price;
+  const near = (a: FleetCar, b: FleetCar) => Math.abs(price(a) - base) - Math.abs(price(b) - base);
+  const same = fleet.filter((c) => ok(c) && c.cls === car.cls).sort(near);
+  const rest = fleet.filter((c) => ok(c) && c.cls !== car.cls && (c.cls === "gruzovoy") === (car.cls === "gruzovoy")).sort(near);
+  const list = [...same, ...rest].slice(0, 4);
+  if (!list.length) return "";
+  const t = ui(lang);
+  return `<ul>${list.map((c) => `<li><a class="mt-sim" href="${langHref((buy ? c.buy : c.rent)!, lang)}">${c.name}</a> — ${[t.from, `${price(c).toLocaleString("ru-RU")}&nbsp;${t.perDay}`].filter(Boolean).join(" ")}</li>`).join("")}</ul>`;
+}
+
 function modelPrice(car: FleetCar | undefined, mode: string | undefined, lang: Lang): string | undefined {
   const v = mode === "vykup" ? car?.buyPrice : car && hasRent(car) ? car.price : car?.buyPrice;
   return v ? `${ui(lang).from} ${v} ${ui(lang).perDay}`.trim() : undefined;
@@ -166,6 +183,15 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
   // вторая опция (аренда ↔ выкуп) выключена в админке — убираем переключатель и ссылки на неё
   const twinOk = !car || (doc.mode === "vykup" ? hasRent(car) : hasBuy(car));
   if (!twinOk) twin = undefined;
+  // «Похожие авто» — в каждой карточке аренды и выкупа, пункты — ссылки на карточки машин (правка SEO 25.11)
+  if (isModel && car) {
+    const sim = similarHtml(car, doc.mode === "vykup", lang);
+    const at = p.blocks.findIndex((b) => b.t === "section" && SIMILAR_RE.test(b.title));
+    if (at >= 0) {
+      const b = p.blocks[at] as Extract<Block, { t: "section" }>;
+      if (sim) b.html = sim; else p.blocks.splice(at, 1);
+    } else if (sim) p.blocks.push({ t: "section", title: SIMILAR_T[lang] ?? "Похожие авто", html: sim, figs: [], btns: [] });
+  }
 
   // у ленты новостей и стены отзывов вступление — это сам список, его рисуют отдельные компоненты
   const list = doc.path === "/novosti" || doc.path === "/reviews";
