@@ -49,7 +49,7 @@ export function TrustOwners({ owners, lang, label }: { owners: Owner[]; lang: La
               ) : (
                 <span className="owner-ph" aria-hidden="true">{o.name.split(" ").map((w) => w[0]).join("").slice(0, 2)}</span>
               )}
-              <span className="owner-cap"><span className="b">{o.name}</span><span>{o.car}</span></span>
+              <span className="owner-cap"><span className="b s">{o.name}</span><span>{o.car}</span></span>
             </button>
           ))}
         </div>

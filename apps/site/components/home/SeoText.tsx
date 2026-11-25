@@ -28,7 +28,7 @@ export function SeoText({ t: seo }: { t: HomeText["seo"] }) {
             {seo.why.map(([b, x], i) => (
               <li key={b}>
                 <span className="seo-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d={ICONS[i % ICONS.length]} /></svg></span>
-                <span className="b">{b.replace(/[.:]\s*$/, "")}</span>
+                <span className="b s">{b.replace(/[.:]\s*$/, "")}</span>
                 <span>{x}</span>
               </li>
             ))}
