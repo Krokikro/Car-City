@@ -36,7 +36,7 @@
 .prose > * { margin: 0; }
 .prose h2 { font: 300 clamp(28px, 3vw, 44px)/1.1 var(--font-display); color: var(--text); letter-spacing: -0.02em; margin-top: 28px; scroll-margin-top: calc(var(--header-h) + 24px); }
 .prose h3 { font: 400 clamp(20px, 1.7vw, 26px)/1.25 var(--font-display); color: var(--text); letter-spacing: -0.01em; margin-top: 18px; }
-.prose strong { color: var(--text); font-weight: 500; }
+.prose .b { color: var(--text); font-weight: 500; }
 .prose a:not(.btn) { color: var(--cc-signal); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .prose p:first-child { color: var(--text); font-size: 19px; }
 .btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px !important; }
@@ -52,6 +52,14 @@
 .prose ol.stepl { list-style: none; padding: 0; display: grid; gap: 12px; counter-reset: st; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
 .prose ol.stepl li { counter-increment: st; position: relative; padding: 76px 22px 24px; border-radius: var(--radius-card); border: 1px solid rgba(255,183,0,.22); background: radial-gradient(120% 80% at 0% 0%, rgba(255,183,0,.1), transparent 60%), #111214; color: var(--text); font: 400 18px/1.35 var(--font-display); }
 .prose ol.stepl li::before { content: counter(st); position: absolute; left: 22px; top: 20px; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; background: var(--cc-signal); color: var(--cc-on-signal); font: 500 18px/1 var(--font-mono); }
+/* длинные пункты: одна карточка в строку, номер слева, жирное начало — заголовок пункта */
+.prose ol.stepl.wide { grid-template-columns: 1fr; }
+.prose ol.stepl.wide li { padding: 22px 26px 22px 80px; font: 400 16px/1.55 var(--font-text); color: var(--text-muted); }
+.prose ol.stepl.wide li::before { left: 22px; top: 20px; }
+.prose ol.stepl.wide li > .b:first-child, .prose ol.stepl.wide li > .b:first-child { display: block; margin-bottom: 6px; color: var(--text); font: 500 19px/1.3 var(--font-display); }
+@media (max-width: 600px) { .prose ol.stepl.wide li { padding: 72px 20px 20px; } }
+/* в статьях колонка текста узкая: карточки-списки шире, меньше в ряд */
+.art-body ul.tiles, .art-body .qgrid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); }
 
 /* таблицы цен */
 .tbl { overflow-x: auto; border-radius: var(--radius-card); border: 1px solid var(--line); background: #0f1012; -webkit-overflow-scrolling: touch; }
@@ -105,7 +113,7 @@
 .mdl-specs li { padding: 10px 16px; border-radius: var(--radius-pill); border: 1px solid var(--line); background: rgba(255,255,255,.03); font-size: 14px; color: var(--text); }
 .mdl-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 12px; margin: 6px 0 0; }
 .mdl-price .mono { color: var(--text-muted); font-size: 16px; }
-.mdl-price b { font: 300 clamp(48px, 6vw, 88px)/1 var(--font-display); letter-spacing: -0.04em; color: var(--cc-signal); text-shadow: 0 0 60px rgba(255,183,0,.35); }
+.mdl-price .b { font: 300 clamp(48px, 6vw, 88px)/1 var(--font-display); letter-spacing: -0.04em; color: var(--cc-signal); text-shadow: 0 0 60px rgba(255,183,0,.35); }
 .mdl-price small { font-size: 16px; color: var(--text-muted); }
 
 .mdl-stage { position: relative; display: grid; gap: 16px; min-width: 0; }
@@ -162,6 +170,7 @@
 .art-toc ol { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; border-left: 1px solid var(--line); }
 .art-toc a { display: block; padding-left: 16px; margin-left: -1px; border-left: 1px solid transparent; color: var(--text-muted); text-decoration: none; line-height: 1.4; font-family: var(--font-text); font-size: 14px; }
 .art-toc a:hover { color: var(--text); border-color: var(--cc-signal); }
+.art-toc li.sub a { padding-left: 28px; font-size: 13px; }
 @media (max-width: 1099px) { .art-toc { position: static; } }
 .art-body { max-width: 760px; font-size: 18px; }
 .art-body > p:first-child::first-letter { float: left; font: 300 4.2em/.8 var(--font-display); color: var(--cc-signal); margin: 6px 12px 0 0; }
@@ -194,7 +203,7 @@
 .rwall-card blockquote { margin: 0; color: var(--text-muted); font-size: 16px; line-height: 1.6; }
 /* пока картинка не загрузилась или недоступна, не показываем системную иконку и alt */
 .pg-fig-img img, .rimg img, .mdl-thumbs img { color: transparent; font-size: 0; }
-.lead strong { color: var(--text); font-weight: 500; }
+.lead .b { color: var(--text); font-weight: 500; }
 
 .pg-untranslated { position: relative; z-index: 3; margin-top: calc(var(--header-h) + 12px); margin-bottom: -40px; font-size: 12px; color: var(--text-muted); }
 

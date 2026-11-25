@@ -105,7 +105,7 @@ html[data-gfx="basic"] .ticker-row { animation: none; }
 .fc-specs dd { margin: 0; color: var(--text); }
 .fc-price { grid-column: 2; grid-row: 1 / span 2; margin: 0; text-align: right; color: var(--text); line-height: 1; }
 .fc-price span { display: block; font: 400 12px/1 var(--font-mono); color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px; }
-.fc-price b { font: 300 clamp(26px, 2.4vw, 38px)/1 var(--font-display); color: var(--cc-signal); letter-spacing: -.03em; }
+.fc-price .b { font: 300 clamp(26px, 2.4vw, 38px)/1 var(--font-display); color: var(--cc-signal); letter-spacing: -.03em; }
 .fc-price small { display: block; margin-top: 4px; font-size: 13px; color: var(--text-muted); }
 .fc-actions { grid-column: 1 / -1; display: flex; gap: 10px; margin-top: 10px; }
 .fs-end { flex: none; width: min(40vw, 360px); display: grid; place-items: center; text-align: center; color: var(--text-muted); }

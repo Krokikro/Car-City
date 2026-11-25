@@ -108,7 +108,7 @@
 [data-theme="light"] .ft-pl { color: var(--ink-3); }
 [data-theme="light"] .ft-specs li { background: var(--surface-2); border-color: transparent; color: var(--ink-2); }
 [data-theme="light"] .ft-specs svg { color: var(--ink-3); }
-[data-theme="light"] .ft-pv b, [data-theme="light"] .ft-price b, [data-theme="light"] .car-price { color: var(--ink); }
+[data-theme="light"] .ft-pv .b, [data-theme="light"] .ft-price .b, [data-theme="light"] .car-price { color: var(--ink); }
 [data-theme="light"] .ft-prices:has(.ft-pr:nth-child(2)) .ft-pr + .ft-pr { border-left-color: var(--hair); }
 [data-theme="light"] .ft-more { background: var(--marker); color: var(--ink); box-shadow: var(--shadow-card); }
 [data-theme="light"] .ft-more-n { color: var(--ink); }
@@ -146,7 +146,7 @@
 /* ── Карточки тарифов ── */
 [data-theme="light"] .tf-card { --tf-acc-text: var(--ink); color: var(--text); }
 [data-theme="light"] .tf-name { background: none; -webkit-background-clip: border-box; background-clip: border-box; color: var(--ink); }
-[data-theme="light"] .tf-price b, [data-theme="light"] .tf-k { color: var(--ink); }
+[data-theme="light"] .tf-price .b, [data-theme="light"] .tf-k { color: var(--ink); }
 [data-theme="light"] .tf-beam, [data-theme="light"] .tf-speed { display: none; }
 
 /* ── Статьи: обложка полосой сверху, текст на белом ── */
@@ -163,7 +163,7 @@
 
 /* ── Подвал: графитовый остров — отсылка к тёмной версии ── */
 [data-theme="light"] .site-footer { background: var(--graphite); color: rgba(255,255,255,.62); border-top: 0; }
-[data-theme="light"] .site-footer a, [data-theme="light"] .site-footer h3, [data-theme="light"] .site-footer h4, [data-theme="light"] .site-footer strong, [data-theme="light"] .site-footer b { color: #fff; }
+[data-theme="light"] .site-footer a, [data-theme="light"] .site-footer h3, [data-theme="light"] .site-footer h4, [data-theme="light"] .site-footer .b, [data-theme="light"] .site-footer .b { color: #fff; }
 [data-theme="light"] .site-footer p, [data-theme="light"] .site-footer small, [data-theme="light"] .site-footer address, [data-theme="light"] .site-footer span:not(.soc-ico) { color: rgba(255,255,255,.62); }
 [data-theme="light"] .site-footer .mono { color: rgba(255,255,255,.45); }
 [data-theme="light"] .footer-bottom { border-top-color: rgba(255,255,255,.1); }
@@ -208,7 +208,7 @@
 [data-theme="light"][data-variant="B"] .btn-ghost:hover { background: var(--paper); border-color: var(--ink); }
 [data-theme="light"][data-variant="B"] .site-footer { background: var(--paper); color: var(--ink-2); border-top: 1px solid var(--hair); }
 [data-theme="light"][data-variant="B"] .site-footer a, [data-theme="light"][data-variant="B"] .site-footer h3, [data-theme="light"][data-variant="B"] .site-footer h4,
-[data-theme="light"][data-variant="B"] .site-footer strong, [data-theme="light"][data-variant="B"] .site-footer b { color: var(--ink); }
+[data-theme="light"][data-variant="B"] .site-footer .b, [data-theme="light"][data-variant="B"] .site-footer .b { color: var(--ink); }
 [data-theme="light"][data-variant="B"] .site-footer p, [data-theme="light"][data-variant="B"] .site-footer small, [data-theme="light"][data-variant="B"] .site-footer address,
 [data-theme="light"][data-variant="B"] .site-footer span:not(.soc-ico) { color: var(--ink-2); }
 [data-theme="light"][data-variant="B"] .site-footer .mono { color: var(--ink-3); }
@@ -240,8 +240,8 @@
 [data-theme="light"] .pg-hero-extra .lead { margin: 0; color: var(--ink-2, #3a3d44); max-width: 34ch; }
 [data-theme="light"] .pg-hero-facts { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
 [data-theme="light"] .pg-hero-facts li { display: grid; gap: 2px; min-width: 120px; padding: 14px 18px; border-radius: 18px; background: #fff; box-shadow: 0 1px 0 rgba(20,21,24,.06), 0 10px 24px -14px rgba(20,21,24,.25); }
-[data-theme="light"] .pg-hero-facts b { font: 600 clamp(22px, 2vw, 30px)/1 var(--font-display); letter-spacing: -.02em; color: #141518; white-space: nowrap; }
-[data-theme="light"] .pg-hero-facts b i { font-style: normal; color: #F5B000; font-size: .8em; }
+[data-theme="light"] .pg-hero-facts .b { font: 600 clamp(22px, 2vw, 30px)/1 var(--font-display); letter-spacing: -.02em; color: #141518; white-space: nowrap; }
+[data-theme="light"] .pg-hero-facts .b i { font-style: normal; color: #F5B000; font-size: .8em; }
 [data-theme="light"] .pg-hero-facts span { font-size: 13px; color: #6a6d74; }
 [data-theme="light"] .pg-hero-facts li:first-child { background: #FFB700; }
 [data-theme="light"] .pg-hero-facts li:first-child span { color: #3b2f00; }
@@ -250,7 +250,7 @@
 [data-theme="light"] .site-footer a:not(.btn):hover,
 [data-theme="light"] .site-footer a:not(.btn):focus-visible { color: #FFB700; }
 [data-theme="light"] .site-footer .footer-msg a:hover { border-color: #FFB700; }
-[data-theme="light"] .pg-hero-facts li:first-child b i { color: #141518; }
+[data-theme="light"] .pg-hero-facts li:first-child .b i { color: #141518; }
 
 /* Заголовок первого экрана: размер шрифта подбирается так, чтобы самая длинная строка помещалась в колонку
    (--ch — длина самой длинной строки, но не больше 20 знаков: очень длинные строки на казахском и др. переносятся) */
@@ -261,7 +261,7 @@
 [data-theme="light"] .kl-tile, [data-theme="light"] .kl-ev { background: #fff; border-color: transparent; box-shadow: var(--shadow-card); }
 [data-theme="light"] .kl-note { background: #FFB700; }
 [data-theme="light"] .kl-note .btn { background: #141518; color: #fff; }
-[data-theme="light"] .kl-tile figcaption, [data-theme="light"] .kl-tile figcaption b { color: #fff; }
+[data-theme="light"] .kl-tile figcaption, [data-theme="light"] .kl-tile figcaption .b { color: #fff; }
 [data-theme="light"] .kl-tile figcaption { background: linear-gradient(180deg, rgba(10,11,13,0), rgba(10,11,13,.78)); }
 [data-theme="light"] .kl-tile figcaption span { color: rgba(255,255,255,.85); }
 [data-theme="light"] .kl-note .btn { border-color: #141518; }
@@ -285,5 +285,5 @@
 [data-theme="light"] .stack-card:nth-child(3n + 1) .ico-badge { background: rgba(11,11,12,.08); border-color: rgba(11,11,12,.12); color: #0B0B0C; }
 /* «26 статей» — один факт: не жёлтая плитка, а аккуратная строка-счётчик */
 [data-theme="light"] .pg-hero-facts li:only-child { display: inline-flex; align-items: baseline; gap: 8px; min-width: 0; padding: 8px 16px; border-radius: 999px; background: #fff; box-shadow: 0 1px 0 rgba(20,21,24,.06), 0 8px 18px -12px rgba(20,21,24,.25); }
-[data-theme="light"] .pg-hero-facts li:only-child b { font-size: 20px; }
+[data-theme="light"] .pg-hero-facts li:only-child .b { font-size: 20px; }
 [data-theme="light"] .pg-hero-facts li:only-child span { font-size: 14px; color: #545862; }

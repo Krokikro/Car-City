@@ -12,6 +12,7 @@
 html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--header-h) + 16px); }
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
+.b { font-weight: bolder; }
 body {
   margin: 0; background: var(--bg); color: var(--text-muted);
   font: 400 var(--text-body)/var(--leading-body) var(--font-text);

@@ -6,7 +6,7 @@
 .hero-bullets li::before { content: ""; width: 10px; height: 10px; background: var(--cc-checker); background-size: 5px 5px; border-radius: 2px; }
 .hero-badges { display: flex; gap: 10px; flex-wrap: wrap; }
 .hero-badge { display: inline-flex; gap: 6px; align-items: baseline; padding: 8px 14px; border-radius: var(--radius-pill); background: var(--glass); border: 1px solid var(--glass-line); backdrop-filter: blur(12px); font: 400 13px/1 var(--font-mono); letter-spacing: .04em; color: var(--text-muted); text-transform: uppercase; }
-.hero-badge b { color: var(--text); font-weight: 400; }
+.hero-badge .b { color: var(--text); font-weight: 400; }
 
 /* — Автопарк — */
 .fleet { overflow: clip; }
@@ -107,7 +107,7 @@
 .owner { margin: 0; display: flex; align-items: center; gap: 14px; padding: 12px 22px 12px 12px; border-radius: var(--radius-pill); background: var(--surface); border: 1px solid var(--line); }
 .owner-ph { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--cc-signal), #8A5F00); color: var(--cc-on-signal); font: 500 16px/1 var(--font-text); }
 .owner figcaption { display: grid; }
-.owner strong { color: var(--text); font-weight: 500; }
+.owner .b { color: var(--text); font-weight: 500; }
 .owner figcaption span { font-size: 14px; color: var(--text-muted); }
 .trust-maps { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 14px; margin: calc(-1 * clamp(20px, 3vw, 56px)) 0 clamp(40px, 5vw, 72px); }
 .trust-maps-k { width: 100%; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-faint); }
@@ -118,7 +118,7 @@
 .trust-2gis { display: flex; flex-direction: column; justify-content: center; gap: 4px; width: 150px; height: 50px; padding: 0 10px; box-sizing: border-box; border-radius: 8px; background: #26272b; color: #fff; text-decoration: none; font-family: Arial, sans-serif; }
 .trust-2gis-top { display: flex; align-items: center; gap: 6px; }
 .trust-2gis-top i { display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: #19AA1E; color: #fff; font: 700 11px/1 Arial, sans-serif; font-style: normal; flex: none; }
-.trust-2gis-top b { font-size: 17px; font-weight: 400; letter-spacing: -.01em; }
+.trust-2gis-top .b { font-size: 17px; font-weight: 400; letter-spacing: -.01em; }
 .trust-2gis-stars { color: #FFC83D; font-size: 15px; letter-spacing: 1px; margin-left: auto; line-height: 1; }
 @media (min-width: 900px) { .trust-ya, .trust-2gis { zoom: 1.25; } }
 .trust-2gis-sub { font-size: 9.5px; color: #b8b9bd; white-space: nowrap; }
@@ -236,7 +236,7 @@
 .seo-body h3 { margin-top: 16px; }
 .seo-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
 .seo-list li { padding: 18px 20px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); }
-.seo-list strong { color: var(--text); font-weight: 500; }
+.seo-list .b { color: var(--text); font-weight: 500; }
 
 /* — Отзывы — */
 .reviews { overflow: clip; }
@@ -256,7 +256,7 @@
 .review blockquote::before { content: "“"; display: block; font: 200 72px/0.6 var(--font-display); color: var(--cc-signal); margin-bottom: 12px; }
 .review figcaption { display: flex; gap: 14px; align-items: center; }
 .review figcaption > span:last-child { display: grid; }
-.review strong { color: var(--text); font-weight: 500; }
+.review .b { color: var(--text); font-weight: 500; }
 .review-av { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--surface-2); border: 1px solid var(--line); color: var(--text); }
 .review-more { text-decoration: none; align-content: end; background: linear-gradient(160deg, rgba(255,183,0,.12), var(--surface)); }
 .review-more .arrow { font-size: 40px; color: var(--cc-signal); }
@@ -274,7 +274,7 @@
 .faq details[open] summary i::before, .faq details[open] summary i::after { background: var(--cc-on-signal); }
 .faq-a { display: grid; gap: 12px; padding-bottom: 28px; max-width: 72ch; font-size: 17px; }
 .faq-a p, .faq-a ul { margin: 0; }
-.faq-a strong { color: var(--text); font-weight: 500; }
+.faq-a .b { color: var(--text); font-weight: 500; }
 .faq details::details-content { block-size: 0; overflow: hidden; transition: block-size .5s var(--ease-out), content-visibility .5s allow-discrete; }
 .faq details[open]::details-content { block-size: auto; }
 :root { interpolate-size: allow-keywords; }
@@ -328,11 +328,11 @@
 .calc-cls-img { display: block; width: 100%; aspect-ratio: 4 / 3; margin-bottom: 6px; position: relative; }
 .calc-cls-img > * { position: absolute; inset: 0; width: 100%; height: 100%; }
 .calc-cls-img img { object-fit: contain; }
-.calc-cls-btn b { font: 500 clamp(17px, 1.5vw, 21px)/1.2 var(--font-display); }
+.calc-cls-btn .b { font: 500 clamp(17px, 1.5vw, 21px)/1.2 var(--font-display); }
 .calc-cls-btn small { color: var(--text-muted); font-size: 13px; }
 .calc-sliders { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
 .calc-val { display: flex; align-items: baseline; gap: 10px; margin-bottom: 14px; }
-.calc-val b { font: 300 clamp(44px, 4.6vw, 64px)/1 var(--font-mono); color: var(--cc-signal); letter-spacing: -.03em; }
+.calc-val .b { font: 300 clamp(44px, 4.6vw, 64px)/1 var(--font-mono); color: var(--cc-signal); letter-spacing: -.03em; }
 .calc-val span { color: var(--text-muted); font-size: 15px; }
 .calc-range { -webkit-appearance: none; appearance: none; width: 100%; height: 8px; box-sizing: content-box; padding: 16px 0; background-clip: content-box; border-radius: 99px; outline: none; cursor: pointer; touch-action: none; -webkit-tap-highlight-color: transparent; background-image: linear-gradient(90deg, var(--cc-signal) var(--p), #26282c var(--p)); background-color: transparent; }
 .calc-sliders, .calc-split { overflow-anchor: none; }
@@ -349,7 +349,7 @@
 .calc-legend { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; }
 .calc-legend li { display: grid; grid-template-columns: 12px 1fr auto; gap: 10px; align-items: center; font-size: 14px; color: var(--text-muted); }
 .calc-legend li i { width: 12px; height: 12px; border-radius: 4px; }
-.calc-legend b { color: var(--text); font: 500 14px var(--font-mono); }
+.calc-legend .b { color: var(--text); font: 500 14px var(--font-mono); }
 @media (max-width: 700px) {
   .calc-sliders { grid-template-columns: 1fr; }
   .calc-legend { grid-template-columns: 1fr; }
