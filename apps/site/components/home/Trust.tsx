@@ -31,7 +31,7 @@ export function Trust({ lang = "ru", t: trust = ruHome.trust, buy = false }: { l
           <iframe className="trust-ya trust-ya-l" src={YA_BADGE} width={150} height={50} loading="lazy" title="Рейтинг Car City в Яндекс Картах" />
           {gis && (
             <a className="trust-2gis" href={gis.url} target="_blank" rel="noopener">
-              <span className="trust-2gis-top"><i aria-hidden="true">2</i><b>{gis.score}</b><span className="trust-2gis-stars" aria-hidden="true">★★★★★</span></span>
+              <span className="trust-2gis-top"><i aria-hidden="true">2</i><span className="b">{gis.score}</span><span className="trust-2gis-stars" aria-hidden="true">★★★★★</span></span>
               <span className="trust-2gis-sub">{(MAPS_T[lang] ?? MAPS_T.ru)[1]}</span>
             </a>
           )}

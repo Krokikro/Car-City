@@ -70,7 +70,7 @@ function Meter({ lang }: { lang: string }) {
   const m = stepsX(lang);
   return (
     <span className="mt" aria-hidden="true">
-      <span className="mt-top"><i className="mt-lamp" /><b>TAXI</b></span>
+      <span className="mt-top"><i className="mt-lamp" /><span className="b">TAXI</span></span>
       <span className="mt-screen">
         <span className="mt-state"><span className="mt-free">{m.free}</span><span className="mt-busy">{m.busy}</span></span>
         <span className="mt-digits"><span className="mt-num" /><small>₽</small></span>

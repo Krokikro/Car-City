@@ -20,7 +20,7 @@ function Price({ label, price, old, t }: { label?: string; price: number; old?: 
     <p className="ft-pr">
       {label && <span className="ft-pl">{label}</span>}
       <span className="ft-pv">
-        <span className="ft-main"><span className="ft-from">{t.from}</span> <b>{price.toLocaleString("ru-RU")}&nbsp;₽</b></span>
+        <span className="ft-main"><span className="ft-from">{t.from}</span> <span className="b">{price.toLocaleString("ru-RU")}&nbsp;₽</span></span>
         <span className="ft-sub">
           {old && old > price && <s className="ft-old">{old.toLocaleString("ru-RU")}&nbsp;₽</s>}
           <span className="ft-per">{t.perDay}</span>

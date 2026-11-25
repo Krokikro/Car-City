@@ -1,5 +1,5 @@
 import type { HomeText } from "@/lib/home-text";
-import { marked } from "marked";
+import { marked } from "@/lib/md";
 
 export function FaqHome({ t }: { t: HomeText["faq"] }) {
   const faqHome = t.items;

@@ -26,7 +26,7 @@ export function Reviews({ lang = "ru", t }: { lang?: Lang; t: HomeText["reviews"
             <blockquote>{r.text}</blockquote>
             <figcaption>
               <span className="review-av" aria-hidden="true">{r.name[0]}</span>
-              <span><strong>{r.name}</strong><span className="muted small">{r.date} {t.on} {loc(lang, r.source)}</span></span>
+              <span><span className="b">{r.name}</span><span className="muted small">{r.date} {t.on} {loc(lang, r.source)}</span></span>
             </figcaption>
           </figure>
         ))}

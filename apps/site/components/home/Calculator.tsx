@@ -28,7 +28,7 @@ export function Calculator({ t = ruHome.calculator, classes = ruHome.fleet.class
   // на странице модели калькулятор сразу открыт на её классе; класса нет среди трёх основных (Бизнес, Грузовой…) —
   // добавляем его четвёртой карточкой, а в классе этой машины считаем по её собственной цене (правка 20.11.2026)
   const list: CarClass[] = initial && !CLASSES.includes(initial) ? [...CLASSES, initial] : CLASSES;
-  const [cls, setCls] = useState<CarClass>(initial ?? "ekonom");
+  const [cls, setCls] = useState<CarClass>(initial ?? "komfort");
   const [days, setDays] = useState(6);
   const [hours, setHours] = useState(10);
   const fleet = cars ?? baseFleet;
@@ -72,7 +72,7 @@ export function Calculator({ t = ruHome.calculator, classes = ruHome.fleet.class
                       <span className="calc-cls-img" aria-hidden="true">
                         {carImages[car.slug] ? <CarArt slug={car.slug} name={car.name} sizes="(max-width: 700px) 30vw, 200px" /> : null}
                       </span>
-                      <b>{classes[c]}</b>
+                      <span className="b">{classes[c]}</span>
                       <small>{x.fromPerDay.replace("{price}", rub(car.price))}</small>
                     </button>
                   );
@@ -82,13 +82,13 @@ export function Calculator({ t = ruHome.calculator, classes = ruHome.fleet.class
             <div className="calc-sliders">
               <fieldset>
                 <legend><span className="q-n">2.</span> {t.q2}</legend>
-                <div className="calc-val"><b>{days}</b><span>{days === 1 ? x.day1 : days < 5 ? x.day2 : x.day5} {x.perWeek}</span></div>
+                <div className="calc-val"><span className="b">{days}</span><span>{days === 1 ? x.day1 : days < 5 ? x.day2 : x.day5} {x.perWeek}</span></div>
                 <input className="calc-range" type="range" min={1} max={7} step={1} value={days} onChange={(e) => setDays(Number(e.target.value))} aria-label={t.q2} style={{ ["--p" as string]: `${((days - 1) / 6) * 100}%` }} />
                 <div className="calc-ticks" aria-hidden="true">{[1, 2, 3, 4, 5, 6, 7].map((d) => <span key={d}>{d}</span>)}</div>
               </fieldset>
               <fieldset>
                 <legend><span className="q-n">3.</span> {t.q3}</legend>
-                <div className="calc-val"><b>{hours}</b><span>{hours < 5 ? x.hour2 : x.hour5} {x.perDay}</span></div>
+                <div className="calc-val"><span className="b">{hours}</span><span>{hours < 5 ? x.hour2 : x.hour5} {x.perDay}</span></div>
                 <input className="calc-range" type="range" min={6} max={12} step={1} value={hours} onChange={(e) => setHours(Number(e.target.value))} aria-label={t.q3} style={{ ["--p" as string]: `${((hours - 6) / 6) * 100}%` }} />
                 <div className="calc-ticks" aria-hidden="true">{[6, 7, 8, 9, 10, 11, 12].map((h) => <span key={h}>{h}</span>)}</div>
               </fieldset>
@@ -99,7 +99,7 @@ export function Calculator({ t = ruHome.calculator, classes = ruHome.fleet.class
                 {parts.map((p) => <i key={p.k} className={`b-${p.k}`} style={{ flexGrow: Math.max(p.v, 0) / total }} />)}
               </div>
               <ul className="calc-legend">
-                {parts.map((p) => <li key={p.k}><i className={`b-${p.k}`} aria-hidden="true" /><span>{p.label}</span><b>{rub(p.v)} ₽</b></li>)}
+                {parts.map((p) => <li key={p.k}><i className={`b-${p.k}`} aria-hidden="true" /><span>{p.label}</span><span className="b">{rub(p.v)} ₽</span></li>)}
               </ul>
             </div>
           </form>
