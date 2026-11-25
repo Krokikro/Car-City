@@ -17,12 +17,12 @@ function parseTable(inner: string) {
   return { head, rows };
 }
 const text = (h: string) => h.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
-// денежная ячейка → <b class="pm">; срок («1 год», «от 3-7 дней») оставляем текстом
+// денежная ячейка → <span class="b pm">; срок («1 год», «от 3-7 дней») оставляем текстом
 const money = (h: string) => {
   if (/pr-now/.test(h)) return h;
   const t = text(h);
   if (/год|дн|мес/.test(t) || !/\d/.test(t)) return t;
-  return `<b class="pm">${/₽/.test(t) ? t.replace(/\s*₽/, "&nbsp;₽") : `${t}&nbsp;₽`}</b>`;
+  return `<span class="b pm">${/₽/.test(t) ? t.replace(/\s*₽/, "&nbsp;₽") : `${t}&nbsp;₽`}</span>`;
 };
 
 // «Объем двигателя 2 л» → [«Объем двигателя», «2 л»], «2020 год выпуска» → [«Год выпуска», «2020»]
@@ -37,7 +37,7 @@ function specPair(s: string): [string, string] | null {
 }
 
 const fmt = (n: number) => n.toLocaleString("ru-RU").replace(/\s/g, "\u00a0");
-const cell = (r: PriceRow) => (r.o && r.o > r.p ? `<span class="pr-now">${fmt(r.p)}&nbsp;₽</span><s class="pr-old">${fmt(r.o)}&nbsp;₽</s>` : `<b class="pm">${fmt(r.p)}&nbsp;₽</b>`);
+const cell = (r: PriceRow) => (r.o && r.o > r.p ? `<span class="pr-now">${fmt(r.p)}&nbsp;₽</span><s class="pr-old">${fmt(r.o)}&nbsp;₽</s>` : `<span class="b pm">${fmt(r.p)}&nbsp;₽</span>`);
 const H: Record<string, { sched: string; term: string; dep: string; pay: string; perDay: string }> = {
   ru: { sched: "График", term: "Срок", dep: "Взнос", pay: "Платёж в сутки", perDay: "Цена в сутки" },
   en: { sched: "Schedule", term: "Term", dep: "Down payment", pay: "Daily payment", perDay: "Price per day" },

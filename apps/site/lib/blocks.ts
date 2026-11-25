@@ -1,6 +1,6 @@
 // Разбор текста страницы с car-city.pro на блоки нового дизайна.
 // Текст не меняется: меняется только то, каким компонентом он показан.
-import { marked } from "marked";
+import { marked } from "./md";
 import { fleet } from "./fleet";
 import { toPath } from "./docs";
 import { href as langHref, localizeHtml, type Lang } from "./i18n";
@@ -84,8 +84,22 @@ const REGEN: [RegExp, string][] = [
   [/themes\/img\/about\/new\/why-vigoda\.webp/, "/pages/about-why-1920.webp"],
 ];
 
+// фото со старого сайта (phpThumbOf-кэш, сейчас 404): машины парка → наши фото из /cars, остальное убираем (правка SEO 25.11)
+const OLD_THUMB = /(?:https?:\/\/(?:www\.)?car-city\.pro)?\/assets\/components\/phpthumbof\/cache\/((?:[^()\s]|\([^()\s]*\))+?)\.[0-9a-f]{32}\.webp/i;
+const thumbStem = (f: string) => f.replace(/\.[0-9a-f]{32}\.webp$/i, "").toLowerCase();
+const OLD_CARS = new Map(fleet.filter((x) => x.img).map((x) => [thumbStem(x.img), `/cars/${x.slug}-640.webp`]));
+function oldThumb(u: string) {
+  const m = u.match(OLD_THUMB);
+  return m ? OLD_CARS.get(m[1].toLowerCase()) ?? "" : u;
+}
+
 function prep(src: string) {
   let s = src.replace(/<!--[\s\S]*?-->/g, "").replace(/\r/g, "");
+  s = s.replace(/!\[([^\]]*)\]\(((?:[^()\s]|\([^()\s]*\))+)\)/g, (m, alt: string, u: string) => {
+    if (!OLD_THUMB.test(u)) return m;
+    const to = oldThumb(u);
+    return to ? `![${alt}](${to})` : "";
+  });
   s = s.replace(/https?:\/\/(?:www\.)?car-city\.pro\/[^)\s]+/g, (u) => { const r = REGEN.find(([re]) => re.test(u)); return r ? r[1] : u; });
   // фото машин каталога со старого сайта: у нас свои фото в карточках, старые не показываем
   s = s.replace(/^!\[car Image\]\([^)\n]*\)[ \t]*$/gim, "");
@@ -126,7 +140,12 @@ function listClass(html: string) {
     const cls = items.length >= 3 && items.length <= 12 && short ? "tiles" : "ticks";
     return `<ul class="${cls}">${inner}</ul>`;
   })
-    .replace(/<ol>/g, '<ol class="stepl">')
+    // нумерованный список: короткие пункты — сетка карточек, длинные — карточки во всю ширину, номер слева (правка SEO 25.11)
+    .replace(/<ol>([\s\S]*?)<\/ol>/g, (m, inner: string) => {
+      const items = inner.match(/<li>[\s\S]*?<\/li>/g) ?? [];
+      const long = items.some((i) => i.replace(/<[^>]+>/g, "").length > 110);
+      return `<ol class="stepl${long ? " wide" : ""}">${inner}</ol>`;
+    })
     // строка из одних ссылок (например, тарифы) → ряд «таблеток»
     .replace(/<p>((?:\s*<a href="[^"]*">[^<]+<\/a>\s*){2,})<\/p>/g, (_, g: string) => `<p class="pill-row">${g.replace(/<a /g, '<a class="pill" ')}</p>`)
     // три и больше пар «подзаголовок + короткий абзац» подряд → сетка карточек
