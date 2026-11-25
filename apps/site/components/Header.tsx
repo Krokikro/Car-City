@@ -54,7 +54,7 @@ export function Header() {
             {LANGS.map((l) => (
               <li key={l}>
                 <a href={href(path === "/spasibo" ? "/" : path, l)} hrefLang={l} lang={l} aria-current={l === lang ? "true" : undefined}>
-                  <b>{LANG_SHORT[l]}</b> {LANG_NAMES[l]}
+                  <span className="b">{LANG_SHORT[l]}</span> {LANG_NAMES[l]}
                 </a>
               </li>
             ))}

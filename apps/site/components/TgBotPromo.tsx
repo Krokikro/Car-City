@@ -41,7 +41,7 @@ export function TgBotPromo() {
       <button type="button" className="tgbot-x" aria-label={t.close} onClick={close}>×</button>
       <span className="tgbot-ico" aria-hidden="true"><SocialIcon kind="telegram" size={40} /></span>
       <div className="tgbot-copy">
-        <b>{t.title}</b>
+        <span className="b">{t.title}</span>
         <p>{t.text}</p>
         <a className="btn btn-primary btn-sm" href={link} target="_blank" rel="noopener" onClick={close}>{t.btn} <span className="arrow">→</span></a>
       </div>

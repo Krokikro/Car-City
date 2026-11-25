@@ -59,19 +59,19 @@ export function CookieNotice({ t: tp, policyUrl = company.privacyUrl }: { t?: Pa
           <label className="consent">
             <input type="checkbox" checked disabled />
             <span>
-              <b>{t.necessary}</b> — {t.necessaryNote}
+              <span className="b">{t.necessary}</span> — {t.necessaryNote}
             </span>
           </label>
           <label className="consent">
             <input type="checkbox" checked={analytics} onChange={(e) => setAnalytics(e.target.checked)} />
             <span>
-              <b>{t.analytics}</b> — {t.analyticsNote}
+              <span className="b">{t.analytics}</span> — {t.analyticsNote}
             </span>
           </label>
           <label className="consent">
             <input type="checkbox" checked={marketing} onChange={(e) => setMarketing(e.target.checked)} />
             <span>
-              <b>{t.marketing}</b> — {t.marketingNote}
+              <span className="b">{t.marketing}</span> — {t.marketingNote}
             </span>
           </label>
         </div>

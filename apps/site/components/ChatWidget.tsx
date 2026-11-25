@@ -146,7 +146,7 @@ export function ChatWidget() {
           <div className="chat-head">
             <span className="chat-ava" aria-hidden="true">CC</span>
             <div>
-              <b>{t.title}</b>
+              <span className="b">{t.title}</span>
               <span className="chat-status"><i />{t.status}</span>
             </div>
             <button type="button" className="chat-x" aria-label={t.close} onClick={() => setOpen(false)}>×</button>
