@@ -63,7 +63,7 @@ export function TariffCards({ terms, lang = "ru", className = "" }: { terms: Pic
                 <span className="tf-k mono">0{i + 1}</span>
                 <span className="tf-count mono">{c.count} {t.models}</span>
               </div>
-              <b className="tf-name">{c.label}</b>
+              <span className="b tf-name">{c.label}</span>
               {c.car && (
                 <div className="tf-car">
                   <CarArt slug={c.car.slug} name={c.car.name} lit sizes="(max-width: 860px) 90vw, 420px" />
@@ -71,7 +71,7 @@ export function TariffCards({ terms, lang = "ru", className = "" }: { terms: Pic
               )}
               <div className="tf-foot">
                 {c.from > 0 && (
-                  <p className="tf-price"><span>{t.from}</span> <b>{c.from.toLocaleString("ru-RU")}</b> <span>{t.day}</span></p>
+                  <p className="tf-price"><span>{t.from}</span> <span className="b">{c.from.toLocaleString("ru-RU")}</span> <span>{t.day}</span></p>
                 )}
                 <span className="tf-go"><span className="tf-go-l">{t.more}</span><span className="tf-arrow" aria-hidden="true">→</span></span>
               </div>

@@ -103,12 +103,12 @@ export function KlubView({ lang = "ru" }: { lang?: Lang }) {
             {t.place.map((x, i) => (
               <figure key={x.img} className={`kl-tile${i === 0 ? " kl-big" : ""}`}>
                 <GenImage kind="pages" id={x.img} className="kl-img" sizes={i === 0 ? "(max-width: 900px) 100vw, 60vw" : "(max-width: 900px) 100vw, 30vw"} alt={x.t} />
-                <figcaption><b>{x.t}</b><span>{x.d}</span></figcaption>
+                <figcaption><span className="b">{x.t}</span><span>{x.d}</span></figcaption>
               </figure>
             ))}
             <div className="kl-tile kl-note">
               <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M7 11V8a5 5 0 0110 0v3M5 11h14v10H5zM12 15v2" /></svg>
-              <b>{t.joinTile[0]}</b>
+              <span className="b">{t.joinTile[0]}</span>
               <span>{t.joinTile[1]}</span>
               <a className="btn btn-dark btn-sm" href="#zayavka">{t.joinTile[2]} <span className="arrow">→</span></a>
             </div>

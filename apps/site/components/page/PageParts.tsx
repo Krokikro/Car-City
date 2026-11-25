@@ -4,7 +4,7 @@ import { saleChips, hasRent, hasBuy } from "@/lib/prices";
 import { SaleChips } from "../SaleChips";
 import { ClassChips } from "./ClassChips";
 import type { ReactNode } from "react";
-import { marked } from "marked";
+import { marked } from "@/lib/md";
 import type { Block, Btn, Card, Fig } from "@/lib/blocks";
 import { CarArt } from "../CarArt";
 import { GenImage, pageKey } from "../GenImage";
@@ -86,7 +86,7 @@ function StatTiles({ stats, strip }: { stats: HeroStat[]; strip?: boolean }) {
         <div key={x.k}>
           {x.i && <svg className="pg-stat-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{STAT_ICON[x.i]}</svg>}
           <dt className="mono">{x.k}</dt>
-          <dd>{x.pre && <small>{x.pre}</small>}<b>{x.v}</b>{x.u && <small>{x.u}</small>}</dd>
+          <dd>{x.pre && <small>{x.pre}</small>}<span className="b">{x.v}</span>{x.u && <small>{x.u}</small>}</dd>
         </div>
       ))}
     </dl>
@@ -211,7 +211,7 @@ export function Figs({ figs, to }: { figs: Fig[]; to?: string }) {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={f.src.startsWith("/") ? asset(f.src) : f.src} alt={plain} loading="lazy" decoding="async" />
                 </div>
-                <figcaption>{m ? <><strong>{m[1]}</strong>{m[2]}</> : plain}</figcaption>
+                <figcaption>{m ? <><span className="b">{m[1]}</span>{m[2]}</> : plain}</figcaption>
               </>
             );
             return to ? <a className="pg-fig-link" href={to}>{inner}</a> : inner;

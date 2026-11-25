@@ -86,7 +86,7 @@ export function BenefitsView({ b, n, lang = "ru", cta = true }: { b: Sec; n: num
                   <li key={j} className="bn-card">
                     <span className="bn-n" aria-hidden="true">{String(j + 1).padStart(2, "0")}</span>
                     <span className="bn-ico"><Ico d={ICONS[c % ICONS.length]} /></span>
-                    {h && <b className="bn-h" dangerouslySetInnerHTML={{ __html: nb(h) }} />}
+                    {h && <span className="b bn-h" dangerouslySetInnerHTML={{ __html: nb(h) }} />}
                     <span className="bn-d" dangerouslySetInnerHTML={{ __html: nb(d) }} />
                   </li>
                 ) : (
@@ -130,7 +130,7 @@ export function FleetNotes({ b, n, lang = "ru" }: { b: Sec; n: number; lang?: La
             <li key={it.href} className="fn-card">
               <a href={href(it.href, lang)} className="fn-link">
                 <span className="fn-photo">{it.car ? <CarArt slug={it.car.slug} name={it.name} lit sizes="(max-width: 700px) 86vw, 420px" /> : null}</span>
-                <b className="fn-name">{it.name}</b>
+                <span className="b fn-name">{it.name}</span>
                 <span className="fn-text">{it.text}</span>
                 <span className="fn-go">{lang === "ru" ? "Смотреть" : "Details"} <i aria-hidden="true">→</i></span>
               </a>
@@ -165,7 +165,7 @@ export function PriceTable({ b, n, lang = "ru" }: { b: Sec; n: number; lang?: La
               {rows.map((r, i) => (
                 <tr key={i}>
                   {r.map((c, j) => (
-                    j === 0 ? <th key={j} scope="row">{c}</th> : <td key={j} className={val(c) === min[j] ? "is-min" : ""}><b>{nb(c.replace(/\s*₽/, "").trim())}</b><span> ₽</span>{olds[i][j] && <s className="pt-old">{nb(olds[i][j].replace(/\s*₽/, "").trim())} ₽</s>}</td>
+                    j === 0 ? <th key={j} scope="row">{c}</th> : <td key={j} className={val(c) === min[j] ? "is-min" : ""}><span className="b">{nb(c.replace(/\s*₽/, "").trim())}</span><span> ₽</span>{olds[i][j] && <s className="pt-old">{nb(olds[i][j].replace(/\s*₽/, "").trim())} ₽</s>}</td>
                   ))}
                 </tr>
               ))}

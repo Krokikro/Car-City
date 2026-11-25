@@ -72,7 +72,7 @@ export function ModelText({ b, n, twinOk = true }: { b: Sec; n: number; twinOk?:
             <div className="mt-twin" data-reveal>
               {twin.map((x, i) =>
                 x.k === "btn" ? <p key={i} className="btn-row" dangerouslySetInnerHTML={{ __html: x.html.replace("btn-ghost", "btn-primary") }} />
-                : x.k === "p" ? (i === 0 ? <b key={i} className="mt-twin-h" dangerouslySetInnerHTML={{ __html: x.html }} /> : <p key={i} dangerouslySetInnerHTML={{ __html: nb(x.html) }} />)
+                : x.k === "p" ? (i === 0 ? <span key={i} className="b mt-twin-h" dangerouslySetInnerHTML={{ __html: x.html }} /> : <p key={i} dangerouslySetInnerHTML={{ __html: nb(x.html) }} />)
                 : null,
               )}
             </div>

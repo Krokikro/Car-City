@@ -66,8 +66,25 @@ export function ArticleView({ doc, p, lang = "ru", related = [], updatedAt, comm
   const cover = hasGen("news", slug);
   // своя обложка есть — убираем из текста старую картинку с car-city.pro (первую в статье)
   const intro = cover ? p.intro.html.replace(/<p>\s*<img[^>]*>\s*<\/p>|<img[^>]*>/, "") : p.intro.html;
-  const html = [intro, ...p.blocks.map((b) => (b.t === "section" ? `<h2 id="${slugify(b.title)}">${b.title}</h2>${b.html}` : b.t === "faq" ? `<h2>${b.title || t.faq}</h2>${b.items.map((q) => `<h3>${q.q}</h3>${q.a}`).join("")}` : ""))].join("");
-  const toc = p.blocks.filter((b) => b.t === "section" && b.title).map((b) => (b as { title: string }).title);
+  // содержание собирается из заголовков статьи: разделы (h2), а в статьях, где разделов меньше двух, — и подзаголовки (h3) (правка SEO 25.11)
+  const toc: { id: string; text: string; sub: boolean }[] = [];
+  const used = new Set<string>();
+  const uid = (t: string) => { let id = slugify(t) || "r"; for (let i = 2; used.has(id); i++) id = `${slugify(t)}-${i}`; used.add(id); return id; };
+  const h2n = p.blocks.filter((b) => b.t === "section" && b.title).length;
+  const sec = (title: string, body: string) => {
+    const id = title ? uid(title) : "";
+    if (title) toc.push({ id, text: title.replace(/<[^>]+>/g, ""), sub: false });
+    const inner = body.replace(/<h3>([\s\S]*?)<\/h3>/g, (_, t: string) => {
+      const text = t.replace(/<[^>]+>/g, "").trim();
+      if (!text) return `<h3>${t}</h3>`;
+      const hid = uid(text);
+      if (h2n < 2) toc.push({ id: hid, text, sub: h2n > 0 });
+      return `<h3 id="${hid}">${t}</h3>`;
+    });
+    return (title ? `<h2 id="${id}">${title}</h2>` : "") + inner;
+  };
+  const faqId = (title: string) => { const id = uid(title); toc.push({ id, text: title, sub: false }); return id; };
+  const html = [sec("", intro), ...p.blocks.map((b) => (b.t === "section" ? sec(b.title, b.html) : b.t === "faq" ? `<h2 id="${faqId(b.title || t.faq)}">${b.title || t.faq}</h2>${b.items.map((q) => `<h3>${q.q}</h3>${q.a}`).join("")}` : ""))].join("");
   const min = Math.max(1, Math.round(words(doc.body) / 180));
   const iso = doc.date?.split(".").reverse().join("-");
   // дата редактирования: правка в админке позже даты публикации (или поле updated в файле статьи)
@@ -131,11 +148,11 @@ export function ArticleView({ doc, p, lang = "ru", related = [], updatedAt, comm
         {cover && <GenImage kind="news" id={slug} className="art-cover" sizes="(max-width: 900px) 100vw, 900px" priority alt={doc.h1} />}
         <div className="art-progress" aria-hidden="true"><i /></div>
       </header>
-      <div className={`wrap art-grid${toc.length > 1 ? "" : " no-toc"}`}>
-        {toc.length > 1 && (
+      <div className={`wrap art-grid${toc.length ? "" : " no-toc"}`}>
+        {toc.length > 0 && (
           <nav className="art-toc mono" aria-label={t.toc}>
             <p>{t.toc}</p>
-            <ol>{toc.map((t) => <li key={t}><a href={`#${slugify(t)}`}>{t}</a></li>)}</ol>
+            <ol>{toc.map((x) => <li key={x.id} className={x.sub ? "sub" : undefined}><a href={`#${x.id}`}>{x.text}</a></li>)}</ol>
           </nav>
         )}
         <div className="art-main">
@@ -153,7 +170,7 @@ export function ArticleView({ doc, p, lang = "ru", related = [], updatedAt, comm
             </div>
             <p>{e.about(company.years)}</p>
             <ul className="art-author-facts">
-              {e.facts.map(([l, k]) => <li key={k}><b>{company[k]}</b><span>{l}</span></li>)}
+              {e.facts.map(([l, k]) => <li key={k}><span className="b">{company[k]}</span><span>{l}</span></li>)}
             </ul>
             <p className="art-author-links">
               <a href={href("/o-nas", lang)}>{e.aboutLink} →</a>

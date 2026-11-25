@@ -35,9 +35,9 @@ export function GiftCta({ b, lang = "ru" }: { b: Sec; lang?: Lang }) {
           <div className="gift-side">
             <div className="gift-ticket" aria-hidden="true">
               <span className="gt-top mono">{tk.top}</span>
-              <span className="gt-main"><b>1</b><span>{tk.day}</span></span>
+              <span className="gt-main"><span className="b">1</span><span>{tk.day}</span></span>
               <span className="gt-cut" />
-              <span className="gt-foot"><b>0 ₽</b><span>{tk.free}</span></span>
+              <span className="gt-foot"><span className="b">0 ₽</span><span>{tk.free}</span></span>
             </div>
             <a className="btn btn-primary btn-lg" href="#zayavka" data-lead="rent" data-magnetic>{label} <span className="arrow">→</span></a>
             {consent && <p className="gift-consent small" dangerouslySetInnerHTML={{ __html: consent }} />}

@@ -38,11 +38,11 @@ export function ContactView({ lang = "ru" }: { lang?: Lang }) {
         <div className="ct-top" data-reveal-stagger>
           <a className="ct-line ct-phone" href={`tel:${tel.replace(/[^\d+]/g, "")}`}>
             <span className="mono">{t.phone}</span>
-            <b className="mono-num">{tel}</b>
+            <span className="b mono-num">{tel}</span>
           </a>
           <a className="ct-line" href={`mailto:${company.email}`}>
             <span className="mono">{t.mail}</span>
-            <b>{company.email}</b>
+            <span className="b">{company.email}</span>
           </a>
           <div className="ct-line">
             <span className="mono">{t.write}</span>
@@ -69,7 +69,7 @@ export function ContactView({ lang = "ru" }: { lang?: Lang }) {
               </ul>
               <div className="ct-hours">
                 <span className="mono">{t.hours}</span>
-                <p><b>{place(lang, o.hours)}</b> <span>{place(lang, o.days)}</span></p>
+                <p><span className="b">{place(lang, o.hours)}</span> <span>{place(lang, o.days)}</span></p>
                 {o.days === "пн-вс" && <em>{t.open}</em>}
               </div>
               <div className="ct-actions">

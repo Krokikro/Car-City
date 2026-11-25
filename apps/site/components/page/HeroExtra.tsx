@@ -50,7 +50,7 @@ export function HeroExtra({ k, lang = "ru", count }: { k: string; lang?: Lang; c
       <p className="lead">{x.lead}</p>
       <ul className="pg-hero-facts">
         {facts.map(([v, l]) => (
-          <li key={l}><b>{v}{k === "reviews" && <i aria-hidden="true"> ★</i>}</b><span>{l}</span></li>
+          <li key={l}><span className="b">{v}{k === "reviews" && <i aria-hidden="true"> ★</i>}</span><span>{l}</span></li>
         ))}
       </ul>
     </div>

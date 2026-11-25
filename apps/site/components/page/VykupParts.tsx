@@ -18,7 +18,7 @@ const paras = (html: string) => [...html.matchAll(/<p>([\s\S]*?)<\/p>/g)].map((m
 const text = (html: string) => html.replace(/<[^>]+>/g, "").replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'").trim();
 /** Цифры в тексте — крупнее: «3%», «14 дней», «от 1 года». */
 function hot(s: string) {
-  return nb(s).replace(/(\d+(?:[.,]\d+)?(?: |\s)?(?:%|дн\S*|лет|года|мес\S*))/g, '<b class="vk-hot">$1</b>');
+  return nb(s).replace(/(\d+(?:[.,]\d+)?(?: |\s)?(?:%|дн\S*|лет|года|мес\S*))/g, '<span class="b vk-hot">$1</span>');
 }
 
 // Значки: контурные, в стиле сайта
@@ -133,7 +133,7 @@ export function savingsHtml(html: string) {
       const t = li.replace(/^<li>|<\/li>$/g, "");
       const m = t.match(/^(.*?)\s[–—-]\s(.+)$/);
       if (!m) return `<li>${nb(t)}</li>`;
-      return `<li><span class="vs-l">${nb(m[1])}</span><b class="vs-v">${nb(m[2])}</b></li>`;
+      return `<li><span class="vs-l">${nb(m[1])}</span><span class="b vs-v">${nb(m[2])}</span></li>`;
     });
     return `<ul class="tiles tiles-save">${lis.join("")}</ul>`;
   });

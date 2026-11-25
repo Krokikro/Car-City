@@ -108,7 +108,7 @@ export function ArticleComments({ path, lang, items }: { path: string; lang: str
         <ol className="art-comments-list">
           {items.map((c) => (
             <li key={c.id}>
-              <p className="art-comment-h"><b>{c.name}</b> <time className="mono" dateTime={c.at}>{fmt(c.at)}</time></p>
+              <p className="art-comment-h"><span className="b">{c.name}</span> <time className="mono" dateTime={c.at}>{fmt(c.at)}</time></p>
               <p className="art-comment-x">{c.text}</p>
             </li>
           ))}

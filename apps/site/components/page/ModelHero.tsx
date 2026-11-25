@@ -57,7 +57,7 @@ export function ModelHero(p: {
           {p.price && (
             <p className="mdl-price" data-reveal>
               {t.from && <span className="mono">{t.from}</span>}
-              {priceNum ? <b data-count={priceNum} data-suffix=" ₽">{Number(priceNum).toLocaleString("ru-RU")} ₽</b> : <b>{p.price}</b>}
+              {priceNum ? <span className="b" data-count={priceNum} data-suffix=" ₽">{Number(priceNum).toLocaleString("ru-RU")} ₽</span> : <span className="b">{p.price}</span>}
               {priceTail && <small>{priceTail.replace(/^₽\s*/, "")}</small>}
               {p.oldPrice && priceNum && p.oldPrice > Number(priceNum) ? <s className="mdl-old">{p.oldPrice.toLocaleString("ru-RU")} ₽</s> : null}
             </p>
