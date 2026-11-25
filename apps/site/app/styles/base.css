@@ -12,7 +12,7 @@
 html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--header-h) + 16px); }
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
-.b { font-weight: bolder; }
+span:where(.b) { font-weight: bolder; }
 body {
   margin: 0; background: var(--bg); color: var(--text-muted);
   font: 400 var(--text-body)/var(--leading-body) var(--font-text);
@@ -44,7 +44,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .accent { color: var(--cc-signal); }
 .link { color: var(--accent-text); text-underline-offset: 4px; text-decoration-thickness: 1px; }
 .sw { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .06em; margin-bottom: -.06em; }
-.sw > span { display: inline-block; will-change: transform; }
+.sw > span:not(:where(.b)) { display: inline-block; will-change: transform; }
 
 /* — Раскладка — */
 .wrap { width: min(100% - 2 * var(--gutter), 1440px); margin-inline: auto; }

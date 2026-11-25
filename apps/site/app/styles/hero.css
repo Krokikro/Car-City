@@ -19,7 +19,7 @@
 @keyframes pulse { 50% { box-shadow: 0 0 0 9px rgba(76, 194, 122, 0); } }
 .hero3d-title { font: 200 clamp(44px, 7.4vw, 128px)/.95 var(--font-display); letter-spacing: -0.04em; max-width: 14ch; }
 .hero3d-title .line { display: block; overflow: hidden; padding-bottom: .04em; }
-.hero3d-title .line > span { display: inline-block; }
+.hero3d-title .line > span:not(:where(.b)) { display: inline-block; }
 .hero3d-title .accent { color: var(--cc-signal); }
 .hero3d-sub { font-size: clamp(18px, 1.8vw, 24px); color: var(--text); max-width: 34ch; }
 .hero3d-sub .mono-num { color: var(--cc-signal); }

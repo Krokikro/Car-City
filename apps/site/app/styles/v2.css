@@ -29,7 +29,7 @@ html[data-gfx="basic"] .hv-curtain { display: none; }
 .hv-eyebrow .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--cc-success); box-shadow: 0 0 0 4px rgba(76, 194, 122, .18); animation: pulse 2s infinite; }
 .hv-title { margin: 0; font: 200 clamp(44px, 7.2vw, 132px)/.94 var(--font-display); letter-spacing: -.045em; color: var(--text); max-width: 15ch; }
 .hv-title .line { display: block; overflow: hidden; padding-bottom: .05em; }
-.hv-title .line > span { display: inline-block; }
+.hv-title .line > span:not(:where(.b)) { display: inline-block; }
 .hv-title .accent { color: var(--cc-signal); font-weight: 300; }
 .hv-sub { margin: 0; font-size: clamp(18px, 1.7vw, 24px); color: var(--text); max-width: 34ch; }
 .hv-stats { display: flex; align-items: end; justify-content: space-between; gap: 24px; padding-bottom: clamp(24px, 4vw, 44px); will-change: transform, opacity; }
@@ -61,7 +61,7 @@ html[data-gfx="basic"] .hv-curtain { display: none; }
 .ticker-band.dark { background: #111214; color: var(--text); rotate: 1.8deg; margin-top: -10px; border-block: 1px solid rgba(255,255,255,.08); }
 .ticker-row { display: flex; width: max-content; animation: tick 38s linear infinite; }
 .ticker-row.rev { animation-direction: reverse; animation-duration: 46s; }
-.ticker-row span { display: inline-flex; align-items: center; gap: 28px; padding-right: 28px; font: 500 clamp(20px, 2.4vw, 34px)/1 var(--font-display); letter-spacing: -.02em; text-transform: uppercase; white-space: nowrap; }
+.ticker-row span:not(:where(.b)) { display: inline-flex; align-items: center; gap: 28px; padding-right: 28px; font: 500 clamp(20px, 2.4vw, 34px)/1 var(--font-display); letter-spacing: -.02em; text-transform: uppercase; white-space: nowrap; }
 .ticker-row i { width: 30px; height: 30px; background: var(--cc-checker); background-size: 10px 10px; border-radius: 4px; }
 .ticker-band:not(.dark) .ticker-row i { background: repeating-conic-gradient(#0B0B0C 0 25%, transparent 0 50%) 0 0 / 10px 10px; }
 @keyframes tick { to { transform: translateX(-50%); } }
@@ -104,8 +104,8 @@ html[data-gfx="basic"] .ticker-row { animation: none; }
 .fc-specs dt::after { content: ":"; }
 .fc-specs dd { margin: 0; color: var(--text); }
 .fc-price { grid-column: 2; grid-row: 1 / span 2; margin: 0; text-align: right; color: var(--text); line-height: 1; }
-.fc-price span { display: block; font: 400 12px/1 var(--font-mono); color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px; }
-.fc-price .b { font: 300 clamp(26px, 2.4vw, 38px)/1 var(--font-display); color: var(--cc-signal); letter-spacing: -.03em; }
+.fc-price span:not(:where(.b)) { display: block; font: 400 12px/1 var(--font-mono); color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px; }
+.fc-price span:where(.b) { font: 300 clamp(26px, 2.4vw, 38px)/1 var(--font-display); color: var(--cc-signal); letter-spacing: -.03em; }
 .fc-price small { display: block; margin-top: 4px; font-size: 13px; color: var(--text-muted); }
 .fc-actions { grid-column: 1 / -1; display: flex; gap: 10px; margin-top: 10px; }
 .fs-end { flex: none; width: min(40vw, 360px); display: grid; place-items: center; text-align: center; color: var(--text-muted); }

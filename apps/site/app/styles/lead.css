@@ -20,7 +20,7 @@
 .cookie-title { font: 500 16px/1.3 var(--font-text); color: var(--text); }
 .cookie-text a { color: var(--text); }
 .cookie-cats { display: grid; gap: 10px; }
-.cookie-cats .b { color: var(--text); font-weight: 500; }
+.cookie-cats span:where(.b) { color: var(--text); font-weight: 500; }
 .cookie-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .cookie-actions .btn { flex: 1 1 auto; }
 
