@@ -5,7 +5,7 @@ import Script from "next/script";
 import { usePathname } from "next/navigation";
 import { captureTouch } from "@/lib/lead/attribution";
 import { getConsent, onConsent } from "@/lib/lead/consent";
-import { ymId } from "@/lib/lead/metrika";
+import { reachGoal, ymId } from "@/lib/lead/metrika";
 
 // Источник визита и Яндекс Метрика (PRD 7.2, 8.3, 14.4).
 // Метки входа запоминаются всегда (это необходимые данные заявки, в cookie не пишутся).
@@ -34,6 +34,19 @@ export function Analytics() {
     return onConsent((c) => {
       if (c.analytics) enable();
     });
+  }, []);
+
+  // Цели старого сайта «Аренда на главной» / «Выкуп авто на главной»: клик по кнопке аренды или выкупа машины на главной
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      const a = (e.target as Element | null)?.closest?.("a[href]");
+      if (!a || !/^\/(en|kk|ky|uz)?\/?$/.test(location.pathname)) return;
+      const h = new URL((a as HTMLAnchorElement).href, location.href).pathname.replace(/^\/(en|kk|ky|uz)(?=\/)/, "");
+      if (/^\/klassyi-avtomobilej\//.test(h)) reachGoal("arendaklik");
+      else if (/^\/vykup\//.test(h)) reachGoal("vykupklik");
+    };
+    document.addEventListener("click", onClick, true);
+    return () => document.removeEventListener("click", onClick, true);
   }, []);
 
   // Переходы внутри сайта без перезагрузки — отдельный просмотр в Метрике
