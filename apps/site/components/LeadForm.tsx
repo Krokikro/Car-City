@@ -11,7 +11,7 @@ import { isLang, splitLang } from "@/lib/i18n";
 import { leadFormI18n } from "@/lib/lead/i18n";
 import { formatPhone, normalizePhone, phoneDigits } from "@/lib/lead/phone";
 import { getTouches } from "@/lib/lead/attribution";
-import { GOALS, getYmClientId, reachGoal } from "@/lib/lead/metrika";
+import { GOALS, getYmClientId, legacyLeadGoals, reachGoal } from "@/lib/lead/metrika";
 import { CAPTCHA_KEY, solveCaptcha } from "@/lib/lead/captcha";
 import { MESSENGERS, type LeadErrorCode, type LeadRequest, type Messenger } from "@/lib/lead/types";
 
@@ -146,6 +146,7 @@ export function LeadForm({ button, source = "site", compact = false, extra, t: t
     try {
       await send(body);
       reachGoal(GOALS.lead, { form: source, ...body.extra });
+      for (const g of legacyLeadGoals(source, location.pathname)) reachGoal(g, { form: source });
       setState("done");
     } catch (err) {
       const code = err instanceof LeadError ? err.code : "network";
